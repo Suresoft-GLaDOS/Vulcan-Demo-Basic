@@ -1,6 +1,7 @@
 name: regression test
 
 on:
+    # push:
     workflow_dispatch:
             
 jobs:
