@@ -4,7 +4,8 @@ int mid(int x, int y, int z){
         if (x < y) {
             ret = y;
         } else if (x < z) {
-            ret = (y * (ret != 0));
+            ret = ((x * y) * (ret != 0));
+
 
 
         }
