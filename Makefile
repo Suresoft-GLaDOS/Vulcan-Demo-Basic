@@ -4,14 +4,14 @@ LDFLAGS:=
 
 all: test
 
-test: test1.o example.o
-	$(CC) $(CFLAGS) test1.o example.o -o test $(LDFLAGS)
+test: test.o example.o
+	$(CC) $(CFLAGS) test.o example.o -o test $(LDFLAGS)
 
 example.o: example.c
 	$(CC) $(CFLAGS) -o example.o -c example.c 
 
-test1.o: test1.c
-	$(CC) $(CFLAGS) -o test1.o -c test1.c
+test.o: test.c
+	$(CC) $(CFLAGS) -o test.o -c test.c
 
 clean:
 	rm -f *.gcov
