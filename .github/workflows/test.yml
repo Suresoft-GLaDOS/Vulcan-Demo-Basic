@@ -1,0 +1,25 @@
+name: regression test
+
+on:
+    pull_request_target:
+        types:
+            - closed
+            
+jobs:
+    build:
+        runs-on: self-hosted
+        steps:
+            - name: checkout source code
+              uses: actions/checkout@v2
+            - name: run build
+              run: |
+                make clean
+                make
+            - name: run test
+              run: |
+                ./test 0
+                ./test 1
+                ./test 2
+                ./test 3
+                ./test 4
+                ./test 5
