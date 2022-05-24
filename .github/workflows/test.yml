@@ -7,15 +7,23 @@ on:
     workflow_dispatch:
             
 jobs:
-    build:
+    checkout:
         runs-on: self-hosted
         steps:
             - name: checkout source code
               uses: actions/checkout@v2
+    build:
+        needs: checkout
+        runs-on: self-hosted
+        steps:
             - name: run build
               run: |
                 make clean
                 make
+    test:
+        needs: build
+        runs-on: self-hosted
+        steps:
             - name: run test
               run: |
                 ./test 0
