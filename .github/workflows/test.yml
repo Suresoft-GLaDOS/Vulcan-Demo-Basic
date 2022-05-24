@@ -1,6 +1,7 @@
 name: regression test
 
 on:
+    push:
     pull_request_target:
         types:
             - closed
