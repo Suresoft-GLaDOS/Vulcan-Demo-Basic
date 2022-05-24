@@ -11,10 +11,9 @@ int mid(int x, int y, int z){
     } else {
         if (x > y) {
             ret = y;
-        } else { ret = x;
-if (x > z) {
+        } else if (x > z) {
             printf("fix here\n");
         }
-    }}
+    }
     return ret;
 }
