@@ -17,4 +17,4 @@ clean:
 	rm -f *.gcov
 	rm -f *.gcda *.gcno
 	rm -f *.o
-#	rm -f test
+	rm -f test
