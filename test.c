@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "example.h"
-#include "../src/ProductionCode.h"
+#include "src/ProductionCode.h"
 
 #define TEST_SIZE
 
