@@ -9,7 +9,9 @@ docker-image:
 extra-build-env-setting-commands: 
 
 test-candidates: |
-  example.c
+  # example.c
+  src/ProductionCode.c
+  src/ProductionCode2.c
 
 time-out: 3600
 max-patch-number : 500
