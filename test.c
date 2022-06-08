@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "example.h"
+#include "src/example.h"
 #include "src/ProductionCode.h"
 
 #define TEST_SIZE
