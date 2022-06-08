@@ -10,7 +10,8 @@ int mid(int x, int y, int z){
             ret = x;
         }
     } else {
-        if (x > y) {
+      ret = y;
+if (x > y) {
             ret = y;
         } else if (x > z) {
             printf("fix here\n");
