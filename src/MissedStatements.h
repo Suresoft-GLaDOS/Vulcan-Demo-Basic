@@ -1,0 +1,1 @@
+int* vendingMachine(int coin, int price);

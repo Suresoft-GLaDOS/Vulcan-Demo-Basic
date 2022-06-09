@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 int mid(int x, int y, int z){
