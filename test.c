@@ -4,6 +4,7 @@
 //#include "src/ProductionCode.h"
 #include "src/RangeChecker.h"
 #include "src/MissedStatements.h"
+#include "src/MethodInsertion.h"
 
 #define TEST_SIZE
 
@@ -64,12 +65,35 @@ struct stForTest1* initStruct1() {
     return input;
 }
 
- int input2[TEST_SIZE][3] = {
+int input2[TEST_SIZE][3] = {
    {100, 500},
    {500, 500},
    {600, 550},
    {1000, 500}
  };
+
+int input3[TEST_SIZE][3] = {
+   {100, 500},
+   {500, 500},
+   {600, 550},
+   {1000, 500}
+ };
+
+
+ int input4[TEST_SIZE][7] = {
+   {4, 12, 3, 7, 2, 11, 14},
+   {1, 8, 2, 3, 12, 6, 14},
+   {7, 8, 1, 11, 10, 6, 8},
+   {10, 7, 2, 12, 9, 11, 6}
+ };
+
+ int input4_1[TEST_SIZE] = {
+    60,
+    40,
+    55,
+    50
+ };
+
 
 int expected_output1[TEST_SIZE][10] = {
     {11, 12, 13, 14, 15},
@@ -84,6 +108,20 @@ int expected_output2[TEST_SIZE][3] = {
     {1, 50},
     {2, 0}
 };
+
+int expected_output4[TEST_SIZE][15] = {
+    {4, 12, 3, 7, 2, 11, 14, 3},
+    {1, 8, 2, 3, 12, 6, 3, 3},
+    {7, 8, 1, 11, 10, 6, 8},
+    {10, 7, 2, 12, 9, 7}
+};
+
+int expected_output4_1[TEST_SIZE] = {
+    56,
+    38,
+    51,
+    47
+ };
 
 int main(int argc, char *argv[]) {
     int test_case = atoi(argv[1]);
@@ -118,18 +156,73 @@ int main(int argc, char *argv[]) {
 //            return compare == true ? 0 : 1;
 
 
-        case 2: ;//MissedStatements
-            int* actual_output2 = vendingMachine(input2[test_index][0], input2[test_index][1]);
+//        case 2: ;//MissedStatements
+//            int* actual_output2 = vendingMachine(input2[test_index][0], input2[test_index][1]);
+//            compare = true;
+//            printf("coin: %d\n", input2[test_index][0]);
+//            printf("price: %d\n", input2[test_index][1]);
+//            for (int i = 0; i < 2; i++) {
+//                printf("Expected: %d, Actual: %d\n", expected_output2[test_index][i], actual_output2[i]);
+//                if (actual_output2[i] != expected_output2[test_index][i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
+//        case 3: ;//NullChecker
+//            int set = setArray();
+//            int* actual_output3 = getIndex(input2[test_index][0], input2[test_index][1]);
+//            compare = true;
+//            printf("coin: %d\n", input2[test_index][0]);
+//            printf("price: %d\n", input2[test_index][1]);
+//            for (int i = 0; i < 2; i++) {
+//                printf("Expected: %d, Actual: %d\n", expected_output2[test_index][i], actual_output2[i]);
+//                if (actual_output2[i] != expected_output2[test_index][i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
+
+        case 4: ;//MethodInsertion
+            struct Vector planVector;
+            struct Vector* planVectorP = &planVector;
+            setVector(planVectorP, 7);
+            int* plan = (int*)malloc(sizeof(int) * 7);
+            for(int i = 0; i < 7; i++) {
+                planVectorP->values[i] = input4[test_index][i];
+            }
+            planVectorP->size = 7;
+
+            int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
             compare = true;
-            printf("coin: %d\n", input2[test_index][0]);
-            printf("price: %d\n", input2[test_index][1]);
-            for (int i = 0; i < 2; i++) {
-                printf("Expected: %d, Actual: %d\n", expected_output2[test_index][i], actual_output2[i]);
-                if (actual_output2[i] != expected_output2[test_index][i]) {
+
+
+            for (int i = 0; i < planVectorP->size; i++) {
+                printf("Expected: %d, Actual: %d\n", expected_output4[test_index][i], planVectorP->values[i]);
+                if (planVectorP->values[i] != expected_output4[test_index][i]) {
                     compare = false;
                     break;
                 }
             }
+
+            if(actual_output4 != expected_output4_1[test_index]) {
+                printf("ExpectedCost: %d, ActualCost: %d\n", expected_output4_1[test_index], actual_output4);
+                compare = false;
+            }
+
             if (compare) {
                 printf("PASSED\n");
             }
