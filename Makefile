@@ -4,11 +4,11 @@ LDFLAGS:=
 
 all: test
 
-test: test.o ProductionCode.o
-	$(CC) $(CFLAGS) test.o ProductionCode.o -o test $(LDFLAGS)
+test: test.o MissedStatements.o
+	$(CC) $(CFLAGS) test.o MissedStatements.o -o test $(LDFLAGS)
 
-ProductionCode.o: src/ProductionCode.c
-	$(CC) $(CFLAGS) -o ProductionCode.o -c src/ProductionCode.c
+MissedStatements.o: src/MissedStatements.c
+	$(CC) $(CFLAGS) -o MissedStatements.o -c src/MissedStatements.c
 
 test.o: test.c
 	$(CC) $(CFLAGS) -o test.o -c test.c
