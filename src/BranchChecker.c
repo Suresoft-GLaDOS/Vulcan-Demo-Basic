@@ -101,12 +101,12 @@ double* cohenSutherlandClip(double x1, double y1,
             // Find intersection point;
             // using formulas y = y1 + slope * (x - x1),
             // x = x1 + (1 / slope) * (y - y1)
-            if (code_out) {
+            if (code_out & TOP) { //original: code_out & TOP
                 // point is above the clip rectangle
                 x = x1 + (x2 - x1) * (y_max - y1) / (y2 - y1);
                 y = y_max;
             }
-            else if (code_out & BOTTOM) {
+            else if (code_out) {
                 // point is below the rectangle
                 x = x1 + (x2 - x1) * (y_min - y1) / (y2 - y1);
                 y = y_min;
