@@ -4,11 +4,11 @@ LDFLAGS:=
 
 all: test
 
-test: test.o MethodInsertion.o
-	$(CC) $(CFLAGS) test.o MethodInsertion.o -o test $(LDFLAGS)
+test: test.o BranchChecker.o
+	$(CC) $(CFLAGS) test.o BranchChecker.o -o test $(LDFLAGS)
 
-MethodInsertion.o: src/MethodInsertion.c
-	$(CC) $(CFLAGS) -o MethodInsertion.o -c src/MethodInsertion.c
+BranchChecker.o: src/BranchChecker.c
+	$(CC) $(CFLAGS) -o BranchChecker.o -c src/BranchChecker.c
 
 test.o: test.c
 	$(CC) $(CFLAGS) -o test.o -c test.c
