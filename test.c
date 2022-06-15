@@ -5,6 +5,7 @@
 #include "src/RangeChecker.h"
 #include "src/MissedStatements.h"
 #include "src/MethodInsertion.h"
+#include "src/BranchChecker.h"
 
 #define TEST_SIZE
 
@@ -94,6 +95,21 @@ int input3[TEST_SIZE][3] = {
     50
  };
 
+double input5[TEST_SIZE][4] = {
+    {10, 8, 4, 4},
+    {10, 8, 4, 4},
+    {10, 8, 4, 4},
+    {9, 9, 5, 5}
+};
+
+
+double input5_1[TEST_SIZE][4] = {
+    {5.0, 5.0, 7.0, 7.0},
+    {7, 9, 11, 4},
+    {1, 5, 4, 1},
+    {4, 12, 8, 8}
+};
+
 
 int expected_output1[TEST_SIZE][10] = {
     {11, 12, 13, 14, 15},
@@ -122,6 +138,15 @@ int expected_output4_1[TEST_SIZE] = {
     51,
     47
  };
+
+double expected_output5[TEST_SIZE][4] = {
+    {5, 5, 7, 7},
+    {7.8, 8.0, 10.0, 5.25},
+    {0, 0, 0, 0},
+    {7, 9, 8, 8},
+ };
+
+
 
 int main(int argc, char *argv[]) {
     int test_case = atoi(argv[1]);
@@ -196,33 +221,56 @@ int main(int argc, char *argv[]) {
 //            }
 //            return compare == true ? 0 : 1;
 
-        case 4: ;//MethodInsertion
-            struct Vector planVector;
-            struct Vector* planVectorP = &planVector;
-            setVector(planVectorP, 7);
-            int* plan = (int*)malloc(sizeof(int) * 7);
-            for(int i = 0; i < 7; i++) {
-                planVectorP->values[i] = input4[test_index][i];
-            }
-            planVectorP->size = 7;
+//        case 4: ;//MethodInsertion
+//            struct Vector planVector;
+//            struct Vector* planVectorP = &planVector;
+//            setVector(planVectorP, 7);
+//            int* plan = (int*)malloc(sizeof(int) * 7);
+//            for(int i = 0; i < 7; i++) {
+//                planVectorP->values[i] = input4[test_index][i];
+//            }
+//            planVectorP->size = 7;
+//
+//            int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
+//            compare = true;
+//
+//
+//            for (int i = 0; i < planVectorP->size; i++) {
+//                printf("Expected: %d, Actual: %d\n", expected_output4[test_index][i], planVectorP->values[i]);
+//                if (planVectorP->values[i] != expected_output4[test_index][i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//
+//            if(actual_output4 != expected_output4_1[test_index]) {
+//                printf("ExpectedCost: %d, ActualCost: %d\n", expected_output4_1[test_index], actual_output4);
+//                compare = false;
+//            }
+//
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
 
-            int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
-            compare = true;
+        case 5: ; // BranchChecker
+            // First Line segment
+            // P11 = (5, 5), P12 = (7, 7)
 
 
-            for (int i = 0; i < planVectorP->size; i++) {
-                printf("Expected: %d, Actual: %d\n", expected_output4[test_index][i], planVectorP->values[i]);
-                if (planVectorP->values[i] != expected_output4[test_index][i]) {
+            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index]);
+
+            for (int i = 0; i < 4; i++) {
+                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
+                if (expected_output5[test_index][i] != actual_output5[i]) {
                     compare = false;
                     break;
                 }
             }
-
-            if(actual_output4 != expected_output4_1[test_index]) {
-                printf("ExpectedCost: %d, ActualCost: %d\n", expected_output4_1[test_index], actual_output4);
-                compare = false;
-            }
-
             if (compare) {
                 printf("PASSED\n");
             }
@@ -230,6 +278,7 @@ int main(int argc, char *argv[]) {
                 printf("FAILED\n");
             }
             return compare == true ? 0 : 1;
+
     }
     return 0;
 
