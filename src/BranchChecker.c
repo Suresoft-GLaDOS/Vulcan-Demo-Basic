@@ -106,7 +106,7 @@ double* cohenSutherlandClip(double x1, double y1,
                 x = x1 + (x2 - x1) * (y_max - y1) / (y2 - y1);
                 y = y_max;
             }
-            else if (code_out) {
+            else if (code_out & BOTTOM) {
                 // point is below the rectangle
                 x = x1 + (x2 - x1) * (y_min - y1) / (y2 - y1);
                 y = y_min;

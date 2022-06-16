@@ -281,6 +281,30 @@ int main(int argc, char *argv[]) {
                 printf("FAILED\n");
             }
             return compare == true ? 0 : 1;
+        case 6: ;
+            struct Node* root = NULL;
+
+            int* actual_output6 =
+
+            //INSERT
+            root = Insert(root, 4);
+            root = Insert(root, 10);
+            root = Insert(root, 13);
+            root = Insert(root, 20);
+            root = Insert(root, 25);
+            root = Insert(root, 32);
+            root = Insert(root, 55);
+
+            Inorder(root);
+            //결과 : 4 10 13 20 25 32 55 (root data : 20)
+
+            //DELETE
+            root = Delete(root, 4);
+            root = Delete(root, 10);
+            root = Delete(root, 13);
+
+            Inorder(root);
+            //결과 : 20 25 32 55 (root data : 25)
 
     }
     return 0;
