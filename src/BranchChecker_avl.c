@@ -1,10 +1,6 @@
 #include <stdio.h>
+#include "BranchChecker_avl.h"
 
-typedef struct Node
-{
-    int data;
-    struct Node* Parent, * Left, * Right;
-}Node;
 
 int GetHeight(Node* node)
 {
@@ -123,7 +119,8 @@ Node* Insert(Node* node, int data)
     }
     else
     {
-        //데이터가 중복되므로 추가하지 않는다.
+        //Do not add data to avoid duplication. but?
+//        node = AVLSet(node);
     }
 
     return node;

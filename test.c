@@ -224,40 +224,40 @@ int main(int argc, char *argv[]) {
 //            }
 //            return compare == true ? 0 : 1;
 
-//        case 4: ;//MethodInsertion
-//            struct Vector planVector;
-//            struct Vector* planVectorP = &planVector;
-//            setVector(planVectorP, 7);
-//            int* plan = (int*)malloc(sizeof(int) * 7);
-//            for(int i = 0; i < 7; i++) {
-//                planVectorP->values[i] = input4[test_index][i];
-//            }
-//            planVectorP->size = 7;
-//
-//            int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
-//            compare = true;
-//
-//
-//            for (int i = 0; i < planVectorP->size; i++) {
-//                printf("Expected: %d, Actual: %d\n", expected_output4[test_index][i], planVectorP->values[i]);
-//                if (planVectorP->values[i] != expected_output4[test_index][i]) {
-//                    compare = false;
-//                    break;
-//                }
-//            }
-//
-//            if(actual_output4 != expected_output4_1[test_index]) {
-//                printf("ExpectedCost: %d, ActualCost: %d\n", expected_output4_1[test_index], actual_output4);
-//                compare = false;
-//            }
-//
-//            if (compare) {
-//                printf("PASSED\n");
-//            }
-//            else {
-//                printf("FAILED\n");
-//            }
-//            return compare == true ? 0 : 1;
+        case 4: ;//MethodInsertion
+            struct Vector planVector;
+            struct Vector* planVectorP = &planVector;
+            setVector(planVectorP, 7);
+            int* plan = (int*)malloc(sizeof(int) * 7);
+            for(int i = 0; i < 7; i++) {
+                planVectorP->values[i] = input4[test_index][i];
+            }
+            planVectorP->size = 7;
+
+            int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
+            compare = true;
+
+
+            for (int i = 0; i < planVectorP->size; i++) {
+                printf("Expected: %d, Actual: %d\n", expected_output4[test_index][i], planVectorP->values[i]);
+                if (planVectorP->values[i] != expected_output4[test_index][i]) {
+                    compare = false;
+                    break;
+                }
+            }
+
+            if(actual_output4 != expected_output4_1[test_index]) {
+                printf("ExpectedCost: %d, ActualCost: %d\n", expected_output4_1[test_index], actual_output4);
+                compare = false;
+            }
+
+            if (compare) {
+                printf("PASSED\n");
+            }
+            else {
+                printf("FAILED\n");
+            }
+            return compare == true ? 0 : 1;
 
         case 5: ; // BranchChecker
             // First Line segment
