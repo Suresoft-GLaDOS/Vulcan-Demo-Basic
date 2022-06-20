@@ -252,6 +252,13 @@ int main(int argc, char *argv[]) {
             printf("NewCost: %d %d\n", planVectorP->size, newCost);
 
             if (planVectorP->size==newCost) {
+                compare = true;
+            }
+            else {
+                false;
+            }
+
+            if (planVectorP->size==newCost) {
                 printf("PASSED\n");
             }
             else {
