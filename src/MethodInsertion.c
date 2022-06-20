@@ -49,37 +49,39 @@ void pop_back(struct Vector* newVector) {
 //    newVector->size = newVector->size - remove;
 //}
 //
-//struct Vector* newTravelPlan(struct Vector* origPlan, int* toDelete, int* toAdd, int shorten) {
-//    struct Vector* newPlan;
-//    setVector(newPlan, origPlan->cap);
-//    newPlan->size = origPlan->size;
-//
-//    for (int i = 0; i <  sizeof(toAdd)/sizeof(int); i++) {
-//        push_back(origPlan, toAdd[i]);
-////        increaseSize(origPlan, 1);
-//    }
-//    for (int i = 0; i < sizeof(toDelete)/sizeof(int); i++) {
-//        for (int j = 0; j < origPlan->size; j++) {
-//            if (origPlan->values[j] == toDelete[i]) {
-//                origPlan->values[j] = 0;
-//                break;
-//            }
-//        }
-//    }
+int newTravelPlan(struct Vector* origPlan, int* toAdd, int* toDelete) {
+    int newCost = 0;
+    int newSize = sizeof(origPlan->values)/sizeof(int);
+
+    for (int i = 0; i <  sizeof(toAdd)/sizeof(int); i++) {
+        push_back(origPlan, toAdd[i]);
+//        increaseSize(origPlan, 1);
+    }
+    newSize = newSize + sizeof(toAdd)/sizeof(int);
+    for (int i = 0; i < origPlan->size; i++) {
+        for (int j = 0; j < sizeof(toDelete)/sizeof(int); j++) {
+            if (origPlan->values[i] == toDelete[j]) {
+                for (int k = i; k < origPlan->size; k++) {
+                    origPlan->values[k] = origPlan->values[k+1];
+                }
+//                pop_back(origPlan);
+                newSize--;
+                break;
+            }
+        }
+    }
 //    for (int i = 0; i < origPlan->size; i++) {
 //        if (origPlan->values[i]) {
 //            push_back(newPlan, origPlan->values[i]);
 ////            increaseSize(newPlan, 1);
 //        }
 //    }
-//    for (int i = 0; i < shorten; i++) {
-//        pop_back(newPlan);
-////        decreaseSize(newPlan, 1); or,
-//    }
-////    decreaseSize(newPlan, shorten);
-//
-//    return newPlan;
-//}
+    for(int i = 0; i < newSize; i++) {
+        newCost = newCost + origPlan->values[i];
+    }
+
+    return newCost;
+}
 
 int computeCost(struct Vector* travelPlan, int budget) {
     int cost = 0;
@@ -112,4 +114,8 @@ int computeCost(struct Vector* travelPlan, int budget) {
 
 
     return cost;
+}
+
+void rePlanning(struct Vector* travelPlan, int* addPlan, int* deletePlan) {
+
 }

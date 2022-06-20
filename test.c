@@ -94,6 +94,13 @@ int input3[TEST_SIZE][3] = {
     50
  };
 
+int input4_2[3] = {
+    {5, 9, 10}
+};
+
+int input4_3[3] = {
+    {15, 1, 8}
+};
 
 int expected_output1[TEST_SIZE][10] = {
     {11, 12, 13, 14, 15},
@@ -200,10 +207,16 @@ int main(int argc, char *argv[]) {
             struct Vector planVector;
             struct Vector* planVectorP = &planVector;
             setVector(planVectorP, 7);
-            int* plan = (int*)malloc(sizeof(int) * 7);
+            int* addPlan = (int*)malloc(sizeof(int) * 3);
+            int* delPlan = (int*)malloc(sizeof(int) * 3);
             for(int i = 0; i < 7; i++) {
                 planVectorP->values[i] = input4[test_index][i];
             }
+            for(int i = 0; i < 0; i++) {
+                addPlan[i] = input4_2[i];
+                delPlan[i] = input4_3[i];
+            }
+
             planVectorP->size = 7;
 
             int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
@@ -222,6 +235,9 @@ int main(int argc, char *argv[]) {
                 printf("ExpectedCost: %d, ActualCost: %d\n", expected_output4_1[test_index], actual_output4);
                 compare = false;
             }
+
+            int newCost = newTravelPlan(planVectorP, addPlan, delPlan);
+            printf("NewCost: %d\n", newCost);
 
             if (compare) {
                 printf("PASSED\n");
