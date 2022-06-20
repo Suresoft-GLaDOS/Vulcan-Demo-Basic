@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <malloc.h>
 #include "src/example.h"
 //#include "src/ProductionCode.h"
 #include "src/RangeChecker.h"
@@ -94,12 +95,12 @@ int input3[TEST_SIZE][3] = {
     50
  };
 
-int input4_2[3] = {
-    {5, 9, 10}
+int input4_2[4] = {
+    5, 9, 10, 0
 };
 
-int input4_3[3] = {
-    {15, 1, 8}
+int input4_3[4] = {
+    15, 1, 8, 0
 };
 
 int expected_output1[TEST_SIZE][10] = {
@@ -128,6 +129,13 @@ int expected_output4_1[TEST_SIZE] = {
     38,
     51,
     47
+ };
+
+ int expected_output4_2[TEST_SIZE][11] = {
+    {4, 12, 3, 7, 2, 11, 14, 3, 5, 9, 10},
+    {2, 3, 12, 6, 3, 3, 5, 9, 10},
+    {7, 11, 10, 6, 5, 9, 10},
+    {10, 7, 2, 12, 9, 7, 5, 9, 10}
  };
 
 int main(int argc, char *argv[]) {
@@ -212,11 +220,10 @@ int main(int argc, char *argv[]) {
             for(int i = 0; i < 7; i++) {
                 planVectorP->values[i] = input4[test_index][i];
             }
-            for(int i = 0; i < 0; i++) {
+            for(int i = 0; i < 3; i++) {
                 addPlan[i] = input4_2[i];
                 delPlan[i] = input4_3[i];
             }
-
             planVectorP->size = 7;
 
             int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
@@ -237,9 +244,14 @@ int main(int argc, char *argv[]) {
             }
 
             int newCost = newTravelPlan(planVectorP, addPlan, delPlan);
-            printf("NewCost: %d\n", newCost);
 
-            if (compare) {
+            for (int i = 0; i < planVectorP->size; i++) {
+                printf("%d, ", planVectorP->values[i]);
+            }
+
+            printf("NewCost: %d %d\n", planVectorP->size, newCost);
+
+            if (planVectorP->size==newCost) {
                 printf("PASSED\n");
             }
             else {
