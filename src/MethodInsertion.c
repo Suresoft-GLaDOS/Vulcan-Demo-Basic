@@ -46,10 +46,10 @@ void pop_back(struct Vector* newVector) {
     }
 }
 
-//void decreaseSize(struct Vector* newVector, int remove) {
-//    newVector->size = newVector->size - remove;
-//}
-//
+void decreaseSize(struct Vector* newVector, int remove) {
+    newVector->size = newVector->size - remove;
+}
+
 int newTravelPlan(struct Vector* origPlan, int* toAdd, int* toDelete) {
     int newCost = 0;
     int newSize = origPlan->size;
@@ -73,7 +73,7 @@ int newTravelPlan(struct Vector* origPlan, int* toAdd, int* toDelete) {
                         origPlan->values[k] = origPlan->values[k+1];
 
                     }
-//                    pop_back(origPlan);
+                    pop_back(origPlan);
                     newSize--;
 //                    break; //it can be another fault example
                 }
@@ -105,11 +105,11 @@ int computeCost(struct Vector* travelPlan, int budget) {
 
     while (cost > budget) {
         cost = cost - travelPlan->values[travelPlan->size-1];
-        pop_back(travelPlan);
-//        decreaseSize(travelPlan);
+//        pop_back(travelPlan);
+        printf("budget: %d  cost: %d\n", budget, cost);
     }
 
-    printf("budget: %d  cost: %d\n", budget, cost);
+
 
     while (cost <= budget - 5) {
         if (budget >= cost + 10) {

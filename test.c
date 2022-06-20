@@ -245,20 +245,20 @@ int main(int argc, char *argv[]) {
 
             int newCost = newTravelPlan(planVectorP, addPlan, delPlan);
 
-            for (int i = 0; i < planVectorP->size; i++) {
-                printf("%d, ", planVectorP->values[i]);
-            }
+//            for (int i = 0; i < planVectorP->size; i++) {
+//                printf("%d, ", planVectorP->values[i]);
+//            }
+//
+//            printf("NewCost: %d %d\n", planVectorP->size, newCost);
+//
+//            if (planVectorP->size==newCost) {
+//                compare = true;
+//            }
+//            else {
+//                compare = false;
+//            }
 
-            printf("NewCost: %d %d\n", planVectorP->size, newCost);
-
-            if (planVectorP->size==newCost) {
-                compare = true;
-            }
-            else {
-                compare = false;
-            }
-
-            if (planVectorP->size==newCost) {
+            if (compare) {
                 printf("PASSED\n");
             }
             else {
