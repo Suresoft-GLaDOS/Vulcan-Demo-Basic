@@ -9,7 +9,6 @@ docker-image:
 extra-build-env-setting-commands: 
 
 test-candidates: |
-  # example.c
   src/MethodInsertion.c
 
 time-out: 3600
