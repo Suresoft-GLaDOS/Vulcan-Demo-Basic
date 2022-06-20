@@ -255,7 +255,7 @@ int main(int argc, char *argv[]) {
                 compare = true;
             }
             else {
-                false;
+                compare = false;
             }
 
             if (planVectorP->size==newCost) {
