@@ -16,4 +16,6 @@ Node* AVLSet(Node* node);
 Node* Insert(Node* node, int data);
 Node* GetMinNode(Node* node, Node* parent);
 Node* Delete(Node* node, int data);
-void Inorder(Node* node);
+void Inorder(Node* node, int* result);
+int* getInorder(Node* node);
+

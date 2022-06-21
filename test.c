@@ -6,6 +6,7 @@
 #include "src/MissedStatements.h"
 #include "src/MethodInsertion.h"
 #include "src/BranchChecker.h"
+#include "src/BranchChecker_avl.h"
 
 #define TEST_SIZE
 
@@ -110,6 +111,20 @@ double input5_1[TEST_SIZE][4] = {
 //    {1, 5, 4, 1},
     {4, 12, 8, 8},
     {5, 8, 10, 3}
+};
+
+int input6_1[TEST_SIZE][7] = {
+    {4, 10, 13, 20, 25, 32, 55},
+    {3, 8, 11, 6, 8, 10, 30},
+    {7, 6, 5, 4, 3, 2, 1},
+    {20, 200, 5, 2, 3, 5, 5}
+};
+
+int input6_2[TEST_SIZE][3] = {
+    {4, 10, 13},
+    {3, 8, 10},
+    {8, 6, 5},
+    {5, 3, 5}
 };
 
 
@@ -224,87 +239,80 @@ int main(int argc, char *argv[]) {
 //            }
 //            return compare == true ? 0 : 1;
 
-        case 4: ;//MethodInsertion
-            struct Vector planVector;
-            struct Vector* planVectorP = &planVector;
-            setVector(planVectorP, 7);
-            int* plan = (int*)malloc(sizeof(int) * 7);
-            for(int i = 0; i < 7; i++) {
-                planVectorP->values[i] = input4[test_index][i];
-            }
-            planVectorP->size = 7;
+//        case 4: ;//MethodInsertion
+//            struct Vector planVector;
+//            struct Vector* planVectorP = &planVector;
+//            setVector(planVectorP, 7);
+//            int* plan = (int*)malloc(sizeof(int) * 7);
+//            for(int i = 0; i < 7; i++) {
+//                planVectorP->values[i] = input4[test_index][i];
+//            }
+//            planVectorP->size = 7;
+//
+//            int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
+//            compare = true;
+//
+//
+//            for (int i = 0; i < planVectorP->size; i++) {
+//                printf("Expected: %d, Actual: %d\n", expected_output4[test_index][i], planVectorP->values[i]);
+//                if (planVectorP->values[i] != expected_output4[test_index][i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//
+//            if(actual_output4 != expected_output4_1[test_index]) {
+//                printf("ExpectedCost: %d, ActualCost: %d\n", expected_output4_1[test_index], actual_output4);
+//                compare = false;
+//            }
+//
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
+//
+//        case 5: ; // BranchChecker
+//            // First Line segment
+//            // P11 = (5, 5), P12 = (7, 7)
+//
+//
+//            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+//            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index]);
+//
+//            for (int i = 0; i < 4; i++) {
+//                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
+//                if (expected_output5[test_index][i] != actual_output5[i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
 
-            int actual_output4 = computeCost(planVectorP, input4_1[test_index]);
-            compare = true;
-
-
-            for (int i = 0; i < planVectorP->size; i++) {
-                printf("Expected: %d, Actual: %d\n", expected_output4[test_index][i], planVectorP->values[i]);
-                if (planVectorP->values[i] != expected_output4[test_index][i]) {
-                    compare = false;
-                    break;
-                }
-            }
-
-            if(actual_output4 != expected_output4_1[test_index]) {
-                printf("ExpectedCost: %d, ActualCost: %d\n", expected_output4_1[test_index], actual_output4);
-                compare = false;
-            }
-
-            if (compare) {
-                printf("PASSED\n");
-            }
-            else {
-                printf("FAILED\n");
-            }
-            return compare == true ? 0 : 1;
-
-        case 5: ; // BranchChecker
-            // First Line segment
-            // P11 = (5, 5), P12 = (7, 7)
-
-
-            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index]);
-
-            for (int i = 0; i < 4; i++) {
-                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
-                if (expected_output5[test_index][i] != actual_output5[i]) {
-                    compare = false;
-                    break;
-                }
-            }
-            if (compare) {
-                printf("PASSED\n");
-            }
-            else {
-                printf("FAILED\n");
-            }
-            return compare == true ? 0 : 1;
         case 6: ;
             struct Node* root = NULL;
 
-            int* actual_output6 =
+            for (int i = 0; i < 7; i++) {
+                root = Insert(root, input6_1[test_index][i]);
+            }
 
-            //INSERT
-            root = Insert(root, 4);
-            root = Insert(root, 10);
-            root = Insert(root, 13);
-            root = Insert(root, 20);
-            root = Insert(root, 25);
-            root = Insert(root, 32);
-            root = Insert(root, 55);
+            for (int i = 0; i < 3; i++) {
+                root = Delete(root, input6_2[test_index][i]);
+            }
 
-            Inorder(root);
-            //결과 : 4 10 13 20 25 32 55 (root data : 20)
+            int* actual_output6 = getInorder(root);
 
-            //DELETE
-            root = Delete(root, 4);
-            root = Delete(root, 10);
-            root = Delete(root, 13);
-
-            Inorder(root);
-            //결과 : 20 25 32 55 (root data : 25)
+            for (int i = 0; i < 7; i++) {
+                printf("%d, ", actual_output6[i]);
+            }
 
     }
     return 0;

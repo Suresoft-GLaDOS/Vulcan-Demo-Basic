@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "BranchChecker_avl.h"
 
+int curIndex = 0;
 
 int GetHeight(Node* node)
 {
@@ -212,16 +213,21 @@ Node* Delete(Node* node, int data)
     return node;
 }
 
-void Inorder(Node* node)
-{
-    if (node == NULL) return;
 
-    Inorder(node->Left);
-    printf("%d ", node->data);
-    Inorder(node->Right);
+
+void Inorder(Node* node, int* result) {
+    if (node == NULL) return;
+    if (curIndex >= 7) return;
+
+    Inorder(node->Left, result);
+//    printf("%d ", node->data);
+    result[curIndex] = node->data;
+    curIndex++;
+    Inorder(node->Right, result);
 }
 
-void main()
-{
-
+int* getInorder(Node* node) {
+    int* result = (int*)malloc(sizeof(int) * 7);
+    Inorder(node, result);
+    return result;
 }
