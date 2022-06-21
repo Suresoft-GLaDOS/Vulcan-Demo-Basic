@@ -10,6 +10,19 @@
 
 #define TEST_SIZE
 
+#ifdef GCOV
+void __cyg_profile_func_enter (void *this_fn, void *call_site) __attribute__((no_instrument_function));
+void __cyg_profile_func_exit  (void *this_fn, void *call_site) __attribute__((no_instrument_function));
+
+void __cyg_profile_func_enter (void *this_fn, void *call_site) {
+       __gcov_flush();
+}
+
+void __cyg_profile_func_exit  (void *this_fn, void *call_site) {
+      __gcov_flush();
+}
+#endif //GCOV
+
 struct stForTest1 {
     int index;
     int* playList;
@@ -122,7 +135,7 @@ int input6_1[TEST_SIZE][7] = {
 
 int input6_2[TEST_SIZE][3] = {
     {4, 10, 13},
-    {3, 8, 10},
+    {3, 11, 10},
     {8, 6, 5},
     {5, 3, 5}
 };
