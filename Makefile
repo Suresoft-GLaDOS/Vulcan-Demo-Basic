@@ -5,7 +5,7 @@ LDFLAGS:=
 all: test
 
 test: test.o MethodInsertion.o
-	$(CC) $(CFLAGS) test.o MethodInsertion.o -o test $(LDFLAGS)
+	$(CC) $(CFLAGS) test.o MethodInsertion.o -o test $(LDFLAGS) -DGCOV=1
 
 MethodInsertion.o: src/MethodInsertion.c
 	$(CC) $(CFLAGS) -o MethodInsertion.o -c src/MethodInsertion.c
