@@ -182,7 +182,7 @@ Node* Delete(Node* node, int data)
             node->Left->Parent = node->Parent;
             node = node->Left;
         }
-        else if (node->Left == NULL && node->Right != NULL) //original: node->Left == NULL && node->Right != NULL
+        else if (node->Left == NULL && node->Right != NULL)
         {
             node->Right->Parent = node->Parent;
             node = node->Right;
@@ -222,6 +222,7 @@ void Inorder(Node* node, int* result) {
 
     Inorder(node->Left, result);
 //    printf("%d ", node->data);
+
     result[curIndex] = node->data;
     curIndex++;
     Inorder(node->Right, result);
@@ -229,6 +230,9 @@ void Inorder(Node* node, int* result) {
 
 int* getInorder(Node* node) {
     int* result = (int*)malloc(sizeof(int) * 7);
+    for(int i = 0; i < 7; i++) {
+        result[i] = 0;
+    }
     Inorder(node, result);
     return result;
 }
