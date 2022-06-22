@@ -22,7 +22,7 @@ void dpp_sighandler(int signum) {
 }
 #endif
 void __asan_on_error(void) {
-#ifdef DPP_ENABLE_GCOV
+#ifdef GCOV
     __gcov_flush();
 #endif
 }
