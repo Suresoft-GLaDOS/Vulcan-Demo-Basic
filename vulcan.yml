@@ -9,8 +9,8 @@ docker-image:
 extra-build-env-setting-commands: 
 
 test-candidates: |
-  # example.c
-  src/BranchChecker.c
+
+  src/BranchChecker_avl.c
 
 time-out: 3600
 max-patch-number : 500
@@ -21,7 +21,7 @@ test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   make clean
-  make CFLAGS="--coverage -g -O0" LDFLAGS="-lgcov"
+  make CFLAGS="--coverage -g -O0" LDFLAGS="-lgcov" -DGCOV=1
 
 
 # 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
@@ -29,10 +29,10 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-  ./test 5 0
-  ./test 5 1
-  ./test 5 2
-  ./test 5 3
+  ./test 6 0
+  ./test 6 1
+  ./test 6 2
+  ./test 6 3
 #  ./test 4
 #  ./test 5
 #  ./test 6
