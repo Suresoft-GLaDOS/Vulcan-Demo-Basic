@@ -5,7 +5,7 @@ LDFLAGS:=
 all: test
 
 test: test.o BranchChecker.o
-	$(CC) $(CFLAGS) test.o BranchChecker.o -o test $(LDFLAGS)
+	$(CC) $(CFLAGS) test.o BranchChecker.o -o test $(LDFLAGS) -DGCOV=1
 
 BranchChecker.o: src/BranchChecker.c
 	$(CC) $(CFLAGS) -o BranchChecker.o -c src/BranchChecker.c
