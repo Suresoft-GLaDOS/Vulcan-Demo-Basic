@@ -27,16 +27,7 @@ void __asan_on_error(void) {
 #endif
 }
 
-#ifdef GCOV
-	  {
-		  dpp_gcov_sigaction.sa_handler = dpp_sighandler;
-		  sigemptyset(&dpp_gcov_sigaction.sa_mask);
-		  dpp_gcov_sigaction.sa_flags = 0;
-		  sigaction(SIGSEGV, &dpp_gcov_sigaction, &dpp_orig_sigaction);
-		  sigaction(SIGFPE, &dpp_gcov_sigaction, &dpp_orig_sigaction);
-		  sigaction(SIGABRT, &dpp_gcov_sigaction, &dpp_orig_sigaction);
-	  }
-#endif
+
 
 struct stForTest1 {
     int index;
@@ -200,7 +191,18 @@ int expected_output6[TEST_SIZE][7] = {
 };
 
 
+
 int main(int argc, char *argv[]) {
+#ifdef GCOV
+	  {
+		  dpp_gcov_sigaction.sa_handler = dpp_sighandler;
+		  sigemptyset(&dpp_gcov_sigaction.sa_mask);
+		  dpp_gcov_sigaction.sa_flags = 0;
+		  sigaction(SIGSEGV, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGFPE, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGABRT, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+	  }
+#endif
     int test_case = atoi(argv[1]);
     int test_index = atoi(argv[2]); //e.q. ./test 2 3
     bool compare = true;
