@@ -177,6 +177,12 @@ double expected_output5[TEST_SIZE][4] = {
     {5, 8, 8, 5}
  };
 
+int expected_output6[TEST_SIZE][7] = {
+    {20, 25, 32, 55},
+    {6, 8, 30},
+    {1, 2, 3, 4, 7},
+    {2, 20, 200}
+};
 
 
 int main(int argc, char *argv[]) {
@@ -326,6 +332,21 @@ int main(int argc, char *argv[]) {
             for (int i = 0; i < 7; i++) {
                 printf("%d, ", actual_output6[i]);
             }
+            int i = 0;
+            bool compare = true;
+            for (int i = 0; i < 7; i++) {
+                if (actual_output6[i] != expected_output6[test_index][i]) {
+                    compare = false;
+                    break;
+                }
+            }
+            if (compare) {
+                printf("PASSED\n");
+            }
+            else {
+                printf("FAILED\n");
+            }
+            return compare == true ? 0 : 1;
 
     }
     return 0;

@@ -142,10 +142,11 @@ Node* GetMinNode(Node* node, Node* parent)
                 node->Parent->Right = node->Right;
             }
 
-            if (node->Right != NULL)
-            {
-                node->Right->Parent = node->Parent;
-            }
+            node->Right->Parent = node->Parent;
+//            if (node->Right != NULL)
+//            {
+//                node->Right->Parent = node->Parent;
+//            }
         }
 
         return node;
