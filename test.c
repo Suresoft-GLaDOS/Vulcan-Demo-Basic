@@ -11,17 +11,21 @@
 #define TEST_SIZE
 
 #ifdef GCOV
-void __cyg_profile_func_enter (void *this_fn, void *call_site) __attribute__((no_instrument_function));
-void __cyg_profile_func_exit  (void *this_fn, void *call_site) __attribute__((no_instrument_function));
-
-void __cyg_profile_func_enter (void *this_fn, void *call_site) {
-       __gcov_flush();
+#include <signal.h>
+static struct sigaction dpp_gcov_sigaction;
+static struct sigaction dpp_orig_sigaction;
+void dpp_sighandler(int signum) {
+	__gcov_flush();
+	sigaction(sigaction, &dpp_orig_sigaction, NULL);
+	raise(signum);
+	exit(1);
 }
-
-void __cyg_profile_func_exit  (void *this_fn, void *call_site) {
-      __gcov_flush();
+#endif
+void __asan_on_error(void) {
+#ifdef DPP_ENABLE_GCOV
+    __gcov_flush();
+#endif
 }
-#endif //GCOV
 
 struct stForTest1 {
     int index;
