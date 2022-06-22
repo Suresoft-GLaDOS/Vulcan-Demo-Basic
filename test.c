@@ -10,7 +10,7 @@
 
 #define TEST_SIZE
 
-#ifdef DGCOV
+#ifdef GCOV
 #include <signal.h>
 static struct sigaction dpp_gcov_sigaction;
 static struct sigaction dpp_orig_sigaction;
@@ -22,10 +22,21 @@ void dpp_sighandler(int signum) {
 }
 #endif
 void __asan_on_error(void) {
-#ifdef DGCOV
+#ifdef GCOV
     __gcov_flush();
 #endif
 }
+
+#ifdef GCOV
+	  {
+		  dpp_gcov_sigaction.sa_handler = dpp_sighandler;
+		  sigemptyset(&dpp_gcov_sigaction.sa_mask);
+		  dpp_gcov_sigaction.sa_flags = 0;
+		  sigaction(SIGSEGV, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGFPE, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGABRT, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+	  }
+#endif
 
 struct stForTest1 {
     int index;
