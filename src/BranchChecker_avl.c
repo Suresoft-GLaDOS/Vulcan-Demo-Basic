@@ -142,11 +142,11 @@ Node* GetMinNode(Node* node, Node* parent)
                 node->Parent->Right = node->Right;
             }
 
-            node->Right->Parent = node->Parent;
-//            if (node->Right != NULL)
-//            {
-//                node->Right->Parent = node->Parent;
-//            }
+//            node->Right->Parent = node->Parent;
+            if (node->Right != NULL)
+            {
+                node->Right->Parent = node->Parent;
+            }
         }
 
         return node;
@@ -177,12 +177,12 @@ Node* Delete(Node* node, int data)
         {
             node = NULL;
         }
-        else if (node->Left != NULL && node->Right == NULL)
+        else if (node->Left != NULL) //Original: node->Left != NULL && node->Right == NULL
         {
             node->Left->Parent = node->Parent;
             node = node->Left;
         }
-        else if (node->Left == NULL && node->Right != NULL)
+        else if (node->Left == NULL && node->Right != NULL) //original: node->Left == NULL && node->Right != NULL
         {
             node->Right->Parent = node->Parent;
             node = node->Right;
