@@ -10,7 +10,7 @@
 
 #define TEST_SIZE
 
-#ifdef GCOV
+#ifdef DGCOV
 #include <signal.h>
 static struct sigaction dpp_gcov_sigaction;
 static struct sigaction dpp_orig_sigaction;
@@ -22,7 +22,7 @@ void dpp_sighandler(int signum) {
 }
 #endif
 void __asan_on_error(void) {
-#ifdef GCOV
+#ifdef DGCOV
     __gcov_flush();
 #endif
 }
