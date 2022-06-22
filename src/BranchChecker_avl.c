@@ -221,7 +221,16 @@ void Inorder(Node* node, int* result) {
     if (curIndex >= 7) return;
 
     Inorder(node->Left, result);
-//    printf("%d ", node->data);
+
+    printf("%d \n", node->data);
+
+    if (node->Right != NULL) {
+        printf("Right: %d\n", node->Right->data);
+    }
+    if (node->Left != NULL) {
+        printf("Left: %d\n", node->Left->data);
+    }
+
 
     result[curIndex] = node->data;
     curIndex++;
