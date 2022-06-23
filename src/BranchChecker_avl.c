@@ -121,7 +121,9 @@ Node* Insert(Node* node, int data)
     else
     {
         //Do not add data to avoid duplication. but?
-//        node = AVLSet(node);
+        node->Right = Insert(node->Right, data);
+        node->Right->Parent = node;
+        node = AVLSet(node);
     }
 
     return node;
@@ -177,7 +179,7 @@ Node* Delete(Node* node, int data)
         {
             node = NULL;
         }
-        else if (node->Left != NULL) //Original: node->Left != NULL && node->Right == NULL
+        else if (node->Left != NULL && node->Right == NULL) //Original: node->Left != NULL && node->Right == NULL
         {
             node->Left->Parent = node->Parent;
             node = node->Left;
