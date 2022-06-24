@@ -10,7 +10,7 @@ extra-build-env-setting-commands:
 
 test-candidates: |
 
-  src/BranchChecker_avl.c
+  src/BranchChecker.c
 
 time-out: 3600
 max-patch-number : 500
