@@ -319,49 +319,17 @@ int main(int argc, char *argv[]) {
 //            }
 //            return compare == true ? 0 : 1;
 //
-//        case 5: ; // BranchChecker
-//            // First Line segment
-//            // P11 = (5, 5), P12 = (7, 7)
-//
-//
-//            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-//            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index]);
-//
-//            for (int i = 0; i < 4; i++) {
-//                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
-//                if (expected_output5[test_index][i] != actual_output5[i]) {
-//                    compare = false;
-//                    break;
-//                }
-//            }
-//            if (compare) {
-//                printf("PASSED\n");
-//            }
-//            else {
-//                printf("FAILED\n");
-//            }
-//            return compare == true ? 0 : 1;
+        case 5: ; // BranchChecker
+            // First Line segment
+            // P11 = (5, 5), P12 = (7, 7)
 
-        case 6: ;
-            struct Node* root = NULL;
 
-            for (int i = 0; i < 7; i++) {
-                root = Insert(root, input6_1[test_index][i]);
-            }
+            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index]);
 
-            for (int i = 0; i < 3; i++) {
-                root = Delete(root, input6_2[test_index][i]);
-            }
-
-            int* actual_output6 = getInorder(root);
-
-            for (int i = 0; i < 7; i++) {
-                printf("%d, ", actual_output6[i]);
-            }
-            int i = 0;
-            bool compare = true;
-            for (int i = 0; i < 7; i++) {
-                if (actual_output6[i] != expected_output6[test_index][i]) {
+            for (int i = 0; i < 4; i++) {
+                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
+                if (expected_output5[test_index][i] != actual_output5[i]) {
                     compare = false;
                     break;
                 }
@@ -373,6 +341,38 @@ int main(int argc, char *argv[]) {
                 printf("FAILED\n");
             }
             return compare == true ? 0 : 1;
+
+//        case 6: ;
+//            struct Node* root = NULL;
+//
+//            for (int i = 0; i < 7; i++) {
+//                root = Insert(root, input6_1[test_index][i]);
+//            }
+//
+//            for (int i = 0; i < 3; i++) {
+//                root = Delete(root, input6_2[test_index][i]);
+//            }
+//
+//            int* actual_output6 = getInorder(root);
+//
+//            for (int i = 0; i < 7; i++) {
+//                printf("%d, ", actual_output6[i]);
+//            }
+//            int i = 0;
+//            bool compare = true;
+//            for (int i = 0; i < 7; i++) {
+//                if (actual_output6[i] != expected_output6[test_index][i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
 
     }
     return 0;

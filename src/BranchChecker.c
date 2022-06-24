@@ -73,7 +73,7 @@ double* cohenSutherlandClip(double x1, double y1,
 
     for (int i = 0; i < 4; i++) {
 
-        if ((code1 == 0) && (code2 == 0)) {
+        if ((code1 == 0)) {  //Original: (code1 == 0) && (code2 == 0)
             // If both endpoints lie within rectangle
             printf("T code1: %d code2: %d\n", code1, code2);
             accept = true;
