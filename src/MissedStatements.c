@@ -24,6 +24,7 @@ int* vendingMachine(int coin, int price) {
     else if(coin == price) {
         result[0] = (int) coin/price;
         result[1] = coin%price;
+        return result;
     }
 
 }

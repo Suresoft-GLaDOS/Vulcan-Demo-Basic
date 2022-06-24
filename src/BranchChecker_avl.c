@@ -121,9 +121,9 @@ Node* Insert(Node* node, int data)
     else
     {
         //Do not add data to avoid duplication. but?
-//        node->Right = Insert(node->Right, data);
-//        node->Right->Parent = node;
-//        node = AVLSet(node);
+        node->Right = Insert(node->Right, data);
+        node->Right->Parent = node;
+        node = AVLSet(node);
     }
 
     return node;
