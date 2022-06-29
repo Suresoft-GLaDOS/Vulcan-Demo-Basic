@@ -220,7 +220,7 @@ Node* Delete(Node* node, int data)
 
 void Inorder(Node* node, int* result) {
     if (node == NULL) return;
-    if (curIndex >= 7) return;
+    if (curIndex >= 11) return;
 
     Inorder(node->Left, result);
 
@@ -240,8 +240,8 @@ void Inorder(Node* node, int* result) {
 }
 
 int* getInorder(Node* node) {
-    int* result = (int*)malloc(sizeof(int) * 7);
-    for(int i = 0; i < 7; i++) {
+    int* result = (int*)malloc(sizeof(int) * 11);
+    for(int i = 0; i < 11; i++) {
         result[i] = 0;
     }
     Inorder(node, result);

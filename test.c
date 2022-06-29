@@ -132,14 +132,14 @@ double input5_1[TEST_SIZE][4] = {
     {5, 8, 10, 3}
 };
 
-int input6_1[TEST_SIZE][7] = {
-    {4, 10, 13, 20, 25, 32, 55},
-    {3, 8, 11, 6, 8, 10, 30},
-    {7, 6, 5, 4, 3, 2, 1},
-    {20, 200, 5, 2, 3, 25, 5},
-    {7, 6, 5, 4, 3, 2, 1},
-    {20, 200, 5, 2, 3, 25, 5},
-    {3, 8, 11, 6, 8, 10, 30}
+int input6_1[TEST_SIZE][11] = {
+    {4, 10, 13, 20, 25, 32, 55, 20, 25, 32, 55},
+    {3, 8, 11, 6, 8, 10, 30, 6, 8, 10, 30},
+    {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
+    {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
+    {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
+    {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
+    {38, 6, 1, 90, 12, 50, 54, 17, 20, 4, 45 }
 };
 
 int input6_2[TEST_SIZE][3] = {
@@ -149,7 +149,7 @@ int input6_2[TEST_SIZE][3] = {
     {5, 3, 5},
     {0, 0, 0},
     {0, 0, 25},
-    {0, 0, 0}
+    {4, 11, 45}
 };
 
 
@@ -189,14 +189,14 @@ double expected_output5[TEST_SIZE][4] = {
     {5, 8, 8, 5}
  };
 
-int expected_output6[TEST_SIZE][7] = {
+int expected_output6[TEST_SIZE][11] = {
     {20, 25, 32, 55},
     {6, 8, 30},
     {1, 2, 3, 4, 7},
     {2, 20, 25, 200},
     {1, 2, 3, 4, 5, 6, 7},
     {2, 3, 5, 20, 200},
-    {3, 6, 8, 10, 11, 30}
+    {1, 6, 12, 17, 20, 38, 50, 54, 90}
 };
 
 
@@ -345,7 +345,7 @@ int main(int argc, char *argv[]) {
         case 6: ;
             struct Node* root = NULL;
 
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 11; i++) {
                 root = Insert(root, input6_1[test_index][i]);
             }
 
@@ -355,13 +355,15 @@ int main(int argc, char *argv[]) {
 
             int* actual_output6 = getInorder(root);
 
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 11; i++) {
                 printf("%d, ", actual_output6[i]);
             }
             int i = 0;
             bool compare = true;
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 11; i++) {
+                printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6[test_index][i]);
                 if (actual_output6[i] != expected_output6[test_index][i]) {
+
                     compare = false;
                     break;
                 }
