@@ -322,28 +322,28 @@ int main(int argc, char *argv[]) {
 //            }
 //            return compare == true ? 0 : 1;
 //
-//        case 5: ; // BranchChecker
-//            // First Line segment
-//            // P11 = (5, 5), P12 = (7, 7)
-//
-//
-//            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-//            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index]);
-//
-//            for (int i = 0; i < 4; i++) {
-//                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
-//                if (expected_output5[test_index][i] != actual_output5[i]) {
-//                    compare = false;
-//                    break;
-//                }
-//            }
-//            if (compare) {
-//                printf("PASSED\n");
-//            }
-//            else {
-//                printf("FAILED\n");
-//            }
-//            return compare == true ? 0 : 1;
+        case 5: ; // BranchChecker
+            // First Line segment
+            // P11 = (5, 5), P12 = (7, 7)
+
+
+            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index]);
+
+            for (int i = 0; i < 4; i++) {
+                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
+                if (expected_output5[test_index][i] != actual_output5[i]) {
+                    compare = false;
+                    break;
+                }
+            }
+            if (compare) {
+                printf("PASSED\n");
+            }
+            else {
+                printf("FAILED\n");
+            }
+            return compare == true ? 0 : 1;
 
         case 6: ;
             struct Node* root = NULL;
