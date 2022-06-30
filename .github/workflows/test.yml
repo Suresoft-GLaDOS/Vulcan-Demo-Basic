@@ -24,6 +24,10 @@ jobs:
         steps:
             - name: run test
               run: |
+                ./test 5 0
+                ./test 5 1
+                ./test 5 2
+                ./test 5 3
                 ./test 6 0
                 ./test 6 1
                 ./test 6 2
