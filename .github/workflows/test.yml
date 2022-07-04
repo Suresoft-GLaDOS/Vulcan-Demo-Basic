@@ -31,3 +31,4 @@ jobs:
                 ./test 6 4
                 ./test 6 5
                 ./test 6 6
+                ./test 6 7
