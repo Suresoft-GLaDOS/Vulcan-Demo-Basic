@@ -133,29 +133,29 @@ double input5_1[TEST_SIZE][4] = {
     {5, 8, 10, 3}
 };
 
-int input6_1[TEST_SIZE][11] = {
-    {4, 10, 13, 20, 25, 32, 55, 20, 25, 32, 55},
-    {3, 8, 11, 6, 8, 10, 30, 6, 8, 10, 30},
-    {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
-    {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
-    {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
-    {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
-    {8, -24, -29, 60, -18, 20, 24, -13, -10, -26, 15 },
-    {38, 6, 1, 90, 12, 50, 54, 17, 20, 4, 45 },
-    {24, -8, -13, 76, -2, 36, 40, 3, 6, -10, 31 }
-};
-
-int input6_2[TEST_SIZE][3] = {
-    {4, 10, 13},
-    {3, 11, 10},
-    {8, 6, 5},
-    {5, 3, 5},
-    {0, 0, 0},
-    {0, 0, 25},
-    {-13, -19, -26},
-    {17, 11, 4},
-    {3, -3, -10}
-};
+//int input6_1[TEST_SIZE][11] = {
+//    {4, 10, 13, 20, 25, 32, 55, 20, 25, 32, 55},
+//    {3, 8, 11, 6, 8, 10, 30, 6, 8, 10, 30},
+//    {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
+//    {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
+//    {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
+//    {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
+//    {8, -24, -29, 60, -18, 20, 24, -13, -10, -26, 15 },
+//    {38, 6, 1, 90, 12, 50, 54, 17, 20, 4, 45 },
+//    {24, -8, -13, 76, -2, 36, 40, 3, 6, -10, 31 }
+//};
+//
+//int input6_2[TEST_SIZE][3] = {
+//    {4, 10, 13},
+//    {3, 11, 10},
+//    {8, 6, 5},
+//    {5, 3, 5},
+//    {0, 0, 0},
+//    {0, 0, 25},
+//    {-13, -19, -26},
+//    {17, 11, 4},
+//    {3, -3, -10}
+//};
 
 
 int expected_output1[TEST_SIZE][10] = {
@@ -214,7 +214,8 @@ int expected_output7[TEST_SIZE][11] = {
     {1, 2, 3, 4, 5, 6, 7},
     {2, 3, 5, 20, 200},
     {-29, -24, -18, -10, 8, 15, 20, 24, 60},
-    {1, 6, 12, 20, 38, 45, 50, 54, 90}
+    {1, 6, 12, 20, 38, 45, 50, 54, 90},
+    {-13, -8, -2, 6, 24, 31, 36, 40, 76}
 };
 
 
@@ -232,6 +233,31 @@ int main(int argc, char *argv[]) {
     int test_case = atoi(argv[1]);
     int test_index = atoi(argv[2]); //e.q. ./test 2 3
     bool compare = true;
+
+    int input6_1[TEST_SIZE][11] = {
+        {4, 10, 13, 20, 25, 32, 55, 20, 25, 32, 55},
+        {3, 8, 11, 6, 8, 10, 30, 6, 8, 10, 30},
+        {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
+        {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
+        {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
+        {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
+        {8, -24, -29, 60, -18, 20, 24, -13, -10, -26, 15 },
+        {38, 6, 1, 90, 12, 50, 54, 17, 20, 4, 45 },
+        {24, -8, -13, 76, -2, 36, 40, 3, 6, -10, 31 }
+    };
+
+    int input6_2[TEST_SIZE][3] = {
+        {4, 10, 13},
+        {3, 11, 10},
+        {8, 6, 5},
+        {5, 3, 5},
+        {0, 0, 0},
+        {0, 0, 25},
+        {-13, -19, -26},
+        {17, 11, 4},
+        {3, -3, -10}
+    };
+
 
     switch(test_case) {
 //        case 1: ;//Range checker
@@ -336,28 +362,28 @@ int main(int argc, char *argv[]) {
 //            }
 //            return compare == true ? 0 : 1;
 //
-        case 5: ; // BranchChecker
-            // First Line segment
-            // P11 = (5, 5), P12 = (7, 7)
-
-
-            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-
-            for (int i = 0; i < 4; i++) {
-                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
-                if (expected_output5[test_index][i] != actual_output5[i]) {
-                    compare = false;
-                    break;
-                }
-            }
-            if (compare) {
-                printf("PASSED\n");
-            }
-            else {
-                printf("FAILED\n");
-            }
-            return compare == true ? 0 : 1;
+//        case 5: ; // BranchChecker
+//            // First Line segment
+//            // P11 = (5, 5), P12 = (7, 7)
+//
+//
+//            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+//            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+//
+//            for (int i = 0; i < 4; i++) {
+//                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
+//                if (expected_output5[test_index][i] != actual_output5[i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
 
         case 6: ;
             struct Node* root = NULL;
@@ -394,44 +420,44 @@ int main(int argc, char *argv[]) {
             return compare == true ? 0 : 1;
 
 
-//        case 7: ;
-//            struct rbNode* root_rb = NULL;
-//
-//            for (int i = 0; i < 11; i++) {
-//                root_rb = insertion(root_rb, input6_1[test_index][i]);
-//            }
-//
-////            int* actual_output7 = getInorderTraversal(root_rb);
-////
-////            for (int i = 0; i < 11; i++) {
-////                printf("%d, ", actual_output7[i]);
-////            }
-//
-//            for (int i = 0; i < 3; i++) {
-//                root_rb = deletion(root_rb, input6_2[test_index][i]);
-//            }
-//
+        case 7: ;
+            struct rbNode* root_rb = NULL;
+
+            for (int i = 0; i < 11; i++) {
+                root_rb = insertion(root_rb, input6_1[test_index][i]);
+            }
+
 //            int* actual_output7 = getInorderTraversal(root_rb);
 //
 //            for (int i = 0; i < 11; i++) {
 //                printf("%d, ", actual_output7[i]);
 //            }
-////            int i = 0;
-//            compare = true;
-//            for (int i = 0; i < 11; i++) {
-//                printf("Actual: %d  Expected: %d\n", actual_output7[i], expected_output7[test_index][i]);
-//                if (actual_output7[i] != expected_output7[test_index][i]) {
-//                    compare = false;
-//                    break;
-//                }
-//            }
-//            if (compare) {
-//                printf("PASSED\n");
-//            }
-//            else {
-//                printf("FAILED\n");
-//            }
-//            return compare == true ? 0 : 1;
+
+            for (int i = 0; i < 3; i++) {
+                root_rb = deletion(root_rb, input6_2[test_index][i]);
+            }
+
+            int* actual_output7 = getInorderTraversal(root_rb);
+
+            for (int i = 0; i < 11; i++) {
+                printf("%d, ", actual_output7[i]);
+            }
+//            int i = 0;
+            compare = true;
+            for (int i = 0; i < 11; i++) {
+                printf("Actual: %d  Expected: %d\n", actual_output7[i], expected_output7[test_index][i]);
+                if (actual_output7[i] != expected_output7[test_index][i]) {
+                    compare = false;
+                    break;
+                }
+            }
+            if (compare) {
+                printf("PASSED\n");
+            }
+            else {
+                printf("FAILED\n");
+            }
+            return compare == true ? 0 : 1;
 
     }
     return 0;

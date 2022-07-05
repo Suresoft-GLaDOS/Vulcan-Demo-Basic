@@ -92,7 +92,7 @@ struct rbNode* insertion(struct rbNode* node, int data) {
         yPtr->color = BLACK;
         xPtr->color = RED;
         xPtr->link[1] = yPtr->link[0];
-//        yPtr->link[0] = xPtr; //Comment out to make fault
+        yPtr->link[0] = xPtr; //Comment out to make fault
         if (xPtr == node) {
           node = yPtr;
         } else {
@@ -132,7 +132,7 @@ struct rbNode* deletion(struct rbNode* node, int data) {
     curData = ptr->data;
     ptr = ptr->link[diff];
     if(ptr != NULL) {
-        curData = ptr->data;
+      curData = ptr->data;
     }
     else {
     }
@@ -190,6 +190,7 @@ struct rbNode* deletion(struct rbNode* node, int data) {
       xPtr->link[0] = yPtr->link[1];
       yPtr->link[1] = ptr->link[1];
 
+      // node = yPtr; //Original: Inside if condition
       if (ptr == node) {
         node = yPtr;
       }
@@ -199,6 +200,7 @@ struct rbNode* deletion(struct rbNode* node, int data) {
       ptr->color = color;
     }
   }
+
 
   if (ht < 1)
     return node;
@@ -211,8 +213,9 @@ struct rbNode* deletion(struct rbNode* node, int data) {
         break;
       }
 
-      if (ht < 2)
+      if (ht < 2) {  
         break;
+      }
 
       if (dir[ht - 2] == 0) {
         rPtr = stack[ht - 1]->link[1];

@@ -11,7 +11,7 @@ extra-build-env-setting-commands:
 test-candidates: |
 
   src/BranchChecker_avl.c
-  src/BranchChecker.c
+  src/BranchChecker_rb.c
 
 time-out: 3600
 max-patch-number : 500
@@ -30,10 +30,23 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-  ./test 5 0
-  ./test 5 1
-  ./test 5 2
-  ./test 5 3
+  ./test 6 0
+  ./test 6 1
+  ./test 6 2
+  ./test 6 3
+  ./test 6 4
+  ./test 6 5
+  ./test 6 6
+  ./test 6 7
+  ./test 7 0
+  ./test 7 1
+  ./test 7 2
+  ./test 7 3
+  ./test 7 4
+  ./test 7 5
+  ./test 7 6
+  ./test 7 7
+  
   
 test-case: 
 

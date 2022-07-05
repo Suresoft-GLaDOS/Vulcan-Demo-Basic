@@ -3,3 +3,4 @@
 *.gcno
 *.o
 test
+.vscode
