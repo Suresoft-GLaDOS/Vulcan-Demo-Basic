@@ -115,22 +115,22 @@ int input3[TEST_SIZE][3] = {
     50
  };
 
-double input5[TEST_SIZE][4] = {
-    {10, 8, 4, 4},
-    {10, 8, 4, 4},
+//double input5[TEST_SIZE][4] = {
 //    {10, 8, 4, 4},
-    {9, 9, 5, 5},
-    {9, 9, 5, 5}
-};
-
-
-double input5_1[TEST_SIZE][4] = {
-    {5.0, 5.0, 7.0, 7.0},
-    {7, 9, 11, 4},
-//    {1, 5, 4, 1},
-    {4, 12, 8, 8},
-    {5, 8, 10, 3}
-};
+//    {10, 8, 4, 4},
+////    {10, 8, 4, 4},
+//    {9, 9, 5, 5},
+//    {9, 9, 5, 5}
+//};
+//
+//
+//double input5_1[TEST_SIZE][4] = {
+//    {5.0, 5.0, 7.0, 7.0},
+//    {7, 9, 11, 4},
+////    {1, 5, 4, 1},
+//    {4, 12, 8, 8},
+//    {5, 8, 10, 3}
+//};
 
 int input6_1[TEST_SIZE][11] = {
     {4, 10, 13, 20, 25, 32, 55, 20, 25, 32, 55},
@@ -325,10 +325,25 @@ int main(int argc, char *argv[]) {
         case 5: ; // BranchChecker
             // First Line segment
             // P11 = (5, 5), P12 = (7, 7)
+            double input5[TEST_SIZE][4] = {
+                {10, 8, 4, 4},
+                {10, 8, 4, 4},
+            //    {10, 8, 4, 4},
+                {9, 9, 5, 5},
+                {9, 9, 5, 5}
+            };
 
+
+            double input5_1[TEST_SIZE][4] = {
+                {5.0, 5.0, 7.0, 7.0},
+                {7, 9, 11, 4},
+            //    {1, 5, 4, 1},
+                {4, 12, 8, 8},
+                {5, 8, 10, 3}
+            };
 
             setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index]);
+            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
 
             for (int i = 0; i < 4; i++) {
                 printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);

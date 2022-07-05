@@ -56,9 +56,9 @@ int computeCode(double x, double y)
 // Implementing Cohen-Sutherland algorithm
 // Clipping a line from P1 = (x2, y2) to P2 = (x2, y2)
 double* cohenSutherlandClip(double x1, double y1,
-                         double x2, double y2, double* rectangle)
+                         double x2, double y2, double rectangle0, double rectangle1, double rectangle2, double rectangle3)
 {
-    setRectangle(rectangle[0], rectangle[1], rectangle[2], rectangle[3]);
+    setRectangle(rectangle0, rectangle1, rectangle2, rectangle3);
     // Compute region codes for P1, P2
     printf("%f %f %f %f\n", x1, y1, x2, y2);
     int code1 = computeCode(x1, y1);
