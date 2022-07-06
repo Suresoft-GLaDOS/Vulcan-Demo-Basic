@@ -119,8 +119,7 @@ double* cohenSutherlandClip(double x1, double y1,
             }
             else if (code_out & LEFT) {
                 // point is to the left of rectangle
-                y = y1 + (y2 - y1) * (x_min - x1) / (x2 - x1);  // Original
-//                y = x1 + (y2 - y1) * (x_min - x1) / (x2 - x1);
+                y = y1 + (y2 - y1) * (x_min - x1) / (x2 - x1);
                 x = x_min;
             }
 
