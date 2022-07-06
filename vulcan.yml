@@ -11,7 +11,6 @@ extra-build-env-setting-commands:
 test-candidates: |
 
   src/BranchChecker_avl.c
-  src/BranchChecker_rb.c
 
 time-out: 3600
 max-patch-number : 500
@@ -38,14 +37,8 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   ./test 6 5
   ./test 6 6
   ./test 6 7
-  ./test 7 0
-  ./test 7 1
-  ./test 7 2
-  ./test 7 3
-  ./test 7 4
-  ./test 7 5
-  ./test 7 6
-  ./test 7 7
+  ./test 6 8
+  ./test 6 9
   
   
 test-case: 

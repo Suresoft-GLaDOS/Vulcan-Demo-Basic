@@ -197,10 +197,11 @@ double expected_output5[TEST_SIZE][4] = {
 
 int expected_output6[TEST_SIZE][11] = {
     {20, 25, 32, 55},
-    {6, 8, 30},
+    {7, 9, 19, 20, 24, 25, 32, 33},
+    {5, 6, 7, 8, 9, 18, 29, 30},
     {1, 2, 3, 4, 7},
     {2, 20, 25, 200},
-    {1, 2, 3, 4, 5, 6, 7},
+    {-4, -3, -2, -1, 1, 2, 3, 4, 7},
     {2, 3, 5, 20, 200},
     {-29, -24, -18, -10, 8, 15, 20, 24, 60},
     {1, 6, 12, 20, 38, 45, 50, 54, 90},
@@ -237,10 +238,11 @@ int main(int argc, char *argv[]) {
 
     int input6_1[TEST_SIZE][11] = {
         {4, 10, 13, 20, 25, 32, 55, 20, 25, 32, 55},
-        {3, 8, 11, 6, 8, 10, 30, 6, 8, 10, 30},
+        {4, 10, 13, 20, 25, 32, 9, 19, 24, 33, 7},
+        {3, 8, 11, 6, 18, 10, 30, 5, 7, 9, 29},
         {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
         {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
-        {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
+        {7, 6, 5, 4, 3, 2, 1, -4, -3, -2, -1},
         {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
         {8, -24, -29, 60, -18, 20, 24, -13, -10, -26, 15 },
         {38, 6, 1, 90, 12, 50, 54, 17, 20, 4, 45 },
@@ -249,10 +251,11 @@ int main(int argc, char *argv[]) {
 
     int input6_2[TEST_SIZE][3] = {
         {4, 10, 13},
+        {4, 10, 13},
         {3, 11, 10},
         {8, 6, 5},
         {5, 3, 5},
-        {0, 0, 0},
+        {8, 6, 5},
         {0, 0, 25},
         {-13, -19, -26},
         {17, 11, 4},
@@ -421,44 +424,44 @@ int main(int argc, char *argv[]) {
              return compare == true ? 0 : 1;
 
 
-         case 7: ;
-             struct rbNode* root_rb = NULL;
-
-             for (int i = 0; i < 11; i++) {
-                 root_rb = insertion(root_rb, input6_1[test_index][i]);
-             }
-
- //            int* actual_output7 = getInorderTraversal(root_rb);
- //
- //            for (int i = 0; i < 11; i++) {
- //                printf("%d, ", actual_output7[i]);
- //            }
-
-             for (int i = 0; i < 3; i++) {
-                 root_rb = deletion(root_rb, input6_2[test_index][i]);
-             }
-
-             int* actual_output7 = getInorderTraversal(root_rb);
-
-             for (int i = 0; i < 11; i++) {
-                 printf("%d, ", actual_output7[i]);
-             }
- //            int i = 0;
-             compare = true;
-             for (int i = 0; i < 11; i++) {
-                 printf("Actual: %d  Expected: %d\n", actual_output7[i], expected_output7[test_index][i]);
-                 if (actual_output7[i] != expected_output7[test_index][i]) {
-                     compare = false;
-                     break;
-                 }
-             }
-             if (compare) {
-                 printf("PASSED\n");
-             }
-             else {
-                 printf("FAILED\n");
-             }
-             return compare == true ? 0 : 1;
+//         case 7: ;
+//             struct rbNode* root_rb = NULL;
+//
+//             for (int i = 0; i < 11; i++) {
+//                 root_rb = insertion(root_rb, input6_1[test_index][i]);
+//             }
+//
+// //            int* actual_output7 = getInorderTraversal(root_rb);
+// //
+// //            for (int i = 0; i < 11; i++) {
+// //                printf("%d, ", actual_output7[i]);
+// //            }
+//
+//             for (int i = 0; i < 3; i++) {
+//                 root_rb = deletion(root_rb, input6_2[test_index][i]);
+//             }
+//
+//             int* actual_output7 = getInorderTraversal(root_rb);
+//
+//             for (int i = 0; i < 11; i++) {
+//                 printf("%d, ", actual_output7[i]);
+//             }
+// //            int i = 0;
+//             compare = true;
+//             for (int i = 0; i < 11; i++) {
+//                 printf("Actual: %d  Expected: %d\n", actual_output7[i], expected_output7[test_index][i]);
+//                 if (actual_output7[i] != expected_output7[test_index][i]) {
+//                     compare = false;
+//                     break;
+//                 }
+//             }
+//             if (compare) {
+//                 printf("PASSED\n");
+//             }
+//             else {
+//                 printf("FAILED\n");
+//             }
+//             return compare == true ? 0 : 1;
 
 //        case 8: ;
 //            rbtree* tree = new_rbtree();
