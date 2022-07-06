@@ -188,7 +188,7 @@ struct rbNode* deletion(struct rbNode* node, int data) {
       yPtr->link[0] = ptr->link[0];
 
       xPtr->link[0] = yPtr->link[1];
-      yPtr->link[1] = ptr->link[1];
+//      yPtr->link[1] = ptr->link[1]; //Comment out ot make fault
 
       // node = yPtr; //Original: Inside if condition
       if (ptr == node) {

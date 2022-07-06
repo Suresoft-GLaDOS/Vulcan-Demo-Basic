@@ -4,10 +4,11 @@
 //#include "src/ProductionCode.h"
 #include "src/RangeChecker.h"
 #include "src/MissedStatements.h"
-#include "src/MethodInsertion.h"
+// #include "src/MethodInsertion.h"
 #include "src/BranchChecker.h"
 #include "src/BranchChecker_avl.h"
 #include "src/BranchChecker_rb.h"
+#include "src/BranchChecker_rb2.h"
 
 #define TEST_SIZE
 
@@ -385,79 +386,128 @@ int main(int argc, char *argv[]) {
 //            }
 //            return compare == true ? 0 : 1;
 
-        case 6: ;
-            struct Node* root = NULL;
+         case 6: ;
+             struct Node* root = NULL;
 
-            for (int i = 0; i < 11; i++) {
-                root = Insert(root, input6_1[test_index][i]);
-            }
+             for (int i = 0; i < 11; i++) {
+                 root = Insert(root, input6_1[test_index][i]);
+             }
 
-            for (int i = 0; i < 3; i++) {
-                root = Delete(root, input6_2[test_index][i]);
-            }
+             for (int i = 0; i < 3; i++) {
+                 root = Delete(root, input6_2[test_index][i]);
+             }
 
-            int* actual_output6 = getInorder(root);
+             int* actual_output6 = getInorder(root);
 
-            for (int i = 0; i < 11; i++) {
-                printf("%d, ", actual_output6[i]);
-            }
-            int i = 0;
-            compare = true;
-            for (int i = 0; i < 11; i++) {
-                printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6[test_index][i]);
-                if (actual_output6[i] != expected_output6[test_index][i]) {
+             for (int i = 0; i < 11; i++) {
+                 printf("%d, ", actual_output6[i]);
+             }
+             int i = 0;
+             compare = true;
+             for (int i = 0; i < 11; i++) {
+                 printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6[test_index][i]);
+                 if (actual_output6[i] != expected_output6[test_index][i]) {
 
-                    compare = false;
-                    break;
-                }
-            }
-            if (compare) {
-                printf("PASSED\n");
-            }
-            else {
-                printf("FAILED\n");
-            }
-            return compare == true ? 0 : 1;
+                     compare = false;
+                     break;
+                 }
+             }
+             if (compare) {
+                 printf("PASSED\n");
+             }
+             else {
+                 printf("FAILED\n");
+             }
+             return compare == true ? 0 : 1;
 
 
-        case 7: ;
-            struct rbNode* root_rb = NULL;
+         case 7: ;
+             struct rbNode* root_rb = NULL;
 
-            for (int i = 0; i < 11; i++) {
-                root_rb = insertion(root_rb, input6_1[test_index][i]);
-            }
+             for (int i = 0; i < 11; i++) {
+                 root_rb = insertion(root_rb, input6_1[test_index][i]);
+             }
 
-//            int* actual_output7 = getInorderTraversal(root_rb);
+ //            int* actual_output7 = getInorderTraversal(root_rb);
+ //
+ //            for (int i = 0; i < 11; i++) {
+ //                printf("%d, ", actual_output7[i]);
+ //            }
+
+             for (int i = 0; i < 3; i++) {
+                 root_rb = deletion(root_rb, input6_2[test_index][i]);
+             }
+
+             int* actual_output7 = getInorderTraversal(root_rb);
+
+             for (int i = 0; i < 11; i++) {
+                 printf("%d, ", actual_output7[i]);
+             }
+ //            int i = 0;
+             compare = true;
+             for (int i = 0; i < 11; i++) {
+                 printf("Actual: %d  Expected: %d\n", actual_output7[i], expected_output7[test_index][i]);
+                 if (actual_output7[i] != expected_output7[test_index][i]) {
+                     compare = false;
+                     break;
+                 }
+             }
+             if (compare) {
+                 printf("PASSED\n");
+             }
+             else {
+                 printf("FAILED\n");
+             }
+             return compare == true ? 0 : 1;
+
+//        case 8: ;
+//            rbtree* tree = new_rbtree();
+//            Node_RB* node = NULL;
+//
+//            for (int i = 0; i < 11; i++) {
+//                node = rbtree_insert(tree, input6_1[test_index][i]);
+//            }
+//
+//            // int* actual_output7 = rb_get_inorder(tree->root);
+//
+//            // for (int i = 0; i < 11; i++) {
+//            //    printf("%d, ", actual_output7[i]);
+//            // }
+//            if (tree->root == NULL) {
+//                printf("NULL!");
+//            }
+//            printf("Root: %d\n", tree->root->data);
+//
+//            for (int i = 0; i < 3; i++) {
+//                Node_RB* targetNode = rbtree_find(tree, input6_2[test_index][i]);
+//                printf("Target: %d\n", targetNode->data);
+//                if(targetNode != NULL) {
+//                    tree->root = rbtree_delete(tree, targetNode);
+//                }
+//            }
+//
+//            int* actual_output7 = rb_get_inorder(tree->root);
 //
 //            for (int i = 0; i < 11; i++) {
 //                printf("%d, ", actual_output7[i]);
 //            }
+////            int i = 0;
+//            compare = true;
+//            for (int i = 0; i < 11; i++) {
+//                printf("Actual: %d  Expected: %d\n", actual_output7[i], expected_output7[test_index][i]);
+//                if (actual_output7[i] != expected_output7[test_index][i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
 
-            for (int i = 0; i < 3; i++) {
-                root_rb = deletion(root_rb, input6_2[test_index][i]);
-            }
-
-            int* actual_output7 = getInorderTraversal(root_rb);
-
-            for (int i = 0; i < 11; i++) {
-                printf("%d, ", actual_output7[i]);
-            }
-//            int i = 0;
-            compare = true;
-            for (int i = 0; i < 11; i++) {
-                printf("Actual: %d  Expected: %d\n", actual_output7[i], expected_output7[test_index][i]);
-                if (actual_output7[i] != expected_output7[test_index][i]) {
-                    compare = false;
-                    break;
-                }
-            }
-            if (compare) {
-                printf("PASSED\n");
-            }
-            else {
-                printf("FAILED\n");
-            }
-            return compare == true ? 0 : 1;
 
     }
     return 0;
