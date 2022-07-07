@@ -94,7 +94,7 @@ Node* AVLSet(Node* node)
     return node;
 }
 
-Node* arrInsert(Node* node, int data1,
+Node* arrInsertDelete(Node* node, int data1,
                             int data2,
                             int data3,
                             int data4,
@@ -115,7 +115,13 @@ Node* arrInsert(Node* node, int data1,
     node = Insert(node, data8);
     node = Insert(node, data9);
     node = Insert(node, data10);
-    node = Insert(node, data10);
+    node = Insert(node, data11);
+
+    node = Delete(node, data8);
+    node = Delete(node, data9);
+    node = Delete(node, data10);
+    node = Delete(node, data11);
+
 
     return node;
 }
