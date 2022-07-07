@@ -73,13 +73,13 @@ double* cohenSutherlandClip(double x1, double y1,
 
     for (int i = 0; i < 4; i++) {
 
-        if ((code1 == 0) && (code2 == 0)) { // && (code2 == 0) Condition add
+        if ((code1 == 0) ) { // && (code2 == 0) Condition add
             // If both endpoints lie within rectangle
             printf("T code1: %d code2: %d\n", code1, code2);
             accept = true;
             break;
         }
-        else if (code1 & code2) { //original: code1 & code2
+        else if (code1 & code2) {
             printf("F code1: %d code2: %d\n", code1, code2);
             // If both endpoints are outside rectangle,
             // in same region
@@ -113,8 +113,8 @@ double* cohenSutherlandClip(double x1, double y1,
             }
             else if (code_out & RIGHT) {
                 // point is to the right of rectangle
-//                y = y1 + (y2 - y1) * (x_max - x1) / (x2 - x1); //Original
-                y = x1 + (y2 - y1) * (x_max - x1) / (x2 - x1);
+                y = y1 + (y2 - y1) * (x_max - x1) / (x2 - x1); //Original
+//                y = x1 + (y2 - y1) * (x_max - x1) / (x2 - x1);
                 x = x_max;
             }
             else if (code_out & LEFT) {
