@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
 #include "src/example.h"
 //#include "src/ProductionCode.h"
 #include "src/RangeChecker.h"
