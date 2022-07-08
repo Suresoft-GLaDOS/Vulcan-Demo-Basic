@@ -1,0 +1,12 @@
+--- __backup0	2022-07-08 02:28:11.349018769 +0000
++++ src/BranchChecker.c	2022-07-08 02:34:03.786339205 +0000
+@@ -115,8 +100,7 @@
+                 y = (y2 - y1) * (x_max - x1) / (x2 - x1) + y1; //Original
+-                x = x_min; //Original: x = x_max;
+-            }
++                x = (rectangle0);
+             else if (code_out & LEFT) {
+                 y = y1 + (y2 - y1) * (x_min - x1) / (x2 - x1);  // Original
+ 
+ 
+ 
