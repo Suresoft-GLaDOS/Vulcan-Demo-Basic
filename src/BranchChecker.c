@@ -115,6 +115,8 @@ double* cohenSutherlandClip(double x1, double y1,
                 // point is to the right of rectangle
 //                y = (y2 - y1) * (x_max - x1) / (x2 - x1) + y1; //Original
                 y = (y2 - y1) * (x_max - x1) / (x2 - x1) + x1;
+                y = (y2 - y1) * (x_max - x1) / (x2 - x1) + (rectangle1);
+
                 x = x_max;
             }
             else if (code_out & LEFT) {
