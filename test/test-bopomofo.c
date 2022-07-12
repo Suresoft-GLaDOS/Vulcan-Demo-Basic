@@ -1348,40 +1348,88 @@ int main(int argc, char *argv[])
     putenv("CHEWING_PATH=" CHEWING_DATA_PREFIX);
     putenv("CHEWING_USER_PATH=" TEST_HASH_DIR);
 
-    ret = asprintf(&logname, "%s.log", argv[0]);
-    if (ret == -1)
-        return -1;
-    fd = fopen(logname, "w");
-    assert(fd);
-    free(logname);
+//    ret = asprintf(&logname, "%s.log", argv[0]);
+//    if (ret == -1)
+//        return -1;
+//    fd = fopen(logname, "w");
+//    assert(fd);
+//    free(logname);
+    char* isolated = getenv("ISOLATED");
 
+    int isolated_int = atoi(isolated);
 
-    test_select_candidate();
-    test_Esc();
-    test_Del();
-    test_Backspace();
-    test_Up();
     test_Down();
-    test_Tab();
-    test_DblTab();
-    test_Capslock();
-    test_Home();
-    test_End();
-    test_PageUp();
-    test_PageDown();
-    test_ShiftSpace();
-    test_Numlock();
-    test_Space();
 
-    test_get_phoneSeq();
-    test_bopomofo_buffer();
+//    switch (isolated_int) {
+//        case 1: ;
+//            printf("ISOLATED: %d", isolated_int);
+////            test_select_candidate();
+//            break;
+//        case 2: ;
+////            test_Esc();
+//            break;
+//        case 3: ;
+//            test_Del();
+//            break;
+//        case 4: ;
+//            test_Backspace();
+//            break;
+//        case 5: ;
+//            test_Up();
+//            break;
+//        case 6: ;
+//            test_Down();
+//            break;
+//        case 7: ;
+//            test_Tab();
+//            break;
+//        case 8: ;
+//            test_DblTab();
+//            break;
+//        case 9: ;
+//            test_Capslock();
+//            break;
+//        case 10: ;
+//            test_Home();
+//            break;
+//        case 11: ;
+//            test_End();
+//            break;
+//        case 12: ;
+//            test_PageUp();
+//            break;
+//        case 13: ;
+//            test_PageDown();
+//            break;
+//        case 14: ;
+//            test_ShiftSpace();
+//            break;
+//        case 15: ;
+//            test_Numlock();
+//            break;
+//        case 16: ;
+//            test_Space();
+//            break;
+//        case 17: ;
+//            test_get_phoneSeq();
+//            break;
+//        case 18: ;
+//            test_bopomofo_buffer();
+//            break;
+//        case 19: ;
+//            test_longest_phrase();
+//            break;
+//        case 20: ;
+//            test_auto_commit();
+//            break;
+//        case 21: ;
+//            test_interval();
+//            break;
+//        default:
+//            break;
+//    }
 
-    test_longest_phrase();
-    test_auto_commit();
-
-    test_interval();
-
-    fclose(fd);
+//    fclose(fd);
 
     return exit_status();
 }
