@@ -1,0 +1,3657 @@
+#
+# test_cand_open_word
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+#
+# test_cand_open_symbol
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 51
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=51nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=49nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+#
+# test_cand_open_already_opened
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+#
+# test_cand_open_nothing_in_preedit
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+#
+# test_cand_open_during_bopomofo
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:304 chewing_Reset] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+#
+# test_cand_close_word
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2169 chewing_cand_close] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_cand_close_symbol
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 51
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=51nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=49nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2169 chewing_cand_close] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_cand_close_already_closed
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2169 chewing_cand_close] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+#
+# test_cand_close_nothing_in_preedit
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2169 chewing_cand_close] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+#
+# test_cand_choose_word
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測, phone = 0x281c , orig_freq = 0, max_freq = 1, user_freq = 0, recent_time = 3
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 1
+selectStr       selectInterval
+             測   0   1
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_choose_symbol
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 2
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 0
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_choose_second_layer
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 2
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 0
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_choose_out_of_range
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 26
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = -1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_choose_not_in_select
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_list_word_no_rearward
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:663 chewing_set_phraseChoiceRearward] API call: mode = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1305 chewing_handle_Home] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2224 chewing_cand_list_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2258 chewing_cand_list_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2224 chewing_cand_list_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2258 chewing_cand_list_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2241 chewing_cand_list_has_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2275 chewing_cand_list_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2241 chewing_cand_list_has_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2275 chewing_cand_list_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2207 chewing_cand_list_last] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2188 chewing_cand_list_first] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+#
+# test_cand_list_word_rearward
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:663 chewing_set_phraseChoiceRearward] API call: mode = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2224 chewing_cand_list_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2258 chewing_cand_list_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2224 chewing_cand_list_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2258 chewing_cand_list_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2241 chewing_cand_list_has_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2275 chewing_cand_list_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2241 chewing_cand_list_has_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2275 chewing_cand_list_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2207 chewing_cand_list_last] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2188 chewing_cand_list_first] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+#
+# test_cand_list_word_selection_next_no_rearward
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 117
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=117		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 54
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=54		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=49		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 111
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=111		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 121
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=121		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 55
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=55		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1305 chewing_handle_Home] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2224 chewing_cand_list_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2258 chewing_cand_list_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/userphrase-sql.c:178 LogUserPhrase] userphrase 一輩, phone = 0x0082 0x0234 , orig_freq = 84, max_freq = 317, user_freq = 84, recent_time = 7
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 0]
+nSelect : 1
+selectStr       selectInterval
+          一輩   0   2
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_list_word_selection_next_rearward
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:663 chewing_set_phraseChoiceRearward] API call: mode = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 117
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=117		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 54
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=54		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=49		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 111
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=111		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 121
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=121		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 55
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=55		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2224 chewing_cand_list_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2258 chewing_cand_list_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/userphrase-sql.c:178 LogUserPhrase] userphrase 輩子, phone = 0x0234 0x2601 , orig_freq = 196, max_freq = 196, user_freq = 196, recent_time = 7
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 1
+selectStr       selectInterval
+          輩子   1   3
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_list_word_selection_prev_no_rearward
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 117
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=117		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 54
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=54		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=49		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 111
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=111		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 121
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=121		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 55
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=55		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1305 chewing_handle_Home] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2207 chewing_cand_list_last] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2241 chewing_cand_list_has_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2275 chewing_cand_list_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/userphrase-sql.c:178 LogUserPhrase] userphrase 一輩, phone = 0x0082 0x0234 , orig_freq = 84, max_freq = 317, user_freq = 84, recent_time = 7
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 0]
+nSelect : 1
+selectStr       selectInterval
+          一輩   0   2
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_list_word_selection_prev_rearward
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:663 chewing_set_phraseChoiceRearward] API call: mode = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 117
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=117		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 54
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=54		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=49		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 111
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=111		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 130 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 121
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=121		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 130 564 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 14317 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 55
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=55		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2207 chewing_cand_list_last] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2241 chewing_cand_list_has_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2275 chewing_cand_list_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:239 chewing_cand_TotalChoice] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2121 chewing_cand_choose_by_index] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/userphrase-sql.c:178 LogUserPhrase] userphrase 輩子, phone = 0x0234 0x2601 , orig_freq = 196, max_freq = 196, user_freq = 196, recent_time = 7
+nPhoneSeq : 3
+phoneSeq  : 130 564 9729 [cursor : 3]
+nSelect : 1
+selectStr       selectInterval
+          輩子   1   3
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 3] 
+      score : 21595 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 3
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+#
+# test_cand_list_symbol
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 51
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=51nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=49nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2224 chewing_cand_list_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2258 chewing_cand_list_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2241 chewing_cand_list_has_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2275 chewing_cand_list_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2188 chewing_cand_list_first] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2207 chewing_cand_list_last] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2098 chewing_cand_string_by_index_static] API call: index = 0
+#
+# test_cand_list_no_cand_windows
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2224 chewing_cand_list_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2258 chewing_cand_list_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2241 chewing_cand_list_has_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2275 chewing_cand_list_prev] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2188 chewing_cand_list_first] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2207 chewing_cand_list_last] API call: 
+#
+# test_commit_preedit_normal
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2295 chewing_commit_preedit_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:588 AutoLearnPhrase] interval from = 0, fromPreeditBuf = 0, len = 2, pending_pos = 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1439 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 20
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_commit_preedit_empty
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2295 chewing_commit_preedit_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_commit_preedit_during_cand_selecting
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2295 chewing_commit_preedit_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_clean_preedit_normal
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2325 chewing_clean_preedit_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_clean_preedit_empty
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2325 chewing_clean_preedit_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_clean_preedit_during_cand_selecting
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2325 chewing_clean_preedit_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_clean_bopomofo_normal
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2347 chewing_clean_bopomofo_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+#
+# test_clean_bopomofo_empty
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2347 chewing_clean_bopomofo_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+#
+# test_clean_bopomofo_after_complete
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2347 chewing_clean_bopomofo_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+#
+# test_clean_bopomofo_during_cand_selecting
+#
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:1451 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c  Func: chewing_handle_Default  Line: 1468 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c:1476 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c:539 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2144 chewing_cand_open] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c:2347 chewing_clean_bopomofo_buf] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 

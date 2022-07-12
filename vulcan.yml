@@ -9,25 +9,48 @@ docker-image:
 extra-build-env-setting-commands:
 
 test-candidates: |
-  src/BranchChecker.c
+  src/chewingio.c
+
 time-out: 3600
 max-patch-number : 500
 
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요
-  make clean
-  make
+  cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build -G Ninja
+  cmake --build build --target clean
+  cmake --build build --target all --parallel 10
+
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
-  make clean
-  make CFLAGS="--coverage -g -O0 -DGCOV=1" LDFLAGS="-lgcov"
+  cmake -DCMAKE_C_FLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV" -DCMAKE_C_OUTPUT_EXTENSION_REPLACE=ON -DCMAKE_BUILD_TYPE=Debug -S . -B build -G Ninja
+  cmake --build build --target clean
+  cmake --build build --target all --parallel 10
+
+
 # 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
 # 그렇지 않으면 test-case에 실행할 테스트 번호를 range로 하도록함
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-  ./test 5 0
-  ./test 5 1
-  ./test 5 2
-  ./test 5 3
+  set ISOLATED="1"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="2"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="3"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="4"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="5"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="6"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="7"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="8"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="9"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="10"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="11"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="12"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="13"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="14"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="15"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="16"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="17"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="18"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="19"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="20"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+  set ISOLATED="21"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
 
 test-case:
 
