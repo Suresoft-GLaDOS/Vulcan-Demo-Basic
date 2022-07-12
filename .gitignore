@@ -127,6 +127,9 @@ doc/libchewing.vrs
 *.dir
 *.ilk
 
+# log
+*.log
+
 # indent backup
 *~
 
