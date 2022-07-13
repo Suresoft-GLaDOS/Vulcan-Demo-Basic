@@ -544,7 +544,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5 -B/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build
+  command = /usr/bin/cmake --regenerate-during-build -S/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic -B/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build
   description = Re-running CMake...
   generator = 1
 

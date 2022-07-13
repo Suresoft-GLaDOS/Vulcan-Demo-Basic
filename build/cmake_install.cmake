@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5
+# Install script for directory: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -51,11 +51,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/local/share/info" TYPE FILE FILES "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/doc/libchewing.info")
+  file(INSTALL DESTINATION "/usr/local/share/info" TYPE FILE FILES "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/doc/libchewing.info")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND /usr/bin/ginstall-info --info-dir=/usr/local/share/info /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/doc/libchewing.info)
+  execute_process(COMMAND /usr/bin/ginstall-info --info-dir=/usr/local/share/info /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/doc/libchewing.info)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -68,8 +68,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   file(INSTALL DESTINATION "/usr/local/share/libchewing" TYPE FILE FILES
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data/dictionary.dat"
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data/index_tree.dat"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data/dictionary.dat"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data/index_tree.dat"
     )
 endif()
 
@@ -83,9 +83,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   file(INSTALL DESTINATION "/usr/local/share/libchewing" TYPE FILE FILES
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data/pinyin.tab"
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data/swkb.dat"
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data/symbols.dat"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data/pinyin.tab"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data/swkb.dat"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data/symbols.dat"
     )
 endif()
 
@@ -99,11 +99,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   file(INSTALL DESTINATION "/usr/local/include/chewing" TYPE FILE FILES
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/chewing.h"
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/chewing-compat.h"
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/chewingio.h"
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/global.h"
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/mod_aux.h"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/chewing.h"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/chewing-compat.h"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/chewingio.h"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/global.h"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/mod_aux.h"
     )
 endif()
 
@@ -116,7 +116,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/local/lib/pkgconfig" TYPE FILE FILES "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/chewing.pc")
+  file(INSTALL DESTINATION "/usr/local/lib/pkgconfig" TYPE FILE FILES "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/chewing.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -140,8 +140,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   file(INSTALL DESTINATION "/usr/local/lib" TYPE SHARED_LIBRARY FILES
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/libchewing.so.3.1.0"
-    "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/libchewing.so.3"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/libchewing.so.3.1.0"
+    "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/libchewing.so.3"
     )
   foreach(file
       "$ENV{DESTDIR}/usr/local/lib/libchewing.so.3.1.0"
@@ -171,7 +171,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/local/lib" TYPE SHARED_LIBRARY FILES "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/libchewing.so")
+  file(INSTALL DESTINATION "/usr/local/lib" TYPE SHARED_LIBRARY FILES "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/libchewing.so")
   if(EXISTS "$ENV{DESTDIR}/usr/local/lib/libchewing.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/lib/libchewing.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -189,7 +189,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/local/lib" TYPE STATIC_LIBRARY FILES "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/libchewing.a")
+  file(INSTALL DESTINATION "/usr/local/lib" TYPE STATIC_LIBRARY FILES "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/libchewing.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -200,5 +200,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

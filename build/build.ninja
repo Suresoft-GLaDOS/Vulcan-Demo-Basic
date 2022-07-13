@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/
+cmake_ninja_workdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/
 
 #############################################
 # Utility command for check
@@ -73,13 +73,15 @@ build stresstest.py: phony CMakeFiles/stresstest.py
 
 build cmake_object_order_depends_target_init_database: phony || cmake_object_order_depends_target_common
 
-build CMakeFiles/init_database.dir/src/tools/init_database.c.o: C_COMPILER__init_database_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tools/init_database.c || cmake_object_order_depends_target_init_database
+build CMakeFiles/init_database.dir/src/tools/init_database.c.o: C_COMPILER__init_database_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tools/init_database.c || cmake_object_order_depends_target_init_database
   DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/init_database.dir/src/tools/init_database.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/init_database.dir
   OBJECT_FILE_DIR = CMakeFiles/init_database.dir/src/tools
+  TARGET_COMPILE_PDB = CMakeFiles/init_database.dir/
+  TARGET_PDB = src/tools/init_database.pdb
 
 
 # =============================================================================
@@ -95,8 +97,9 @@ build src/tools/init_database: C_EXECUTABLE_LINKER__init_database_Debug CMakeFil
   OBJECT_DIR = CMakeFiles/init_database.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/init_database.dir/
   TARGET_FILE = src/tools/init_database
-  TARGET_PDB = init_database.dbg
+  TARGET_PDB = src/tools/init_database.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-bopomofo
@@ -107,13 +110,15 @@ build src/tools/init_database: C_EXECUTABLE_LINKER__init_database_Debug CMakeFil
 
 build cmake_object_order_depends_target_test-bopomofo: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-bopomofo.dir/test/test-bopomofo.c.o: C_COMPILER__test-bopomofo_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-bopomofo.c || cmake_object_order_depends_target_test-bopomofo
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-bopomofo.dir/test/test-bopomofo.c.o: C_COMPILER__test-bopomofo_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-bopomofo.c || cmake_object_order_depends_target_test-bopomofo
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-bopomofo.dir/test/test-bopomofo.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-bopomofo.dir
   OBJECT_FILE_DIR = CMakeFiles/test-bopomofo.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-bopomofo.dir/
+  TARGET_PDB = test/test-bopomofo.pdb
 
 
 # =============================================================================
@@ -130,8 +135,9 @@ build test/test-bopomofo: C_EXECUTABLE_LINKER__test-bopomofo_Debug CMakeFiles/te
   OBJECT_DIR = CMakeFiles/test-bopomofo.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-bopomofo.dir/
   TARGET_FILE = test/test-bopomofo
-  TARGET_PDB = test-bopomofo.dbg
+  TARGET_PDB = test/test-bopomofo.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-config
@@ -142,13 +148,15 @@ build test/test-bopomofo: C_EXECUTABLE_LINKER__test-bopomofo_Debug CMakeFiles/te
 
 build cmake_object_order_depends_target_test-config: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-config.dir/test/test-config.c.o: C_COMPILER__test-config_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-config.c || cmake_object_order_depends_target_test-config
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-config.dir/test/test-config.c.o: C_COMPILER__test-config_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-config.c || cmake_object_order_depends_target_test-config
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-config.dir/test/test-config.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-config.dir
   OBJECT_FILE_DIR = CMakeFiles/test-config.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-config.dir/
+  TARGET_PDB = test/test-config.pdb
 
 
 # =============================================================================
@@ -165,8 +173,9 @@ build test/test-config: C_EXECUTABLE_LINKER__test-config_Debug CMakeFiles/test-c
   OBJECT_DIR = CMakeFiles/test-config.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-config.dir/
   TARGET_FILE = test/test-config
-  TARGET_PDB = test-config.dbg
+  TARGET_PDB = test/test-config.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-easy-symbol
@@ -177,13 +186,15 @@ build test/test-config: C_EXECUTABLE_LINKER__test-config_Debug CMakeFiles/test-c
 
 build cmake_object_order_depends_target_test-easy-symbol: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-easy-symbol.dir/test/test-easy-symbol.c.o: C_COMPILER__test-easy-symbol_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-easy-symbol.c || cmake_object_order_depends_target_test-easy-symbol
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-easy-symbol.dir/test/test-easy-symbol.c.o: C_COMPILER__test-easy-symbol_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-easy-symbol.c || cmake_object_order_depends_target_test-easy-symbol
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-easy-symbol.dir/test/test-easy-symbol.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-easy-symbol.dir
   OBJECT_FILE_DIR = CMakeFiles/test-easy-symbol.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-easy-symbol.dir/
+  TARGET_PDB = test/test-easy-symbol.pdb
 
 
 # =============================================================================
@@ -200,8 +211,9 @@ build test/test-easy-symbol: C_EXECUTABLE_LINKER__test-easy-symbol_Debug CMakeFi
   OBJECT_DIR = CMakeFiles/test-easy-symbol.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-easy-symbol.dir/
   TARGET_FILE = test/test-easy-symbol
-  TARGET_PDB = test-easy-symbol.dbg
+  TARGET_PDB = test/test-easy-symbol.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-error-handling
@@ -212,13 +224,15 @@ build test/test-easy-symbol: C_EXECUTABLE_LINKER__test-easy-symbol_Debug CMakeFi
 
 build cmake_object_order_depends_target_test-error-handling: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-error-handling.dir/test/test-error-handling.c.o: C_COMPILER__test-error-handling_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-error-handling.c || cmake_object_order_depends_target_test-error-handling
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-error-handling.dir/test/test-error-handling.c.o: C_COMPILER__test-error-handling_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-error-handling.c || cmake_object_order_depends_target_test-error-handling
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-error-handling.dir/test/test-error-handling.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-error-handling.dir
   OBJECT_FILE_DIR = CMakeFiles/test-error-handling.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-error-handling.dir/
+  TARGET_PDB = test/test-error-handling.pdb
 
 
 # =============================================================================
@@ -235,8 +249,9 @@ build test/test-error-handling: C_EXECUTABLE_LINKER__test-error-handling_Debug C
   OBJECT_DIR = CMakeFiles/test-error-handling.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-error-handling.dir/
   TARGET_FILE = test/test-error-handling
-  TARGET_PDB = test-error-handling.dbg
+  TARGET_PDB = test/test-error-handling.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-fullshape
@@ -247,13 +262,15 @@ build test/test-error-handling: C_EXECUTABLE_LINKER__test-error-handling_Debug C
 
 build cmake_object_order_depends_target_test-fullshape: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-fullshape.dir/test/test-fullshape.c.o: C_COMPILER__test-fullshape_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-fullshape.c || cmake_object_order_depends_target_test-fullshape
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-fullshape.dir/test/test-fullshape.c.o: C_COMPILER__test-fullshape_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-fullshape.c || cmake_object_order_depends_target_test-fullshape
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-fullshape.dir/test/test-fullshape.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-fullshape.dir
   OBJECT_FILE_DIR = CMakeFiles/test-fullshape.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-fullshape.dir/
+  TARGET_PDB = test/test-fullshape.pdb
 
 
 # =============================================================================
@@ -270,8 +287,9 @@ build test/test-fullshape: C_EXECUTABLE_LINKER__test-fullshape_Debug CMakeFiles/
   OBJECT_DIR = CMakeFiles/test-fullshape.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-fullshape.dir/
   TARGET_FILE = test/test-fullshape
-  TARGET_PDB = test-fullshape.dbg
+  TARGET_PDB = test/test-fullshape.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-key2pho
@@ -282,13 +300,15 @@ build test/test-fullshape: C_EXECUTABLE_LINKER__test-fullshape_Debug CMakeFiles/
 
 build cmake_object_order_depends_target_test-key2pho: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-key2pho.dir/test/test-key2pho.c.o: C_COMPILER__test-key2pho_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-key2pho.c || cmake_object_order_depends_target_test-key2pho
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-key2pho.dir/test/test-key2pho.c.o: C_COMPILER__test-key2pho_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-key2pho.c || cmake_object_order_depends_target_test-key2pho
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-key2pho.dir/test/test-key2pho.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-key2pho.dir
   OBJECT_FILE_DIR = CMakeFiles/test-key2pho.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-key2pho.dir/
+  TARGET_PDB = test/test-key2pho.pdb
 
 
 # =============================================================================
@@ -305,8 +325,9 @@ build test/test-key2pho: C_EXECUTABLE_LINKER__test-key2pho_Debug CMakeFiles/test
   OBJECT_DIR = CMakeFiles/test-key2pho.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-key2pho.dir/
   TARGET_FILE = test/test-key2pho
-  TARGET_PDB = test-key2pho.dbg
+  TARGET_PDB = test/test-key2pho.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-keyboard
@@ -317,13 +338,15 @@ build test/test-key2pho: C_EXECUTABLE_LINKER__test-key2pho_Debug CMakeFiles/test
 
 build cmake_object_order_depends_target_test-keyboard: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-keyboard.dir/test/test-keyboard.c.o: C_COMPILER__test-keyboard_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-keyboard.c || cmake_object_order_depends_target_test-keyboard
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-keyboard.dir/test/test-keyboard.c.o: C_COMPILER__test-keyboard_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-keyboard.c || cmake_object_order_depends_target_test-keyboard
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-keyboard.dir/test/test-keyboard.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-keyboard.dir
   OBJECT_FILE_DIR = CMakeFiles/test-keyboard.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-keyboard.dir/
+  TARGET_PDB = test/test-keyboard.pdb
 
 
 # =============================================================================
@@ -340,8 +363,9 @@ build test/test-keyboard: C_EXECUTABLE_LINKER__test-keyboard_Debug CMakeFiles/te
   OBJECT_DIR = CMakeFiles/test-keyboard.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-keyboard.dir/
   TARGET_FILE = test/test-keyboard
-  TARGET_PDB = test-keyboard.dbg
+  TARGET_PDB = test/test-keyboard.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-keyboardless
@@ -352,13 +376,15 @@ build test/test-keyboard: C_EXECUTABLE_LINKER__test-keyboard_Debug CMakeFiles/te
 
 build cmake_object_order_depends_target_test-keyboardless: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-keyboardless.dir/test/test-keyboardless.c.o: C_COMPILER__test-keyboardless_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-keyboardless.c || cmake_object_order_depends_target_test-keyboardless
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-keyboardless.dir/test/test-keyboardless.c.o: C_COMPILER__test-keyboardless_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-keyboardless.c || cmake_object_order_depends_target_test-keyboardless
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-keyboardless.dir/test/test-keyboardless.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-keyboardless.dir
   OBJECT_FILE_DIR = CMakeFiles/test-keyboardless.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-keyboardless.dir/
+  TARGET_PDB = test/test-keyboardless.pdb
 
 
 # =============================================================================
@@ -375,8 +401,9 @@ build test/test-keyboardless: C_EXECUTABLE_LINKER__test-keyboardless_Debug CMake
   OBJECT_DIR = CMakeFiles/test-keyboardless.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-keyboardless.dir/
   TARGET_FILE = test/test-keyboardless
-  TARGET_PDB = test-keyboardless.dbg
+  TARGET_PDB = test/test-keyboardless.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-logger
@@ -387,13 +414,15 @@ build test/test-keyboardless: C_EXECUTABLE_LINKER__test-keyboardless_Debug CMake
 
 build cmake_object_order_depends_target_test-logger: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-logger.dir/test/test-logger.c.o: C_COMPILER__test-logger_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-logger.c || cmake_object_order_depends_target_test-logger
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-logger.dir/test/test-logger.c.o: C_COMPILER__test-logger_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-logger.c || cmake_object_order_depends_target_test-logger
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-logger.dir/test/test-logger.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-logger.dir
   OBJECT_FILE_DIR = CMakeFiles/test-logger.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-logger.dir/
+  TARGET_PDB = test/test-logger.pdb
 
 
 # =============================================================================
@@ -410,8 +439,9 @@ build test/test-logger: C_EXECUTABLE_LINKER__test-logger_Debug CMakeFiles/test-l
   OBJECT_DIR = CMakeFiles/test-logger.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-logger.dir/
   TARGET_FILE = test/test-logger
-  TARGET_PDB = test-logger.dbg
+  TARGET_PDB = test/test-logger.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-mmap
@@ -422,13 +452,15 @@ build test/test-logger: C_EXECUTABLE_LINKER__test-logger_Debug CMakeFiles/test-l
 
 build cmake_object_order_depends_target_test-mmap: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-mmap.dir/test/test-mmap.c.o: C_COMPILER__test-mmap_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-mmap.c || cmake_object_order_depends_target_test-mmap
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-mmap.dir/test/test-mmap.c.o: C_COMPILER__test-mmap_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-mmap.c || cmake_object_order_depends_target_test-mmap
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-mmap.dir/test/test-mmap.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-mmap.dir
   OBJECT_FILE_DIR = CMakeFiles/test-mmap.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-mmap.dir/
+  TARGET_PDB = test/test-mmap.pdb
 
 
 # =============================================================================
@@ -445,8 +477,9 @@ build test/test-mmap: C_EXECUTABLE_LINKER__test-mmap_Debug CMakeFiles/test-mmap.
   OBJECT_DIR = CMakeFiles/test-mmap.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-mmap.dir/
   TARGET_FILE = test/test-mmap
-  TARGET_PDB = test-mmap.dbg
+  TARGET_PDB = test/test-mmap.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-path
@@ -457,13 +490,15 @@ build test/test-mmap: C_EXECUTABLE_LINKER__test-mmap_Debug CMakeFiles/test-mmap.
 
 build cmake_object_order_depends_target_test-path: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-path.dir/test/test-path.c.o: C_COMPILER__test-path_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-path.c || cmake_object_order_depends_target_test-path
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-path.dir/test/test-path.c.o: C_COMPILER__test-path_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-path.c || cmake_object_order_depends_target_test-path
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-path.dir/test/test-path.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-path.dir
   OBJECT_FILE_DIR = CMakeFiles/test-path.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-path.dir/
+  TARGET_PDB = test/test-path.pdb
 
 
 # =============================================================================
@@ -480,8 +515,9 @@ build test/test-path: C_EXECUTABLE_LINKER__test-path_Debug CMakeFiles/test-path.
   OBJECT_DIR = CMakeFiles/test-path.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-path.dir/
   TARGET_FILE = test/test-path
-  TARGET_PDB = test-path.dbg
+  TARGET_PDB = test/test-path.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-regression
@@ -492,13 +528,15 @@ build test/test-path: C_EXECUTABLE_LINKER__test-path_Debug CMakeFiles/test-path.
 
 build cmake_object_order_depends_target_test-regression: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-regression.dir/test/test-regression.c.o: C_COMPILER__test-regression_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-regression.c || cmake_object_order_depends_target_test-regression
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-regression.dir/test/test-regression.c.o: C_COMPILER__test-regression_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-regression.c || cmake_object_order_depends_target_test-regression
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-regression.dir/test/test-regression.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-regression.dir
   OBJECT_FILE_DIR = CMakeFiles/test-regression.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-regression.dir/
+  TARGET_PDB = test/test-regression.pdb
 
 
 # =============================================================================
@@ -515,8 +553,9 @@ build test/test-regression: C_EXECUTABLE_LINKER__test-regression_Debug CMakeFile
   OBJECT_DIR = CMakeFiles/test-regression.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-regression.dir/
   TARGET_FILE = test/test-regression
-  TARGET_PDB = test-regression.dbg
+  TARGET_PDB = test/test-regression.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-reset
@@ -527,13 +566,15 @@ build test/test-regression: C_EXECUTABLE_LINKER__test-regression_Debug CMakeFile
 
 build cmake_object_order_depends_target_test-reset: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-reset.dir/test/test-reset.c.o: C_COMPILER__test-reset_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-reset.c || cmake_object_order_depends_target_test-reset
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-reset.dir/test/test-reset.c.o: C_COMPILER__test-reset_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-reset.c || cmake_object_order_depends_target_test-reset
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-reset.dir/test/test-reset.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-reset.dir
   OBJECT_FILE_DIR = CMakeFiles/test-reset.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-reset.dir/
+  TARGET_PDB = test/test-reset.pdb
 
 
 # =============================================================================
@@ -550,8 +591,9 @@ build test/test-reset: C_EXECUTABLE_LINKER__test-reset_Debug CMakeFiles/test-res
   OBJECT_DIR = CMakeFiles/test-reset.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-reset.dir/
   TARGET_FILE = test/test-reset
-  TARGET_PDB = test-reset.dbg
+  TARGET_PDB = test/test-reset.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-special-symbol
@@ -562,13 +604,15 @@ build test/test-reset: C_EXECUTABLE_LINKER__test-reset_Debug CMakeFiles/test-res
 
 build cmake_object_order_depends_target_test-special-symbol: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-special-symbol.dir/test/test-special-symbol.c.o: C_COMPILER__test-special-symbol_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-special-symbol.c || cmake_object_order_depends_target_test-special-symbol
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-special-symbol.dir/test/test-special-symbol.c.o: C_COMPILER__test-special-symbol_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-special-symbol.c || cmake_object_order_depends_target_test-special-symbol
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-special-symbol.dir/test/test-special-symbol.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-special-symbol.dir
   OBJECT_FILE_DIR = CMakeFiles/test-special-symbol.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-special-symbol.dir/
+  TARGET_PDB = test/test-special-symbol.pdb
 
 
 # =============================================================================
@@ -585,8 +629,9 @@ build test/test-special-symbol: C_EXECUTABLE_LINKER__test-special-symbol_Debug C
   OBJECT_DIR = CMakeFiles/test-special-symbol.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-special-symbol.dir/
   TARGET_FILE = test/test-special-symbol
-  TARGET_PDB = test-special-symbol.dbg
+  TARGET_PDB = test/test-special-symbol.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-symbol
@@ -597,13 +642,15 @@ build test/test-special-symbol: C_EXECUTABLE_LINKER__test-special-symbol_Debug C
 
 build cmake_object_order_depends_target_test-symbol: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-symbol.dir/test/test-symbol.c.o: C_COMPILER__test-symbol_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-symbol.c || cmake_object_order_depends_target_test-symbol
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-symbol.dir/test/test-symbol.c.o: C_COMPILER__test-symbol_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-symbol.c || cmake_object_order_depends_target_test-symbol
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-symbol.dir/test/test-symbol.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-symbol.dir
   OBJECT_FILE_DIR = CMakeFiles/test-symbol.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-symbol.dir/
+  TARGET_PDB = test/test-symbol.pdb
 
 
 # =============================================================================
@@ -620,8 +667,9 @@ build test/test-symbol: C_EXECUTABLE_LINKER__test-symbol_Debug CMakeFiles/test-s
   OBJECT_DIR = CMakeFiles/test-symbol.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-symbol.dir/
   TARGET_FILE = test/test-symbol
-  TARGET_PDB = test-symbol.dbg
+  TARGET_PDB = test/test-symbol.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-userphrase
@@ -632,13 +680,15 @@ build test/test-symbol: C_EXECUTABLE_LINKER__test-symbol_Debug CMakeFiles/test-s
 
 build cmake_object_order_depends_target_test-userphrase: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-userphrase.dir/test/test-userphrase.c.o: C_COMPILER__test-userphrase_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-userphrase.c || cmake_object_order_depends_target_test-userphrase
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-userphrase.dir/test/test-userphrase.c.o: C_COMPILER__test-userphrase_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-userphrase.c || cmake_object_order_depends_target_test-userphrase
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-userphrase.dir/test/test-userphrase.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-userphrase.dir
   OBJECT_FILE_DIR = CMakeFiles/test-userphrase.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-userphrase.dir/
+  TARGET_PDB = test/test-userphrase.pdb
 
 
 # =============================================================================
@@ -655,8 +705,9 @@ build test/test-userphrase: C_EXECUTABLE_LINKER__test-userphrase_Debug CMakeFile
   OBJECT_DIR = CMakeFiles/test-userphrase.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-userphrase.dir/
   TARGET_FILE = test/test-userphrase
-  TARGET_PDB = test-userphrase.dbg
+  TARGET_PDB = test/test-userphrase.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-utf8
@@ -667,13 +718,15 @@ build test/test-userphrase: C_EXECUTABLE_LINKER__test-userphrase_Debug CMakeFile
 
 build cmake_object_order_depends_target_test-utf8: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/test-utf8.dir/test/test-utf8.c.o: C_COMPILER__test-utf8_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/test-utf8.c || cmake_object_order_depends_target_test-utf8
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/test-utf8.dir/test/test-utf8.c.o: C_COMPILER__test-utf8_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-utf8.c || cmake_object_order_depends_target_test-utf8
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-utf8.dir/test/test-utf8.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-utf8.dir
   OBJECT_FILE_DIR = CMakeFiles/test-utf8.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-utf8.dir/
+  TARGET_PDB = test/test-utf8.pdb
 
 
 # =============================================================================
@@ -690,8 +743,9 @@ build test/test-utf8: C_EXECUTABLE_LINKER__test-utf8_Debug CMakeFiles/test-utf8.
   OBJECT_DIR = CMakeFiles/test-utf8.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-utf8.dir/
   TARGET_FILE = test/test-utf8
-  TARGET_PDB = test-utf8.dbg
+  TARGET_PDB = test/test-utf8.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target performance
@@ -702,13 +756,15 @@ build test/test-utf8: C_EXECUTABLE_LINKER__test-utf8_Debug CMakeFiles/test-utf8.
 
 build cmake_object_order_depends_target_performance: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/performance.dir/test/performance.c.o: C_COMPILER__performance_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/performance.c || cmake_object_order_depends_target_performance
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/performance.dir/test/performance.c.o: C_COMPILER__performance_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/performance.c || cmake_object_order_depends_target_performance
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/performance.dir/test/performance.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/performance.dir
   OBJECT_FILE_DIR = CMakeFiles/performance.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/performance.dir/
+  TARGET_PDB = test/performance.pdb
 
 
 # =============================================================================
@@ -725,8 +781,9 @@ build test/performance: C_EXECUTABLE_LINKER__performance_Debug CMakeFiles/perfor
   OBJECT_DIR = CMakeFiles/performance.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/performance.dir/
   TARGET_FILE = test/performance
-  TARGET_PDB = performance.dbg
+  TARGET_PDB = test/performance.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target randkeystroke
@@ -737,13 +794,15 @@ build test/performance: C_EXECUTABLE_LINKER__performance_Debug CMakeFiles/perfor
 
 build cmake_object_order_depends_target_randkeystroke: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/randkeystroke.dir/test/randkeystroke.c.o: C_COMPILER__randkeystroke_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/randkeystroke.c || cmake_object_order_depends_target_randkeystroke
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/randkeystroke.dir/test/randkeystroke.c.o: C_COMPILER__randkeystroke_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/randkeystroke.c || cmake_object_order_depends_target_randkeystroke
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/randkeystroke.dir/test/randkeystroke.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/randkeystroke.dir
   OBJECT_FILE_DIR = CMakeFiles/randkeystroke.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/randkeystroke.dir/
+  TARGET_PDB = test/randkeystroke.pdb
 
 
 # =============================================================================
@@ -760,8 +819,9 @@ build test/randkeystroke: C_EXECUTABLE_LINKER__randkeystroke_Debug CMakeFiles/ra
   OBJECT_DIR = CMakeFiles/randkeystroke.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/randkeystroke.dir/
   TARGET_FILE = test/randkeystroke
-  TARGET_PDB = randkeystroke.dbg
+  TARGET_PDB = test/randkeystroke.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target simulate
@@ -772,13 +832,15 @@ build test/randkeystroke: C_EXECUTABLE_LINKER__randkeystroke_Debug CMakeFiles/ra
 
 build cmake_object_order_depends_target_simulate: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/simulate.dir/test/simulate.c.o: C_COMPILER__simulate_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/simulate.c || cmake_object_order_depends_target_simulate
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/simulate.dir/test/simulate.c.o: C_COMPILER__simulate_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/simulate.c || cmake_object_order_depends_target_simulate
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/simulate.dir/test/simulate.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/simulate.dir
   OBJECT_FILE_DIR = CMakeFiles/simulate.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/simulate.dir/
+  TARGET_PDB = test/simulate.pdb
 
 
 # =============================================================================
@@ -795,8 +857,9 @@ build test/simulate: C_EXECUTABLE_LINKER__simulate_Debug CMakeFiles/simulate.dir
   OBJECT_DIR = CMakeFiles/simulate.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/simulate.dir/
   TARGET_FILE = test/simulate
-  TARGET_PDB = simulate.dbg
+  TARGET_PDB = test/simulate.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target testchewing
@@ -807,13 +870,15 @@ build test/simulate: C_EXECUTABLE_LINKER__simulate_Debug CMakeFiles/simulate.dir
 
 build cmake_object_order_depends_target_testchewing: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/testchewing.dir/test/testchewing.c.o: C_COMPILER__testchewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/testchewing.c || cmake_object_order_depends_target_testchewing
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/testchewing.dir/test/testchewing.c.o: C_COMPILER__testchewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/testchewing.c || cmake_object_order_depends_target_testchewing
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/testchewing.dir/test/testchewing.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/testchewing.dir
   OBJECT_FILE_DIR = CMakeFiles/testchewing.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/testchewing.dir/
+  TARGET_PDB = test/testchewing.pdb
 
 
 # =============================================================================
@@ -830,8 +895,9 @@ build test/testchewing: C_EXECUTABLE_LINKER__testchewing_Debug CMakeFiles/testch
   OBJECT_DIR = CMakeFiles/testchewing.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/testchewing.dir/
   TARGET_FILE = test/testchewing
-  TARGET_PDB = testchewing.dbg
+  TARGET_PDB = test/testchewing.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target genkeystroke
@@ -842,13 +908,15 @@ build test/testchewing: C_EXECUTABLE_LINKER__testchewing_Debug CMakeFiles/testch
 
 build cmake_object_order_depends_target_genkeystroke: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/genkeystroke.dir/test/genkeystroke.c.o: C_COMPILER__genkeystroke_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/genkeystroke.c || cmake_object_order_depends_target_genkeystroke
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/genkeystroke.dir/test/genkeystroke.c.o: C_COMPILER__genkeystroke_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/genkeystroke.c || cmake_object_order_depends_target_genkeystroke
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/genkeystroke.dir/test/genkeystroke.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/genkeystroke.dir
   OBJECT_FILE_DIR = CMakeFiles/genkeystroke.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/genkeystroke.dir/
+  TARGET_PDB = test/genkeystroke.pdb
 
 
 # =============================================================================
@@ -865,8 +933,9 @@ build test/genkeystroke: C_EXECUTABLE_LINKER__genkeystroke_Debug CMakeFiles/genk
   OBJECT_DIR = CMakeFiles/genkeystroke.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/genkeystroke.dir/
   TARGET_FILE = test/genkeystroke
-  TARGET_PDB = genkeystroke.dbg
+  TARGET_PDB = test/genkeystroke.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target testhelper
@@ -877,13 +946,15 @@ build test/genkeystroke: C_EXECUTABLE_LINKER__genkeystroke_Debug CMakeFiles/genk
 
 build cmake_object_order_depends_target_testhelper: phony || cmake_object_order_depends_target_chewing cmake_object_order_depends_target_common cmake_object_order_depends_target_userphrase
 
-build CMakeFiles/testhelper.dir/test/testhelper.c.o: C_COMPILER__testhelper_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/testhelper.c || cmake_object_order_depends_target_testhelper
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/default-test.txt\" -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+build CMakeFiles/testhelper.dir/test/testhelper.c.o: C_COMPILER__testhelper_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/testhelper.c || cmake_object_order_depends_target_testhelper
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt\" -DTEST_DATA_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/data\" -DTEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/testhelper.dir/test/testhelper.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/testhelper.dir
   OBJECT_FILE_DIR = CMakeFiles/testhelper.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/testhelper.dir/testhelper.pdb
+  TARGET_PDB = libtesthelper.pdb
 
 
 # =============================================================================
@@ -898,8 +969,9 @@ build libtesthelper.a: C_STATIC_LIBRARY_LINKER__testhelper_Debug CMakeFiles/chew
   OBJECT_DIR = CMakeFiles/testhelper.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/testhelper.dir/testhelper.pdb
   TARGET_FILE = libtesthelper.a
-  TARGET_PDB = testhelper.a.dbg
+  TARGET_PDB = libtesthelper.pdb
 
 
 #############################################
@@ -916,117 +988,145 @@ build data: phony CMakeFiles/data data/dictionary.dat data/index_tree.dat src/to
 
 build cmake_object_order_depends_target_chewing: phony || CMakeFiles/chewing.dir
 
-build CMakeFiles/chewing.dir/src/compat.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/compat.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/compat.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/compat.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/compat.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/chewingio.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingio.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/chewingio.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/chewingio.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/chewingutil.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewingutil.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/chewingutil.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/chewingutil.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/choice.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/choice.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/choice.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/choice.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/choice.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/dict.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/dict.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/dict.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/dict.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/dict.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/mod_aux.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/mod_aux.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/mod_aux.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/mod_aux.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/pinyin.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/pinyin.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/pinyin.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/pinyin.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/pinyin.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/src/plat_mmap_posix.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/src/plat_mmap_posix.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src/porting_layer/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/src/plat_mmap_windows.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/src/plat_mmap_windows.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src/porting_layer/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/src/plat_path.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/src/plat_path.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src/porting_layer/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/src/rpl_malloc.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/src/rpl_malloc.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src/porting_layer/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/tree.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/tree.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/tree.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/tree.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/userphrase.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/userphrase.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/userphrase.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/userphrase.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/chewing.dir/src/bopomofo.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/bopomofo.c || cmake_object_order_depends_target_chewing
+build CMakeFiles/chewing.dir/src/bopomofo.c.o: C_COMPILER__chewing_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/bopomofo.c || cmake_object_order_depends_target_chewing
   DEFINES = -DCHEWING_DATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/bopomofo.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
 
 
 
@@ -1044,21 +1144,25 @@ build chewing: phony CMakeFiles/chewing.dir/src/compat.c.o CMakeFiles/chewing.di
 
 build cmake_object_order_depends_target_userphrase: phony || CMakeFiles/userphrase.dir
 
-build CMakeFiles/userphrase.dir/src/chewing-sql.c.o: C_COMPILER__userphrase_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/chewing-sql.c || cmake_object_order_depends_target_userphrase
+build CMakeFiles/userphrase.dir/src/chewing-sql.c.o: C_COMPILER__userphrase_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewing-sql.c || cmake_object_order_depends_target_userphrase
   DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/userphrase.dir/src/chewing-sql.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/userphrase.dir
   OBJECT_FILE_DIR = CMakeFiles/userphrase.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/userphrase.dir/userphrase.pdb
+  TARGET_PDB = libuserphrase.pdb
 
-build CMakeFiles/userphrase.dir/src/userphrase-sql.c.o: C_COMPILER__userphrase_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/userphrase-sql.c || cmake_object_order_depends_target_userphrase
+build CMakeFiles/userphrase.dir/src/userphrase-sql.c.o: C_COMPILER__userphrase_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c || cmake_object_order_depends_target_userphrase
   DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/userphrase.dir/src/userphrase-sql.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/userphrase.dir
   OBJECT_FILE_DIR = CMakeFiles/userphrase.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/userphrase.dir/userphrase.pdb
+  TARGET_PDB = libuserphrase.pdb
 
 
 # =============================================================================
@@ -1073,8 +1177,9 @@ build libuserphrase.a: C_STATIC_LIBRARY_LINKER__userphrase_Debug CMakeFiles/user
   OBJECT_DIR = CMakeFiles/userphrase.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/userphrase.dir/userphrase.pdb
   TARGET_FILE = libuserphrase.a
-  TARGET_PDB = userphrase.a.dbg
+  TARGET_PDB = libuserphrase.pdb
 
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target chewing_shared
@@ -1102,8 +1207,9 @@ build libchewing.so.3.1.0: C_SHARED_LIBRARY_LINKER__chewing_shared_Debug CMakeFi
   PRE_LINK = :
   SONAME = libchewing.so.3
   SONAME_FLAG = -Wl,-soname,
+  TARGET_COMPILE_PDB = CMakeFiles/chewing_shared.dir/
   TARGET_FILE = libchewing.so.3.1.0
-  TARGET_PDB = chewing.so.dbg
+  TARGET_PDB = libchewing.pdb
 
 
 #############################################
@@ -1134,8 +1240,9 @@ build libchewing.a: C_STATIC_LIBRARY_LINKER__chewing_static_Debug CMakeFiles/che
   OBJECT_DIR = CMakeFiles/chewing_static.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/chewing_static.dir/chewing_static.pdb
   TARGET_FILE = libchewing.a
-  TARGET_PDB = chewing.a.dbg
+  TARGET_PDB = libchewing.pdb
 
 # =============================================================================
 # Object build statements for OBJECT_LIBRARY target common
@@ -1146,21 +1253,25 @@ build libchewing.a: C_STATIC_LIBRARY_LINKER__chewing_static_Debug CMakeFiles/che
 
 build cmake_object_order_depends_target_common: phony || CMakeFiles/common.dir
 
-build CMakeFiles/common.dir/src/common/chewing-utf8-util.c.o: C_COMPILER__common_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/common/chewing-utf8-util.c || cmake_object_order_depends_target_common
+build CMakeFiles/common.dir/src/common/chewing-utf8-util.c.o: C_COMPILER__common_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/common/chewing-utf8-util.c || cmake_object_order_depends_target_common
   DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/common.dir/src/common/chewing-utf8-util.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/common.dir
   OBJECT_FILE_DIR = CMakeFiles/common.dir/src/common
+  TARGET_COMPILE_PDB = CMakeFiles/common.dir/
+  TARGET_PDB = ""
 
-build CMakeFiles/common.dir/src/common/key2pho.c.o: C_COMPILER__common_Debug /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/common/key2pho.c || cmake_object_order_depends_target_common
+build CMakeFiles/common.dir/src/common/key2pho.c.o: C_COMPILER__common_Debug /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/common/key2pho.c || cmake_object_order_depends_target_common
   DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/common.dir/src/common/key2pho.c.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g
-  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/include/internal -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src -I/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/src/porting_layer/include
+  INCLUDES = -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/SQLITE3_INCLUDE -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src -I/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/common.dir
   OBJECT_FILE_DIR = CMakeFiles/common.dir/src/common
+  TARGET_COMPILE_PDB = CMakeFiles/common.dir/
+  TARGET_PDB = ""
 
 
 
@@ -1174,7 +1285,7 @@ build common: phony CMakeFiles/common.dir/src/common/chewing-utf8-util.c.o CMake
 # Utility command for test
 
 build CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/ctest --force-new-ctest-process
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/ctest --force-new-ctest-process
   DESC = Running tests...
   pool = console
   restat = 1
@@ -1186,7 +1297,7 @@ build test: phony CMakeFiles/test.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1197,7 +1308,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/cmake --regenerate-during-build -S/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5 -B/mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/cmake --regenerate-during-build -S/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic -B/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1215,7 +1326,7 @@ build list_install_components: phony
 # Utility command for install
 
 build CMakeFiles/install.util: CUSTOM_COMMAND all
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/cmake -P cmake_install.cmake
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/cmake -P cmake_install.cmake
   DESC = Install the project...
   pool = console
   restat = 1
@@ -1227,7 +1338,7 @@ build install: phony CMakeFiles/install.util
 # Utility command for install/local
 
 build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -1239,7 +1350,7 @@ build install/local: phony CMakeFiles/install/local.util
 # Utility command for install/strip
 
 build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -1251,7 +1362,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 # Custom command for CMakeFiles/check
 
 build CMakeFiles/check | ${cmake_ninja_workdir}CMakeFiles/check: CUSTOM_COMMAND || INFO all_static_data chewing common data libchewing.a libchewing.so libtesthelper.a libuserphrase.a src/tools/init_database stresstest.py test/genkeystroke test/performance test/randkeystroke test/simulate test/test-bopomofo test/test-config test/test-easy-symbol test/test-error-handling test/test-fullshape test/test-key2pho test/test-keyboard test/test-keyboardless test/test-logger test/test-mmap test/test-path test/test-regression test/test-reset test/test-special-symbol test/test-symbol test/test-userphrase test/test-utf8 test/testchewing
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/ctest
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/ctest
 
 
 #############################################
@@ -1264,7 +1375,7 @@ build CMakeFiles/INFO | ${cmake_ninja_workdir}CMakeFiles/INFO: phony doc/libchew
 # Custom command for doc/libchewing.info
 
 build doc/libchewing.info | ${cmake_ninja_workdir}doc/libchewing.info: CUSTOM_COMMAND ../doc/libchewing.texi
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/makeinfo /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/doc/libchewing.texi -o /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/doc/libchewing.info -I /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/doc
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/makeinfo /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/doc/libchewing.texi -o /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/doc/libchewing.info -I /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/doc
   DESC = Generating doc/libchewing.info
   restat = 1
 
@@ -1273,14 +1384,14 @@ build doc/libchewing.info | ${cmake_ninja_workdir}doc/libchewing.info: CUSTOM_CO
 # Custom command for CMakeFiles/all_static_data
 
 build CMakeFiles/all_static_data | ${cmake_ninja_workdir}CMakeFiles/all_static_data: CUSTOM_COMMAND
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/cmake -E copy_if_different /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/data/pinyin.tab /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data/pinyin.tab && /usr/bin/cmake -E copy_if_different /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/data/swkb.dat /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data/swkb.dat && /usr/bin/cmake -E copy_if_different /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/data/symbols.dat /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data/symbols.dat
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/cmake -E copy_if_different /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/data/pinyin.tab /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data/pinyin.tab && /usr/bin/cmake -E copy_if_different /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/data/swkb.dat /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data/swkb.dat && /usr/bin/cmake -E copy_if_different /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/data/symbols.dat /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data/symbols.dat
 
 
 #############################################
 # Custom command for CMakeFiles/stresstest.py
 
 build CMakeFiles/stresstest.py | ${cmake_ninja_workdir}CMakeFiles/stresstest.py: CUSTOM_COMMAND
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/cmake -E copy_if_different /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/test/stresstest.py /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/test/stresstest.py
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/cmake -E copy_if_different /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/stresstest.py /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/test/stresstest.py
 
 
 #############################################
@@ -1293,7 +1404,7 @@ build CMakeFiles/data | ${cmake_ninja_workdir}CMakeFiles/data: phony data/dictio
 # Custom command for data/dictionary.dat
 
 build data/dictionary.dat data/index_tree.dat | ${cmake_ninja_workdir}data/dictionary.dat ${cmake_ninja_workdir}data/index_tree.dat: CUSTOM_COMMAND src/tools/init_database ../data/phone.cin ../data/tsi.src || common src/tools/init_database
-  COMMAND = cd /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build && /usr/bin/cmake -E make_directory /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data && /usr/bin/cmake -E chdir /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/data /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build/src/tools/init_database /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/data/phone.cin /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/data/tsi.src
+  COMMAND = cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build && /usr/bin/cmake -E make_directory /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data && /usr/bin/cmake -E chdir /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/data /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/src/tools/init_database /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/data/phone.cin /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/data/tsi.src
   DESC = Generating data/dictionary.dat, data/index_tree.dat
   restat = 1
 
@@ -1360,7 +1471,7 @@ build userphrase: phony libuserphrase.a
 # =============================================================================
 
 #############################################
-# Folder: /mnt/c/Users/sure/GLaDOS/libchewing/buggy_5/build
+# Folder: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build
 
 build all: phony INFO stresstest.py src/tools/init_database test/test-bopomofo test/test-config test/test-easy-symbol test/test-error-handling test/test-fullshape test/test-key2pho test/test-keyboard test/test-keyboardless test/test-logger test/test-mmap test/test-path test/test-regression test/test-reset test/test-special-symbol test/test-symbol test/test-userphrase test/test-utf8 test/performance test/randkeystroke test/simulate test/testchewing test/genkeystroke libtesthelper.a data chewing libuserphrase.a libchewing.so libchewing.a common
 
@@ -1376,14 +1487,14 @@ build all: phony INFO stresstest.py src/tools/init_database test/test-bopomofo t
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../chewing.pc.in ../cmake/FindCurses.cmake ../cmake/config.h.in ../cmake/version.texi.in /usr/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.23/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.23/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFiles.cmake /usr/share/cmake-3.23/Modules/CheckTypeSize.cmake /usr/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.23/Modules/FindPackageMessage.cmake /usr/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.23/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../chewing.pc.in ../cmake/FindCurses.cmake ../cmake/config.h.in ../cmake/version.texi.in /usr/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /usr/share/cmake-3.23/Modules/CMakeCCompilerABI.c /usr/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.23/Modules/CMakeConfigurableFile.in /usr/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.23/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake-3.23/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.23/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.23/Modules/CheckFunctionExists.c /usr/share/cmake-3.23/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFile.c.in /usr/share/cmake-3.23/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFiles.cmake /usr/share/cmake-3.23/Modules/CheckTypeSize.c.in /usr/share/cmake-3.23/Modules/CheckTypeSize.cmake /usr/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.23/Modules/FindPackageMessage.cmake /usr/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.23/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c CMakeFiles/CheckTypeSize/UINT16_T.c
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../chewing.pc.in ../cmake/FindCurses.cmake ../cmake/config.h.in ../cmake/version.texi.in /usr/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.23/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.23/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFiles.cmake /usr/share/cmake-3.23/Modules/CheckTypeSize.cmake /usr/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.23/Modules/FindPackageMessage.cmake /usr/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.23/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../chewing.pc.in ../cmake/FindCurses.cmake ../cmake/config.h.in ../cmake/version.texi.in /usr/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /usr/share/cmake-3.23/Modules/CMakeCCompilerABI.c /usr/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.23/Modules/CMakeConfigurableFile.in /usr/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.23/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake-3.23/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.23/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.23/Modules/CheckFunctionExists.c /usr/share/cmake-3.23/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFile.c.in /usr/share/cmake-3.23/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.23/Modules/CheckIncludeFiles.cmake /usr/share/cmake-3.23/Modules/CheckTypeSize.c.in /usr/share/cmake-3.23/Modules/CheckTypeSize.cmake /usr/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.23/Modules/FindPackageMessage.cmake /usr/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.23/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c CMakeFiles/CheckTypeSize/UINT16_T.c: phony
 
 
 #############################################
