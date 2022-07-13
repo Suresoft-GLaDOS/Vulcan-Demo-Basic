@@ -15,8 +15,8 @@ time-out: 3600
 max-patch-number : 500
 
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요
-  cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build -G Ninja
   cmake --build build --target clean
+  cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build -G Ninja  
   cmake --build build --target all --parallel 10
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
