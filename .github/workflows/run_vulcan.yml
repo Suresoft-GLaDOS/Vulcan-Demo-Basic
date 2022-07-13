@@ -1,0 +1,14 @@
+name: vulcan runner
+
+on:
+    workflow_dispatch:
+
+jobs:
+    auto-repair:
+        runs-on: self-hosted
+        steps:
+            - name: run vulcan action
+              uses: Suresoft-GLaDOS/vulcan-action@main
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                path: vulcan_target
