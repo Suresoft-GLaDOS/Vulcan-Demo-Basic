@@ -1,0 +1,12 @@
+--- __backup0	2022-07-14 08:12:27.520305140 +0000
++++ src/MethodInsertion.c	2022-07-14 08:23:00.817368047 +0000
+@@ -106,7 +106,9 @@
+     while (cost > budget) {
+         cost = cost - travelPlan->values[travelPlan->size-1];
++      pop_back((travelPlan));
+         printf("budget: %d  cost: %d\n", budget, cost);
++
+     }
+ 
+ 
+ 
