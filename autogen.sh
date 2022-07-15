@@ -1,7 +1,8 @@
-#! /bin/sh
+#!/bin/sh
+set -x
+libtoolize --force --copy
+aclocal -I ./m4
+autoheader
+automake --foreign --add-missing --copy
+autoconf
 
-AUTORECONF_ARGS=-i
-mkdir -p m4
-AUTORECONF_ARGS="$AUTORECONF_ARGS -I m4"
-
-autoreconf $AUTORECONF_ARGS
