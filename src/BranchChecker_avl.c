@@ -94,7 +94,7 @@ Node* AVLSet(Node* node)
     return node;
 }
 
-Node* arrInsertDelete(Node* node, int data1,
+int* arrInsertDelete(Node* node, int data1,
                             int data2,
                             int data3,
                             int data4,
@@ -121,7 +121,9 @@ Node* arrInsertDelete(Node* node, int data1,
     node = Delete(node, data2);
     node = Delete(node, data3);
 
-    return node;
+    int* result = getInorder(node);
+
+    return result;
 }
 
 Node* Insert(Node* node, int data)
@@ -216,7 +218,7 @@ Node* Delete(Node* node, int data)
     {
         if (node->Left == NULL && node->Right == NULL) {
             node = ((void *)0);
-        } else if (node->Left != NULL) { //Original: node->Left != NULL && node->Right == NULL
+        } else if (node->Left != NULL ) { //Original: node->Left != NULL && node->Right == NULL
             node->Left->Parent = node->Parent;
             node = node->Left;
         } else if (node->Left == ((void *)0) && node->Right != ((void *)0)) {

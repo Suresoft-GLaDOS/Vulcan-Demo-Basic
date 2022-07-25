@@ -385,28 +385,28 @@ int main(int argc, char *argv[]) {
 //            }
 //            return compare == true ? 0 : 1;
 //
-        case 5: ; // BranchChecker
-            // First Line segment
-            // P11 = (5, 5), P12 = (7, 7)
-
-
-            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-
-            for (int i = 0; i < 4; i++) {
-                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
-                if (expected_output5[test_index][i] != actual_output5[i]) {
-                    compare = false;
-                    break;
-                }
-            }
-            if (compare) {
-                printf("PASSED\n");
-            }
-            else {
-                printf("FAILED\n");
-            }
-            return compare == true ? 0 : 1;
+//        case 5: ; // BranchChecker
+//            // First Line segment
+//            // P11 = (5, 5), P12 = (7, 7)
+//
+//
+//            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+//            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+//
+//            for (int i = 0; i < 4; i++) {
+//                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
+//                if (expected_output5[test_index][i] != actual_output5[i]) {
+//                    compare = false;
+//                    break;
+//                }
+//            }
+//            if (compare) {
+//                printf("PASSED\n");
+//            }
+//            else {
+//                printf("FAILED\n");
+//            }
+//            return compare == true ? 0 : 1;
 
         case 6: ;
             struct Node* root = NULL;
@@ -414,18 +414,18 @@ int main(int argc, char *argv[]) {
 //            for (int i = 0; i < 11; i++) {
 //                root = Insert(root, input6_1[test_index][i]);
 //            }
-            root = arrInsertDelete(root, input6_1[test_index][0]
-                                  , input6_1[test_index][1]
-                                  , input6_1[test_index][2]
-                                  , input6_1[test_index][3]
-                                  , input6_1[test_index][4]
-                                  , input6_1[test_index][5]
-                                  , input6_1[test_index][6]
-                                  , input6_1[test_index][7]
-                                  , input6_1[test_index][8]
-                                  , input6_1[test_index][9]
-                                  , input6_1[test_index][10]
-            );
+//            root = arrInsertDelete(root, input6_1[test_index][0]
+//                                  , input6_1[test_index][1]
+//                                  , input6_1[test_index][2]
+//                                  , input6_1[test_index][3]
+//                                  , input6_1[test_index][4]
+//                                  , input6_1[test_index][5]
+//                                  , input6_1[test_index][6]
+//                                  , input6_1[test_index][7]
+//                                  , input6_1[test_index][8]
+//                                  , input6_1[test_index][9]
+//                                  , input6_1[test_index][10]
+//            );
 
 //            for (int i = 0; i < 3; i++) {
 //                root = Delete(root, input6_2[test_index][i]);
@@ -434,7 +434,18 @@ int main(int argc, char *argv[]) {
 //                                , input6_2[test_index][1]
 //                                , input6_2[test_index][2]);
 
-            int* actual_output6 = getInorder(root);
+            int* actual_output6 = arrInsertDelete(root, input6_1[test_index][0]
+                                                            , input6_1[test_index][1]
+                                                            , input6_1[test_index][2]
+                                                            , input6_1[test_index][3]
+                                                            , input6_1[test_index][4]
+                                                            , input6_1[test_index][5]
+                                                            , input6_1[test_index][6]
+                                                            , input6_1[test_index][7]
+                                                            , input6_1[test_index][8]
+                                                            , input6_1[test_index][9]
+                                                            , input6_1[test_index][10]
+            );
 
             for (int i = 0; i < 11; i++) {
                 printf("%d, ", actual_output6[i]);
