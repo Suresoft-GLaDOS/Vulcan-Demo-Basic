@@ -14,7 +14,7 @@ Node* LR(Node* node);
 Node* RL(Node* node);
 Node* AVLSet(Node* node);
 Node* Insert(Node* node, int data);
-int* arrInsertDelete(Node* node, int data1,
+Node* arrInsertDelete(Node* node, int data1,
                             int data2,
                             int data3,
                             int data4,
