@@ -216,7 +216,7 @@ Node* Delete(Node* node, int data)
     {
         if (node->Left == NULL && node->Right == NULL) {
             node = ((void *)0);
-        } else if (node->Left != NULL) { //Original: node->Left != NULL && node->Right == NULL
+        } else if ((node->Left != ((void *)0)) && !(node->Right != 0)) {
             node->Left->Parent = node->Parent;
             node = node->Left;
         } else if (node->Left == ((void *)0) && node->Right != ((void *)0)) {
