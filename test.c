@@ -411,25 +411,25 @@ int main(int argc, char *argv[]) {
         case 6: ;
             struct Node* root = NULL;
 
-//            for (int i = 0; i < 11; i++) {
-//                root = Insert(root, input6_1[test_index][i]);
-//            }
-            root = arrInsertDelete(root, input6_1[test_index][0]
-                                  , input6_1[test_index][1]
-                                  , input6_1[test_index][2]
-                                  , input6_1[test_index][3]
-                                  , input6_1[test_index][4]
-                                  , input6_1[test_index][5]
-                                  , input6_1[test_index][6]
-                                  , input6_1[test_index][7]
-                                  , input6_1[test_index][8]
-                                  , input6_1[test_index][9]
-                                  , input6_1[test_index][10]
-            );
+            for (int i = 0; i < 11; i++) {
+                root = Insert(root, input6_1[test_index][i]);
+            }
+//            root = arrInsertDelete(root, input6_1[test_index][0]
+//                                  , input6_1[test_index][1]
+//                                  , input6_1[test_index][2]
+//                                  , input6_1[test_index][3]
+//                                  , input6_1[test_index][4]
+//                                  , input6_1[test_index][5]
+//                                  , input6_1[test_index][6]
+//                                  , input6_1[test_index][7]
+//                                  , input6_1[test_index][8]
+//                                  , input6_1[test_index][9]
+//                                  , input6_1[test_index][10]
+//            );
 
-//            for (int i = 0; i < 3; i++) {
-//                root = Delete(root, input6_2[test_index][i]);
-//            }
+            for (int i = 0; i < 3; i++) {
+                root = Delete(root, input6_2[test_index][i]);
+            }
 //            root = arrDelete(root, input6_2[test_index][0]
 //                                , input6_2[test_index][1]
 //                                , input6_2[test_index][2]);
