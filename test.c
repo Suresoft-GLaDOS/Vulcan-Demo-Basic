@@ -209,6 +209,18 @@ int expected_output6[TEST_SIZE][11] = {
 //    {-13, -8, -2, 6, 24, 31, 36, 40, 76}
 };
 
+int expected_output6_orig[TEST_SIZE][11] = {
+        {20, 25, 32, 55},
+        {6, 8, 30},
+        {1, 2, 3, 4, 7},
+        {2, 20, 25, 200},
+        {1, 2, 3, 4, 5, 6, 7},
+        {2, 3, 5, 20, 200},
+//    {-29, -24, -18, -10, 8, 15, 20, 24, 60},
+        {1, 6, 12, 20, 38, 45, 50, 54, 90}
+//    {-13, -8, -2, 6, 24, 31, 36, 40, 76}
+};
+
 int expected_output7[TEST_SIZE][11] = {
     {20, 25, 32, 55},
     {6, 8, 30},
@@ -442,8 +454,8 @@ int main(int argc, char *argv[]) {
             int i = 0;
             compare = true;
             for (int i = 0; i < 11; i++) {
-                printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6[test_index][i]);
-                if (actual_output6[i] != expected_output6[test_index][i]) {
+                printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6_orig[test_index][i]);
+                if (actual_output6[i] != expected_output6_orig[test_index][i]) {
 
                     compare = false;
                     break;
