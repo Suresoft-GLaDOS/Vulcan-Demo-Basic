@@ -247,6 +247,7 @@ int main(int argc, char *argv[]) {
 #endif
     int test_case = atoi(argv[1]);
     int test_index = atoi(argv[2]); //e.q. ./test 2 3
+    int test_orig = atoi(argv[3]);
     bool compare = true;
 
     double input5[TEST_SIZE][4] = {
@@ -422,59 +423,79 @@ int main(int argc, char *argv[]) {
 
         case 6: ;
             struct Node* root = NULL;
+            int* actual_output6 = NULL;
 
-            for (int i = 0; i < 11; i++) {
-                root = Insert(root, input6_1[test_index][i]);
-            }
+            if (test_orig == 0) {
+                for (int i = 0; i < 11; i++) {
+                    root = Insert(root, input6_1[test_index][i]);
+                }
 
 
-            for (int i = 0; i < 3; i++) {
-                root = Delete(root, input6_2[test_index][i]);
-            }
+                for (int i = 0; i < 3; i++) {
+                    root = Delete(root, input6_2[test_index][i]);
+                }
 //            root = arrDelete(root, input6_2[test_index][0]
 //                                , input6_2[test_index][1]
 //                                , input6_2[test_index][2]);
 
-            int* actual_output6 = getInorder(root);
+                actual_output6 = getInorder(root);
+            }
+            else {
+                root = NULL;
+                root = arrInsertDelete(root, input6_1[test_index][0]
+                        , input6_1[test_index][1]
+                        , input6_1[test_index][2]
+                        , input6_1[test_index][3]
+                        , input6_1[test_index][4]
+                        , input6_1[test_index][5]
+                        , input6_1[test_index][6]
+                        , input6_1[test_index][7]
+                        , input6_1[test_index][8]
+                        , input6_1[test_index][9]
+                        , input6_1[test_index][10]
+                );
 
-            root = NULL;
-            root = arrInsertDelete(root, input6_1[test_index][0]
-                      , input6_1[test_index][1]
-                      , input6_1[test_index][2]
-                      , input6_1[test_index][3]
-                      , input6_1[test_index][4]
-                      , input6_1[test_index][5]
-                      , input6_1[test_index][6]
-                      , input6_1[test_index][7]
-                      , input6_1[test_index][8]
-                      , input6_1[test_index][9]
-                      , input6_1[test_index][10]
-            );
+                actual_output6 = getInorder(root);
+            }
 
-            int* actual_output6_2 = getInorder(root);
+
+
 
             for (int i = 0; i < 11; i++) {
                 printf("%d, ", actual_output6[i]);
             }
             int i = 0;
             compare = true;
-            for (int i = 0; i < 11; i++) {
-                printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6_orig[test_index][i]);
-                if (actual_output6[i] != expected_output6_orig[test_index][i]) {
+            if (test_orig == 0) {
+                for (int i = 0; i < 11; i++) {
+                    printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6_orig[test_index][i]);
+                    if (actual_output6[i] != expected_output6_orig[test_index][i]) {
 
-                    compare = false;
-                    break;
+                        compare = false;
+                        break;
+                    }
+                }
+            }
+            else {
+                for (int i = 0; i < 11; i++) {
+                    printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6[test_index][i]);
+                    if (actual_output6[i] != expected_output6[test_index][i]) {
+
+                        compare = false;
+                        break;
+                    }
                 }
             }
 
-            for (int i = 0; i < 11; i++) {
-                printf("Actual: %d  Expected: %d\n", actual_output6_2[i], expected_output6[test_index][i]);
-                if (actual_output6_2[i] != expected_output6[test_index][i]) {
 
-//                    compare = false;
-                    break;
-                }
-            }
+//            for (int i = 0; i < 11; i++) {
+//                printf("Actual: %d  Expected: %d\n", actual_output6_2[i], expected_output6[test_index][i]);
+//                if (actual_output6_2[i] != expected_output6[test_index][i]) {
+//
+////                    compare = false;
+//                    break;
+//                }
+//            }
 
             if (compare) {
                 printf("PASSED\n");
