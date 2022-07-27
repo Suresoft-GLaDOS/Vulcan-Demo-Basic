@@ -117,9 +117,7 @@ Node* arrInsertDelete(Node* node, int data1,
     node = Insert(node, data10);
     node = Insert(node, data11);
 
-    node = Delete(node, data1);
-    node = Delete(node, data2);
-    node = Delete(node, data3);
+    node = Delete(node, data9);
 
     return node;
 }
