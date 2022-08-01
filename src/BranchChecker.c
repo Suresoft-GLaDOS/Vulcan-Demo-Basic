@@ -71,7 +71,7 @@ double* cohenSutherlandClip(double x1, double y1,
     // Initialize line as outside the rectangular window
     bool accept = false;
 
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 8; i++) {
 
         if ((code1 == 0) && (code2 == 0)) { // && (code2 == 0) Condition add
             // If both endpoints lie within rectangle
@@ -137,6 +137,14 @@ double* cohenSutherlandClip(double x1, double y1,
                 y2 = y;
                 code2 = computeCode(x2, y2);
             }
+        }
+        if (i > 4) {
+            clippedLine[0] = 0;
+            clippedLine[1] = 0;
+            clippedLine[2] = 0;
+            clippedLine[3] = 0;
+            printf("Line rejected\n");
+            return clippedLine
         }
     }
     clippedLine[0] = x1;

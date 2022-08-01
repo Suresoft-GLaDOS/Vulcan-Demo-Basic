@@ -346,7 +346,14 @@ int main(int argc, char *argv[]) {
             };
 
             setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
+            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0],
+                                                         input5_1[test_index][1],
+                                                         input5_1[test_index][2],
+                                                         input5_1[test_index][3],
+                                                         input5[test_index][0],
+                                                         input5[test_index][1],
+                                                         input5[test_index][2],
+                                                         input5[test_index][3]);
 
             for (int i = 0; i < 4; i++) {
                 printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
