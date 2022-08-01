@@ -326,7 +326,7 @@ int main(int argc, char *argv[]) {
         case 5: ; // BranchChecker
             // First Line segment
             // P11 = (5, 5), P12 = (7, 7)
-            double input5[TEST_SIZE][4] = {
+            int input5[TEST_SIZE][4] = {
                 {10, 8, 4, 4},
 
             //    {10, 8, 4, 4},
@@ -336,8 +336,8 @@ int main(int argc, char *argv[]) {
             };
 
 
-            double input5_1[TEST_SIZE][4] = {
-                {5.0, 5.0, 7.0, 7.0},
+            int input5_1[TEST_SIZE][4] = {
+                {5, 5, 7, 7},
 
             //    {1, 5, 4, 1},
                 {4, 12, 8, 8},

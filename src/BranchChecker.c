@@ -55,14 +55,24 @@ int computeCode(double x, double y)
 
 // Implementing Cohen-Sutherland algorithm
 // Clipping a line from P1 = (x2, y2) to P2 = (x2, y2)
-double* cohenSutherlandClip(double x1, double y1,
-                         double x2, double y2, double rectangle0, double rectangle1, double rectangle2, double rectangle3)
+double* cohenSutherlandClip(int x1, int y1,
+                         int x2, int y2, int rectangle0, int rectangle1, int rectangle2, int rectangle3)
 {
-    setRectangle(rectangle0, rectangle1, rectangle2, rectangle3);
+    double dx1 = x1;
+    double dx2 = x2;
+    double dy1 = y1;
+    double dy2 = y2;
+
+    double dr0 = rectangle0;
+    double dr1 = rectangle1;
+    double dr2 = rectangle2;
+    double dr3 = rectangle3;
+
+    setRectangle(dr0, dr1, dr2, dr3);
     // Compute region codes for P1, P2
     printf("%f %f %f %f\n", x1, y1, x2, y2);
-    int code1 = computeCode(x1, y1);
-    int code2 = computeCode(x2, y2);
+    int code1 = computeCode(dx1, dy1);
+    int code2 = computeCode(dx2, dy2);
 
     printf("code1: %d code2: %d\n", code1, code2);
 
@@ -103,23 +113,23 @@ double* cohenSutherlandClip(double x1, double y1,
             // x = x1 + (1 / slope) * (y - y1)
             if (code_out & TOP) { //original: code_out & TOP
                 // point is above the clip rectangle
-                x = x1 + (x2 - x1) * (y_max - y1) / (y2 - y1);
+                x = dx1 + (dx2 - dx1) * (y_max - dy1) / (dy2 - dy1);
                 y = y_max;
             }
             else if (code_out & BOTTOM) {
                 // point is below the rectangle
-                x = x1 + (x2 - x1) * (y_min - y1) / (y2 - y1);
+                x = dx1 + (dx2 - dx1) * (y_min - dy1) / (dy2 - dy1);
                 y = y_min;
             }
             else if (code_out & RIGHT) {
                 // point is to the right of rectangle
-//                y = (y2 - y1) * (x_max - x1) / (x2 - x1) + y1; //Original
-                y = (y2 - y1) * (x_max - x1) / (x2 - x1) + x1;
+//                y = (dy2 - dy1) * (x_max - dx1) / (dx2 - dx1) + dy1; //Original
+                y = (dy2 - dy1) * (x_max - dx1) / (dx2 - dx1) + dx1;
                 x = x_max;
             }
             else if (code_out & LEFT) {
                 // point is to the left of rectangle
-                y = y1 + (y2 - y1) * (x_min - x1) / (x2 - x1);  // Original
+                y = dy1 + (dy2 - dy1) * (x_min - dx1) / (dx2 - dx1);  // Original
 //                y = x1 + (y2 - y1) * (x_min - x1) / (x2 - x1);
                 x = x_min;
             }
@@ -128,14 +138,14 @@ double* cohenSutherlandClip(double x1, double y1,
             // We replace point outside rectangle
             // by intersection point
             if (code_out == code1) {
-                x1 = x;
-                y1 = y;
-                code1 = computeCode(x1, y1);
+                dx1 = x;
+                dy1 = y;
+                code1 = computeCode(dx1, dy1);
             }
             else {
-                x2 = x;
-                y2 = y;
-                code2 = computeCode(x2, y2);
+                dx2 = x;
+                dy2 = y;
+                code2 = computeCode(dx2, dy2);
             }
         }
         if (i > 4) {
@@ -147,12 +157,12 @@ double* cohenSutherlandClip(double x1, double y1,
             return clippedLine;
         }
     }
-    clippedLine[0] = x1;
-    clippedLine[1] = y1;
-    clippedLine[2] = x2;
-    clippedLine[3] = y2;
+    clippedLine[0] = dx1;
+    clippedLine[1] = dy1;
+    clippedLine[2] = dx2;
+    clippedLine[3] = dy2;
     if (accept) {
-        printf("Line accepted from %f, %f to %f, %f\n", x1, y1, x2, y2);
+        printf("Line accepted from %f, %f to %f, %f\n", dx1, dy1, dx2, dy2);
         // Here the user can add code to display the rectangle
         // along with the accepted (portion of) lines
     }
