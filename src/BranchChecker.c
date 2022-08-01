@@ -144,7 +144,7 @@ double* cohenSutherlandClip(double x1, double y1,
             clippedLine[2] = 0;
             clippedLine[3] = 0;
             printf("Line rejected\n");
-            return clippedLine
+            return clippedLine;
         }
     }
     clippedLine[0] = x1;
