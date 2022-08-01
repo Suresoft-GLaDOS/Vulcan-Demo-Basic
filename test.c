@@ -351,7 +351,7 @@ int main(int argc, char *argv[]) {
                                                          input5_1[test_index][2],
                                                          input5_1[test_index][3],
                                                          input5[test_index][0],
-                                                         input5[test_index][1],
+                                                         input5[test_index][1]-1,
                                                          input5[test_index][2],
                                                          input5[test_index][3]);
 
