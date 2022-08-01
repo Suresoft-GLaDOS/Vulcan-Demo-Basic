@@ -331,7 +331,7 @@ int main(int argc, char *argv[]) {
 
             //    {10, 8, 4, 4},
                 {9, 9, 5, 5},
-                {9, 9, 5, 5},
+                {9, 11, 5, 5},
                 {10, 8, 4, 4}
             };
 
@@ -351,7 +351,7 @@ int main(int argc, char *argv[]) {
                                                          input5_1[test_index][2],
                                                          input5_1[test_index][3],
                                                          input5[test_index][0],
-                                                         input5[test_index][1]-1,
+                                                         input5[test_index][1],
                                                          input5[test_index][2],
                                                          input5[test_index][3]);
 
@@ -359,7 +359,7 @@ int main(int argc, char *argv[]) {
                 printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
                 if (expected_output5[test_index][i] != actual_output5[i]) {
                     compare = false;
-                    break;
+//                    break;
                 }
             }
             if (compare) {
