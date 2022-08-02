@@ -70,7 +70,7 @@ double* cohenSutherlandClip(int x1, int y1,
 
     setRectangle(dr0, dr1, dr2, dr3);
     // Compute region codes for P1, P2
-    printf("%f %f %f %f\n", x1, y1, x2, y2);
+//    printf("%f %f %f %f\n", x1, y1, x2, y2);
     int code1 = computeCode(dx1, dy1);
     int code2 = computeCode(dx2, dy2);
 
