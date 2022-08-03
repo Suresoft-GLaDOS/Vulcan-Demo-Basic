@@ -1,0 +1,20 @@
+test-bopomofo 0 0
+test-config 2 17.4307
+test-easy-symbol 2 0.0344859
+test-error-handling 2 0.00293248
+test-fullshape 2 0.0144592
+test-key2pho 2 0.00274489
+test-keyboard 2 0.0245489
+test-keyboardless 2 0.50458
+test-logger 2 0.017834
+test-mmap 2 0.00344249
+test-path 2 0.0040628
+test-regression 2 0.12475
+test-reset 2 0.0220458
+test-special-symbol 2 0.0235965
+test-struct-size 2 0.00222505
+test-symbol 2 0.0420579
+test-userphrase 2 0.432095
+test-utf8 2 0.00268272
+---
+test-bopomofo

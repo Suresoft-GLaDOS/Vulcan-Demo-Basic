@@ -1,0 +1,2692 @@
+#
+# test_ShiftLeft_not_entering_chewing
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1068 chewing_handle_ShiftLeft] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:424 chewing_keystroke_CheckIgnore] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:438 chewing_keystroke_CheckAbsorb] API call: 
+#
+# test_ShiftLeft_add_userphrase
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1068 chewing_handle_ShiftLeft] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1068 chewing_handle_ShiftLeft] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1649 chewing_handle_CtrlNum] API call: 
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 5
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:183 chewing_cursor_Current] API call: 
+#
+# test_ShiftRight_not_entering_chewing
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1138 chewing_handle_ShiftRight] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:424 chewing_keystroke_CheckIgnore] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:438 chewing_keystroke_CheckAbsorb] API call: 
+#
+# test_ShiftRight_add_userphrase
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1103 chewing_handle_Left] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1103 chewing_handle_Left] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1138 chewing_handle_ShiftRight] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1138 chewing_handle_ShiftRight] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1649 chewing_handle_CtrlNum] API call: 
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 5
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:183 chewing_cursor_Current] API call: 
+#
+# test_CtrlNum_add_phrase_right
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:519 chewing_set_addPhraseDirection] API call: direction = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1303 chewing_handle_Home] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1649 chewing_handle_CtrlNum] API call: 
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 5
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:368 chewing_aux_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:382 chewing_aux_Length] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:410 chewing_aux_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:396 chewing_aux_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:183 chewing_cursor_Current] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1649 chewing_handle_CtrlNum] API call: 
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9319, recent_time = 5
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23319 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:368 chewing_aux_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:382 chewing_aux_Length] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:410 chewing_aux_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:396 chewing_aux_String_static] API call: 
+#
+# test_CtrlNum_add_phrase_left
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:519 chewing_set_addPhraseDirection] API call: direction = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1649 chewing_handle_CtrlNum] API call: 
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 5
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:368 chewing_aux_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:382 chewing_aux_Length] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:410 chewing_aux_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:396 chewing_aux_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:183 chewing_cursor_Current] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1649 chewing_handle_CtrlNum] API call: 
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9319, recent_time = 5
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23319 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:368 chewing_aux_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:382 chewing_aux_Length] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:410 chewing_aux_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:396 chewing_aux_String_static] API call: 
+#
+# test_CtrlNum_add_phrase_right_symbol_in_between
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:519 chewing_set_addPhraseDirection] API call: direction = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=49nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1303 chewing_handle_Home] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1649 chewing_handle_CtrlNum] API call: 
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:183 chewing_cursor_Current] API call: 
+#
+# test_CtrlNum_add_phrase_left_symbol_in_between
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:519 chewing_set_addPhraseDirection] API call: direction = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=49nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1649 chewing_handle_CtrlNum] API call: 
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:183 chewing_cursor_Current] API call: 
+#
+# test_userphrase_auto_learn
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 100
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=100		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:802 chewing_handle_Space] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 32
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=32		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 100
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=100		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:802 chewing_handle_Space] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 32
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=32		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 100
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=100		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:802 chewing_handle_Space] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 32
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=32		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 4
+phoneSeq  : 5144 5144 5144 10268 [cursor : 4]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] [3 4] 
+      score : 10000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 3 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 3, to = 4
+nPhoneSeq : 4
+phoneSeq  : 5144 5144 5144 10268 [cursor : 4]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] [3 4] 
+      score : 10000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 3 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 3, to = 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 4
+phoneSeq  : 5144 5144 5144 10268 [cursor : 4]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] [3 4] 
+      score : 10000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 3 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 3, to = 4
+nPhoneSeq : 4
+phoneSeq  : 5144 5144 5144 10268 [cursor : 4]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] [3 4] 
+      score : 10000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 3 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 3, to = 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 5
+phoneSeq  : 5144 5144 5144 10268 8708 [cursor : 5]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] [3 5] 
+      score : 21018 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 3 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 3, to = 5
+nPhoneSeq : 5
+phoneSeq  : 5144 5144 5144 10268 8708 [cursor : 5]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 0 0 
+bArrBrkpt     : 0 0 0 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] [3 5] 
+      score : 21018 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 2, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 3 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 3, to = 5
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 0, fromPreeditBuf = 0, len = 1, pending_pos = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 1 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 1, fromPreeditBuf = 1, len = 1, pending_pos = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 1, len 1 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 2, fromPreeditBuf = 2, len = 1, pending_pos = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 2, len 1 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 3 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 3, fromPreeditBuf = 3, len = 2, pending_pos = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 科科科, phone = 0x1418 0x1418 0x1418 , orig_freq = 1, max_freq = 1, user_freq = 1, recent_time = 14
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 3, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 14
+#
+# test_userphrase_auto_learn_with_symbol
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 51
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=51nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=49nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 100
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=100		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:802 chewing_handle_Space] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 32
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=32		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 51
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=51nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=49nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 100
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=100		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 5144 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 1 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:802 chewing_handle_Space] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 32
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=32		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 1 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 1 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 100
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=100		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 1 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 1 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 1 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 5144 5144 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 1 1 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:802 chewing_handle_Space] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 32
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=32		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 1 1 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 4, from = 2, to = 3
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 1 1 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 4, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 96
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=96		Chinese mode key, BopomofoPhoInput return value = 6
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 1 1 0 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 4, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 51
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=51nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 1 1 0 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 4, from = 2, to = 3
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 1 1 0 0 
+bChiSym : 1 , bSelect : 1
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 4, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 49
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=49nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 1 1 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 4, from = 2, to = 3
+nPhoneSeq : 3
+phoneSeq  : 5144 5144 5144 [cursor : 3]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 0 
+bUserArrBrkpt : 0 0 0 0 
+bArrBrkpt     : 1 1 0 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] [2 3] 
+      score : 9000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 3, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 4, from = 2, to = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 0, fromPreeditBuf = 1, len = 1, pending_pos = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 1, len 1 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 1, fromPreeditBuf = 3, len = 1, pending_pos = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 科, phone = 0x1418 , orig_freq = 0, max_freq = 1, user_freq = 0, recent_time = 18
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 3, len 1 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 2 to preeditBuf index 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 2, fromPreeditBuf = 4, len = 1, pending_pos = 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 4, len 1 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 科科, phone = 0x1418 0x1418 , orig_freq = 1, max_freq = 1, user_freq = 1, recent_time = 18
+#
+# test_userphrase_auto_learn_hardcode_break
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:519 chewing_set_addPhraseDirection] API call: direction = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 50
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=50		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 55
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=55		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 2585 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 2585 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 50
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=50		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 2585 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 2585 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 2585 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 2585 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 55
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=55		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 2585 2585 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+nPhoneSeq : 2
+phoneSeq  : 2585 2585 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] [1 2] 
+      score : 8000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 1, from = 1, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 0, fromPreeditBuf = 0, len = 1, pending_pos = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 1 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 的, phone = 0x0a19 , orig_freq = 0, max_freq = 1, user_freq = 0, recent_time = 6
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 1 to preeditBuf index 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 1, fromPreeditBuf = 1, len = 1, pending_pos = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 1, len 1 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 的, phone = 0x0a19 , orig_freq = 0, max_freq = 1, user_freq = 10, recent_time = 6
+#
+# test_userphrase_enumerate_normal
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1859 chewing_userphrase_enumerate] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1887 chewing_userphrase_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1936 chewing_userphrase_get] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1887 chewing_userphrase_has_next] API call: 
+#
+# test_userphrase_enumerate_empty
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1859 chewing_userphrase_enumerate] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1887 chewing_userphrase_has_next] API call: 
+#
+# test_userphrase_enumerate_rewind
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1859 chewing_userphrase_enumerate] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1887 chewing_userphrase_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1936 chewing_userphrase_get] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1859 chewing_userphrase_enumerate] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1887 chewing_userphrase_has_next] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1936 chewing_userphrase_get] API call: 
+#
+# test_userphrase_manipulate_normal
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2036 chewing_userphrase_remove] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+#
+# test_userphrase_manipulate_maximum
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 金窩銀窩不如自己的狗窩, phone = 0x18d0 0x0110 0x00d2 0x0110 0x0304 0x2502 0x2604 0x1883 0x0a19 0x1243 0x0110 , orig_freq = 1, max_freq = 1, user_freq = 1, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:213 UserUpdatePhrase] wordSeq length 12 > MAX_PHRASE_LEN (11)
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:32 UserBindPhone] phoneSeq length 12 > MAX_PHRASE_LEN(11)
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:400 UserGetPhraseFirst] UserBindPhone returns -1
+#
+# test_userphrase_manipulate_hash_collision
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試測試測試, phone = 0x281c 0x2204 0x281c 0x2204 0x281c 0x2204 , orig_freq = 1, max_freq = 1, user_freq = 1, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2036 chewing_userphrase_remove] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2036 chewing_userphrase_remove] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+#
+# test_userphrase_manipulate_error_handling
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2036 chewing_userphrase_remove] API call: 
+#
+# test_userphrase_manipulate_remove_same_phone
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 側室, phone = 0x281c 0x2204 , orig_freq = 318, max_freq = 9318, user_freq = 318, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2036 chewing_userphrase_remove] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+#
+# test_userphrase_manipulate_remove_same_phrase
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 什麼, phone = 0x2252 0x0619 , orig_freq = 20445, max_freq = 20445, user_freq = 20445, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1996 chewing_userphrase_add] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 什麼, phone = 0x221a 0x0619 , orig_freq = 20445, max_freq = 20445, user_freq = 20445, recent_time = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2036 chewing_userphrase_remove] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+#
+# test_userphrase_manipulate_remove_non_userphrase
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2036 chewing_userphrase_remove] API call: 
+#
+# test_userphrase_lookup
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:2066 chewing_userphrase_lookup] API call: 

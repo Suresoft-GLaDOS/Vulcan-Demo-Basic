@@ -1,0 +1,243 @@
+#
+# test_set_keyboard_type
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_DEFAULT
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_DEFAULT
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_HSU
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_IBM
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_GIN_YIEH
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 3
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_ET
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 4
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 5
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_ET26
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 5
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 6
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_DVORAK
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 6
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 7
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_DVORAK_HSU
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 7
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 8
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_DACHEN_CP26
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 8
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 9
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_HANYU_PINYIN
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 9
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 10
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_THL_PINYIN
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 10
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 11
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_MPS2_PINYIN
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 11
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 12
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:382 chewing_get_KBString] API call: KBString = KB_CARPALX
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 12
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = -1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 14
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:368 chewing_get_KBType] API call: kbtype = 0
+#
+# test_KBStr2Num
+#
+#
+# test_enumerate_keyboard_type
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:457 chewing_kbtype_Enumerate] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:507 chewing_kbtype_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:488 chewing_kbtype_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:471 chewing_kbtype_hasNext] API call: 
+#
+# test_hsu_po_to_bo
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 112
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=112		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 98
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=98		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+#
+# test_et26_po_to_bo
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:348 chewing_set_KBType] API call: kbtype = 5
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 112
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=112		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 98
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=98		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:169 chewing_bopomofo_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:155 chewing_bopomofo_String_static] API call: 

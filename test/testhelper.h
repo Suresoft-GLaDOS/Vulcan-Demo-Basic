@@ -17,6 +17,8 @@
 #include "chewingio.h"
 #include "chewing-utf8-util.h"
 
+#include "plat_path.h"
+
 #define KEY_DBLTAB	892     // <TT>
 #define KEY_SSPACE	893     // <SS>
 #define KEY_PPAGE	894     // <PU>
@@ -73,13 +75,13 @@ typedef struct TestData {
 } TestData;
 
 typedef struct BufferType {
-    char *name;
-    int (*check) (ChewingContext *ctx);
-    int (*check_alt) (ChewingContext *ctx);
-    int (*get_length) (ChewingContext *ctx);
-    char *(*get_string) (ChewingContext *ctx);
-    char *(*get_string_alt) (ChewingContext *ctx, int *len);
-    const char *(*get_string_static) (ChewingContext *ctx);
+    const char *name;
+    int (*check) (const ChewingContext *ctx);
+    int (*check_alt) (const ChewingContext *ctx);
+    int (*get_length) (const ChewingContext *ctx);
+    char *(*get_string) (const ChewingContext *ctx);
+    char *(*get_string_alt) (const ChewingContext *ctx, int *len);
+    const char *(*get_string_static) (const ChewingContext *ctx);
 } BufferType;
 
 extern BufferType COMMIT_BUFFER;
@@ -90,7 +92,7 @@ extern BufferType AUX_BUFFER;
 typedef int (*get_char_func) (void *param);
 
 int get_keystroke(get_char_func get_char, void *param);
-void type_keystroke_by_string(ChewingContext *ctx, char *keystroke);
+void type_keystroke_by_string(ChewingContext *ctx, const char *keystroke);
 void type_single_keystroke(ChewingContext *ctx, int ch);
 int exit_status();
 void clean_userphrase();

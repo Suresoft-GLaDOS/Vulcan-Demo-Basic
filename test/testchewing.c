@@ -2,7 +2,7 @@
  * testchewing.c
  *
  * Copyright (c) 2004, 2005, 2008, 2011
- *	libchewing Core Team. See ChangeLog for details.
+ *      libchewing Core Team. See ChangeLog for details.
  *
  * See the file "COPYING" for information on usage and redistribution
  * of this file.
@@ -121,7 +121,6 @@ int main()
     /* Free Chewing IM handle */
     chewing_delete(ctx);
 
-    /* Termate Chewing services */
 #ifndef USED_IN_SIMULATION
     printf("\n");
 #endif

@@ -1,0 +1,1235 @@
+#
+# test_type_easy_symbol
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:635 chewing_set_easySymbolInput] API call: mode = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 81
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=81nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 87
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=87nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 65
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=65nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 83
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=83nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 90
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=90nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 88
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=88nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 69
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=69nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 82
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=82nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 68
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=68nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 70
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=70nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 67
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=67nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 86
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=86nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 84
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=84nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 89
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=89nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 71
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=71nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 72
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=72nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 66
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=66nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 78
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=78nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 85
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=85nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 73
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=73nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 79
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=79nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 80
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=80nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 74
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=74nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 75
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=75nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 76
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=76nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 77
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=77nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:93 chewing_buffer_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:107 chewing_buffer_Len] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:121 chewing_buffer_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:135 chewing_buffer_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+#
+# test_mode_change
+#
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:450 chewing_set_maxChiSymbolLen] API call: n = 16
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 0, fromPreeditBuf = 0, len = 2, pending_pos = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9318, recent_time = 722
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:635 chewing_set_easySymbolInput] API call: mode = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 81
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=81nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 1 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:635 chewing_set_easySymbolInput] API call: mode = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 104
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=104		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 107
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=107		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+nPhoneSeq : 0
+phoneSeq  : [cursor : 0]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 
+bUserArrBrkpt : 0 
+bArrBrkpt     : 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : 
+      score : 0 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 103
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=103		Chinese mode key, BopomofoPhoInput return value = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+nPhoneSeq : 1
+phoneSeq  : 10268 [cursor : 1]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 
+bUserArrBrkpt : 0 0 
+bArrBrkpt     : 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 1] 
+      score : 7000 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 1
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:1449 chewing_handle_Default] API call: key = 52
+[ File: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c  Func: chewing_handle_Default  Line: 1466 ]
+   key=52		Chinese mode key, BopomofoPhoInput return value = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+nPhoneSeq : 2
+phoneSeq  : 10268 8708 [cursor : 2]
+nSelect : 0
+selectStr       selectInterval
+bUserArrCnnct : 0 0 0 
+bUserArrBrkpt : 0 0 0 
+bArrBrkpt     : 0 0 0 
+bChiSym : 1 , bSelect : 0
+After SaveList :
+  interval : [0 2] 
+      score : 23318 , nMatchCnnct : 0
+
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c:541 FillPreeditBuf] Fill preeditBuf start 0, from = 0, to = 2
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c:875 chewing_handle_Enter] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1494 toPreeditBufIndex] translate phoneSeq index 0 to preeditBuf index 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:594 AutoLearnPhrase] interval from = 0, fromPreeditBuf = 0, len = 2, pending_pos = 0
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c:1457 copyStringFromPreeditBuf] Copy pos 0, len 2 from preeditBuf
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase-sql.c:178 LogUserPhrase] userphrase 測試, phone = 0x281c 0x2204 , orig_freq = 9318, max_freq = 9318, user_freq = 9319, recent_time = 728
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:39 chewing_commit_Check] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:59 chewing_commit_String] API call: 
+[/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c:79 chewing_commit_String_static] API call: 

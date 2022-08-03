@@ -2,11 +2,11 @@
  * hash.c
  *
  * Copyright (c) 1999, 2000, 2001
- *	Lu-chuan Kung and Kang-pen Chen.
- *	All rights reserved.
+ *      Lu-chuan Kung and Kang-pen Chen.
+ *      All rights reserved.
  *
  * Copyright (c) 2004-2008, 2011-2014
- *	libchewing Core Team. See ChangeLog for details.
+ *      libchewing Core Team. See ChangeLog for details.
  *
  * See the file "COPYING" for information on usage and redistribution
  * of this file.
@@ -48,7 +48,7 @@ static int PhoneSeqTheSame(const uint16_t p1[], const uint16_t p2[])
 {
     int i;
 
-    if (!p1 || !p2)             /* FIXME: should not happend. */
+    if (!p1 || !p2)             /* FIXME: should not happened. */
         return 0;
 
     for (i = 0; (p1[i] != 0 && p2[i] != 0); i++) {
@@ -429,6 +429,7 @@ static int migrate_hash_to_bin(ChewingData *pgdata)
     }
     ret = fscanf(txtfile, "%d", &pgdata->static_data.chewing_lifetime);
     if (ret != 1) {
+        free(dump);
         return 0;
     }
 

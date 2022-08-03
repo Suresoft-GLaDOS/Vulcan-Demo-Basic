@@ -20,12 +20,12 @@
 
 #include "chewing.h"
 
-CHEWING_API int chewing_zuin_Check(ChewingContext *ctx)
+CHEWING_API int chewing_zuin_Check(const ChewingContext *ctx)
 {
     return !chewing_bopomofo_Check(ctx);
 }
 
-CHEWING_API char *chewing_zuin_String(ChewingContext *ctx, int *bopomofo_count)
+CHEWING_API char *chewing_zuin_String(const ChewingContext *ctx, int *bopomofo_count)
 {
     char *s = strdup(chewing_bopomofo_String_static(ctx));
 
@@ -60,11 +60,11 @@ CHEWING_API int chewing_Configure(ChewingContext *ctx, ChewingConfigData * pcd)
     return 0;
 }
 
-CHEWING_API void chewing_set_hsuSelKeyType(ChewingContext *ctx, int mode)
+CHEWING_API void chewing_set_hsuSelKeyType(ChewingContext *ctx UNUSED, int mode UNUSED)
 {
 }
 
-CHEWING_API int chewing_get_hsuSelKeyType(ChewingContext *ctx)
+CHEWING_API int chewing_get_hsuSelKeyType(ChewingContext *ctx UNUSED)
 {
     return 0;
 }

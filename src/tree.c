@@ -2,19 +2,19 @@
  * tree.c
  *
  * Copyright (c) 1999, 2000, 2001
- *	Lu-chuan Kung and Kang-pen Chen.
- *	All rights reserved.
+ *      Lu-chuan Kung and Kang-pen Chen.
+ *      All rights reserved.
  *
  * Copyright (c) 2004-2006, 2008, 2010-2014
- *	libchewing Core Team. See ChangeLog for details.
+ *      libchewing Core Team. See ChangeLog for details.
  *
  * See the file "COPYING" for information on usage and redistribution
  * of this file.
  */
 
 /**
- *	@file tree.c
- *	@brief API for accessing the phrase tree.
+ * @file tree.c
+ * @brief API for accessing the phrase tree.
  */
 #include <assert.h>
 #include <stdio.h>
@@ -151,6 +151,8 @@ static int CheckUserChoose(ChewingData *pgdata,
      * also store the phrase with highest freq
      */
     pUserPhraseData = UserGetPhraseFirst(pgdata, new_phoneSeq);
+    if (pUserPhraseData == NULL)
+      goto end;
     p_phr->freq = -1;
     do {
         for (chno = 0; chno < nSelect; chno++) {
@@ -183,7 +185,7 @@ static int CheckUserChoose(ChewingData *pgdata,
 
     if (p_phr->freq != -1)
         return 1;
-
+  end:
     free(p_phr);
     return 0;
 }
@@ -306,7 +308,7 @@ static void internal_release_Phrase(UsedPhraseMode mode, Phrase *pUser, Phrase *
         if (pUser != NULL)
             free(pUser);
         break;
-    default:                   /* In fact, it is alwyas 0 */
+    default:                   /* In fact, it is always 0 */
         if (pDict != NULL)
             free(pDict);
         if (pUser != NULL)
@@ -428,7 +430,7 @@ static int CompRecord(const RecordNode **pa, const RecordNode **pb)
  *
  * Example:
  * 國民大會 has three interval: 國民, 大會, 國民大會. This function removes
- * 國名, 大會 becasue 國民大會 contains 國民 and 大會.
+ * 國名, 大會 because 國民大會 contains 國民 and 大會.
  */
 static void Discard1(TreeDataType *ptd)
 {

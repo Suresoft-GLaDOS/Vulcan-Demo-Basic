@@ -2,7 +2,7 @@
  * testhelper.c
  *
  * Copyright (c) 2012
- *	libchewing Core Team. See ChangeLog for details.
+ *      libchewing Core Team. See ChangeLog for details.
  *
  * See the file "COPYING" for information on usage and redistribution
  * of this file.
@@ -10,6 +10,7 @@
 #include "testhelper.h"
 
 #include <assert.h>
+#include <errno.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -242,7 +243,7 @@ static void type_keystroke(ChewingContext *ctx, get_char_func get_char, void *pa
 
 static int get_char_by_string(void *param)
 {
-    char **ptr = param;
+    const char **ptr = param;
     char ch;
 
     assert(param);
@@ -263,7 +264,7 @@ void internal_ok(const char *file, int line, int test, const char *test_txt, con
     ++test_run;
     if (test) {
         ++test_ok;
-        printf("ok %d ", test_run);
+        printf("ok %u ", test_run);
 
         va_start(ap, fmt);
         vprintf(fmt, ap);
@@ -271,7 +272,7 @@ void internal_ok(const char *file, int line, int test, const char *test_txt, con
 
         printf("\n");
     } else {
-        printf("not ok %d ", test_run);
+        printf("not ok %u ", test_run);
 
         va_start(ap, fmt);
         vprintf(fmt, ap);
@@ -281,7 +282,7 @@ void internal_ok(const char *file, int line, int test, const char *test_txt, con
     }
 }
 
-void type_keystroke_by_string(ChewingContext *ctx, char *keystroke)
+void type_keystroke_by_string(ChewingContext *ctx, const char *keystroke)
 {
     type_keystroke(ctx, get_char_by_string, &keystroke);
 }
@@ -384,7 +385,7 @@ void internal_ok_candidate(const char *file, int line, ChewingContext *ctx, cons
 void internal_ok_candidate_len(const char *file, int line, ChewingContext *ctx, size_t expected_len)
 {
     const char *buf;
-    int actual_len;
+    size_t actual_len;
 
     assert(ctx);
 
@@ -398,14 +399,13 @@ void internal_ok_keystroke_rtn(const char *file, int line, ChewingContext *ctx, 
 {
     const struct {
         int rtn;
-        int (*func) (ChewingContext *ctx);
+        int (*func) (const ChewingContext *ctx);
     } TABLE[] = {
-        {
-        KEYSTROKE_IGNORE, chewing_keystroke_CheckIgnore}, {
-        KEYSTROKE_COMMIT, chewing_commit_Check},
-            // No function to check KEYSTROKE_BELL
-        {
-    KEYSTROKE_ABSORB, chewing_keystroke_CheckAbsorb},};
+        {KEYSTROKE_IGNORE, chewing_keystroke_CheckIgnore},
+        {KEYSTROKE_COMMIT, chewing_commit_Check},
+        // No function to check KEYSTROKE_BELL
+        {KEYSTROKE_ABSORB, chewing_keystroke_CheckAbsorb},
+    };
     size_t i;
     int actual;
     int expected;
@@ -433,13 +433,13 @@ int internal_has_userphrase(const char *file UNUSED, int line UNUSED,
 
     phone = calloc(MAX_PHONE_SEQ_LEN, sizeof(*phone));
     if (!phone) {
-        fprintf(stderr, "calloc fails at %s:%d", __FILE__, __LINE__);
+        fprintf(stderr, "calloc fails at %s:%d\n", __FILE__, __LINE__);
         goto end;
     }
 
     bopomofo_buf = strdup(bopomofo);
     if (!bopomofo_buf) {
-        fprintf(stderr, "strdup fails at %s:%d", __FILE__, __LINE__);
+        fprintf(stderr, "strdup fails at %s:%d\n", __FILE__, __LINE__);
         goto end;
     }
 
@@ -465,7 +465,7 @@ int internal_has_userphrase(const char *file UNUSED, int line UNUSED,
     return ret;
 }
 
-void logger(void *data, int level, const char *fmt, ...)
+void logger(void *data, int level UNUSED, const char *fmt, ...)
 {
     va_list ap;
     FILE *fd = (FILE *) data;
@@ -491,5 +491,6 @@ int exit_status()
 
 void clean_userphrase()
 {
-    remove(TEST_HASH_DIR PLAT_SEPARATOR DB_NAME);
+    if(remove(TEST_HASH_DIR PLAT_SEPARATOR DB_NAME) != 0 && errno != ENOENT)
+        fprintf(stderr, "remove fails at %s:%d\n", __FILE__, __LINE__);
 }

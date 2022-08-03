@@ -13,21 +13,19 @@ one of the most popular choices for Traditional Chinese users. Chewing was
 inspired by other proprietary intelligent Zhuyin input methods under Microsoft
 Windows, namely, Wang-Xin by Eten, Microsoft New Zhuyin, and Nature Zhuyin.
 
-The Chewing core team extended their work and actively maintains the project 
+The Chewing core team extended their work and actively maintains the project
 as full open source efforts.
 
-+ Website: http://chewing.im/  
-+ Issue tracker: http://code.google.com/p/chewing/issues/list  
++ Website: <http://chewing.im/>
++ Issue tracker: <https://github.com/chewing/libchewing/issues>
 + Mailing lists:
-   - Development: http://groups.google.com/group/chewing-devel
-   - General: http://groups.google.com/group/chewing
+   - Development: <http://groups.google.com/group/chewing-devel>
+   - General: <http://groups.google.com/group/chewing>
 + Build Status:
-   - Travis-Ci: [![Status-Icon](https://travis-ci.org/chewing/libchewing.png)]
-    (https://travis-ci.org/chewing/libchewing)
-   - Drone.io: [![Status-Icon](https://drone.io/github.com/chewing/libchewing/status.png)]
-    (https://drone.io/github.com/chewing/libchewing)
-   - Coveralls: [![Status-Icon](https://coveralls.io/repos/chewing/libchewing/badge.png?branch=master)]
-    (https://coveralls.io/r/chewing/libchewing)
+   - Travis-Ci: [![Status-Icon](https://travis-ci.org/chewing/libchewing.svg?branch=master)](https://travis-ci.org/chewing/libchewing)
+   - Coverity Scan: [![Coverity Scan Build Status](https://scan.coverity.com/projects/1273/badge.svg)](https://scan.coverity.com/projects/1273)
+   - Coveralls: [![Coverage Status](https://img.shields.io/coveralls/chewing/libchewing.svg)](https://coveralls.io/r/chewing/libchewing?branch=master)
+    - API changes/compatibility report: <http://upstream-tracker.org/versions/libchewing.html>
 
 
 ## History
@@ -64,7 +62,7 @@ platforms and framework along with community collaboration.
 ## Status
 
 
-### 1. System bridge integration  
+### 1. System bridge integration
 
 Chewing has been adopted by various input frameworks in Unix-like systems and
 even Microsoft Windows.  On these systems, the chewing package is usually
@@ -105,25 +103,25 @@ logic; and input framework interface for display and preference setting.
   - MPS2 Pinyin
 
 
-### 3. External and unmerged projects  
+### 3. External and unmerged projects
 
 libchewing provides straightforward API and design, which enables third-party
 projects to deploy the innovative.  Here are the examples:
 
   * FreeArray: utilizing libchewing for selecting phrases of Array input
-   method.  
-   https://github.com/shaform/libfreearray  
-   https://github.com/shaform/ibus-freearray  
+   method.
+   <https://github.com/shaform/libfreearray>
+   <https://github.com/shaform/ibus-freearray>
 
-  * CitC (Chewing in the Cloud): extending cloud services for real-time  
-   training and phrase selection based on Chewing IM.  
-   https://code.google.com/p/citc/  
+  * CitC (Chewing in the Cloud): extending cloud services for real-time
+   training and phrase selection based on Chewing IM.
+   <https://code.google.com/p/citc/>
 
-  * KindleChewing: Chewing IM for Kindle DX device  
-   https://github.com/tjwei/KindleChewing  
+  * KindleChewing: Chewing IM for Kindle DX device
+   <https://github.com/tjwei/KindleChewing>
 
-  * NTNU-Master Input Method: A Faster Chinese IM based on windows-chewing  
-   https://sites.google.com/site/ntnumaster001/  
+  * NTNU-Master Input Method: A Faster Chinese IM based on windows-chewing
+   <https://sites.google.com/site/ntnumaster001/>
 
 
 ## Minimal Build Tools Requirement
@@ -135,13 +133,13 @@ build libchewing. If any tools you use below this version, libchewing might not
 be built.
 
 + Build tools:
-   - autoconf >= 2.67
+   - autoconf >= 2.65
    - automake >= 1.11.6
    - libtool >= 2.4.2
    - cmake >= 2.8.8 (optional)
 + Toolchain / IDE:
    - clang >= 3.2
-   - gcc >= 4.7.3
+   - gcc >= 4.6.3
    - Visual Studio Express 2012
 + Documentation tools:
    - texinfo >= 4.12
@@ -151,10 +149,10 @@ be built.
 
 libchewing uses the following CI services:
 
-- https://travis-ci.org/chewing/libchewing (testing) 
-- https://drone.io/github.com/chewing/libchewing (testing) 
-- https://coveralls.io/r/chewing/libchewing (coverage report) 
-- https://launchpad.net/~chewing/+archive/chewing (ubuntu PPA)
+- <https://travis-ci.org/chewing/libchewing> (testing)
+- <https://drone.io/github.com/chewing/libchewing> (testing)
+- <https://coveralls.io/r/chewing/libchewing> (coverage report)
+- <https://launchpad.net/~chewing/+archive/chewing> (ubuntu PPA)
 
 
 ## Installation
@@ -184,7 +182,7 @@ Example cross-build instructions:
 To build libchewing on Windows, you need to setup MinGW and MSYS in your
 system. The installer of MinGW and MSYS is in the following link:
 
-http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/
+<http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/>
 
 In "Select Components" during installing, please select the following items:
 
@@ -229,7 +227,7 @@ print it to console.
 
 ## Build with CMake
 
-libchewing supports cmake (http://www.cmake.org/) build system. You can use the
+libchewing supports cmake (<http://www.cmake.org/>) build system. You can use the
 following command to build with cmake:
 
 	- cmake .
@@ -247,9 +245,59 @@ platform:
 	- cmake . -G "Visual Studio 11 Win64" (64-bits Windows)
 
 
+## Build on OS X
+
+To build libchewing on OS X, you will need tools listed in the requirement.
+Since OS X does not ship with those tools, building those tools from source
+could be a tricky task.
+
+A simple way to install those tools is by using Homebrew, a package manager
+for OS X. You can learn more about Homebrew or see the installation
+instruction from
+
+http://brew.sh
+
+Once Homebrew is installed, run the following commands to install the tools
+you need:
+
+        # brew install autoconf automake
+        # brew install libtool
+        # brew install cmake
+
+        # brew install texinfo
+
+
+### Autotools (autoconf, automake)
+
+If you get the source from the git repository, run:
+
+        # ./autogen.sh
+
+Because OS X uses an older version of `makeinfo`, you have to set MAKEINFO
+manually to where Homebrew installed makeinfo. For example:
+
+        # ./configure MAKEINFO=/usr/local/Cellar/texinfo/5.2/bin/makeinfo
+
+then
+
+        # make
+
+
+### cmake
+
+Because OS X uses an older version of `makeinfo`, you have to set MAKEINFO
+manually to where Homebrew installed makeinfo. For example:
+
+        # cmake -DMAKEINFO=/usr/local/Cellar/texinfo/5.2/bin/makeinfo .
+
+then
+
+        # make
+
+
 ## Usage
 
-( modified from http://code.google.com/p/ibus/wiki/ChewingUserGuide )
+( modified from <http://code.google.com/p/ibus/wiki/ChewingUserGuide> )
 
 Chewing guides the user to input Chinese by its pronunciation, in the form of
 either [Bopomofo/Zhuyin][1] or [Hanyu pinyin][2], as well as Chinese punctuation
@@ -327,16 +375,16 @@ characters are full-width pretty symbols that resemble English characters.
 	-----------   --------                   -------------
 	Shift-Space   chewing_handle_ShiftSpace  Toggle Half/Full Shape sub-mode
 
-	
+
 ### Temporary English sub-mode
-	
+
 This sub-mode is for temporary English inputting.
-	
+
 	Key binding   API name                   Functionality
 	-----------   --------                   -------------
 	Caps Lock     chewing_handle_Capslock    Toggle Temporary English sub-mode
 
-	
+
 ### Candidate Selection mode
 
 This mode is for Choosing the candidate. Firstly, the longest phrases that fit
@@ -357,7 +405,7 @@ candidates "市","是"; pressing {Down} again makes Chewing displays back the
 	Right         chewing_handle_Right       Next page of candidates
 	1, 2, ...0    chewing_handle_Default     Select 1st, 2nd, ... 10th candidate
 
-	
+
 ### Bypass mode
 
 This mode is on whenever the preedit buffer is empty. This allows you to use
@@ -376,7 +424,7 @@ implemented in file contrib/simple-select.c
 Except the following source code:
 
 * thirdparty/sqlite-amalgamation/ contains sqlite3 source which is in public
-  domain. See http://www.sqlite.org/copyright.html for more information.
+  domain. See <http://www.sqlite.org/copyright.html> for more information.
 
 * cmake/FindCurses.cmake is modified from CMake source, which is licensed under
    BSD 3-Clause.
