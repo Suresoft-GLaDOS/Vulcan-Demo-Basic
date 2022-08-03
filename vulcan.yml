@@ -32,7 +32,7 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-  declare -x ISOLATED=\"1\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
+  declare -x ISOLATED=\"1\"; index=1; ctest --output-on-failure --tests-regex $(sed -n \"1\"p < CTEST_TEST_CASE.output)$ --test-dir build
   declare -x ISOLATED=\"2\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
   declare -x ISOLATED=\"3\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
   declare -x ISOLATED=\"4\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
