@@ -2,16 +2,14 @@
  * chewing.h
  *
  * Copyright (c) 2004, 2005, 2006, 2008
- *      libchewing Core Team. See ChangeLog for details.
+ *	libchewing Core Team. See ChangeLog for details.
  *
  * See the file "COPYING" for information on usage and redistribution
  * of this file.
  */
 
-/* *INDENT-OFF* */
 #ifndef _CHEWING_CORE_
 #define _CHEWING_CORE_
-/* *INDENT-ON* */
 
 #ifdef __cplusplus
 extern "C" {
@@ -48,12 +46,13 @@ extern "C" {
 #include "global.h"
 #include "mod_aux.h"
 
-/* backward compatibility */
-#include "chewing-compat.h"
+/** @brief indicate the internal encoding of data processing.
+ *  @since 0.3.0
+ */
+#define LIBCHEWING_ENCODING "UTF-8"
 
 #ifdef __cplusplus
 }
 #endif
-/* *INDENT-OFF* */
-#endif                          /* _CHEWING_CORE_ */
-/* *INDENT-ON* */
+
+#endif /* _CHEWING_CORE_ */

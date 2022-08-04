@@ -1,65 +1,26 @@
 language: c
 
-# container-based builds
-sudo: false
-
-git:
-  depth: 1
-
-env:
-  global:
-    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-    #   via the "travis encrypt" command using the project repo's public key
-    - secure: "BPP6SZ50idXkIPERv5Z+Q2OCvGHHEKI27icS60VnduwT3rtwZBmS2TBPAZugVdxk8AlP9txRidyGjKrliQ8j7KquqNj8RXW86Akok0/gRSWidxUsaWccCYQ00ynDQsil8hAQw3vZHiIdRVDrVYHrvSZeIPqBpfwC/i3zCUpsEoA="
-    - BUILD=autotools
+compiler: gcc
+env: BUILD=autotools
 
 matrix:
   include:
     - compiler: gcc
       env: BUILD=cmake
     - compiler: clang
-      env: BUILD=cmake CMAKE_OPTION="-DUSE_VALGRIND=no -DNO_UNDEFINED=no" CFLAGS="-fsanitize=address -fsanitize=undefined"
+      env: BUILD=cmake CMAKE_OPTION="-DUSE_VALGRIND=no -DNO_UNDEFINED=no" CFLAGS=-fsanitize=address
     - compiler: gcc
       env: BUILD=cmake CMAKE_OPTION="-DENABLE_GCOV=yes -DUSE_VALGRIND=no" COVERALLS=yes
-    - compiler: clang
-      env: BUILD=cmake CMAKE_OPTION="-DWITH_STATIC_SQLITE3=yes"
-    - compiler: gcc
-      env: BUILD=autotools CONFIGURE_OPTION="--with-static_sqlite3=yes"
-    - compiler: gcc
-      env: BUILD=cmake CMAKE_OPTION="-DWITH_SQLITE3=no"
-    - compiler: clang
-      env: BUILD=autotools CONFIGURE_OPTION="--with-sqlite3=no"
-
-
-before_install:
-  - pip install --user cpp-coveralls
-  - P_JOBS="-j$(getconf _NPROCESSORS_ONLN)"
 
 script:
-  - if [ x$BUILD == xautotools ]; then ./autogen.sh && ./configure $CONFIGURE_OPTION && make $P_JOBS CFLAGS="$CFLAGS -Wall -Werror" && make $P_JOBS check && make $P_JOBS release && LC_ALL=c sort data/tsi.src > data/tsi.src.sort && diff data/tsi.src data/tsi.src.sort; fi
-  - if [ x$BUILD == xcmake ]; then CFLAGS="$CFLAGS -Wall -Werror" cmake . $CMAKE_OPTION && make $P_JOBS && make $P_JOBS check && LC_ALL=c sort data/tsi.src > data/tsi.src.sort && diff data/tsi.src data/tsi.src.sort; fi
+  - if [ x$BUILD == xautotools ]; then ./autogen.sh && ./configure $CONFIGURE_OPTION && make && make check; fi
+  - if [ x$BUILD == xcmake ]; then cmake . $CMAKE_OPTION && make && make check; fi
+
+before_install:
+  - sudo pip install cpp-coveralls --use-mirrors
+  - sudo add-apt-repository --yes ppa:czchen/travis-ci # For cmake 2.8.9
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq texinfo cmake valgrind
 
 after_success:
-  - if [ x$COVERALLS == xyes ]; then coveralls --exclude src/tools --exclude contrib --exclude test --exclude thirdparty --exclude-pattern '.*CMake[^/]+\.c(?:pp)?' --exclude-pattern '.*/[_A-Z0-9]+\.c(?:pp)?' --exclude-pattern '[^\.]*\.h'; fi
-
-
-addons:
-  coverity_scan:
-    project:
-      name: "chewing/libchewing"
-      description: "Build submitted via Travis CI"
-    notification_email: chewing-devel@googlegroups.com
-    build_command_prepend: "./autogen.sh && ./configure && make clean"
-    build_command: "make $P_JOBS"
-    branch_pattern: coverity_scan
-  apt:
-    sources:
-    # sources list: https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
-    - kalakris-cmake
-    packages:
-    # packages list: https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
-    - cmake
-    - cmake-data
-    - texinfo
-    - libsqlite3-dev
-    - valgrind
+  - if [ x$COVERALLS == xyes ]; then coveralls --exclude src/tools --exclude contrib --exclude test ; fi
