@@ -1030,7 +1030,7 @@ int main()
             break;
         case 15:;
             test_Numlock_numeric_input();
-
+            test_Numlock_select_candidate();
             break;
         case 16:;
             test_Space();
@@ -1044,9 +1044,7 @@ int main()
         case 19:;
             test_longest_phrase();
             break;
-        case 20:;
-            test_Numlock_select_candidate();
-            break;
+
     }
 
 	return exit_status();

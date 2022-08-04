@@ -44,5 +44,4 @@ jobs:
                   declare -x ISOLATED="17"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
                   declare -x ISOLATED="18"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
                   declare -x ISOLATED="19"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="20"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
 
