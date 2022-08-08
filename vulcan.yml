@@ -42,8 +42,6 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   cd test;make check-TESTS --no-print-directory TESTS=$(cd test;make print-TESTS | cut -d ' ' -f 5)
   cd test;make check-TESTS --no-print-directory TESTS=$(cd test;make print-TESTS | cut -d ' ' -f 6)
   cd test;make check-TESTS --no-print-directory TESTS=$(cd test;make print-TESTS | cut -d ' ' -f 7)
-  cd test;make check-TESTS --no-print-directory TESTS=$(cd test;make print-TESTS | cut -d ' ' -f 8)
-  cd test;make check-TESTS --no-print-directory TESTS=$(cd test;make print-TESTS | cut -d ' ' -f 9)
   cd test;make check-TESTS --no-print-directory TESTS=$(cd test;make print-TESTS | cut -d ' ' -f 10)
   cd test;make check-TESTS --no-print-directory TESTS=$(cd test;make print-TESTS | cut -d ' ' -f 11)
   cd test;make check-TESTS --no-print-directory TESTS=$(cd test;make print-TESTS | cut -d ' ' -f 12)
