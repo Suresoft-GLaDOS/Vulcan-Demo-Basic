@@ -54,7 +54,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.github/workflows/run_vulcan.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.github/workflows/test.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/tools/tiffcrop.c" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/test/tiff2rgba-rgb-3c-16b.sh" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tools/tiffcrop.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/vulcan.yml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
@@ -226,7 +227,7 @@
       <workItem from="1659310456217" duration="8036000" />
       <workItem from="1659416330327" duration="6022000" />
       <workItem from="1659686808744" duration="603000" />
-      <workItem from="1659915910110" duration="2112000" />
+      <workItem from="1659915910110" duration="2689000" />
     </task>
     <servers />
   </component>
