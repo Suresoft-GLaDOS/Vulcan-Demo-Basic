@@ -25,24 +25,83 @@ jobs:
         steps:
             - name: run test
               run: |
-                  declare -x ISOLATED="1"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="2"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="3"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="4"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="5"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="6"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="7"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="8"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="9"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="10"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="11"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="12"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="13"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="14"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="15"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="16"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="17"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="18"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="19"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="20"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
-                  declare -x ISOLATED="21"; index=1; ctest --output-on-failure --tests-regex $(sed -n "${index}p" < CTEST_TEST_CASE.output)$ --test-dir build
+                    tools/tiffcrop .dpp/CVE-2016-5321.tif /tmp/tmpout.tif
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 1)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 2)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 3)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 4)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 5)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 6)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 7)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 8)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 9)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 10)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 11)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 12)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 13)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 14)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 15)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 16)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 17)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 18)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 19)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 20)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 21)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 22)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 23)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 24)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 25)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 26)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 27)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 28)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 29)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 30)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 31)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 32)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 33)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 34)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 35)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 36)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 37)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 38)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 39)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 40)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 41)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 42)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 43)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 44)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 45)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 46)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 47)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 48)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 49)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 50)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 51)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 52)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 53)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 54)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 55)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 56)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 57)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 58)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 59)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 60)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 61)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 62)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 63)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 64)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 65)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 66)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 67)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 68)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 69)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 70)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 71)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 72)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 73)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 74)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 75)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 76)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 77)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 78)
+                    make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 79)

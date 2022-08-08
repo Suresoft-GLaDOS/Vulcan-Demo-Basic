@@ -1501,7 +1501,7 @@ configure:13779: $? = 0
 configure:13779: result: yes
 configure:13779: checking for setmode
 configure:13779: gcc -o conftest -g -O2 -Wall -W   conftest.c -lm  >&5
-/usr/bin/ld: /tmp/ccOj6NVe.o: in function `main':
+/usr/bin/ld: /tmp/ccmPJWJG.o: in function `main':
 /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/conftest.c:101: undefined reference to `setmode'
 collect2: error: ld returned 1 exit status
 configure:13779: $? = 1
@@ -2928,7 +2928,7 @@ conftest.c: In function 'routine':
 conftest.c:95:41: warning: parameter 'a' set but not used [-Wunused-but-set-parameter]
    95 |               static void routine(void* a) {a=0;}
       |                                   ~~~~~~^
-/usr/bin/ld: /tmp/ccRP8viu.o: in function `main':
+/usr/bin/ld: /tmp/cc4AAWgW.o: in function `main':
 /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/conftest.c:101: undefined reference to `pthread_create'
 /usr/bin/ld: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/conftest.c:102: undefined reference to `pthread_join'
 /usr/bin/ld: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/conftest.c:104: undefined reference to `__pthread_register_cancel'
@@ -4639,7 +4639,7 @@ configure:16062: checking for OpenGL/glu.h
 configure:16062: result: no
 configure:16076: checking for OpenGL Utility library
 configure:16122: g++ -o conftest -g -O2 -pthread   conftest.cpp -lGL  -lm -lz -lm  >&5
-/usr/bin/ld: /tmp/ccOOzRxd.o: in function `main':
+/usr/bin/ld: /tmp/ccTwGnkH.o: in function `main':
 /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/conftest.cpp:111: undefined reference to `gluBeginCurve'
 collect2: error: ld returned 1 exit status
 configure:16122: $? = 1
@@ -5784,21 +5784,30 @@ config.status:1291: creating port/Makefile
 config.status:1291: creating test/Makefile
 config.status:1291: creating tools/Makefile
 config.status:1291: creating libtiff/tif_config.h
+config.status:1472: libtiff/tif_config.h is unchanged
 config.status:1291: creating libtiff/tiffconf.h
+config.status:1472: libtiff/tiffconf.h is unchanged
 config.status:1520: executing depfiles commands
 config.status:1597: cd contrib/addtiffo       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1602: $? = 0
 config.status:1597: cd contrib/dbs       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1602: $? = 0
 config.status:1597: cd contrib/iptcutil       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1602: $? = 0
 config.status:1597: cd libtiff       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1602: $? = 0
 config.status:1597: cd port       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1602: $? = 0
 config.status:1597: cd test       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1602: $? = 0
 config.status:1597: cd tools       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1602: $? = 0
 config.status:1520: executing libtool commands
 
@@ -6068,7 +6077,7 @@ LIBTIFF_DOCDIR='${prefix}/share/doc/tiff-4.0.6'
 LIBTIFF_MAJOR_VERSION='4'
 LIBTIFF_MICRO_VERSION='6'
 LIBTIFF_MINOR_VERSION='0'
-LIBTIFF_RELEASE_DATE='20220805'
+LIBTIFF_RELEASE_DATE='20220808'
 LIBTIFF_VERSION='4.0.6'
 LIBTIFF_VERSION_INFO='7:4:2'
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
