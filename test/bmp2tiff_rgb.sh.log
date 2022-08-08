@@ -1,0 +1,11 @@
+ /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tools/bmp2tiff /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/images/rgb-3c-8b.bmp o-bmp2tiff_rgb.tiff
+ /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tools/tiffinfo -D o-bmp2tiff_rgb.tiff
+TIFF Directory at offset 0x11836 (71734)
+  Image Width: 157 Image Length: 151
+  Bits/Sample: 8
+  Compression Scheme: PackBits
+  Photometric Interpretation: RGB color
+  Orientation: row 0 top, col 0 lhs
+  Samples/Pixel: 3
+  Rows/Strip: 17
+  Planar Configuration: single image plane

@@ -1,0 +1,2 @@
+ /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tools/tiffcp -c none ./images/logluv-3c-16b.tiff o-tiffcp-logluv-raw.tiff
+ /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tools/tiffcp -c sgilog o-tiffcp-logluv-raw.tiff o-tiffcp-logluv-sgilog.tiff

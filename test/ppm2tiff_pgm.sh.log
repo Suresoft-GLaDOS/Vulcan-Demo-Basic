@@ -1,0 +1,11 @@
+ /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tools/ppm2tiff /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/images/minisblack-1c-8b.pgm o-ppm2tiff_pgm.tiff
+ /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tools/tiffinfo -D o-ppm2tiff_pgm.tiff
+TIFF Directory at offset 0x5d8c (23948)
+  Image Width: 157 Image Length: 151
+  Bits/Sample: 8
+  Compression Scheme: PackBits
+  Photometric Interpretation: min-is-black
+  Orientation: row 0 top, col 0 lhs
+  Samples/Pixel: 1
+  Rows/Strip: 52
+  Planar Configuration: single image plane

@@ -1,0 +1,16 @@
+ /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tools/tiff2rgba ./images/minisblack-2c-8b-alpha.tiff o-tiff2rgba-minisblack-2c-8b-alpha.tiff
+ /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tools/tiffinfo -D o-tiff2rgba-minisblack-2c-8b-alpha.tiff
+TIFF Directory at offset 0x226c (8812)
+  Image Width: 64 Image Length: 64
+  Resolution: 300, 300 pixels/inch
+  Bits/Sample: 8
+  Compression Scheme: PackBits
+  Photometric Interpretation: RGB color
+  Extra Samples: 1<assoc-alpha>
+  Orientation: row 0 top, col 0 lhs
+  Samples/Pixel: 4
+  Rows/Strip: 32
+  Planar Configuration: single image plane
+  Software: LIBTIFF, Version 4.0.6
+Copyright (c) 1988-1996 Sam Leffler
+Copyright (c) 1991-1996 Silicon Graphics, Inc.
