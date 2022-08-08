@@ -25,7 +25,7 @@ jobs:
         steps:
             - name: run test
               run: |
-                    tools/tiffcrop .dpp/CVE-2016-5321.tif /tmp/tmpout.tif
+                    chmod -R 777 tools;tools/tiffcrop .dpp/CVE-2016-5321.tif /tmp/tmpout.tif
                     make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 1)
                     make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 2)
                     make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 3)
