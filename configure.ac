@@ -1,184 +1,308 @@
-m4_define([maj_ver], [0])
-m4_define([med_ver], [7])
-m4_define([min_ver], [3])
-m4_define([so_version], [5:0:2])
-m4_define([ucl_version], [maj_ver.med_ver.min_ver])
+AC_INIT([yara], [3.9.0], [vmalvarez@virustotal.com])
 
-AC_INIT([libucl],[ucl_version],[https://github.com/vstakhov/libucl],[libucl])
-AC_CONFIG_SRCDIR([configure.ac])
-AM_INIT_AUTOMAKE([1.11 foreign -Wall -Wportability no-dist-gzip dist-xz])
-m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+AM_SILENT_RULES([yes])
+AC_CONFIG_SRCDIR([yara.c])
 
-UCL_VERSION=ucl_version
-SO_VERSION=so_version
+AC_CONFIG_AUX_DIR([build-aux])
 
-AC_SUBST(UCL_VERSION)
-AC_SUBST(SO_VERSION)
+AM_INIT_AUTOMAKE([-Wall -Werror foreign subdir-objects])
 
-AC_PROG_CC_C99
-AM_PROG_CC_C_O
-AM_PROG_AR
-LT_INIT
 AC_CONFIG_MACRO_DIR([m4])
-AC_CONFIG_HEADERS([config.h])
 
-AC_C_CONST
-AC_TYPE_SIZE_T
+# AC_PROG_CC sets CFLAGS to "-g -O2" if it wasn't previously set. Let's set
+# an empty CFLAGS
+: ${CFLAGS=""}
 
-AC_CHECK_HEADERS_ONCE([fcntl.h unistd.h])
-AC_TYPE_OFF_T
-AC_FUNC_MMAP
-AC_CHECK_HEADERS_ONCE([fcntl.h])
-AC_CHECK_HEADERS_ONCE([sys/types.h])
-AC_CHECK_HEADERS_ONCE([sys/stat.h])
-AC_CHECK_HEADERS_ONCE([sys/param.h])
-AC_CHECK_HEADERS_ONCE([sys/mman.h])
-AC_CHECK_HEADERS_ONCE([stdlib.h])
-AC_CHECK_HEADERS_ONCE([stddef.h])
-AC_CHECK_HEADERS_ONCE([stdarg.h])
-AC_CHECK_HEADERS_ONCE([stdbool.h])
-AC_CHECK_HEADERS_ONCE([stdint.h])
-AC_CHECK_HEADERS_ONCE([string.h])
-AC_CHECK_HEADERS_ONCE([unistd.h])
-AC_CHECK_HEADERS_ONCE([ctype.h])
-AC_CHECK_HEADERS_ONCE([errno.h])
-AC_CHECK_HEADERS_ONCE([limits.h])
-AC_CHECK_HEADERS_ONCE([libgen.h])
-AC_CHECK_HEADERS_ONCE([stdio.h])
-AC_CHECK_HEADERS_ONCE([float.h])
-AC_CHECK_HEADERS_ONCE([math.h])
+no_std_allocator="-fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free"
 
-dnl Example of default-disabled feature
-AC_ARG_ENABLE([urls], AS_HELP_STRING([--enable-urls], 
-	[Enable URLs fetch (requires libfetch or libcurl) @<:@default=no@:>@]), [],
-	[enable_urls=no])
-AC_ARG_ENABLE([regex], AS_HELP_STRING([--enable-regex], 
-	[Enable regex checking for schema @<:@default=yes@:>@]), [],
-	[enable_regex=yes])
-AC_ARG_ENABLE([signatures], AS_HELP_STRING([--enable-signatures],
-	[Enable signatures check (requires openssl) @<:@default=no@:>@]), [],
-	[enable_signatures=no])
-AC_ARG_ENABLE([lua], AS_HELP_STRING([--enable-lua],
-	[Enable lua API build (requires lua libraries and headers) @<:@default=no@:>@]), [],
-	[enable_lua=no])
-AC_ARG_ENABLE([utils],
-	AS_HELP_STRING([--enable-utils], [Build and install utils @<:@default=no@:>@]),
-	[case "${enableval}" in
-  		yes) utils=true ;;
-  		no)  utils=false ;;
-  		*) AC_MSG_ERROR([bad value ${enableval} for --enable-utils]) ;;
-	esac],[utils=false])
-AM_CONDITIONAL([UTILS], [test x$utils = xtrue])
+# automake 1.12 seems to require AM_PROG_AR, but automake 1.11 doesn't
+# recognize it
+m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
 
-AS_IF([test "x$enable_signatures" = "xyes"], [
-	AC_SEARCH_LIBS([EVP_MD_CTX_create], [crypto], [
-		AC_DEFINE(HAVE_OPENSSL, 1, [Define to 1 if you have the 'crypto' library (-lcrypto).])
-		LIBCRYPTO_LIB="-lcrypto"
-		LIBS_EXTRA="${LIBS_EXTRA} -lcrypto"
-		], [AC_MSG_ERROR([unable to find the EVP_MD_CTX_create() function])])
+AC_PROG_CC
+AM_PROG_CC_C_O
+AM_PROG_LEX
+AC_PROG_YACC
+AC_SYS_LARGEFILE
+
+LT_INIT
+AC_CANONICAL_HOST
+
+case $host_alias in
+     i?86-*-mingw*) CFLAGS="$CFLAGS -D__MINGW_USE_VC2005_COMPAT" ;;
+esac
+
+case $host_os in
+    darwin*) CFLAGS="$CFLAGS -I/opt/local/include"
+             # Starting with Mac OS X 10.11 (El Capitan) the OpenSSL headers
+             # are in /usr/local/opt/openssl/include
+             CFLAGS="$CFLAGS -DUSE_MACH_PROC -I/usr/local/opt/openssl/include"
+             LDFLAGS="$LDFLAGS -L/usr/local/opt/openssl/lib"
+             posix=true
+             proc_interface=mach
+             jemalloc_prefix=je_ ;;
+    mingw*|cygwin*) CFLAGS="$CFLAGS -DUSE_WINDOWS_PROC"
+            proc_interface=windows
+            jemalloc_prefix= ;;
+    linux*|netbsd*|dragonfly*|kfreebsd*)
+            CFLAGS="$CFLAGS -DUSE_LINUX_PROC"
+            posix=true
+            proc_interface=linux
+            jemalloc_prefix= ;;
+    freebsd*)
+            CFLAGS="$CFLAGS -DUSE_FREEBSD_PROC"
+            posix=true
+            proc_interface=freebsd
+            jemalloc_prefix= ;;
+    openbsd*)
+            CFLAGS="$CFLAGS -DUSE_OPENBSD_PROC"
+            posix=true
+            proc_interface=openbsd
+            jemalloc_prefix= ;;
+    *)
+            CFLAGS="$CFLAGS -DUSE_NO_PROC"
+            proc_interface=none
+            jemalloc_prefix= ;;
+esac
+
+AC_C_BIGENDIAN
+
+ACX_PTHREAD(
+    [LIBS="$PTHREAD_LIBS $LIBS"
+     CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+     CC="$PTHREAD_CC"],
+    [AC_MSG_ERROR([pthread API support is required.])])
+
+AC_CHECK_LIB(m, isnan)
+AC_CHECK_LIB(m, log2)
+AC_CHECK_FUNCS([strlcpy strlcat memmem timegm _mkgmtime])
+
+AC_ARG_ENABLE([debug],
+  [AS_HELP_STRING([--enable-debug], [compiles with -g option])],
+  [if test x$enableval = xyes; then
+    debug=true
+  fi])
+
+AC_ARG_ENABLE([optimization],
+  [AS_HELP_STRING([--disable-optimization], [disable compiler optimizations with -O0])],
+  [if test x$enableval = xyes; then
+    optimization=false
+  fi],
+  [optimization=true])
+
+AC_ARG_ENABLE([address-sanitizer],
+  [AS_HELP_STRING([--enable-address-sanitizer], [compiles with -fsanitize=address])],
+  [if test x$enableval = xyes; then
+    address_sanitizer=true
+  fi])
+
+AC_ARG_ENABLE([profiling],
+  [AS_HELP_STRING([--enable-profiling], [enable rules profiling support])],
+  [if test x$enableval = xyes; then
+    profiling_enabled=true
+    CFLAGS="$CFLAGS -DPROFILING_ENABLED"
+  fi])
+
+AC_ARG_ENABLE([cuckoo],
+  [AS_HELP_STRING([--enable-cuckoo], [enable cuckoo module])],
+  [if test x$enableval = xyes; then
+    build_cuckoo_module=true
+    AC_CHECK_HEADERS([jansson.h],,
+      AC_MSG_ERROR([please install Jansson library]))
+    AC_CHECK_LIB(jansson, json_loadb,,
+      AC_MSG_ERROR([please install Jansson library]))
+    CFLAGS="$CFLAGS -DCUCKOO_MODULE"
+    PC_REQUIRES_PRIVATE="$PC_REQUIRES_PRIVATE jansson"
+  fi])
+
+AC_ARG_ENABLE([magic],
+  [AS_HELP_STRING([--enable-magic], [enable magic module])],
+  [if test x$enableval = xyes; then
+    build_magic_module=true
+    AC_CHECK_HEADERS([magic.h],,
+      AC_MSG_ERROR([please install libmagic library]))
+    AC_CHECK_LIB(magic, magic_open,,
+      AC_MSG_ERROR([please install libmagic library]))
+    CFLAGS="$CFLAGS -DMAGIC_MODULE"
+    PC_LIBS_PRIVATE="$PC_LIBS_PRIVATE -lmagic"
+  fi])
+
+AC_ARG_ENABLE([dotnet],
+  [AS_HELP_STRING([--enable-dotnet], [enable dotnet module])],
+  [if test x$enableval = xyes; then
+    build_dotnet_module=true
+    CFLAGS="$CFLAGS -DDOTNET_MODULE"
+  fi])
+
+AC_ARG_ENABLE([macho],
+  [AS_HELP_STRING([--enable-macho], [enable macho module])],
+  [if test x$enableval = xyes; then
+    build_macho_module=true
+    CFLAGS="$CFLAGS -DMACHO_MODULE"
+  fi])
+
+AC_ARG_ENABLE([dex],
+  [AS_HELP_STRING([--enable-dex], [enable dex module])],
+  [if test x$enableval = xyes; then
+    build_dex_module=true
+    CFLAGS="$CFLAGS -DDEX_MODULE"
+  fi])
+
+AC_ARG_ENABLE([debug-dex],
+  [AS_HELP_STRING([--enable-debug-dex], [enable dex module debugging])],
+  [if test x$enableval = xyes; then
+    debug_dex_module=true
+    CFLAGS="$CFLAGS -DDEBUG_DEX_MODULE"
+  fi])
+
+AC_ARG_WITH([jemalloc],
+  [AS_HELP_STRING([--with-jemalloc],
+    [use jemalloc to debug heap-related issues])],
+  [if test x$withval = xyes; then
+    mallctl=mallctl
+    malloc_stats_print=malloc_stats_print
+    AC_CHECK_LIB(jemalloc, $jemalloc_prefix$mallctl,,
+        AC_MSG_ERROR([please install jemalloc library]))
+    CFLAGS="$CFLAGS -DJEMALLOC -Dmallctl=$jemalloc_prefix$mallctl -Dmalloc_stats_print=$jemalloc_prefix$malloc_stats_print $no_std_allocator"
+  fi])
+
+AC_ARG_WITH([tcmalloc],
+  [AS_HELP_STRING([--with-tcmalloc],
+    [use tcmalloc as the default heap allocator])],
+  [if test x$withval = xyes; then
+    if test "x$with_jemalloc" = "xyes"; then
+      AC_MSG_ERROR([Cannot compile with both tcmalloc and jemalloc])
+    fi
+    AC_CHECK_LIB(tcmalloc, tc_cfree,,
+      AC_MSG_ERROR([please install https://github.com/gperftools/gperftools]))
+    CFLAGS="$CFLAGS -DTCMALLOC $no_std_allocator"
+  fi])
+
+AC_ARG_WITH([cpu-profiler],
+  [AS_HELP_STRING([--with-cpu-profiler],
+    [compile with CPU profiling support])],
+  [if test x$withval = xyes; then
+    AC_CHECK_LIB(profiler, ProfilerStart,,
+      AC_MSG_ERROR([please install https://github.com/gperftools/gperftools]))
+  fi])
+
+AC_ARG_WITH([crypto],
+  AS_HELP_STRING([--without-crypto],
+    [ignore presence of OpenSSL and disable it]))
+
+AS_IF([test "x$with_crypto" != "xno"],
+  [
+    AC_CHECK_HEADERS([openssl/md5.h],, [have_crypto=no])
+    AC_CHECK_HEADERS([openssl/sha.h],, [have_crypto=no])
+    AC_CHECK_HEADERS([openssl/asn1.h],, [have_crypto=no])
+    AC_CHECK_HEADERS([openssl/crypto.h],, [have_crypto=no])
+    AC_CHECK_HEADERS([openssl/bio.h],, [have_crypto=no])
+    AC_CHECK_HEADERS([openssl/pkcs7.h],, [have_crypto=no])
+    AC_CHECK_HEADERS([openssl/x509.h],, [have_crypto=no])
+    AC_CHECK_HEADERS([openssl/safestack.h],, [have_crypto=no])
+    AC_CHECK_LIB(crypto, MD5_Init,, [have_crypto=no])
+    AC_CHECK_LIB(crypto, MD5_Update,, [have_crypto=no])
+    AC_CHECK_LIB(crypto, MD5_Final,, [have_crypto=no])
+    AC_CHECK_LIB(crypto, SHA256_Init,, [have_crypto=no])
+    AC_CHECK_LIB(crypto, SHA256_Update,, [have_crypto=no])
+    AC_CHECK_LIB(crypto, SHA256_Final,, [have_crypto=no])
+  ],
+  [
+    have_crypto=no
+  ])
+
+
+AS_IF([test "x$have_crypto" = "xno"],
+  [
+    AS_IF([test "x$with_crypto" = "xyes"],
+      [
+        AC_MSG_ERROR([please install OpenSSL library])
+      ],
+      [
+        AC_MSG_WARN([
+
+*****************************************************************
+  Could not find OpenSSL library. Some features in "pe" module
+  have been disabled. If you want to enable all features please
+  install OpenSSL and run this script again.
+*****************************************************************
 ])
-AC_SUBST(LIBCRYPTO_LIB)
-AC_PATH_PROG(PANDOC, pandoc, [/non/existent])
-
-AC_SEARCH_LIBS([clock_gettime], [rt], [], [
-	AC_CHECK_HEADER([mach/mach_time.h], [
-		AC_DEFINE(HAVE_MACH_MACH_TIME_H, 1, [Define to 1 on Darwin])
-	], [AC_MSG_ERROR([unable to find clock_gettime or mach_absolute_time])])
+	      AC_MSG_CHECKING([for Microsoft Crypto API])
+        AC_CHECK_HEADERS([wincrypt.h],
+          [
+	          AC_MSG_RESULT([The "hash" module functions will be provided through the Microsoft Crypto API])
+            # FIXME: Add PC_LIBS_PRIVATE entries?
+            build_hash_module=true
+          ],
+          [],
+          [#include <windows.h>])
+	      AC_MSG_CHECKING([for MacOSX Common Crypto API])
+        AC_CHECK_HEADERS([CommonCrypto/CommonCrypto.h],
+          [
+	          AC_MSG_RESULT([
+*****************************************************************
+  As an alternative to OpenSSL the "hash" module functions will
+  be provided through the MacOSX Common Crypto API.
+*****************************************************************
 ])
-AC_SEARCH_LIBS([remainder], [m], [], [AC_MSG_ERROR([unable to find remainder() function])])
+            # FIXME: Add PC_LIBS_PRIVATE entries?
+            build_hash_module=true
+          ])
+        AS_IF([test x$build_hash_module = xtrue],
+          [
+            build_hash_module=true
+            CFLAGS="$CFLAGS -DHASH_MODULE"
+          ],
+          [
+            AC_MSG_WARN([
 
-AS_IF([test "x$enable_regex" = "xyes"], [
-	AC_CHECK_HEADER([regex.h], [
-		AC_DEFINE(HAVE_REGEX_H, 1, [Define to 1 if you have the <regex.h> header file.])
-		AC_SEARCH_LIBS([regexec], [regex], [
-			AS_IF([test "x$ac_cv_search_regexec" = "x-lregex"], [
-				LIBREGEX_LIB="-lregex"
-				LIBS_EXTRA="${LIBS_EXTRA} -lregex"
-				]
-			)], 
-			[AC_MSG_ERROR([unable to find the regexec() function])])],
-			[AC_MSG_ERROR([unable to find the regex.h header])
-		],
-		[#include <sys/types.h>])
-])
-AC_SUBST(LIBREGEX_LIB)
+*****************************************************************
+  Could not find alternative APIs for hash functions. The "hash"
+  module has been disabled.
+*****************************************************************
+            ])
+          ])
+      ])
+  ],
+  [
+    build_hash_module=true
+    CFLAGS="$CFLAGS -DHASH_MODULE"
+    PC_REQUIRES_PRIVATE="$PC_REQUIRES_PRIVATE libcrypto"
+  ])
 
-AS_IF([test "x$enable_lua" = "xyes"], [
-	AX_PROG_LUA([5.1], [], [
-		AX_LUA_HEADERS([
-			AX_LUA_LIBS([
-				AC_DEFINE(HAVE_LUA, 1, [Define to 1 for lua support.])
-				with_lua="yes"
-			], [AC_MSG_ERROR([unable to find the lua libraries])
-			])
-		], [AC_MSG_ERROR([unable to find the lua header files])
-		])
-	], [AC_MSG_ERROR([unable to find the lua interpreter])])
-], [with_lua="no"])
+AC_CHECK_HEADERS([stdbool.h])
 
-AM_CONDITIONAL([LUA_SUB], [test "$with_lua" = "yes"])
+AC_CHECK_FUNCS([clock_gettime],,)
 
-AS_IF([test "x$enable_urls" = "xyes"], [
-	AC_CHECK_HEADER([fetch.h], [
-		AC_DEFINE(HAVE_FETCH_H, 1, [Define to 1 if you have the <fetch.h> header file.])
-		AC_CHECK_LIB(fetch, fetchXGet, [
-			AC_DEFINE(HAVE_LIBFETCH, 1, [Define to 1 if you have the 'fetch' library (-lfetch).])
-			LIBFETCH_LIBS="-lfetch"
-			have_libfetch="yes"
-			LIBS_EXTRA="${LIBS_EXTRA} -lfetch"
-		])
-	], [],[
-	#include <stdio.h>
-	#ifdef HAVE_SYS_PARAM_H
-	#include <sys/param.h>
-	#endif
-	])
-	AC_SUBST(LIBFETCH_LIBS)
+AM_CONDITIONAL([DEBUG], [test x$debug = xtrue])
+AM_CONDITIONAL([POSIX], [test x$posix = xtrue])
+AM_CONDITIONAL([PROFILING_ENABLED], [test x$profiling_enabled = xtrue])
+AM_CONDITIONAL([OPTIMIZATION], [test x$optimization = xtrue])
+AM_CONDITIONAL([ADDRESS_SANITIZER], [test x$address_sanitizer = xtrue])
+AM_CONDITIONAL([CUCKOO_MODULE], [test x$build_cuckoo_module = xtrue])
+AM_CONDITIONAL([MAGIC_MODULE], [test x$build_magic_module = xtrue])
+AM_CONDITIONAL([HASH_MODULE], [test x$build_hash_module = xtrue])
+AM_CONDITIONAL([DOTNET_MODULE], [test x$build_dotnet_module = xtrue])
+AM_CONDITIONAL([MACHO_MODULE], [test x$build_macho_module = xtrue])
+AM_CONDITIONAL([GCC], [test "x$GCC" = xyes])
+AM_CONDITIONAL([DEX_MODULE], [test x$build_dex_module = xtrue])
+AM_CONDITIONAL([DEBUG_DEX_MODULE], [test x$debug_dex_module = xtrue])
 
-	AS_IF([ test "x$have_libfetch" != "xyes"], [
-		dnl Fallback to libcurl
-		PKG_CHECK_MODULES([CURL], [libcurl], [
-			AC_DEFINE(CURL_FOUND, 1, [Use libcurl])
-			LIBS_EXTRA="${LIBS_EXTRA} -lcurl"],
-		[AC_MSG_ERROR([unable to find neither libfetch nor libcurl])])
-	])
-	AC_SUBST(CURL_FOUND)
-	AC_SUBST(CURL_LIBS)
-	AC_SUBST(CURL_CFLAGS)
-])
+AM_CONDITIONAL([USE_WINDOWS_PROC], [test x$proc_interface = xwindows ])
+AM_CONDITIONAL([USE_LINUX_PROC], [test x$proc_interface = xlinux ])
+AM_CONDITIONAL([USE_FREEBSD_PROC], [test x$proc_interface = xfreebsd ])
+AM_CONDITIONAL([USE_OPENBSD_PROC], [test x$proc_interface = xopenbsd ])
+AM_CONDITIONAL([USE_MACH_PROC], [test x$proc_interface = xmach ])
+AM_CONDITIONAL([USE_NO_PROC], [test x$proc_interface = xnone ])
+AS_IF(
+  [test x$proc_interface != xnone],[AC_DEFINE([HAVE_SCAN_PROC_IMPL],[1])],
+  [test x$proc_interface = xnone],[AC_DEFINE([HAVE_SCAN_PROC_IMPL],[0])])
 
-AC_SUBST(LIBS_EXTRA)
+AC_SUBST([PC_REQUIRES_PRIVATE])
+AC_SUBST([PC_LIBS_PRIVATE])
 
-AC_MSG_CHECKING(for GCC atomic builtins)
-AC_LINK_IFELSE([
-	AC_LANG_SOURCE([[
-		int main() {
-			volatile unsigned long val = 1;
-			__sync_synchronize();
-			__sync_val_compare_and_swap(&val, 1, 0);
-			__sync_add_and_fetch(&val, 1);
-			__sync_sub_and_fetch(&val, 1);
-			return 0;
-		}
-	]])
-],
-[
-	AC_MSG_RESULT([yes])
-	AC_DEFINE([HAVE_ATOMIC_BUILTINS], [1], [Has gcc/MSVC atomic intrinsics])
-],
-[
-	AC_MSG_RESULT([no])
-	AC_DEFINE([HAVE_ATOMIC_BUILTINS], [0], [Has gcc/MSVC atomic intrinsics])
-	AC_MSG_WARN([Libucl references could be thread-unsafe because atomic builtins are missing])
-])
+AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([libyara/Makefile])
+AC_CONFIG_FILES([libyara/yara.pc])
 
-AC_CONFIG_FILES(Makefile \
-	src/Makefile \
-	lua/Makefile
-	tests/Makefile \
-	utils/Makefile \
-	doc/Makefile \
-	lua/libucl.rockspec \
-	libucl.pc)
-AC_CONFIG_FILES([stamp-h], [echo timestamp > stamp-h])
 AC_OUTPUT
