@@ -19,14 +19,12 @@ test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json
   ./configure
   make clean
   make -j10
-  chmod -R 777 tools
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   ./autogen.sh  
   ./configure
   make clean
-  make -j10 CFLAGS="--coverage -DDPP_ENABLE_GCOV"
-  chmod -R 777 tools
+  make -j10 CFLAGS="--coverage"
 
 
 # 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
@@ -34,48 +32,11 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-  chmod -R 777 tools;tools/tiffcrop .dpp/CVE-2016-5321.tif /tmp/tmpout.tif
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 1)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 2)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 3)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 4)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 5)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 6)
-
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 20)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 21)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 22)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 23)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 24)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 25)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 26)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 27)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 28)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 29)
-  
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 40)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 41)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 42)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 43)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 44)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 45)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 46)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 47)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 48)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 49)
- 
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 60)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 61)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 62)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 63)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 64)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 65)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 66)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 67)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 68)
-  chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 69)
-
-  
+  index=1; make check TESTS="$(sed -n "1p" < AUTOMAKE_TEST_CASE.output)"
+  index=2; make check TESTS="$(sed -n "2p" < AUTOMAKE_TEST_CASE.output)"
+  index=3; make check TESTS="$(sed -n "3p" < AUTOMAKE_TEST_CASE.output)"
+  index=4; make check TESTS="$(sed -n "4p" < AUTOMAKE_TEST_CASE.output)"
+  index=5; make check TESTS="$(sed -n "5p" < AUTOMAKE_TEST_CASE.output)"
   
 
 test-case:

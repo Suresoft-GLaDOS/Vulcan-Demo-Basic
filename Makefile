@@ -14,31 +14,6 @@
 
 
 
-# Tag Image File Format (TIFF) Software
-#
-# Copyright (C) 2004, Andrey Kiselev <dron@ak4719.spb.edu>
-#
-# Permission to use, copy, modify, distribute, and sell this software and 
-# its documentation for any purpose is hereby granted without fee, provided
-# that (i) the above copyright notices and this permission notice appear in
-# all copies of the software and related documentation, and (ii) the names of
-# Sam Leffler and Silicon Graphics may not be used in any advertising or
-# publicity relating to the software without the specific, prior written
-# permission of Sam Leffler and Silicon Graphics.
-# 
-# THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, 
-# EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY 
-# WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  
-# 
-# IN NO EVENT SHALL SAM LEFFLER OR SILICON GRAPHICS BE LIABLE FOR
-# ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND,
-# OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
-# WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF 
-# LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
-# OF THIS SOFTWARE.
-
-# Process this file with automake to produce Makefile.in.
-
 
 am__is_gnu_make = { \
   if test -z '$(MAKELEVEL)'; then \
@@ -95,10 +70,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/tiff
-pkgincludedir = $(includedir)/tiff
-pkglibdir = $(libdir)/tiff
-pkglibexecdir = $(libexecdir)/tiff
+pkgdatadir = $(datadir)/libucl
+pkgincludedir = $(includedir)/libucl
+pkglibdir = $(libdir)/libucl
+pkglibexecdir = $(libexecdir)/libucl
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -111,24 +86,23 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-unknown-linux-gnu
-host_triplet = x86_64-unknown-linux-gnu
+build_triplet = x86_64-pc-linux-gnu
+host_triplet = x86_64-pc-linux-gnu
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/acinclude.m4 \
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_lua.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
 	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
 	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
-	$(am__configure_deps) $(dist_doc_DATA) $(am__DIST_COMMON)
+	$(am__configure_deps) $(am__DIST_COMMON)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
-mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
-CONFIG_HEADER = $(top_builddir)/libtiff/tif_config.h \
-	$(top_builddir)/libtiff/tiffconf.h
-CONFIG_CLEAN_FILES = libtiff-4.pc
+mkinstalldirs = $(install_sh) -d
+CONFIG_HEADER = config.h
+CONFIG_CLEAN_FILES = libucl.pc stamp-h
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
@@ -184,8 +158,8 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(docdir)" "$(DESTDIR)$(pkgconfigdir)"
-DATA = $(dist_doc_DATA) $(pkgconfig_DATA)
+am__installdirs = "$(DESTDIR)$(pkgconfigdir)"
+DATA = $(pkgconfig_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 am__recursive_targets = \
@@ -194,7 +168,8 @@ am__recursive_targets = \
   $(am__extra_recursive_targets)
 AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \
 	cscope distdir distdir-am dist dist-all distcheck
-am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
+am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
+	$(LISP)config.h.in
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
 # *not* preserved.
@@ -214,16 +189,10 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/libtiff-4.pc.in \
-	$(top_srcdir)/config/compile $(top_srcdir)/config/config.guess \
-	$(top_srcdir)/config/config.sub \
-	$(top_srcdir)/config/install-sh $(top_srcdir)/config/ltmain.sh \
-	$(top_srcdir)/config/missing \
-	$(top_srcdir)/config/mkinstalldirs ChangeLog README TODO \
-	config/compile config/config.guess config/config.sub \
-	config/install-sh config/ltmain.sh config/missing \
-	config/mkinstalldirs
+DIST_SUBDIRS = src tests utils doc lua
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+	$(srcdir)/libucl.pc.in $(srcdir)/stamp-h.in COPYING ar-lib \
+	compile config.guess config.sub install-sh ltmain.sh missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -259,32 +228,29 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-DIST_ARCHIVES = $(distdir).tar.gz $(distdir).zip
 GZIP_ENV = --best
-DIST_TARGETS = dist-gzip dist-zip
+DIST_ARCHIVES = $(distdir).tar.xz
+DIST_TARGETS = dist-xz
 distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing aclocal-1.16
+ACLOCAL = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing aclocal-1.16
 AMTAR = $${TAR-tar}
-AM_DEFAULT_VERBOSITY = 1
+AM_DEFAULT_VERBOSITY = 0
 AR = ar
-AS = as
-AUTOCONF = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing autoconf
-AUTOHEADER = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing autoheader
-AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing automake-1.16
+AUTOCONF = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoconf
+AUTOHEADER = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoheader
+AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing automake-1.16
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2 -Wall -W
-CMAKE = /usr/bin/cmake
+CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
-CXX = g++
-CXXCPP = g++ -E
-CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+CURL_CFLAGS = 
+CURL_FOUND = 
+CURL_LIBS = 
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -297,12 +263,6 @@ ECHO_T =
 EGREP = /usr/bin/grep -E
 EXEEXT = 
 FGREP = /usr/bin/grep -F
-GLUT_CFLAGS = 
-GLUT_LIBS = 
-GLU_CFLAGS = -pthread
-GLU_LIBS = -lGLU -lGL  -lm
-GL_CFLAGS = -pthread
-GL_LIBS = -lGL  -lm
 GREP = /usr/bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
@@ -311,24 +271,26 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
-LIBDIR = 
+LIBCRYPTO_LIB = 
+LIBFETCH_LIBS = 
 LIBOBJS = 
-LIBS = -lz -lm 
-LIBTIFF_ALPHA_VERSION = 
-LIBTIFF_DOCDIR = ${prefix}/share/doc/tiff-4.0.6
-LIBTIFF_MAJOR_VERSION = 4
-LIBTIFF_MICRO_VERSION = 6
-LIBTIFF_MINOR_VERSION = 0
-LIBTIFF_RELEASE_DATE = 20220808
-LIBTIFF_VERSION = 4.0.6
-LIBTIFF_VERSION_INFO = 7:4:2
+LIBREGEX_LIB = 
+LIBS = -lm 
+LIBS_EXTRA = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-MAINT = #
-MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing makeinfo
+LUA = 
+LUA_EXEC_PREFIX = 
+LUA_INCLUDE = 
+LUA_LIB = 
+LUA_PLATFORM = 
+LUA_PREFIX = 
+LUA_SHORT_VERSION = 
+LUA_VERSION = 
+MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -337,71 +299,71 @@ OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = tiff
-PACKAGE_BUGREPORT = tiff@lists.maptools.org
-PACKAGE_NAME = LibTIFF Software
-PACKAGE_STRING = LibTIFF Software 4.0.6
-PACKAGE_TARNAME = tiff
+PACKAGE = libucl
+PACKAGE_BUGREPORT = https://github.com/vstakhov/libucl
+PACKAGE_NAME = libucl
+PACKAGE_STRING = libucl 0.7.3
+PACKAGE_TARNAME = libucl
 PACKAGE_URL = 
-PACKAGE_VERSION = 4.0.6
+PACKAGE_VERSION = 0.7.3
+PANDOC = /non/existent
 PATH_SEPARATOR = :
-PTHREAD_CC = gcc
-PTHREAD_CFLAGS = -pthread
-PTHREAD_LIBS = 
+PKG_CONFIG = /usr/bin/pkg-config
+PKG_CONFIG_LIBDIR = 
+PKG_CONFIG_PATH = 
 RANLIB = ranlib
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
+SO_VERSION = 5:0:2
 STRIP = strip
-VERSION = 4.0.6
-XMKMF = 
-X_CFLAGS = 
-X_EXTRA_LIBS = 
-X_LIBS = 
-X_PRE_LIBS =  -lSM -lICE
+UCL_VERSION = 0.7.3
+VERSION = 0.7.3
 abs_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
 abs_srcdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
 abs_top_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
 abs_top_srcdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
 ac_ct_AR = ar
 ac_ct_CC = gcc
-ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
 am__include = include
 am__leading_dot = .
 am__quote = 
-am__tar = tar --format=posix -chf - "$$tardir"
-am__untar = tar -xf -
-ax_pthread_config = 
+am__tar = $${TAR-tar} chof - "$$tardir"
+am__untar = $${TAR-tar} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-unknown-linux-gnu
+build = x86_64-pc-linux-gnu
 build_alias = 
 build_cpu = x86_64
 build_os = linux-gnu
-build_vendor = unknown
+build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
-docdir = $(LIBTIFF_DOCDIR)
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-unknown-linux-gnu
+host = x86_64-pc-linux-gnu
 host_alias = 
 host_cpu = x86_64
 host_os = linux-gnu
-host_vendor = unknown
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/install-sh
+install_sh = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
+luadir = 
+luaexecdir = 
 mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
+pkgluadir = 
+pkgluaexecdir = 
 prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
@@ -411,48 +373,22 @@ sharedstatedir = ${prefix}/com
 srcdir = .
 sysconfdir = ${prefix}/etc
 target_alias = 
-tiff_libs_private = -lz -lm 
 top_build_prefix = 
 top_builddir = .
 top_srcdir = .
-AUTOMAKE_OPTIONS = 1.12 dist-zip foreign
 ACLOCAL_AMFLAGS = -I m4
-docfiles = \
-	COPYRIGHT \
-	ChangeLog \
-	README \
-	README.vms \
-	RELEASE-DATE \
-	TODO \
-	VERSION
-
-EXTRA_DIST = \
-	CMakeLists.txt \
-	HOWTO-RELEASE \
-	Makefile.vc \
-	SConstruct \
-	autogen.sh \
-	configure.com \
-	libtiff-4.pc.in \
-	nmake.opt
-
-dist_doc_DATA = $(docfiles)
-SUBDIRS = port libtiff tools build contrib test man html
+EXTRA_DIST = uthash klib README.md
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libtiff-4.pc
-
-# Special rules to assist with Coverity submissions.
-PACKAGE_CHANGE_DATE = `awk '/^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/ { print substr($$1,1,4) substr($$1,6,2) substr($$1,9,2); exit; }' $(top_srcdir)/ChangeLog`
-COVERITY_EMAIL = bfriesen@simple.dallas.tx.us
-COVERITY_TARBALL = libtiff.xz
-COVERITY_VERSION = devel-${PACKAGE_CHANGE_DATE}
-COVERITY_DESCRIPTION = 'libtiff development'
-all: all-recursive
+pkgconfig_DATA = libucl.pc
+#LUA_SUBDIR = lua
+SUBDIRS = src tests utils doc $(LUA_SUBDIR)
+all: config.h
+	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
 .SUFFIXES:
 am--refresh: Makefile
 	@:
-$(srcdir)/Makefile.in: # $(srcdir)/Makefile.am  $(am__configure_deps)
+$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -478,12 +414,29 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	$(SHELL) ./config.status --recheck
 
-$(top_srcdir)/configure: # $(am__configure_deps)
+$(top_srcdir)/configure:  $(am__configure_deps)
 	$(am__cd) $(srcdir) && $(AUTOCONF)
-$(ACLOCAL_M4): # $(am__aclocal_m4_deps)
+$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
-libtiff-4.pc: $(top_builddir)/config.status $(srcdir)/libtiff-4.pc.in
+
+config.h: stamp-h1
+	@test -f $@ || rm -f stamp-h1
+	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) stamp-h1
+
+stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
+	@rm -f stamp-h1
+	cd $(top_builddir) && $(SHELL) ./config.status config.h
+$(srcdir)/config.h.in:  $(am__configure_deps) 
+	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
+	rm -f stamp-h1
+	touch $@
+
+distclean-hdr:
+	-rm -f config.h stamp-h1
+libucl.pc: $(top_builddir)/config.status $(srcdir)/libucl.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+stamp-h: $(top_builddir)/config.status $(srcdir)/stamp-h.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:
@@ -494,27 +447,6 @@ clean-libtool:
 
 distclean-libtool:
 	-rm -f libtool config.lt
-install-dist_docDATA: $(dist_doc_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(docdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(docdir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
-	done
-
-uninstall-dist_docDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(docdir)'; $(am__uninstall_files_from_dir)
 install-pkgconfigDATA: $(pkgconfig_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(pkgconfig_DATA)'; test -n "$(pkgconfigdir)" || list=; \
@@ -721,7 +653,6 @@ dist-bzip2: distdir
 dist-lzip: distdir
 	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz
 	$(am__post_remove_distdir)
-
 dist-xz: distdir
 	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz
 	$(am__post_remove_distdir)
@@ -739,6 +670,7 @@ dist-shar: distdir
 	@echo WARNING: "It will be removed altogether in Automake 2.0" >&2
 	shar $(distdir) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).shar.gz
 	$(am__post_remove_distdir)
+
 dist-zip: distdir
 	-rm -f $(distdir).zip
 	zip -rq $(distdir).zip $(distdir)
@@ -775,7 +707,6 @@ distcheck: dist
 	test -d $(distdir)/_build || exit 0; \
 	dc_install_base=`$(am__cd) $(distdir)/_inst && pwd | sed -e 's,^[^:\\/]:[\\/],/,'` \
 	  && dc_destdir="$${TMPDIR-/tmp}/am-dc-$$$$/" \
-	  && $(MAKE) $(AM_MAKEFLAGS) distcheck-hook \
 	  && am__cwd=`pwd` \
 	  && $(am__cd) $(distdir)/_build/sub \
 	  && ../../configure \
@@ -836,10 +767,10 @@ distcleancheck: distclean
 	       exit 1; } >&2
 check-am: all-am
 check: check-recursive
-all-am: Makefile $(DATA)
+all-am: Makefile $(DATA) config.h
 installdirs: installdirs-recursive
 installdirs-am:
-	for dir in "$(DESTDIR)$(docdir)" "$(DESTDIR)$(pkgconfigdir)"; do \
+	for dir in "$(DESTDIR)$(pkgconfigdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-recursive
@@ -879,8 +810,8 @@ clean-am: clean-generic clean-libtool mostlyclean-am
 distclean: distclean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -f Makefile
-distclean-am: clean-am distclean-generic distclean-libtool \
-	distclean-tags
+distclean-am: clean-am distclean-generic distclean-hdr \
+	distclean-libtool distclean-tags
 
 dvi: dvi-recursive
 
@@ -894,7 +825,7 @@ info: info-recursive
 
 info-am:
 
-install-data-am: install-dist_docDATA install-pkgconfigDATA
+install-data-am: install-pkgconfigDATA
 
 install-dvi: install-dvi-recursive
 
@@ -940,59 +871,29 @@ ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-dist_docDATA uninstall-pkgconfigDATA
+uninstall-am: uninstall-pkgconfigDATA
 
-.MAKE: $(am__recursive_targets) install-am install-strip
+.MAKE: $(am__recursive_targets) all install-am install-strip
 
 .PHONY: $(am__recursive_targets) CTAGS GTAGS TAGS all all-am \
 	am--refresh check check-am clean clean-cscope clean-generic \
 	clean-libtool cscope cscopelist-am ctags ctags-am dist \
 	dist-all dist-bzip2 dist-gzip dist-lzip dist-shar dist-tarZ \
 	dist-xz dist-zip distcheck distclean distclean-generic \
-	distclean-libtool distclean-tags distcleancheck distdir \
-	distuninstallcheck dvi dvi-am html html-am info info-am \
-	install install-am install-data install-data-am \
-	install-dist_docDATA install-dvi install-dvi-am install-exec \
-	install-exec-am install-html install-html-am install-info \
-	install-info-am install-man install-pdf install-pdf-am \
-	install-pkgconfigDATA install-ps install-ps-am install-strip \
-	installcheck installcheck-am installdirs installdirs-am \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags tags-am uninstall uninstall-am uninstall-dist_docDATA \
-	uninstall-pkgconfigDATA
+	distclean-hdr distclean-libtool distclean-tags distcleancheck \
+	distdir distuninstallcheck dvi dvi-am html html-am info \
+	info-am install install-am install-data install-data-am \
+	install-dvi install-dvi-am install-exec install-exec-am \
+	install-html install-html-am install-info install-info-am \
+	install-man install-pdf install-pdf-am install-pkgconfigDATA \
+	install-ps install-ps-am install-strip installcheck \
+	installcheck-am installdirs installdirs-am maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
+	uninstall-am uninstall-pkgconfigDATA
 
 .PRECIOUS: Makefile
 
-
-distcheck-hook:
-	if [ -x "$(CMAKE)" ]; then \
-	  mkdir $(distdir)/_build/cmake \
-	  && cd $(distdir)/_build/cmake \
-	  && cmake ../.. \
-	  && $(MAKE) \
-	  && ctest -V \
-	  && $(MAKE) DESTDIR=../../_inst/cmake install ; \
-	fi
-	rm -rf $(distdir)/_build/cmake
-	rm -rf $(distdir)/_inst/cmake
-
-release:
-	(rm -f $(top_srcdir)/RELEASE-DATE && echo $(LIBTIFF_RELEASE_DATE) > $(top_srcdir)/RELEASE-DATE)
-	(rm -f $(top_srcdir)/VERSION && echo $(LIBTIFF_VERSION) > $(top_srcdir)/VERSION)
-	(rm -f $(top_srcdir)/libtiff/tiffvers.h && sed 's,LIBTIFF_VERSION,$(LIBTIFF_VERSION),;s,LIBTIFF_RELEASE_DATE,$(LIBTIFF_RELEASE_DATE),' $(top_srcdir)/libtiff/tiffvers.h.in > $(top_srcdir)/libtiff/tiffvers.h)
-coverity:
-	$(MAKE) clean
-	cov-build --dir cov-int $(MAKE)
-	tar caf $(COVERITY_TARBALL) cov-int
-	curl --limit-rate 50K \
-	--form token=`cat $$HOME/.coverity_key_tiff` \
-	--form email=$(COVERITY_EMAIL) \
-	--form file=@$(COVERITY_TARBALL) \
-	--form version=$(COVERITY_VERSION) \
-	--form description=$(COVERITY_DESCRIPTION) \
-	https://scan.coverity.com/builds?project=tiff
-	$(RM) $(COVERITY_TARBALL)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,8 +1,0 @@
-test_arrays.o: test_arrays.c /usr/include/stdc-predef.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h test_arrays.h
-
-/usr/include/stdc-predef.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
-
-test_arrays.h:
