@@ -50,7 +50,8 @@ test_stack_LDADD = libyara/.libs/libyara.a
 TESTS = $(check_PROGRAMS)
 TESTS_ENVIRONMENT = TOP_SRCDIR=$(top_srcdir)
 
-check_PROGRAMS = test-atoms \
+check_PROGRAMS = test-alignment \
+  test-atoms \
   test-api \
   test-rules \
   test-pe \
