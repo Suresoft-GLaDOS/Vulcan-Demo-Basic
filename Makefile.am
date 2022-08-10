@@ -50,7 +50,15 @@ test_stack_LDADD = libyara/.libs/libyara.a
 TESTS = $(check_PROGRAMS)
 TESTS_ENVIRONMENT = TOP_SRCDIR=$(top_srcdir)
 
-check_PROGRAMS = test-atoms
+check_PROGRAMS = test-atoms \
+  test-api \
+  test-rules \
+  test-pe \
+  test-elf \
+  test-version \
+  test-bitmask \
+  test-math \
+  test-stack
 
 if POSIX
 # The -fsanitize=address option makes test-exception fail. Include the test

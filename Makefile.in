@@ -93,11 +93,7 @@ host_triplet = @host@
 @OPTIMIZATION_FALSE@am__append_3 = -O0
 @ADDRESS_SANITIZER_TRUE@am__append_4 = -fsanitize=address
 bin_PROGRAMS = yara$(EXEEXT) yarac$(EXEEXT)
-check_PROGRAMS = test-alignment$(EXEEXT) test-atoms$(EXEEXT) \
-	test-api$(EXEEXT) test-rules$(EXEEXT) test-pe$(EXEEXT) \
-	test-elf$(EXEEXT) test-version$(EXEEXT) test-bitmask$(EXEEXT) \
-	test-math$(EXEEXT) test-stack$(EXEEXT) $(am__EXEEXT_1) \
-	$(am__EXEEXT_2) $(am__EXEEXT_3)
+check_PROGRAMS = test-atoms$(EXEEXT)
 
 # The -fsanitize=address option makes test-exception fail. Include the test
 # only if the option is not enabled.
