@@ -16,6 +16,7 @@ jobs:
         steps:
             - name: run build
               run: |
+                  chmod -R 777 .
                   ./bootstrap.sh
                   ./configure LDFLAGS=-llua5.3
                   make clean

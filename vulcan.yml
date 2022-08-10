@@ -15,12 +15,14 @@ time-out: 3600
 max-patch-number : 500
 
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
+  chmod -R 777 .
   ./bootstrap.sh
   ./configure LDFLAGS=-llua5.3
   make clean
   make -j10
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
+  chmod -R 777 .
   ./bootstrap.sh
   ./configure LDFLAGS=-llua5.3
   make clean
