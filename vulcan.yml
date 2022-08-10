@@ -17,7 +17,7 @@ max-patch-number : 500
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
   chmod -R 777 .
   ./bootstrap.sh
-  ./configure LDFLAGS=-llua5.3
+  ./configure CFLAGS="-fPIE" LDFLAGS=-llua5.3
   make clean
   make -j10
 
@@ -25,7 +25,7 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
   chmod -R 777 .
   sed -i 's/libyara\/atoms.c//' Makefile.am
   ./bootstrap.sh
-  ./configure CFLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV" LDFLAGS="-lgcov -llua5.3"
+  ./configure CFLAGS="-fPIE --coverage -g -O0 -DDPP_ENABLE_GCOV" LDFLAGS="-lgcov -llua5.3"
   make clean
   make -j10
   find libyara -type d -name '.libs' -exec find {} \( -name '*.o' -o -name '*.gcno' \) -delete \;
