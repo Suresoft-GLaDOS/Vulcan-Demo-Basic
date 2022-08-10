@@ -9,7 +9,7 @@ docker-image:
 extra-build-env-setting-commands:
 
 test-candidates: |
-  tools/tiffcrop.c
+  libyara/atoms.c
 
 time-out: 3600
 max-patch-number : 500
@@ -23,10 +23,12 @@ test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   chmod -R 777 .
+  sed -i 's/libyara\/atoms.c//' Makefile.am
   ./bootstrap.sh
-  ./configure LDFLAGS=-llua5.3
+  ./configure CFLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV" LDFLAGS="-lgcov -llua5.3"
   make clean
-  make -j10 CFLAGS="--coverage"
+  make -j10
+  find libyara -type d -name '.libs' -exec find {} \( -name '*.o' -o -name '*.gcno' \) -delete \;
 
 
 # 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
