@@ -1,6 +1,6 @@
-#line 1 "hex_lexer.c"
+#line 2 "hex_lexer.c"
 
-#line 3 "hex_lexer.c"
+#line 4 "hex_lexer.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -753,11 +753,11 @@ with noyywrap then we can remove this pragma.
       YYABORT; \
     } \
 
-#line 756 "hex_lexer.c"
+#line 757 "hex_lexer.c"
 #define YY_NO_UNISTD_H 1
 #define YY_NO_INPUT 1
 
-#line 760 "hex_lexer.c"
+#line 761 "hex_lexer.c"
 
 #define INITIAL 0
 #define comment 1
@@ -1035,7 +1035,7 @@ YY_DECL
 
 
 
-#line 1038 "hex_lexer.c"
+#line 1039 "hex_lexer.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1243,7 +1243,7 @@ YY_RULE_SETUP
 #line 182 "hex_lexer.l"
 ECHO;
 	YY_BREAK
-#line 1246 "hex_lexer.c"
+#line 1247 "hex_lexer.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(comment):
 case YY_STATE_EOF(range):

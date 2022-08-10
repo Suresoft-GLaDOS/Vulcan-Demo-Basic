@@ -15,14 +15,14 @@ time-out: 3600
 max-patch-number : 500
 
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
-  ./autogen.sh  
-  ./configure
+  ./bootstrap.sh
+  ./configure LDFLAGS=-llua5.3
   make clean
   make -j10
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
-  ./autogen.sh  
-  ./configure
+  ./bootstrap.sh
+  ./configure LDFLAGS=-llua5.3
   make clean
   make -j10 CFLAGS="--coverage"
 
@@ -32,11 +32,18 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-  index=1; make check TESTS="$(sed -n "1p" < AUTOMAKE_TEST_CASE.output)"
-  index=2; make check TESTS="$(sed -n "2p" < AUTOMAKE_TEST_CASE.output)"
-  index=3; make check TESTS="$(sed -n "3p" < AUTOMAKE_TEST_CASE.output)"
-  index=4; make check TESTS="$(sed -n "4p" < AUTOMAKE_TEST_CASE.output)"
-  index=5; make check TESTS="$(sed -n "5p" < AUTOMAKE_TEST_CASE.output)"
+  echo return 1 > tests/defects4cpp.lua;make check-TESTS
+  echo return 10 > tests/defects4cpp.lua;make check-TESTS
+  echo return 20 > tests/defects4cpp.lua;make check-TESTS
+  echo return 30 > tests/defects4cpp.lua;make check-TESTS
+  echo return 40 > tests/defects4cpp.lua;make check-TESTS
+  echo return 50 > tests/defects4cpp.lua;make check-TESTS
+  echo return 60 > tests/defects4cpp.lua;make check-TESTS
+  echo return 70 > tests/defects4cpp.lua;make check-TESTS
+  echo return 80 > tests/defects4cpp.lua;make check-TESTS
+  echo return 90 > tests/defects4cpp.lua;make check-TESTS
+  echo return 100 > tests/defects4cpp.lua;make check-TESTS
+  echo return 102 > tests/defects4cpp.lua;make check-TESTS
   
 
 test-case:
