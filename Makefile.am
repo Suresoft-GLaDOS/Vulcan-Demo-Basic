@@ -56,9 +56,9 @@ if POSIX
 # The -fsanitize=address option makes test-exception fail. Include the test
 # only if the option is not enabled.
 if !ADDRESS_SANITIZER
-check_PROGRAMS+=test-exception
-test_exception_SOURCES = tests/test-exception.c tests/util.c
-test_exception_LDADD = libyara/.libs/libyara.a
+# check_PROGRAMS+=test-exception
+# test_exception_SOURCES = tests/test-exception.c tests/util.c
+# test_exception_LDADD = libyara/.libs/libyara.a
 endif
 endif
 
