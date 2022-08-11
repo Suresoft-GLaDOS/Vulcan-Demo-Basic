@@ -69,10 +69,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/libucl
-pkgincludedir = $(includedir)/libucl
-pkglibdir = $(libdir)/libucl
-pkglibexecdir = $(libexecdir)/libucl
+pkgdatadir = $(datadir)/libxml2
+pkgincludedir = $(includedir)/libxml2
+pkglibdir = $(libdir)/libxml2
+pkglibexecdir = $(libexecdir)/libxml2
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -89,10 +89,10 @@ build_triplet = x86_64-pc-linux-gnu
 host_triplet = x86_64-pc-linux-gnu
 subdir = doc
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/ax_lua.m4 \
-	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
-	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
-	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
+	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
+	$(top_srcdir)/acinclude.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
@@ -114,6 +114,14 @@ am__v_at_0 = @
 am__v_at_1 = 
 SOURCES =
 DIST_SOURCES =
+RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+	ctags-recursive dvi-recursive html-recursive info-recursive \
+	install-data-recursive install-dvi-recursive \
+	install-exec-recursive install-html-recursive \
+	install-info-recursive install-pdf-recursive \
+	install-ps-recursive install-recursive installcheck-recursive \
+	installdirs-recursive pdf-recursive ps-recursive \
+	tags-recursive uninstall-recursive
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -146,13 +154,65 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-man3dir = $(mandir)/man3
-am__installdirs = "$(DESTDIR)$(man3dir)"
+man1dir = $(mandir)/man1
+am__installdirs = "$(DESTDIR)$(man1dir)"
 NROFF = nroff
-MANS = $(dist_man_MANS)
+MANS = $(man_MANS)
+RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+  distclean-recursive maintainer-clean-recursive
+am__recursive_targets = \
+  $(RECURSIVE_TARGETS) \
+  $(RECURSIVE_CLEAN_TARGETS) \
+  $(am__extra_recursive_targets)
+AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \
+	distdir distdir-am
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
-am__DIST_COMMON = $(dist_man_MANS) $(srcdir)/Makefile.in
+# Read a list of newline-separated strings from the standard input,
+# and print each of them once, without duplicates.  Input order is
+# *not* preserved.
+am__uniquify_input = $(AWK) '\
+  BEGIN { nonempty = 0; } \
+  { items[$$0] = 1; nonempty = 1; } \
+  END { if (nonempty) { for (i in items) print i; }; } \
+'
+# Make sure the list of sources is unique.  This is necessary because,
+# e.g., the same source file might be shared among _SOURCES variables
+# for different programs/libraries.
+am__define_uniq_tagged_files = \
+  list='$(am__tagged_files)'; \
+  unique=`for i in $$list; do \
+    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+  done | $(am__uniquify_input)`
+ETAGS = etags
+CTAGS = ctags
+DIST_SUBDIRS = $(SUBDIRS)
+am__DIST_COMMON = $(srcdir)/Makefile.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+am__relativize = \
+  dir0=`pwd`; \
+  sed_first='s,^\([^/]*\)/.*$$,\1,'; \
+  sed_rest='s,^[^/]*/*,,'; \
+  sed_last='s,^.*/\([^/]*\)$$,\1,'; \
+  sed_butlast='s,/*[^/]*$$,,'; \
+  while test -n "$$dir1"; do \
+    first=`echo "$$dir1" | sed -e "$$sed_first"`; \
+    if test "$$first" != "."; then \
+      if test "$$first" = ".."; then \
+        dir2=`echo "$$dir0" | sed -e "$$sed_last"`/"$$dir2"; \
+        dir0=`echo "$$dir0" | sed -e "$$sed_butlast"`; \
+      else \
+        first2=`echo "$$dir2" | sed -e "$$sed_first"`; \
+        if test "$$first2" = "$$first"; then \
+          dir2=`echo "$$dir2" | sed -e "$$sed_rest"`; \
+        else \
+          dir2="../$$dir2"; \
+        fi; \
+        dir0="$$dir0"/"$$first"; \
+      fi; \
+    fi; \
+    dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
+  done; \
+  reldir="$$dir2"
 ACLOCAL = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
@@ -161,18 +221,22 @@ AUTOCONF = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoconf
 AUTOHEADER = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoheader
 AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing automake-1.16
 AWK = gawk
+BASE_THREAD_LIBS = -lpthread
+C14N_OBJ = c14n.c
+CATALOG_OBJ = catalog.o
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2
+CFLAGS = -g -O2 -pedantic -W -Wformat -Wunused -Wimplicit -Wreturn-type -Wswitch -Wcomment -Wtrigraphs -Wformat -Wchar-subscripts -Wuninitialized -Wparentheses -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wredundant-decls -Wno-long-long
 CPP = gcc -E
 CPPFLAGS = 
-CURL_CFLAGS = 
-CURL_FOUND = 
-CURL_LIBS = 
 CYGPATH_W = echo
+CYGWIN_EXTRA_LDFLAGS = 
+CYGWIN_EXTRA_PYTHON_LIBADD = 
+DEBUG_OBJ = debugXML.o
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DLLTOOL = false
+DOCB_OBJ = DOCBparser.o
 DSYMUTIL = 
 DUMPBIN = 
 ECHO_C = 
@@ -181,7 +245,15 @@ ECHO_T =
 EGREP = /usr/bin/grep -E
 EXEEXT = 
 FGREP = /usr/bin/grep -F
+FTP_OBJ = nanoftp.o
 GREP = /usr/bin/grep
+HAVE_ISINF = 
+HAVE_ISNAN = 
+HTML_DIR = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html
+HTML_OBJ = HTMLparser.o HTMLtree.o
+HTTP_OBJ = nanohttp.o
+ICONV_LIBS = 
+ICU_LIBS = 
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -189,54 +261,135 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
-LIBCRYPTO_LIB = 
-LIBFETCH_LIBS = 
 LIBOBJS = 
-LIBREGEX_LIB = 
-LIBS = -lm 
-LIBS_EXTRA = 
+LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
+LIBXML_MAJOR_VERSION = 2
+LIBXML_MICRO_VERSION = 3
+LIBXML_MINOR_VERSION = 9
+LIBXML_VERSION = 2.9.3
+LIBXML_VERSION_EXTRA = 
+LIBXML_VERSION_INFO = 11:3:9
+LIBXML_VERSION_NUMBER = 20903
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-LUA = 
-LUA_EXEC_PREFIX = 
-LUA_INCLUDE = 
-LUA_LIB = 
-LUA_PLATFORM = 
-LUA_PREFIX = 
-LUA_SHORT_VERSION = 
-LUA_VERSION = 
+LZMA_CFLAGS = 
+LZMA_LIBS = 
 MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
+MODULE_EXTENSION = .so
+MODULE_PLATFORM_LIBS = -ldl
+MV = /usr/bin/mv
+M_LIBS = -lm
 NM = /usr/bin/nm -B
 NMEDIT = 
 OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = libucl
-PACKAGE_BUGREPORT = https://github.com/vstakhov/libucl
-PACKAGE_NAME = libucl
-PACKAGE_STRING = libucl 0.7.3
-PACKAGE_TARNAME = libucl
+PACKAGE = libxml2
+PACKAGE_BUGREPORT = 
+PACKAGE_NAME = 
+PACKAGE_STRING = 
+PACKAGE_TARNAME = 
 PACKAGE_URL = 
-PACKAGE_VERSION = 0.7.3
-PANDOC = /non/existent
+PACKAGE_VERSION = 
 PATH_SEPARATOR = :
+PERL = /usr/bin/perl
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = 
+PYTHON = /bin/python
+PYTHON_INCLUDES = /usr/include/python3.8
+PYTHON_LIBS = -L/usr/lib/python3.8/config-3.8-x86_64-linux-gnu -L/usr/lib  -lcrypt -lpthread -ldl  -lutil -lm -lm 
+PYTHON_SITE_PACKAGES = /usr/lib/python3.8/site-packages
+PYTHON_SUBDIR = python
+PYTHON_TESTS =  RelaxNGPythonTests SchemasPythonTests
+PYTHON_VERSION = 3.8
 RANLIB = ranlib
+RDL_LIBS = 
+READER_TEST = Readertests
+RELDATE = Thu Aug 11 2022
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
-SO_VERSION = 5:0:2
+STATIC_BINARIES = 
 STRIP = strip
-UCL_VERSION = 0.7.3
-VERSION = 0.7.3
+TAR = /usr/bin/tar
+TEST_C14N = C14Ntests
+TEST_CATALOG = Catatests
+TEST_DEBUG = Scripttests
+TEST_HTML = HTMLtests
+TEST_MODULES = ModuleTests
+TEST_PATTERN = Patterntests
+TEST_PHTML = HTMLPushtests
+TEST_PUSH = XMLPushtests
+TEST_REGEXPS = Regexptests Automatatests
+TEST_SAX = SAXtests
+TEST_SCHEMAS = Schemastests Relaxtests
+TEST_SCHEMATRON = Schematrontests
+TEST_THREADS = Threadtests
+TEST_VALID = Validtests
+TEST_VTIME = VTimingtests
+TEST_XINCLUDE = XIncludetests
+TEST_XPATH = XPathtests
+TEST_XPTR = XPtrtests
+THREAD_CFLAGS =  -D_REENTRANT
+THREAD_LIBS = 
+VERSION = 2.9.3
+VERSION_SCRIPT_FLAGS = -Wl,--version-script=
+WGET = /usr/bin/wget
+WIN32_EXTRA_LDFLAGS = 
+WIN32_EXTRA_LIBADD = 
+WIN32_EXTRA_PYTHON_LIBADD = 
+WITH_C14N = 1
+WITH_CATALOG = 1
+WITH_DEBUG = 1
+WITH_DOCB = 1
+WITH_FTP = 1
+WITH_HTML = 1
+WITH_HTTP = 1
+WITH_ICONV = 1
+WITH_ICU = 0
+WITH_ISO8859X = 1
+WITH_LEGACY = 1
+WITH_LZMA = 0
+WITH_MEM_DEBUG = 0
+WITH_MODULES = 1
+WITH_OUTPUT = 1
+WITH_PATTERN = 1
+WITH_PUSH = 1
+WITH_READER = 1
+WITH_REGEXPS = 1
+WITH_RUN_DEBUG = 0
+WITH_SAX1 = 1
+WITH_SCHEMAS = 1
+WITH_SCHEMATRON = 1
+WITH_THREADS = 1
+WITH_THREAD_ALLOC = 0
+WITH_TREE = 1
+WITH_TRIO = 0
+WITH_VALID = 1
+WITH_WRITER = 1
+WITH_XINCLUDE = 1
+WITH_XPATH = 1
+WITH_XPTR = 1
+WITH_ZLIB = 1
+XINCLUDE_OBJ = xinclude.o
+XMLLINT = /usr/bin/xmllint
+XML_CFLAGS = 
+XML_INCLUDEDIR = -I${includedir}/libxml2
+XML_LIBDIR = -L${libdir}
+XML_LIBS = -lxml2 -lz   -lm 
+XML_LIBTOOLLIBS = libxml2.la
+XPATH_OBJ = xpath.o
+XPTR_OBJ = xpointer.o
+XSLTPROC = /usr/bin/xsltproc
+Z_CFLAGS = 
+Z_LIBS = -lz
 abs_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/doc
 abs_srcdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/doc
 abs_top_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
@@ -258,7 +411,7 @@ build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
-docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
+docdir = ${datarootdir}/doc/${PACKAGE}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
 host = x86_64-pc-linux-gnu
@@ -274,17 +427,14 @@ libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
-luadir = 
-luaexecdir = 
 mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-pkgluadir = 
-pkgluaexecdir = 
 prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
+pythondir = $(PYTHON_SITE_PACKAGES)
 runstatedir = ${localstatedir}/run
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
@@ -294,9 +444,249 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-EXTRA_DIST = api.md
-dist_man_MANS = libucl.3
-all: all-am
+SUBDIRS = . devhelp examples
+
+# The top-level SGML file.
+DOC_MAIN_XML_FILE = gnome-xml.xml
+
+# The directory containing the source code (if it contains documentation).
+DOC_SOURCE_DIR = ..
+
+# A file in win32 depends upon one of the doc files
+WIN32_DIR = $(top_srcdir)/win32
+PAGES = architecture.html bugs.html contribs.html docs.html DOM.html \
+    downloads.html entities.html example.html help.html index.html \
+    interface.html intro.html library.html namespaces.html news.html \
+    tree.html xmldtd.html XMLinfo.html XSLT.html
+
+APIPAGES = APIconstructors.html APIfiles.html APIfunctions.html \
+    APIsymbols.html APIchunk0.html
+
+#EXTRA_DIST_wc = xmlcatalog_man.xml $(wildcard tutorial/*.html) \
+#    $(wildcard tutorial/*.c) $(wildcard tutorial/*.pdf) \
+#    $(wildcard tutorial/images/*.png) \
+#    $(wildcard tutorial/images/callouts/*.png) $(wildcard API*.html) \
+#    $(wildcard *.1) $(wildcard *.xsl) $(wildcard *.html) \
+#    $(wildcard *.gif) w3c.png $(wildcard html/*.html) \
+#    $(wildcard html/*.png) libxml2-api.xml index.py search.php \
+#    apibuild.py libxml2.xsa xmllint.xml xmlcatalog_man.xml \
+#    README.docs symbols.xml
+
+
+# Expanded form of EXTRA_DIST_wc
+#
+EXTRA_DIST = \
+	APIchunk0.html \
+	APIchunk1.html \
+	APIchunk2.html \
+	APIchunk3.html \
+	APIchunk4.html \
+	APIchunk5.html \
+	APIchunk6.html \
+	APIchunk7.html \
+	APIchunk8.html \
+	APIchunk9.html \
+	APIchunk10.html \
+	APIchunk11.html \
+	APIchunk12.html \
+	APIchunk13.html \
+	APIchunk14.html \
+	APIchunk15.html \
+	APIchunk16.html \
+	APIchunk17.html \
+	APIchunk18.html \
+	APIchunk19.html \
+	APIchunk20.html \
+	APIchunk21.html \
+	APIchunk22.html \
+	APIchunk23.html \
+	APIchunk24.html \
+	APIchunk25.html \
+	APIchunk26.html \
+	APIchunk27.html \
+	APIchunk28.html \
+	APIchunk29.html \
+	APIconstructors.html \
+	APIfiles.html \
+	APIfunctions.html \
+	APIsymbols.html \
+	ChangeLog.xsl \
+	DOM.gif \
+	DOM.html \
+	FAQ.html \
+	Libxml2-Logo-180x168.gif \
+	Libxml2-Logo-90x34.gif \
+	README.docs \
+	XMLinfo.html \
+	XSLT.html \
+	api.xsl \
+	apibuild.py \
+	architecture.html \
+	bugs.html \
+	catalog.gif \
+	catalog.html \
+	checkapisym.xsl \
+	contribs.html \
+	docs.html \
+	downloads.html \
+	elfgcchack.xsl \
+	encoding.html \
+	entities.html \
+	example.html \
+	guidelines.html \
+	help.html \
+	html/book1.html \
+	html/home.png \
+	html/index.html \
+	html/left.png \
+	html/libxml-DOCBparser.html \
+	html/libxml-HTMLparser.html \
+	html/libxml-HTMLtree.html \
+	html/libxml-SAX.html \
+	html/libxml-SAX2.html \
+	html/libxml-c14n.html \
+	html/libxml-catalog.html \
+	html/libxml-chvalid.html \
+	html/libxml-debugXML.html \
+	html/libxml-dict.html \
+	html/libxml-encoding.html \
+	html/libxml-entities.html \
+	html/libxml-globals.html \
+	html/libxml-hash.html \
+	html/libxml-lib.html \
+	html/libxml-list.html \
+	html/libxml-nanoftp.html \
+	html/libxml-nanohttp.html \
+	html/libxml-parser.html \
+	html/libxml-parserInternals.html \
+	html/libxml-pattern.html \
+	html/libxml-relaxng.html \
+	html/libxml-schemasInternals.html \
+	html/libxml-schematron.html \
+	html/libxml-threads.html \
+	html/libxml-tree.html \
+	html/libxml-uri.html \
+	html/libxml-valid.html \
+	html/libxml-xinclude.html \
+	html/libxml-xlink.html \
+	html/libxml-xmlIO.html \
+	html/libxml-xmlautomata.html \
+	html/libxml-xmlerror.html \
+	html/libxml-xmlexports.html \
+	html/libxml-xmlmemory.html \
+	html/libxml-xmlmodule.html \
+	html/libxml-xmlreader.html \
+	html/libxml-xmlregexp.html \
+	html/libxml-xmlsave.html \
+	html/libxml-xmlschemas.html \
+	html/libxml-xmlschemastypes.html \
+	html/libxml-xmlstring.html \
+	html/libxml-xmlunicode.html \
+	html/libxml-xmlversion.html \
+	html/libxml-xmlwriter.html \
+	html/libxml-xpath.html \
+	html/libxml-xpathInternals.html \
+	html/libxml-xpointer.html \
+	html/libxml-xzlib.html \
+	html/right.png \
+	html/up.png \
+	index.html \
+	index.py \
+	interface.html \
+	intro.html \
+	library.html \
+	libxml.gif \
+	libxml2-api.xml \
+	libxml2.xsa \
+	namespaces.html \
+	newapi.xsl \
+	news.html \
+	news.xsl \
+	python.html \
+	redhat.gif \
+	search.php \
+	searches.html \
+	searches.xsl \
+	site.xsl \
+	smallfootonly.gif \
+	structure.gif \
+	symbols.xml \
+	syms.xsl \
+	threads.html \
+	tree.html \
+	tutorial/apa.html \
+	tutorial/apb.html \
+	tutorial/apc.html \
+	tutorial/apd.html \
+	tutorial/ape.html \
+	tutorial/apf.html \
+	tutorial/apg.html \
+	tutorial/aph.html \
+	tutorial/api.html \
+	tutorial/ar01s02.html \
+	tutorial/ar01s03.html \
+	tutorial/ar01s04.html \
+	tutorial/ar01s05.html \
+	tutorial/ar01s06.html \
+	tutorial/ar01s07.html \
+	tutorial/ar01s08.html \
+	tutorial/ar01s09.html \
+	tutorial/images/blank.png \
+	tutorial/images/callouts/1.png \
+	tutorial/images/callouts/10.png \
+	tutorial/images/callouts/2.png \
+	tutorial/images/callouts/3.png \
+	tutorial/images/callouts/4.png \
+	tutorial/images/callouts/5.png \
+	tutorial/images/callouts/6.png \
+	tutorial/images/callouts/7.png \
+	tutorial/images/callouts/8.png \
+	tutorial/images/callouts/9.png \
+	tutorial/images/caution.png \
+	tutorial/images/draft.png \
+	tutorial/images/home.png \
+	tutorial/images/important.png \
+	tutorial/images/next.png \
+	tutorial/images/note.png \
+	tutorial/images/prev.png \
+	tutorial/images/tip.png \
+	tutorial/images/toc-blank.png \
+	tutorial/images/toc-minus.png \
+	tutorial/images/toc-plus.png \
+	tutorial/images/up.png \
+	tutorial/images/warning.png \
+	tutorial/includeaddattribute.c \
+	tutorial/includeaddkeyword.c \
+	tutorial/includeconvert.c \
+	tutorial/includegetattribute.c \
+	tutorial/includekeyword.c \
+	tutorial/includexpath.c \
+	tutorial/index.html \
+	tutorial/ix01.html \
+	tutorial/xmltutorial.pdf \
+	upgrade.html \
+	w3c.png \
+	wiki.xsl \
+	xml.html \
+	xmlcatalog.1 \
+	xmlcatalog_man.html \
+	xmlcatalog_man.xml \
+	xmldtd.html \
+	xmlio.html \
+	xmllint.1 \
+	xmllint.html \
+	xmllint.xml \
+	xmlmem.html \
+	xmlreader.html \
+	xsa.xsl
+
+man_MANS = xmllint.1 xmlcatalog.1
+#source_file_deps = \
+#	$(filter-out %/xmlversion.h, $(wildcard $(top_srcdir)/include/libxml/*.h)) \
+#	$(top_srcdir)/include/libxml/xmlversion.h.in \
+#	$(wildcard $(top_srcdir)/*.c)
+
+all: all-recursive
 
 .SUFFIXES:
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
@@ -308,9 +698,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign doc/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign doc/Makefile
+	  $(AUTOMAKE) --gnu doc/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -334,55 +724,148 @@ mostlyclean-libtool:
 
 clean-libtool:
 	-rm -rf .libs _libs
-install-man3: $(dist_man_MANS)
+install-man1: $(man_MANS)
 	@$(NORMAL_INSTALL)
 	@list1=''; \
-	list2='$(dist_man_MANS)'; \
-	test -n "$(man3dir)" \
+	list2='$(man_MANS)'; \
+	test -n "$(man1dir)" \
 	  && test -n "`echo $$list1$$list2`" \
 	  || exit 0; \
-	echo " $(MKDIR_P) '$(DESTDIR)$(man3dir)'"; \
-	$(MKDIR_P) "$(DESTDIR)$(man3dir)" || exit 1; \
+	echo " $(MKDIR_P) '$(DESTDIR)$(man1dir)'"; \
+	$(MKDIR_P) "$(DESTDIR)$(man1dir)" || exit 1; \
 	{ for i in $$list1; do echo "$$i"; done;  \
 	if test -n "$$list2"; then \
 	  for i in $$list2; do echo "$$i"; done \
-	    | sed -n '/\.3[a-z]*$$/p'; \
+	    | sed -n '/\.1[a-z]*$$/p'; \
 	fi; \
 	} | while read p; do \
 	  if test -f $$p; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; echo "$$p"; \
 	done | \
-	sed -e 'n;s,.*/,,;p;h;s,.*\.,,;s,^[^3][0-9a-z]*$$,3,;x' \
+	sed -e 'n;s,.*/,,;p;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,' | \
 	sed 'N;N;s,\n, ,g' | { \
 	list=; while read file base inst; do \
 	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
-	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
-	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man3dir)/$$inst" || exit $$?; \
+	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
+	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst" || exit $$?; \
 	  fi; \
 	done; \
 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
 	while read files; do \
 	  test -z "$$files" || { \
-	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man3dir)'"; \
-	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man3dir)" || exit $$?; }; \
+	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man1dir)'"; \
+	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man1dir)" || exit $$?; }; \
 	done; }
 
-uninstall-man3:
+uninstall-man1:
 	@$(NORMAL_UNINSTALL)
-	@list=''; test -n "$(man3dir)" || exit 0; \
+	@list=''; test -n "$(man1dir)" || exit 0; \
 	files=`{ for i in $$list; do echo "$$i"; done; \
-	l2='$(dist_man_MANS)'; for i in $$l2; do echo "$$i"; done | \
-	  sed -n '/\.3[a-z]*$$/p'; \
-	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^3][0-9a-z]*$$,3,;x' \
+	l2='$(man_MANS)'; for i in $$l2; do echo "$$i"; done | \
+	  sed -n '/\.1[a-z]*$$/p'; \
+	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
-	dir='$(DESTDIR)$(man3dir)'; $(am__uninstall_files_from_dir)
-tags TAGS:
+	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
 
-ctags CTAGS:
+# This directory's subdirectories are mostly independent; you can cd
+# into them and run 'make' without going through this Makefile.
+# To change the values of 'make' variables: instead of editing Makefiles,
+# (1) if the variable is set in 'config.status', edit 'config.status'
+#     (which will cause the Makefiles to be regenerated when you run 'make');
+# (2) otherwise, pass the desired values on the 'make' command line.
+$(am__recursive_targets):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
 
-cscope cscopelist:
+ID: $(am__tagged_files)
+	$(am__define_uniq_tagged_files); mkid -fID $$unique
+tags: tags-recursive
+TAGS: tags
 
+tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
+	set x; \
+	here=`pwd`; \
+	if ($(ETAGS) --etags-include --version) >/dev/null 2>&1; then \
+	  include_option=--etags-include; \
+	  empty_fix=.; \
+	else \
+	  include_option=--include; \
+	  empty_fix=; \
+	fi; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test ! -f $$subdir/TAGS || \
+	      set "$$@" "$$include_option=$$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
+	$(am__define_uniq_tagged_files); \
+	shift; \
+	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
+	  test -n "$$unique" || unique=$$empty_fix; \
+	  if test $$# -gt 0; then \
+	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	      "$$@" $$unique; \
+	  else \
+	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	      $$unique; \
+	  fi; \
+	fi
+ctags: ctags-recursive
+
+CTAGS: ctags
+ctags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
+	$(am__define_uniq_tagged_files); \
+	test -z "$(CTAGS_ARGS)$$unique" \
+	  || $(CTAGS) $(CTAGSFLAGS) $(AM_CTAGSFLAGS) $(CTAGS_ARGS) \
+	     $$unique
+
+GTAGS:
+	here=`$(am__cd) $(top_builddir) && pwd` \
+	  && $(am__cd) $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) "$$here"
+cscopelist: cscopelist-recursive
+
+cscopelist-am: $(am__tagged_files)
+	list='$(am__tagged_files)'; \
+	case "$(srcdir)" in \
+	  [\\/]* | ?:[\\/]*) sdir="$(srcdir)" ;; \
+	  *) sdir=$(subdir)/$(srcdir) ;; \
+	esac; \
+	for i in $$list; do \
+	  if test -f "$$i"; then \
+	    echo "$(subdir)/$$i"; \
+	  else \
+	    echo "$$sdir/$$i"; \
+	  fi; \
+	done >> $(top_builddir)/cscope.files
+
+distclean-tags:
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
 
 distdir: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) distdir-am
@@ -417,22 +900,48 @@ distdir-am: $(DISTFILES)
 	    || exit 1; \
 	  fi; \
 	done
+	@list='$(DIST_SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    $(am__make_dryrun) \
+	      || test -d "$(distdir)/$$subdir" \
+	      || $(MKDIR_P) "$(distdir)/$$subdir" \
+	      || exit 1; \
+	    dir1=$$subdir; dir2="$(distdir)/$$subdir"; \
+	    $(am__relativize); \
+	    new_distdir=$$reldir; \
+	    dir1=$$subdir; dir2="$(top_distdir)"; \
+	    $(am__relativize); \
+	    new_top_distdir=$$reldir; \
+	    echo " (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir="$$new_top_distdir" distdir="$$new_distdir" \\"; \
+	    echo "     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)"; \
+	    ($(am__cd) $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$$new_top_distdir" \
+	        distdir="$$new_distdir" \
+		am__remove_distdir=: \
+		am__skip_length_check=: \
+		am__skip_mode_fix=: \
+	        distdir) \
+	      || exit 1; \
+	  fi; \
+	done
 check-am: all-am
-check: check-am
+check: check-recursive
 all-am: Makefile $(MANS)
-installdirs:
-	for dir in "$(DESTDIR)$(man3dir)"; do \
+installdirs: installdirs-recursive
+installdirs-am:
+	for dir in "$(DESTDIR)$(man1dir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
-install: install-am
-install-exec: install-exec-am
-install-data: install-data-am
-uninstall: uninstall-am
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 
-installcheck: installcheck-am
+installcheck: installcheck-recursive
 install-strip:
 	if test -z '$(STRIP)'; then \
 	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
@@ -454,97 +963,198 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-clean: clean-am
+clean: clean-recursive
 
-clean-am: clean-generic clean-libtool mostlyclean-am
+clean-am: clean-generic clean-libtool clean-local mostlyclean-am
 
-distclean: distclean-am
+distclean: distclean-recursive
 	-rm -f Makefile
-distclean-am: clean-am distclean-generic
+distclean-am: clean-am distclean-generic distclean-tags
 
-dvi: dvi-am
+dvi: dvi-recursive
 
 dvi-am:
 
-html: html-am
+html: html-recursive
 
 html-am:
 
-info: info-am
+info: info-recursive
 
 info-am:
 
-install-data-am: install-man
+install-data-am: install-data-local install-man
 
-install-dvi: install-dvi-am
+install-dvi: install-dvi-recursive
 
 install-dvi-am:
 
 install-exec-am:
 
-install-html: install-html-am
+install-html: install-html-recursive
 
 install-html-am:
 
-install-info: install-info-am
+install-info: install-info-recursive
 
 install-info-am:
 
-install-man: install-man3
+install-man: install-man1
 
-install-pdf: install-pdf-am
+install-pdf: install-pdf-recursive
 
 install-pdf-am:
 
-install-ps: install-ps-am
+install-ps: install-ps-recursive
 
 install-ps-am:
 
 installcheck-am:
 
-maintainer-clean: maintainer-clean-am
+maintainer-clean: maintainer-clean-recursive
 	-rm -f Makefile
-maintainer-clean-am: distclean-am maintainer-clean-generic
+maintainer-clean-am: distclean-am maintainer-clean-generic \
+	maintainer-clean-local
 
-mostlyclean: mostlyclean-am
+mostlyclean: mostlyclean-recursive
 
 mostlyclean-am: mostlyclean-generic mostlyclean-libtool
 
-pdf: pdf-am
+pdf: pdf-recursive
 
 pdf-am:
 
-ps: ps-am
+ps: ps-recursive
 
 ps-am:
 
 uninstall-am: uninstall-man
 
-uninstall-man: uninstall-man3
+uninstall-man: uninstall-man1
 
-.MAKE: install-am install-strip
+.MAKE: $(am__recursive_targets) install-am install-strip
 
-.PHONY: all all-am check check-am clean clean-generic clean-libtool \
-	cscopelist-am ctags-am distclean distclean-generic \
-	distclean-libtool distdir dvi dvi-am html html-am info info-am \
-	install install-am install-data install-data-am install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-info install-info-am install-man \
-	install-man3 install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
-	installdirs maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-generic mostlyclean-libtool pdf pdf-am \
-	ps ps-am tags-am uninstall uninstall-am uninstall-man \
-	uninstall-man3
+.PHONY: $(am__recursive_targets) CTAGS GTAGS TAGS all all-am check \
+	check-am clean clean-generic clean-libtool clean-local \
+	cscopelist-am ctags ctags-am distclean distclean-generic \
+	distclean-libtool distclean-tags distdir dvi dvi-am html \
+	html-am info info-am install install-am install-data \
+	install-data-am install-data-local install-dvi install-dvi-am \
+	install-exec install-exec-am install-html install-html-am \
+	install-info install-info-am install-man install-man1 \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	installdirs-am maintainer-clean maintainer-clean-generic \
+	maintainer-clean-local mostlyclean mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
+	uninstall-am uninstall-man uninstall-man1
 
 .PRECIOUS: Makefile
 
 
-gen-man: /non/existent
-	tail -n +$$(grep -n '# Synopsis' api.md | cut -d':' -f1) api.md | \
-	cat pandoc.template - | sed -e 's/^# \(.*\)/# \U\1/' \
-	-e "s/%%date%%/$$(LANG=C date +'%d %B, %Y')/" | \
-	/non/existent -s -f markdown -t man -o libucl.3 
+#docs: web $(top_builddir)/NEWS libxml2.xsa $(man_MANS)
+
+#api: libxml2-api.xml libxml2-refs.xml $(APIPAGES) $(srcdir)/html/index.html $(WIN32_DIR)/libxml2.def.src ../elfgcchack.h $(srcdir)/site.xsl
+
+#web: $(PAGES)
+
+#../elfgcchack.h: $(srcdir)/elfgcchack.xsl $(srcdir)/libxml2-api.xml
+#	-@(if [ -x $(XSLTPROC) ] ; then \
+#	  echo "Rebuilding the elfgcchack.h header" ; \
+#	  $(XSLTPROC) --nonet $(srcdir)/elfgcchack.xsl $(srcdir)/libxml2-api.xml > elfgcchack.h ; \
+#	  if [ "`diff -q elfgcchack.h ../elfgcchack.h`" ] ; then \
+#	    echo "updating ../elfgcchack.h"; \
+#	    cp elfgcchack.h ../elfgcchack.h; \
+#	  fi ; rm -f elfgcchack.h ;  fi );
+
+#$(PAGES): xml.html $(srcdir)/site.xsl
+#	-@(if [ -x $(XSLTPROC) ] ; then \
+#	  echo "Rebuilding the HTML Web pages from xml.html" ; \
+#	  $(XSLTPROC) --nonet --html --path $(srcdir) $(srcdir)/site.xsl $(srcdir)/xml.html > index.html ; fi );
+#	-@(if [ -x $(XMLLINT) ] ; then \
+#	  echo "Validating the HTML Web pages" ; \
+#	  $(XMLLINT) --nonet --valid --noout $(PAGES) ; fi );
+
+#$(top_builddir)/NEWS: $(srcdir)/news.xsl $(srcdir)/news.html
+#	-@(if [ -x $(XSLTPROC) ] ; then \
+#	  $(XSLTPROC) --nonet $(srcdir)/news.xsl $(srcdir)/news.html > $(top_builddir)/NEWS ; fi );
+
+#libxml2.xsa: $(srcdir)/xsa.xsl $(srcdir)/news.html
+#	-@(if [ -x $(XSLTPROC) ] ; then \
+#	  echo "Rebuilding the NEWS file" ; \
+#	  $(XSLTPROC) --nonet $(srcdir)/xsa.xsl $(srcdir)/news.html > libxml2.xsa ; fi );
+
+#$(APIPAGES): libxml2-api.xml libxml2-refs.xml $(srcdir)/site.xsl $(srcdir)/api.xsl
+#	-@(if [ -x $(XSLTPROC) ] ; then \
+#	  echo "Rebuilding the HTML API pages from libxml2-refs.xml" ; \
+#	  $(XSLTPROC) --nonet --html $(srcdir)/api.xsl \
+#	                     $(srcdir)/xml.html ; fi );
+#	-@(if [ -x $(XMLLINT) ] ; then \
+#	  echo "Validating the HTML API pages" ; \
+#	  $(XMLLINT) --nonet --valid --noout API*.html ; fi );
+
+#$(srcdir)/html/index.html: libxml2-api.xml $(srcdir)/newapi.xsl
+#	-@(if [ -x $(XSLTPROC) ] ; then \
+#	  echo "Rebuilding the HTML pages from the XML API" ; \
+#	  $(XSLTPROC) --nonet $(srcdir)/newapi.xsl $(srcdir)/libxml2-api.xml ; fi )
+#	-@(if [ -x $(XMLLINT) ] ; then \
+#	  echo "Validating the resulting XHTML pages" ; \
+#	  $(XMLLINT) --nonet --valid --noout html/*.html ; fi );
+
+#wiki: libxml2-api.xml $(srcdir)/wiki.xsl
+#	-@(if [ -x $(XSLTPROC) ] ; then \
+#		echo "Rebuilding the wiki HTML pages from the XML API" ; \
+#		$(XSLTPROC) --nonet $(srcdir)/wiki.xsl $(srcdir)/libxml2-api.xml; fi )
+
+#$(WIN32_DIR)/libxml2.def.src: libxml2-api.xml
+#	-@(if [ -x $(XSLTPROC) ] ; then \
+#	  $(XSLTPROC) -o $(WIN32_DIR)/libxml2.def.src \
+#	  --nonet $(WIN32_DIR)/defgen.xsl libxml2-api.xml ; fi )
+
+#libxml2-api.xml libxml2-refs.xml ../libxml2.syms: apibuild.py symbols.xml syms.xsl checkapisym.xsl $(source_file_deps)
+#	test -f $(top_srcdir)/include/libxml/xmlversion.h
+#	(cd $(srcdir) && ./apibuild.py)
+#	($(XSLTPROC) $(srcdir)/checkapisym.xsl $(srcdir)/libxml2-api.xml)
+#	($(XSLTPROC) -o ../libxml2.syms $(srcdir)/syms.xsl $(srcdir)/symbols.xml)
+#	-@(cd .. ; $(MAKE) rebuild_testapi)
+
+#xmllint.1: xmllint.xml
+#	-@($(XSLTPROC) --nonet xmllint.xml)
+
+#xmlcatalog.1: xmlcatalog_man.xml
+#	-@($(XSLTPROC) --nonet xmlcatalog_man.xml)
+
+#check-extra-dist:
+#	for f in $(EXTRA_DIST_wc) ; do echo $$f; done | sort -u >tmp.EXTRA_DIST_wc
+#	for f in $(EXTRA_DIST) ;    do echo $$f; done | sort    >tmp.EXTRA_DIST
+#	diff -u tmp.EXTRA_DIST_wc tmp.EXTRA_DIST
+#	rm -f tmp.EXTRA_DIST_wc tmp.EXTRA_DIST
+
+clean-local:
+	rm -f *~ *.bak *.hierarchy *.signals *-unused.txt
+
+maintainer-clean-local: clean-local
+	rm -rf libxml-decl-list.txt libxml-decl.txt 
+
+rebuild: api docs
+
+install-data-local: 
+	$(MKDIR_P) $(DESTDIR)$(HTML_DIR)
+	-$(INSTALL) -m 0644 $(srcdir)/xml.html $(srcdir)/encoding.html $(srcdir)/FAQ.html $(srcdir)/structure.gif $(srcdir)/DOM.gif $(srcdir)/smallfootonly.gif $(srcdir)/redhat.gif $(srcdir)/libxml.gif $(srcdir)/w3c.png $(srcdir)/Libxml2-Logo-180x168.gif $(srcdir)/Libxml2-Logo-90x34.gif $(DESTDIR)$(HTML_DIR)
+	$(MKDIR_P) $(DESTDIR)$(HTML_DIR)/html
+	-$(INSTALL) -m 0644 $(srcdir)/html/*.html $(DESTDIR)$(HTML_DIR)/html
+	-$(INSTALL) -m 0644 $(srcdir)/html/*.png $(DESTDIR)$(HTML_DIR)/html
+	$(MKDIR_P) $(DESTDIR)$(HTML_DIR)/tutorial
+	-$(INSTALL) -m 0644 $(srcdir)/tutorial/*.* \
+		$(DESTDIR)$(HTML_DIR)/tutorial
+	$(MKDIR_P) $(DESTDIR)$(HTML_DIR)/tutorial/images
+	-$(INSTALL) -m 0644 $(srcdir)/tutorial/images/*.* \
+		$(DESTDIR)$(HTML_DIR)/tutorial/images
+	$(MKDIR_P) $(DESTDIR)$(HTML_DIR)/tutorial/images/callouts
+	-$(INSTALL) -m 0644 $(srcdir)/tutorial/images/callouts/*.* \
+		$(DESTDIR)$(HTML_DIR)/tutorial/images/callouts
+
+.PHONY: docs api web wiki rebuild
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

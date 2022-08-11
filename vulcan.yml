@@ -9,24 +9,22 @@ docker-image:
 extra-build-env-setting-commands:
 
 test-candidates: |
-  tools/tiffcrop.c
+  parser.c
 
 time-out: 3600
 max-patch-number : 500
 
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
-  rm -f ./Makefile
-  ./autogen.sh  
-  ./configure
+  rm -f Makefile
+  ./autogen.sh 
   make clean
-  make -j10
+  make runtest -j10
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
-  rm -f ./Makefile
-  ./autogen.sh  
-  ./configure CFLAGS="--coverage -g -O0" LDFLAGS="-lgcov"
+  rm -f Makefile
+  ./autogen.sh --with-coverage
   make clean
-  make -j10
+  make runtest -j10
 
 
 # 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
@@ -34,11 +32,27 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-  index=1; make check TESTS="$(sed -n "1p" < AUTOMAKE_TEST_CASE.output)"
-  index=2; make check TESTS="$(sed -n "2p" < AUTOMAKE_TEST_CASE.output)"
-  index=3; make check TESTS="$(sed -n "3p" < AUTOMAKE_TEST_CASE.output)"
-  index=4; make check TESTS="$(sed -n "4p" < AUTOMAKE_TEST_CASE.output)"
-  index=5; make check TESTS="$(sed -n "5p" < AUTOMAKE_TEST_CASE.output)"
+  bash -c 'index=1; ./runtest "$(sed -n 1p .dpp/test_list)"'
+  bash -c 'index=2; ./runtest "$(sed -n 2p .dpp/test_list)"'
+  bash -c 'index=3; ./runtest "$(sed -n 3p .dpp/test_list)"'
+  bash -c 'index=4; ./runtest "$(sed -n 4p .dpp/test_list)"'
+  bash -c 'index=5; ./runtest "$(sed -n 5p .dpp/test_list)"'
+  bash -c 'index=6; ./runtest "$(sed -n 6p .dpp/test_list)"'
+  bash -c 'index=7; ./runtest "$(sed -n 7p .dpp/test_list)"'
+  bash -c 'index=8; ./runtest "$(sed -n 8p .dpp/test_list)"'
+  bash -c 'index=9; ./runtest "$(sed -n 9p .dpp/test_list)"'
+  bash -c 'index=10; ./runtest "$(sed -n 10p .dpp/test_list)"'
+  bash -c 'index=31; ./runtest "$(sed -n 31p .dpp/test_list)"'
+  bash -c 'index=32; ./runtest "$(sed -n 32p .dpp/test_list)"'
+  bash -c 'index=33; ./runtest "$(sed -n 33p .dpp/test_list)"'
+  bash -c 'index=34; ./runtest "$(sed -n 34p .dpp/test_list)"'
+  bash -c 'index=35; ./runtest "$(sed -n 35p .dpp/test_list)"'
+  bash -c 'index=36; ./runtest "$(sed -n 36p .dpp/test_list)"'
+  bash -c 'index=37; ./runtest "$(sed -n 37p .dpp/test_list)"'
+  bash -c 'index=38; ./runtest "$(sed -n 38p .dpp/test_list)"'
+  bash -c 'index=39; ./runtest "$(sed -n 39p .dpp/test_list)"'
+  bash -c 'index=40; ./runtest "$(sed -n 40p .dpp/test_list)"'
+  bash -c 'DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests" + "General documents valid regression tests"'
   
 
 test-case:
