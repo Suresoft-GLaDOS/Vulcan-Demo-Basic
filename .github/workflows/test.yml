@@ -44,6 +44,4 @@ jobs:
                     bash -c 'index=36; ./runtest "$(sed -n 36p .dpp/test_list)"'
                     bash -c 'index=37; ./runtest "$(sed -n 37p .dpp/test_list)"'
                     bash -c 'index=38; ./runtest "$(sed -n 38p .dpp/test_list)"'
-                    bash -c 'index=39; ./runtest "$(sed -n 39p .dpp/test_list)"'
-                    bash -c 'index=40; ./runtest "$(sed -n 40p .dpp/test_list)"'
                     bash -c 'DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests" + "General documents valid regression tests"'
