@@ -7,7 +7,6 @@ Reader regression tests
 Reader entities substitution regression tests
 Reader on memory regression tests
 Walker regression tests
-SAX1 callbacks regression tests
 SAX2 callbacks regression tests
 XML push regression tests
 HTML regression tests
