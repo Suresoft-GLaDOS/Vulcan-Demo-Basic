@@ -34,22 +34,22 @@ test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
   ./runtest "XML entity subst regression tests"
   index=3; ./runtest "$(sed -n 3p .dpp/test_list)"
-  bash -c 'index=4; ./runtest "$(sed -n 4p .dpp/test_list)"'
-  bash -c 'index=5; ./runtest "$(sed -n 5p .dpp/test_list)"'
-  bash -c 'index=6; ./runtest "$(sed -n 6p .dpp/test_list)"'
-  bash -c 'index=7; ./runtest "$(sed -n 7p .dpp/test_list)"'
-  bash -c 'index=8; ./runtest "$(sed -n 8p .dpp/test_list)"'
-  bash -c 'index=9; ./runtest "$(sed -n 9p .dpp/test_list)"'
-  bash -c 'index=10; ./runtest "$(sed -n 10p .dpp/test_list)"'
-  bash -c 'index=31; ./runtest "$(sed -n 31p .dpp/test_list)"'
-  bash -c 'index=32; ./runtest "$(sed -n 32p .dpp/test_list)"'
-  bash -c 'index=33; ./runtest "$(sed -n 33p .dpp/test_list)"'
-  bash -c 'index=34; ./runtest "$(sed -n 34p .dpp/test_list)"'
-  bash -c 'index=35; ./runtest "$(sed -n 35p .dpp/test_list)"'
-  bash -c 'index=36; ./runtest "$(sed -n 36p .dpp/test_list)"'
-  bash -c 'index=37; ./runtest "$(sed -n 37p .dpp/test_list)"'
-  bash -c 'index=38; ./runtest "$(sed -n 38p .dpp/test_list)"'
-  bash -c 'DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests" + "General documents valid regression tests"'
+  index=4; ./runtest "$(sed -n 4p .dpp/test_list)"
+  index=5; ./runtest "$(sed -n 5p .dpp/test_list)"
+  index=6; ./runtest "$(sed -n 6p .dpp/test_list)"
+  index=7; ./runtest "$(sed -n 7p .dpp/test_list)"
+  index=8; ./runtest "$(sed -n 8p .dpp/test_list)"
+  index=9; ./runtest "$(sed -n 9p .dpp/test_list)"
+  index=10; ./runtest "$(sed -n 10p .dpp/test_list)"
+  index=31; ./runtest "$(sed -n 31p .dpp/test_list)"
+  index=32; ./runtest "$(sed -n 32p .dpp/test_list)"
+  index=33; ./runtest "$(sed -n 33p .dpp/test_list)"
+  index=34; ./runtest "$(sed -n 34p .dpp/test_list)"
+  index=35; ./runtest "$(sed -n 35p .dpp/test_list)"
+  index=36; ./runtest "$(sed -n 36p .dpp/test_list)"
+  index=37; ./runtest "$(sed -n 37p .dpp/test_list)"
+  index=38; ./runtest "$(sed -n 38p .dpp/test_list)"
+  DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests" + "General documents valid regression tests"
   
 
 test-case:
