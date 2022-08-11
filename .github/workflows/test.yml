@@ -27,7 +27,7 @@ jobs:
         steps:
             - name: run test
               run: |
-                    index=2; ./runtest "XML entity subst regression tests"
+                    ./runtest "XML entity subst regression tests"
                     bash -c 'index=3; ./runtest "$(sed -n 3p .dpp/test_list)"'
                     bash -c 'index=4; ./runtest "$(sed -n 4p .dpp/test_list)"'
                     bash -c 'index=5; ./runtest "$(sed -n 5p .dpp/test_list)"'
