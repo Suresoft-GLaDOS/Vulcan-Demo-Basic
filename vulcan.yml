@@ -49,7 +49,7 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   bash -c 'index=36; ./runtest "$(sed -n 36p .dpp/test_list)"'
   bash -c 'index=37; ./runtest "$(sed -n 37p .dpp/test_list)"'
   bash -c 'index=38; ./runtest "$(sed -n 38p .dpp/test_list)"'
-  bash -c 'DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests" + "General documents valid regression tests"'
+#  bash -c 'DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests" + "General documents valid regression tests"'
   
 
 test-case:
