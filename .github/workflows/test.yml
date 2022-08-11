@@ -27,7 +27,6 @@ jobs:
         steps:
             - name: run test
               run: |
-                    bash -c 'index=1; ./runtest "$(sed -n 1p .dpp/test_list)"'
                     bash -c 'index=2; ./runtest "$(sed -n 2p .dpp/test_list)"'
                     bash -c 'index=3; ./runtest "$(sed -n 3p .dpp/test_list)"'
                     bash -c 'index=4; ./runtest "$(sed -n 4p .dpp/test_list)"'
