@@ -2,8 +2,8 @@
    yara 3.7.1: ./test-suite.log
 ==================================
 
-# TOTAL: 10
-# PASS:  10
+# TOTAL: 1
+# PASS:  1
 # SKIP:  0
 # XFAIL: 0
 # FAIL:  0

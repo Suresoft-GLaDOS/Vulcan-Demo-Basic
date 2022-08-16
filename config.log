@@ -220,11 +220,11 @@ configure:4888: checking lex output file root
 configure:4902: result: lex.yy
 configure:4907: checking lex library
 configure:4921: gcc -o conftest -fPIE  -llua5.3 conftest.c   >&5
-/usr/bin/ld: /tmp/ccjZcCGg.o: in function `yylex':
+/usr/bin/ld: /tmp/cc0nVlRm.o: in function `yylex':
 conftest.c:(.text+0x77b): undefined reference to `yywrap'
-/usr/bin/ld: /tmp/ccjZcCGg.o: in function `input':
+/usr/bin/ld: /tmp/cc0nVlRm.o: in function `input':
 conftest.c:(.text+0x12a7): undefined reference to `yywrap'
-/usr/bin/ld: /tmp/ccjZcCGg.o: in function `main':
+/usr/bin/ld: /tmp/cc0nVlRm.o: in function `main':
 conftest.c:(.text+0x1ff2): undefined reference to `yywrap'
 collect2: error: ld returned 1 exit status
 configure:4921: $? = 1
@@ -2398,7 +2398,7 @@ conftest.c:30:22: warning: null argument where non-null required (argument 1) [-
    30 |                      pthread_create(0,0,0,0); pthread_cleanup_pop(0);
       |                      ^~~~~~~~~~~~~~
 conftest.c:30:22: warning: null argument where non-null required (argument 3) [-Wnonnull]
-/usr/bin/ld: /tmp/cc7cZ1cw.o: in function `main':
+/usr/bin/ld: /tmp/cchX0FIB.o: in function `main':
 conftest.c:(.text+0x2b): undefined reference to `pthread_join'
 /usr/bin/ld: conftest.c:(.text+0x98): undefined reference to `__pthread_register_cancel'
 /usr/bin/ld: conftest.c:(.text+0xb1): undefined reference to `pthread_create'
@@ -2620,7 +2620,7 @@ configure:10836: $? = 0
 configure:10845: result: yes
 configure:10859: checking for strlcpy
 configure:10859: gcc -o conftest -fPIE -DUSE_LINUX_PROC -pthread  -llua5.3 conftest.c -lm -lm   >&5
-/usr/bin/ld: /tmp/ccMwm6WZ.o: in function `main':
+/usr/bin/ld: /tmp/ccEmHNR3.o: in function `main':
 conftest.c:(.text+0xe): undefined reference to `strlcpy'
 collect2: error: ld returned 1 exit status
 configure:10859: $? = 1
@@ -2691,7 +2691,7 @@ configure: failed program was:
 configure:10859: result: no
 configure:10859: checking for strlcat
 configure:10859: gcc -o conftest -fPIE -DUSE_LINUX_PROC -pthread  -llua5.3 conftest.c -lm -lm   >&5
-/usr/bin/ld: /tmp/ccoVRhIm.o: in function `main':
+/usr/bin/ld: /tmp/cchr0Nzq.o: in function `main':
 conftest.c:(.text+0xe): undefined reference to `strlcat'
 collect2: error: ld returned 1 exit status
 configure:10859: $? = 1
@@ -2770,7 +2770,7 @@ configure:10859: $? = 0
 configure:10859: result: yes
 configure:10859: checking for _mkgmtime
 configure:10859: gcc -o conftest -fPIE -DUSE_LINUX_PROC -pthread  -llua5.3 conftest.c -lm -lm   >&5
-/usr/bin/ld: /tmp/ccatiAgz.o: in function `main':
+/usr/bin/ld: /tmp/ccDrtDqH.o: in function `main':
 conftest.c:(.text+0xe): undefined reference to `_mkgmtime'
 collect2: error: ld returned 1 exit status
 configure:10859: $? = 1
@@ -2973,8 +2973,10 @@ config.status:1056: creating libyara/Makefile
 config.status:1056: creating libyara/yara.pc
 config.status:1228: executing depfiles commands
 config.status:1305: cd .       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1310: $? = 0
 config.status:1305: cd libyara       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1310: $? = 0
 config.status:1228: executing libtool commands
 
