@@ -1,80 +1,32 @@
-AM_CFLAGS=-std=gnu99 -Wall -I$(srcdir)/libyara/include
+ACLOCAL_AMFLAGS = -I m4
+SUBDIRS = src/lib @EXTRA_TARGETS@
 
-if DEBUG
-AM_CFLAGS+=-g
+if BUILD_FUZZTARGETS
+SUBDIRS += fuzz
 endif
 
-if OPTIMIZATION
-AM_CFLAGS+=-O3
-else
-AM_CFLAGS+=-O0
-endif
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = libndpi.pc
 
-if ADDRESS_SANITIZER
-AM_CFLAGS+=-fsanitize=address
-endif
+EXTRA_DIST = README.md README.fuzzer.md CHANGELOG.md CONTRIBUTING.md \
+	autogen.sh wireshark windows utils packages \
+	influxdb/Makefile.in influxdb/metric_anomaly.c influxdb/README.txt \
+	rrdtool/Makefile.in rrdtool/README.txt rrdtool/rrd_anomaly.c rrdtool/rrd_similarity.c \
+	doc/requirements.txt doc/conf.py doc/flow_risks.rst doc/guide/nDPI_QuickStartGuide.pages \
+		doc/guide/nDPI_QuickStartGuide.pdf doc/img/logo.png doc/index.rst \
+		doc/Makefile doc/what_is_ndpi.rst \
+	python/DEV_GUIDE.md python/dev_requirements.txt python/ndpi_example.py python/ndpi/__init__.py \
+		python/ndpi/ndpi_build.py python/ndpi/ndpi.py python/README.md \
+		python/requirements.txt python/setup.py python/tests.py \
+	sonar-project.properties .github .ci-ignore lgtm.yml
 
-# Build the library in the hand subdirectory first.
-SUBDIRS = libyara
-DIST_SUBDIRS = libyara
 
-ACLOCAL_AMFLAGS=-I m4
+.PHONY: doc doc-view
+doc:
+	make -C doc html
 
-bin_PROGRAMS = yara yarac
+doc-view:
+	python3 -m http.server --bind 127.0.0.1 --directory doc/_build/html 8080
 
-yara_SOURCES = args.c args.h common.h threading.c threading.h yara.c
-yara_LDADD = -Llibyara/.libs -lyara
-
-yarac_SOURCES = args.c args.h common.h yarac.c
-yarac_LDADD = -Llibyara/.libs -lyara
-
-# test_alignment_SOURCES = tests/test-alignment.c
-test_atoms_SOURCES = tests/test-atoms.c tests/util.c libyara/atoms.c
-test_atoms_LDADD = libyara/.libs/libyara.a
-# test_rules_SOURCES = tests/test-rules.c tests/util.c
-# test_rules_LDADD = libyara/.libs/libyara.a
-# test_pe_SOURCES = tests/test-pe.c tests/util.c
-# test_pe_LDADD = libyara/.libs/libyara.a
-# test_elf_SOURCES = tests/test-elf.c tests/util.c
-# test_elf_LDADD = libyara/.libs/libyara.a
-# test_version_SOURCES = tests/test-version.c
-# test_api_LDADD = libyara/.libs/libyara.a
-# test_api_SOURCES = tests/test-api.c tests/util.c
-# test_bitmask_SOURCES = tests/test-bitmask.c
-# test_bitmask_LDADD = libyara/.libs/libyara.a
-# test_math_SOURCES = tests/test-math.c tests/util.c
-# test_math_LDADD = libyara/.libs/libyara.a
-# test_stack_SOURCES = tests/test-stack.c
-# test_stack_LDADD = libyara/.libs/libyara.a
-
-TESTS = $(check_PROGRAMS)
-TESTS_ENVIRONMENT = TOP_SRCDIR=$(top_srcdir)
-
-check_PROGRAMS = test-atoms
-
-if POSIX
-# The -fsanitize=address option makes test-exception fail. Include the test
-# only if the option is not enabled.
-if !ADDRESS_SANITIZER
-# check_PROGRAMS+=test-exception
-# test_exception_SOURCES = tests/test-exception.c tests/util.c
-# test_exception_LDADD = libyara/.libs/libyara.a
-endif
-endif
-
-if MACHO_MODULE
-check_PROGRAMS+=test-macho
-test_macho_SOURCES = tests/test-macho.c tests/util.c
-test_macho_LDADD = libyara/.libs/libyara.a
-endif
-
-if DEX_MODULE
-check_PROGRAMS+=test-dex
-test_dex_SOURCES = tests/test-dex.c tests/util.c
-test_dex_LDADD = libyara/.libs/libyara.a
-endif
-
-# man pages
-man1_MANS = yara.man yarac.man
-
-EXTRA_DIST = $(man1_MANS) README.md bootstrap.sh
+changelog:
+	git log --since={`curl -s https://github.com/ntop/ndpi/releases | grep datetime | head -n1 | egrep -o "[0-9]+\-[0-9]+\-[0-9]+"`} --name-only --pretty=format:" - %s" | grep  "^ " > CHANGELOG.latest

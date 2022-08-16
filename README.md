@@ -1,122 +1,98 @@
-[![Join the chat at https://gitter.im/VirusTotal/yara](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/VirusTotal/yara?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Travis build status](https://travis-ci.org/VirusTotal/yara.svg)](https://travis-ci.org/VirusTotal/yara)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/7glqg19w4oolm7pr?svg=true)](https://ci.appveyor.com/project/plusvic/yara)
-[![Coverity status](https://scan.coverity.com/projects/9057/badge.svg?flat=1)](https://scan.coverity.com/projects/plusvic-yara)
+![ntop][ntopng_logo] ![ntop][ntop_logo]
+# nDPI
 
+[![Build Status](https://img.shields.io/github/workflow/status/ntop/nDPI/Build/dev?logo=github)](https://github.com/ntop/nDPI/actions?query=workflow%3ABuild)
+[![Code Quality: Cpp](https://img.shields.io/lgtm/grade/cpp/g/ntop/nDPI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ntop/nDPI/context:cpp)
+[![Total Alerts](https://img.shields.io/lgtm/alerts/g/ntop/nDPI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ntop/nDPI/alerts)
+[![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/ndpi.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:ndpi)
 
+## What is nDPI ?
 
-## YARA in a nutshell
+nDPI® is an open source LGPLv3 library for deep-packet inspection. Based on OpenDPI it includes ntop extensions. We have tried to push them into the OpenDPI source tree but nobody answered emails so we have decided to create our own source tree
 
-YARA is a tool aimed at (but not limited to) helping malware researchers to
-identify and classify malware samples. With YARA you can create descriptions of
-malware families (or whatever you want to describe) based on textual or binary
-patterns. Each description, a.k.a rule, consists of a set of strings and a
-boolean expression which determine its logic. Let's see an example:
+### How To Compile nDPI
 
-```yara
-rule silent_banker : banker
-{
-    meta:
-        description = "This is just an example"
-        threat_level = 3
-        in_the_wild = true
+In order to compile this project do
 
-    strings:
-        $a = {6A 40 68 00 30 00 00 6A 14 8D 91}
-        $b = {8D 4D B0 2B C1 83 C0 27 99 6A 4E 59 F7 F9}
-        $c = "UVODFRYSIHLNWPEJXQZAKCBGMT"
+- ./autogen.sh
+- make
 
-    condition:
-        $a or $b or $c
-}
-```
+To compile the library w/o any tools or tests:
 
-The above rule is telling YARA that any file containing one of the three strings
-must be reported as *silent_banker*. This is just a simple example, more
-complex and powerful rules can be created by using wild-cards, case-insensitive
-strings, regular expressions, special operators and many other features that
-you'll find explained in [YARA's documentation](https://yara.readthedocs.org/).
+- ./autogen.sh --with-only-libndpi
+- make
 
-YARA is multi-platform, running on Windows, Linux and Mac OS X, and can be used
-through its command-line interface or from your own Python scripts with the
-yara-python extension.
+To run tests do additionally:
 
-## Additional resources
+- ./tests/do.sh # Generate and check for diff's in PCAP files
+- ./tests/do-unit.sh # Run unit tests
+- ./tests/do-dga.sh # Run DGA detection test
 
-If you plan to use YARA to scan compressed files (.zip, .tar, etc) you should
-take a look at [yextend](https://github.com/BayshoreNetworks/yextend), a very
-helpful extension to YARA developed and open-sourced by Bayshore Networks.
+or run all with: `make check`
 
-Additionally, the guys from [InQuest](https://inquest.net/) have curated an
-awesome list of [YARA-related stuff](https://github.com/InQuest/awesome-yara).
+Please note that the (minimal) pre-requisites for compilation include:
+- GNU tools (autoconf automake libtool pkg-config gettext flex bison)
+- GNU C compiler (gcc) or Clang
 
-## Who's using YARA
+On Debian/Ubuntu systems do:
+- sudo apt-get install build-essential git gettext flex bison libtool autoconf automake pkg-config libpcap-dev libjson-c-dev libnuma-dev libpcre2-dev libmaxminddb-dev librrd-dev
 
-* [ActiveCanopy](https://activecanopy.com/)
-* [Adlice](http://www.adlice.com/)
-* [AlienVault](https://otx.alienvault.com/)
-* [Avast](https://www.avast.com/)
-* [BAE Systems](http://www.baesystems.com/home?r=ai)
-* [Bayshore Networks, Inc.](http://www.bayshorenetworks.com)
-* [BinaryAlert](https://github.com/airbnb/binaryalert)
-* [Blue Coat](http://www.bluecoat.com/products/malware-analysis-appliance)
-* [Blueliv](http://www.blueliv.com)
-* [Conix](http://www.conix.fr)
-* [CrowdStrike FMS](https://github.com/CrowdStrike/CrowdFMS)
-* [Cuckoo Sandbox](https://github.com/cuckoosandbox/cuckoo)
-* [Cyber Triage](http://www.cybertriage.com)
-* [Cybereason](https://www.cybereason.com)
-* [Digita Security](https://digitasecurity.com/product/uxprotect)
-* [Dtex Systems](https://dtexsystems.com)
-* [ESET](https://www.eset.com)
-* [ESTsecurity](https://www.estsecurity.com)
-* [Fidelis XPS](http://www.fidelissecurity.com/network-security-appliance/Fidelis-XPS)
-* [FireEye, Inc.](http://www.fireeye.com)
-* [Fox-IT](https://www.fox-it.com)
-* [FSF](https://github.com/EmersonElectricCo/fsf)
-* [Guidance Software](http://www.guidancesoftware.com/endpointsecurity)
-* [Heroku](https://heroku.com)
-* [Hornetsecurity](https://www.hornetsecurity.com/en/)
-* [InQuest](http://www.inquest.net/)
-* [JASK](http://jask.io)
-* [Joe Security](https://www.joesecurity.org)
-* [jsunpack-n](http://jsunpack.jeek.org/)
-* [Kaspersky Lab](http://www.kaspersky.com)
-* [Koodous](https://koodous.com/)
-* [Laika BOSS](https://github.com/lmco/laikaboss)
-* [Lastline, Inc.](http://www.lastline.com)
-* [LimaCharlie](https://limacharlie.io/)
-* [McAfee Advanced Threat Defense](http://mcafee.com/atd)
-* [Metaflows](http://www.metaflows.com)
-* [NBS System](https://www.nbs-system.com/)
-* [Nextron Systems](https://www.nextron-systems.com)
-* [Nozomi Networks](http://www.nozominetworks.com)
-* [osquery](http://www.osquery.io)
-* [Payload Security](https://www.payload-security.com)
-* [PhishMe](http://phishme.com/)
-* [Picus Security](http://www.picussecurity.com/)
-* [Radare2](http://rada.re)
-* [Raytheon Cyber Products, Inc.](http://www.raytheoncyber.com/capabilities/products/sureview-threatprotection/)
-* [RedSocks Security](https://redsocks.eu/)
-* [ReversingLabs](http://reversinglabs.com)
-* [root9B](https://www.root9b.com)
-* [RSA ECAT](http://www.emc.com/security/rsa-ecat.htm)
-* [SpamStopsHere](https://www.spamstopshere.com)
-* [stoQ](http://stoq.punchcyber.com)
-* [Symantec](http://www.symantec.com)
-* [Tanium](http://www.tanium.com/)
-* [Tenable Network Security](https://www.tenable.com/)
-* [The DigiTrust Group](http://www.digitrustgroup.com/)
-* [ThreatConnect](https://www.threatconnect.com/)
-* [ThreatStream, Inc.](http://threatstream.com)
-* [Thug](https://github.com/buffer/thug)
-* [Trend Micro](http://www.trendmicro.com)
-* [VirusTotal Intelligence](https://www.virustotal.com/intelligence/)
-* [VMRay](https://www.vmray.com/)
-* [We Watch Your Website](http://www.wewatchyourwebsite.com/)
-* [Websense](http://www.websense.com)
-* [x64dbg](http://x64dbg.com)
-* [YALIH](https://github.com/Masood-M/YALIH)
-* [Scanii](https://scanii.com)
+On Arch Linux:
+- sudo pacman -S gcc git gettext flex bison libtool autoconf automake pkg-config libpcap json-c numactl pcre2 libmaxminddb rrdtool
 
-Are you using it? Want to see your site listed here?
+On FreeBSD:
+- sudo pkg install gcc git gettext flex bison libtool autoconf automake devel/pkgconf gmake libpcap json-c pcre2 libmaxminddb rrdtool
+
+Remember to use `gmake` and not `make` on FreeBSD
+
+On MacOS:
+- brew install coreutils gcc git gettext flex bison libtool autoconf automake pkg-config libpcap json-c pcre2 libmaxminddb rrdtool
+
+On Windows (assuming [MSYS2](https://www.msys2.org/) already installed):
+- msys2 -c "pacman --noconfirm -S --needed --overwrite '\*' git mingw-w64-x86\_64-toolchain automake1.16 automake-wrapper autoconf libtool make mingw-w64-x86\_64-json-c mingw-w64-x86\_64-crt-git mingw-w64-x86\_64-pcre mingw-w64-x86\_64-libpcap"
+
+### How To Build The Documentation
+
+- pip install --upgrade pip
+- pip install -r doc/requirements.txt
+- make doc
+
+Use the builtin python3 webserver to view documentation:
+- make doc-view
+
+### How To Add A New Protocol Dissector
+
+The entire procedure of adding new protocols in detail:
+
+1. Add new protocol together with its unique ID to: `src/include/ndpi_protocol_ids.h`
+2. Create a new protocol in: `src/lib/protocols/`
+3. Variables to be kept for the duration of the entire flow (as state variables) need to be placed in: `src/include/ndpi_typedefs.h` in `ndpi_flow_tcp_struct` (for TCP only), `ndpi_flow_udp_struct` (for UDP only), or `ndpi_flow_struct` (for both).
+4. Add a new entry for the search function for the new protocol in: `src/include/ndpi_protocols.h`
+5. Choose (do not change anything) a selection bitmask from: `src/include/ndpi_define.h`
+6. Set protocol default ports in `ndpi_init_protocol_defaults` in: `src/lib/ndpi_main.c`
+7. `./autogen.sh`
+8. `make`
+9. `make check`
+
+### How to use nDPI to Block Selected Traffic
+
+You can use nDPI to selectively block selected Internet traffic by embedding it onto an application (remember that nDPI is just a library). Both [ntopng](https://github.com/ntop/ntopng) and [nProbe cento](http://www.ntop.org/products/netflow/nprobe-cento/) can do this.
+
+### nDPI Paper Citation
+
+- Deri, Luca, et al. [nDPI: Open-source high-speed deep packet inspection](http://luca.ntop.org/nDPI.pdf) 2014 International Wireless Communications and Mobile Computing Conference (IWCMC). IEEE, 2014.
+
+### nDPI-Related Projects
+
+- [nfstream](https://github.com/aouinizied/nfstream)
+- [nDPId](https://github.com/utoni/nDPId)
+
+### DISCLAIMER
+
+While we do our best to detect network protocols, we cannot guarantee that our software is error free and 100% accurate in protocol detection. Please make sure that you respect the privacy of users and you have proper authorization to listen, capture and inspect network traffic.
+
+nDPI is a registered trademark in the US and EU.
+
+[ntopng_logo]: https://camo.githubusercontent.com/0f789abcef232035c05e0d2e82afa3cc3be46485/687474703a2f2f7777772e6e746f702e6f72672f77702d636f6e74656e742f75706c6f6164732f323031312f30382f6e746f706e672d69636f6e2d313530783135302e706e67
+
+[ntop_logo]: https://camo.githubusercontent.com/58e2a1ecfff62d8ecc9d74633bd1013f26e06cba/687474703a2f2f7777772e6e746f702e6f72672f77702d636f6e74656e742f75706c6f6164732f323031352f30352f6e746f702e706e67
