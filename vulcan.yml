@@ -10,7 +10,6 @@ extra-build-env-setting-commands:
 
 test-candidates: |
   parser.c
-
 time-out: 3600
 max-patch-number : 500
 
@@ -19,14 +18,11 @@ test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json
   ./autogen.sh 
   make clean
   make runtest -j10
-
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   rm -f Makefile
   ./autogen.sh --with-coverage
   make clean
   make runtest -j10
-
-
 # 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
 # 그렇지 않으면 test-case에 실행할 테스트 번호를 range로 하도록함
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
@@ -49,8 +45,7 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   index=36; ./runtest "$(sed -n 36p .dpp/test_list)"
   index=37; ./runtest "$(sed -n 37p .dpp/test_list)"
   index=38; ./runtest "$(sed -n 38p .dpp/test_list)"
-  DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests" + "General documents valid regression tests"
-  
+  DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests"
 
 test-case:
 

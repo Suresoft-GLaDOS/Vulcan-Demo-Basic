@@ -9,7 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abba9988-d3db-4ff0-822c-80b9e322eabe" name="Changes" comment="" />
+    <list default="true" id="caa6a43a-d602-4af0-b34d-d36b8c99b50d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,16 +18,37 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="libxml2_3" />
+                    <option name="lastUsedInstant" value="1660625400" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="libxml2" />
+                    <option name="lastUsedInstant" value="1660625399" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.github/workflows/run_vulcan.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.github/workflows/test.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/vulcan.yml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="2800i32q" />
+    <option name="directoryName" value="q5pwfbpx" />
   </component>
   <component name="MakefileLocalSettings">
     <option name="projectSyncType">
@@ -44,7 +65,7 @@
     <option name="majorVersion" value="2022" />
     <option name="minorVersion" value="1.3" />
   </component>
-  <component name="ProjectId" id="2DBZdtBQcWTL0qNJYM7HqienNNd" />
+  <component name="ProjectId" id="2DCTjnOCFGPnG2IPn72sL5rkMy3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -52,42 +73,31 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/sure/dpp_checkout/libxml2/buggy#3",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sure/GLaDOS/Vulcan-Demo-Basic&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="abba9988-d3db-4ff0-822c-80b9e322eabe" name="Changes" comment="" />
-      <created>1660174529301</created>
+      <changelist id="caa6a43a-d602-4af0-b34d-d36b8c99b50d" name="Changes" comment="" />
+      <created>1660202203434</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1660174529301</updated>
-      <workItem from="1660174531997" duration="10330000" />
+      <updated>1660202203434</updated>
+      <workItem from="1660202204708" duration="1221000" />
+      <workItem from="1660604842087" duration="1831000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

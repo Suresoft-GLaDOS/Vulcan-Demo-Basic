@@ -5,7 +5,7 @@ includedir=${pcfiledir}/include
 
 
 Name: libXML
-Version: 2.9.3
+Version: 2.9.4
 Description: libXML library version2.
 Requires:
 Libs: -L${libdir} -lxml2   -lz   -lm 

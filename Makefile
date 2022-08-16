@@ -506,7 +506,7 @@ C14N_OBJ = c14n.c
 CATALOG_OBJ = catalog.o
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2 -pedantic -W -Wformat -Wunused -Wimplicit -Wreturn-type -Wswitch -Wcomment -Wtrigraphs -Wformat -Wchar-subscripts -Wuninitialized -Wparentheses -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wredundant-decls -Wno-long-long
+CFLAGS = -g -O2 -pedantic -W -Wformat -Wno-format-extra-args -Wunused -Wimplicit -Wreturn-type -Wswitch -Wcomment -Wtrigraphs -Wchar-subscripts -Wuninitialized -Wparentheses -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wredundant-decls -Wno-long-long
 CPP = gcc -E
 CPPFLAGS = 
 CYGPATH_W = echo
@@ -533,6 +533,7 @@ HTML_DIR = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html
 HTML_OBJ = HTMLparser.o HTMLtree.o
 HTTP_OBJ = nanohttp.o
 ICONV_LIBS = 
+ICU_CFLAGS = 
 ICU_LIBS = 
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
@@ -545,18 +546,19 @@ LIBOBJS =
 LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBXML_MAJOR_VERSION = 2
-LIBXML_MICRO_VERSION = 3
+LIBXML_MICRO_VERSION = 4
 LIBXML_MINOR_VERSION = 9
-LIBXML_VERSION = 2.9.3
+LIBXML_VERSION = 2.9.4
 LIBXML_VERSION_EXTRA = 
-LIBXML_VERSION_INFO = 11:3:9
-LIBXML_VERSION_NUMBER = 20903
+LIBXML_VERSION_INFO = 11:4:9
+LIBXML_VERSION_NUMBER = 20904
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 LZMA_CFLAGS = 
 LZMA_LIBS = 
+MAINT = 
 MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
@@ -592,7 +594,7 @@ PYTHON_VERSION = 3.8
 RANLIB = ranlib
 RDL_LIBS = 
 READER_TEST = Readertests
-RELDATE = Thu Aug 11 2022
+RELDATE = Tue Aug 16 2022
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
@@ -619,7 +621,7 @@ TEST_XPATH = XPathtests
 TEST_XPTR = XPtrtests
 THREAD_CFLAGS =  -D_REENTRANT
 THREAD_LIBS = 
-VERSION = 2.9.3
+VERSION = 2.9.4
 VERSION_SCRIPT_FLAGS = -Wl,--version-script=
 WGET = /usr/bin/wget
 WIN32_EXTRA_LDFLAGS = 
@@ -663,7 +665,7 @@ XMLLINT = /usr/bin/xmllint
 XML_CFLAGS = 
 XML_INCLUDEDIR = -I${includedir}/libxml2
 XML_LIBDIR = -L${libdir}
-XML_LIBS = -lxml2 -lz   -lm 
+XML_LIBS = -lxml2 -lz     -lm 
 XML_LIBTOOLLIBS = libxml2.la
 XPATH_OBJ = xpath.o
 XPTR_OBJ = xpointer.o
@@ -864,7 +866,7 @@ EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
 	     check-xsddata-test-suite.py check-xinclude-test-suite.py \
              example/Makefile.am example/gjobread.c example/gjobs.xml \
 	     $(man_MANS) libxml-2.0.pc.in libxml-2.0-uninstalled.pc.in \
-	     libxml2-config.cmake.in \
+	     libxml2-config.cmake.in autogen.sh \
 	     trionan.c trionan.h triostr.c triostr.h trio.c trio.h \
 	     triop.h triodef.h libxml.h elfgcchack.h xzlib.h buf.h \
 	     enc.h save.h testThreadsWin32.c genUnicode.py TODO_SCHEMAS \
@@ -2101,6 +2103,10 @@ check-valgrind valgrind: all
 	@echo '## Running the regression tests under Valgrind'
 	@echo '## Go get a cup of coffee it is gonna take a while ...'
 	$(MAKE) CHECKER='valgrind -q' runtests
+
+asan:
+	@echo '## rebuilding for ASAN'
+	./configure CFLAGS="-fsanitize=address,undefined -Wformat -Werror=format-security -Werror=array-bounds -g" CXXFLAGS="-fsanitize=address,undefined -Wformat -Werror=format-security -Werror=array-bounds -g" LDFLAGS="-fsanitize=address,undefined" CC="clang" CXX="clang++" --disable-shared ; OptimOff  ; $(MAKE) clean ; $(MAKE)
 
 testall : tests SVGtests SAXtests
 

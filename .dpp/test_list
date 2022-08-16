@@ -7,6 +7,8 @@ Reader regression tests
 Reader entities substitution regression tests
 Reader on memory regression tests
 Walker regression tests
+SAX1 callbacks regression tests
+SAX2 callbacks regression tests
 XML push regression tests
 HTML regression tests
 Push HTML regression tests
@@ -35,4 +37,3 @@ C14N with comments regression tests
 C14N without comments regression tests
 C14N exclusive without comments regression tests
 C14N 1.1 without comments regression tests
-Catalog and Threads regression tests

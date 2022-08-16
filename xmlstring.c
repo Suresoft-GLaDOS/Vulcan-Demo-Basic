@@ -457,6 +457,8 @@ xmlStrncat(xmlChar *cur, const xmlChar *add, int len) {
         return(xmlStrndup(add, len));
 
     size = xmlStrlen(cur);
+    if (size < 0)
+        return(NULL);
     ret = (xmlChar *) xmlRealloc(cur, (size + len + 1) * sizeof(xmlChar));
     if (ret == NULL) {
         xmlErrMemory(NULL, NULL);
@@ -484,14 +486,19 @@ xmlStrncatNew(const xmlChar *str1, const xmlChar *str2, int len) {
     int size;
     xmlChar *ret;
 
-    if (len < 0)
+    if (len < 0) {
         len = xmlStrlen(str2);
+        if (len < 0)
+            return(NULL);
+    }
     if ((str2 == NULL) || (len == 0))
         return(xmlStrdup(str1));
     if (str1 == NULL)
         return(xmlStrndup(str2, len));
 
     size = xmlStrlen(str1);
+    if (size < 0)
+        return(NULL);
     ret = (xmlChar *) xmlMalloc((size + len + 1) * sizeof(xmlChar));
     if (ret == NULL) {
         xmlErrMemory(NULL, NULL);
@@ -538,7 +545,7 @@ xmlStrcat(xmlChar *cur, const xmlChar *add) {
  * Returns the number of characters written to @buf or -1 if an error occurs.
  */
 int XMLCDECL
-xmlStrPrintf(xmlChar *buf, int len, const xmlChar *msg, ...) {
+xmlStrPrintf(xmlChar *buf, int len, const char *msg, ...) {
     va_list args;
     int ret;
 
@@ -566,7 +573,7 @@ xmlStrPrintf(xmlChar *buf, int len, const xmlChar *msg, ...) {
  * Returns the number of characters written to @buf or -1 if an error occurs.
  */
 int
-xmlStrVPrintf(xmlChar *buf, int len, const xmlChar *msg, va_list ap) {
+xmlStrVPrintf(xmlChar *buf, int len, const char *msg, va_list ap) {
     int ret;
 
     if((buf == NULL) || (msg == NULL)) {
@@ -837,8 +844,8 @@ xmlUTF8Strsize(const xmlChar *utf, int len) {
             break;
         if ( (ch = *ptr++) & 0x80)
             while ((ch<<=1) & 0x80 ) {
-                ptr++;
 		if (*ptr == 0) break;
+                ptr++;
 	    }
     }
     return (ptr - utf);
