@@ -80,20 +80,20 @@ yara.o: yara.c /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  libyara/include/yara/strutils.h /usr/include/assert.h \
- libyara/include/yara/integers.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
- libyara/include/yara/filemap.h libyara/include/yara/utils.h \
- libyara/include/yara/compiler.h /usr/include/setjmp.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ libyara/include/yara/integers.h libyara/include/yara/filemap.h \
+ libyara/include/yara/utils.h libyara/include/yara/compiler.h \
+ /usr/include/setjmp.h /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp2.h \
  libyara/include/yara/ahocorasick.h libyara/include/yara/limits.h \
  libyara/include/yara/utils.h libyara/include/yara/atoms.h \
- libyara/include/yara/re.h libyara/include/yara/types.h \
- libyara/include/yara/arena.h libyara/include/yara/stream.h \
- libyara/include/yara/bitmask.h libyara/include/yara/hash.h \
- libyara/include/yara/sizedstr.h libyara/include/yara/stopwatch.h \
- libyara/include/yara/threading.h /usr/include/pthread.h \
- /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
+ libyara/include/yara/re.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
+ libyara/include/yara/types.h libyara/include/yara/arena.h \
+ libyara/include/yara/stream.h libyara/include/yara/bitmask.h \
+ libyara/include/yara/hash.h libyara/include/yara/sizedstr.h \
+ libyara/include/yara/stopwatch.h libyara/include/yara/threading.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
  libyara/include/yara/filemap.h libyara/include/yara/modules.h \
@@ -310,8 +310,6 @@ libyara/include/yara/strutils.h:
 
 libyara/include/yara/integers.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
-
 libyara/include/yara/filemap.h:
 
 libyara/include/yara/utils.h:
@@ -333,6 +331,8 @@ libyara/include/yara/utils.h:
 libyara/include/yara/atoms.h:
 
 libyara/include/yara/re.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 libyara/include/yara/types.h:
 

@@ -159,7 +159,7 @@ am__libyara_la_SOURCES_DIST = modules/tests.c modules/pe.c \
 	exec.c exefiles.c filemap.c hash.c hex_grammar.y hex_lexer.l \
 	lexer.l libyara.c mem.c modules.c object.c parser.c proc.c \
 	re.c re_grammar.y re_lexer.l rules.c scan.c scanner.c \
-	sizedstr.c stack.c stopwatch.c strutils.c stream.c threading.c \
+	sizedstr.c stopwatch.c strutils.c stream.c threading.c \
 	proc/windows.c proc/linux.c proc/freebsd.c proc/openbsd.c \
 	proc/mach.c proc/none.c
 am__dirstamp = $(am__leading_dot)dirstamp
@@ -184,8 +184,8 @@ am_libyara_la_OBJECTS = $(am__objects_7) grammar.lo ahocorasick.lo \
 	exefiles.lo filemap.lo hash.lo hex_grammar.lo hex_lexer.lo \
 	lexer.lo libyara.lo mem.lo modules.lo object.lo parser.lo \
 	proc.lo re.lo re_grammar.lo re_lexer.lo rules.lo scan.lo \
-	scanner.lo sizedstr.lo stack.lo stopwatch.lo strutils.lo \
-	stream.lo threading.lo $(am__objects_8) $(am__objects_9) \
+	scanner.lo sizedstr.lo stopwatch.lo strutils.lo stream.lo \
+	threading.lo $(am__objects_8) $(am__objects_9) \
 	$(am__objects_10) $(am__objects_11) $(am__objects_12) \
 	$(am__objects_13)
 libyara_la_OBJECTS = $(am_libyara_la_OBJECTS)
@@ -225,18 +225,17 @@ am__depfiles_remade = ./$(DEPDIR)/ahocorasick.Plo \
 	./$(DEPDIR)/re_grammar.Plo ./$(DEPDIR)/re_lexer.Plo \
 	./$(DEPDIR)/rules.Plo ./$(DEPDIR)/scan.Plo \
 	./$(DEPDIR)/scanner.Plo ./$(DEPDIR)/sizedstr.Plo \
-	./$(DEPDIR)/stack.Plo ./$(DEPDIR)/stopwatch.Plo \
-	./$(DEPDIR)/stream.Plo ./$(DEPDIR)/strutils.Plo \
-	./$(DEPDIR)/threading.Plo modules/$(DEPDIR)/cuckoo.Plo \
-	modules/$(DEPDIR)/dex.Plo modules/$(DEPDIR)/dotnet.Plo \
-	modules/$(DEPDIR)/elf.Plo modules/$(DEPDIR)/hash.Plo \
-	modules/$(DEPDIR)/macho.Plo modules/$(DEPDIR)/magic.Plo \
-	modules/$(DEPDIR)/math.Plo modules/$(DEPDIR)/pe.Plo \
-	modules/$(DEPDIR)/pe_utils.Plo modules/$(DEPDIR)/tests.Plo \
-	modules/$(DEPDIR)/time.Plo proc/$(DEPDIR)/freebsd.Plo \
-	proc/$(DEPDIR)/linux.Plo proc/$(DEPDIR)/mach.Plo \
-	proc/$(DEPDIR)/none.Plo proc/$(DEPDIR)/openbsd.Plo \
-	proc/$(DEPDIR)/windows.Plo
+	./$(DEPDIR)/stopwatch.Plo ./$(DEPDIR)/stream.Plo \
+	./$(DEPDIR)/strutils.Plo ./$(DEPDIR)/threading.Plo \
+	modules/$(DEPDIR)/cuckoo.Plo modules/$(DEPDIR)/dex.Plo \
+	modules/$(DEPDIR)/dotnet.Plo modules/$(DEPDIR)/elf.Plo \
+	modules/$(DEPDIR)/hash.Plo modules/$(DEPDIR)/macho.Plo \
+	modules/$(DEPDIR)/magic.Plo modules/$(DEPDIR)/math.Plo \
+	modules/$(DEPDIR)/pe.Plo modules/$(DEPDIR)/pe_utils.Plo \
+	modules/$(DEPDIR)/tests.Plo modules/$(DEPDIR)/time.Plo \
+	proc/$(DEPDIR)/freebsd.Plo proc/$(DEPDIR)/linux.Plo \
+	proc/$(DEPDIR)/mach.Plo proc/$(DEPDIR)/none.Plo \
+	proc/$(DEPDIR)/openbsd.Plo proc/$(DEPDIR)/windows.Plo
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -316,11 +315,11 @@ AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build-aux/missing
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS =  -DUSE_LINUX_PROC -pthread -DHASH_MODULE
+CFLAGS = -fPIE -DUSE_LINUX_PROC -pthread -DHASH_MODULE
 CPP = gcc -E
 CPPFLAGS = 
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.9.0\" -DPACKAGE_STRING=\"yara\ 3.9.0\" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.9.0\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -DHAVE_OPENSSL_MD5_H=1 -DHAVE_OPENSSL_SHA_H=1 -DHAVE_OPENSSL_ASN1_H=1 -DHAVE_OPENSSL_CRYPTO_H=1 -DHAVE_OPENSSL_BIO_H=1 -DHAVE_OPENSSL_PKCS7_H=1 -DHAVE_OPENSSL_X509_H=1 -DHAVE_OPENSSL_SAFESTACK_H=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_STDBOOL_H=1 -DHAVE_CLOCK_GETTIME=1 -DHAVE_SCAN_PROC_IMPL=1
+DEFS = -DPACKAGE_NAME=\"yara\" -DPACKAGE_TARNAME=\"yara\" -DPACKAGE_VERSION=\"3.7.1\" -DPACKAGE_STRING=\"yara\ 3.7.1\" -DPACKAGE_BUGREPORT=\"vmalvarez@virustotal.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"yara\" -DVERSION=\"3.7.1\" -DYYTEXT_POINTER=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_LIBM=1 -DHAVE_LIBM=1 -DHAVE_MEMMEM=1 -DHAVE_TIMEGM=1 -DHAVE_OPENSSL_MD5_H=1 -DHAVE_OPENSSL_SHA_H=1 -DHAVE_OPENSSL_ASN1_H=1 -DHAVE_OPENSSL_CRYPTO_H=1 -DHAVE_OPENSSL_BIO_H=1 -DHAVE_OPENSSL_PKCS7_H=1 -DHAVE_OPENSSL_X509_H=1 -DHAVE_OPENSSL_SAFESTACK_H=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_LIBCRYPTO=1 -DHAVE_CLOCK_GETTIME=1 -DHAVE_SCAN_PROC_IMPL=1
 DEPDIR = .deps
 DLLTOOL = false
 DSYMUTIL = 
@@ -361,10 +360,10 @@ OTOOL64 =
 PACKAGE = yara
 PACKAGE_BUGREPORT = vmalvarez@virustotal.com
 PACKAGE_NAME = yara
-PACKAGE_STRING = yara 3.9.0
+PACKAGE_STRING = yara 3.7.1
 PACKAGE_TARNAME = yara
 PACKAGE_URL = 
-PACKAGE_VERSION = 3.9.0
+PACKAGE_VERSION = 3.7.1
 PATH_SEPARATOR = :
 PC_LIBS_PRIVATE = 
 PC_REQUIRES_PRIVATE =  libcrypto
@@ -376,7 +375,7 @@ SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-VERSION = 3.9.0
+VERSION = 3.7.1
 YACC = bison -y
 YFLAGS = 
 abs_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/libyara
@@ -476,7 +475,6 @@ yarainclude_HEADERS = \
   include/yara/scan.h \
   include/yara/scanner.h \
   include/yara/sizedstr.h \
-  include/yara/stack.h \
   include/yara/stopwatch.h \
   include/yara/stream.h \
   include/yara/strutils.h \
@@ -499,7 +497,7 @@ noinst_HEADERS = \
   modules/module_list
 
 lib_LTLIBRARIES = libyara.la
-libyara_la_LDFLAGS = -version-number 3:9:0
+libyara_la_LDFLAGS = -version-number 3:7:0
 BUILT_SOURCES = \
   lexer.c \
   hex_lexer.c \
@@ -512,8 +510,8 @@ libyara_la_SOURCES = $(MODULES) grammar.y ahocorasick.c arena.c \
 	atoms.c bitmask.c compiler.c endian.c exec.c exefiles.c \
 	filemap.c hash.c hex_grammar.y hex_lexer.l lexer.l libyara.c \
 	mem.c modules.c object.c parser.c proc.c re.c re_grammar.y \
-	re_lexer.l rules.c scan.c scanner.c sizedstr.c stack.c \
-	stopwatch.c strutils.c stream.c threading.c $(am__append_12) \
+	re_lexer.l rules.c scan.c scanner.c sizedstr.c stopwatch.c \
+	strutils.c stream.c threading.c $(am__append_12) \
 	$(am__append_13) $(am__append_14) $(am__append_15) \
 	$(am__append_16) $(am__append_17)
 pkgconfigdir = $(libdir)/pkgconfig
@@ -681,7 +679,6 @@ include ./$(DEPDIR)/rules.Plo # am--include-marker
 include ./$(DEPDIR)/scan.Plo # am--include-marker
 include ./$(DEPDIR)/scanner.Plo # am--include-marker
 include ./$(DEPDIR)/sizedstr.Plo # am--include-marker
-include ./$(DEPDIR)/stack.Plo # am--include-marker
 include ./$(DEPDIR)/stopwatch.Plo # am--include-marker
 include ./$(DEPDIR)/stream.Plo # am--include-marker
 include ./$(DEPDIR)/strutils.Plo # am--include-marker
@@ -983,7 +980,6 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/scan.Plo
 	-rm -f ./$(DEPDIR)/scanner.Plo
 	-rm -f ./$(DEPDIR)/sizedstr.Plo
-	-rm -f ./$(DEPDIR)/stack.Plo
 	-rm -f ./$(DEPDIR)/stopwatch.Plo
 	-rm -f ./$(DEPDIR)/stream.Plo
 	-rm -f ./$(DEPDIR)/strutils.Plo
@@ -1079,7 +1075,6 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/scan.Plo
 	-rm -f ./$(DEPDIR)/scanner.Plo
 	-rm -f ./$(DEPDIR)/sizedstr.Plo
-	-rm -f ./$(DEPDIR)/stack.Plo
 	-rm -f ./$(DEPDIR)/stopwatch.Plo
 	-rm -f ./$(DEPDIR)/stream.Plo
 	-rm -f ./$(DEPDIR)/strutils.Plo

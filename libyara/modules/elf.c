@@ -29,6 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define _GNU_SOURCE
 
+#include <stdbool.h>
 #include <limits.h>
 #include <string.h>
 
@@ -36,7 +37,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <yara/endian.h>
 #include <yara/modules.h>
 #include <yara/mem.h>
-#include <yara/utils.h>
 
 
 #define MODULE_NAME elf

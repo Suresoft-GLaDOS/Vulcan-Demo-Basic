@@ -63,7 +63,7 @@ extern int hex_yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 78 "hex_grammar.y"
+#line 87 "hex_grammar.y"
 
   int64_t integer;
   RE_NODE *re_node;

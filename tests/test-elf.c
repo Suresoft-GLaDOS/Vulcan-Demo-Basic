@@ -8,27 +8,27 @@ int main(int argc, char** argv)
   yr_initialize();
   int index = defects4cpp_test_index();
   switch (index) {
-      case 126:
+      case 87:
   assert_true_rule_blob(
       "import \"elf\" rule test { condition: elf.type }",
       ELF32_FILE);
           break;
-      case 127:
+      case 88:
   assert_true_rule_blob(
       "import \"elf\" rule test { condition: elf.type }",
       ELF64_FILE);
           break;
-      case 128:
+      case 89:
   assert_true_rule_blob(
       "import \"elf\" rule test { condition: elf.machine == elf.EM_386 }",
       ELF32_FILE)
           break;
-      case 129:
+      case 90:
   assert_true_rule_blob(
       "import \"elf\" rule test { condition: elf.machine == elf.EM_X86_64 }",
       ELF64_FILE)
           break;
-      case 130:
+      case 91:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
       }",
       ELF32_FILE);
           break;
-      case 131:
+      case 92:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -46,17 +46,17 @@ int main(int argc, char** argv)
       }",
       ELF64_FILE);
           break;
-      case 132:
+      case 93:
   assert_true_rule_blob(
       "import \"elf\" rule test { condition: elf.entry_point == 0xa0 }",
       ELF32_NOSECTIONS);
           break;
-      case 133:
+      case 94:
   assert_true_rule_blob(
       "import \"elf\" rule test { condition: elf.entry_point == 0x1a0 }",
       ELF32_SHAREDOBJ);
         break;
-      case 134:
+      case 95:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -64,7 +64,7 @@ int main(int argc, char** argv)
       }",
       ELF64_FILE);
           break;
-      case 135:
+      case 96:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -72,7 +72,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 136:
+      case 97:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -81,7 +81,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 137:
+      case 98:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -93,7 +93,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 138:
+      case 99:
   assert_true_rule_blob(
       "import \"elf\" \
         rule test { \
@@ -105,7 +105,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 139:
+      case 100:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -115,7 +115,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 140:
+      case 101:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -127,7 +127,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 141:
+      case 102:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -140,7 +140,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 142:
+      case 103:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -150,7 +150,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 143:
+      case 104:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -161,7 +161,7 @@ int main(int argc, char** argv)
       }",
       ELF32_MIPS_FILE);
           break;
-      case 144:
+      case 105:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -169,7 +169,7 @@ int main(int argc, char** argv)
       }",
       ELF_x64_FILE);
           break;
-      case 145:
+      case 106:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -179,7 +179,7 @@ int main(int argc, char** argv)
       }",
       ELF_x64_FILE);
           break;
-      case 146:
+      case 107:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -191,7 +191,7 @@ int main(int argc, char** argv)
       }",
       ELF_x64_FILE);
           break;
-      case 147:
+      case 108:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -203,7 +203,7 @@ int main(int argc, char** argv)
       }",
       ELF_x64_FILE);
           break;
-      case 148:
+      case 109:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -213,7 +213,7 @@ int main(int argc, char** argv)
       }",
       ELF_x64_FILE);
           break;
-      case 149:
+      case 110:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -225,7 +225,7 @@ int main(int argc, char** argv)
      }",
      ELF_x64_FILE);
           break;
-      case 150:
+      case 111:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -238,7 +238,7 @@ int main(int argc, char** argv)
       }",
       ELF_x64_FILE);
           break;
-      case 151:
+      case 112:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \
@@ -248,7 +248,7 @@ int main(int argc, char** argv)
      }",
      ELF_x64_FILE);
           break;
-      case 152:
+      case 113:
   assert_true_rule_blob(
       "import \"elf\" \
       rule test { \

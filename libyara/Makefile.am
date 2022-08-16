@@ -89,7 +89,6 @@ yarainclude_HEADERS = \
   include/yara/scan.h \
   include/yara/scanner.h \
   include/yara/sizedstr.h \
-  include/yara/stack.h \
   include/yara/stopwatch.h \
   include/yara/stream.h \
   include/yara/strutils.h \
@@ -114,7 +113,7 @@ noinst_HEADERS = \
 
 lib_LTLIBRARIES = libyara.la
 
-libyara_la_LDFLAGS = -version-number 3:9:0
+libyara_la_LDFLAGS = -version-number 3:7:0
 
 BUILT_SOURCES = \
   lexer.c \
@@ -153,7 +152,6 @@ libyara_la_SOURCES = \
   scan.c \
   scanner.c \
   sizedstr.c \
-  stack.c \
   stopwatch.c \
   strutils.c \
   stream.c \

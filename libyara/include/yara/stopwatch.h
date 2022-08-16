@@ -55,21 +55,11 @@ typedef struct _YR_STOPWATCH
 
 } YR_STOPWATCH;
 
-#elif defined(HAVE_CLOCK_GETTIME)
+#else
 
 typedef struct _YR_STOPWATCH
 {
   struct timespec ts_start;
-
-} YR_STOPWATCH;
-
-#else
-
-#include <sys/time.h>
-
-typedef struct _YR_STOPWATCH
-{
-  struct timeval tv_start;
 
 } YR_STOPWATCH;
 

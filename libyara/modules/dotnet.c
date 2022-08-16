@@ -208,13 +208,9 @@ void dotnet_parse_us(
   const uint8_t* offset = pe->data + metadata_root + us_header->Offset;
   const uint8_t* end_of_header = offset + us_header->Size;
 
-  // Make sure the header size is larger than 0 and its end is not past the
-  // end of PE.
-  if (us_header->Size == 0 || !fits_in_pe(pe, offset, us_header->Size))
-    return;
-
-  // The first entry MUST be single NULL byte.
-  if (*offset != 0x00)
+  // Make sure end of header is not past end of PE, and the first entry MUST be
+  // a single NULL byte.
+  if (!fits_in_pe(pe, offset, us_header->Size) || *offset != 0x00)
     return;
 
   offset++;
@@ -752,9 +748,6 @@ void dotnet_parse_tilde_2(
 
             // Now follow the Type index into the MemberRef table.
             memberref_row = memberref_ptr + (memberref_row_size * type_index);
-
-            if (!fits_in_pe(pe, memberref_row, memberref_row_size))
-              break;
 
             if (index_sizes.memberref == 4)
             {

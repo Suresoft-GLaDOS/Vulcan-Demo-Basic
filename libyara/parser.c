@@ -27,6 +27,7 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
 
@@ -295,14 +296,12 @@ static int _yr_parser_write_string(
     SIZED_STRING* str,
     RE_AST* re_ast,
     YR_STRING** string,
-    int* min_atom_quality,
-    int* num_atom)
+    int* min_atom_quality)
 {
   SIZED_STRING* literal_string;
-  YR_ATOM_LIST_ITEM* atom;
   YR_ATOM_LIST_ITEM* atom_list = NULL;
 
-  int c, result;
+  int result;
   int max_string_len;
   bool free_literal = false;
 
@@ -360,6 +359,10 @@ static int _yr_parser_write_string(
   (*string)->fixed_offset = UNDEFINED;
   (*string)->rule = compiler->current_rule;
 
+  #ifdef PROFILING_ENABLED
+  (*string)->time_cost = 0;
+  #endif
+
   memset((*string)->matches, 0,
          sizeof((*string)->matches));
 
@@ -383,8 +386,7 @@ static int _yr_parser_write_string(
           (uint8_t*) literal_string->c_string,
           (int32_t) literal_string->length,
           flags,
-          &atom_list,
-          min_atom_quality);
+          &atom_list);
     }
   }
   else
@@ -398,11 +400,7 @@ static int _yr_parser_write_string(
 
     if (result == ERROR_SUCCESS)
       result = yr_atoms_extract_from_re(
-          &compiler->atoms_config,
-          re_ast,
-          flags,
-          &atom_list,
-          min_atom_quality);
+          &compiler->atoms_config, re_ast, flags, &atom_list);
   }
 
   if (result == ERROR_SUCCESS)
@@ -415,6 +413,9 @@ static int _yr_parser_write_string(
         compiler->matches_arena);
   }
 
+  *min_atom_quality = yr_atoms_min_quality(
+      &compiler->atoms_config, atom_list);
+
   if (flags & STRING_GFLAGS_LITERAL)
   {
     if (flags & STRING_GFLAGS_WIDE)
@@ -425,17 +426,6 @@ static int _yr_parser_write_string(
     if (max_string_len <= YR_MAX_ATOM_LENGTH)
       (*string)->g_flags |= STRING_GFLAGS_FITS_IN_ATOM;
   }
-
-  atom = atom_list;
-  c = 0;
-
-  while (atom != NULL)
-  {
-    atom = atom->next;
-    c++;
-  }
-
-  (*num_atom) += c;
 
   if (free_literal)
     yr_free(literal_string);
@@ -458,8 +448,8 @@ int yr_parser_reduce_string_declaration(
     SIZED_STRING* str,
     YR_STRING** string)
 {
-  int min_atom_quality = YR_MIN_ATOM_QUALITY;
-  int min_atom_quality_aux = YR_MIN_ATOM_QUALITY;
+  int min_atom_quality;
+  int min_atom_quality_aux;
 
   int32_t min_gap;
   int32_t max_gap;
@@ -588,7 +578,7 @@ int yr_parser_reduce_string_declaration(
     {
       yywarning(
           yyscanner,
-          "%s contains .* or .+, consider using .{,N} or .{1,N} with a reasonable value for N",
+          "%s contains .* or .+, consider using .{N} or .{1,N} with a reasonable value for N",
           identifier);
     }
 
@@ -614,8 +604,7 @@ int yr_parser_reduce_string_declaration(
         NULL,
         re_ast,
         string,
-        &min_atom_quality,
-        &compiler->current_rule->num_atoms);
+        &min_atom_quality);
 
     if (result != ERROR_SUCCESS)
       goto _exit;
@@ -654,8 +643,7 @@ int yr_parser_reduce_string_declaration(
           NULL,
           re_ast,
           &aux_string,
-          &min_atom_quality_aux,
-          &compiler->current_rule->num_atoms);
+          &min_atom_quality_aux);
 
       if (result != ERROR_SUCCESS)
         goto _exit;
@@ -685,8 +673,7 @@ int yr_parser_reduce_string_declaration(
         str,
         NULL,
         string,
-        &min_atom_quality,
-        &compiler->current_rule->num_atoms);
+        &min_atom_quality);
 
     if (result != ERROR_SUCCESS)
       goto _exit;
@@ -708,9 +695,8 @@ int yr_parser_reduce_string_declaration(
   {
     yywarning(
         yyscanner,
-        "%s in rule %s is slowing down scanning",
-        (*string)->identifier,
-        compiler->current_rule->identifier);
+        "%s is slowing down scanning",
+        (*string)->identifier);
   }
 
 _exit:
@@ -744,7 +730,7 @@ int yr_parser_reduce_rule_declaration_phase_1(
       yr_hash_table_lookup(
         compiler->objects_table,
         identifier,
-        NULL) != NULL)
+        compiler->current_namespace->name) != NULL)
   {
     // A rule or variable with the same identifier already exists, return the
     // appropriate error.
@@ -766,13 +752,9 @@ int yr_parser_reduce_rule_declaration_phase_1(
 
   (*rule)->g_flags = flags;
   (*rule)->ns = compiler->current_namespace;
-  (*rule)->num_atoms = 0;
 
   #ifdef PROFILING_ENABLED
-  (*rule)->time_cost = 0;
-
-  memset(
-      (*rule)->time_cost_per_thread, 0, sizeof((*rule)->time_cost_per_thread));
+  rule->time_cost = 0;
   #endif
 
   FAIL_ON_ERROR(yr_arena_write_string(
@@ -836,28 +818,15 @@ int yr_parser_reduce_rule_declaration_phase_2(
   int result;
 
   YR_FIXUP *fixup;
-  YR_STRING* string;
   YR_COMPILER* compiler = yyget_extra(yyscanner);
+
+  // Check for unreferenced (unused) strings.
+
+  YR_STRING* string = rule->strings;
 
   yr_get_configuration(
       YR_CONFIG_MAX_STRINGS_PER_RULE,
       (void*) &max_strings_per_rule);
-
-  // Show warning if the rule is generating too many atoms. The warning is
-  // shown if the number of atoms is greater than 20 times the maximum number
-  // of strings allowed for a rule, as 20 is minimum number of atoms generated
-  // for a string using *nocase*, *ascii* and *wide* modifiers simultaneosly.
-
-  if (rule->num_atoms > YR_ATOMS_PER_RULE_WARNING_THRESHOLD)
-  {
-    yywarning(
-        yyscanner,
-        "rule %s is slowing down scanning",
-        rule->identifier);
-  }
-
-  // Check for unreferenced (unused) strings.
-  string = rule->strings;
 
   while (!STRING_IS_NULL(string))
   {
@@ -1077,8 +1046,6 @@ int yr_parser_reduce_import(
     yyscan_t yyscanner,
     SIZED_STRING* module_name)
 {
-  int result;
-
   YR_COMPILER* compiler = yyget_extra(yyscanner);
   YR_OBJECT* module_structure;
 
@@ -1112,7 +1079,7 @@ int yr_parser_reduce_import(
       compiler->current_namespace->name,
       module_structure));
 
-  result = yr_modules_do_declarations(
+  int result = yr_modules_do_declarations(
       module_name->c_string,
       module_structure);
 
@@ -1212,8 +1179,6 @@ int yr_parser_reduce_operation(
     EXPRESSION left_operand,
     EXPRESSION right_operand)
 {
-  int expression_type;
-
   YR_COMPILER* compiler = yyget_extra(yyscanner);
 
   if ((left_operand.type == EXPRESSION_TYPE_INTEGER ||
@@ -1234,7 +1199,7 @@ int yr_parser_reduce_operation(
           NULL));
     }
 
-    expression_type = EXPRESSION_TYPE_FLOAT;
+    int expression_type = EXPRESSION_TYPE_FLOAT;
 
     if (left_operand.type == EXPRESSION_TYPE_INTEGER &&
         right_operand.type == EXPRESSION_TYPE_INTEGER)

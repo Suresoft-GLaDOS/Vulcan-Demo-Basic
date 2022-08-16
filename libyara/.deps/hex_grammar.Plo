@@ -17,9 +17,10 @@ hex_grammar.lo: hex_grammar.c /usr/include/stdc-predef.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h include/yara/integers.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
+ include/yara/integers.h /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
+ /usr/include/stdint.h /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -55,7 +56,6 @@ hex_grammar.lo: hex_grammar.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
  include/yara/hex_lexer.h include/yara/re.h /usr/include/ctype.h \
  include/yara/types.h include/yara/arena.h include/yara/stream.h \
  include/yara/bitmask.h include/yara/limits.h include/yara/utils.h \
@@ -124,6 +124,8 @@ hex_grammar.lo: hex_grammar.c /usr/include/stdc-predef.h \
 /usr/include/linux/limits.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 include/yara/integers.h:
 
@@ -214,8 +216,6 @@ include/yara/strutils.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 /usr/include/inttypes.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 include/yara/hex_lexer.h:
 

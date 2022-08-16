@@ -73,12 +73,12 @@ modules/time.lo: modules/time.c /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/limits.h \
- include/yara/utils.h include/yara/error.h include/yara/exec.h \
- include/yara/hash.h include/yara/scan.h include/yara/types.h \
- include/yara/arena.h include/yara/stream.h include/yara/bitmask.h \
- include/yara/sizedstr.h include/yara/stopwatch.h /usr/include/time.h \
+ /usr/include/inttypes.h include/yara/limits.h include/yara/utils.h \
+ include/yara/error.h include/yara/exec.h include/yara/hash.h \
+ include/yara/scan.h include/yara/types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/arena.h \
+ include/yara/stream.h include/yara/bitmask.h include/yara/sizedstr.h \
+ include/yara/stopwatch.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
@@ -268,8 +268,6 @@ include/yara/integers.h:
 
 /usr/include/inttypes.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
-
 include/yara/limits.h:
 
 include/yara/utils.h:
@@ -283,6 +281,8 @@ include/yara/hash.h:
 include/yara/scan.h:
 
 include/yara/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 include/yara/arena.h:
 

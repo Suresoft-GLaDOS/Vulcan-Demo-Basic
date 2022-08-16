@@ -77,11 +77,11 @@ hex_lexer.lo: hex_lexer.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h include/yara/strutils.h \
- /usr/include/assert.h include/yara/integers.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/error.h \
- include/yara/mem.h include/yara/re.h /usr/include/ctype.h \
- include/yara/utils.h include/yara/types.h include/yara/arena.h \
- include/yara/stream.h include/yara/bitmask.h include/yara/hash.h \
+ /usr/include/assert.h include/yara/integers.h include/yara/error.h \
+ include/yara/mem.h include/yara/re.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h /usr/include/ctype.h \
+ include/yara/types.h include/yara/arena.h include/yara/stream.h \
+ include/yara/bitmask.h include/yara/hash.h include/yara/utils.h \
  include/yara/sizedstr.h include/yara/stopwatch.h \
  include/yara/hex_lexer.h hex_grammar.h hex_grammar.h
 
@@ -285,17 +285,15 @@ include/yara/strutils.h:
 
 include/yara/integers.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
-
 include/yara/error.h:
 
 include/yara/mem.h:
 
 include/yara/re.h:
 
-/usr/include/ctype.h:
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
-include/yara/utils.h:
+/usr/include/ctype.h:
 
 include/yara/types.h:
 
@@ -306,6 +304,8 @@ include/yara/stream.h:
 include/yara/bitmask.h:
 
 include/yara/hash.h:
+
+include/yara/utils.h:
 
 include/yara/sizedstr.h:
 

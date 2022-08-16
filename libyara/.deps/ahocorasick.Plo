@@ -5,6 +5,7 @@ ahocorasick.lo: ahocorasick.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
@@ -56,11 +57,10 @@ ahocorasick.lo: ahocorasick.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/atoms.h \
- include/yara/re.h /usr/include/ctype.h include/yara/utils.h \
+ include/yara/atoms.h include/yara/re.h /usr/include/ctype.h \
  include/yara/types.h include/yara/bitmask.h include/yara/hash.h \
- include/yara/sizedstr.h include/yara/stopwatch.h /usr/include/time.h \
- /usr/include/x86_64-linux-gnu/bits/time.h \
+ include/yara/utils.h include/yara/sizedstr.h include/yara/stopwatch.h \
+ /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
  include/yara/threading.h /usr/include/pthread.h /usr/include/sched.h \
@@ -96,6 +96,8 @@ ahocorasick.lo: ahocorasick.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
 
@@ -223,21 +225,19 @@ include/yara/strutils.h:
 
 /usr/include/inttypes.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
-
 include/yara/atoms.h:
 
 include/yara/re.h:
 
 /usr/include/ctype.h:
 
-include/yara/utils.h:
-
 include/yara/types.h:
 
 include/yara/bitmask.h:
 
 include/yara/hash.h:
+
+include/yara/utils.h:
 
 include/yara/sizedstr.h:
 

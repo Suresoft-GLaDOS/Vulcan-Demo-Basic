@@ -47,6 +47,8 @@ proc/linux.lo: proc/linux.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+ /usr/include/x86_64-linux-gnu/sys/ptrace.h \
+ /usr/include/x86_64-linux-gnu/bits/ptrace-shared.h \
  /usr/include/x86_64-linux-gnu/sys/wait.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
@@ -78,7 +80,8 @@ proc/linux.lo: proc/linux.c /usr/include/stdc-predef.h \
  /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- include/yara/proc.h include/yara/types.h include/yara/arena.h \
+ include/yara/proc.h include/yara/types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/arena.h \
  include/yara/integers.h include/yara/stream.h include/yara/bitmask.h \
  include/yara/limits.h include/yara/utils.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/limits.h \
@@ -92,8 +95,7 @@ proc/linux.lo: proc/linux.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/hash.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h include/yara/hash.h \
  include/yara/utils.h include/yara/sizedstr.h include/yara/stopwatch.h \
  /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
@@ -223,6 +225,10 @@ proc/linux.lo: proc/linux.c /usr/include/stdc-predef.h \
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
+/usr/include/x86_64-linux-gnu/sys/ptrace.h:
+
+/usr/include/x86_64-linux-gnu/bits/ptrace-shared.h:
+
 /usr/include/x86_64-linux-gnu/sys/wait.h:
 
 /usr/include/signal.h:
@@ -299,6 +305,8 @@ include/yara/proc.h:
 
 include/yara/types.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
+
 include/yara/arena.h:
 
 include/yara/integers.h:
@@ -342,8 +350,6 @@ include/yara/strutils.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 include/yara/hash.h:
 

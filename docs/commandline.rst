@@ -5,24 +5,17 @@ Running YARA from the command-line
 **********************************
 
 In order to invoke YARA you’ll need two things: a file with the rules you want
-to use and the target to be scanned. The target can be a file, a folder, or a
-process. ::
+to use (either in source code or compiled form) and the target to be scanned.
+The target can be a file, a folder, or a process. ::
 
   yara [OPTIONS] RULES_FILE TARGET
 
-In YARA 3.8 and below ``RULES_FILE`` was allowed to be a file with rules in source
-form or in compiled form indistinctly. In YARA 3.9 you need to explictly specify
-that ``RULES_FILE`` contains compiled rules by using the -C flag. ::
 
-  yara [OPTIONS] -C RULES_FILE TARGET
-
-This is a security measure to prevent users from inadvertenly using compiled
-rules coming from a third-party. Using compiled rules from untrusted sources can
-lead to the execution of malicious code in your computer.
-
-For compiling rules beforhand you can use the ``yarac`` tool. This way can save
-time, because for YARA it is faster to load compiled rules than compiling the
-same rules over and over again.
+``RULES_FILE`` can be passed directly in source code form, or can be previously
+compiled with the ``yarac`` tool. You may prefer to use your rules in compiled
+form if you are going to invoke YARA multiple times with the same rules. This
+way you’ll save time, because for YARA it is faster to load compiled rules than
+compiling the same rules over and over again.
 
 You can also pass multiple source files to `yara` like in the following example::
 
@@ -56,10 +49,6 @@ Available options are:
 .. option:: -i <identifier> --identifier=<identifier>
 
   Print rules named <identifier> and ignore the rest.
-
-.. option:: -C --compiled-rules
-
-  RULES_FILE contains rules already compiled with yarac.
 
 .. option:: -c --count
 

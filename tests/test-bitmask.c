@@ -217,15 +217,15 @@ void test_find_non_colliding_offsets_2()
   // Bitmask A can accommodate B at offset 0.
   if (yr_bitmask_find_non_colliding_offset(a, b, 200, 140, &o) != 0)
     exit(EXIT_FAILURE);
-
+    
   yr_bitmask_clear_all(a);
   yr_bitmask_clear_all(b);
-
+    
   yr_bitmask_set(a, 130);
 
   yr_bitmask_set(b, 0);
   yr_bitmask_set(b, 130);
-
+    
   if (yr_bitmask_find_non_colliding_offset(a, b, 200, 140, &o) != 1)
     exit(EXIT_FAILURE);
 }
@@ -235,13 +235,13 @@ int main(int argc, char** argv)
 {
   int index = defects4cpp_test_index();
   switch (index) {
-      case 103:
+      case 64:
   test_set_clear();
           break;
-      case 104:
+      case 65:
   test_find_non_colliding_offsets_1();
           break;
-      case 105:
+      case 66:
   test_find_non_colliding_offsets_2();
           break;
   }

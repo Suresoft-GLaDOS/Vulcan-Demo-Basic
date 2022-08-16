@@ -1,6 +1,5 @@
+
 #include <yara.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "util.h"
 
 #if defined(_WIN32) || defined(__CYGWIN__)
@@ -656,12 +655,12 @@ void test_rules_stats()
   stats_for_rules("\
       rule test { \
       strings: \
-        $ = \"00000\" \
-        $ = \"00001\" \
-        $ = \"00002\" \
-        $ = \"11110\" \
-        $ = \"11111\" \
-        $ = \"11112\" \
+        $ = \"abcd0\" \
+        $ = \"abcd1\" \
+        $ = \"abcd2\" \
+        $ = \"efgh0\" \
+        $ = \"efgh1\" \
+        $ = \"efgh2\" \
       condition: all of them }",
       &stats);
 
@@ -676,14 +675,14 @@ void test_rules_stats()
   stats_for_rules("\
       rule test { \
       strings: \
-        $ = \"00000\" \
-        $ = \"00001\" \
-        $ = \"00002\" \
-        $ = \"11110\" \
-        $ = \"22220\" \
-        $ = \"33330\" \
-        $ = \"33331\" \
-        $ = \"44440\" \
+        $ = \"abcd0\" \
+        $ = \"abcd1\" \
+        $ = \"abcd2\" \
+        $ = \"efgh0\" \
+        $ = \"ijkl0\" \
+        $ = \"mnop0\" \
+        $ = \"mnop1\" \
+        $ = \"qrst0\" \
       condition: all of them }",
       &stats);
 
@@ -694,16 +693,6 @@ void test_rules_stats()
   assert_true_expr(stats.top_ac_match_list_lengths[0] == 3);
   assert_true_expr(stats.ac_match_list_length_pctls[1] == 1);
   assert_true_expr(stats.ac_match_list_length_pctls[100] == 3);
-
-  stats_for_rules("\
-      rule test { \
-      condition: true }",
-      &stats);
-
-  assert_true_expr(stats.rules == 1);
-  assert_true_expr(stats.strings == 0);
-  assert_true_expr(stats.ac_matches == 0);
-  assert_true_expr(stats.ac_root_match_list_length == 0);
 }
 
 
@@ -745,9 +734,6 @@ void test_issue_920()
 
 int main(int argc, char** argv)
 {
-  char *top_srcdir = getenv("TOP_SRCDIR");
-  if (top_srcdir)
-    chdir(top_srcdir);
   int index = defects4cpp_test_index();
   switch (index) {
       case 45:

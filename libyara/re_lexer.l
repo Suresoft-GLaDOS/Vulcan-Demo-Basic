@@ -46,6 +46,7 @@ with noyywrap then we can remove this pragma.
 
 #include <assert.h>
 #include <setjmp.h>
+#include <stdbool.h>
 
 #include <yara/globals.h>
 #include <yara/utils.h>

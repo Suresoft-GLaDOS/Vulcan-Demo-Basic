@@ -142,7 +142,6 @@ static bool fast_scan = false;
 static bool negate = false;
 static bool print_count_only = false;
 static bool fail_on_warnings = false;
-static bool rules_are_compiled = false;
 static int total_count = 0;
 static int limit = 0;
 static int timeout = 1000000;
@@ -160,53 +159,29 @@ args_option_t options[] =
   OPT_STRING(0, "atom-quality-table", &atom_quality_table,
       "path to a file with the atom quality table", "FILE"),
 
-  OPT_BOOLEAN('C', "compiled-rules", &rules_are_compiled,
-      "load compiled rules"),
-
-  OPT_BOOLEAN('c', "count", &print_count_only,
-      "print only number of matches"),
-
-  OPT_STRING_MULTI('d', "define", &ext_vars, MAX_ARGS_EXT_VAR,
-      "define external variable", "VAR=VALUE"),
-
-  OPT_BOOLEAN(0, "fail-on-warnings", &fail_on_warnings,
-      "fail on warnings"),
-
-  OPT_BOOLEAN('f', "fast-scan", &fast_scan,
-      "fast matching mode"),
-
-  OPT_BOOLEAN('h', "help", &show_help,
-      "show this help and exit"),
+  OPT_STRING_MULTI('t', "tag", &tags, MAX_ARGS_TAG,
+      "print only rules tagged as TAG", "TAG"),
 
   OPT_STRING_MULTI('i', "identifier", &identifiers, MAX_ARGS_IDENTIFIER,
       "print only rules named IDENTIFIER", "IDENTIFIER"),
 
-  OPT_INTEGER('l', "max-rules", &limit,
-      "abort scanning after matching a NUMBER of rules", "NUMBER"),
-
-  OPT_INTEGER(0, "max-strings-per-rule", &max_strings_per_rule,
-      "set maximum number of strings per rule (default=10000)", "NUMBER"),
-
-  OPT_STRING_MULTI('x', "module-data", &modules_data, MAX_ARGS_MODULE_DATA,
-      "pass FILE's content as extra data to MODULE", "MODULE=FILE"),
+  OPT_BOOLEAN('c', "count", &print_count_only,
+      "print only number of matches"),
 
   OPT_BOOLEAN('n', "negate", &negate,
       "print only not satisfied rules (negate)", NULL),
 
-  OPT_BOOLEAN('w', "no-warnings", &ignore_warnings,
-      "disable warnings"),
-
-  OPT_BOOLEAN('m', "print-meta", &show_meta,
-      "print metadata"),
-
   OPT_BOOLEAN('D', "print-module-data", &show_module_data,
       "print module data"),
 
-  OPT_BOOLEAN('e', "print-namespace", &show_namespace,
-      "print rules' namespace"),
-
   OPT_BOOLEAN('S', "print-stats", &show_stats,
       "print rules' statistics"),
+
+  OPT_BOOLEAN('g', "print-tags", &show_tags,
+      "print tags"),
+
+  OPT_BOOLEAN('m', "print-meta", &show_meta,
+      "print metadata"),
 
   OPT_BOOLEAN('s', "print-strings", &show_strings,
       "print matching strings"),
@@ -214,26 +189,47 @@ args_option_t options[] =
   OPT_BOOLEAN('L', "print-string-length", &show_string_length,
       "print length of matched strings"),
 
-  OPT_BOOLEAN('g', "print-tags", &show_tags,
-      "print tags"),
-
-  OPT_BOOLEAN('r', "recursive", &recursive_search,
-      "recursively search directories"),
-
-  OPT_INTEGER('k', "stack-size", &stack_size,
-      "set maximum stack size (default=16384)", "SLOTS"),
-
-  OPT_STRING_MULTI('t', "tag", &tags, MAX_ARGS_TAG,
-      "print only rules tagged as TAG", "TAG"),
+  OPT_BOOLEAN('e', "print-namespace", &show_namespace,
+      "print rules' namespace"),
 
   OPT_INTEGER('p', "threads", &threads,
       "use the specified NUMBER of threads to scan a directory", "NUMBER"),
 
+  OPT_INTEGER('l', "max-rules", &limit,
+      "abort scanning after matching a NUMBER of rules", "NUMBER"),
+
+  OPT_STRING_MULTI('d', NULL, &ext_vars, MAX_ARGS_EXT_VAR,
+      "define external variable", "VAR=VALUE"),
+
+  OPT_STRING_MULTI('x', NULL, &modules_data, MAX_ARGS_MODULE_DATA,
+      "pass FILE's content as extra data to MODULE", "MODULE=FILE"),
+
   OPT_INTEGER('a', "timeout", &timeout,
       "abort scanning after the given number of SECONDS", "SECONDS"),
 
+  OPT_INTEGER('k', "stack-size", &stack_size,
+      "set maximum stack size (default=16384)", "SLOTS"),
+
+  OPT_INTEGER(0, "max-strings-per-rule", &max_strings_per_rule,
+      "set maximum number of strings per rule (default=10000)", "NUMBER"),
+
+  OPT_BOOLEAN('r', "recursive", &recursive_search,
+      "recursively search directories"),
+
+  OPT_BOOLEAN('f', "fast-scan", &fast_scan,
+      "fast matching mode"),
+
+  OPT_BOOLEAN('w', "no-warnings", &ignore_warnings,
+      "disable warnings"),
+
+  OPT_BOOLEAN(0, "fail-on-warnings", &fail_on_warnings,
+      "fail on warnings"),
+
   OPT_BOOLEAN('v', "version", &show_version,
       "show version information"),
+
+  OPT_BOOLEAN('h', "help", &show_help,
+      "show this help and exit"),
 
   OPT_END()
 };
@@ -532,10 +528,7 @@ static void print_error(
       fprintf(stderr, "could not open file\n");
       break;
     case ERROR_UNSUPPORTED_FILE_VERSION:
-      fprintf(stderr, "rules were compiled with a different version of YARA\n");
-      break;
-    case ERROR_INVALID_FILE:
-      fprintf(stderr, "invalid compiled rules file.\n");
+      fprintf(stderr, "rules were compiled with a newer version of YARA\n");
       break;
     case ERROR_CORRUPT_FILE:
       fprintf(stderr, "corrupt compiled rules file.\n");
@@ -551,7 +544,7 @@ static void print_error(
       fprintf(stderr, "too many matches\n");
       break;
     default:
-      fprintf(stderr, "error: %d\n", error);
+      fprintf(stderr, "internal error: %d\n", error);
       break;
   }
 }
@@ -1139,7 +1132,21 @@ int main(
   // Try to load the rules file as a binary file containing
   // compiled rules first
 
-  if (rules_are_compiled)
+  result = yr_rules_load(argv[0], &rules);
+
+  // Accepted result are ERROR_SUCCESS or ERROR_INVALID_FILE
+  // if we are passing the rules in source form, if result is
+  // different from those exit with error.
+
+  if (result != ERROR_SUCCESS &&
+      result != ERROR_COULD_NOT_OPEN_FILE &&
+      result != ERROR_INVALID_FILE)
+  {
+    print_error(result);
+    exit_with_code(EXIT_FAILURE);
+  }
+
+  if (result == ERROR_SUCCESS)
   {
     // When a binary file containing compiled rules is provided, yara accepts
     // only two arguments, the compiled rules file and the target to be scanned.
@@ -1152,10 +1159,13 @@ int main(
       exit_with_code(EXIT_FAILURE);
     }
 
-    result = yr_rules_load(argv[0], &rules);
+    result = define_external_variables(rules, NULL);
 
-    if (result == ERROR_SUCCESS)
-      result = define_external_variables(rules, NULL);
+    if (result != ERROR_SUCCESS)
+    {
+      print_error(result);
+      exit_with_code(EXIT_FAILURE);
+    }
   }
   else
   {
@@ -1205,12 +1215,12 @@ int main(
     yr_compiler_destroy(compiler);
 
     compiler = NULL;
-  }
 
-  if (result != ERROR_SUCCESS)
-  {
-    print_error(result);
-    exit_with_code(EXIT_FAILURE);
+    if (result != ERROR_SUCCESS)
+    {
+      fprintf(stderr, "error: %d\n", result);
+      exit_with_code(EXIT_FAILURE);
+    }
   }
 
   if (show_stats)

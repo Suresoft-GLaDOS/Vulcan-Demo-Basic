@@ -1,4 +1,5 @@
-stopwatch.lo: stopwatch.c /usr/include/stdc-predef.h /usr/include/time.h \
+stopwatch.lo: stopwatch.c /usr/include/stdc-predef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h /usr/include/time.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
@@ -29,6 +30,8 @@ stopwatch.lo: stopwatch.c /usr/include/stdc-predef.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h
 
 /usr/include/stdc-predef.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 /usr/include/time.h:
 

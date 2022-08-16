@@ -46,6 +46,7 @@ with noyywrap then we can remove this pragma.
 
 #include <math.h>
 #include <stdarg.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -67,7 +68,6 @@ with noyywrap then we can remove this pragma.
 #include <yara/sizedstr.h>
 #include <yara/error.h>
 #include <yara/mem.h>
-#include <yara/utils.h>
 #include <yara/strutils.h>
 
 #include "grammar.h"
@@ -348,12 +348,15 @@ include[ \t]+\"         {
 
 <<EOF>> {
 
+  YR_COMPILER* compiler = yyget_extra(yyscanner);
+
+  _yr_compiler_pop_file_name(compiler);
   yypop_buffer_state(yyscanner);
 
   if (!YY_CURRENT_BUFFER)
+  {
     yyterminate();
-
-  return _END_OF_INCLUDED_FILE_;
+  }
 }
 
 
@@ -704,13 +707,9 @@ u?int(8|16|32)(be)? {
 }
 
 
-\{(({hexdigit}|[ \-|\?\[\]\(\)\n\r\t]|\/\*[^*]*\*+([^*/][^*]*\*+)*\/)+|\/\/.*)+\}  {
+\{(({hexdigit}|[ \-|\?\[\]\(\)\n\r\t]|\/\*[^*]*\*\/)+|\/\/.*)+\}  {
   // Match hex-digits with whitespace or comments. The latter are stripped
   // out by hex_lexer.l
-  // TODO(vmalvarez): Integrate the hex string lexer and parser into this one,
-  // by having a single lexer/parser instead of two different ones we can avoid
-  // complex regular expressions like the one above, which is actually trying to
-  // do some parsing in the lexer.
 
   alloc_sized_string(s, strlen(yytext));
 

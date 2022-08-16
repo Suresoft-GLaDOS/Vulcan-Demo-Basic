@@ -315,7 +315,7 @@ int module_load(
       &json_error);
 
   if (json == NULL)
-    return ERROR_INVALID_MODULE_DATA;
+    return ERROR_INVALID_FILE;
 
   module_object->data = (void*) json;
 

@@ -81,7 +81,7 @@ extern int re_yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 73 "re_grammar.y"
+#line 83 "re_grammar.y"
 
   int integer;
   uint32_t range;

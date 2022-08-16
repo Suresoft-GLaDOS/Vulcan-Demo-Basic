@@ -97,7 +97,7 @@ int main (int argc, char **argv)
   CHECK_OFFSET(YR_MATCHES, 16, tail);
           break;
       case 10:
-  CHECK_SIZE(YR_STRING, 56 + 2 * 24 /* YR_MATCHES */ * YR_MAX_THREADS);
+  CHECK_SIZE(YR_STRING, 64 + 2 * 24 /* YR_MATCHES */ * YR_MAX_THREADS);
           break;
       case 11:
   CHECK_OFFSET(YR_STRING, 4,  length);
@@ -124,10 +124,10 @@ int main (int argc, char **argv)
   CHECK_OFFSET(YR_STRING, 48, fixed_offset);
           break;
       case 19:
-  CHECK_SIZE(YR_RULE, 64 + 12 * YR_MAX_THREADS);
+  CHECK_SIZE(YR_RULE, 16 + 4 * YR_MAX_THREADS + 40);
           break;
       case 20:
-  CHECK_OFFSET(YR_RULE, 4,                           t_flags);
+  CHECK_OFFSET(YR_RULE, 4,                        t_flags);
           break;
       case 21:
   CHECK_OFFSET(YR_RULE, 8 + 4 * YR_MAX_THREADS,      identifier);

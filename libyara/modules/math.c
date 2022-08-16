@@ -27,9 +27,9 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include <stdbool.h>
 #include <math.h>
 
-#include <yara/utils.h>
 #include <yara/modules.h>
 #include <yara/mem.h>
 
@@ -39,7 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // log2 is not defined by math.h in VC++
 
-#if defined(_MSC_VER) && _MSC_VER < 1800
+#ifdef _MSC_VER
 double log2(double n)
 {
   return log(n) / log(2.0);

@@ -8,7 +8,7 @@
 dlname='libyara.so.3'
 
 # Names of this library.
-library_names='libyara.so.3.9.0 libyara.so.3 libyara.so'
+library_names='libyara.so.3.7.0 libyara.so.3 libyara.so'
 
 # The name of the static archive.
 old_library='libyara.a'
@@ -23,8 +23,8 @@ dependency_libs=' -llua5.3 -lcrypto -lm'
 weak_library_names=''
 
 # Version information for libyara.
-current=12
-age=9
+current=10
+age=7
 revision=0
 
 # Is this an already installed library?

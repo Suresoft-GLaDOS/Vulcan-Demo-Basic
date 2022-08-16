@@ -54,9 +54,8 @@ re.lo: re.c /usr/include/stdc-predef.h /usr/include/assert.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/globals.h \
- include/yara/threading.h /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/inttypes.h include/yara/globals.h include/yara/threading.h \
+ /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
@@ -76,11 +75,11 @@ re.lo: re.c /usr/include/stdc-predef.h /usr/include/assert.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/stdio2.h include/yara/re.h \
- /usr/include/ctype.h include/yara/types.h include/yara/arena.h \
- include/yara/stream.h include/yara/bitmask.h include/yara/hash.h \
- include/yara/sizedstr.h include/yara/stopwatch.h include/yara/error.h \
- include/yara/re_lexer.h re_grammar.h include/yara/hex_lexer.h \
- hex_grammar.h
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h /usr/include/ctype.h \
+ include/yara/types.h include/yara/arena.h include/yara/stream.h \
+ include/yara/bitmask.h include/yara/hash.h include/yara/sizedstr.h \
+ include/yara/stopwatch.h include/yara/error.h include/yara/re_lexer.h \
+ re_grammar.h include/yara/hex_lexer.h hex_grammar.h
 
 /usr/include/stdc-predef.h:
 
@@ -218,8 +217,6 @@ include/yara/integers.h:
 
 /usr/include/inttypes.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
-
 include/yara/globals.h:
 
 include/yara/threading.h:
@@ -273,6 +270,8 @@ include/yara/mem.h:
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
 include/yara/re.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 /usr/include/ctype.h:
 

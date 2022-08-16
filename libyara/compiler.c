@@ -29,6 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <assert.h>
 #include <fcntl.h>
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
@@ -264,8 +265,7 @@ YR_API void yr_compiler_destroy(
   yr_arena_destroy(compiler->automaton_arena);
   yr_arena_destroy(compiler->matches_arena);
 
-  if (compiler->automaton != NULL)
-    yr_ac_automaton_destroy(compiler->automaton);
+  yr_ac_automaton_destroy(compiler->automaton);
 
   yr_hash_table_destroy(
       compiler->rules_table,
@@ -386,20 +386,16 @@ YR_API int yr_compiler_load_atom_quality_table(
     const char* filename,
     unsigned char warning_threshold)
 {
-  long file_size;
-  int entries;
-  void* table;
-
   FILE* fh = fopen(filename, "rb");
 
   if (fh == NULL)
     return ERROR_COULD_NOT_OPEN_FILE;
 
   fseek(fh, 0L, SEEK_END);
-  file_size = ftell(fh);
+  long file_size = ftell(fh);
   fseek(fh, 0L, SEEK_SET);
 
-  table = yr_malloc(file_size);
+  void* table = yr_malloc(file_size);
 
   if (table == NULL)
   {
@@ -407,7 +403,7 @@ YR_API int yr_compiler_load_atom_quality_table(
     return ERROR_INSUFFICIENT_MEMORY;
   }
 
-  entries = (int) file_size / sizeof(YR_ATOM_QUALITY_TABLE_ENTRY);
+  int entries = file_size / sizeof(YR_ATOM_QUALITY_TABLE_ENTRY);
 
   if (fread(table, sizeof(YR_ATOM_QUALITY_TABLE_ENTRY), entries, fh) != entries)
   {
@@ -546,8 +542,6 @@ YR_API int yr_compiler_add_file(
     const char* namespace_,
     const char* file_name)
 {
-  int result;
-
   // Don't allow yr_compiler_add_file() after
   // yr_compiler_get_rules() has been called.
 
@@ -558,23 +552,21 @@ YR_API int yr_compiler_add_file(
 
   assert(compiler->errors == 0);
 
+  if (file_name != NULL)
+    _yr_compiler_push_file_name(compiler, file_name);
+
   if (namespace_ != NULL)
     compiler->last_error = _yr_compiler_set_namespace(compiler, namespace_);
   else
     compiler->last_error = _yr_compiler_set_namespace(compiler, "default");
 
-  if (compiler->last_error == ERROR_SUCCESS && file_name != NULL)
-    compiler->last_error = _yr_compiler_push_file_name(compiler, file_name);
-
   if (compiler->last_error != ERROR_SUCCESS)
-    return ++compiler->errors;
+  {
+    compiler->errors++;
+    return compiler->errors;
+  }
 
-  result = yr_lex_parse_rules_file(rules_file, compiler);
-
-  if (file_name != NULL)
-    _yr_compiler_pop_file_name(compiler);
-
-  return result;
+  return yr_lex_parse_rules_file(rules_file, compiler);
 }
 
 
@@ -584,8 +576,6 @@ YR_API int yr_compiler_add_fd(
     const char* namespace_,
     const char* file_name)
 {
-  int result;
-
   // Don't allow yr_compiler_add_fd() after
   // yr_compiler_get_rules() has been called.
 
@@ -596,23 +586,21 @@ YR_API int yr_compiler_add_fd(
 
   assert(compiler->errors == 0);
 
+  if (file_name != NULL)
+    _yr_compiler_push_file_name(compiler, file_name);
+
   if (namespace_ != NULL)
     compiler->last_error = _yr_compiler_set_namespace(compiler, namespace_);
   else
     compiler->last_error = _yr_compiler_set_namespace(compiler, "default");
 
-  if (compiler->last_error == ERROR_SUCCESS && file_name != NULL)
-    compiler->last_error = _yr_compiler_push_file_name(compiler, file_name);
-
   if (compiler->last_error != ERROR_SUCCESS)
-    return ++compiler->errors;
+  {
+    compiler->errors++;
+    return compiler->errors;
+  }
 
-  result = yr_lex_parse_rules_fd(rules_fd, compiler);
-
-  if (file_name != NULL)
-    _yr_compiler_pop_file_name(compiler);
-
-  return result;
+  return yr_lex_parse_rules_fd(rules_fd, compiler);
 }
 
 
@@ -637,7 +625,10 @@ YR_API int yr_compiler_add_string(
     compiler->last_error = _yr_compiler_set_namespace(compiler, "default");
 
   if (compiler->last_error != ERROR_SUCCESS)
-    return ++compiler->errors;
+  {
+    compiler->errors++;
+    return compiler->errors;
+  }
 
   return yr_lex_parse_rules_string(rules_string, compiler);
 }
@@ -872,9 +863,6 @@ int _yr_compiler_define_variable(
 
   char* id;
 
-  if (external->identifier == NULL)
-    return ERROR_INVALID_ARGUMENT;
-
   object = (YR_OBJECT*) yr_hash_table_lookup(
       compiler->objects_table,
       external->identifier,
@@ -902,9 +890,6 @@ int _yr_compiler_define_variable(
   if (external->type == EXTERNAL_VARIABLE_TYPE_STRING)
   {
     char* val;
-
-    if (external->value.s == NULL)
-      return ERROR_INVALID_ARGUMENT;
 
     FAIL_ON_ERROR(yr_arena_write_string(
         compiler->sz_arena,

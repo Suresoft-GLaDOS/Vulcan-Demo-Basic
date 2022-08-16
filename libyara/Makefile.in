@@ -159,7 +159,7 @@ am__libyara_la_SOURCES_DIST = modules/tests.c modules/pe.c \
 	exec.c exefiles.c filemap.c hash.c hex_grammar.y hex_lexer.l \
 	lexer.l libyara.c mem.c modules.c object.c parser.c proc.c \
 	re.c re_grammar.y re_lexer.l rules.c scan.c scanner.c \
-	sizedstr.c stack.c stopwatch.c strutils.c stream.c threading.c \
+	sizedstr.c stopwatch.c strutils.c stream.c threading.c \
 	proc/windows.c proc/linux.c proc/freebsd.c proc/openbsd.c \
 	proc/mach.c proc/none.c
 am__dirstamp = $(am__leading_dot)dirstamp
@@ -184,8 +184,8 @@ am_libyara_la_OBJECTS = $(am__objects_7) grammar.lo ahocorasick.lo \
 	exefiles.lo filemap.lo hash.lo hex_grammar.lo hex_lexer.lo \
 	lexer.lo libyara.lo mem.lo modules.lo object.lo parser.lo \
 	proc.lo re.lo re_grammar.lo re_lexer.lo rules.lo scan.lo \
-	scanner.lo sizedstr.lo stack.lo stopwatch.lo strutils.lo \
-	stream.lo threading.lo $(am__objects_8) $(am__objects_9) \
+	scanner.lo sizedstr.lo stopwatch.lo strutils.lo stream.lo \
+	threading.lo $(am__objects_8) $(am__objects_9) \
 	$(am__objects_10) $(am__objects_11) $(am__objects_12) \
 	$(am__objects_13)
 libyara_la_OBJECTS = $(am_libyara_la_OBJECTS)
@@ -225,18 +225,17 @@ am__depfiles_remade = ./$(DEPDIR)/ahocorasick.Plo \
 	./$(DEPDIR)/re_grammar.Plo ./$(DEPDIR)/re_lexer.Plo \
 	./$(DEPDIR)/rules.Plo ./$(DEPDIR)/scan.Plo \
 	./$(DEPDIR)/scanner.Plo ./$(DEPDIR)/sizedstr.Plo \
-	./$(DEPDIR)/stack.Plo ./$(DEPDIR)/stopwatch.Plo \
-	./$(DEPDIR)/stream.Plo ./$(DEPDIR)/strutils.Plo \
-	./$(DEPDIR)/threading.Plo modules/$(DEPDIR)/cuckoo.Plo \
-	modules/$(DEPDIR)/dex.Plo modules/$(DEPDIR)/dotnet.Plo \
-	modules/$(DEPDIR)/elf.Plo modules/$(DEPDIR)/hash.Plo \
-	modules/$(DEPDIR)/macho.Plo modules/$(DEPDIR)/magic.Plo \
-	modules/$(DEPDIR)/math.Plo modules/$(DEPDIR)/pe.Plo \
-	modules/$(DEPDIR)/pe_utils.Plo modules/$(DEPDIR)/tests.Plo \
-	modules/$(DEPDIR)/time.Plo proc/$(DEPDIR)/freebsd.Plo \
-	proc/$(DEPDIR)/linux.Plo proc/$(DEPDIR)/mach.Plo \
-	proc/$(DEPDIR)/none.Plo proc/$(DEPDIR)/openbsd.Plo \
-	proc/$(DEPDIR)/windows.Plo
+	./$(DEPDIR)/stopwatch.Plo ./$(DEPDIR)/stream.Plo \
+	./$(DEPDIR)/strutils.Plo ./$(DEPDIR)/threading.Plo \
+	modules/$(DEPDIR)/cuckoo.Plo modules/$(DEPDIR)/dex.Plo \
+	modules/$(DEPDIR)/dotnet.Plo modules/$(DEPDIR)/elf.Plo \
+	modules/$(DEPDIR)/hash.Plo modules/$(DEPDIR)/macho.Plo \
+	modules/$(DEPDIR)/magic.Plo modules/$(DEPDIR)/math.Plo \
+	modules/$(DEPDIR)/pe.Plo modules/$(DEPDIR)/pe_utils.Plo \
+	modules/$(DEPDIR)/tests.Plo modules/$(DEPDIR)/time.Plo \
+	proc/$(DEPDIR)/freebsd.Plo proc/$(DEPDIR)/linux.Plo \
+	proc/$(DEPDIR)/mach.Plo proc/$(DEPDIR)/none.Plo \
+	proc/$(DEPDIR)/openbsd.Plo proc/$(DEPDIR)/windows.Plo
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -476,7 +475,6 @@ yarainclude_HEADERS = \
   include/yara/scan.h \
   include/yara/scanner.h \
   include/yara/sizedstr.h \
-  include/yara/stack.h \
   include/yara/stopwatch.h \
   include/yara/stream.h \
   include/yara/strutils.h \
@@ -499,7 +497,7 @@ noinst_HEADERS = \
   modules/module_list
 
 lib_LTLIBRARIES = libyara.la
-libyara_la_LDFLAGS = -version-number 3:9:0
+libyara_la_LDFLAGS = -version-number 3:7:0
 BUILT_SOURCES = \
   lexer.c \
   hex_lexer.c \
@@ -512,8 +510,8 @@ libyara_la_SOURCES = $(MODULES) grammar.y ahocorasick.c arena.c \
 	atoms.c bitmask.c compiler.c endian.c exec.c exefiles.c \
 	filemap.c hash.c hex_grammar.y hex_lexer.l lexer.l libyara.c \
 	mem.c modules.c object.c parser.c proc.c re.c re_grammar.y \
-	re_lexer.l rules.c scan.c scanner.c sizedstr.c stack.c \
-	stopwatch.c strutils.c stream.c threading.c $(am__append_12) \
+	re_lexer.l rules.c scan.c scanner.c sizedstr.c stopwatch.c \
+	strutils.c stream.c threading.c $(am__append_12) \
 	$(am__append_13) $(am__append_14) $(am__append_15) \
 	$(am__append_16) $(am__append_17)
 pkgconfigdir = $(libdir)/pkgconfig
@@ -681,7 +679,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scan.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scanner.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sizedstr.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stack.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stopwatch.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stream.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strutils.Plo@am__quote@ # am--include-marker
@@ -983,7 +980,6 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/scan.Plo
 	-rm -f ./$(DEPDIR)/scanner.Plo
 	-rm -f ./$(DEPDIR)/sizedstr.Plo
-	-rm -f ./$(DEPDIR)/stack.Plo
 	-rm -f ./$(DEPDIR)/stopwatch.Plo
 	-rm -f ./$(DEPDIR)/stream.Plo
 	-rm -f ./$(DEPDIR)/strutils.Plo
@@ -1079,7 +1075,6 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/scan.Plo
 	-rm -f ./$(DEPDIR)/scanner.Plo
 	-rm -f ./$(DEPDIR)/sizedstr.Plo
-	-rm -f ./$(DEPDIR)/stack.Plo
 	-rm -f ./$(DEPDIR)/stopwatch.Plo
 	-rm -f ./$(DEPDIR)/stream.Plo
 	-rm -f ./$(DEPDIR)/strutils.Plo

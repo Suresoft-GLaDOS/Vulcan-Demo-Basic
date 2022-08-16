@@ -35,7 +35,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <fcntl.h>
 
 #include <yara.h>
-#include "util.h"
 
 char compile_error[1024];
 int warnings;
@@ -186,11 +185,11 @@ static int capture_matches(
 
       yr_string_matches_foreach(string, match)
       {
-        if (strlen(f->expected) == match->data_length &&
-            strncmp(f->expected, (char*)(match->data), match->data_length) == 0)
-        {
+        int r = strncmp(
+            f->expected, (char*) (match->data), match->data_length);
+
+        if (r == 0)
           f->found++;
-        }
       }
     }
   }
@@ -260,98 +259,4 @@ int read_file(
 _exit:
   close(fd);
   return rc;
-}
-
-
-int _assert_atoms(
-    RE_AST* re_ast,
-    int expected_atom_count,
-    atom* expected_atoms)
-{
-  YR_ATOMS_CONFIG c;
-  YR_ATOM_LIST_ITEM* atoms;
-  YR_ATOM_LIST_ITEM* atom;
-  YR_ATOM_LIST_ITEM* next_atom;
-
-  int min_atom_quality;
-  int exit_code;
-
-  c.get_atom_quality = yr_atoms_heuristic_quality;
-
-  yr_atoms_extract_from_re(&c, re_ast, 0, &atoms, &min_atom_quality);
-
-  atom = atoms;
-
-  exit_code = EXIT_SUCCESS;
-  while (atom != NULL)
-  {
-    if (expected_atom_count == 0)
-    {
-      exit_code = EXIT_FAILURE;
-      break;
-    }
-
-    if (atom->atom.length != expected_atoms->length ||
-       memcmp(atom->atom.bytes, expected_atoms->data, atom->atom.length) != 0)
-    {
-      exit_code = EXIT_FAILURE;
-      break;
-    }
-
-    expected_atoms++;
-    expected_atom_count--;
-    atom = atom->next;
-  }
-
-  atom = atoms;
-  while (atom != NULL)
-  {
-    next_atom = atom->next;
-    yr_free(atom);
-    atom = next_atom;
-  }
-
-  return exit_code;
-}
-
-
-void assert_re_atoms(
-    char* re,
-    int expected_atom_count,
-    atom* expected_atoms)
-{
-  RE_AST* re_ast;
-  RE_ERROR re_error;
-
-  int exit_code;
-
-  yr_re_parse(re, &re_ast, &re_error);
-  exit_code = _assert_atoms(re_ast, expected_atom_count, expected_atoms);
-
-  if(re_ast != NULL)
-    yr_re_ast_destroy(re_ast);
-
-  if(exit_code != EXIT_SUCCESS)
-    exit(exit_code);
-}
-
-
-void assert_hex_atoms(
-    char* hex,
-    int expected_atom_count,
-    atom* expected_atoms)
-{
-  RE_AST* re_ast;
-  RE_ERROR re_error;
-
-  int exit_code;
-
-  yr_re_parse_hex(hex, &re_ast, &re_error);
-  exit_code = _assert_atoms(re_ast, expected_atom_count, expected_atoms);
-
-  if(re_ast != NULL)
-    yr_re_ast_destroy(re_ast);
-
-  if(exit_code != EXIT_SUCCESS)
-    exit(exit_code);
 }

@@ -8,7 +8,7 @@ int main(int argc, char** argv)
   yr_initialize();
   int index = defects4cpp_test_index();
   switch (index) {
-      case 193:
+      case 154:
   assert_true_rule_blob(
       "import \"math\" \
       rule test { \
@@ -17,7 +17,7 @@ int main(int argc, char** argv)
       }",
       "A");
           break;
-      case 194:
+      case 155:
   assert_true_rule_blob(
       "import \"math\" \
       rule test { \

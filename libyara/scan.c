@@ -196,9 +196,7 @@ static int _yr_scan_wicompare(
   if (data_size < string_length * 2)
     return 0;
 
-  while (i < string_length &&
-         yr_lowercase[*s1] == yr_lowercase[*s2] &&
-         *(s1 + 1) == 0x00)
+  while (i < string_length && yr_lowercase[*s1] == yr_lowercase[*s2])
   {
     s1+=2;
     s2++;
@@ -874,9 +872,8 @@ int yr_scan_verify_match(
 
   #ifdef PROFILING_ENABLED
   uint64_t finish_time = yr_stopwatch_elapsed_us(&context->stopwatch);
-
-  string->rule->time_cost_per_thread[context->tidx] += (
-      finish_time - start_time);
+  string->time_cost += (finish_time - start_time);
+  string->rule->time_cost += (finish_time - start_time);
   #endif
 
   return result;

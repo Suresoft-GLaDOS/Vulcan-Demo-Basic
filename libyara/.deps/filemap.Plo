@@ -71,8 +71,7 @@ filemap.lo: filemap.c /usr/include/stdc-predef.h /usr/include/fcntl.h \
  /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/error.h
+ /usr/include/inttypes.h include/yara/error.h
 
 /usr/include/stdc-predef.h:
 
@@ -247,7 +246,5 @@ include/yara/strutils.h:
 /usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
 /usr/include/inttypes.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 include/yara/error.h:

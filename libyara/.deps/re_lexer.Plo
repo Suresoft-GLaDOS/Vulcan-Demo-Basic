@@ -62,7 +62,8 @@ re_lexer.lo: re_lexer.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/assert.h \
  /usr/include/setjmp.h /usr/include/x86_64-linux-gnu/bits/setjmp.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp2.h include/yara/globals.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp2.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/globals.h \
  include/yara/threading.h /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
@@ -76,13 +77,12 @@ re_lexer.lo: re_lexer.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h include/yara/strutils.h \
- include/yara/integers.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/error.h \
- include/yara/limits.h include/yara/utils.h include/yara/mem.h \
- include/yara/re.h /usr/include/ctype.h include/yara/types.h \
- include/yara/arena.h include/yara/stream.h include/yara/bitmask.h \
- include/yara/hash.h include/yara/sizedstr.h include/yara/stopwatch.h \
- include/yara/re_lexer.h re_grammar.h
+ include/yara/integers.h include/yara/error.h include/yara/limits.h \
+ include/yara/utils.h include/yara/mem.h include/yara/re.h \
+ /usr/include/ctype.h include/yara/types.h include/yara/arena.h \
+ include/yara/stream.h include/yara/bitmask.h include/yara/hash.h \
+ include/yara/sizedstr.h include/yara/stopwatch.h include/yara/re_lexer.h \
+ re_grammar.h
 
 /usr/include/stdc-predef.h:
 
@@ -240,6 +240,8 @@ re_lexer.lo: re_lexer.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/x86_64-linux-gnu/bits/setjmp2.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
+
 include/yara/globals.h:
 
 include/yara/threading.h:
@@ -281,8 +283,6 @@ include/yara/utils.h:
 include/yara/strutils.h:
 
 include/yara/integers.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 include/yara/error.h:
 

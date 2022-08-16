@@ -93,15 +93,17 @@ host_triplet = @host@
 @OPTIMIZATION_FALSE@am__append_3 = -O0
 @ADDRESS_SANITIZER_TRUE@am__append_4 = -fsanitize=address
 bin_PROGRAMS = yara$(EXEEXT) yarac$(EXEEXT)
-check_PROGRAMS = test-atoms$(EXEEXT) $(am__EXEEXT_1) $(am__EXEEXT_2)
+check_PROGRAMS = test-alignment$(EXEEXT) test-atoms$(EXEEXT) \
+	test-api$(EXEEXT) test-rules$(EXEEXT) test-pe$(EXEEXT) \
+	test-elf$(EXEEXT) test-version$(EXEEXT) test-bitmask$(EXEEXT) \
+	test-math$(EXEEXT) $(am__EXEEXT_1) $(am__EXEEXT_2) \
+	$(am__EXEEXT_3)
 
 # The -fsanitize=address option makes test-exception fail. Include the test
 # only if the option is not enabled.
-# check_PROGRAMS+=test-exception
-# test_exception_SOURCES = tests/test-exception.c tests/util.c
-# test_exception_LDADD = libyara/.libs/libyara.a
-@MACHO_MODULE_TRUE@am__append_5 = test-macho
-@DEX_MODULE_TRUE@am__append_6 = test-dex
+@ADDRESS_SANITIZER_FALSE@@POSIX_TRUE@am__append_5 = test-exception
+@MACHO_MODULE_TRUE@am__append_6 = test-macho
+@DEX_MODULE_TRUE@am__append_7 = test-dex
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/acx_pthread.m4 \
@@ -118,28 +120,60 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"
-@MACHO_MODULE_TRUE@am__EXEEXT_1 = test-macho$(EXEEXT)
-@DEX_MODULE_TRUE@am__EXEEXT_2 = test-dex$(EXEEXT)
+@ADDRESS_SANITIZER_FALSE@@POSIX_TRUE@am__EXEEXT_1 =  \
+@ADDRESS_SANITIZER_FALSE@@POSIX_TRUE@	test-exception$(EXEEXT)
+@MACHO_MODULE_TRUE@am__EXEEXT_2 = test-macho$(EXEEXT)
+@DEX_MODULE_TRUE@am__EXEEXT_3 = test-dex$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am_test_atoms_OBJECTS = tests/test-atoms.$(OBJEXT) \
-	tests/util.$(OBJEXT) libyara/atoms.$(OBJEXT)
-test_atoms_OBJECTS = $(am_test_atoms_OBJECTS)
-test_atoms_DEPENDENCIES = libyara/.libs/libyara.a
+am_test_alignment_OBJECTS = tests/test-alignment.$(OBJEXT)
+test_alignment_OBJECTS = $(am_test_alignment_OBJECTS)
+test_alignment_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
+am_test_api_OBJECTS = tests/test-api.$(OBJEXT) tests/util.$(OBJEXT)
+test_api_OBJECTS = $(am_test_api_OBJECTS)
+test_api_DEPENDENCIES = libyara/.libs/libyara.a
+am_test_atoms_OBJECTS = tests/test-atoms.$(OBJEXT) \
+	tests/util.$(OBJEXT) libyara/atoms.$(OBJEXT)
+test_atoms_OBJECTS = $(am_test_atoms_OBJECTS)
+test_atoms_DEPENDENCIES = libyara/.libs/libyara.a
+am_test_bitmask_OBJECTS = tests/test-bitmask.$(OBJEXT)
+test_bitmask_OBJECTS = $(am_test_bitmask_OBJECTS)
+test_bitmask_DEPENDENCIES = libyara/.libs/libyara.a
 am__test_dex_SOURCES_DIST = tests/test-dex.c tests/util.c
 @DEX_MODULE_TRUE@am_test_dex_OBJECTS = tests/test-dex.$(OBJEXT) \
 @DEX_MODULE_TRUE@	tests/util.$(OBJEXT)
 test_dex_OBJECTS = $(am_test_dex_OBJECTS)
-@DEX_MODULE_TRUE@test_dex_DEPENDENCIES = libyara/.libs/libyara.a
+test_dex_DEPENDENCIES =
+am_test_elf_OBJECTS = tests/test-elf.$(OBJEXT) tests/util.$(OBJEXT)
+test_elf_OBJECTS = $(am_test_elf_OBJECTS)
+test_elf_DEPENDENCIES = libyara/.libs/libyara.a
+am__test_exception_SOURCES_DIST = tests/test-exception.c tests/util.c
+@ADDRESS_SANITIZER_FALSE@@POSIX_TRUE@am_test_exception_OBJECTS = tests/test-exception.$(OBJEXT) \
+@ADDRESS_SANITIZER_FALSE@@POSIX_TRUE@	tests/util.$(OBJEXT)
+test_exception_OBJECTS = $(am_test_exception_OBJECTS)
+test_exception_DEPENDENCIES =
 am__test_macho_SOURCES_DIST = tests/test-macho.c tests/util.c
 @MACHO_MODULE_TRUE@am_test_macho_OBJECTS = tests/test-macho.$(OBJEXT) \
 @MACHO_MODULE_TRUE@	tests/util.$(OBJEXT)
 test_macho_OBJECTS = $(am_test_macho_OBJECTS)
-@MACHO_MODULE_TRUE@test_macho_DEPENDENCIES = libyara/.libs/libyara.a
+test_macho_DEPENDENCIES =
+am_test_math_OBJECTS = tests/test-math.$(OBJEXT) tests/util.$(OBJEXT)
+test_math_OBJECTS = $(am_test_math_OBJECTS)
+test_math_DEPENDENCIES = libyara/.libs/libyara.a
+am_test_pe_OBJECTS = tests/test-pe.$(OBJEXT) tests/util.$(OBJEXT)
+test_pe_OBJECTS = $(am_test_pe_OBJECTS)
+test_pe_DEPENDENCIES = libyara/.libs/libyara.a
+am_test_rules_OBJECTS = tests/test-rules.$(OBJEXT) \
+	tests/util.$(OBJEXT)
+test_rules_OBJECTS = $(am_test_rules_OBJECTS)
+test_rules_DEPENDENCIES = libyara/.libs/libyara.a
+am_test_version_OBJECTS = tests/test-version.$(OBJEXT)
+test_version_OBJECTS = $(am_test_version_OBJECTS)
+test_version_LDADD = $(LDADD)
 am_yara_OBJECTS = args.$(OBJEXT) threading.$(OBJEXT) yara.$(OBJEXT)
 yara_OBJECTS = $(am_yara_OBJECTS)
 yara_DEPENDENCIES =
@@ -163,9 +197,13 @@ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/args.Po ./$(DEPDIR)/threading.Po \
 	./$(DEPDIR)/yara.Po ./$(DEPDIR)/yarac.Po \
-	libyara/$(DEPDIR)/atoms.Po tests/$(DEPDIR)/test-atoms.Po \
-	tests/$(DEPDIR)/test-dex.Po tests/$(DEPDIR)/test-macho.Po \
-	tests/$(DEPDIR)/util.Po
+	libyara/$(DEPDIR)/atoms.Po tests/$(DEPDIR)/test-alignment.Po \
+	tests/$(DEPDIR)/test-api.Po tests/$(DEPDIR)/test-atoms.Po \
+	tests/$(DEPDIR)/test-bitmask.Po tests/$(DEPDIR)/test-dex.Po \
+	tests/$(DEPDIR)/test-elf.Po tests/$(DEPDIR)/test-exception.Po \
+	tests/$(DEPDIR)/test-macho.Po tests/$(DEPDIR)/test-math.Po \
+	tests/$(DEPDIR)/test-pe.Po tests/$(DEPDIR)/test-rules.Po \
+	tests/$(DEPDIR)/test-version.Po tests/$(DEPDIR)/util.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -185,11 +223,19 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(test_atoms_SOURCES) $(test_dex_SOURCES) \
-	$(test_macho_SOURCES) $(yara_SOURCES) $(yarac_SOURCES)
-DIST_SOURCES = $(test_atoms_SOURCES) $(am__test_dex_SOURCES_DIST) \
-	$(am__test_macho_SOURCES_DIST) $(yara_SOURCES) \
-	$(yarac_SOURCES)
+SOURCES = $(test_alignment_SOURCES) $(test_api_SOURCES) \
+	$(test_atoms_SOURCES) $(test_bitmask_SOURCES) \
+	$(test_dex_SOURCES) $(test_elf_SOURCES) \
+	$(test_exception_SOURCES) $(test_macho_SOURCES) \
+	$(test_math_SOURCES) $(test_pe_SOURCES) $(test_rules_SOURCES) \
+	$(test_version_SOURCES) $(yara_SOURCES) $(yarac_SOURCES)
+DIST_SOURCES = $(test_alignment_SOURCES) $(test_api_SOURCES) \
+	$(test_atoms_SOURCES) $(test_bitmask_SOURCES) \
+	$(am__test_dex_SOURCES_DIST) $(test_elf_SOURCES) \
+	$(am__test_exception_SOURCES_DIST) \
+	$(am__test_macho_SOURCES_DIST) $(test_math_SOURCES) \
+	$(test_pe_SOURCES) $(test_rules_SOURCES) \
+	$(test_version_SOURCES) $(yara_SOURCES) $(yarac_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -449,7 +495,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/build-aux/ar-lib \
 	$(top_srcdir)/build-aux/test-driver AUTHORS COPYING \
 	build-aux/ar-lib build-aux/compile build-aux/config.guess \
 	build-aux/config.sub build-aux/depcomp build-aux/install-sh \
-	build-aux/ltmain.sh build-aux/missing build-aux/ylwrap
+	build-aux/ltmain.sh build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -631,31 +677,29 @@ yara_SOURCES = args.c args.h common.h threading.c threading.h yara.c
 yara_LDADD = -Llibyara/.libs -lyara
 yarac_SOURCES = args.c args.h common.h yarac.c
 yarac_LDADD = -Llibyara/.libs -lyara
-
-# test_alignment_SOURCES = tests/test-alignment.c
+test_alignment_SOURCES = tests/test-alignment.c
 test_atoms_SOURCES = tests/test-atoms.c tests/util.c libyara/atoms.c
 test_atoms_LDADD = libyara/.libs/libyara.a
-# test_rules_SOURCES = tests/test-rules.c tests/util.c
-# test_rules_LDADD = libyara/.libs/libyara.a
-# test_pe_SOURCES = tests/test-pe.c tests/util.c
-# test_pe_LDADD = libyara/.libs/libyara.a
-# test_elf_SOURCES = tests/test-elf.c tests/util.c
-# test_elf_LDADD = libyara/.libs/libyara.a
-# test_version_SOURCES = tests/test-version.c
-# test_api_LDADD = libyara/.libs/libyara.a
-# test_api_SOURCES = tests/test-api.c tests/util.c
-# test_bitmask_SOURCES = tests/test-bitmask.c
-# test_bitmask_LDADD = libyara/.libs/libyara.a
-# test_math_SOURCES = tests/test-math.c tests/util.c
-# test_math_LDADD = libyara/.libs/libyara.a
-# test_stack_SOURCES = tests/test-stack.c
-# test_stack_LDADD = libyara/.libs/libyara.a
+test_rules_SOURCES = tests/test-rules.c tests/util.c
+test_rules_LDADD = libyara/.libs/libyara.a
+test_pe_SOURCES = tests/test-pe.c tests/util.c
+test_pe_LDADD = libyara/.libs/libyara.a
+test_elf_SOURCES = tests/test-elf.c tests/util.c
+test_elf_LDADD = libyara/.libs/libyara.a
+test_version_SOURCES = tests/test-version.c
+test_api_LDADD = libyara/.libs/libyara.a
+test_api_SOURCES = tests/test-api.c tests/util.c
+test_bitmask_SOURCES = tests/test-bitmask.c
+test_bitmask_LDADD = libyara/.libs/libyara.a
+test_math_SOURCES = tests/test-math.c tests/util.c
+test_math_LDADD = libyara/.libs/libyara.a
 TESTS = $(check_PROGRAMS)
-TESTS_ENVIRONMENT = TOP_SRCDIR=$(top_srcdir)
+@ADDRESS_SANITIZER_FALSE@@POSIX_TRUE@test_exception_SOURCES = tests/test-exception.c tests/util.c
+@ADDRESS_SANITIZER_FALSE@@POSIX_TRUE@test_exception_LDADD = -Llibyara/.libs -lyara
 @MACHO_MODULE_TRUE@test_macho_SOURCES = tests/test-macho.c tests/util.c
-@MACHO_MODULE_TRUE@test_macho_LDADD = libyara/.libs/libyara.a
+@MACHO_MODULE_TRUE@test_macho_LDADD = -Llibyara/.libs -lyara
 @DEX_MODULE_TRUE@test_dex_SOURCES = tests/test-dex.c tests/util.c
-@DEX_MODULE_TRUE@test_dex_LDADD = libyara/.libs/libyara.a
+@DEX_MODULE_TRUE@test_dex_LDADD = -Llibyara/.libs -lyara
 
 # man pages
 man1_MANS = yara.man yarac.man
@@ -761,9 +805,21 @@ tests/$(am__dirstamp):
 tests/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) tests/$(DEPDIR)
 	@: > tests/$(DEPDIR)/$(am__dirstamp)
-tests/test-atoms.$(OBJEXT): tests/$(am__dirstamp) \
+tests/test-alignment.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-alignment$(EXEEXT): $(test_alignment_OBJECTS) $(test_alignment_DEPENDENCIES) $(EXTRA_test_alignment_DEPENDENCIES) 
+	@rm -f test-alignment$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_alignment_OBJECTS) $(test_alignment_LDADD) $(LIBS)
+tests/test-api.$(OBJEXT): tests/$(am__dirstamp) \
 	tests/$(DEPDIR)/$(am__dirstamp)
 tests/util.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-api$(EXEEXT): $(test_api_OBJECTS) $(test_api_DEPENDENCIES) $(EXTRA_test_api_DEPENDENCIES) 
+	@rm -f test-api$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_api_OBJECTS) $(test_api_LDADD) $(LIBS)
+tests/test-atoms.$(OBJEXT): tests/$(am__dirstamp) \
 	tests/$(DEPDIR)/$(am__dirstamp)
 libyara/$(am__dirstamp):
 	@$(MKDIR_P) libyara
@@ -777,18 +833,60 @@ libyara/atoms.$(OBJEXT): libyara/$(am__dirstamp) \
 test-atoms$(EXEEXT): $(test_atoms_OBJECTS) $(test_atoms_DEPENDENCIES) $(EXTRA_test_atoms_DEPENDENCIES) 
 	@rm -f test-atoms$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_atoms_OBJECTS) $(test_atoms_LDADD) $(LIBS)
+tests/test-bitmask.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-bitmask$(EXEEXT): $(test_bitmask_OBJECTS) $(test_bitmask_DEPENDENCIES) $(EXTRA_test_bitmask_DEPENDENCIES) 
+	@rm -f test-bitmask$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_bitmask_OBJECTS) $(test_bitmask_LDADD) $(LIBS)
 tests/test-dex.$(OBJEXT): tests/$(am__dirstamp) \
 	tests/$(DEPDIR)/$(am__dirstamp)
 
 test-dex$(EXEEXT): $(test_dex_OBJECTS) $(test_dex_DEPENDENCIES) $(EXTRA_test_dex_DEPENDENCIES) 
 	@rm -f test-dex$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_dex_OBJECTS) $(test_dex_LDADD) $(LIBS)
+tests/test-elf.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-elf$(EXEEXT): $(test_elf_OBJECTS) $(test_elf_DEPENDENCIES) $(EXTRA_test_elf_DEPENDENCIES) 
+	@rm -f test-elf$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_elf_OBJECTS) $(test_elf_LDADD) $(LIBS)
+tests/test-exception.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-exception$(EXEEXT): $(test_exception_OBJECTS) $(test_exception_DEPENDENCIES) $(EXTRA_test_exception_DEPENDENCIES) 
+	@rm -f test-exception$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_exception_OBJECTS) $(test_exception_LDADD) $(LIBS)
 tests/test-macho.$(OBJEXT): tests/$(am__dirstamp) \
 	tests/$(DEPDIR)/$(am__dirstamp)
 
 test-macho$(EXEEXT): $(test_macho_OBJECTS) $(test_macho_DEPENDENCIES) $(EXTRA_test_macho_DEPENDENCIES) 
 	@rm -f test-macho$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_macho_OBJECTS) $(test_macho_LDADD) $(LIBS)
+tests/test-math.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-math$(EXEEXT): $(test_math_OBJECTS) $(test_math_DEPENDENCIES) $(EXTRA_test_math_DEPENDENCIES) 
+	@rm -f test-math$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_math_OBJECTS) $(test_math_LDADD) $(LIBS)
+tests/test-pe.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-pe$(EXEEXT): $(test_pe_OBJECTS) $(test_pe_DEPENDENCIES) $(EXTRA_test_pe_DEPENDENCIES) 
+	@rm -f test-pe$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_pe_OBJECTS) $(test_pe_LDADD) $(LIBS)
+tests/test-rules.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-rules$(EXEEXT): $(test_rules_OBJECTS) $(test_rules_DEPENDENCIES) $(EXTRA_test_rules_DEPENDENCIES) 
+	@rm -f test-rules$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_rules_OBJECTS) $(test_rules_LDADD) $(LIBS)
+tests/test-version.$(OBJEXT): tests/$(am__dirstamp) \
+	tests/$(DEPDIR)/$(am__dirstamp)
+
+test-version$(EXEEXT): $(test_version_OBJECTS) $(test_version_DEPENDENCIES) $(EXTRA_test_version_DEPENDENCIES) 
+	@rm -f test-version$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_version_OBJECTS) $(test_version_LDADD) $(LIBS)
 
 yara$(EXEEXT): $(yara_OBJECTS) $(yara_DEPENDENCIES) $(EXTRA_yara_DEPENDENCIES) 
 	@rm -f yara$(EXEEXT)
@@ -811,9 +909,18 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/yara.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/yarac.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@libyara/$(DEPDIR)/atoms.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-alignment.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-api.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-atoms.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-bitmask.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-dex.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-elf.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-exception.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-macho.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-math.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-pe.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-rules.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/test-version.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@tests/$(DEPDIR)/util.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
@@ -1143,9 +1250,72 @@ recheck: all $(check_PROGRAMS)
 	        am__force_recheck=am--force-recheck \
 	        TEST_LOGS="$$log_list"; \
 	exit $$?
+test-alignment.log: test-alignment$(EXEEXT)
+	@p='test-alignment$(EXEEXT)'; \
+	b='test-alignment'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-atoms.log: test-atoms$(EXEEXT)
 	@p='test-atoms$(EXEEXT)'; \
 	b='test-atoms'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-api.log: test-api$(EXEEXT)
+	@p='test-api$(EXEEXT)'; \
+	b='test-api'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-rules.log: test-rules$(EXEEXT)
+	@p='test-rules$(EXEEXT)'; \
+	b='test-rules'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-pe.log: test-pe$(EXEEXT)
+	@p='test-pe$(EXEEXT)'; \
+	b='test-pe'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-elf.log: test-elf$(EXEEXT)
+	@p='test-elf$(EXEEXT)'; \
+	b='test-elf'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-version.log: test-version$(EXEEXT)
+	@p='test-version$(EXEEXT)'; \
+	b='test-version'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-bitmask.log: test-bitmask$(EXEEXT)
+	@p='test-bitmask$(EXEEXT)'; \
+	b='test-bitmask'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-math.log: test-math$(EXEEXT)
+	@p='test-math$(EXEEXT)'; \
+	b='test-math'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-exception.log: test-exception$(EXEEXT)
+	@p='test-exception$(EXEEXT)'; \
+	b='test-exception'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -1429,9 +1599,18 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/yara.Po
 	-rm -f ./$(DEPDIR)/yarac.Po
 	-rm -f libyara/$(DEPDIR)/atoms.Po
+	-rm -f tests/$(DEPDIR)/test-alignment.Po
+	-rm -f tests/$(DEPDIR)/test-api.Po
 	-rm -f tests/$(DEPDIR)/test-atoms.Po
+	-rm -f tests/$(DEPDIR)/test-bitmask.Po
 	-rm -f tests/$(DEPDIR)/test-dex.Po
+	-rm -f tests/$(DEPDIR)/test-elf.Po
+	-rm -f tests/$(DEPDIR)/test-exception.Po
 	-rm -f tests/$(DEPDIR)/test-macho.Po
+	-rm -f tests/$(DEPDIR)/test-math.Po
+	-rm -f tests/$(DEPDIR)/test-pe.Po
+	-rm -f tests/$(DEPDIR)/test-rules.Po
+	-rm -f tests/$(DEPDIR)/test-version.Po
 	-rm -f tests/$(DEPDIR)/util.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
@@ -1485,9 +1664,18 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/yara.Po
 	-rm -f ./$(DEPDIR)/yarac.Po
 	-rm -f libyara/$(DEPDIR)/atoms.Po
+	-rm -f tests/$(DEPDIR)/test-alignment.Po
+	-rm -f tests/$(DEPDIR)/test-api.Po
 	-rm -f tests/$(DEPDIR)/test-atoms.Po
+	-rm -f tests/$(DEPDIR)/test-bitmask.Po
 	-rm -f tests/$(DEPDIR)/test-dex.Po
+	-rm -f tests/$(DEPDIR)/test-elf.Po
+	-rm -f tests/$(DEPDIR)/test-exception.Po
 	-rm -f tests/$(DEPDIR)/test-macho.Po
+	-rm -f tests/$(DEPDIR)/test-math.Po
+	-rm -f tests/$(DEPDIR)/test-pe.Po
+	-rm -f tests/$(DEPDIR)/test-rules.Po
+	-rm -f tests/$(DEPDIR)/test-version.Po
 	-rm -f tests/$(DEPDIR)/util.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic

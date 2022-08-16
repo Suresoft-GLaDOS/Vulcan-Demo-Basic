@@ -67,9 +67,7 @@ arena.lo: arena.c /usr/include/stdc-predef.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h include/yara/strutils.h \
- /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h include/yara/hash.h \
- include/yara/utils.h
+ /usr/include/inttypes.h include/yara/hash.h include/yara/utils.h
 
 /usr/include/stdc-predef.h:
 
@@ -238,8 +236,6 @@ include/yara/utils.h:
 include/yara/strutils.h:
 
 /usr/include/inttypes.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
 
 include/yara/hash.h:
 
