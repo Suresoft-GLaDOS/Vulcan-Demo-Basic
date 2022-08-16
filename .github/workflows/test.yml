@@ -33,6 +33,11 @@ jobs:
                     echo return 30 > tests/defects4cpp.lua;make check-TESTS
                     echo return 40 > tests/defects4cpp.lua;make check-TESTS
                     echo return 50 > tests/defects4cpp.lua;make check-TESTS
+                    echo return 51 > tests/defects4cpp.lua;make check-TESTS
+                    echo return 52 > tests/defects4cpp.lua;make check-TESTS
+                    echo return 53 > tests/defects4cpp.lua;make check-TESTS
+                    echo return 54 > tests/defects4cpp.lua;make check-TESTS
+                    echo return 55 > tests/defects4cpp.lua;make check-TESTS
                     echo return 60 > tests/defects4cpp.lua;make check-TESTS
                     echo return 70 > tests/defects4cpp.lua;make check-TESTS
                     echo return 80 > tests/defects4cpp.lua;make check-TESTS
