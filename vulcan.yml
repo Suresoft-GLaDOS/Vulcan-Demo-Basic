@@ -9,7 +9,7 @@ docker-image:
 extra-build-env-setting-commands:
 
 test-candidates: |
-  libyara/atoms.c
+  /src/lib/protocols/syslog.c
 
 time-out: 3600
 max-patch-number : 500
@@ -42,6 +42,9 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   index=8; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w tests/result/$(sed -n ${index}p .dpp/test_list) -v 2; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w /tmp/reader.out -v 2; diff tests/result/$(sed -n ${index}p .dpp/test_list).out /tmp/reader.out; [ $? -eq 0 ]
   index=9; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w tests/result/$(sed -n ${index}p .dpp/test_list) -v 2; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w /tmp/reader.out -v 2; diff tests/result/$(sed -n ${index}p .dpp/test_list).out /tmp/reader.out; [ $? -eq 0 ]
   index=10; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w tests/result/$(sed -n ${index}p .dpp/test_list) -v 2; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w /tmp/reader.out -v 2; diff tests/result/$(sed -n ${index}p .dpp/test_list).out /tmp/reader.out; [ $? -eq 0 ]
+  index=105; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w tests/result/$(sed -n ${index}p .dpp/test_list) -v 2; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w /tmp/reader.out -v 2; diff tests/result/$(sed -n ${index}p .dpp/test_list).out /tmp/reader.out; [ $? -eq 0 ]
+  index=222; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w tests/result/$(sed -n ${index}p .dpp/test_list) -v 2; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w /tmp/reader.out -v 2; diff tests/result/$(sed -n ${index}p .dpp/test_list).out /tmp/reader.out; [ $? -eq 0 ]
+
   index=101; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w tests/result/$(sed -n ${index}p .dpp/test_list) -v 2; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w /tmp/reader.out -v 2; diff tests/result/$(sed -n ${index}p .dpp/test_list).out /tmp/reader.out; [ $? -eq 0 ]
   index=102; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w tests/result/$(sed -n ${index}p .dpp/test_list) -v 2; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w /tmp/reader.out -v 2; diff tests/result/$(sed -n ${index}p .dpp/test_list).out /tmp/reader.out; [ $? -eq 0 ] 
   index=103; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w tests/result/$(sed -n ${index}p .dpp/test_list) -v 2; example/ndpiReader -p example/protos.txt -c example/categories.txt -q -t -i tests/pcap/$(sed -n ${index}p .dpp/test_list) -w /tmp/reader.out -v 2; diff tests/result/$(sed -n ${index}p .dpp/test_list).out /tmp/reader.out; [ $? -eq 0 ] 
