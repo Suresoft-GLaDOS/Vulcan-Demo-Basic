@@ -1,5 +1,7 @@
-runtest.o: runtest.c /usr/include/stdc-predef.h libxml.h config.h \
- include/libxml/xmlversion.h include/libxml/xmlexports.h \
+runtest.o: runtest.c /usr/include/stdc-predef.h libxml.h \
+ include/libxml/xmlstring.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+ include/libxml/xmlversion.h include/libxml/xmlexports.h config.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -8,7 +10,6 @@ runtest.o: runtest.c /usr/include/stdc-predef.h libxml.h config.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -68,9 +69,8 @@ runtest.o: runtest.c /usr/include/stdc-predef.h libxml.h config.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- include/libxml/xmlstring.h include/libxml/xmlregexp.h \
- include/libxml/dict.h include/libxml/hash.h include/libxml/valid.h \
- include/libxml/xmlerror.h include/libxml/list.h \
+ include/libxml/xmlregexp.h include/libxml/dict.h include/libxml/hash.h \
+ include/libxml/valid.h include/libxml/xmlerror.h include/libxml/list.h \
  include/libxml/xmlautomata.h include/libxml/entities.h \
  include/libxml/encoding.h /usr/include/iconv.h include/libxml/xmlIO.h \
  include/libxml/globals.h include/libxml/SAX.h /usr/include/stdlib.h \
@@ -82,15 +82,16 @@ runtest.o: runtest.c /usr/include/stdc-predef.h libxml.h config.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h include/libxml/xlink.h \
  include/libxml/SAX2.h include/libxml/xmlmemory.h \
- include/libxml/threads.h include/libxml/uri.h include/libxml/xmlreader.h \
- include/libxml/relaxng.h include/libxml/xmlschemas.h \
- include/libxml/xinclude.h include/libxml/xpath.h \
- include/libxml/xpathInternals.h include/libxml/xpointer.h \
- include/libxml/xmlschemastypes.h include/libxml/schemasInternals.h \
- include/libxml/pattern.h include/libxml/c14n.h \
- include/libxml/HTMLparser.h include/libxml/HTMLtree.h \
- include/libxml/catalog.h /usr/include/glob.h /usr/include/pthread.h \
- /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
+ include/libxml/threads.h include/libxml/parserInternals.h \
+ include/libxml/HTMLparser.h include/libxml/chvalid.h \
+ include/libxml/uri.h include/libxml/xmlreader.h include/libxml/relaxng.h \
+ include/libxml/xmlschemas.h include/libxml/xinclude.h \
+ include/libxml/xpath.h include/libxml/xpathInternals.h \
+ include/libxml/xpointer.h include/libxml/xmlschemastypes.h \
+ include/libxml/schemasInternals.h include/libxml/pattern.h \
+ include/libxml/c14n.h include/libxml/HTMLtree.h include/libxml/catalog.h \
+ /usr/include/glob.h /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
@@ -102,11 +103,15 @@ runtest.o: runtest.c /usr/include/stdc-predef.h libxml.h config.h \
 
 libxml.h:
 
-config.h:
+include/libxml/xmlstring.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:
 
 include/libxml/xmlversion.h:
 
 include/libxml/xmlexports.h:
+
+config.h:
 
 /usr/include/stdio.h:
 
@@ -125,8 +130,6 @@ include/libxml/xmlexports.h:
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -260,8 +263,6 @@ include/libxml/tree.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
-include/libxml/xmlstring.h:
-
 include/libxml/xmlregexp.h:
 
 include/libxml/dict.h:
@@ -314,6 +315,12 @@ include/libxml/xmlmemory.h:
 
 include/libxml/threads.h:
 
+include/libxml/parserInternals.h:
+
+include/libxml/HTMLparser.h:
+
+include/libxml/chvalid.h:
+
 include/libxml/uri.h:
 
 include/libxml/xmlreader.h:
@@ -337,8 +344,6 @@ include/libxml/schemasInternals.h:
 include/libxml/pattern.h:
 
 include/libxml/c14n.h:
-
-include/libxml/HTMLparser.h:
 
 include/libxml/HTMLtree.h:
 

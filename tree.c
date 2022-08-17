@@ -254,10 +254,10 @@ xmlBuildQName(const xmlChar *ncname, const xmlChar *prefix,
  *
  * [NS 7] LocalPart ::= NCName
  *
- * Returns NULL if not a QName, otherwise the local part, and prefix
- *   is updated to get the Prefix if any.
+ * Returns NULL if the name doesn't have a prefix. Otherwise, returns the
+ * local part, and prefix is updated to get the Prefix. Both the return value
+ * and the prefix must be freed by the caller.
  */
-
 xmlChar *
 xmlSplitQName2(const xmlChar *name, xmlChar **prefix) {
     int len = 0;
@@ -1044,7 +1044,7 @@ xmlCreateIntSubset(xmlDocPtr doc, const xmlChar *name,
  * DICT_FREE:
  * @str:  a string
  *
- * Free a string if it is not owned by the "dict" dictionnary in the
+ * Free a string if it is not owned by the "dict" dictionary in the
  * current scope
  */
 #define DICT_FREE(str)						\
@@ -1057,7 +1057,7 @@ xmlCreateIntSubset(xmlDocPtr doc, const xmlChar *name,
  * DICT_COPY:
  * @str:  a string
  *
- * Copy a string using a "dict" dictionnary in the current scope,
+ * Copy a string using a "dict" dictionary in the current scope,
  * if availabe.
  */
 #define DICT_COPY(str, cpy) \
@@ -1074,7 +1074,7 @@ xmlCreateIntSubset(xmlDocPtr doc, const xmlChar *name,
  * DICT_CONST_COPY:
  * @str:  a string
  *
- * Copy a string using a "dict" dictionnary in the current scope,
+ * Copy a string using a "dict" dictionary in the current scope,
  * if availabe.
  */
 #define DICT_CONST_COPY(str, cpy) \
@@ -1401,6 +1401,8 @@ xmlStringLenGetNodeList(const xmlDoc *doc, const xmlChar *value, int len) {
 			else if ((ent != NULL) && (ent->children == NULL)) {
 			    xmlNodePtr temp;
 
+                            /* Set to non-NULL value to avoid recursion. */
+			    ent->children = (xmlNodePtr) -1;
 			    ent->children = xmlStringGetNodeList(doc,
 				    (const xmlChar*)node->content);
 			    ent->owner = 1;
@@ -1593,12 +1595,15 @@ xmlStringGetNodeList(const xmlDoc *doc, const xmlChar *value) {
 			else if ((ent != NULL) && (ent->children == NULL)) {
 			    xmlNodePtr temp;
 
+                            /* Set to non-NULL value to avoid recursion. */
+			    ent->children = (xmlNodePtr) -1;
 			    ent->children = xmlStringGetNodeList(doc,
 				    (const xmlChar*)node->content);
 			    ent->owner = 1;
 			    temp = ent->children;
 			    while (temp) {
 				temp->parent = (xmlNodePtr)ent;
+				ent->last = temp;
 				temp = temp->next;
 			    }
 			}
@@ -2270,7 +2275,7 @@ xmlNewNodeEatName(xmlNsPtr ns, xmlChar *name) {
     cur = (xmlNodePtr) xmlMalloc(sizeof(xmlNode));
     if (cur == NULL) {
 	xmlTreeErrMemory("building node");
-	/* we can't check here that name comes from the doc dictionnary */
+	/* we can't check here that name comes from the doc dictionary */
 	return(NULL);
     }
     memset(cur, 0, sizeof(xmlNode));
@@ -2350,7 +2355,7 @@ xmlNewDocNodeEatName(xmlDocPtr doc, xmlNsPtr ns,
 	    UPDATE_LAST_CHILD_AND_PARENT(cur)
 	}
     } else {
-        /* if name don't come from the doc dictionnary free it here */
+        /* if name don't come from the doc dictionary free it here */
         if ((name != NULL) && (doc != NULL) &&
 	    (!(xmlDictOwns(doc->dict, name))))
 	    xmlFree(name);
@@ -3701,7 +3706,7 @@ xmlFreeNodeList(xmlNodePtr cur) {
 	     * When a node is a text node or a comment, it uses a global static
 	     * variable for the name of the node.
 	     * Otherwise the node name might come from the document's
-	     * dictionnary
+	     * dictionary
 	     */
 	    if ((cur->name != NULL) &&
 		(cur->type != XML_TEXT_NODE) &&
@@ -3770,7 +3775,7 @@ xmlFreeNode(xmlNodePtr cur) {
     /*
      * When a node is a text node or a comment, it uses a global static
      * variable for the name of the node.
-     * Otherwise the node name might come from the document's dictionnary
+     * Otherwise the node name might come from the document's dictionary
      */
     if ((cur->name != NULL) &&
         (cur->type != XML_TEXT_NODE) &&

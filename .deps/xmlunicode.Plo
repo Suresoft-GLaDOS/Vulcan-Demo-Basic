@@ -1,5 +1,7 @@
-xmlunicode.lo: xmlunicode.c /usr/include/stdc-predef.h libxml.h config.h \
- include/libxml/xmlversion.h include/libxml/xmlexports.h \
+xmlunicode.lo: xmlunicode.c /usr/include/stdc-predef.h libxml.h \
+ include/libxml/xmlstring.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+ include/libxml/xmlversion.h include/libxml/xmlexports.h config.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -8,7 +10,6 @@ xmlunicode.lo: xmlunicode.c /usr/include/stdc-predef.h libxml.h config.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -28,18 +29,21 @@ xmlunicode.lo: xmlunicode.c /usr/include/stdc-predef.h libxml.h config.h \
  /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- include/libxml/xmlunicode.h include/libxml/chvalid.h \
- include/libxml/xmlstring.h elfgcchack.h
+ include/libxml/xmlunicode.h include/libxml/chvalid.h elfgcchack.h
 
 /usr/include/stdc-predef.h:
 
 libxml.h:
 
-config.h:
+include/libxml/xmlstring.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:
 
 include/libxml/xmlversion.h:
 
 include/libxml/xmlexports.h:
+
+config.h:
 
 /usr/include/stdio.h:
 
@@ -58,8 +62,6 @@ include/libxml/xmlexports.h:
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -104,7 +106,5 @@ include/libxml/xmlexports.h:
 include/libxml/xmlunicode.h:
 
 include/libxml/chvalid.h:
-
-include/libxml/xmlstring.h:
 
 elfgcchack.h:

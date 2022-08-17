@@ -14,7 +14,6 @@
 
 
 
-
 am__is_gnu_make = { \
   if test -z '$(MAKELEVEL)'; then \
     false; \
@@ -88,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
 host_triplet = x86_64-pc-linux-gnu
-noinst_PROGRAMS = gjobread$(EXEEXT)
+check_PROGRAMS = gjobread$(EXEEXT)
 subdir = example
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
@@ -102,7 +101,6 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-PROGRAMS = $(noinst_PROGRAMS)
 am_gjobread_OBJECTS = gjobread.$(OBJEXT)
 gjobread_OBJECTS = $(am_gjobread_OBJECTS)
 gjobread_LDADD = $(LDADD)
@@ -191,7 +189,7 @@ C14N_OBJ = c14n.c
 CATALOG_OBJ = catalog.o
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2 -pedantic -W -Wformat -Wunused -Wimplicit -Wreturn-type -Wswitch -Wcomment -Wtrigraphs -Wformat -Wchar-subscripts -Wuninitialized -Wparentheses -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wredundant-decls -Wno-long-long
+CFLAGS = -g -O2 -pedantic -W -Wformat -Wno-format-extra-args -Wunused -Wimplicit -Wreturn-type -Wswitch -Wcomment -Wtrigraphs -Wchar-subscripts -Wuninitialized -Wparentheses -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wredundant-decls -Wno-long-long
 CPP = gcc -E
 CPPFLAGS = 
 CYGPATH_W = echo
@@ -218,6 +216,7 @@ HTML_DIR = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html
 HTML_OBJ = HTMLparser.o HTMLtree.o
 HTTP_OBJ = nanohttp.o
 ICONV_LIBS = 
+ICU_CFLAGS = 
 ICU_LIBS = 
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
@@ -230,18 +229,19 @@ LIBOBJS =
 LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBXML_MAJOR_VERSION = 2
-LIBXML_MICRO_VERSION = 3
+LIBXML_MICRO_VERSION = 4
 LIBXML_MINOR_VERSION = 9
-LIBXML_VERSION = 2.9.3
+LIBXML_VERSION = 2.9.4
 LIBXML_VERSION_EXTRA = 
-LIBXML_VERSION_INFO = 11:3:9
-LIBXML_VERSION_NUMBER = 20903
+LIBXML_VERSION_INFO = 11:4:9
+LIBXML_VERSION_NUMBER = 20904
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 LZMA_CFLAGS = 
 LZMA_LIBS = 
+MAINT = 
 MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
@@ -277,7 +277,7 @@ PYTHON_VERSION = 3.8
 RANLIB = ranlib
 RDL_LIBS = 
 READER_TEST = Readertests
-RELDATE = Thu Aug 11 2022
+RELDATE = Wed Aug 17 2022
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
@@ -304,7 +304,7 @@ TEST_XPATH = XPathtests
 TEST_XPTR = XPtrtests
 THREAD_CFLAGS =  -D_REENTRANT
 THREAD_LIBS = 
-VERSION = 2.9.3
+VERSION = 2.9.4
 VERSION_SCRIPT_FLAGS = -Wl,--version-script=
 WGET = /usr/bin/wget
 WIN32_EXTRA_LDFLAGS = 
@@ -348,7 +348,7 @@ XMLLINT = /usr/bin/xmllint
 XML_CFLAGS = 
 XML_INCLUDEDIR = -I${includedir}/libxml2
 XML_LIBDIR = -L${libdir}
-XML_LIBS = -lxml2 -lz   -lm 
+XML_LIBS = -lxml2 -lz     -lm 
 XML_LIBTOOLLIBS = libxml2.la
 XPATH_OBJ = xpath.o
 XPTR_OBJ = xpointer.o
@@ -447,8 +447,8 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
 
-clean-noinstPROGRAMS:
-	@list='$(noinst_PROGRAMS)'; test -n "$$list" || exit 0; \
+clean-checkPROGRAMS:
+	@list='$(check_PROGRAMS)'; test -n "$$list" || exit 0; \
 	echo " rm -f" $$list; \
 	rm -f $$list || exit $$?; \
 	test -n "$(EXEEXT)" || exit 0; \
@@ -587,8 +587,9 @@ distdir-am: $(DISTFILES)
 	  fi; \
 	done
 check-am: all-am
+	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
 check: check-am
-all-am: Makefile $(PROGRAMS)
+all-am: Makefile
 installdirs:
 install: install-am
 install-exec: install-exec-am
@@ -622,7 +623,7 @@ maintainer-clean-generic:
 	@echo "it deletes files that may require special tools to rebuild."
 clean: clean-am
 
-clean-am: clean-generic clean-libtool clean-noinstPROGRAMS \
+clean-am: clean-checkPROGRAMS clean-generic clean-libtool \
 	mostlyclean-am
 
 distclean: distclean-am
@@ -691,10 +692,10 @@ ps-am:
 
 uninstall-am:
 
-.MAKE: install-am install-strip
+.MAKE: check-am install-am install-strip
 
 .PHONY: CTAGS GTAGS TAGS all all-am am--depfiles check check-am clean \
-	clean-generic clean-libtool clean-noinstPROGRAMS cscopelist-am \
+	clean-checkPROGRAMS clean-generic clean-libtool cscopelist-am \
 	ctags ctags-am distclean distclean-compile distclean-generic \
 	distclean-libtool distclean-tags distdir dvi dvi-am html \
 	html-am info info-am install install-am install-data \
