@@ -64,7 +64,7 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test; make print-TESTS | cut -d ' ' -f 67)
   chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test; make print-TESTS | cut -d ' ' -f 68)
   chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test; make print-TESTS | cut -d ' ' -f 69)
-  chmod -R 777 .; rm -f dpp_test_result; tools/tiff2pdf .dpp/00112-libtiff-heapoverflow-_TIFFmemcpy 2>&1 | tee dpp_test_result; grep -q AddressSanitizer dpp_test_result; [ $? -eq 1 ]
+  chmod -R 777 .; rm -f dpp_test_result; tools/tiff2pdf.o .dpp/00112-libtiff-heapoverflow-_TIFFmemcpy 2>&1 | tee dpp_test_result; grep -q AddressSanitizer dpp_test_result; [ $? -eq 1 ]
   
   
 
