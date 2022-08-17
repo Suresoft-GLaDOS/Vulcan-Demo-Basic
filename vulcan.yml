@@ -40,7 +40,6 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   index=7; ./runtest "$(sed -n 7p .dpp/test_list)"
   index=8; ./runtest "$(sed -n 8p .dpp/test_list)"
   index=9; ./runtest "$(sed -n 9p .dpp/test_list)"
-  index=10; ./runtest "$(sed -n 10p .dpp/test_list)"
   index=31; ./runtest "$(sed -n 31p .dpp/test_list)"
   index=32; ./runtest "$(sed -n 32p .dpp/test_list)"
   index=33; ./runtest "$(sed -n 33p .dpp/test_list)"
@@ -61,4 +60,4 @@ test-coverage-command: | # 커버리지 테스트 실행 / 테스트 대상을 �
 gcov-exclusion-list: | # 커버리지 제외 대상
   *test*.o
 gcov-inclusion-list: | # 커버리지 포함 대상 지정
-  .libs/*
+  .libs/parser*
