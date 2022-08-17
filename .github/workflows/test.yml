@@ -28,14 +28,12 @@ jobs:
         steps:
             - name: run test
               run: |
-                    chmod -R 777 tools; rm -f dpp_test_result; tools/tiff2pdf .dpp/00112-libtiff-heapoverflow-_TIFFmemcpy 2>&1 | tee dpp_test_result; grep -q AddressSanitizer dpp_test_result; [ $? -eq 1 ]
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 1)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 2)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 3)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 4)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 5)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 6)
-                  
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 20)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 21)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 22)
@@ -46,7 +44,6 @@ jobs:
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 27)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 28)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 29)
-                    
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 40)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 41)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 42)
@@ -57,7 +54,6 @@ jobs:
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 47)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 48)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 49)
-                    
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 60)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 61)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 62)
@@ -68,3 +64,4 @@ jobs:
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 67)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 68)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 69)
+                    chmod -R 777 tools; rm -f dpp_test_result; tools/tiff2pdf .dpp/00112-libtiff-heapoverflow-_TIFFmemcpy 2>&1 | tee dpp_test_result; grep -q AddressSanitizer dpp_test_result; [ $? -eq 1 ]
