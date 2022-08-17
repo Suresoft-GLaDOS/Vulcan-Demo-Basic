@@ -63,9 +63,6 @@ test-coverage-command: | # 커버리지 테스트 실행 / 테스트 대상을 �
   bash -c "@testcase@"
 gcov-exclusion-list: | # 커버리지 제외 대상
   test*.o
-  *.y
-  *lexer.c
-  *compiler.c
-  *.l
-  *ahocorasick.c
-  *grammar.c
+
+gcov-inclusion-list:
+  parser
