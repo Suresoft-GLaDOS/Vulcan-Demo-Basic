@@ -16,52 +16,55 @@ jobs:
         steps:
             - name: run build
               run: |
-                cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build -G Ninja  
-                cmake --build build --target clean
-                cmake --build build --target all --parallel 10
+                    ./autogen.sh
+                    ./configure CFLAGS="-g -O0 -fsanitize=address,undefined -fsanitize-recover=all"
+                    make clean
+                    make -j10
+                    chmod -R 777 tools
+                
     test:
         needs: build
         runs-on: self-hosted
         steps:
             - name: run test
               run: |
-                    chmod -R 777 tools;tools/tiffcrop .dpp/CVE-2016-5321.tif /tmp/tmpout.tif
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 1)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 2)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 3)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 4)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 5)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 6)
+                    chmod -R 777 tools; rm -f dpp_test_result; tools/tiff2pdf .dpp/00112-libtiff-heapoverflow-_TIFFmemcpy 2>&1 | tee dpp_test_result; grep -q AddressSanitizer dpp_test_result; [ $? -eq 1 ]
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 1)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 2)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 3)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 4)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 5)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 6)
                   
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 20)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 21)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 22)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 23)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 24)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 25)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 26)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 27)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 28)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 29)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 20)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 21)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 22)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 23)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 24)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 25)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 26)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 27)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 28)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 29)
                     
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 40)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 41)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 42)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 43)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 44)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 45)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 46)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 47)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 48)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 49)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 40)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 41)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 42)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 43)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 44)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 45)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 46)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 47)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 48)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 49)
                     
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 60)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 61)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 62)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 63)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 64)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 65)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 66)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 67)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 68)
-                    chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 69)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 60)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 61)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 62)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 63)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 64)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 65)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 66)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 67)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 68)
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;cd test;make print-TESTS | cut -d ' ' -f 69)
