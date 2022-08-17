@@ -28,7 +28,9 @@ jobs:
         steps:
             - name: run test
               run: |
-                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0; cd test; make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;make print-TESTS | cut -d ' ' -f 1)
+                    chmod -R 777 .
+                    cd test
+                    chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0; make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;make print-TESTS | cut -d ' ' -f 1)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0; make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;make print-TESTS | cut -d ' ' -f 2)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0; make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;make print-TESTS | cut -d ' ' -f 3)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0; make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;make print-TESTS | cut -d ' ' -f 4)
