@@ -66,6 +66,7 @@ jobs:
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0; make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;make print-TESTS | cut -d ' ' -f 67)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0; make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;make print-TESTS | cut -d ' ' -f 68)
                     chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0; make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .; ASAN_OPTIONS=halt_on_error=0;make print-TESTS | cut -d ' ' -f 69)
-                    chmod -R 777 .; rm -f dpp_test_result; tools/tiff2pdf .dpp/00112-libtiff-heapoverflow-_TIFFmemcpy 2>&1 | tee dpp_test_result; grep -q AddressSanitizer dpp_test_result; [ $? -eq 1 ]
+                    cd .. 
+                    rm -f dpp_test_result; tools/tiff2pdf .dpp/00112-libtiff-heapoverflow-_TIFFmemcpy 2>&1 | tee dpp_test_result; grep -q AddressSanitizer dpp_test_result; [ $? -eq 1 ]
                     
 
