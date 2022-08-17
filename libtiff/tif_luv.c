@@ -158,6 +158,7 @@
 typedef struct logLuvState LogLuvState;
 
 struct logLuvState {
+        int                     encoder_state;  /* 1 if encoder correctly initialized */
 	int                     user_datafmt;   /* user data format */
 	int                     encode_meth;    /* encoding method */
 	int                     pixel_size;     /* bytes per pixel */
@@ -401,8 +402,10 @@ LogLuvDecodeStrip(TIFF* tif, uint8* bp, tmsize_t cc, uint16 s)
                 return 0;
 
 	assert(cc%rowlen == 0);
-	while (cc && (*tif->tif_decoderow)(tif, bp, rowlen, s))
-		bp += rowlen, cc -= rowlen;
+	while (cc && (*tif->tif_decoderow)(tif, bp, rowlen, s)) {
+		bp += rowlen;
+		cc -= rowlen;
+	}
 	return (cc == 0);
 }
 
@@ -420,8 +423,10 @@ LogLuvDecodeTile(TIFF* tif, uint8* bp, tmsize_t cc, uint16 s)
                 return 0;
 
 	assert(cc%rowlen == 0);
-	while (cc && (*tif->tif_decoderow)(tif, bp, rowlen, s))
-		bp += rowlen, cc -= rowlen;
+	while (cc && (*tif->tif_decoderow)(tif, bp, rowlen, s)) {
+		bp += rowlen;
+		cc -= rowlen;
+	}
 	return (cc == 0);
 }
 
@@ -687,8 +692,10 @@ LogLuvEncodeStrip(TIFF* tif, uint8* bp, tmsize_t cc, uint16 s)
                 return 0;
 
 	assert(cc%rowlen == 0);
-	while (cc && (*tif->tif_encoderow)(tif, bp, rowlen, s) == 1)
-		bp += rowlen, cc -= rowlen;
+	while (cc && (*tif->tif_encoderow)(tif, bp, rowlen, s) == 1) {
+		bp += rowlen;
+		cc -= rowlen;
+	}
 	return (cc == 0);
 }
 
@@ -705,8 +712,10 @@ LogLuvEncodeTile(TIFF* tif, uint8* bp, tmsize_t cc, uint16 s)
                 return 0;
 
 	assert(cc%rowlen == 0);
-	while (cc && (*tif->tif_encoderow)(tif, bp, rowlen, s) == 1)
-		bp += rowlen, cc -= rowlen;
+	while (cc && (*tif->tif_encoderow)(tif, bp, rowlen, s) == 1) {
+		bp += rowlen;
+		cc -= rowlen;
+	}
 	return (cc == 0);
 }
 
@@ -1544,6 +1553,7 @@ LogLuvSetupEncode(TIFF* tif)
 		    td->td_photometric, "must be either LogLUV or LogL");
 		break;
 	}
+	sp->encoder_state = 1;
 	return (1);
 notsupported:
 	TIFFErrorExt(tif->tif_clientdata, module,
@@ -1555,19 +1565,27 @@ notsupported:
 static void
 LogLuvClose(TIFF* tif)
 {
+        LogLuvState* sp = (LogLuvState*) tif->tif_data;
 	TIFFDirectory *td = &tif->tif_dir;
 
+	assert(sp != 0);
 	/*
 	 * For consistency, we always want to write out the same
 	 * bitspersample and sampleformat for our TIFF file,
 	 * regardless of the data format being used by the application.
 	 * Since this routine is called after tags have been set but
 	 * before they have been recorded in the file, we reset them here.
+         * Note: this is really a nasty approach. See PixarLogClose
 	 */
-	td->td_samplesperpixel =
-	    (td->td_photometric == PHOTOMETRIC_LOGL) ? 1 : 3;
-	td->td_bitspersample = 16;
-	td->td_sampleformat = SAMPLEFORMAT_INT;
+        if( sp->encoder_state )
+        {
+            /* See PixarLogClose. Might avoid issues with tags whose size depends
+             * on those below, but not completely sure this is enough. */
+            td->td_samplesperpixel =
+                (td->td_photometric == PHOTOMETRIC_LOGL) ? 1 : 3;
+            td->td_bitspersample = 16;
+            td->td_sampleformat = SAMPLEFORMAT_INT;
+        }
 }
 
 static void
@@ -1606,17 +1624,21 @@ LogLuvVSetField(TIFF* tif, uint32 tag, va_list ap)
 		 */
 		switch (sp->user_datafmt) {
 		case SGILOGDATAFMT_FLOAT:
-			bps = 32, fmt = SAMPLEFORMAT_IEEEFP;
+			bps = 32;
+			fmt = SAMPLEFORMAT_IEEEFP;
 			break;
 		case SGILOGDATAFMT_16BIT:
-			bps = 16, fmt = SAMPLEFORMAT_INT;
+			bps = 16;
+			fmt = SAMPLEFORMAT_INT;
 			break;
 		case SGILOGDATAFMT_RAW:
-			bps = 32, fmt = SAMPLEFORMAT_UINT;
+			bps = 32;
+			fmt = SAMPLEFORMAT_UINT;
 			TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 1);
 			break;
 		case SGILOGDATAFMT_8BIT:
-			bps = 8, fmt = SAMPLEFORMAT_UINT;
+			bps = 8;
+			fmt = SAMPLEFORMAT_UINT;
 			break;
 		default:
 			TIFFErrorExt(tif->tif_clientdata, tif->tif_name,

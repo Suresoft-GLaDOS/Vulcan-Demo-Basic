@@ -21,7 +21,7 @@ jobs:
                     make clean
                     make -j10
                     chmod -R 777 tools
-                
+
     test:
         needs: build
         runs-on: self-hosted

@@ -3628,6 +3628,7 @@ TIFFReadDirectory(TIFF* tif)
 	if (tif->tif_dir.td_planarconfig == PLANARCONFIG_SEPARATE)
 		tif->tif_dir.td_stripsperimage /= tif->tif_dir.td_samplesperpixel;
 	if (!TIFFFieldSet(tif, FIELD_STRIPOFFSETS)) {
+#ifdef OJPEG_SUPPORT
 		if ((tif->tif_dir.td_compression==COMPRESSION_OJPEG) &&
 		    (isTiled(tif)==0) &&
 		    (tif->tif_dir.td_nstrips==1)) {
@@ -3640,7 +3641,9 @@ TIFFReadDirectory(TIFF* tif)
 			 * JpegInterchangeFormat stream.
 			 */
 			TIFFSetFieldBit(tif, FIELD_STRIPOFFSETS);
-		} else {
+		} else
+#endif
+        {
 			MissingRequired(tif,
 				isTiled(tif) ? "TileOffsets" : "StripOffsets");
 			goto bad;
@@ -4997,6 +5000,11 @@ TIFFFetchNormalTag(TIFF* tif, TIFFDirEntry* dp, int recover)
 					if (err==TIFFReadDirEntryErrOk)
 					{
 						int m;
+                        if( dp->tdir_count > 0 && data[dp->tdir_count-1] != '\0' )
+                        {
+                            TIFFWarningExt(tif->tif_clientdata,module,"ASCII value for tag \"%s\" does not end in null byte. Forcing it to be null",fip->field_name);
+                            data[dp->tdir_count-1] = '\0';
+                        }
 						m=TIFFSetField(tif,dp->tdir_tag,(uint16)(dp->tdir_count),data);
 						if (data!=0)
 							_TIFFfree(data);
@@ -5169,6 +5177,11 @@ TIFFFetchNormalTag(TIFF* tif, TIFFDirEntry* dp, int recover)
 				if (err==TIFFReadDirEntryErrOk)
 				{
 					int m;
+                    if( dp->tdir_count > 0 && data[dp->tdir_count-1] != '\0' )
+                    {
+                        TIFFWarningExt(tif->tif_clientdata,module,"ASCII value for tag \"%s\" does not end in null byte. Forcing it to be null",fip->field_name);
+                        data[dp->tdir_count-1] = '\0';
+                    }
 					m=TIFFSetField(tif,dp->tdir_tag,(uint32)(dp->tdir_count),data);
 					if (data!=0)
 						_TIFFfree(data);
@@ -5489,8 +5502,7 @@ ChopUpSingleUncompressedStrip(TIFF* tif)
 	uint64 rowblockbytes;
 	uint64 stripbytes;
 	uint32 strip;
-	uint64 nstrips64;
-	uint32 nstrips32;
+	uint32 nstrips;
 	uint32 rowsperstrip;
 	uint64* newcounts;
 	uint64* newoffsets;
@@ -5521,18 +5533,17 @@ ChopUpSingleUncompressedStrip(TIFF* tif)
 	    return;
 
 	/*
-	 * never increase the number of strips in an image
+	 * never increase the number of rows per strip
 	 */
 	if (rowsperstrip >= td->td_rowsperstrip)
 		return;
-	nstrips64 = TIFFhowmany_64(bytecount, stripbytes);
-	if ((nstrips64==0)||(nstrips64>0xFFFFFFFF)) /* something is wonky, do nothing. */
-	    return;
-	nstrips32 = (uint32)nstrips64;
+        nstrips = TIFFhowmany_32(td->td_imagelength, rowsperstrip);
+        if( nstrips == 0 )
+            return;
 
-	newcounts = (uint64*) _TIFFCheckMalloc(tif, nstrips32, sizeof (uint64),
+	newcounts = (uint64*) _TIFFCheckMalloc(tif, nstrips, sizeof (uint64),
 				"for chopped \"StripByteCounts\" array");
-	newoffsets = (uint64*) _TIFFCheckMalloc(tif, nstrips32, sizeof (uint64),
+	newoffsets = (uint64*) _TIFFCheckMalloc(tif, nstrips, sizeof (uint64),
 				"for chopped \"StripOffsets\" array");
 	if (newcounts == NULL || newoffsets == NULL) {
 		/*
@@ -5549,18 +5560,18 @@ ChopUpSingleUncompressedStrip(TIFF* tif)
 	 * Fill the strip information arrays with new bytecounts and offsets
 	 * that reflect the broken-up format.
 	 */
-	for (strip = 0; strip < nstrips32; strip++) {
+	for (strip = 0; strip < nstrips; strip++) {
 		if (stripbytes > bytecount)
 			stripbytes = bytecount;
 		newcounts[strip] = stripbytes;
-		newoffsets[strip] = offset;
+		newoffsets[strip] = stripbytes ? offset : 0;
 		offset += stripbytes;
 		bytecount -= stripbytes;
 	}
 	/*
 	 * Replace old single strip info with multi-strip info.
 	 */
-	td->td_stripsperimage = td->td_nstrips = nstrips32;
+	td->td_stripsperimage = td->td_nstrips = nstrips;
 	TIFFSetField(tif, TIFFTAG_ROWSPERSTRIP, rowsperstrip);
 
 	_TIFFfree(td->td_stripbytecount);

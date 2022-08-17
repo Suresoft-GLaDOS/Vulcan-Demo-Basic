@@ -191,7 +191,7 @@ AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing au
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2 -Wall -W
+CFLAGS = -g -O0 -fsanitize=address,undefined -fsanitize-recover=all -Wall -W
 CMAKE = /usr/bin/cmake
 CPP = gcc -E
 CPPFLAGS = 
@@ -229,13 +229,13 @@ LIBDIR =
 LIBOBJS = 
 LIBS = -lz -lm 
 LIBTIFF_ALPHA_VERSION = 
-LIBTIFF_DOCDIR = ${prefix}/share/doc/tiff-4.0.6
+LIBTIFF_DOCDIR = ${prefix}/share/doc/tiff-4.0.7
 LIBTIFF_MAJOR_VERSION = 4
-LIBTIFF_MICRO_VERSION = 6
+LIBTIFF_MICRO_VERSION = 7
 LIBTIFF_MINOR_VERSION = 0
-LIBTIFF_RELEASE_DATE = 20220808
-LIBTIFF_VERSION = 4.0.6
-LIBTIFF_VERSION_INFO = 7:4:2
+LIBTIFF_RELEASE_DATE = 20220817
+LIBTIFF_VERSION = 4.0.7
+LIBTIFF_VERSION_INFO = 7:5:2
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
@@ -254,10 +254,10 @@ OTOOL64 =
 PACKAGE = tiff
 PACKAGE_BUGREPORT = tiff@lists.maptools.org
 PACKAGE_NAME = LibTIFF Software
-PACKAGE_STRING = LibTIFF Software 4.0.6
+PACKAGE_STRING = LibTIFF Software 4.0.7
 PACKAGE_TARNAME = tiff
 PACKAGE_URL = 
-PACKAGE_VERSION = 4.0.6
+PACKAGE_VERSION = 4.0.7
 PATH_SEPARATOR = :
 PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
@@ -267,7 +267,7 @@ SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-VERSION = 4.0.6
+VERSION = 4.0.7
 XMKMF = 
 X_CFLAGS = 
 X_EXTRA_LIBS = 
@@ -379,17 +379,11 @@ docfiles = \
 	TIFFWriteRawTile.3tiff.html \
 	TIFFWriteScanline.3tiff.html \
 	TIFFWriteTile.3tiff.html \
-	bmp2tiff.1.html \
 	fax2ps.1.html \
 	fax2tiff.1.html \
-	gif2tiff.1.html \
 	pal2rgb.1.html \
 	ppm2tiff.1.html \
-	ras2tiff.1.html \
 	raw2tiff.1.html \
-	rgb2ycbcr.1.html \
-	sgi2tiff.1.html \
-	thumbnail.1.html \
 	tiff2bw.1.html \
 	tiff2pdf.1.html \
 	tiff2ps.1.html \
@@ -403,8 +397,7 @@ docfiles = \
 	tiffinfo.1.html \
 	tiffmedian.1.html \
 	tiffset.1.html \
-	tiffsplit.1.html \
-	tiffsv.1.html
+	tiffsplit.1.html
 
 dist_doc_DATA = $(indexfile) $(docfiles)
 INDEXSTART = '<HTML><HEAD><TITLE>Libtiff HTML manpage index</TITLE></HEAD><BODY BGCOLOR=white><ul><H2>Man Pages</h2><p>'

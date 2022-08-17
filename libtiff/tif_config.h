@@ -230,7 +230,7 @@
 #define PACKAGE_NAME "LibTIFF Software"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "LibTIFF Software 4.0.6"
+#define PACKAGE_STRING "LibTIFF Software 4.0.7"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "tiff"
@@ -239,7 +239,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "4.0.6"
+#define PACKAGE_VERSION "4.0.7"
 
 /* Support Macintosh PackBits algorithm */
 #define PACKBITS_SUPPORT 1
@@ -361,7 +361,7 @@
 /* #undef USE_WIN32_FILEIO */
 
 /* Version number of package */
-#define VERSION "4.0.6"
+#define VERSION "4.0.7"
 
 /* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
    significant byte first (like Motorola and SPARC, unlike Intel). */
