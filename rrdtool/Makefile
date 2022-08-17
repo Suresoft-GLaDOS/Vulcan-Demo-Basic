@@ -1,0 +1,31 @@
+CC=gcc
+INC=-I ../src/include -I/usr/local/include
+LIBDPI=../src/lib/libndpi.a
+LDFLAGS=
+LIB=$(LIBDPI) -lrrd -lm   -lm 
+
+TOOLS=rrd_anomaly rrd_similarity
+
+all: $(TOOLS)
+
+rrd_anomaly: rrd_anomaly.c Makefile $(LIBDPI)
+	$(CC) $(CPPFLAGS) -g $(INC) $(LDFLAGS) rrd_anomaly.c -o rrd_anomaly $(LIB)
+
+rrd_similarity: rrd_similarity.c Makefile $(LIBDPI)
+	$(CC) $(CPPFLAGS) -g $(INC) $(LDFLAGS) rrd_similarity.c -o rrd_similarity $(LIB)
+
+clean:
+	/bin/rm -f *.o $(TOOLS) *~
+
+distclean: clean
+	/bin/rm -f Makefile
+
+distdir:
+	find . -type f -name '*.c' \
+		-o -name '*.txt' | xargs -I'{}' cp '{}' '$(distdir)/{}'
+
+install:
+	@echo -n ""
+
+check:
+	true # nothing to do here
