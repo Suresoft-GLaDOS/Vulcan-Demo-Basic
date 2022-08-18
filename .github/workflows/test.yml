@@ -17,7 +17,7 @@ jobs:
             - name: run build
               run: |
                     ./autogen.sh
-                    ./configure CFLAGS="-g -O0 -fsanitize=address,undefined -fsanitize-recover=all"
+                    ./configure CFLAGS="-g -O0 -fsanitize=address,undefined -fsanitize-recover=all -fPIE"
                     make clean
                     make -j10
                     chmod -R 777 tools
