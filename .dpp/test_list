@@ -1,4 +1,4 @@
-python3 test/spec_tests.py -s test/spec.txt -p "build/md2html/md2html"
+python3 test/spec_tests.py -s test/spec.txt -p build/md2html/md2html
 python3 test/spec_tests.py -s test/coverage.txt -p "build/md2html/md2html"
 python3 test/spec_tests.py -s test/permissive-email-autolinks.txt -p "build/md2html/md2html --fpermissive-email-autolinks"
 python3 test/spec_tests.py -s test/permissive-url-autolinks.txt -p "build/md2html/md2html --fpermissive-url-autolinks"
