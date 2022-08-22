@@ -1,23 +1,30 @@
+# YAML definition for travis-ci.com continuous integration.
+# See https://docs.travis-ci.com/user/languages/c
+
 language: c
-sudo: false
+
+compiler:
+    - gcc
+
 addons:
-  apt:
-    packages:
-      # Some tests require the DTDs.
-      w3c-sgml-lib
-matrix:
-  include:
-    # Try to emulate a C89 compiler on a POSIX system by disabling as many
-    # GNU extensions as possible. -Dlinux is required to make the weak
-    # pthread symbols work.
-    - compiler: gcc
-      env: CFLAGS="-O2 -std=c89 -D_POSIX_C_SOURCE=200809L -Dlinux"
-    # clang with AddressSanitizer and UndefinedBehaviorSanitizer.
-    - compiler: clang
-      dist: trusty
-      env: CONFIG="--without-python"
-           CFLAGS="-O2 -g -fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover"
-           UBSAN_OPTIONS=print_stacktrace=1
-script: sh autogen.sh $CONFIG && make -j2 V=1 && make check
-git:
-  depth: 10
+    apt:
+        packages:
+            - python3   # for running tests
+            - lcov      # for generating code coverage report
+
+before_script:
+    - mkdir build
+    - cd build
+    - CFLAGS='--coverage -g -O0' cmake -DCMAKE_BUILD_TYPE=Debug -G 'Unix Makefiles' ..
+
+script:
+    - make VERBOSE=1
+
+after_success:
+    - ../scripts/run-tests.sh
+    # Creating report
+    - lcov --directory . --capture --output-file coverage.info # capture coverage info
+    - lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter out system
+    - lcov --list coverage.info # debug info
+    # Uploading report to CodeCov
+    - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
