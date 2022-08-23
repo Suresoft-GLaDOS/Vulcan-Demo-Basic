@@ -1,5 +1,2 @@
-ALL_EXE = build
-
-
-all: 
+all:
 	cd build; make -j10
