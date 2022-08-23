@@ -1,9 +1,5 @@
-SUBDIRS := build
-
-all clean : $(SUBDIRS)
+ALL_EXE = build
 
 
-$(SUBDIRS) :
-	cd $(SUBDIRS); $(MAKE)
-
-.PHONY: all clean $(SUBDIRS)
+all: 
+	cd build; make -j10
