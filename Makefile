@@ -1,2 +1,5 @@
+default_target: all
+.PHONY : default_target
+
 all:
-	cd build; make -j10
+	cd build; make
