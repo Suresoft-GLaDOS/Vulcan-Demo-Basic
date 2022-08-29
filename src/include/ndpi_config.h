@@ -86,10 +86,10 @@
 /* #undef NDPI_ENABLE_DEBUG_MESSAGES */
 
 /* Last GIT change */
-#define NDPI_GIT_DATE "Tue Aug 16 16:12:56 2022 +0900"
+#define NDPI_GIT_DATE "Wed Aug 17 10:35:02 2022 +0900"
 
 /* GIT Release */
-#define NDPI_GIT_RELEASE "4.3.0-1415-0fd4c11"
+#define NDPI_GIT_RELEASE "4.3.0-1422-47d7e10"
 
 /* nDPI major release */
 #define NDPI_MAJOR_RELEASE "4"

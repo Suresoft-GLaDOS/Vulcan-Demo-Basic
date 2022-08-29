@@ -534,8 +534,8 @@ configure: failed program was:
 | #define NDPI_MAJOR_RELEASE "4"
 | #define NDPI_MINOR_RELEASE "3"
 | #define NDPI_PATCH_LEVEL "0"
-| #define NDPI_GIT_RELEASE "4.3.0-1415-0fd4c11"
-| #define NDPI_GIT_DATE "Tue Aug 16 16:12:56 2022 +0900"
+| #define NDPI_GIT_RELEASE "4.3.0-1422-47d7e10"
+| #define NDPI_GIT_DATE "Wed Aug 17 10:35:02 2022 +0900"
 | /* end confdefs.h.  */
 | 
 | /* Override any GCC internal prototype to avoid an error.
@@ -641,8 +641,8 @@ configure: failed program was:
 | #define NDPI_MAJOR_RELEASE "4"
 | #define NDPI_MINOR_RELEASE "3"
 | #define NDPI_PATCH_LEVEL "0"
-| #define NDPI_GIT_RELEASE "4.3.0-1415-0fd4c11"
-| #define NDPI_GIT_DATE "Tue Aug 16 16:12:56 2022 +0900"
+| #define NDPI_GIT_RELEASE "4.3.0-1422-47d7e10"
+| #define NDPI_GIT_DATE "Wed Aug 17 10:35:02 2022 +0900"
 | #define HAVE_PTHREAD_PRIO_INHERIT 1
 | #define HAVE_PTHREAD 1
 | #define HAVE_NETINET_IN_H 1
@@ -699,8 +699,8 @@ configure: failed program was:
 | #define NDPI_MAJOR_RELEASE "4"
 | #define NDPI_MINOR_RELEASE "3"
 | #define NDPI_PATCH_LEVEL "0"
-| #define NDPI_GIT_RELEASE "4.3.0-1415-0fd4c11"
-| #define NDPI_GIT_DATE "Tue Aug 16 16:12:56 2022 +0900"
+| #define NDPI_GIT_RELEASE "4.3.0-1422-47d7e10"
+| #define NDPI_GIT_DATE "Wed Aug 17 10:35:02 2022 +0900"
 | #define HAVE_PTHREAD_PRIO_INHERIT 1
 | #define HAVE_PTHREAD 1
 | #define HAVE_NETINET_IN_H 1
@@ -759,8 +759,8 @@ configure: failed program was:
 | #define NDPI_MAJOR_RELEASE "4"
 | #define NDPI_MINOR_RELEASE "3"
 | #define NDPI_PATCH_LEVEL "0"
-| #define NDPI_GIT_RELEASE "4.3.0-1415-0fd4c11"
-| #define NDPI_GIT_DATE "Tue Aug 16 16:12:56 2022 +0900"
+| #define NDPI_GIT_RELEASE "4.3.0-1422-47d7e10"
+| #define NDPI_GIT_DATE "Wed Aug 17 10:35:02 2022 +0900"
 | #define HAVE_PTHREAD_PRIO_INHERIT 1
 | #define HAVE_PTHREAD 1
 | #define HAVE_NETINET_IN_H 1
@@ -1022,7 +1022,7 @@ EXEEXT=''
 EXE_SUFFIX=''
 EXTRA_TARGETS='example tests tests/dga'
 FGREP='/usr/bin/grep -F'
-GIT_RELEASE='4.3.0-1415-0fd4c11'
+GIT_RELEASE='4.3.0-1422-47d7e10'
 GREP='/usr/bin/grep'
 HANDLE_TLS_SIGS='//'
 HAS_FUZZLDFLAGS_FALSE=''
@@ -1170,8 +1170,8 @@ target_alias=''
 #define NDPI_MAJOR_RELEASE "4"
 #define NDPI_MINOR_RELEASE "3"
 #define NDPI_PATCH_LEVEL "0"
-#define NDPI_GIT_RELEASE "4.3.0-1415-0fd4c11"
-#define NDPI_GIT_DATE "Tue Aug 16 16:12:56 2022 +0900"
+#define NDPI_GIT_RELEASE "4.3.0-1422-47d7e10"
+#define NDPI_GIT_DATE "Wed Aug 17 10:35:02 2022 +0900"
 #define HAVE_PTHREAD_PRIO_INHERIT 1
 #define HAVE_PTHREAD 1
 #define HAVE_NETINET_IN_H 1
