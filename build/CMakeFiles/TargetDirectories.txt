@@ -1,8 +1,0 @@
-/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/md4c/CMakeFiles/md4c.dir
-/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/md4c/CMakeFiles/edit_cache.dir
-/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/md4c/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/md2html/CMakeFiles/md2html.dir
-/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/md2html/CMakeFiles/edit_cache.dir
-/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/build/md2html/CMakeFiles/rebuild_cache.dir
