@@ -16,6 +16,10 @@ LIBXML_VERSION_INFO=`expr $LIBXML_MAJOR_VERSION + $LIBXML_MINOR_VERSION`:$LIBXML
 
 LIBXML_VERSION_NUMBER=`expr $LIBXML_MAJOR_VERSION \* 10000 + $LIBXML_MINOR_VERSION \* 100 + $LIBXML_MICRO_VERSION`
 
+LIBS += -L/home/workspace/msv/src/.libs -ltest_runtime
+echo "LIBS"
+echo $LIBS
+
 if test -f CVS/Entries ; then
   extra=`grep ChangeLog CVS/Entries | grep -v LIBXML | sed -e s\%/ChangeLog/1\.%% -e s\%/.*$%%`
   echo extra=$extra
