@@ -99,6 +99,8 @@ dnl
 dnl zlib option might change flags, so we save them initially
 dnl
 _cppflags="${CPPFLAGS}"
+LIBS += "${VULCAN_LIBRARY_PATH}"
+
 _libs="${LIBS}"
 
 AC_ARG_WITH(c14n,
@@ -477,6 +479,7 @@ AC_SUBST(WITH_LZMA)
 
 CPPFLAGS=${_cppflags}
 LIBS=${_libs}
+
 
 echo Checking headers
 
