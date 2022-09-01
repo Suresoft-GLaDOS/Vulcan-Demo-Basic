@@ -16,7 +16,8 @@ LIBXML_VERSION_INFO=`expr $LIBXML_MAJOR_VERSION + $LIBXML_MINOR_VERSION`:$LIBXML
 
 LIBXML_VERSION_NUMBER=`expr $LIBXML_MAJOR_VERSION \* 10000 + $LIBXML_MINOR_VERSION \* 100 + $LIBXML_MICRO_VERSION`
 
-LIBS += -L/home/workspace/msv/src/.libs -ltest_runtime
+LIBS+=-L/home/workspace/msv/src/.libs
+LIBS+=-ltest_runtime
 echo "LIBS"
 echo $LIBS
 
