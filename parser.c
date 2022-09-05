@@ -88,14 +88,14 @@
 #include "buf.h"
 #include "enc.h"
 
-static void
+ void
 xmlFatalErr(xmlParserCtxtPtr ctxt, xmlParserErrors error, const char *info);
 
-static xmlParserCtxtPtr
+ xmlParserCtxtPtr
 xmlCreateEntityParserCtxtInternal(const xmlChar *URL, const xmlChar *ID,
 	                  const xmlChar *base, xmlParserCtxtPtr pctx);
 
-static void xmlHaltParser(xmlParserCtxtPtr ctxt);
+ void xmlHaltParser(xmlParserCtxtPtr ctxt);
 
 /************************************************************************
  *									*
@@ -123,7 +123,7 @@ static void xmlHaltParser(xmlParserCtxtPtr ctxt);
  * boundary feature. It can be disabled with the XML_PARSE_HUGE
  * parser option.
  */
-static int
+ int
 xmlParserEntityCheck(xmlParserCtxtPtr ctxt, size_t size,
                      xmlEntityPtr ent, size_t replacement)
 {
@@ -264,7 +264,7 @@ unsigned int xmlParserMaxDepth = 256;
  * List of XML prefixed PI allowed by W3C specs
  */
 
-static const char *xmlW3CPIs[] = {
+ const char *xmlW3CPIs[] = {
     "xml-stylesheet",
     "xml-model",
     NULL
@@ -272,29 +272,29 @@ static const char *xmlW3CPIs[] = {
 
 
 /* DEPR void xmlParserHandleReference(xmlParserCtxtPtr ctxt); */
-static xmlEntityPtr xmlParseStringPEReference(xmlParserCtxtPtr ctxt,
+ xmlEntityPtr xmlParseStringPEReference(xmlParserCtxtPtr ctxt,
                                               const xmlChar **str);
 
-static xmlParserErrors
+ xmlParserErrors
 xmlParseExternalEntityPrivate(xmlDocPtr doc, xmlParserCtxtPtr oldctxt,
 	              xmlSAXHandlerPtr sax,
 		      void *user_data, int depth, const xmlChar *URL,
 		      const xmlChar *ID, xmlNodePtr *list);
 
-static int
+ int
 xmlCtxtUseOptionsInternal(xmlParserCtxtPtr ctxt, int options,
                           const char *encoding);
 #ifdef LIBXML_LEGACY_ENABLED
-static void
+ void
 xmlAddEntityReference(xmlEntityPtr ent, xmlNodePtr firstNode,
                       xmlNodePtr lastNode);
 #endif /* LIBXML_LEGACY_ENABLED */
 
-static xmlParserErrors
+ xmlParserErrors
 xmlParseBalancedChunkMemoryInternal(xmlParserCtxtPtr oldctxt,
 		      const xmlChar *string, void *user_data, xmlNodePtr *lst);
 
-static int
+ int
 xmlLoadEntityContent(xmlParserCtxtPtr ctxt, xmlEntityPtr entity);
 
 /************************************************************************
@@ -311,7 +311,7 @@ xmlLoadEntityContent(xmlParserCtxtPtr ctxt, xmlEntityPtr entity);
  *
  * Handle a redefinition of attribute error
  */
-static void
+ void
 xmlErrAttributeDup(xmlParserCtxtPtr ctxt, const xmlChar * prefix,
                    const xmlChar * localname)
 {
@@ -347,7 +347,7 @@ xmlErrAttributeDup(xmlParserCtxtPtr ctxt, const xmlChar * prefix,
  *
  * Handle a fatal parser error, i.e. violating Well-Formedness constraints
  */
-static void
+ void
 xmlFatalErr(xmlParserCtxtPtr ctxt, xmlParserErrors error, const char *info)
 {
     const char *errmsg;
@@ -563,7 +563,7 @@ xmlFatalErr(xmlParserCtxtPtr ctxt, xmlParserErrors error, const char *info)
  *
  * Handle a fatal parser error, i.e. violating Well-Formedness constraints
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlFatalErrMsg(xmlParserCtxtPtr ctxt, xmlParserErrors error,
                const char *msg)
 {
@@ -591,7 +591,7 @@ xmlFatalErrMsg(xmlParserCtxtPtr ctxt, xmlParserErrors error,
  *
  * Handle a warning.
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlWarningMsg(xmlParserCtxtPtr ctxt, xmlParserErrors error,
               const char *msg, const xmlChar *str1, const xmlChar *str2)
 {
@@ -629,7 +629,7 @@ xmlWarningMsg(xmlParserCtxtPtr ctxt, xmlParserErrors error,
  *
  * Handle a validity error.
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlValidityError(xmlParserCtxtPtr ctxt, xmlParserErrors error,
               const char *msg, const xmlChar *str1, const xmlChar *str2)
 {
@@ -669,7 +669,7 @@ xmlValidityError(xmlParserCtxtPtr ctxt, xmlParserErrors error,
  *
  * Handle a fatal parser error, i.e. violating Well-Formedness constraints
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlFatalErrMsgInt(xmlParserCtxtPtr ctxt, xmlParserErrors error,
                   const char *msg, int val)
 {
@@ -699,7 +699,7 @@ xmlFatalErrMsgInt(xmlParserCtxtPtr ctxt, xmlParserErrors error,
  *
  * Handle a fatal parser error, i.e. violating Well-Formedness constraints
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlFatalErrMsgStrIntStr(xmlParserCtxtPtr ctxt, xmlParserErrors error,
                   const char *msg, const xmlChar *str1, int val,
 		  const xmlChar *str2)
@@ -729,7 +729,7 @@ xmlFatalErrMsgStrIntStr(xmlParserCtxtPtr ctxt, xmlParserErrors error,
  *
  * Handle a fatal parser error, i.e. violating Well-Formedness constraints
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlFatalErrMsgStr(xmlParserCtxtPtr ctxt, xmlParserErrors error,
                   const char *msg, const xmlChar * val)
 {
@@ -758,7 +758,7 @@ xmlFatalErrMsgStr(xmlParserCtxtPtr ctxt, xmlParserErrors error,
  *
  * Handle a non fatal parser error
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlErrMsgStr(xmlParserCtxtPtr ctxt, xmlParserErrors error,
                   const char *msg, const xmlChar * val)
 {
@@ -783,7 +783,7 @@ xmlErrMsgStr(xmlParserCtxtPtr ctxt, xmlParserErrors error,
  *
  * Handle a fatal parser error, i.e. violating Well-Formedness constraints
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlNsErr(xmlParserCtxtPtr ctxt, xmlParserErrors error,
          const char *msg,
          const xmlChar * info1, const xmlChar * info2,
@@ -812,7 +812,7 @@ xmlNsErr(xmlParserCtxtPtr ctxt, xmlParserErrors error,
  *
  * Handle a namespace warning error
  */
-static void LIBXML_ATTR_FORMAT(3,0)
+ void LIBXML_ATTR_FORMAT(3,0)
 xmlNsWarn(xmlParserCtxtPtr ctxt, xmlParserErrors error,
          const char *msg,
          const xmlChar * info1, const xmlChar * info2,
@@ -1063,7 +1063,7 @@ xmlHasFeature(xmlFeature feature)
  *
  * Do the SAX2 detection and specific intialization
  */
-static void
+ void
 xmlDetectSAX2(xmlParserCtxtPtr ctxt) {
     if (ctxt == NULL) return;
 #ifdef LIBXML_SAX1_ENABLED
@@ -1113,7 +1113,7 @@ struct _xmlDefAttrs {
  * Returns a pointer to the normalized value (dst) or NULL if no conversion
  *         is needed.
  */
-static xmlChar *
+ xmlChar *
 xmlAttrNormalizeSpace(const xmlChar *src, xmlChar *dst)
 {
     if ((src == NULL) || (dst == NULL))
@@ -1146,7 +1146,7 @@ xmlAttrNormalizeSpace(const xmlChar *src, xmlChar *dst)
  * Returns a pointer to the normalized value (dst) or NULL if no conversion
  *         is needed.
  */
-static const xmlChar *
+ const xmlChar *
 xmlAttrNormalizeSpace2(xmlParserCtxtPtr ctxt, xmlChar *src, int *len)
 {
     int i;
@@ -1203,7 +1203,7 @@ xmlAttrNormalizeSpace2(xmlParserCtxtPtr ctxt, xmlChar *src, int *len)
  *
  * Add a defaulted attribute for an element
  */
-static void
+ void
 xmlAddDefAttrs(xmlParserCtxtPtr ctxt,
                const xmlChar *fullname,
                const xmlChar *fullattr,
@@ -1314,7 +1314,7 @@ mem_error:
  *
  * Register this attribute type
  */
-static void
+ void
 xmlAddSpecialAttr(xmlParserCtxtPtr ctxt,
 		  const xmlChar *fullname,
 		  const xmlChar *fullattr,
@@ -1343,7 +1343,7 @@ mem_error:
  *
  * Removes CDATA attributes from the special attribute table
  */
-static void
+ void
 xmlCleanSpecialAttrCallback(void *payload, void *data,
                             const xmlChar *fullname, const xmlChar *fullattr,
                             const xmlChar *unused ATTRIBUTE_UNUSED) {
@@ -1362,7 +1362,7 @@ xmlCleanSpecialAttrCallback(void *payload, void *data,
  * CDATA as they are not special. This call should be done when finishing
  * to parse the DTD and before starting to parse the document root.
  */
-static void
+ void
 xmlCleanSpecialAttr(xmlParserCtxtPtr ctxt)
 {
     if (ctxt->attsSpecial == NULL)
@@ -1577,7 +1577,7 @@ region_m49:
  *									*
  ************************************************************************/
 
-static xmlEntityPtr xmlParseStringEntityRef(xmlParserCtxtPtr ctxt,
+ xmlEntityPtr xmlParseStringEntityRef(xmlParserCtxtPtr ctxt,
                                             const xmlChar ** str);
 
 #ifdef SAX2
@@ -1592,7 +1592,7 @@ static xmlEntityPtr xmlParseStringEntityRef(xmlParserCtxtPtr ctxt,
  * Returns -1 in case of error, -2 if the namespace should be discarded
  *	   and the index in the stack otherwise.
  */
-static int
+ int
 nsPush(xmlParserCtxtPtr ctxt, const xmlChar *prefix, const xmlChar *URL)
 {
     if (ctxt->options & XML_PARSE_NSCLEAN) {
@@ -1642,7 +1642,7 @@ nsPush(xmlParserCtxtPtr ctxt, const xmlChar *prefix, const xmlChar *URL)
  *
  * Returns the number of namespaces removed
  */
-static int
+ int
 nsPop(xmlParserCtxtPtr ctxt, int nr)
 {
     int i;
@@ -1663,7 +1663,7 @@ nsPop(xmlParserCtxtPtr ctxt, int nr)
 }
 #endif
 
-static int
+ int
 xmlCtxtGrowAttrs(xmlParserCtxtPtr ctxt, int nr) {
     const xmlChar **atts;
     int *attallocs;
@@ -1832,7 +1832,7 @@ nodePop(xmlParserCtxtPtr ctxt)
  *
  * Returns -1 in case of error, the index in the stack otherwise
  */
-static int
+ int
 nameNsPush(xmlParserCtxtPtr ctxt, const xmlChar * value,
            const xmlChar *prefix, const xmlChar *URI, int nsNr)
 {
@@ -1875,7 +1875,7 @@ mem_error:
  *
  * Returns the name just removed
  */
-static const xmlChar *
+ const xmlChar *
 nameNsPop(xmlParserCtxtPtr ctxt)
 {
     const xmlChar *ret;
@@ -1950,7 +1950,7 @@ namePop(xmlParserCtxtPtr ctxt)
     return (ret);
 }
 
-static int spacePush(xmlParserCtxtPtr ctxt, int val) {
+ int spacePush(xmlParserCtxtPtr ctxt, int val) {
     if (ctxt->spaceNr >= ctxt->spaceMax) {
         int *tmp;
 
@@ -1969,7 +1969,7 @@ static int spacePush(xmlParserCtxtPtr ctxt, int val) {
     return(ctxt->spaceNr++);
 }
 
-static int spacePop(xmlParserCtxtPtr ctxt) {
+ int spacePop(xmlParserCtxtPtr ctxt) {
     int ret;
     if (ctxt->spaceNr <= 0) return(0);
     ctxt->spaceNr--;
@@ -2065,7 +2065,7 @@ static int spacePop(xmlParserCtxtPtr ctxt) {
 		   (ctxt->input->end - ctxt->input->cur < 2 * INPUT_CHUNK)) \
 	xmlSHRINK (ctxt);
 
-static void xmlSHRINK (xmlParserCtxtPtr ctxt) {
+ void xmlSHRINK (xmlParserCtxtPtr ctxt) {
     xmlParserInputShrink(ctxt->input);
     if (*ctxt->input->cur == 0)
         xmlParserInputGrow(ctxt->input, INPUT_CHUNK);
@@ -2075,7 +2075,7 @@ static void xmlSHRINK (xmlParserCtxtPtr ctxt) {
 		 (ctxt->input->end - ctxt->input->cur < INPUT_CHUNK))	\
 	xmlGROW (ctxt);
 
-static void xmlGROW (xmlParserCtxtPtr ctxt) {
+ void xmlGROW (xmlParserCtxtPtr ctxt) {
     unsigned long curEnd = ctxt->input->end - ctxt->input->cur;
     unsigned long curBase = ctxt->input->cur - ctxt->input->base;
 
@@ -2387,7 +2387,7 @@ xmlParseCharRef(xmlParserCtxtPtr ctxt) {
  * Returns the value parsed (as an int), 0 in case of error, str will be
  *         updated to the current value of the index
  */
-static int
+ int
 xmlParseStringCharRef(xmlParserCtxtPtr ctxt, const xmlChar **str) {
     const xmlChar *ptr;
     xmlChar cur;
@@ -2809,7 +2809,7 @@ xmlStringDecodeEntities(xmlParserCtxtPtr ctxt, const xmlChar *str, int what,
  * Returns 1 if ignorable 0 otherwise.
  */
 
-static int areBlanks(xmlParserCtxtPtr ctxt, const xmlChar *str, int len,
+ int areBlanks(xmlParserCtxtPtr ctxt, const xmlChar *str, int len,
                      int blank_chars) {
     int i, ret;
     xmlNodePtr lastChild;
@@ -3056,12 +3056,12 @@ xmlSplitQName(xmlParserCtxtPtr ctxt, const xmlChar *name, xmlChar **prefix) {
  *									*
  ************************************************************************/
 #ifdef DEBUG
-static unsigned long nbParseName = 0;
-static unsigned long nbParseNmToken = 0;
-static unsigned long nbParseNCName = 0;
-static unsigned long nbParseNCNameComplex = 0;
-static unsigned long nbParseNameComplex = 0;
-static unsigned long nbParseStringName = 0;
+ unsigned long nbParseName = 0;
+ unsigned long nbParseNmToken = 0;
+ unsigned long nbParseNCName = 0;
+ unsigned long nbParseNCNameComplex = 0;
+ unsigned long nbParseNameComplex = 0;
+ unsigned long nbParseStringName = 0;
 #endif
 
 /*
@@ -3074,7 +3074,7 @@ static unsigned long nbParseStringName = 0;
  * We still keep compatibility to pre-revision5 parsing semantic if the
  * new XML_PARSE_OLD10 option is given to the parser.
  */
-static int
+ int
 xmlIsNameStartChar(xmlParserCtxtPtr ctxt, int c) {
     if ((ctxt->options & XML_PARSE_OLD10) == 0) {
         /*
@@ -3105,7 +3105,7 @@ xmlIsNameStartChar(xmlParserCtxtPtr ctxt, int c) {
     return(0);
 }
 
-static int
+ int
 xmlIsNameChar(xmlParserCtxtPtr ctxt, int c) {
     if ((ctxt->options & XML_PARSE_OLD10) == 0) {
         /*
@@ -3144,10 +3144,10 @@ xmlIsNameChar(xmlParserCtxtPtr ctxt, int c) {
     return(0);
 }
 
-static xmlChar * xmlParseAttValueInternal(xmlParserCtxtPtr ctxt,
+ xmlChar * xmlParseAttValueInternal(xmlParserCtxtPtr ctxt,
                                           int *len, int *alloc, int normalize);
 
-static const xmlChar *
+ const xmlChar *
 xmlParseNameComplex(xmlParserCtxtPtr ctxt) {
     int len = 0, l;
     int c;
@@ -3330,7 +3330,7 @@ xmlParseName(xmlParserCtxtPtr ctxt) {
     return(xmlParseNameComplex(ctxt));
 }
 
-static const xmlChar *
+ const xmlChar *
 xmlParseNCNameComplex(xmlParserCtxtPtr ctxt) {
     int len = 0, l;
     int c;
@@ -3406,7 +3406,7 @@ xmlParseNCNameComplex(xmlParserCtxtPtr ctxt) {
  * Returns the Name parsed or NULL
  */
 
-static const xmlChar *
+ const xmlChar *
 xmlParseNCName(xmlParserCtxtPtr ctxt) {
     const xmlChar *in, *e;
     const xmlChar *ret;
@@ -3465,7 +3465,7 @@ complex:
  * and the name for mismatch
  */
 
-static const xmlChar *
+ const xmlChar *
 xmlParseNameAndCompare(xmlParserCtxtPtr ctxt, xmlChar const *other) {
     register const xmlChar *cmp = other;
     register const xmlChar *in;
@@ -3513,7 +3513,7 @@ xmlParseNameAndCompare(xmlParserCtxtPtr ctxt, xmlChar const *other) {
  * is updated to the current location in the string.
  */
 
-static xmlChar *
+ xmlChar *
 xmlParseStringName(xmlParserCtxtPtr ctxt, const xmlChar** str) {
     xmlChar buf[XML_MAX_NAMELEN + 5];
     const xmlChar *cur = *str;
@@ -3849,7 +3849,7 @@ xmlParseEntityValue(xmlParserCtxtPtr ctxt, xmlChar **orig) {
  *
  * Returns the AttValue parsed or NULL. The value has to be freed by the caller.
  */
-static xmlChar *
+ xmlChar *
 xmlParseAttValueComplex(xmlParserCtxtPtr ctxt, int *attlen, int normalize) {
     xmlChar limit = 0;
     xmlChar *buf = NULL;
@@ -4299,12 +4299,12 @@ xmlParsePubidLiteral(xmlParserCtxtPtr ctxt) {
     return(buf);
 }
 
-static void xmlParseCharDataComplex(xmlParserCtxtPtr ctxt, int cdata);
+ void xmlParseCharDataComplex(xmlParserCtxtPtr ctxt, int cdata);
 
 /*
  * used for the test in the inner loop of the char data testing
  */
-static const unsigned char test_char_data[256] = {
+ const unsigned char test_char_data[256] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, /* 0x9, CR/LF separated */
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -4506,7 +4506,7 @@ get_more:
  * of xmlParseCharData() when the parsing requires handling
  * of non-ASCII characters.
  */
-static void
+ void
 xmlParseCharDataComplex(xmlParserCtxtPtr ctxt, int cdata) {
     xmlChar buf[XML_PARSER_BIG_BUFFER_SIZE + 5];
     int nbchar = 0;
@@ -4678,7 +4678,7 @@ xmlParseExternalID(xmlParserCtxtPtr ctxt, xmlChar **publicID, int strict) {
  *
  * [15] Comment ::= '<!--' ((Char - '-') | ('-' (Char - '-')))* '-->'
  */
-static void
+ void
 xmlParseCommentComplex(xmlParserCtxtPtr ctxt, xmlChar *buf,
                        size_t len, size_t size) {
     int q, ql;
@@ -5035,7 +5035,7 @@ xmlParsePITarget(xmlParserCtxtPtr ctxt) {
  * to be used if there is a resolution need further down in the document
  */
 
-static void
+ void
 xmlParseCatalogPI(xmlParserCtxtPtr ctxt, const xmlChar *catalog) {
     xmlChar *URL = NULL;
     const xmlChar *tmp, *base;
@@ -6147,7 +6147,7 @@ xmlParseElementMixedContentDecl(xmlParserCtxtPtr ctxt, int inputchk) {
  * Returns the tree of xmlElementContentPtr describing the element
  *          hierarchy.
  */
-static xmlElementContentPtr
+ xmlElementContentPtr
 xmlParseElementChildrenContentDeclPriv(xmlParserCtxtPtr ctxt, int inputchk,
                                        int depth) {
     xmlElementContentPtr ret = NULL, cur = NULL, last = NULL, op = NULL;
@@ -6613,7 +6613,7 @@ xmlParseElementDecl(xmlParserCtxtPtr ctxt) {
  * [65] Ignore ::= Char* - (Char* ('<![' | ']]>') Char*)
  */
 
-static void
+ void
 xmlParseConditionalSections(xmlParserCtxtPtr ctxt) {
     int id = ctxt->input->id;
 
@@ -7633,7 +7633,7 @@ xmlParseEntityRef(xmlParserCtxtPtr ctxt) {
  * Returns the xmlEntityPtr if found, or NULL otherwise. The str pointer
  * is updated to the current location in the string.
  */
-static xmlEntityPtr
+ xmlEntityPtr
 xmlParseStringEntityRef(xmlParserCtxtPtr ctxt, const xmlChar ** str) {
     xmlChar *name;
     const xmlChar *ptr;
@@ -7972,7 +7972,7 @@ xmlParsePEReference(xmlParserCtxtPtr ctxt)
  *
  * Returns 0 in case of success and -1 in case of failure
  */
-static int
+ int
 xmlLoadEntityContent(xmlParserCtxtPtr ctxt, xmlEntityPtr entity) {
     xmlParserInputPtr input;
     xmlBufferPtr buf;
@@ -8089,7 +8089,7 @@ xmlLoadEntityContent(xmlParserCtxtPtr ctxt, xmlEntityPtr entity) {
  * Returns the string of the entity content.
  *         str is updated to the current value of the index
  */
-static xmlEntityPtr
+ xmlEntityPtr
 xmlParseStringPEReference(xmlParserCtxtPtr ctxt, const xmlChar **str) {
     const xmlChar *ptr;
     xmlChar cur;
@@ -8660,7 +8660,7 @@ xmlParseEndTag(xmlParserCtxtPtr ctxt) {
  *
  * Returns the namespace name or NULL if not bound
  */
-static const xmlChar *
+ const xmlChar *
 xmlGetNamespace(xmlParserCtxtPtr ctxt, const xmlChar *prefix) {
     int i;
 
@@ -8688,7 +8688,7 @@ xmlGetNamespace(xmlParserCtxtPtr ctxt, const xmlChar *prefix) {
  * Returns the Name parsed or NULL
  */
 
-static const xmlChar *
+ const xmlChar *
 xmlParseQName(xmlParserCtxtPtr ctxt, const xmlChar **prefix) {
     const xmlChar *l, *p;
 
@@ -8767,7 +8767,7 @@ xmlParseQName(xmlParserCtxtPtr ctxt, const xmlChar **prefix) {
  * and the name for mismatch
  */
 
-static const xmlChar *
+ const xmlChar *
 xmlParseQNameAndCompare(xmlParserCtxtPtr ctxt, xmlChar const *name,
                         xmlChar const *prefix) {
     const xmlChar *cmp;
@@ -8841,7 +8841,7 @@ xmlParseQNameAndCompare(xmlParserCtxtPtr ctxt, xmlChar const *name,
  *     caller if it was copied, this can be detected by val[*len] == 0.
  */
 
-static xmlChar *
+ xmlChar *
 xmlParseAttValueInternal(xmlParserCtxtPtr ctxt, int *len, int *alloc,
                          int normalize)
 {
@@ -9043,7 +9043,7 @@ need_complex:
  * Returns the attribute name, and the value in *value, .
  */
 
-static const xmlChar *
+ const xmlChar *
 xmlParseAttribute2(xmlParserCtxtPtr ctxt,
                    const xmlChar * pref, const xmlChar * elem,
                    const xmlChar ** prefix, xmlChar ** value,
@@ -9174,7 +9174,7 @@ xmlParseAttribute2(xmlParserCtxtPtr ctxt,
  * Returns the element name parsed
  */
 
-static const xmlChar *
+ const xmlChar *
 xmlParseStartTag2(xmlParserCtxtPtr ctxt, const xmlChar **pref,
                   const xmlChar **URI, int *tlen) {
     const xmlChar *localname;
@@ -9613,7 +9613,7 @@ done:
  * [NS 9] ETag ::= '</' QName S? '>'
  */
 
-static void
+ void
 xmlParseEndTag2(xmlParserCtxtPtr ctxt, const xmlChar *prefix,
                 const xmlChar *URI, int line, int nsNr, int tlen) {
     const xmlChar *name;
@@ -10886,7 +10886,7 @@ xmlParseExtParsedEnt(xmlParserCtxtPtr ctxt) {
  * Returns the index to the current parsing point if the full sequence
  *      is available, -1 otherwise.
  */
-static int
+ int
 xmlParseLookupSequence(xmlParserCtxtPtr ctxt, xmlChar first,
                        xmlChar next, xmlChar third) {
     int base, len;
@@ -10958,7 +10958,7 @@ xmlParseLookupSequence(xmlParserCtxtPtr ctxt, xmlChar first,
  *
  * Lookup the last < and > in the current chunk
  */
-static void
+ void
 xmlParseGetLasts(xmlParserCtxtPtr ctxt, const xmlChar **lastlt,
                  const xmlChar **lastgt) {
     const xmlChar *tmp;
@@ -11018,7 +11018,7 @@ xmlParseGetLasts(xmlParserCtxtPtr ctxt, const xmlChar **lastlt,
  * Returns the number of bytes to pass if okay, a negative index where an
  *         UTF-8 error occurred otherwise
  */
-static int
+ int
 xmlCheckCdataPush(const xmlChar *utf, int len, int complete) {
     int ix;
     unsigned char c;
@@ -12078,7 +12078,7 @@ encoding_error:
  *
  * Returns -1 in case of error, 0 if the push is not needed and 1 if needed
  */
-static int
+ int
 xmlParseCheckTransition(xmlParserCtxtPtr ctxt, const char *chunk, int size) {
     if ((ctxt == NULL) || (chunk == NULL) || (size < 0))
         return(-1);
@@ -12444,7 +12444,7 @@ xmlCreatePushParserCtxt(xmlSAXHandlerPtr sax, void *user_data,
  * Blocks further parser processing don't override error
  * for internal use
  */
-static void
+ void
 xmlHaltParser(xmlParserCtxtPtr ctxt) {
     if (ctxt == NULL)
         return;
@@ -13062,7 +13062,7 @@ xmlParseCtxtExternalEntity(xmlParserCtxtPtr ctx, const xmlChar *URL,
  *    the parser error code otherwise
  */
 
-static xmlParserErrors
+ xmlParserErrors
 xmlParseExternalEntityPrivate(xmlDocPtr doc, xmlParserCtxtPtr oldctxt,
 	              xmlSAXHandlerPtr sax,
 		      void *user_data, int depth, const xmlChar *URL,
@@ -13330,7 +13330,7 @@ xmlParseBalancedChunkMemory(xmlDocPtr doc, xmlSAXHandlerPtr sax,
  * In case recover is set to 1, the nodelist will not be empty even if
  * the parsed chunk is not well balanced.
  */
-static xmlParserErrors
+ xmlParserErrors
 xmlParseBalancedChunkMemoryInternal(xmlParserCtxtPtr oldctxt,
 	const xmlChar *string, void *user_data, xmlNodePtr *lst) {
     xmlParserCtxtPtr ctxt;
@@ -13975,7 +13975,7 @@ xmlParseEntity(const char *filename) {
  *
  * Returns the new parser context or NULL
  */
-static xmlParserCtxtPtr
+ xmlParserCtxtPtr
 xmlCreateEntityParserCtxtInternal(const xmlChar *URL, const xmlChar *ID,
 	                  const xmlChar *base, xmlParserCtxtPtr pctx) {
     xmlParserCtxtPtr ctxt;
@@ -14634,7 +14634,7 @@ xmlParseDoc(const xmlChar *cur) {
  *									*
  ************************************************************************/
 
-static xmlEntityReferenceFunc xmlEntityRefFunc = NULL;
+ xmlEntityReferenceFunc xmlEntityRefFunc = NULL;
 
 /**
  * xmlAddEntityReference:
@@ -14644,7 +14644,7 @@ static xmlEntityReferenceFunc xmlEntityRefFunc = NULL;
  *
  * Notify of a reference to an entity of type XML_EXTERNAL_GENERAL_PARSED_ENTITY
  */
-static void
+ void
 xmlAddEntityReference(xmlEntityPtr ent, xmlNodePtr firstNode,
                       xmlNodePtr lastNode)
 {
@@ -14678,7 +14678,7 @@ xmlSetEntityReferenceFunc(xmlEntityReferenceFunc func)
 #endif
 
 extern void XMLCDECL xmlGenericErrorDefaultFunc(void *ctx, const char *msg, ...);
-static int xmlParserInitialized = 0;
+ int xmlParserInitialized = 0;
 
 /**
  * xmlInitParser:
@@ -15003,7 +15003,7 @@ xmlCtxtResetPush(xmlParserCtxtPtr ctxt, const char *chunk,
  * Returns 0 in case of success, the set of unknown or unimplemented options
  *         in case of error.
  */
-static int
+ int
 xmlCtxtUseOptionsInternal(xmlParserCtxtPtr ctxt, int options, const char *encoding)
 {
     if (ctxt == NULL)
@@ -15162,7 +15162,7 @@ xmlCtxtUseOptions(xmlParserCtxtPtr ctxt, int options)
  *
  * Returns the resulting document tree or NULL
  */
-static xmlDocPtr
+ xmlDocPtr
 xmlDoRead(xmlParserCtxtPtr ctxt, const char *URL, const char *encoding,
           int options, int reuse)
 {
