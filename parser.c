@@ -89,6 +89,7 @@
 #include "enc.h"
 
 static int xmlParserInitialized = 0;
+static const xmlChar* nameNsPop(xmlParserCtxtPtr ctxt);
 
  void
 xmlFatalErr(xmlParserCtxtPtr ctxt, xmlParserErrors error, const char *info);
