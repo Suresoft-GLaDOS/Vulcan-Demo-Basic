@@ -88,6 +88,8 @@
 #include "buf.h"
 #include "enc.h"
 
+static int xmlParserInitialized = 0;
+
  void
 xmlFatalErr(xmlParserCtxtPtr ctxt, xmlParserErrors error, const char *info);
 
@@ -14678,7 +14680,7 @@ xmlSetEntityReferenceFunc(xmlEntityReferenceFunc func)
 #endif
 
 extern void XMLCDECL xmlGenericErrorDefaultFunc(void *ctx, const char *msg, ...);
-static int xmlParserInitialized = 0;
+
 
 /**
  * xmlInitParser:
