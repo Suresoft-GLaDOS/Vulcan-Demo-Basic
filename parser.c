@@ -8264,7 +8264,7 @@ xmlParseDocTypeDecl(xmlParserCtxtPtr ctxt) {
  * [28 end] ('[' (markupdecl | PEReference | S)* ']' S?)? '>'
  */
 
-static void
+void
 xmlParseInternalSubset(xmlParserCtxtPtr ctxt) {
     /*
      * Is there any DTD definition ?
@@ -8576,7 +8576,7 @@ failed:
  * [NS 9] ETag ::= '</' QName S? '>'
  */
 
-static void
+void
 xmlParseEndTag1(xmlParserCtxtPtr ctxt, int line) {
     const xmlChar *name;
 
@@ -11084,7 +11084,7 @@ xmlCheckCdataPush(const xmlChar *utf, int len, int complete) {
  *
  * Returns zero if no parsing was possible
  */
-static int
+int
 xmlParseTryOrFinish(xmlParserCtxtPtr ctxt, int terminate) {
     int ret = 0;
     int avail, tlen;
