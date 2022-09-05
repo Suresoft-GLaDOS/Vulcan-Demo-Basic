@@ -1877,7 +1877,7 @@ mem_error:
  *
  * Returns the name just removed
  */
- const xmlChar *
+static const xmlChar *
 nameNsPop(xmlParserCtxtPtr ctxt)
 {
     const xmlChar *ret;
