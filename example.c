@@ -1,20 +1,8 @@
-
-#include <stdio.h>
-
-int mid(int x, int y, int z){
-    int ret = z;
-    if (y < z) {
-        if (x < y) {
-            ret = y;
-        } else if (x < z) {
-            ret = x;
-        }
-    } else {
-        if (x > y) {
-            ret = y;
-        } else if (x > z) {
-            printf("fix here\n");
-        }
+int func1(int x) {
+    int y = 100;
+    y = x;
+    if (x >= 100) { // correct code: if (x > 100) {
+        return -y;
     }
-    return ret;
+    return y;
 }
