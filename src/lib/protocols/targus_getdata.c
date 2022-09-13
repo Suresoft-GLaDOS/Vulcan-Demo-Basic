@@ -29,7 +29,7 @@
 
 static void ndpi_check_targus_getdata(struct ndpi_detection_module_struct *ndpi_struct,
 				  struct ndpi_flow_struct *flow) {
-  struct ndpi_packet_struct *packet = &ndpi_struct->packet;
+  struct ndpi_packet_struct *packet = &flow->packet;
 
   if(packet->iph) {
     u_int16_t targus_getdata_port       = ntohs(5201);
@@ -45,7 +45,7 @@ static void ndpi_check_targus_getdata(struct ndpi_detection_module_struct *ndpi_
                                 || (packet->udp->source == complex_link_port)))) {
 
       NDPI_LOG_INFO(ndpi_struct, "found targus getdata used for speedtest\n");
-      ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_TARGUS_GETDATA, NDPI_PROTOCOL_UNKNOWN, NDPI_CONFIDENCE_DPI);
+      ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_TARGUS_GETDATA, NDPI_PROTOCOL_UNKNOWN);
       return;
     }
   }
@@ -55,10 +55,12 @@ static void ndpi_check_targus_getdata(struct ndpi_detection_module_struct *ndpi_
 
 void ndpi_search_targus_getdata(struct ndpi_detection_module_struct *ndpi_struct, struct ndpi_flow_struct *flow)
 {
+  struct ndpi_packet_struct *packet = &flow->packet;
+
   NDPI_LOG_DBG(ndpi_struct, "search targus getdata\n");
 
   /* skip marked packets */
-  if(flow->detected_protocol_stack[0] != NDPI_PROTOCOL_TARGUS_GETDATA)
+  if(packet->detected_protocol_stack[0] != NDPI_PROTOCOL_TARGUS_GETDATA)
     ndpi_check_targus_getdata(ndpi_struct, flow);
 }
 
@@ -68,7 +70,7 @@ void init_targus_getdata_dissector(struct ndpi_detection_module_struct *ndpi_str
   ndpi_set_bitmask_protocol_detection("TARGUS_GETDATA", ndpi_struct, detection_bitmask, *id,
 				      NDPI_PROTOCOL_TARGUS_GETDATA,
 				      ndpi_search_targus_getdata,
-				      NDPI_SELECTION_BITMASK_PROTOCOL_V4_V6_TCP_OR_UDP,
+				      NDPI_SELECTION_BITMASK_PROTOCOL_TCP_OR_UDP,
 				      SAVE_DETECTION_BITMASK_AS_UNKNOWN,
 				      ADD_TO_DETECTION_BITMASK);
   *id += 1;

@@ -1,7 +1,7 @@
 /*
  * ndpi_util.h
  *
- * Copyright (C) 2011-22 - ntop.org
+ * Copyright (C) 2011-19 - ntop.org
  *
  * nDPI is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -29,9 +29,8 @@
 #ifndef __NDPI_UTIL_H__
 #define __NDPI_UTIL_H__
 
-#include "../src/lib/third_party/include/uthash.h"
+#include "uthash.h"
 #include <pcap.h>
-#include "ndpi_includes.h"
 #include "ndpi_classify.h"
 #include "ndpi_typedefs.h"
 
@@ -51,13 +50,7 @@
 #define PREFETCH_OFFSET    3
 
 extern int dpdk_port_init(int port, struct rte_mempool *mbuf_pool);
-extern int dpdk_port_deinit(int port);
 #endif
-
-#define PLEN_MAX         1504
-#define PLEN_BIN_LEN     32
-#define PLEN_NUM_BINS    48 /* 47*32 = 1504 */
-#define MAX_NUM_BIN_PKTS 256
 
 /* ETTA Spec defiintions for feature readiness */
 #define ETTA_MIN_PACKETS 10
@@ -90,43 +83,42 @@ extern int dpdk_port_deinit(int port);
 #define MAX_TABLE_SIZE_1         4096
 #define MAX_TABLE_SIZE_2         8192
 #define INIT_VAL                   -1
-#define SERIALIZATION_BUFSIZ     (8192 * 2)
 
 
 // inner hash table (ja3 -> security state)
 typedef struct ndpi_ja3_info {
-  char * ja3;
-  ndpi_cipher_weakness unsafe_cipher;
-  UT_hash_handle hh;
+   char * ja3;
+   ndpi_cipher_weakness unsafe_cipher;
+   UT_hash_handle hh;
 } ndpi_ja3_info;
 
 // external hash table (host ip -> <ip string, hash table ja3c, hash table ja3s>)
 // used to aggregate ja3 fingerprints by hosts
 typedef struct ndpi_host_ja3_fingerprints {
-  u_int32_t ip;
-  char *ip_string;
-  char *dns_name;
-  ndpi_ja3_info *host_client_info_hasht;
-  ndpi_ja3_info *host_server_info_hasht;
+   u_int32_t ip;
+   char *ip_string;
+   char *dns_name;
+   ndpi_ja3_info *host_client_info_hasht;
+   ndpi_ja3_info *host_server_info_hasht;
 
-  UT_hash_handle hh;
+   UT_hash_handle hh;
 } ndpi_host_ja3_fingerprints;
 
 
 //inner hash table
 typedef struct ndpi_ip_dns{
-  u_int32_t ip;
-  char *ip_string;
-  char *dns_name; //server name if any;
-  UT_hash_handle hh;
+   u_int32_t ip;
+   char *ip_string;
+   char *dns_name; //server name if any;
+   UT_hash_handle hh;
 } ndpi_ip_dns;
 
 //hash table ja3 -> <host, ip, security>, used to aggregate host by ja3 fingerprints
 typedef struct ndpi_ja3_fingerprints_host{
-  char *ja3; //key
-  ndpi_cipher_weakness unsafe_cipher;
-  ndpi_ip_dns *ipToDNS_ht;
-  UT_hash_handle hh;
+   char *ja3; //key
+   ndpi_cipher_weakness unsafe_cipher;
+   ndpi_ip_dns *ipToDNS_ht;
+   UT_hash_handle hh;
 } ndpi_ja3_fingerprints_host;
 
 struct flow_metrics {
@@ -135,12 +127,13 @@ struct flow_metrics {
 
 struct ndpi_entropy {
   // Entropy fields
+  struct timeval src2dst_last_pkt_time, dst2src_last_pkt_time, flow_last_pkt_time;
   u_int16_t src2dst_pkt_len[MAX_NUM_PKTS];                     /*!< array of packet appdata lengths */
-  pkt_timeval src2dst_pkt_time[MAX_NUM_PKTS];               /*!< array of arrival times          */
+  struct timeval src2dst_pkt_time[MAX_NUM_PKTS];               /*!< array of arrival times          */
   u_int16_t dst2src_pkt_len[MAX_NUM_PKTS];                     /*!< array of packet appdata lengths */
-  pkt_timeval dst2src_pkt_time[MAX_NUM_PKTS];               /*!< array of arrival times          */
-  pkt_timeval src2dst_start;                                /*!< first packet arrival time       */
-  pkt_timeval dst2src_start;                                /*!< first packet arrival time       */
+  struct timeval dst2src_pkt_time[MAX_NUM_PKTS];               /*!< array of arrival times          */
+  struct timeval src2dst_start;                                /*!< first packet arrival time       */
+  struct timeval dst2src_start;                                /*!< first packet arrival time       */
   u_int32_t src2dst_opackets;                                  /*!< non-zero packet counts          */
   u_int32_t dst2src_opackets;                                  /*!< non-zero packet counts          */
   u_int16_t src2dst_pkt_count;                                 /*!< packet counts                   */
@@ -158,25 +151,14 @@ struct ndpi_entropy {
   float score;
 };
 
-enum info_type {
-    INFO_INVALID = 0,
-    INFO_GENERIC,
-    INFO_KERBEROS,
-    INFO_FTP_IMAP_POP_SMTP,
-    INFO_TLS_QUIC_ALPN_VERSION,
-    INFO_TLS_QUIC_ALPN_ONLY,
-};
-
 // flow tracking
 typedef struct ndpi_flow_info {
   u_int32_t flow_id;
   u_int32_t hashval;
-  u_int32_t src_ip; /* network order */
-  u_int32_t dst_ip; /* network order */
-  struct ndpi_in6_addr src_ip6; /* network order */
-  struct ndpi_in6_addr dst_ip6; /* network order */
-  u_int16_t src_port; /* network order */
-  u_int16_t dst_port; /* network order */
+  u_int32_t src_ip;
+  u_int32_t dst_ip;
+  u_int16_t src_port;
+  u_int16_t dst_port;
   u_int8_t detection_completed, protocol, bidirectional, check_extra_packets;
   u_int16_t vlan_id;
   ndpi_packet_tunnel tunnel_type;
@@ -198,84 +180,52 @@ typedef struct ndpi_flow_info {
   u_int32_t src2dst_packets, dst2src_packets;
   u_int32_t has_human_readeable_strings;
   char human_readeable_string_buffer[32];
-  char *risk_str;
 
   // result only, not used for flow identification
   ndpi_protocol detected_protocol;
-  ndpi_confidence_t confidence;
 
   // Flow data analysis
-  pkt_timeval src2dst_last_pkt_time, dst2src_last_pkt_time, flow_last_pkt_time;
   struct ndpi_analyze_struct *iat_c_to_s, *iat_s_to_c, *iat_flow,
     *pktlen_c_to_s, *pktlen_s_to_c;
 
-  enum info_type info_type;
-  union {
-    char info[256];
-    struct {
-      char alpn[128];
-      char tls_supported_versions[128];
-    } tls_quic;
-    struct {
-      unsigned char auth_failed;
-      char username[127];
-      char password[128];
-    } ftp_imap_pop_smtp;
-    struct {
-      char domain[85];
-      char hostname[85];
-      char username[86];
-    } kerberos;
-  };
-
+  char info[160];
   char flow_extra_info[16];
-  char host_server_name[80]; /* Hostname/SNI */
-  char *bittorent_hash;
-  char *dhcp_fingerprint;
-  char *dhcp_class_ident;
+  char host_server_name[240];
+  char bittorent_hash[41];
+  char dhcp_fingerprint[48];
   ndpi_risk risk;
   
   struct {
     u_int16_t ssl_version;
-    char server_info[64],
+    char client_requested_server_name[64], server_info[64],
       client_hassh[33], server_hassh[33], *server_names,
       *tls_alpn, *tls_supported_versions,
       *tls_issuerDN, *tls_subjectDN,
       ja3_client[33], ja3_server[33],
       sha1_cert_fingerprint[20];
     u_int8_t sha1_cert_fingerprint_set;
-    struct tls_heuristics browser_heuristics;
-    
     struct {
       u_int16_t cipher_suite;
       char *esni;
     } encrypted_sni;    
-
     time_t notBefore, notAfter;
     u_int16_t server_cipher;
     ndpi_cipher_weakness client_unsafe_cipher, server_unsafe_cipher;
   } ssh_tls;
 
   struct {
-    char url[256], request_content_type[64], content_type[64], user_agent[256];
+    char url[256], content_type[64], user_agent[128];
     u_int response_status_code;
   } http;
 
   struct {
-    char *username, *password;
+    char username[32], password[32];
   } telnet;
 
   void *src_id, *dst_id;
 
-  struct ndpi_entropy *entropy;
-  struct ndpi_entropy *last_entropy;
-
-  /* Payload lenght bins */
-#ifdef DIRECTION_BINS
-  struct ndpi_bin payload_len_bin_src2dst, payload_len_bin_dst2src;
-#else
-  struct ndpi_bin payload_len_bin;
-#endif
+  struct ndpi_entropy entropy;
+  struct ndpi_entropy last_entropy;
 } ndpi_flow_info_t;
 
 
@@ -289,13 +239,10 @@ typedef struct ndpi_stats {
   u_int64_t protocol_counter_bytes[NDPI_MAX_SUPPORTED_PROTOCOLS + NDPI_MAX_NUM_CUSTOM_PROTOCOLS + 1];
   u_int32_t protocol_flows[NDPI_MAX_SUPPORTED_PROTOCOLS + NDPI_MAX_NUM_CUSTOM_PROTOCOLS + 1];
   u_int32_t ndpi_flow_count;
-  u_int32_t flow_count[3];
   u_int64_t tcp_count, udp_count;
   u_int64_t mpls_count, pppoe_count, vlan_count, fragmented_count;
   u_int64_t packet_len[6];
   u_int16_t max_packet_len;
-  u_int64_t dpi_packet_count[3];
-  u_int64_t flow_confidence[NDPI_CONFIDENCE_MAX];
 } ndpi_stats_t;
 
 
@@ -303,7 +250,6 @@ typedef struct ndpi_stats {
 typedef struct ndpi_workflow_prefs {
   u_int8_t decode_tunnels;
   u_int8_t quiet_mode;
-  u_int8_t ignore_vlanid;
   u_int32_t num_roots;
   u_int32_t max_ndpi_flows;
 } ndpi_workflow_prefs_t;
@@ -333,17 +279,14 @@ typedef struct ndpi_workflow {
   void **ndpi_flows_root;
   struct ndpi_detection_module_struct *ndpi_struct;
   u_int32_t num_allocated_flows;
-
-  /* CSV,TLV,JSON serialization interface */
-  ndpi_serializer ndpi_serializer;
-} ndpi_workflow_t;
+ } ndpi_workflow_t;
 
 
 /* TODO: remove wrappers parameters and use ndpi global, when their initialization will be fixed... */
-struct ndpi_workflow * ndpi_workflow_init(const struct ndpi_workflow_prefs * prefs, pcap_t * pcap_handle, int do_init_flows_root, ndpi_serialization_format serialization_format);
+struct ndpi_workflow * ndpi_workflow_init(const struct ndpi_workflow_prefs * prefs, pcap_t * pcap_handle);
 
 
-/* workflow main free function */
+ /* workflow main free function */
 void ndpi_workflow_free(struct ndpi_workflow * workflow);
 
 
@@ -357,10 +300,8 @@ void ndpi_free_flow_info_half(struct ndpi_flow_info *flow);
 /* Process a packet and update the workflow  */
 struct ndpi_proto ndpi_workflow_process_packet(struct ndpi_workflow * workflow,
 					       const struct pcap_pkthdr *header,
-					       const u_char *packet,
-					       ndpi_risk *flow_risk);
+					       const u_char *packet);
 
-int ndpi_is_datalink_supported(int datalink_type);
 
 /* flow callbacks for complete detected flow
    (ndpi_flow_info will be freed right after) */
@@ -376,25 +317,16 @@ static inline void ndpi_workflow_set_flow_giveup_callback(struct ndpi_workflow *
   workflow->__flow_giveup_udata = udata;
 }
 
-/* compare two nodes in workflow */
+ /* compare two nodes in workflow */
 int ndpi_workflow_node_cmp(const void *a, const void *b);
 void process_ndpi_collected_info(struct ndpi_workflow * workflow, struct ndpi_flow_info *flow);
 u_int32_t ethernet_crc32(const void* data, size_t n_bytes);
-void ndpi_flow_info_free_data(struct ndpi_flow_info *flow);
 void ndpi_flow_info_freer(void *node);
+void ndpi_free_flow_data_analysis(struct ndpi_flow_info *flow);
+void ndpi_free_flow_tls_data(struct ndpi_flow_info *flow);
 const char* print_cipher_id(u_int32_t cipher);
 float ndpi_flow_get_byte_count_entropy(const uint32_t byte_count[256], unsigned int num_bytes);
 
 extern int nDPI_LogLevel;
-
-#ifdef NDPI_ENABLE_DEBUG_MESSAGES
-#define LOG(log_level, args...)			\
-  {						\
-    if(log_level <= nDPI_LogLevel)		\
-      printf(args);				\
-  }
-#else
-#define LOG(...) {}
-#endif
 
 #endif

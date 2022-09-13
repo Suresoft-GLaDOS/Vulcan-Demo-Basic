@@ -32,13 +32,13 @@ static void ndpi_int_spotify_add_connection(struct ndpi_detection_module_struct 
 					    struct ndpi_flow_struct *flow,
 					    u_int8_t due_to_correlation)
 {
-  ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_SPOTIFY, NDPI_PROTOCOL_UNKNOWN, NDPI_CONFIDENCE_DPI);
+  ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_SPOTIFY, NDPI_PROTOCOL_UNKNOWN);
 }
 
 
 static void ndpi_check_spotify(struct ndpi_detection_module_struct *ndpi_struct, struct ndpi_flow_struct *flow)
 {
-  struct ndpi_packet_struct *packet = &ndpi_struct->packet;
+  struct ndpi_packet_struct *packet = &flow->packet;
   // const u_int8_t *packet_payload = packet->payload;
   u_int32_t payload_len = packet->payload_packet_len;
 
@@ -62,12 +62,12 @@ static void ndpi_check_spotify(struct ndpi_detection_module_struct *ndpi_struct,
        packet->payload[6] == 0x52 && (packet->payload[7] == 0x0e || packet->payload[7] == 0x0f) &&
        packet->payload[8] == 0x50 ) {
       NDPI_LOG_INFO(ndpi_struct, "found spotify tcp dissector\n");
-      ndpi_int_spotify_add_connection(ndpi_struct, flow, 0);
+      ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_SPOTIFY, NDPI_PROTOCOL_UNKNOWN);
     }
 
 
     if(packet->iph /* IPv4 Only: we need to support packet->iphv6 at some point */) {
-      /* if(flow->detected_protocol_stack[0] == NDPI_PROTOCOL_UNKNOWN) */ {
+      /* if(packet->detected_protocol_stack[0] == NDPI_PROTOCOL_UNKNOWN) */ {
 	/*
 	Spotify
 
@@ -89,12 +89,12 @@ static void ndpi_check_spotify(struct ndpi_detection_module_struct *ndpi_struct,
 
 	//printf("%08X - %08X\n", ntohl(packet->iph->saddr), ntohl(packet->iph->daddr));
 
-    unsigned long src_addr = ntohl(packet->iph->saddr);
-    unsigned long dst_addr = ntohl(packet->iph->daddr);
-    unsigned long src_addr_masked_22 = src_addr & 0xFFFFFC00; // */22
-    unsigned long dst_addr_masked_22 = dst_addr & 0xFFFFFC00; // */22
-    unsigned long src_addr_masked_24 = src_addr & 0xFFFFFF00; // */24
-    unsigned long dst_addr_masked_24 = dst_addr & 0xFFFFFF00; // */24
+    long src_addr = ntohl(packet->iph->saddr);
+    long dst_addr = ntohl(packet->iph->daddr);
+    long src_addr_masked_22 = src_addr & 0xFFFFFC00; // */22
+    long dst_addr_masked_22 = dst_addr & 0xFFFFFC00; // */22
+    long src_addr_masked_24 = src_addr & 0xFFFFFF00; // */24
+    long dst_addr_masked_24 = dst_addr & 0xFFFFFF00; // */24
 
 	if(   src_addr_masked_22 == 0x4E1F0800 /* 78.31.8.0 */
 	   || dst_addr_masked_22 == 0x4E1F0800 /* 78.31.8.0 */
@@ -109,7 +109,7 @@ static void ndpi_check_spotify(struct ndpi_detection_module_struct *ndpi_struct,
        || dst_addr_masked_24 == 0xC284A200 /* 194.132.162.0 */
 	   ) {
         NDPI_LOG_INFO(ndpi_struct, "found spotify via ip range\n");
-	ndpi_int_spotify_add_connection(ndpi_struct, flow, 0);
+	ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_SPOTIFY, NDPI_PROTOCOL_UNKNOWN);
 	  return;
 	}
       }
@@ -121,11 +121,15 @@ static void ndpi_check_spotify(struct ndpi_detection_module_struct *ndpi_struct,
 
 void ndpi_search_spotify(struct ndpi_detection_module_struct *ndpi_struct, struct ndpi_flow_struct *flow)
 {
+  struct ndpi_packet_struct *packet = &flow->packet;
+
   NDPI_LOG_DBG(ndpi_struct, "search spotify\n");
 
   /* skip marked packets */
-  if (flow->detected_protocol_stack[0] != NDPI_PROTOCOL_SPOTIFY) {
-    ndpi_check_spotify(ndpi_struct, flow);
+  if (packet->detected_protocol_stack[0] != NDPI_PROTOCOL_SPOTIFY) {
+    if (packet->tcp_retransmission == 0) {
+      ndpi_check_spotify(ndpi_struct, flow);
+    }
   }
 }
 
@@ -135,7 +139,7 @@ void init_spotify_dissector(struct ndpi_detection_module_struct *ndpi_struct, u_
   ndpi_set_bitmask_protocol_detection("SPOTIFY", ndpi_struct, detection_bitmask, *id,
 				      NDPI_PROTOCOL_SPOTIFY,
 				      ndpi_search_spotify,
-				      NDPI_SELECTION_BITMASK_PROTOCOL_V4_V6_TCP_OR_UDP_WITH_PAYLOAD_WITHOUT_RETRANSMISSION,
+				      NDPI_SELECTION_BITMASK_PROTOCOL_TCP_OR_UDP_WITH_PAYLOAD,
 				      SAVE_DETECTION_BITMASK_AS_UNKNOWN,
 				      ADD_TO_DETECTION_BITMASK);
 

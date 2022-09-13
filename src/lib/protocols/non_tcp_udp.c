@@ -1,8 +1,8 @@
 /*
  * non_tcp_udp.c
  *
- * Copyright (C) 2009-11 - ipoque GmbH
- * Copyright (C) 2011-22 - ntop.org
+ * Copyright (C) 2009-2011 by ipoque GmbH
+ * Copyright (C) 2011-20 - ntop.org
  *
  * This file is part of nDPI, an open source deep packet inspection
  * library based on the OpenDPI and PACE technology by ipoque GmbH
@@ -32,7 +32,7 @@
     if (NDPI_COMPARE_PROTOCOL_TO_BITMASK(ndpi_struct->detection_bitmask,nprot) != 0) \
       {									\
 	ndpi_set_detected_protocol(ndpi_struct, flow,			\
-				   nprot, NDPI_PROTOCOL_UNKNOWN, NDPI_CONFIDENCE_DPI);		\
+				   nprot, NDPI_PROTOCOL_UNKNOWN);		\
       }									\
   }
 
@@ -40,14 +40,16 @@
 void ndpi_search_in_non_tcp_udp(struct ndpi_detection_module_struct
 				*ndpi_struct, struct ndpi_flow_struct *flow)
 {
-  struct ndpi_packet_struct *packet = &ndpi_struct->packet;
+  struct ndpi_packet_struct *packet = &flow->packet;
 
   if (packet->iph == NULL) {
+#ifdef NDPI_DETECTION_SUPPORT_IPV6
     if (packet->iphv6 == NULL)
+#endif
       return;
   }
 
-  switch (flow->l4_proto) {
+  switch (packet->l4_protocol) {
   case NDPI_IPSEC_PROTOCOL_ESP:
   case NDPI_IPSEC_PROTOCOL_AH:
     set_protocol_and_bmask(NDPI_PROTOCOL_IP_IPSEC);

@@ -1,7 +1,7 @@
 /*
  * ndpi_community_id.c
  *
- * Copyright (C) 2011-22 - ntop.org
+ * Copyright (C) 2011-20 - ntop.org
  *
  * This file is part of nDPI, an open source deep packet inspection
  * library based on the OpenDPI and PACE technology by ipoque GmbH
@@ -21,13 +21,16 @@
  *
  */
 
+#ifdef HAVE_CONFIG_H
+#include "ndpi_config.h"
+#endif
+
 #include <stdlib.h>
 #include <errno.h>
 #include <sys/types.h>
 
 #include "ndpi_api.h"
 #include "ndpi_config.h"
-#include "ndpi_includes.h"
 
 #include <time.h>
 #ifndef WIN32
@@ -66,7 +69,7 @@
 
 /* **************************************************** */
 
-static u_int16_t ndpi_community_id_buf_copy(u_int8_t * const dst, const void * const src, u_int16_t len) {
+static ssize_t ndpi_community_id_buf_copy(u_int8_t * const dst, const void * const src, ssize_t len) {
   if(src)
     memcpy(dst, src, len);
   else
@@ -164,15 +167,13 @@ static int ndpi_community_id_peer_v4_is_less_than(u_int32_t ip1, u_int32_t ip2, 
 
 static int ndpi_community_id_peer_v6_is_less_than(struct ndpi_in6_addr *ip1, struct ndpi_in6_addr *ip2, u_int16_t p1, u_int16_t p2) {
   int comp = memcmp(ip1, ip2, sizeof(struct ndpi_in6_addr));
-
   return comp < 0 || (comp == 0 && p1 < p2);
 }
 
 /* **************************************************** */
 
-void ndpi_string_sha1_hash(const uint8_t *message, size_t len, u_char *hash /* 20-bytes */) {
+static void ndpi_community_id_sha1_hash(const uint8_t *message, size_t len, u_char *hash /* 20-bytes */) {
   SHA1_CTX ctx;
-
   SHA1Init(&ctx);
   SHA1Update(&ctx, message, len);
   SHA1Final(hash, &ctx);
@@ -181,11 +182,10 @@ void ndpi_string_sha1_hash(const uint8_t *message, size_t len, u_char *hash /* 2
 /* **************************************************** */
 
 /*
-  https://github.com/corelight/community-id-spec/blob/bda913f617389df07cdaa23606e11bbd318e265c/community-id.py#L285
+https://github.com/corelight/community-id-spec/blob/bda913f617389df07cdaa23606e11bbd318e265c/community-id.py#L285
 */
 static int ndpi_community_id_finalize_and_compute_hash(u_int8_t *comm_buf, u_int16_t off, u_int8_t l4_proto,
-						       u_int16_t src_port, u_int16_t dst_port,
-						       char *hash_buf, size_t hash_buf_len) {
+             u_int16_t src_port, u_int16_t dst_port, char *hash_buf, u_int8_t hash_buf_len) {
   u_int8_t pad = 0;
   uint32_t hash[5];
   char *community_id;
@@ -200,7 +200,7 @@ static int ndpi_community_id_finalize_and_compute_hash(u_int8_t *comm_buf, u_int
   switch(l4_proto) {
   case IPPROTO_ICMP:
   case IPPROTO_ICMPV6:
-  case NDPI_SCTP_PROTOCOL_TYPE:
+  case IPPROTO_SCTP:
   case IPPROTO_UDP:
   case IPPROTO_TCP:
     off += ndpi_community_id_buf_copy(&comm_buf[off], &src_port, sizeof(src_port));
@@ -209,12 +209,12 @@ static int ndpi_community_id_finalize_and_compute_hash(u_int8_t *comm_buf, u_int
   }
 
   /* Compute SHA1 */
-  ndpi_string_sha1_hash(comm_buf, off, (u_char*)hash);
+  ndpi_community_id_sha1_hash(comm_buf, off, (u_char*)hash);
 
   /* Base64 encoding */
   community_id = ndpi_base64_encode((u_int8_t*)hash, sizeof(hash));
 
-  if(community_id == NULL)
+  if (community_id == NULL)
     return -1;
 
 #if 0 /* Debug Info */
@@ -231,7 +231,7 @@ static int ndpi_community_id_finalize_and_compute_hash(u_int8_t *comm_buf, u_int
   printf("Base64: %s\n", community_id);
 #endif
 
-  if(hash_buf_len < 2 || hash_buf_len-2 < strlen(community_id)+1) {
+  if (hash_buf_len < 2 || hash_buf_len-2 < strlen(community_id)+1) {
     ndpi_free(community_id);
     return -1;
   }
@@ -281,7 +281,7 @@ int ndpi_flowv4_flow_hash(u_int8_t l4_proto, u_int32_t src_ip, u_int32_t dst_ip,
     src_port = icmp_type;
     dst_port = ndpi_community_id_icmp_type_to_code_v4(icmp_type, icmp_code, &icmp_one_way);
     break;
-  case NDPI_SCTP_PROTOCOL_TYPE:
+  case IPPROTO_SCTP:
   case IPPROTO_UDP:
   case IPPROTO_TCP:
     /* src/dst port ok */
@@ -340,7 +340,7 @@ int ndpi_flowv6_flow_hash(u_int8_t l4_proto, struct ndpi_in6_addr *src_ip, struc
     src_port = icmp_type;
     dst_port = ndpi_community_id_icmp_type_to_code_v6(icmp_type, icmp_code, &icmp_one_way);
     break;
-  case NDPI_SCTP_PROTOCOL_TYPE:
+  case IPPROTO_SCTP:
   case IPPROTO_UDP:
   case IPPROTO_TCP:
     /* src/dst port ok */

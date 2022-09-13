@@ -87,20 +87,18 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
 host_triplet = x86_64-pc-linux-gnu
-#am__append_1 = do-unit.sh
 subdir = tests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
-	$(top_srcdir)/m4/ax_pthread.m4 $(top_srcdir)/m4/libtool.m4 \
-	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
-	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_pthread.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/src/include/ndpi_config.h
-CONFIG_CLEAN_FILES = do.sh
+CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
@@ -326,11 +324,10 @@ TEST_LOGS = $(am__test_logs2:.test.log=.log)
 TEST_LOG_DRIVER = $(SHELL) $(top_srcdir)/test-driver
 TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
 	$(TEST_LOG_FLAGS)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/do.sh.in \
-	$(top_srcdir)/test-driver
+am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/test-driver
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing aclocal-1.16
-ADDITIONAL_LIBS = -lm
+ADDITIONAL_LIBS = 
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
@@ -338,23 +335,19 @@ AUTOCONF = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoconf
 AUTOHEADER = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoheader
 AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing automake-1.16
 AWK = gawk
-BUILD_FUZZTARGETS = 0
-BUILD_MINGW = 
-BUILD_MINGW_X64 = 
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -W -Wall -Wno-unused-parameter -Wno-unused-function -Wno-address-of-packed-member -g -O2 
+CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
 CUSTOM_NDPI = 
 CXX = g++
-CXXCPP = 
+CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DISABLE_NPCAP = 0
 DLLTOOL = false
 DL_LIB = 
 DPDK_TARGET = 
@@ -365,26 +358,20 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
 EXEEXT = 
-EXE_SUFFIX = 
-EXTRA_TARGETS = example tests tests/dga
 FGREP = /usr/bin/grep -F
-GIT_RELEASE = 4.3.0-1422-47d7e10
+GIT_RELEASE = 3.3.0-1425-1a9c361
 GREP = /usr/bin/grep
-HANDLE_TLS_SIGS = //
 HAVE_PTHREAD_SETAFFINITY_NP = 
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-JSONC_CFLAGS = 
-JSONC_LIBS = 
+JSON_C_LIB = 
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
-LIBM = -lm
 LIBOBJS = 
-LIBRRD = 
-LIBS =  
+LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIB_FUZZING_ENGINE = 
 LIPO = 
@@ -395,10 +382,10 @@ MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NDPI_API_VERSION = 15
-NDPI_MAJOR = 4
+NDPI_MAJOR = 3
 NDPI_MINOR = 3
 NDPI_PATCH = 0
-NDPI_VERSION_SHORT = 4.3.0
+NDPI_VERSION_SHORT = 3.3.0
 NM = /usr/bin/nm -B
 NMEDIT = 
 OBJDUMP = objdump
@@ -408,30 +395,23 @@ OTOOL64 =
 PACKAGE = libndpi
 PACKAGE_BUGREPORT = 
 PACKAGE_NAME = libndpi
-PACKAGE_STRING = libndpi 4.3.0
+PACKAGE_STRING = libndpi 3.3.0
 PACKAGE_TARNAME = libndpi
 PACKAGE_URL = 
-PACKAGE_VERSION = 4.3.0
+PACKAGE_VERSION = 3.3.0
 PATH_SEPARATOR = :
-PCAP_CFLAGS = 
 PCAP_INC = 
 PCAP_LIB = -lpcap
-PCAP_LIBS = 
-PCRE_ENABLED = 0
-PKG_CONFIG = /usr/bin/pkg-config
-PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = 
 PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
-PTHREAD_CXX = g++
-PTHREAD_LIBS = -lpthread
+PTHREAD_LIBS = 
 RANLIB = ranlib
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-USE_HOST_LIBGCRYPT = 0
-VERSION = 4.3.0
+SVN_DATE = 
+VERSION = 3.3.0
 abs_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tests
 abs_srcdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/tests
 abs_top_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
@@ -487,12 +467,8 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-TESTS = do.sh do-dga.sh $(am__append_1)
-EXTRA_DIST = pcap result performance \
-	unit/unit.c unit/Makefile.in \
-	dga/dga_evaluate.c dga/Makefile.in dga/README.md dga/test_dga.csv dga/test_non_dga.csv do-dga.sh \
-	do-unit.sh do.sh.in ossfuzz.sh
-
+TESTS = do.sh
+EXTRA_DIST = do.sh pcap result
 all: all-am
 
 .SUFFIXES:
@@ -526,8 +502,6 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-do.sh: $(top_builddir)/config.status $(srcdir)/do.sh.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -685,20 +659,6 @@ recheck: all
 do.sh.log: do.sh
 	@p='do.sh'; \
 	b='do.sh'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
-do-dga.sh.log: do-dga.sh
-	@p='do-dga.sh'; \
-	b='do-dga.sh'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
-do-unit.sh.log: do-unit.sh
-	@p='do-unit.sh'; \
-	b='do-unit.sh'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -872,9 +832,6 @@ uninstall-am:
 
 .PRECIOUS: Makefile
 
-
-all:
-	@echo -n ""
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -28,6 +28,9 @@
 #include <netinet/in.h>
 #if defined(__NetBSD__) || defined(__OpenBSD__)
 #include <netinet/in_systm.h>
+#if defined(__OpenBSD__)
+#include <pthread.h>
+#endif
 #endif
 #endif
 

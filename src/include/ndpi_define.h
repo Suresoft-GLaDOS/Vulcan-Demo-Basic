@@ -27,17 +27,15 @@
   gcc -E -dM - < /dev/null |grep ENDIAN
 */
 
-#if defined(__FreeBSD__) || defined(__NetBSD__)
-#include <sys/endian.h>
+#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+#include <machine/endian.h>
 #endif
 
 #ifdef __OpenBSD__
 #include <endian.h>
 #define __BYTE_ORDER BYTE_ORDER
 #if BYTE_ORDER == LITTLE_ENDIAN
-#ifndef __LITTLE_ENDIAN__
 #define __LITTLE_ENDIAN__
-#endif /* __LITTLE_ENDIAN__ */
 #else
 #define __BIG_ENDIAN__
 #endif/* BYTE_ORDER */
@@ -156,7 +154,7 @@
 
 /* misc definitions */
 #define NDPI_DEFAULT_MAX_TCP_RETRANSMISSION_WINDOW_SIZE 0x10000
-#define NDPI_DEFAULT_MAX_NUM_PKTS_PER_FLOW_TO_DISSECT   32
+
 
 /* TODO: rebuild all memory areas to have a more aligned memory block here */
 
@@ -165,6 +163,21 @@
 
 #define MAX_PACKET_COUNTER                                   65000
 #define MAX_DEFAULT_PORTS                                        5
+
+#define NDPI_DIRECTCONNECT_CONNECTION_IP_TICK_TIMEOUT          600
+#define NDPI_IRC_CONNECTION_TIMEOUT                            120
+#define NDPI_GNUTELLA_CONNECTION_TIMEOUT                        60
+#define NDPI_BATTLEFIELD_CONNECTION_TIMEOUT                     60
+#define NDPI_THUNDER_CONNECTION_TIMEOUT                         30
+#define NDPI_RTSP_CONNECTION_TIMEOUT                             5
+#define NDPI_TVANTS_CONNECTION_TIMEOUT                           5
+#define NDPI_YAHOO_DETECT_HTTP_CONNECTIONS                       1
+#define NDPI_YAHOO_LAN_VIDEO_TIMEOUT                            30
+#define NDPI_ZATTOO_CONNECTION_TIMEOUT                         120
+#define NDPI_ZATTOO_FLASH_TIMEOUT                                5
+#define NDPI_JABBER_STUN_TIMEOUT                                30
+#define NDPI_JABBER_FT_TIMEOUT				         5
+#define NDPI_SOULSEEK_CONNECTION_IP_TICK_TIMEOUT               600
 
 #ifdef NDPI_ENABLE_DEBUG_MESSAGES
  #define NDPI_LOG(proto, m, log_level, args...)		                                 \
@@ -183,7 +196,7 @@
   */
 
  #ifndef NDPI_CURRENT_PROTO
- #define NDPI_CURRENT_PROTO NDPI_PROTOCOL_UNKNOWN
+ #define NDPI_CURRENT_PROTO NDPI_PROTO_UNKNOWN
  #endif
 
  #define NDPI_LOG_ERR(mod, args...)		                                 \
@@ -240,7 +253,6 @@
   ((x.u6_addr.u6_addr64[0] < y.u6_addr.u6_addr64[0]) || ((x.u6_addr.u6_addr64[0] == y.u6_addr.u6_addr64[0]) && (x.u6_addr.u6_addr64[1] < y.u6_addr.u6_addr64[1])))
 
 #define NDPI_NUM_BITS              512
-#define NDPI_NUM_BITS_MASK         (512-1)
 
 #define NDPI_BITS /* 32 */ (sizeof(ndpi_ndpi_mask) * 8 /* number of bits in a byte */)        /* bits per mask */
 #define howmanybits(x, y)   (((x)+((y)-1))/(y))
@@ -262,18 +274,18 @@
 #define NDPI_BITMASK_SET_ALL(a)   NDPI_ONE(&a)
 #define NDPI_BITMASK_SET(a, b)    { memcpy(&a, &b, sizeof(NDPI_PROTOCOL_BITMASK)); }
 
-#define NDPI_SET_BIT(num, n)    num |= 1ULL << ( n )
-#define NDPI_CLR_BIT(num, n)    num &= ~(1ULL << ( n ))
-#define NDPI_CLR_BIT(num, n)    num &= ~(1ULL << ( n ))
-#define NDPI_ISSET_BIT(num, n)  (num & (1ULL << ( n )))
+#define NDPI_SET_BIT(num, n)    num |= 1UL << n
+#define NDPI_CLR_BIT(num, n)    num &= ~(1UL << n)
+#define NDPI_CLR_BIT(num, n)    num &= ~(1UL << n)
+#define NDPI_ISSET_BIT(num, n)  (num & (1 << n))
 #define NDPI_ZERO_BIT(num)      num = 0
 
 /* this is a very very tricky macro *g*,
  * the compiler will remove all shifts here if the protocol is static...
  */
-#define NDPI_ADD_PROTOCOL_TO_BITMASK(bmask,value)     NDPI_SET(&bmask,   value & NDPI_NUM_BITS_MASK)
-#define NDPI_DEL_PROTOCOL_FROM_BITMASK(bmask,value)   NDPI_CLR(&bmask,   value & NDPI_NUM_BITS_MASK)
-#define NDPI_COMPARE_PROTOCOL_TO_BITMASK(bmask,value) NDPI_ISSET(&bmask, value & NDPI_NUM_BITS_MASK)
+#define NDPI_ADD_PROTOCOL_TO_BITMASK(bmask,value)     NDPI_SET(&bmask,value)
+#define NDPI_DEL_PROTOCOL_FROM_BITMASK(bmask,value)   NDPI_CLR(&bmask,value)
+#define NDPI_COMPARE_PROTOCOL_TO_BITMASK(bmask,value) NDPI_ISSET(&bmask,value)
 
 #define NDPI_SAVE_AS_BITMASK(bmask,value)  { NDPI_ZERO(&bmask) ; NDPI_ADD_PROTOCOL_TO_BITMASK(bmask, value); }
 
@@ -297,25 +309,15 @@
 #define NDPI_IPIP_PROTOCOL_TYPE    0x04
 #define NDPI_ICMPV6_PROTOCOL_TYPE  0x3a
 
-#define NDPI_ARRAY_LENGTH(array) (sizeof(array) / sizeof((array)[0]))
-
 /* the get_uXX will return raw network packet bytes !! */
-#define get_u_int8_t(X,O)   (*(u_int8_t  *)((&(((u_int8_t *)X)[O]))))
-#define get_u_int16_t(X,O)  (*(u_int16_t *)((&(((u_int8_t *)X)[O]))))
-#define get_u_int32_t(X,O)  (*(u_int32_t *)((&(((u_int8_t *)X)[O]))))
-#if defined(__arm__)
-static inline u_int64_t get_u_int64_t(const u_int8_t* X, int O)
-{
-  u_int64_t tmp;
-  memcpy(&tmp, X + O, sizeof(tmp));
-  return tmp;
-}
-#else
-#define get_u_int64_t(X,O)  (*(u_int64_t *)((&(((u_int8_t *)X)[O]))))
-#endif // __arm__
+#define get_u_int8_t(X,O)  (*(u_int8_t *)(((u_int8_t *)X) + O))
+#define get_u_int16_t(X,O)  (*(u_int16_t *)(((u_int8_t *)X) + O))
+#define get_u_int32_t(X,O)  (*(u_int32_t *)(((u_int8_t *)X) + O))
+#define get_u_int64_t(X,O)  (*(u_int64_t *)(((u_int8_t *)X) + O))
 
 /* new definitions to get little endian from network bytes */
 #define get_ul8(X,O) get_u_int8_t(X,O)
+
 
 #if defined(__LITTLE_ENDIAN__) || defined(_LITTLE_ENDIAN)
 #define get_l16(X,O)  get_u_int16_t(X,O)
@@ -331,23 +333,14 @@ static inline u_int64_t get_u_int64_t(const u_int8_t* X, int O)
 /* define memory callback function */
 #define match_first_bytes(payload,st) (memcmp((payload),(st),(sizeof(st)-1))==0)
 
-#if defined(WIN32)
-#undef strtok_r
-#define strtok_r strtok_s
-
-#if BYTE_ORDER == LITTLE_ENDIAN
-#define le16toh(x) (x)
-#define le32toh(x) (x)
-#else
-#error "byte order not supported"
+#if defined(WIN32) && !defined(snprintf)
+#define snprintf _snprintf
 #endif
-
-#endif /* WIN32 */
 
 #define NDPI_MAX_DNS_REQUESTS                   16
 #define NDPI_MIN_NUM_STUN_DETECTION             8
 
-#define NDPI_MAJOR                              4
+#define NDPI_MAJOR                              3
 #define NDPI_MINOR                              3
 #define NDPI_PATCH                              0
 
@@ -357,10 +350,6 @@ static inline u_int64_t get_u_int64_t(const u_int8_t* X, int O)
 #define NDPI_CIPHER_INSECURE                    2
 
 #define NDPI_OPTIMAL_HLL_NUM_BUCKETS           16
-
-#define NDPI_MAX_NUM_TLS_APPL_BLOCKS            8
-
-//#define TLS_HANDLE_SIGNATURE_ALGORITMS 1
 
 #ifdef __APPLE__
 
@@ -382,73 +371,5 @@ static inline u_int64_t get_u_int64_t(const u_int8_t* X, int O)
 #define le64toh(x) OSSwapLittleToHostInt64(x)
 
 #endif /* __APPLE__ */
-
-
-#if defined(__MINGW32__)
-
-#if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-
-#define htobe16(x) htons(x)
-#define htole16(x) (x)
-#define be16toh(x) ntohs(x)
-#define le16toh(x) (x)
-#define htobe32(x) htonl(x)
-#define htole32(x) (x)
-#define be32toh(x) ntohl(x)
-#define le32toh(x) (x)
-#define htobe64(x) htonll(x)
-#define htole64(x) (x)
-#define be64toh(x) ntohll(x)
-#define le64toh(x) (x)
-
-#elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
-
-#define htobe16(x) (x)
-#define htole16(x) __builtin_bswap16(x)
-#define be16toh(x) (x)
-#define le16toh(x) __builtin_bswap16(x)
-#define htobe32(x) (x)
-#define htole32(x) __builtin_bswap32(x)
-#define be32toh(x) (x)
-#define le32toh(x) __builtin_bswap32(x)
-#define htobe64(x) (x)
-#define htole64(x) __builtin_bswap64(x)
-#define be64toh(x) (x)
-#define le64toh(x) __builtin_bswap64(x)
-
-#else
-#error Unexpected __BYTE_ORDER__
-
-#endif /* __BYTE_ORDER__ */
-#endif /* __MINGW32__ */
-
-
-#ifndef ETH_ARP
-#define ETH_ARP                0x0806
-#endif
-
-#ifndef ETH_P_IP
-#define ETH_P_IP               0x0800 	/* IPv4 */
-#endif
-
-#ifndef ETH_P_IPV6
-#define ETH_P_IPV6	       0x86dd	/* IPv6 */
-#endif
-
-#ifndef ETH_P_VLAN
-#define ETH_P_VLAN             0x8100
-#endif
-
-#ifndef ETH_P_MPLS_UNI
-#define ETH_P_MPLS_UNI         0x8847
-#endif
-
-#ifndef ETH_P_MPLS_MULTI
-#define ETH_P_MPLS_MULTI       0x8848
-#endif
-
-#ifndef ETH_P_PPPoE
-#define ETH_P_PPPoE            0x8864
-#endif
 
 #endif /* __NDPI_DEFINE_INCLUDE_FILE__ */

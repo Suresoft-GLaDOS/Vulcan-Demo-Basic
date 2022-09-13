@@ -53,7 +53,7 @@ static void set_websocket_detected(struct ndpi_detection_module_struct *ndpi_str
         ndpi_search_tcp_or_udp(ndpi_struct, flow);
 
         ndpi_int_reset_protocol(flow);
-        ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_WEBSOCKET, flow->guessed_host_protocol_id, NDPI_CONFIDENCE_DPI);
+        ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_WEBSOCKET, flow->guessed_host_protocol_id);
     }
 }
 
@@ -61,7 +61,7 @@ static void set_websocket_detected(struct ndpi_detection_module_struct *ndpi_str
 
 static void ndpi_check_websocket(struct ndpi_detection_module_struct *ndpi_struct, struct ndpi_flow_struct *flow)
 {
-    struct ndpi_packet_struct *packet = &ndpi_struct->packet;
+    struct ndpi_packet_struct *packet = &flow->packet;
 
     if (packet->payload_packet_len < sizeof(u_int16_t))
     {
@@ -98,6 +98,8 @@ static void ndpi_check_websocket(struct ndpi_detection_module_struct *ndpi_struc
 
 void ndpi_search_websocket(struct ndpi_detection_module_struct *ndpi_struct, struct ndpi_flow_struct *flow)
 {
+    struct ndpi_packet_struct *packet = &flow->packet;
+
     // Break after 6 packets.
     if (flow->packet_counter > 10)
     {
@@ -105,7 +107,7 @@ void ndpi_search_websocket(struct ndpi_detection_module_struct *ndpi_struct, str
         return;
     }
 
-    if (flow->detected_protocol_stack[0] != NDPI_PROTOCOL_UNKNOWN)
+    if (packet->detected_protocol_stack[0] != NDPI_PROTOCOL_UNKNOWN)
     {
         return;
     }

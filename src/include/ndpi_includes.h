@@ -32,13 +32,13 @@
 #include <ctype.h>
 #include <time.h>
 #include <limits.h>
-#include <stdbool.h>
 
 #ifdef WIN32
 #include "ndpi_win32.h"
 #else
 #include <sys/types.h>
 #include <sys/param.h>
+#include <pthread.h>
 #include <arpa/inet.h>
 #include <sys/time.h>
 #include <sys/socket.h>
@@ -57,16 +57,14 @@
 #if defined __NetBSD__ || defined __OpenBSD__
 #include <netinet/in_systm.h>
 
+#ifdef __OpenBSD__
+#include <pthread.h>
+
+#endif
 #endif
 #endif
 #endif
 
 #endif	/* Win32 */
-
-#if defined __OpenBSD__
-#include "ndpi_includes_OpenBSD.h"
-#else
-typedef struct timeval pkt_timeval;
-#endif /* __OpenBSD__ */
 
 #endif /* __NDPI_INCLUDES_H__ */

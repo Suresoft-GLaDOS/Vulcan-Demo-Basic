@@ -88,20 +88,17 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
 host_triplet = x86_64-pc-linux-gnu
-bin_PROGRAMS = fuzz_process_packet$(EXEEXT) \
-	fuzz_process_packet_with_main$(EXEEXT) \
-	fuzz_ndpi_reader$(EXEEXT) fuzz_ndpi_reader_with_main$(EXEEXT)
+bin_PROGRAMS = fuzz_process_packet$(EXEEXT) fuzz_ndpi_reader$(EXEEXT)
 #am__append_1 = $(LIB_FUZZING_ENGINE)
-#am__append_2 = $(LIB_FUZZING_ENGINE)
+am__append_2 = onefile.c
 #am__append_3 = $(LIB_FUZZING_ENGINE)
-#am__append_4 = $(LIB_FUZZING_ENGINE)
+am__append_4 = onefile.c
 subdir = fuzz
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
-	$(top_srcdir)/m4/ax_pthread.m4 $(top_srcdir)/m4/libtool.m4 \
-	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
-	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_pthread.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
@@ -111,25 +108,19 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
+am__fuzz_ndpi_reader_SOURCES_DIST = fuzz_ndpi_reader.c onefile.c
+am__objects_1 =  \
+	fuzz_ndpi_reader-onefile.$(OBJEXT)
 am_fuzz_ndpi_reader_OBJECTS =  \
-	fuzz_ndpi_reader-fuzz_ndpi_reader.$(OBJEXT)
+	fuzz_ndpi_reader-fuzz_ndpi_reader.$(OBJEXT) $(am__objects_1)
 fuzz_ndpi_reader_OBJECTS = $(am_fuzz_ndpi_reader_OBJECTS)
-fuzz_ndpi_reader_DEPENDENCIES = ../example/libndpiReader.a \
-	../src/lib/libndpi.a
-am_fuzz_ndpi_reader_with_main_OBJECTS =  \
-	fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.$(OBJEXT)
-fuzz_ndpi_reader_with_main_OBJECTS =  \
-	$(am_fuzz_ndpi_reader_with_main_OBJECTS)
-fuzz_ndpi_reader_with_main_DEPENDENCIES = ../src/lib/libndpi.a
-am_fuzz_process_packet_OBJECTS =  \
-	fuzz_process_packet-fuzz_process_packet.$(OBJEXT)
+fuzz_ndpi_reader_LDADD = $(LDADD)
+am__fuzz_process_packet_SOURCES_DIST = fuzz_process_packet.c onefile.c
+am__objects_2 = onefile.$(OBJEXT)
+am_fuzz_process_packet_OBJECTS = fuzz_process_packet.$(OBJEXT) \
+	$(am__objects_2)
 fuzz_process_packet_OBJECTS = $(am_fuzz_process_packet_OBJECTS)
-fuzz_process_packet_DEPENDENCIES = ../src/lib/libndpi.a
-am_fuzz_process_packet_with_main_OBJECTS =  \
-	fuzz_process_packet_with_main-fuzz_process_packet.$(OBJEXT)
-fuzz_process_packet_with_main_OBJECTS =  \
-	$(am_fuzz_process_packet_with_main_OBJECTS)
-fuzz_process_packet_with_main_DEPENDENCIES = ../src/lib/libndpi.a
+fuzz_process_packet_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -147,9 +138,8 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade =  \
 	./$(DEPDIR)/fuzz_ndpi_reader-fuzz_ndpi_reader.Po \
-	./$(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Po \
-	./$(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Po \
-	./$(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Po
+	./$(DEPDIR)/fuzz_ndpi_reader-onefile.Po \
+	./$(DEPDIR)/fuzz_process_packet.Po ./$(DEPDIR)/onefile.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
@@ -173,14 +163,9 @@ AM_V_CCLD = $(am__v_CCLD_$(V))
 am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(fuzz_ndpi_reader_SOURCES) \
-	$(fuzz_ndpi_reader_with_main_SOURCES) \
-	$(fuzz_process_packet_SOURCES) \
-	$(fuzz_process_packet_with_main_SOURCES)
-DIST_SOURCES = $(fuzz_ndpi_reader_SOURCES) \
-	$(fuzz_ndpi_reader_with_main_SOURCES) \
-	$(fuzz_process_packet_SOURCES) \
-	$(fuzz_process_packet_with_main_SOURCES)
+SOURCES = $(fuzz_ndpi_reader_SOURCES) $(fuzz_process_packet_SOURCES)
+DIST_SOURCES = $(am__fuzz_ndpi_reader_SOURCES_DIST) \
+	$(am__fuzz_process_packet_SOURCES_DIST)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -208,7 +193,7 @@ CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing aclocal-1.16
-ADDITIONAL_LIBS = -lm
+ADDITIONAL_LIBS = 
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
@@ -216,23 +201,19 @@ AUTOCONF = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoconf
 AUTOHEADER = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoheader
 AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing automake-1.16
 AWK = gawk
-BUILD_FUZZTARGETS = 0
-BUILD_MINGW = 
-BUILD_MINGW_X64 = 
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -W -Wall -Wno-unused-parameter -Wno-unused-function -Wno-address-of-packed-member -g -O2 
+CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
 CUSTOM_NDPI = 
 CXX = g++
-CXXCPP = 
+CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DISABLE_NPCAP = 0
 DLLTOOL = false
 DL_LIB = 
 DPDK_TARGET = 
@@ -243,26 +224,20 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
 EXEEXT = 
-EXE_SUFFIX = 
-EXTRA_TARGETS = example tests tests/dga
 FGREP = /usr/bin/grep -F
-GIT_RELEASE = 4.3.0-1422-47d7e10
+GIT_RELEASE = 3.3.0-1425-1a9c361
 GREP = /usr/bin/grep
-HANDLE_TLS_SIGS = //
 HAVE_PTHREAD_SETAFFINITY_NP = 
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-JSONC_CFLAGS = 
-JSONC_LIBS = 
+JSON_C_LIB = 
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
-LIBM = -lm
 LIBOBJS = 
-LIBRRD = 
-LIBS =  
+LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIB_FUZZING_ENGINE = 
 LIPO = 
@@ -273,10 +248,10 @@ MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NDPI_API_VERSION = 15
-NDPI_MAJOR = 4
+NDPI_MAJOR = 3
 NDPI_MINOR = 3
 NDPI_PATCH = 0
-NDPI_VERSION_SHORT = 4.3.0
+NDPI_VERSION_SHORT = 3.3.0
 NM = /usr/bin/nm -B
 NMEDIT = 
 OBJDUMP = objdump
@@ -286,30 +261,23 @@ OTOOL64 =
 PACKAGE = libndpi
 PACKAGE_BUGREPORT = 
 PACKAGE_NAME = libndpi
-PACKAGE_STRING = libndpi 4.3.0
+PACKAGE_STRING = libndpi 3.3.0
 PACKAGE_TARNAME = libndpi
 PACKAGE_URL = 
-PACKAGE_VERSION = 4.3.0
+PACKAGE_VERSION = 3.3.0
 PATH_SEPARATOR = :
-PCAP_CFLAGS = 
 PCAP_INC = 
 PCAP_LIB = -lpcap
-PCAP_LIBS = 
-PCRE_ENABLED = 0
-PKG_CONFIG = /usr/bin/pkg-config
-PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = 
 PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
-PTHREAD_CXX = g++
-PTHREAD_LIBS = -lpthread
+PTHREAD_LIBS = 
 RANLIB = ranlib
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-USE_HOST_LIBGCRYPT = 0
-VERSION = 4.3.0
+SVN_DATE = 
+VERSION = 3.3.0
 abs_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/fuzz
 abs_srcdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/fuzz
 abs_top_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
@@ -365,48 +333,26 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-fuzz_process_packet_SOURCES = fuzz_process_packet.c
-fuzz_process_packet_CFLAGS = $(am__append_1)
-fuzz_process_packet_LDADD = ../src/lib/libndpi.a
-fuzz_process_packet_LDFLAGS = $(ADDITIONAL_LIBS) $(LIBS) \
-	$(am__append_2)
+fuzz_process_packet_SOURCES = fuzz_process_packet.c $(am__append_2)
+fuzz_process_packet_LDFLAGS = ../src/lib/libndpi.a $(ADDITIONAL_LIBS) \
+	$(am__append_1)
 # force usage of CXX for linker
 fuzz_process_packet_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
     $(LIBTOOLFLAGS) --mode=link $(CXX) $(AM_CXXFLAGS) $(CXXFLAGS) \
     $(fuzz_process_packet_LDFLAGS) $(LDFLAGS) -o $@
 
-fuzz_process_packet_with_main_SOURCES = fuzz_process_packet.c
-fuzz_process_packet_with_main_CFLAGS = -DBUILD_MAIN
-fuzz_process_packet_with_main_LDADD = ../src/lib/libndpi.a
-fuzz_process_packet_with_main_LDFLAGS = $(ADDITIONAL_LIBS) $(LIBS)
-# force usage of CXX for linker
-fuzz_process_packet_with_main_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-    $(LIBTOOLFLAGS) --mode=link $(CXX) $(AM_CXXFLAGS) $(CXXFLAGS) \
-    $(fuzz_process_packet_with_main_LDFLAGS) $(LDFLAGS) -o $@
-
-fuzz_ndpi_reader_SOURCES = fuzz_ndpi_reader.c
-fuzz_ndpi_reader_CFLAGS = -I../example/ $(am__append_3)
-fuzz_ndpi_reader_LDADD = ../example/libndpiReader.a ../src/lib/libndpi.a
-fuzz_ndpi_reader_LDFLAGS = $(PCAP_LIB) $(ADDITIONAL_LIBS) $(LIBS) \
-	$(am__append_4)
+fuzz_ndpi_reader_SOURCES = fuzz_ndpi_reader.c $(am__append_4)
+fuzz_ndpi_reader_CFLAGS = -I../example/
+fuzz_ndpi_reader_LDFLAGS = ../example/libndpiReader.a \
+	../src/lib/libndpi.a $(PCAP_LIB) $(ADDITIONAL_LIBS) \
+	$(am__append_3)
 # force usage of CXX for linker
 fuzz_ndpi_reader_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
     $(LIBTOOLFLAGS) --mode=link $(CXX) $(AM_CXXFLAGS) $(CXXFLAGS) \
     $(fuzz_ndpi_reader_LDFLAGS) $(LDFLAGS) -o $@
 
-fuzz_ndpi_reader_with_main_SOURCES = fuzz_ndpi_reader.c
-fuzz_ndpi_reader_with_main_CFLAGS = -I../example/ -DBUILD_MAIN
-fuzz_ndpi_reader_with_main_LDADD = ../src/lib/libndpi.a
-fuzz_ndpi_reader_with_main_LDFLAGS = ../example/libndpiReader.a $(PCAP_LIB) $(ADDITIONAL_LIBS) $(LIBS)
-# force usage of CXX for linker
-fuzz_ndpi_reader_with_main_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-    $(LIBTOOLFLAGS) --mode=link $(CXX) $(AM_CXXFLAGS) $(CXXFLAGS) \
-    $(fuzz_ndpi_reader_with_main_LDFLAGS) $(LDFLAGS) -o $@
-
-
-# required for Google oss-fuzz
-# see https://github.com/google/oss-fuzz/tree/master/projects/ndpi
-testpcaps := $(wildcard ../tests/pcap/*.pcap*)
+EXTRA_fuzz_ndpi_reader_DEPENDENCIES = fuzz_ndpi_reader_seed_corpus.zip
+testpcaps := $(wildcard ../tests/pcap/*.pcap)
 all: all-am
 
 .SUFFIXES:
@@ -494,17 +440,9 @@ fuzz_ndpi_reader$(EXEEXT): $(fuzz_ndpi_reader_OBJECTS) $(fuzz_ndpi_reader_DEPEND
 	@rm -f fuzz_ndpi_reader$(EXEEXT)
 	$(AM_V_GEN)$(fuzz_ndpi_reader_LINK) $(fuzz_ndpi_reader_OBJECTS) $(fuzz_ndpi_reader_LDADD) $(LIBS)
 
-fuzz_ndpi_reader_with_main$(EXEEXT): $(fuzz_ndpi_reader_with_main_OBJECTS) $(fuzz_ndpi_reader_with_main_DEPENDENCIES) $(EXTRA_fuzz_ndpi_reader_with_main_DEPENDENCIES) 
-	@rm -f fuzz_ndpi_reader_with_main$(EXEEXT)
-	$(AM_V_GEN)$(fuzz_ndpi_reader_with_main_LINK) $(fuzz_ndpi_reader_with_main_OBJECTS) $(fuzz_ndpi_reader_with_main_LDADD) $(LIBS)
-
 fuzz_process_packet$(EXEEXT): $(fuzz_process_packet_OBJECTS) $(fuzz_process_packet_DEPENDENCIES) $(EXTRA_fuzz_process_packet_DEPENDENCIES) 
 	@rm -f fuzz_process_packet$(EXEEXT)
 	$(AM_V_GEN)$(fuzz_process_packet_LINK) $(fuzz_process_packet_OBJECTS) $(fuzz_process_packet_LDADD) $(LIBS)
-
-fuzz_process_packet_with_main$(EXEEXT): $(fuzz_process_packet_with_main_OBJECTS) $(fuzz_process_packet_with_main_DEPENDENCIES) $(EXTRA_fuzz_process_packet_with_main_DEPENDENCIES) 
-	@rm -f fuzz_process_packet_with_main$(EXEEXT)
-	$(AM_V_GEN)$(fuzz_process_packet_with_main_LINK) $(fuzz_process_packet_with_main_OBJECTS) $(fuzz_process_packet_with_main_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -513,9 +451,9 @@ distclean-compile:
 	-rm -f *.tab.c
 
 include ./$(DEPDIR)/fuzz_ndpi_reader-fuzz_ndpi_reader.Po # am--include-marker
-include ./$(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Po # am--include-marker
-include ./$(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Po # am--include-marker
-include ./$(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Po # am--include-marker
+include ./$(DEPDIR)/fuzz_ndpi_reader-onefile.Po # am--include-marker
+include ./$(DEPDIR)/fuzz_process_packet.Po # am--include-marker
+include ./$(DEPDIR)/onefile.Po # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -561,47 +499,19 @@ fuzz_ndpi_reader-fuzz_ndpi_reader.obj: fuzz_ndpi_reader.c
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_CFLAGS) $(CFLAGS) -c -o fuzz_ndpi_reader-fuzz_ndpi_reader.obj `if test -f 'fuzz_ndpi_reader.c'; then $(CYGPATH_W) 'fuzz_ndpi_reader.c'; else $(CYGPATH_W) '$(srcdir)/fuzz_ndpi_reader.c'; fi`
 
-fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.o: fuzz_ndpi_reader.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_with_main_CFLAGS) $(CFLAGS) -MT fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.o -MD -MP -MF $(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Tpo -c -o fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.o `test -f 'fuzz_ndpi_reader.c' || echo '$(srcdir)/'`fuzz_ndpi_reader.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Tpo $(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Po
-#	$(AM_V_CC)source='fuzz_ndpi_reader.c' object='fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.o' libtool=no \
+fuzz_ndpi_reader-onefile.o: onefile.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_CFLAGS) $(CFLAGS) -MT fuzz_ndpi_reader-onefile.o -MD -MP -MF $(DEPDIR)/fuzz_ndpi_reader-onefile.Tpo -c -o fuzz_ndpi_reader-onefile.o `test -f 'onefile.c' || echo '$(srcdir)/'`onefile.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/fuzz_ndpi_reader-onefile.Tpo $(DEPDIR)/fuzz_ndpi_reader-onefile.Po
+#	$(AM_V_CC)source='onefile.c' object='fuzz_ndpi_reader-onefile.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_with_main_CFLAGS) $(CFLAGS) -c -o fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.o `test -f 'fuzz_ndpi_reader.c' || echo '$(srcdir)/'`fuzz_ndpi_reader.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_CFLAGS) $(CFLAGS) -c -o fuzz_ndpi_reader-onefile.o `test -f 'onefile.c' || echo '$(srcdir)/'`onefile.c
 
-fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.obj: fuzz_ndpi_reader.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_with_main_CFLAGS) $(CFLAGS) -MT fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.obj -MD -MP -MF $(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Tpo -c -o fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.obj `if test -f 'fuzz_ndpi_reader.c'; then $(CYGPATH_W) 'fuzz_ndpi_reader.c'; else $(CYGPATH_W) '$(srcdir)/fuzz_ndpi_reader.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Tpo $(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Po
-#	$(AM_V_CC)source='fuzz_ndpi_reader.c' object='fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.obj' libtool=no \
+fuzz_ndpi_reader-onefile.obj: onefile.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_CFLAGS) $(CFLAGS) -MT fuzz_ndpi_reader-onefile.obj -MD -MP -MF $(DEPDIR)/fuzz_ndpi_reader-onefile.Tpo -c -o fuzz_ndpi_reader-onefile.obj `if test -f 'onefile.c'; then $(CYGPATH_W) 'onefile.c'; else $(CYGPATH_W) '$(srcdir)/onefile.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/fuzz_ndpi_reader-onefile.Tpo $(DEPDIR)/fuzz_ndpi_reader-onefile.Po
+#	$(AM_V_CC)source='onefile.c' object='fuzz_ndpi_reader-onefile.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_with_main_CFLAGS) $(CFLAGS) -c -o fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.obj `if test -f 'fuzz_ndpi_reader.c'; then $(CYGPATH_W) 'fuzz_ndpi_reader.c'; else $(CYGPATH_W) '$(srcdir)/fuzz_ndpi_reader.c'; fi`
-
-fuzz_process_packet-fuzz_process_packet.o: fuzz_process_packet.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_process_packet_CFLAGS) $(CFLAGS) -MT fuzz_process_packet-fuzz_process_packet.o -MD -MP -MF $(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Tpo -c -o fuzz_process_packet-fuzz_process_packet.o `test -f 'fuzz_process_packet.c' || echo '$(srcdir)/'`fuzz_process_packet.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Tpo $(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Po
-#	$(AM_V_CC)source='fuzz_process_packet.c' object='fuzz_process_packet-fuzz_process_packet.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_process_packet_CFLAGS) $(CFLAGS) -c -o fuzz_process_packet-fuzz_process_packet.o `test -f 'fuzz_process_packet.c' || echo '$(srcdir)/'`fuzz_process_packet.c
-
-fuzz_process_packet-fuzz_process_packet.obj: fuzz_process_packet.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_process_packet_CFLAGS) $(CFLAGS) -MT fuzz_process_packet-fuzz_process_packet.obj -MD -MP -MF $(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Tpo -c -o fuzz_process_packet-fuzz_process_packet.obj `if test -f 'fuzz_process_packet.c'; then $(CYGPATH_W) 'fuzz_process_packet.c'; else $(CYGPATH_W) '$(srcdir)/fuzz_process_packet.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Tpo $(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Po
-#	$(AM_V_CC)source='fuzz_process_packet.c' object='fuzz_process_packet-fuzz_process_packet.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_process_packet_CFLAGS) $(CFLAGS) -c -o fuzz_process_packet-fuzz_process_packet.obj `if test -f 'fuzz_process_packet.c'; then $(CYGPATH_W) 'fuzz_process_packet.c'; else $(CYGPATH_W) '$(srcdir)/fuzz_process_packet.c'; fi`
-
-fuzz_process_packet_with_main-fuzz_process_packet.o: fuzz_process_packet.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_process_packet_with_main_CFLAGS) $(CFLAGS) -MT fuzz_process_packet_with_main-fuzz_process_packet.o -MD -MP -MF $(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Tpo -c -o fuzz_process_packet_with_main-fuzz_process_packet.o `test -f 'fuzz_process_packet.c' || echo '$(srcdir)/'`fuzz_process_packet.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Tpo $(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Po
-#	$(AM_V_CC)source='fuzz_process_packet.c' object='fuzz_process_packet_with_main-fuzz_process_packet.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_process_packet_with_main_CFLAGS) $(CFLAGS) -c -o fuzz_process_packet_with_main-fuzz_process_packet.o `test -f 'fuzz_process_packet.c' || echo '$(srcdir)/'`fuzz_process_packet.c
-
-fuzz_process_packet_with_main-fuzz_process_packet.obj: fuzz_process_packet.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_process_packet_with_main_CFLAGS) $(CFLAGS) -MT fuzz_process_packet_with_main-fuzz_process_packet.obj -MD -MP -MF $(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Tpo -c -o fuzz_process_packet_with_main-fuzz_process_packet.obj `if test -f 'fuzz_process_packet.c'; then $(CYGPATH_W) 'fuzz_process_packet.c'; else $(CYGPATH_W) '$(srcdir)/fuzz_process_packet.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Tpo $(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Po
-#	$(AM_V_CC)source='fuzz_process_packet.c' object='fuzz_process_packet_with_main-fuzz_process_packet.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_process_packet_with_main_CFLAGS) $(CFLAGS) -c -o fuzz_process_packet_with_main-fuzz_process_packet.obj `if test -f 'fuzz_process_packet.c'; then $(CYGPATH_W) 'fuzz_process_packet.c'; else $(CYGPATH_W) '$(srcdir)/fuzz_process_packet.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(fuzz_ndpi_reader_CFLAGS) $(CFLAGS) -c -o fuzz_ndpi_reader-onefile.obj `if test -f 'onefile.c'; then $(CYGPATH_W) 'onefile.c'; else $(CYGPATH_W) '$(srcdir)/onefile.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -737,9 +647,9 @@ clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
 
 distclean: distclean-am
 		-rm -f ./$(DEPDIR)/fuzz_ndpi_reader-fuzz_ndpi_reader.Po
-	-rm -f ./$(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Po
-	-rm -f ./$(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Po
-	-rm -f ./$(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Po
+	-rm -f ./$(DEPDIR)/fuzz_ndpi_reader-onefile.Po
+	-rm -f ./$(DEPDIR)/fuzz_process_packet.Po
+	-rm -f ./$(DEPDIR)/onefile.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -786,9 +696,9 @@ installcheck-am:
 
 maintainer-clean: maintainer-clean-am
 		-rm -f ./$(DEPDIR)/fuzz_ndpi_reader-fuzz_ndpi_reader.Po
-	-rm -f ./$(DEPDIR)/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Po
-	-rm -f ./$(DEPDIR)/fuzz_process_packet-fuzz_process_packet.Po
-	-rm -f ./$(DEPDIR)/fuzz_process_packet_with_main-fuzz_process_packet.Po
+	-rm -f ./$(DEPDIR)/fuzz_ndpi_reader-onefile.Po
+	-rm -f ./$(DEPDIR)/fuzz_process_packet.Po
+	-rm -f ./$(DEPDIR)/onefile.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

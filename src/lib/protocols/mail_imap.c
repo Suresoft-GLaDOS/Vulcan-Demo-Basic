@@ -1,7 +1,7 @@
 /*
  * mail_imap.c
  *
- * Copyright (C) 2016-22 - ntop.org
+ * Copyright (C) 2016-20 - ntop.org
  *
  * This file is part of nDPI, an open source deep packet inspection
  * library based on the OpenDPI and PACE technology by ipoque GmbH
@@ -30,15 +30,14 @@
 
 /* #define IMAP_DEBUG 1*/
 
-static void ndpi_int_mail_imap_add_connection(struct ndpi_detection_module_struct *ndpi_struct, struct ndpi_flow_struct *flow,
-					      u_int16_t protocol) {
-  flow->guessed_protocol_id = NDPI_PROTOCOL_UNKNOWN; /* Avoid IMAPS to be used s sub-protocol */
-  ndpi_set_detected_protocol(ndpi_struct, flow, protocol, NDPI_PROTOCOL_UNKNOWN, NDPI_CONFIDENCE_DPI);
+static void ndpi_int_mail_imap_add_connection(struct ndpi_detection_module_struct *ndpi_struct, struct ndpi_flow_struct *flow)
+{
+  ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_MAIL_IMAP, NDPI_PROTOCOL_UNKNOWN);
 }
 
 void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct, struct ndpi_flow_struct *flow)
 {
-  struct ndpi_packet_struct *packet = &ndpi_struct->packet;
+  struct ndpi_packet_struct *packet = &flow->packet;       
   u_int16_t i = 0;
   u_int16_t space_pos = 0;
   u_int16_t command_start = 0;
@@ -48,7 +47,7 @@ void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct,
   NDPI_LOG_DBG(ndpi_struct, "search IMAP_IMAP\n");
 
 #ifdef IMAP_DEBUG
-  printf("%s() [%.*s]\n", __FUNCTION__, packet->payload_packet_len, packet->payload);
+  printf("%s() [%s]\n", __FUNCTION__, packet->payload);
 #endif
 
   if(flow->l4.tcp.mail_imap_starttls == 2) {
@@ -67,7 +66,8 @@ void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct,
       flow->l4.tcp.mail_imap_stage += 1;
       saw_command = 1;
     } else {
-      if(flow->l4.tcp.mail_imap_stage < 5) {
+
+      if(flow->l4.tcp.mail_imap_stage < 4) {
 	// search for the first space character (end of the tag)
 	while (i < 20 && i < packet->payload_packet_len) {
 	  if(i > 0 && packet->payload[i] == ' ') {
@@ -121,13 +121,6 @@ void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct,
 		   && (packet->payload[command_start + 2] == 'D' || packet->payload[command_start + 2] == 'd')) {
 	  flow->l4.tcp.mail_imap_stage += 1;
 	  saw_command = 1;
-	} else if((packet->payload[command_start] == 'N' || packet->payload[command_start] == 'n')
-	    && (packet->payload[command_start + 1] == 'O' || packet->payload[command_start + 1] == 'o')
-	    && packet->payload[command_start + 2] == ' ') {
-	  flow->l4.tcp.mail_imap_stage += 1;
-	  if(flow->l4.tcp.mail_imap_starttls == 1)
-	    flow->l4.tcp.mail_imap_starttls = 2;
-	  saw_command = 1;
 	}
       }
       if((command_start + 10) < packet->payload_packet_len) {
@@ -156,7 +149,7 @@ void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct,
 	    && (packet->payload[command_start + 7] == 'S' || packet->payload[command_start + 7] == 's')) {
         flow->l4.tcp.mail_imap_stage += 1;
         flow->l4.tcp.mail_imap_starttls = 1;
-        ndpi_int_mail_imap_add_connection(ndpi_struct, flow, NDPI_PROTOCOL_MAIL_IMAPS);
+        flow->detected_protocol_stack[0] = NDPI_PROTOCOL_MAIL_IMAPS;
         saw_command = 1;
 	}
       }
@@ -166,29 +159,38 @@ void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct,
 	    && (packet->payload[command_start + 2] == 'G' || packet->payload[command_start + 2] == 'g')
 	    && (packet->payload[command_start + 3] == 'I' || packet->payload[command_start + 3] == 'i')
 	    && (packet->payload[command_start + 4] == 'N' || packet->payload[command_start + 4] == 'n')) {
-	  /* xxxx LOGIN "username" "password"
-	     xxxx LOGIN username password */
-	  char str[256], *user, *saveptr;
-	  u_int len = ndpi_min(packet->payload_packet_len - (command_start + 5), (int)sizeof(str) - 1);
-
-	  strncpy(str, (const char*)packet->payload + command_start + 5, len);
+	  /* xxxx LOGIN "username" "password" */
+	  char str[256], *item;
+	  u_int len = packet->payload_packet_len >= sizeof(str) ? sizeof(str)-1 : packet->payload_packet_len;
+	  
+	  strncpy(str, (const char*)packet->payload, len);
 	  str[len] = '\0';
 
-	  user = strtok_r(str, " \"\r\n", &saveptr);
-	  if(user) {
-	    char *pwd;
+	  item = strchr(str, '"');
+	  if(item) {
+	    char *column;
+	    
+	    item++;
+	    column = strchr(item, '"');
 
-	    ndpi_snprintf(flow->l4.tcp.ftp_imap_pop_smtp.username,
-		     sizeof(flow->l4.tcp.ftp_imap_pop_smtp.username),
-		     "%s", user);
+	    if(column) {
+	      column[0] = '\0';
+	      snprintf(flow->protos.ftp_imap_pop_smtp.username,
+		       sizeof(flow->protos.ftp_imap_pop_smtp.username),
+		       "%s", item);
 
-	    ndpi_set_risk(ndpi_struct, flow, NDPI_CLEAR_TEXT_CREDENTIALS, "Found IMAP Username");
+	      column = strchr(&column[1], '"');
+	      if(column) {
+		item = &column[1];
+		column = strchr(item, '"');
 
-	    pwd = strtok_r(NULL, " \"\r\n", &saveptr);
-	    if(pwd) {
-	      ndpi_snprintf(flow->l4.tcp.ftp_imap_pop_smtp.password,
-		       sizeof(flow->l4.tcp.ftp_imap_pop_smtp.password),
-	               "%s", pwd);
+		if(column) {
+		  column[0] = '\0';
+		  snprintf(flow->protos.ftp_imap_pop_smtp.password,
+			   sizeof(flow->protos.ftp_imap_pop_smtp.password),
+			   "%s", item);
+		}
+	      }
 	    }
 	  }
 	  
@@ -238,10 +240,6 @@ void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct,
 	    && (packet->payload[command_start + 10] == 'T' || packet->payload[command_start + 10] == 't')
 	    && (packet->payload[command_start + 11] == 'E' || packet->payload[command_start + 11] == 'e')) {
 	  flow->l4.tcp.mail_imap_stage += 1;
-	  /* Authenticate phase may have multiple messages. Ignore them since they are
-	     somehow encrypted anyway. */
-	  flow->l4.tcp.mail_imap_starttls = 2;
-          ndpi_int_mail_imap_add_connection(ndpi_struct, flow, NDPI_PROTOCOL_MAIL_IMAPS);
 	  saw_command = 1;
 	}
       }
@@ -320,11 +318,11 @@ void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct,
       if((flow->l4.tcp.mail_imap_stage == 3)
 	 || (flow->l4.tcp.mail_imap_stage == 5)
 	 || (flow->l4.tcp.mail_imap_stage == 7)
-        ) {
-	if((flow->l4.tcp.ftp_imap_pop_smtp.username[0] != '\0')
+	 ) {
+	if((flow->protos.ftp_imap_pop_smtp.username[0] != '\0')
 	   || (flow->l4.tcp.mail_imap_stage >= 7)) {
 	  NDPI_LOG_INFO(ndpi_struct, "found MAIL_IMAP\n");
-	  ndpi_int_mail_imap_add_connection(ndpi_struct, flow, NDPI_PROTOCOL_MAIL_IMAP);
+	  ndpi_int_mail_imap_add_connection(ndpi_struct, flow);
 	}
 	
 	return;
@@ -344,7 +342,7 @@ void ndpi_search_mail_imap_tcp(struct ndpi_detection_module_struct *ndpi_struct,
   // skip over possible authentication hashes etc. that cannot be identified as imap commands or responses
   // if the packet count is low enough and at least one command or response was seen before
   if((packet->payload_packet_len >= 2 && ntohs(get_u_int16_t(packet->payload, packet->payload_packet_len - 2)) == 0x0d0a)
-      && flow->packet_counter < 8 && flow->l4.tcp.mail_imap_stage >= 1) {
+      && flow->packet_counter < 6 && flow->l4.tcp.mail_imap_stage >= 1) {
     NDPI_LOG_DBG2(ndpi_struct,
 	     "no imap command or response but packet count < 6 and imap stage >= 1 -> skip\n");
     return;

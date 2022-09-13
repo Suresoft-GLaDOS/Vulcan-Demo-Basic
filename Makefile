@@ -91,11 +91,10 @@ host_triplet = x86_64-pc-linux-gnu
 #am__append_1 = fuzz
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
-	$(top_srcdir)/m4/ax_pthread.m4 $(top_srcdir)/m4/libtool.m4 \
-	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
-	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_pthread.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
@@ -104,11 +103,9 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/src/include/ndpi_config.h
-CONFIG_CLEAN_FILES = example/Makefile example/Makefile.dpdk \
-	tests/unit/Makefile tests/performance/Makefile \
-	tests/dga/Makefile rrdtool/Makefile influxdb/Makefile \
-	libndpi.pc src/include/ndpi_define.h src/lib/Makefile \
-	src/include/ndpi_api.h doc/Doxyfile.cfg
+CONFIG_CLEAN_FILES = example/Makefile example/Makefile.dpdk libndpi.pc \
+	src/include/ndpi_define.h src/lib/Makefile python/Makefile \
+	src/include/ndpi_api.h
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
@@ -194,20 +191,15 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = src/lib example tests tests/dga fuzz
+DIST_SUBDIRS = src/lib example tests fuzz
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/libndpi.pc.in \
-	$(top_srcdir)/doc/Doxyfile.cfg.in \
 	$(top_srcdir)/example/Makefile.dpdk.in \
 	$(top_srcdir)/example/Makefile.in \
-	$(top_srcdir)/influxdb/Makefile.in \
-	$(top_srcdir)/rrdtool/Makefile.in \
+	$(top_srcdir)/python/Makefile.in \
 	$(top_srcdir)/src/include/ndpi_api.h.in \
 	$(top_srcdir)/src/include/ndpi_config.h.in \
 	$(top_srcdir)/src/include/ndpi_define.h.in \
-	$(top_srcdir)/src/lib/Makefile.in \
-	$(top_srcdir)/tests/dga/Makefile.in \
-	$(top_srcdir)/tests/performance/Makefile.in \
-	$(top_srcdir)/tests/unit/Makefile.in COPYING INSTALL compile \
+	$(top_srcdir)/src/lib/Makefile.in COPYING INSTALL compile \
 	config.guess config.sub install-sh ltmain.sh missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
@@ -252,7 +244,7 @@ am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
 ACLOCAL = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing aclocal-1.16
-ADDITIONAL_LIBS = -lm
+ADDITIONAL_LIBS = 
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
@@ -260,23 +252,19 @@ AUTOCONF = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoconf
 AUTOHEADER = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing autoheader
 AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing automake-1.16
 AWK = gawk
-BUILD_FUZZTARGETS = 0
-BUILD_MINGW = 
-BUILD_MINGW_X64 = 
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -W -Wall -Wno-unused-parameter -Wno-unused-function -Wno-address-of-packed-member -g -O2 
+CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
 CUSTOM_NDPI = 
 CXX = g++
-CXXCPP = 
+CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DISABLE_NPCAP = 0
 DLLTOOL = false
 DL_LIB = 
 DPDK_TARGET = 
@@ -287,26 +275,20 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
 EXEEXT = 
-EXE_SUFFIX = 
-EXTRA_TARGETS = example tests tests/dga
 FGREP = /usr/bin/grep -F
-GIT_RELEASE = 4.3.0-1422-47d7e10
+GIT_RELEASE = 3.3.0-1425-1a9c361
 GREP = /usr/bin/grep
-HANDLE_TLS_SIGS = //
 HAVE_PTHREAD_SETAFFINITY_NP = 
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-JSONC_CFLAGS = 
-JSONC_LIBS = 
+JSON_C_LIB = 
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
-LIBM = -lm
 LIBOBJS = 
-LIBRRD = 
-LIBS =  
+LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIB_FUZZING_ENGINE = 
 LIPO = 
@@ -317,10 +299,10 @@ MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NDPI_API_VERSION = 15
-NDPI_MAJOR = 4
+NDPI_MAJOR = 3
 NDPI_MINOR = 3
 NDPI_PATCH = 0
-NDPI_VERSION_SHORT = 4.3.0
+NDPI_VERSION_SHORT = 3.3.0
 NM = /usr/bin/nm -B
 NMEDIT = 
 OBJDUMP = objdump
@@ -330,30 +312,23 @@ OTOOL64 =
 PACKAGE = libndpi
 PACKAGE_BUGREPORT = 
 PACKAGE_NAME = libndpi
-PACKAGE_STRING = libndpi 4.3.0
+PACKAGE_STRING = libndpi 3.3.0
 PACKAGE_TARNAME = libndpi
 PACKAGE_URL = 
-PACKAGE_VERSION = 4.3.0
+PACKAGE_VERSION = 3.3.0
 PATH_SEPARATOR = :
-PCAP_CFLAGS = 
 PCAP_INC = 
 PCAP_LIB = -lpcap
-PCAP_LIBS = 
-PCRE_ENABLED = 0
-PKG_CONFIG = /usr/bin/pkg-config
-PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = 
 PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
-PTHREAD_CXX = g++
-PTHREAD_LIBS = -lpthread
+PTHREAD_LIBS = 
 RANLIB = ranlib
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-USE_HOST_LIBGCRYPT = 0
-VERSION = 4.3.0
+SVN_DATE = 
+VERSION = 3.3.0
 abs_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
 abs_srcdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
 abs_top_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
@@ -410,21 +385,10 @@ top_build_prefix =
 top_builddir = .
 top_srcdir = .
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = src/lib example tests tests/dga $(am__append_1)
+SUBDIRS = src/lib example tests $(am__append_1)
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libndpi.pc
-EXTRA_DIST = README.md README.fuzzer.md CHANGELOG.md CONTRIBUTING.md \
-	autogen.sh wireshark windows utils packages \
-	influxdb/Makefile.in influxdb/metric_anomaly.c influxdb/README.txt \
-	rrdtool/Makefile.in rrdtool/README.txt rrdtool/rrd_anomaly.c rrdtool/rrd_similarity.c \
-	doc/requirements.txt doc/conf.py doc/flow_risks.rst doc/guide/nDPI_QuickStartGuide.pages \
-		doc/guide/nDPI_QuickStartGuide.pdf doc/img/logo.png doc/index.rst \
-		doc/Makefile doc/what_is_ndpi.rst \
-	python/DEV_GUIDE.md python/dev_requirements.txt python/ndpi_example.py python/ndpi/__init__.py \
-		python/ndpi/ndpi_build.py python/ndpi/ndpi.py python/README.md \
-		python/requirements.txt python/setup.py python/tests.py \
-	sonar-project.properties .github .ci-ignore lgtm.yml
-
+EXTRA_DIST = autogen.sh
 all: all-recursive
 
 .SUFFIXES:
@@ -480,25 +444,15 @@ example/Makefile: $(top_builddir)/config.status $(top_srcdir)/example/Makefile.i
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 example/Makefile.dpdk: $(top_builddir)/config.status $(top_srcdir)/example/Makefile.dpdk.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-tests/unit/Makefile: $(top_builddir)/config.status $(top_srcdir)/tests/unit/Makefile.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-tests/performance/Makefile: $(top_builddir)/config.status $(top_srcdir)/tests/performance/Makefile.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-tests/dga/Makefile: $(top_builddir)/config.status $(top_srcdir)/tests/dga/Makefile.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-rrdtool/Makefile: $(top_builddir)/config.status $(top_srcdir)/rrdtool/Makefile.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-influxdb/Makefile: $(top_builddir)/config.status $(top_srcdir)/influxdb/Makefile.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 libndpi.pc: $(top_builddir)/config.status $(srcdir)/libndpi.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 src/include/ndpi_define.h: $(top_builddir)/config.status $(top_srcdir)/src/include/ndpi_define.h.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 src/lib/Makefile: $(top_builddir)/config.status $(top_srcdir)/src/lib/Makefile.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-src/include/ndpi_api.h: $(top_builddir)/config.status $(top_srcdir)/src/include/ndpi_api.h.in
+python/Makefile: $(top_builddir)/config.status $(top_srcdir)/python/Makefile.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-doc/Doxyfile.cfg: $(top_builddir)/config.status $(top_srcdir)/doc/Doxyfile.cfg.in
+src/include/ndpi_api.h: $(top_builddir)/config.status $(top_srcdir)/src/include/ndpi_api.h.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:
@@ -957,16 +911,6 @@ uninstall-am: uninstall-pkgconfigDATA
 
 .PRECIOUS: Makefile
 
-
-.PHONY: doc doc-view
-doc:
-	make -C doc html
-
-doc-view:
-	python3 -m http.server --bind 127.0.0.1 --directory doc/_build/html 8080
-
-changelog:
-	git log --since={`curl -s https://github.com/ntop/ndpi/releases | grep datetime | head -n1 | egrep -o "[0-9]+\-[0-9]+\-[0-9]+"`} --name-only --pretty=format:" - %s" | grep  "^ " > CHANGELOG.latest
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

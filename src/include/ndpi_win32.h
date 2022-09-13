@@ -31,8 +31,6 @@
 #define __mingw_forceinline __inline__ __attribute__((__always_inline__,__gnu_inline__))
 #endif
 
-#undef _WIN32_WINNT
-#define _WIN32_WINNT _WIN32_WINNT_WIN8
 #include <winsock2.h>
 #include <windows.h>
 #include <ws2tcpip.h>
@@ -41,18 +39,14 @@
 #include <getopt.h>   /* getopt from: http://www.pwilson.net/sample.html. */
 #include <process.h>  /* for getpid() and the exec..() family */
 #include <stdint.h>
-#include <time.h>
 
 #ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#define	IPVERSION	4 /* on *nix it is defined in netinet/ip.h */ 
+#define _WS2TCPIP_H_ /* Avoid compilation problems */
 
-#if defined(__MINGW32__) || defined(__MINGW64__)
-#undef gettimeofday
-#define gettimeofday mingw_gettimeofday
-#endif
+#define	IPVERSION	4 /* on *nix it is defined in netinet/ip.h */ 
 
 extern char* strsep(char **sp, char *sep);
 
@@ -66,13 +60,26 @@ typedef uint           u_int32_t;
 typedef uint           u_int;
 typedef unsigned       __int64 u_int64_t;
 
-#define gmtime_r(a, b)                  memcpy(b, gmtime(a), sizeof(struct tm))
+#define pthread_t                HANDLE
+#define pthread_mutex_t          HANDLE
+#define pthread_rwlock_t         pthread_mutex_t
+#define pthread_rwlock_init      pthread_mutex_init
+#define pthread_rwlock_wrlock    pthread_mutex_lock
+#define pthread_rwlock_rdlock    pthread_mutex_lock
+#define pthread_rwlock_unlock    pthread_mutex_unlock
+#define pthread_rwlock_destroy	 pthread_mutex_destroy
 
+#define gmtime_r(a, b)           memcpy(b, gmtime(a), sizeof(struct tm))
+
+#define in_addr_t				unsigned long
+
+extern unsigned long waitForNextEvent(unsigned long ulDelay /* ms */);
+
+#define sleep(a /* sec */)              waitForNextEvent(1000*a /* ms */)
+#ifndef localtime_r
+#define localtime_r(a, b)               localtime_s(b, a)
+#endif
+#define strtok_r                        strtok_s
 #define timegm                          _mkgmtime
-
-#define sleep(a /* sec */)              Sleep(1000*a /* ms */)
-
-/* https://stackoverflow.com/questions/7993050/multiplatform-atomic-increment */
-#define __sync_fetch_and_add(a,b)       InterlockedExchangeAdd ((a), b)
 
 #endif /* __NDPI_WIN32_H__ */

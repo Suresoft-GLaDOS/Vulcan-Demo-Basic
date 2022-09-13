@@ -300,7 +300,7 @@ cache_result cache_remove(cache_t cache, void *item, uint32_t item_size) {
 }
 
 void cache_free(cache_t cache) {
-  uint32_t i;
+  int i;
   if(!cache) {
     return;
   }

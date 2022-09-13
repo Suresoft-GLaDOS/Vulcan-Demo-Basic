@@ -25,26 +25,13 @@
 
 void ndpi_search_whatsapp(struct ndpi_detection_module_struct *ndpi_struct,
 			  struct ndpi_flow_struct *flow) {
-  struct ndpi_packet_struct *packet = &ndpi_struct->packet;
+  struct ndpi_packet_struct *packet = &flow->packet;
   static u_int8_t whatsapp_sequence[] = {
     0x45, 0x44, 0x0, 0x01, 0x0, 0x0, 0x02, 0x08,
     0x0, 0x57, 0x41, 0x02, 0x0, 0x0, 0x0
   };
-  static u_int8_t whatsapp_old_sequence[] = {
-    0x57, 0x41, 0x01, 0x05
-  };
 
   NDPI_LOG_DBG(ndpi_struct, "search WhatsApp\n");
-
-  /* This is a very old sequence (2015?) but we still have it in our unit tests.
-     Try to detect it, without too much effort... */
-  if(flow->l4.tcp.wa_matched_so_far == 0 &&
-     packet->payload_packet_len > sizeof(whatsapp_old_sequence) &&
-     memcmp(packet->payload, whatsapp_old_sequence, sizeof(whatsapp_old_sequence)) == 0) {
-    NDPI_LOG_INFO(ndpi_struct, "found WhatsApp (old sequence)\n");
-    ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_WHATSAPP, NDPI_PROTOCOL_UNKNOWN, NDPI_CONFIDENCE_DPI);
-    return;
-  }
 
   if(flow->l4.tcp.wa_matched_so_far < sizeof(whatsapp_sequence)) {
     size_t match_len = sizeof(whatsapp_sequence) - flow->l4.tcp.wa_matched_so_far;
@@ -55,7 +42,7 @@ void ndpi_search_whatsapp(struct ndpi_detection_module_struct *ndpi_struct,
       flow->l4.tcp.wa_matched_so_far += match_len;
       if(flow->l4.tcp.wa_matched_so_far == sizeof(whatsapp_sequence)) {
 	NDPI_LOG_INFO(ndpi_struct, "found WhatsApp\n");
-	ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_WHATSAPP, NDPI_PROTOCOL_UNKNOWN, NDPI_CONFIDENCE_DPI);
+	ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_WHATSAPP, NDPI_PROTOCOL_UNKNOWN);
       }
       return;
     }

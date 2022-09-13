@@ -20,8 +20,8 @@ LIBNDPI = $(PWD)/../src/lib/libndpi.a
 SRCS-y := reader_util.c intrusion_detection.c ndpiReader.c
 
 CFLAGS += -g
-CFLAGS += -Wno-strict-prototypes -Wno-missing-prototypes -Wno-missing-declarations -Wno-unused-parameter -I $(PWD)/../src/include -W -Wall -Wno-unused-parameter -Wno-unused-function -Wno-address-of-packed-member -g -O2  -DUSE_DPDK
-LDLIBS = $(LIBNDPI) -lpcap   -lm -lpthread 
+CFLAGS += -Wno-strict-prototypes -Wno-missing-prototypes -Wno-missing-declarations -Wno-unused-parameter -I $(PWD)/../src/include -g -O2 -DUSE_DPDK
+LDLIBS = $(LIBNDPI) -lpcap -lpthread 
 
 include $(RTE_SDK)/mk/rte.extapp.mk
 

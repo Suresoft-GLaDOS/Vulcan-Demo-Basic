@@ -4,38 +4,8 @@
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
 
-/* Define to 1 if you have the <float.h> header file. */
-#define HAVE_FLOAT_H 1
-
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
-
-/* Define to 1 if you have the `gcrypt' library (-lgcrypt). */
-/* #undef HAVE_LIBGCRYPT */
-
-/* Define to 1 if you have the `gpg-error' library (-lgpg-error). */
-/* #undef HAVE_LIBGPG_ERROR */
-
-/* libjson-c is present */
-/* #undef HAVE_LIBJSON_C */
-
-/* Define to 1 if you have the `m' library (-lm). */
-/* #undef HAVE_LIBM */
-
-/* Define to 1 if you have the `maxminddb' library (-lmaxminddb). */
-/* #undef HAVE_LIBMAXMINDDB */
-
-/* Define to 1 if you have the `pcap' library (-lpcap). */
-/* #undef HAVE_LIBPCAP */
-
-/* Define to 1 if you have the <math.h> header file. */
-#define HAVE_MATH_H 1
-
-/* MaxMind DB support */
-/* #undef HAVE_MAXMINDDB */
-
-/* Define to 1 if you have the <maxminddb.h> header file. */
-/* #undef HAVE_MAXMINDDB_H */
 
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
@@ -54,9 +24,6 @@
 
 /* libc has pthread_setaffinity_np */
 #define HAVE_PTHREAD_SETAFFINITY_NP 1
-
-/* rrdtool is present */
-/* #undef HAVE_RRDTOOL */
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #define HAVE_STDINT_H 1
@@ -86,13 +53,13 @@
 /* #undef NDPI_ENABLE_DEBUG_MESSAGES */
 
 /* Last GIT change */
-#define NDPI_GIT_DATE "Wed Aug 17 10:35:02 2022 +0900"
+#define NDPI_GIT_DATE "Mon Aug 29 12:04:00 2022 +0900"
 
 /* GIT Release */
-#define NDPI_GIT_RELEASE "4.3.0-1422-47d7e10"
+#define NDPI_GIT_RELEASE "3.3.0-1425-1a9c361"
 
 /* nDPI major release */
-#define NDPI_MAJOR_RELEASE "4"
+#define NDPI_MAJOR_RELEASE "3"
 
 /* nDPI minor release */
 #define NDPI_MINOR_RELEASE "3"
@@ -100,29 +67,26 @@
 /* nDPI patch level */
 #define NDPI_PATCH_LEVEL "0"
 
-/* Define to 1 if your C compiler doesn't accept -c and -o together. */
-/* #undef NO_MINUS_C_MINUS_O */
-
 /* Name of package */
-#define PACKAGE "libndpi"
+/* #undef PACKAGE */
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT ""
+/* #undef PACKAGE_BUGREPORT */
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "libndpi"
+/* #undef PACKAGE_NAME */
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "libndpi 4.3.0"
+/* #undef PACKAGE_STRING */
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "libndpi"
+/* #undef PACKAGE_TARNAME */
 
 /* Define to the home page for this package. */
-#define PACKAGE_URL ""
+/* #undef PACKAGE_URL */
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "4.3.0"
+/* #undef PACKAGE_VERSION */
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
@@ -131,8 +95,5 @@
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
 
-/* Use locally installed libgcrypt instead of builtin gcrypt-light */
-/* #undef USE_HOST_LIBGCRYPT */
-
 /* Version number of package */
-#define VERSION "4.3.0"
+/* #undef VERSION */

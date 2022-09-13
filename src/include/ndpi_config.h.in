@@ -3,38 +3,8 @@
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #undef HAVE_DLFCN_H
 
-/* Define to 1 if you have the <float.h> header file. */
-#undef HAVE_FLOAT_H
-
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
-
-/* Define to 1 if you have the `gcrypt' library (-lgcrypt). */
-#undef HAVE_LIBGCRYPT
-
-/* Define to 1 if you have the `gpg-error' library (-lgpg-error). */
-#undef HAVE_LIBGPG_ERROR
-
-/* libjson-c is present */
-#undef HAVE_LIBJSON_C
-
-/* Define to 1 if you have the `m' library (-lm). */
-#undef HAVE_LIBM
-
-/* Define to 1 if you have the `maxminddb' library (-lmaxminddb). */
-#undef HAVE_LIBMAXMINDDB
-
-/* Define to 1 if you have the `pcap' library (-lpcap). */
-#undef HAVE_LIBPCAP
-
-/* Define to 1 if you have the <math.h> header file. */
-#undef HAVE_MATH_H
-
-/* MaxMind DB support */
-#undef HAVE_MAXMINDDB
-
-/* Define to 1 if you have the <maxminddb.h> header file. */
-#undef HAVE_MAXMINDDB_H
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
@@ -53,9 +23,6 @@
 
 /* libc has pthread_setaffinity_np */
 #undef HAVE_PTHREAD_SETAFFINITY_NP
-
-/* rrdtool is present */
-#undef HAVE_RRDTOOL
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #undef HAVE_STDINT_H
@@ -99,9 +66,6 @@
 /* nDPI patch level */
 #undef NDPI_PATCH_LEVEL
 
-/* Define to 1 if your C compiler doesn't accept -c and -o together. */
-#undef NO_MINUS_C_MINUS_O
-
 /* Name of package */
 #undef PACKAGE
 
@@ -129,9 +93,6 @@
 
 /* Define to 1 if you have the ANSI C header files. */
 #undef STDC_HEADERS
-
-/* Use locally installed libgcrypt instead of builtin gcrypt-light */
-#undef USE_HOST_LIBGCRYPT
 
 /* Version number of package */
 #undef VERSION

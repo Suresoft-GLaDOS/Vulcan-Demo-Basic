@@ -71,13 +71,19 @@ enum MAGIC_COOKIE_CONSTANTS{
   MC_INTERFACE_VERSION = 0x01
 };
 
+enum DEFAULT_PROTOCOL_PORTS{
+  PORT_DEFAULT_CLIENT = 30491,
+  PORT_DEFAULT_SERVER = 30501,
+  PORT_DEFAULT_SD = 30490
+};
+
 /**
  * Entry point when protocol is identified.
  */
 static void ndpi_int_someip_add_connection (struct ndpi_detection_module_struct *ndpi_struct,
 					    struct ndpi_flow_struct *flow)
 {
-  ndpi_set_detected_protocol(ndpi_struct,flow,NDPI_PROTOCOL_SOMEIP,NDPI_PROTOCOL_UNKNOWN, NDPI_CONFIDENCE_DPI);
+  ndpi_set_detected_protocol(ndpi_struct,flow,NDPI_PROTOCOL_SOMEIP,NDPI_PROTOCOL_UNKNOWN);
   NDPI_LOG_INFO(ndpi_struct, "found SOME/IP\n");
 }
 
@@ -95,7 +101,7 @@ static u_int32_t someip_data_cover_32(const u_int8_t *data)
 void ndpi_search_someip (struct ndpi_detection_module_struct *ndpi_struct,
 			 struct ndpi_flow_struct *flow)
 {
-  const struct ndpi_packet_struct *packet = &ndpi_struct->packet;
+  const struct ndpi_packet_struct *packet = &flow->packet;
   
   if (packet->payload_packet_len < 16) {
     NDPI_LOG(NDPI_PROTOCOL_SOMEIP, ndpi_struct, NDPI_LOG_DEBUG,
@@ -108,7 +114,7 @@ void ndpi_search_someip (struct ndpi_detection_module_struct *ndpi_struct,
 
   NDPI_LOG_DBG(ndpi_struct, "search SOME/IP\n");
 
-  if (flow->detected_protocol_stack[0] != NDPI_PROTOCOL_UNKNOWN) {
+  if (packet->detected_protocol_stack[0] != NDPI_PROTOCOL_UNKNOWN) {
     return;
   }
  
@@ -145,7 +151,6 @@ void ndpi_search_someip (struct ndpi_detection_module_struct *ndpi_struct,
   u_int8_t interface_version = (packet->payload[13]);
 
   u_int8_t message_type = (u_int8_t) (packet->payload[14]);
-  message_type &= (~0x20); /* Clear TP  bit */
   NDPI_LOG_DBG2(ndpi_struct,"====>>>> SOME/IP message type: [%d]\n",message_type);
 
   if ((message_type != SOMEIP_REQUEST) && (message_type != SOMEIP_REQUEST_NO_RETURN) && (message_type != SOMEIP_NOTIFICATION) && (message_type != SOMEIP_REQUEST_ACK) && 
@@ -196,7 +201,23 @@ void ndpi_search_someip (struct ndpi_detection_module_struct *ndpi_struct,
     NDPI_LOG_DBG2(ndpi_struct, "SOME/IP-SD currently not supported [%d]\n", message_type);
   }
 
-  ndpi_int_someip_add_connection(ndpi_struct, flow);
+  //Filtering by port. 
+  //This check is NOT a 100% thing - these ports are mentioned in the documentation but the documentation also states they haven't been approved by IANA yet, and that the user is free to use different ports.
+  //This is is PURELY for demo purposes and the rest of the check must be filled in later on!
+  if (packet->l4_protocol == IPPROTO_UDP){
+    if ((packet->udp->dest == ntohs(PORT_DEFAULT_CLIENT)) || (packet->udp->dest == ntohs(PORT_DEFAULT_SERVER)) || (packet->udp->dest == ntohs(PORT_DEFAULT_SD))) {
+      ndpi_int_someip_add_connection(ndpi_struct, flow);
+      return;
+    }
+  }
+  if (packet->l4_protocol == IPPROTO_TCP){
+    if ((packet->tcp->dest == ntohs(PORT_DEFAULT_CLIENT)) || (packet->tcp->dest == ntohs(PORT_DEFAULT_SERVER))) {
+      ndpi_int_someip_add_connection(ndpi_struct, flow);
+      return;
+    }
+  }
+
+  NDPI_EXCLUDE_PROTO(ndpi_struct, flow);
 }
 /**
  * Entry point for the ndpi library

@@ -20,26 +20,28 @@
  */
 
 #include "ndpi_protocol_ids.h"
-#define NDPI_CURRENT_PROTO NDPI_PROTOCOL_NATS
 #include "ndpi_api.h"
+
+#define NDPI_CURRENT_PROTO NDPI_PROTOCOL_NATS
 
 static const char* commands[] =
   {
    "INFO {",
    "CONNECT {",
    "PUB ",
-   "SUB ",
+   "SUB",
    "UNSUB ",
    "MSG ",
    "PING",
    "PONG",
-
+   "+OK",
+   "-ERR",
    NULL
   };
 
 void ndpi_search_nats_tcp(struct ndpi_detection_module_struct *ndpi_struct,
                             struct ndpi_flow_struct *flow) {
-  struct ndpi_packet_struct *packet = &ndpi_struct->packet;
+  struct ndpi_packet_struct *packet = &flow->packet;
 
   /* Check connection over TCP */
   NDPI_LOG_DBG(ndpi_struct, "search NATS\n");
@@ -48,17 +50,17 @@ void ndpi_search_nats_tcp(struct ndpi_detection_module_struct *ndpi_struct,
     int i;
 
     for(i=0; commands[i] != NULL; i++) {
-      int len = ndpi_min(strlen(commands[i]), packet->payload_packet_len);
-      int rc = strncmp((const char *)packet->payload, commands[i], len);
-      
-      if(rc != 0) continue;
+      char *match = ndpi_strnstr((const char *)flow->packet.payload,
+				 commands[i],
+				 flow->packet.payload_packet_len);
 
-      if(ndpi_strnstr((const char *)packet->payload,
-		      "\r\n",
-		      packet->payload_packet_len) != NULL) {
+      if(!match) continue;
+
+      if(ndpi_strnstr((const char *)match, "\r\n",
+		      flow->packet.payload_packet_len - ((unsigned long)match - (unsigned long)flow->packet.payload)) != NULL) {
 	NDPI_LOG_INFO(ndpi_struct, "found NATS\n");
 
-	ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_NATS, NDPI_PROTOCOL_UNKNOWN, NDPI_CONFIDENCE_DPI);
+	ndpi_set_detected_protocol(ndpi_struct, flow, NDPI_PROTOCOL_NATS, NDPI_PROTOCOL_UNKNOWN);
 	return;
       }
     }
