@@ -7,6 +7,8 @@ jobs:
     auto-repair:
         runs-on: self-hosted
         steps:
+            - name: Checkout vulcan target
+              uses: actions/checkout@v2
             - name: run vulcan action
               uses: Suresoft-GLaDOS/vulcan-action@main
               with:
