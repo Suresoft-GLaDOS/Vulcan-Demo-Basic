@@ -37,6 +37,6 @@ int fixPlanMonth (struct AccountBook myAccount, int wishedMonth) {
     int planBenefit = computeBenefit(myAccount, wishedMonth);
 
     if (maxBenefit > planBenefit + 10) {
-        
+
     }
 }

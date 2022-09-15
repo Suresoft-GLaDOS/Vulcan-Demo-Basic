@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
+#include <string.h>
 #include "src/example.h"
 //#include "src/ProductionCode.h"
 #include "src/RangeChecker.h"
 #include "src/MissedStatements.h"
 #include "src/MethodInsertion.h"
+#include "src/Huffman.h"
+#include "src/ShortestSuper.h"
 
 #define TEST_SIZE
 
@@ -103,6 +106,16 @@ int input4_3[4] = {
     15, 1, 8, 0
 };
 
+string inputSS_1[TEST_SIZE][5] = {
+        {"", "", "", "", ""},
+        {"", "", "", "", ""},
+        {"", "", "", "", ""},
+        {"", "", "", "", ""},
+        {"", "", "", "", ""},
+        {"", "", "", "", ""},
+};
+
+
 int expected_output1[TEST_SIZE][10] = {
     {11, 12, 13, 14, 15},
     {13, 14, 15},
@@ -136,6 +149,10 @@ int expected_output4_1[TEST_SIZE] = {
     {2, 3, 12, 6, 3, 3, 5, 9, 10},
     {7, 11, 10, 6, 5, 9, 10},
     {10, 7, 2, 12, 9, 7, 5, 9, 10}
+ };
+
+ int expected_outputSS[TEST_SIZE][20] = {
+
  };
 
 int main(int argc, char *argv[]) {
@@ -258,6 +275,26 @@ int main(int argc, char *argv[]) {
 //                compare = false;
 //            }
 
+            if (compare) {
+                printf("PASSED\n");
+            }
+            else {
+                printf("FAILED\n");
+            }
+            return compare == true ? 0 : 1;
+
+        case 8:
+            int* actual_output2 = vendingMachine(input2[test_index][0], input2[test_index][1]);
+            compare = true;
+            printf("coin: %d\n", input2[test_index][0]);
+            printf("price: %d\n", input2[test_index][1]);
+            for (int i = 0; i < 2; i++) {
+                printf("Expected: %d, Actual: %d\n", expected_output2[test_index][i], actual_output2[i]);
+                if (actual_output2[i] != expected_output2[test_index][i]) {
+                    compare = false;
+                    break;
+                }
+            }
             if (compare) {
                 printf("PASSED\n");
             }

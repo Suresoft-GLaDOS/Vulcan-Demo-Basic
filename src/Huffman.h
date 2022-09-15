@@ -1,0 +1,8 @@
+//
+// Created by sure on 2022-09-15.
+//
+
+#ifndef VULCAN_DEMO_BASIC_HUFFMAN_H
+#define VULCAN_DEMO_BASIC_HUFFMAN_H
+
+#endif //VULCAN_DEMO_BASIC_HUFFMAN_H
