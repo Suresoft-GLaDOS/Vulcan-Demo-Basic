@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <malloc.h>
 
 #include "MethodInsertion.h"
 
@@ -11,7 +12,7 @@ void setVector(struct Vector* newVector, int default_capacity) {
 }
 
 void push_back(struct Vector* newVector, int new_value) {
-    printf("push 3\n");
+//    printf("push 3\n");
     if(newVector->size == newVector->cap) {
         int* temp = (int*)malloc(sizeof(int) * newVector->cap * 2);
         for (int i = 0; i < newVector->cap; i++) {
@@ -45,41 +46,56 @@ void pop_back(struct Vector* newVector) {
     }
 }
 
-//void decreaseSize(struct Vector* newVector, int remove) {
-//    newVector->size = newVector->size - remove;
-//}
-//
-//struct Vector* newTravelPlan(struct Vector* origPlan, int* toDelete, int* toAdd, int shorten) {
-//    struct Vector* newPlan;
-//    setVector(newPlan, origPlan->cap);
-//    newPlan->size = origPlan->size;
-//
-//    for (int i = 0; i <  sizeof(toAdd)/sizeof(int); i++) {
-//        push_back(origPlan, toAdd[i]);
-////        increaseSize(origPlan, 1);
+void decreaseSize(struct Vector* newVector, int remove) {
+    newVector->size = newVector->size - remove;
+}
+
+int newTravelPlan(struct Vector* origPlan, int* toAdd, int* toDelete) {
+    int newCost = 0;
+    int newSize = origPlan->size;
+
+//    for (int i = 0; i < origPlan->size; i++) {
+//        printf("origPlan: %d\n", origPlan->values[i]);
 //    }
-//    for (int i = 0; i < sizeof(toDelete)/sizeof(int); i++) {
-//        for (int j = 0; j < origPlan->size; j++) {
-//            if (origPlan->values[j] == toDelete[i]) {
-//                origPlan->values[j] = 0;
-//                break;
-//            }
-//        }
-//    }
+
+    for (int i = 0; i < 3; i++) {
+        push_back(origPlan, toAdd[i]);
+//        increaseSize(origPlan, 1);
+    }
+    newSize = newSize + 3;
+    for (int i = 0; i < origPlan->size; i++) {
+        while(1){
+            int delFlag = 0;
+            for (int j = 0; j < 3; j++) {
+                if (origPlan->values[i] == toDelete[j]) {
+                    delFlag = 1;
+                    for (int k = i; k < origPlan->size; k++) {
+                        origPlan->values[k] = origPlan->values[k+1];
+
+                    }
+                    pop_back(origPlan);
+                    newSize--;
+//                    break; //it can be another fault example
+                }
+            }
+            if(delFlag == 0) {
+                break;
+            }
+        }
+
+    }
 //    for (int i = 0; i < origPlan->size; i++) {
 //        if (origPlan->values[i]) {
 //            push_back(newPlan, origPlan->values[i]);
 ////            increaseSize(newPlan, 1);
 //        }
 //    }
-//    for (int i = 0; i < shorten; i++) {
-//        pop_back(newPlan);
-////        decreaseSize(newPlan, 1); or,
-//    }
-////    decreaseSize(newPlan, shorten);
-//
-//    return newPlan;
-//}
+    for(int i = 0; i < newSize; i++) {
+        newCost = newCost + origPlan->values[i];
+    }
+
+    return newSize;
+}
 
 int computeCost(struct Vector* travelPlan, int budget) {
     int cost = 0;
@@ -90,10 +106,10 @@ int computeCost(struct Vector* travelPlan, int budget) {
     while (cost > budget) {
         cost = cost - travelPlan->values[travelPlan->size-1];
 //        pop_back(travelPlan);
-//        decreaseSize(travelPlan);
+        printf("budget: %d  cost: %d\n", budget, cost);
     }
 
-    printf("budget: %d  cost: %d\n", budget, cost);
+
 
     while (cost <= budget - 5) {
         if (budget >= cost + 10) {
@@ -112,4 +128,8 @@ int computeCost(struct Vector* travelPlan, int budget) {
 
 
     return cost;
+}
+
+void rePlanning(struct Vector* travelPlan, int* addPlan, int* deletePlan) {
+
 }

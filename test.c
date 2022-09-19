@@ -1,33 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <malloc.h>
+#include <string.h>
 #include "src/example.h"
 //#include "src/ProductionCode.h"
 #include "src/RangeChecker.h"
 #include "src/MissedStatements.h"
 #include "src/MethodInsertion.h"
-#include "src/BranchChecker.h"
-#include "src/BranchChecker_avl.h"
+#include "src/Huffman.h"
+#include "src/ShortestSuper.h"
+
+#include "src/3Dimension.h"
 
 #define TEST_SIZE
-
-#ifdef GCOV
-#include <signal.h>
-static struct sigaction dpp_gcov_sigaction;
-static struct sigaction dpp_orig_sigaction;
-void dpp_sighandler(int signum) {
-	__gcov_flush();
-	sigaction(sigaction, &dpp_orig_sigaction, NULL);
-	raise(signum);
-	exit(1);
-}
-#endif
-void __asan_on_error(void) {
-#ifdef GCOV
-    __gcov_flush();
-#endif
-}
-
-
 
 struct stForTest1 {
     int index;
@@ -115,45 +100,28 @@ int input3[TEST_SIZE][3] = {
     50
  };
 
-//double input5[TEST_SIZE][4] = {
-//    {10, 8, 4, 4},
-//    {10, 8, 4, 4},
-////    {10, 8, 4, 4},
-//    {9, 9, 5, 5},
-//    {9, 9, 5, 5}
-//};
-//
-//
-//double input5_1[TEST_SIZE][4] = {
-//    {5.0, 5.0, 7.0, 7.0},
-//    {7, 9, 11, 4},
-////    {1, 5, 4, 1},
-//    {4, 12, 8, 8},
-//    {5, 8, 10, 3}
-//};
-
-int input6_1[TEST_SIZE][11] = {
-    {4, 10, 13, 20, 25, 32, 55, 20, 25, 32, 55},
-    {3, 8, 11, 6, 8, 10, 30, 6, 8, 10, 30},
-    {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
-    {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
-    {7, 6, 5, 4, 3, 2, 1, 4, 3, 2, 1},
-    {20, 200, 5, 2, 3, 25, 5, 2, 3, 25, 5},
-    {8, -24, -29, 60, -18, 20, 24, -13, -10, -26, 15 },
-    {38, 6, 1, 90, 12, 50, 54, 17, 20, 4, 45 },
+int input4_2[4] = {
+    5, 9, 10, 0
 };
 
-int input6_2[TEST_SIZE][3] = {
-    {4, 10, 13},
-    {3, 11, 10},
-    {8, 6, 5},
-    {5, 3, 5},
-    {0, 0, 0},
-    {0, 0, 25},
-    {-13, -19, -26},
-    {17, 11, 4}
+int input4_3[4] = {
+    15, 1, 8, 0
 };
 
+//string inputSS_1[TEST_SIZE][5] = {
+//        {"", "", "", "", ""},
+//        {"", "", "", "", ""},
+//        {"", "", "", "", ""},
+//        {"", "", "", "", ""},
+//        {"", "", "", "", ""},
+//        {"", "", "", "", ""},
+//};
+
+int input9[TEST_SIZE][3] = {
+        {1, 1, 1},
+        {-1, -1, 1},
+        {1, -1, 1}
+};
 
 int expected_output1[TEST_SIZE][10] = {
     {11, 12, 13, 14, 15},
@@ -183,39 +151,21 @@ int expected_output4_1[TEST_SIZE] = {
     47
  };
 
-double expected_output5[TEST_SIZE][4] = {
-    {5, 5, 7, 7},
-
-//    {0, 0, 0, 0},
-    {7, 9, 8, 8},
-    {5, 8, 8, 5},
-    {7.8, 8.0, 10.0, 5.25}
+ int expected_output4_2[TEST_SIZE][11] = {
+    {4, 12, 3, 7, 2, 11, 14, 3, 5, 9, 10},
+    {2, 3, 12, 6, 3, 3, 5, 9, 10},
+    {7, 11, 10, 6, 5, 9, 10},
+    {10, 7, 2, 12, 9, 7, 5, 9, 10}
  };
 
-int expected_output6[TEST_SIZE][11] = {
-    {20, 25, 32, 55},
-    {6, 8, 30},
-    {1, 2, 3, 4, 7},
-    {2, 20, 25, 200},
-    {1, 2, 3, 4, 5, 6, 7},
-    {2, 3, 5, 20, 200},
-    {-29, -24, -18, -10, 8, 15, 20, 24, 60},
-    {1, 6, 12, 20, 38, 45, 50, 54, 90}
-};
 
-
+ int expected_output9[TEST_SIZE][3] = {
+         {1, 2, 3},
+         {0, 2, 3},
+         {1, 2, -1}
+ };
 
 int main(int argc, char *argv[]) {
-#ifdef GCOV
-	  {
-		  dpp_gcov_sigaction.sa_handler = dpp_sighandler;
-		  sigemptyset(&dpp_gcov_sigaction.sa_mask);
-		  dpp_gcov_sigaction.sa_flags = 0;
-		  sigaction(SIGSEGV, &dpp_gcov_sigaction, &dpp_orig_sigaction);
-		  sigaction(SIGFPE, &dpp_gcov_sigaction, &dpp_orig_sigaction);
-		  sigaction(SIGABRT, &dpp_gcov_sigaction, &dpp_orig_sigaction);
-	  }
-#endif
     int test_case = atoi(argv[1]);
     int test_index = atoi(argv[2]); //e.q. ./test 2 3
     bool compare = true;
@@ -292,9 +242,14 @@ int main(int argc, char *argv[]) {
 //            struct Vector planVector;
 //            struct Vector* planVectorP = &planVector;
 //            setVector(planVectorP, 7);
-//            int* plan = (int*)malloc(sizeof(int) * 7);
+//            int* addPlan = (int*)malloc(sizeof(int) * 3);
+//            int* delPlan = (int*)malloc(sizeof(int) * 3);
 //            for(int i = 0; i < 7; i++) {
 //                planVectorP->values[i] = input4[test_index][i];
+//            }
+//            for(int i = 0; i < 3; i++) {
+//                addPlan[i] = input4_2[i];
+//                delPlan[i] = input4_3[i];
 //            }
 //            planVectorP->size = 7;
 //
@@ -315,6 +270,21 @@ int main(int argc, char *argv[]) {
 //                compare = false;
 //            }
 //
+//            int newCost = newTravelPlan(planVectorP, addPlan, delPlan);
+//
+////            for (int i = 0; i < planVectorP->size; i++) {
+////                printf("%d, ", planVectorP->values[i]);
+////            }
+////
+////            printf("NewCost: %d %d\n", planVectorP->size, newCost);
+////
+////            if (planVectorP->size==newCost) {
+////                compare = true;
+////            }
+////            else {
+////                compare = false;
+////            }
+//
 //            if (compare) {
 //                printf("PASSED\n");
 //            }
@@ -322,35 +292,15 @@ int main(int argc, char *argv[]) {
 //                printf("FAILED\n");
 //            }
 //            return compare == true ? 0 : 1;
-//
-        case 5: ; // BranchChecker
-            // First Line segment
-            // P11 = (5, 5), P12 = (7, 7)
-            double input5[TEST_SIZE][4] = {
-                {10, 8, 4, 4},
-
-            //    {10, 8, 4, 4},
-                {9, 9, 5, 5},
-                {9, 9, 5, 5},
-                {10, 8, 4, 4}
-            };
 
 
-            double input5_1[TEST_SIZE][4] = {
-                {5.0, 5.0, 7.0, 7.0},
+        case 9:;
+            int* actual_output9 = findDot(input9[test_index][0], input9[test_index][1], input9[test_index][2]);
 
-            //    {1, 5, 4, 1},
-                {4, 12, 8, 8},
-                {5, 8, 10, 3},
-                {7, 9, 11, 4},
-            };
-
-            setRectangle(input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-            double* actual_output5 = cohenSutherlandClip(input5_1[test_index][0], input5_1[test_index][1], input5_1[test_index][2], input5_1[test_index][3], input5[test_index][0], input5[test_index][1], input5[test_index][2], input5[test_index][3]);
-
-            for (int i = 0; i < 4; i++) {
-                printf("Expected: %f, Actual: %f\n", expected_output5[test_index][i], actual_output5[i]);
-                if (expected_output5[test_index][i] != actual_output5[i]) {
+            compare = true;
+            for (int i = 0; i < 3; i++) {
+                printf("Expected: %d, Actual: %d\n", expected_output9[test_index][i], actual_output9[i]);
+                if (actual_output9[i] != expected_output9[test_index][i]) {
                     compare = false;
                     break;
                 }
@@ -362,41 +312,6 @@ int main(int argc, char *argv[]) {
                 printf("FAILED\n");
             }
             return compare == true ? 0 : 1;
-
-//        case 6: ;
-//            struct Node* root = NULL;
-//
-//            for (int i = 0; i < 11; i++) {
-//                root = Insert(root, input6_1[test_index][i]);
-//            }
-//
-//            for (int i = 0; i < 3; i++) {
-//                root = Delete(root, input6_2[test_index][i]);
-//            }
-//
-//            int* actual_output6 = getInorder(root);
-//
-//            for (int i = 0; i < 11; i++) {
-//                printf("%d, ", actual_output6[i]);
-//            }
-//            int i = 0;
-//            bool compare = true;
-//            for (int i = 0; i < 11; i++) {
-//                printf("Actual: %d  Expected: %d\n", actual_output6[i], expected_output6[test_index][i]);
-//                if (actual_output6[i] != expected_output6[test_index][i]) {
-//
-//                    compare = false;
-//                    break;
-//                }
-//            }
-//            if (compare) {
-//                printf("PASSED\n");
-//            }
-//            else {
-//                printf("FAILED\n");
-//            }
-//            return compare == true ? 0 : 1;
-
     }
     return 0;
 

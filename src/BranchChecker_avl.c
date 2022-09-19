@@ -94,6 +94,34 @@ Node* AVLSet(Node* node)
     return node;
 }
 
+Node* arrInsertDelete(Node* node, int data1,
+                            int data2,
+                            int data3,
+                            int data4,
+                            int data5,
+                            int data6,
+                            int data7,
+                            int data8,
+                            int data9,
+                            int data10,
+                            int data11) {
+    node = Insert(node, data1);
+    node = Insert(node, data2);
+    node = Insert(node, data3);
+    node = Insert(node, data4);
+    node = Insert(node, data5);
+    node = Insert(node, data6);
+    node = Insert(node, data7);
+    node = Insert(node, data8);
+    node = Insert(node, data9);
+    node = Insert(node, data10);
+    node = Insert(node, data11);
+
+    node = Delete(node, data9);
+
+    return node;
+}
+
 Node* Insert(Node* node, int data)
 {
     if (node == NULL)
@@ -159,6 +187,15 @@ Node* GetMinNode(Node* node, Node* parent)
     }
 }
 
+Node* arrDelete(Node* node, int data1,
+                            int data2,
+                            int data3) {
+    node = Delete(node, data1);
+    node = Delete(node, data2);
+    node = Delete(node, data3);
+
+    return node;
+}
 Node* Delete(Node* node, int data)
 {
     if (node == NULL) return NULL;
@@ -175,39 +212,26 @@ Node* Delete(Node* node, int data)
     }
     else
     {
-        if (node->Left == NULL && node->Right == NULL)
-        {
-            node = NULL;
-        }
-        else if (node->Left != NULL) //Original: node->Left != NULL && node->Right == NULL
-        {
+        if (node->Left == NULL && node->Right == NULL) {
+            node = ((void *)0);
+        } else if (node->Left != NULL) { //Original: node->Left != NULL && node->Right == NULL
             node->Left->Parent = node->Parent;
             node = node->Left;
-        }
-        else if (node->Left == NULL && node->Right != NULL)
-        {
+        } else if (node->Left == ((void *)0) && node->Right != ((void *)0)) {
             node->Right->Parent = node->Parent;
             node = node->Right;
-        }
-        else
-        {
+        } else {
             Node* deleteNode = node;
             Node* minNode = GetMinNode(node->Right, deleteNode);
-
             minNode->Parent = node->Parent;
-
             minNode->Left = deleteNode->Left;
-            if (deleteNode->Left != NULL)
-            {
+            if (deleteNode->Left != ((void *)0)) {
                 deleteNode->Left->Parent = minNode;
             }
-
             minNode->Right = deleteNode->Right;
-            if (deleteNode->Right != NULL)
-            {
+            if (deleteNode->Right != ((void *)0)) {
                 deleteNode->Right->Parent = minNode;
             }
-
             node = minNode;
             free(deleteNode);
         }

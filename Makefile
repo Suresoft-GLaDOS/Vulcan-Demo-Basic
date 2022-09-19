@@ -4,11 +4,11 @@ LDFLAGS:=
 
 all: test
 
-test: test.o BranchChecker.o
-	$(CC) $(CFLAGS) test.o BranchChecker.o -o test $(LDFLAGS)
+test: test.o 3Dimension.o
+	$(CC) $(CFLAGS) test.o 3Dimension.o -o test $(LDFLAGS) -DGCOV=1
 
-BranchChecker.o: src/BranchChecker.c
-	$(CC) $(CFLAGS) -o BranchChecker.o -c src/BranchChecker.c
+3Dimension.o: src/3Dimension.c
+	$(CC) $(CFLAGS) -o 3Dimension.o -c src/3Dimension.c
 
 test.o: test.c
 	$(CC) $(CFLAGS) -o test.o -c test.c
