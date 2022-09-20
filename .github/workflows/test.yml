@@ -26,8 +26,8 @@ jobs:
         steps:
             - name: run test
               run: |
-                  index=1; make check TESTS="$(sed -n "1p" < AUTOMAKE_TEST_CASE.output)"
-                  index=2; make check TESTS="$(sed -n "2p" < AUTOMAKE_TEST_CASE.output)"
-                  index=3; make check TESTS="$(sed -n "3p" < AUTOMAKE_TEST_CASE.output)"
-                  index=4; make check TESTS="$(sed -n "4p" < AUTOMAKE_TEST_CASE.output)"
-                  index=5; make check TESTS="$(sed -n "5p" < AUTOMAKE_TEST_CASE.output)"
+                    make check TESTS="$(sed -n "1p" < AUTOMAKE_TEST_CASE.output)"
+                    make check TESTS="$(sed -n "2p" < AUTOMAKE_TEST_CASE.output)"
+                    make check TESTS="$(sed -n "3p" < AUTOMAKE_TEST_CASE.output)"
+                    make check TESTS="$(sed -n "4p" < AUTOMAKE_TEST_CASE.output)"
+                    make check TESTS="$(sed -n "5p" < AUTOMAKE_TEST_CASE.output)"
