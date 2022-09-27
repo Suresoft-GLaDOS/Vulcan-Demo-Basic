@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall -O3 -DNDEBUG -rdynamic CMakeFiles/md2html.dir/cmdline.c.o CMakeFiles/md2html.dir/entity.c.o CMakeFiles/md2html.dir/md2html.c.o CMakeFiles/md2html.dir/render_html.c.o -o md2html  ../md4c/libmd4c.a 
