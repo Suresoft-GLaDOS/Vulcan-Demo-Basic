@@ -37,7 +37,6 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   index=8; ./runtest "$(sed -n 8p .dpp/test_list)"
   index=9; ./runtest "$(sed -n 9p .dpp/test_list)"
   index=10; ./runtest "$(sed -n 10p .dpp/test_list)"
-  index=31; ./runtest "$(sed -n 31p .dpp/test_list)"
   index=32; ./runtest "$(sed -n 32p .dpp/test_list)"
   index=33; ./runtest "$(sed -n 33p .dpp/test_list)"
   index=34; ./runtest "$(sed -n 34p .dpp/test_list)"
