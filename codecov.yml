@@ -1,4 +1,2 @@
-# YAML definition for codecov.io code coverage reports.
-
 ignore:
-    - "md2html"
+  - "xmpsdk"  # Not interested about the coverage of XMKSDK

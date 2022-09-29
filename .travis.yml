@@ -1,30 +1,41 @@
-# YAML definition for travis-ci.com continuous integration.
-# See https://docs.travis-ci.com/user/languages/c
+language: cpp
 
-language: c
+git:
+  quiet: true
+  depth: 1
 
-compiler:
-    - gcc
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+      sudo: required
+      compiler: gcc
+      env: COVERAGE=1 CMAKE_OPTIONS="-DCMAKE_BUILD_TYPE=Release -DEXIV2_ENABLE_VIDEO=ON -DEXIV2_ENABLE_WEBREADY=ON -DEXIV2_BUILD_UNIT_TESTS=ON -DBUILD_WITH_COVERAGE=ON -DEXIV2_ENABLE_CURL=ON"
 
-addons:
-    apt:
-        packages:
-            - python3   # for running tests
-            - lcov      # for generating code coverage report
+    - os: linux
+      dist: xenial
+      sudo: required
+      compiler: gcc
+      env:
+        - WITH_VALGRIND=1
+        - CMAKE_OPTIONS="-DCMAKE_BUILD_TYPE=Release -DEXIV2_ENABLE_VIDEO=ON -DEXIV2_ENABLE_WEBREADY=ON -DEXIV2_BUILD_UNIT_TESTS=ON -DEXIV2_ENABLE_CURL=ON"
 
-before_script:
-    - mkdir build
-    - cd build
-    - CFLAGS='--coverage -g -O0' cmake -DCMAKE_BUILD_TYPE=Debug -G 'Unix Makefiles' ..
+    - os: linux
+      dist: xenial
+      sudo: required
+      compiler: clang
+      env: CMAKE_OPTIONS="-DCMAKE_BUILD_TYPE=Release -DEXIV2_ENABLE_VIDEO=ON -DEXIV2_ENABLE_WEBREADY=ON -DEXIV2_BUILD_UNIT_TESTS=ON -DEXIV2_ENABLE_CURL=ON"
 
-script:
-    - make VERBOSE=1
+    - os: osx
+      osx_image: xcode10.2
+      compiler: clang
+      env: CMAKE_OPTIONS="-DCMAKE_BUILD_TYPE=Release -DEXIV2_ENABLE_VIDEO=ON -DEXIV2_ENABLE_WEBREADY=ON -DEXIV2_BUILD_UNIT_TESTS=ON -DEXIV2_ENABLE_NLS=OFF -DEXIV2_ENABLE_CURL=ON"
 
-after_success:
-    - ../scripts/run-tests.sh
-    # Creating report
-    - lcov --directory . --capture --output-file coverage.info # capture coverage info
-    - lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter out system
-    - lcov --list coverage.info # debug info
-    # Uploading report to CodeCov
-    - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
+install: ./ci/install.sh
+script:  ./ci/run.sh
+
+cache:
+    ccache: true
+    directories:
+    - conan         # Conan installation folder
+    - $HOME/conanData     # Conan storage location
