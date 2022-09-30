@@ -35,7 +35,6 @@ jobs:
                     index=7; ./runtest "$(sed -n 7p .dpp/test_list)"
                     index=8; ./runtest "$(sed -n 8p .dpp/test_list)"
                     index=9; ./runtest "$(sed -n 9p .dpp/test_list)"
-                    index=10; ./runtest "$(sed -n 10p .dpp/test_list)"
                     index=32; ./runtest "$(sed -n 32p .dpp/test_list)"
                     index=33; ./runtest "$(sed -n 33p .dpp/test_list)"
                     index=34; ./runtest "$(sed -n 34p .dpp/test_list)"
@@ -43,4 +42,4 @@ jobs:
                     index=36; ./runtest "$(sed -n 36p .dpp/test_list)"
                     index=37; ./runtest "$(sed -n 37p .dpp/test_list)"
                     index=38; ./runtest "$(sed -n 38p .dpp/test_list)"
-                    DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests" + "General documents valid regression tests"
+                    DPP_RUN_ERROR_CASE=1 ./runtest "Error cases regression tests"
