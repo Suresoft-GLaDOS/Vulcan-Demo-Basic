@@ -43,23 +43,25 @@ add_library( exiv2lib_int OBJECT
 add_library( exiv2lib
     ../include/exiv2/config.h
     ../include/exiv2/exiv2.hpp
-    ../include/exiv2/rwlock.hpp
     ../include/exiv2/slice.hpp
     basicio.cpp             ../include/exiv2/basicio.hpp
-    bigtiffimage.cpp
+    bigtiffimage.cpp        ../include/exiv2/bigtiffimage.hpp
     bmpimage.cpp            ../include/exiv2/bmpimage.hpp
     convert.cpp             ../include/exiv2/convert.hpp
     cr2image.cpp            ../include/exiv2/cr2image.hpp
     crwimage.cpp            ../include/exiv2/crwimage.hpp
     datasets.cpp            ../include/exiv2/datasets.hpp
     easyaccess.cpp          ../include/exiv2/easyaccess.hpp
-    epsimage.cpp            ../include/exiv2/epsimage.hpp
+    enforce.hpp
     error.cpp               ../include/exiv2/error.hpp
     exif.cpp                ../include/exiv2/exif.hpp
+    fff.h
     futils.cpp              ../include/exiv2/futils.hpp
     gifimage.cpp            ../include/exiv2/gifimage.hpp
     http.cpp                ../include/exiv2/http.hpp
     image.cpp               ../include/exiv2/image.hpp
+                            ../include/exiv2/image_types.hpp
+    i18n.h
     ini.cpp                 ../include/exiv2/ini.hpp
     iptc.cpp                ../include/exiv2/iptc.hpp
     jp2image.cpp            ../include/exiv2/jp2image.hpp
@@ -95,7 +97,7 @@ generate_export_header(exiv2lib
 # ---------------------------------------------------------
 
 if(MINGW OR MSYS)
-    target_sources(exiv2lib_int PRIVATE localtime.c)
+    target_sources(exiv2lib_int PRIVATE localtime.c private.h tzfile.h)
 endif()
 
 if( EXIV2_ENABLE_WEBREADY )
@@ -103,24 +105,11 @@ if( EXIV2_ENABLE_WEBREADY )
         target_sources(exiv2lib PRIVATE easyaccess.cpp ../include/exiv2/easyaccess.hpp)
     endif()
 
-    if( EXIV2_ENABLE_SSH )
-        target_sources(exiv2lib PRIVATE ssh.cpp ../include/exiv2/ssh.hpp)
-    endif()
 endif()
 
 if( EXIV2_ENABLE_PNG )
-    target_sources(exiv2lib_int PRIVATE pngchunk_int.cpp)
+    target_sources(exiv2lib_int PRIVATE pngchunk_int.cpp pngchunk_int.hpp)
     target_sources(exiv2lib PRIVATE pngimage.cpp ../include/exiv2/pngimage.hpp)
-endif()
-
-if( EXIV2_ENABLE_VIDEO )
-    target_sources(exiv2lib PRIVATE
-        asfvideo.cpp            ../include/exiv2/asfvideo.hpp
-        matroskavideo.cpp       ../include/exiv2/matroskavideo.hpp
-        quicktimevideo.cpp      ../include/exiv2/quicktimevideo.hpp
-        riffvideo.cpp           ../include/exiv2/riffvideo.hpp
-        utilsvideo.cpp          ../include/exiv2/utilsvideo.hpp
-    )
 endif()
 
 # Other library target properties
@@ -172,11 +161,6 @@ target_include_directories(exiv2lib_int PUBLIC
 )
 
 if (EXIV2_ENABLE_WEBREADY)
-
-    if( EXIV2_ENABLE_SSH )
-        target_include_directories(exiv2lib SYSTEM PUBLIC ${SSH_INCLUDE_DIR} )
-        target_link_libraries( exiv2lib PUBLIC ${SSH_LIBRARIES})
-    endif()
 
     if( EXIV2_ENABLE_CURL )
         target_include_directories(exiv2lib SYSTEM PUBLIC ${CURL_INCLUDE_DIR} )
@@ -241,7 +225,7 @@ install(FILES
 
 install(EXPORT exiv2Config DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/exiv2")
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/exiv2ConfigVersion.cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}/exiv2/cmake")
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/exiv2ConfigVersion.cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/exiv2")
 
 # ******************************************************************************
 # exiv2 application
@@ -280,11 +264,10 @@ if(EXIV2_BUILD_EXIV2_COMMAND)
     endif()
 
     install(TARGETS exiv2 RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+    install( FILES exiv2.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 )
+
+    if (MSVC)
+        set_target_properties(exiv2 PROPERTIES LINK_FLAGS "/ignore:4099")
+    endif()
 endif()
 
-# ******************************************************************************
-# Man page
-install( FILES exiv2.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 )
-
-# That's all Folks!
-##

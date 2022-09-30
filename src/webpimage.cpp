@@ -62,8 +62,8 @@ namespace Exiv2 {
 namespace Exiv2 {
     using namespace Exiv2::Internal;
 
-    WebPImage::WebPImage(BasicIo::AutoPtr io)
-    : Image(ImageType::webp, mdNone, io)
+    WebPImage::WebPImage(BasicIo::UniquePtr io)
+    : Image(ImageType::webp, mdNone, std::move(io))
     {
     } // WebPImage::WebPImage
 
@@ -117,7 +117,7 @@ namespace Exiv2 {
             throw Error(kerDataSourceOpenFailed, io_->path(), strError());
         }
         IoCloser closer(*io_);
-        BasicIo::AutoPtr tempIo(new MemIo);
+        BasicIo::UniquePtr tempIo(new MemIo);
         assert (tempIo.get() != 0);
 
         doWriteMetadata(*tempIo); // may throw
@@ -456,7 +456,7 @@ namespace Exiv2 {
 
                 if ( equalsWebPTag(chunkId, WEBP_CHUNK_HEADER_EXIF) && option==kpsRecursive ) {
                     // create memio object with the payload, then print the structure
-                    BasicIo::AutoPtr p = BasicIo::AutoPtr(new MemIo(payload.pData_,payload.size_));
+                    BasicIo::UniquePtr p = BasicIo::UniquePtr(new MemIo(payload.pData_,payload.size_));
                     printTiffStructure(*p,out,option,depth);
                 }
 
@@ -593,13 +593,12 @@ namespace Exiv2 {
             } else if (equalsWebPTag(chunkId, WEBP_CHUNK_HEADER_EXIF)) {
                 io_->read(payload.pData_, payload.size_);
 
-                byte  size_buff[2];
                 // 4 meaningful bytes + 2 padding bytes
                 byte  exifLongHeader[]   = { 0xFF, 0x01, 0xFF, 0xE1, 0x00, 0x00 };
                 byte  exifShortHeader[]  = { 0x45, 0x78, 0x69, 0x66, 0x00, 0x00 };
                 byte  exifTiffLEHeader[] = { 0x49, 0x49, 0x2A };       // "MM*"
                 byte  exifTiffBEHeader[] = { 0x4D, 0x4D, 0x00, 0x2A }; // "II\0*"
-                byte* rawExifData = NULL;
+                byte* rawExifData = nullptr;
                 long  offset = 0;
                 bool  s_header = false;
                 bool  le_header = false;
@@ -632,27 +631,28 @@ namespace Exiv2 {
                     offset += 12;
                 }
 
-                const long size = payload.size_ + offset;
-                rawExifData = (byte*)malloc(size);
+                const long sizePayload = payload.size_ + offset;
+                rawExifData = (byte*)malloc(sizePayload);
 
+                byte  sizeBuff[2];
                 if (s_header) {
-                    us2Data(size_buff, (uint16_t) (size - 6), bigEndian);
+                    us2Data(sizeBuff, (uint16_t) (sizePayload - 6), bigEndian);
                     memcpy(rawExifData, (char*)&exifLongHeader, 4);
-                    memcpy(rawExifData + 4, (char*)&size_buff, 2);
+                    memcpy(rawExifData + 4, (char*)&sizeBuff, 2);
                 }
 
                 if (be_header || le_header) {
-                    us2Data(size_buff, (uint16_t) (size - 6), bigEndian);
+                    us2Data(sizeBuff, (uint16_t) (sizePayload - 6), bigEndian);
                     memcpy(rawExifData, (char*)&exifLongHeader, 4);
-                    memcpy(rawExifData + 4, (char*)&size_buff, 2);
+                    memcpy(rawExifData + 4, (char*)&sizeBuff, 2);
                     memcpy(rawExifData + 6, (char*)&exifShortHeader, 6);
                 }
 
                 memcpy(rawExifData + offset, payload.pData_, payload.size_);
 
 #ifdef DEBUG
-                std::cout << "Display Hex Dump [size:" << (unsigned long)size << "]" << std::endl;
-                std::cout << Internal::binaryToHex(rawExifData, size);
+                std::cout << "Display Hex Dump [size:" << (unsigned long)sizePayload << "]" << std::endl;
+                std::cout << Internal::binaryToHex(rawExifData, sizePayload);
 #endif
 
                 if (pos != -1) {
@@ -670,7 +670,8 @@ namespace Exiv2 {
                     exifData_.clear();
                 }
 
-                if (rawExifData) free(rawExifData);
+                if (rawExifData)
+                    free(rawExifData);
             } else if (equalsWebPTag(chunkId, WEBP_CHUNK_HEADER_XMP)) {
                 io_->read(payload.pData_, payload.size_);
                 xmpPacket_.assign(reinterpret_cast<char*>(payload.pData_), payload.size_);
@@ -694,9 +695,9 @@ namespace Exiv2 {
 
     /* =========================================== */
 
-    Image::AutoPtr newWebPInstance(BasicIo::AutoPtr io, bool /*create*/)
+    Image::UniquePtr newWebPInstance(BasicIo::UniquePtr io, bool /*create*/)
     {
-        Image::AutoPtr image(new WebPImage(io));
+        Image::UniquePtr image(new WebPImage(std::move(io)));
         if (!image->good()) {
             image.reset();
         }

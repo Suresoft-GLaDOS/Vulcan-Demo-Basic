@@ -46,11 +46,9 @@ endif()
 OptionOutput( "Native language support:            " EXIV2_ENABLE_NLS                )
 OptionOutput( "Conversion of Windows XP tags:      " EXIV2_ENABLE_PRINTUCS2          )
 OptionOutput( "Nikon lens database:                " EXIV2_ENABLE_LENSDATA           )
-OptionOutput( "Building video support:             " EXIV2_ENABLE_VIDEO              )
 OptionOutput( "Building webready support:          " EXIV2_ENABLE_WEBREADY           )
 if    ( EXIV2_ENABLE_WEBREADY )
     OptionOutput( "USE Libcurl for HttpIo:             " EXIV2_ENABLE_CURL           )
-    OptionOutput( "USE Libssh for SshIo:               " EXIV2_ENABLE_SSH            )
 endif ( EXIV2_ENABLE_WEBREADY )
 
 if (WIN32)
@@ -65,8 +63,5 @@ OptionOutput( "Building doc:                       " EXIV2_BUILD_DOC            
 OptionOutput( "Building with coverage flags:       " BUILD_WITH_COVERAGE             )
 OptionOutput( "Using ccache:                       " BUILD_WITH_CCACHE               )
 
-message( STATUS "------------------------------------------------------------------" )
-
-message(STATUS " WARNING: Deprecated features: EPS, Video, Ssh")
 
 message( STATUS "------------------------------------------------------------------" )

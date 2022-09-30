@@ -1,7 +1,6 @@
 find_package(GTest REQUIRED)
 
 add_executable(unit_tests mainTestRunner.cpp
-    gtestwrapper.h
     test_types.cpp
     test_tiffheader.cpp
     test_futils.cpp
@@ -14,14 +13,19 @@ add_executable(unit_tests mainTestRunner.cpp
     test_helper_functions.cpp
     test_slice.cpp
     test_image_int.cpp
+    test_ImageFactory.cpp
     $<TARGET_OBJECTS:exiv2lib_int>
 )
 
-#TODO Use GTest::GTest once we upgrade the minimum CMake version required
+target_compile_definitions(unit_tests
+    PRIVATE
+        TESTDATA_PATH="${PROJECT_SOURCE_DIR}/test/data"
+)
+
 target_link_libraries(unit_tests
     PRIVATE
         exiv2lib
-        ${GTEST_BOTH_LIBRARIES}
+        GTest::GTest
 )
 
 # ZLIB is used in exiv2lib_int.
@@ -31,13 +35,7 @@ endif()
 
 target_include_directories(unit_tests
     PRIVATE
-        ${GTEST_INCLUDE_DIRS}
         ${CMAKE_SOURCE_DIR}/src
-)
-
-target_compile_definitions(unit_tests
-    PRIVATE
-        GTEST_LINKED_AS_SHARED_LIBRARY=1
 )
 
 set_target_properties(unit_tests PROPERTIES

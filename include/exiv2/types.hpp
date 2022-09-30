@@ -26,8 +26,7 @@
            11-Feb-04, ahu: isolated as a component<BR>
            31-Jul-04, brad: added Time, Data and String values
  */
-#ifndef TYPES_HPP_
-#define TYPES_HPP_
+#pragma once
 
 #include "exiv2lib_export.h"
 
@@ -41,27 +40,7 @@
 #include <limits>
 #include <algorithm>
 #include <sstream>
-
-#ifdef _MSC_VER
-// Visual Studio 2010 and later has stdint.h
-# if   _MSC_VER >= _MSC_VER_2010
-#  include <stdint.h>
-# else
-// Earlier compilers have MS C99 equivalents such as __int8
-   typedef unsigned __int8  uint8_t;
-   typedef unsigned __int16 uint16_t;
-   typedef unsigned __int32 uint32_t;
-   typedef unsigned __int64 uint64_t;
-   typedef          __int8  int8_t;
-   typedef          __int16 int16_t;
-   typedef          __int32 int32_t;
-   typedef          __int64 int64_t;
-# endif
-#else
-  #ifdef EXV_HAVE_STDINT_H
-  # include <stdint.h>
-  #endif
-#endif
+#include <stdint.h> /// \todo change to cstdint
 
 
 // MSVC macro to convert a string to a wide string
@@ -110,16 +89,39 @@ namespace Exiv2 {
     typedef std::pair<int32_t, int32_t> Rational;
 
     //! Type to express the byte order (little or big endian)
-    enum ByteOrder { invalidByteOrder, littleEndian, bigEndian };
+    enum ByteOrder
+    {
+        invalidByteOrder,
+        littleEndian,
+        bigEndian,
+    };
 
     //! Type to indicate write method used by TIFF parsers
-    enum WriteMethod { wmIntrusive, wmNonIntrusive };
+    enum WriteMethod
+    {
+        wmIntrusive,
+        wmNonIntrusive,
+    };
 
     //! An identifier for each type of metadata
-    enum MetadataId { mdNone=0, mdExif=1, mdIptc=2, mdComment=4, mdXmp=8, mdIccProfile=16 };
+    enum MetadataId
+    {
+        mdNone = 0,
+        mdExif = 1,
+        mdIptc = 2,
+        mdComment = 4,
+        mdXmp = 8,
+        mdIccProfile = 16,
+    };
 
     //! An identifier for each mode of metadata support
-    enum AccessMode { amNone=0, amRead=1, amWrite=2, amReadWrite=3 };
+    enum AccessMode
+    {
+        amNone = 0,
+        amRead = 1,
+        amWrite = 2,
+        amReadWrite = 3,
+    };
 
     /*!
       @brief %Exiv2 value type identifiers.
@@ -166,14 +168,13 @@ namespace Exiv2 {
 
     //! Type information lookup functions. Implemented as a static class.
     class EXIV2API TypeInfo {
-        //! Prevent construction: not implemented.
-        TypeInfo();
-        //! Prevent copy-construction: not implemented.
-        TypeInfo(const TypeInfo& rhs);
-        //! Prevent assignment: not implemented.
-        TypeInfo& operator=(const TypeInfo& rhs);
-
     public:
+        TypeInfo() = delete;
+        TypeInfo& operator=(const TypeInfo& rhs) = delete;
+        TypeInfo& operator=(const TypeInfo&& rhs) = delete;
+        TypeInfo(const TypeInfo& rhs) = delete;
+        TypeInfo(const TypeInfo&& rhs) = delete;
+
         //! Return the name of the type, 0 if unknown.
         static const char* typeName(TypeId typeId);
         //! Return the type id for a type name
@@ -213,7 +214,7 @@ namespace Exiv2 {
         DataBuf(const byte* pData, long size);
         /*!
           @brief Copy constructor. Transfers the buffer to the newly created
-                 object similar to std::auto_ptr, i.e., the original object is
+                 object similar to std::unique_ptr, i.e., the original object is
                  modified.
          */
         DataBuf(DataBuf& rhs);
@@ -225,7 +226,7 @@ namespace Exiv2 {
         //@{
         /*!
           @brief Assignment operator. Transfers the buffer and releases the
-                 buffer at the original object similar to std::auto_ptr, i.e.,
+                 buffer at the original object similar to std::unique_ptr, i.e.,
                  the original object is modified.
          */
         DataBuf& operator=(DataBuf& rhs);
@@ -255,10 +256,11 @@ namespace Exiv2 {
           @name Conversions
 
           Special conversions with auxiliary type to enable copies
-          and assignments, similar to those used for std::auto_ptr.
+          and assignments, similar to those used for std::unique_ptr.
           See http://www.josuttis.com/libbook/auto_ptr.html for a discussion.
          */
         //@{
+        // cppcheck-suppress noExplicitConstructor
         DataBuf(const DataBufRef& rhs);
         DataBuf& operator=(DataBufRef rhs);
         operator DataBufRef();
@@ -508,7 +510,7 @@ namespace Exiv2 {
     const T* find(T (&src)[N], const K& key)
     {
         const T* rc = std::find(src, src + N, key);
-        return rc == src + N ? 0 : rc;
+        return rc == src + N ? nullptr : rc;
     }
 
     //! Template used in the COUNTOF macro to determine the size of an array
@@ -540,11 +542,14 @@ namespace Exiv2 {
     T stringTo(const std::string& s, bool& ok)
     {
         std::istringstream is(s);
+        // cppcheck-suppress unassignedVariable
         T tmp;
+        // cppcheck-suppress uninitvar
         ok = (is >> tmp) ? true : false;
         std::string rest;
         is >> std::skipws >> rest;
         if (!rest.empty()) ok = false;
+        // cppcheck-suppress uninitvar
         return tmp;
     }
 
@@ -607,5 +612,3 @@ namespace Exiv2 {
     }
 
 }                                       // namespace Exiv2
-
-#endif                                  // #ifndef TYPES_HPP_

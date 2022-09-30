@@ -135,8 +135,8 @@ struct Jp2UuidBox
 namespace Exiv2
 {
 
-    Jp2Image::Jp2Image(BasicIo::AutoPtr io, bool create)
-            : Image(ImageType::jp2, mdExif | mdIptc | mdXmp, io)
+    Jp2Image::Jp2Image(BasicIo::UniquePtr io, bool create)
+            : Image(ImageType::jp2, mdExif | mdIptc | mdXmp, std::move(io))
     {
         if (create)
         {
@@ -214,7 +214,6 @@ namespace Exiv2
             throw Error(kerNotAnImage, "JPEG-2000");
         }
 
-        long              position  = 0;
         Jp2BoxHeader      box       = {0,0};
         Jp2BoxHeader      subBox    = {0,0};
         Jp2ImageHeaderBox ihdr      = {0,0,0,0,0,0,0,0};
@@ -222,7 +221,7 @@ namespace Exiv2
 
         while (io_->read((byte*)&box, sizeof(box)) == sizeof(box))
         {
-            position   = io_->tell();
+            long position = io_->tell();
             box.length = getLong((byte*)&box.length, bigEndian);
             box.type   = getLong((byte*)&box.type, bigEndian);
 #ifdef DEBUG
@@ -469,17 +468,14 @@ namespace Exiv2
             out << " address |   length | box       | data" << std::endl;
         }
 
-        if ( bPrint || bXMP || bICC || bIPTCErase ) {
+        if (bPrint || bXMP || bICC || bIPTCErase) {
+            Jp2BoxHeader box = {1, 1};
+            Jp2BoxHeader subBox = {1, 1};
+            Jp2UuidBox uuid = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+            bool bLF = false;
 
-            long              position  = 0;
-            Jp2BoxHeader      box       = {1,1};
-            Jp2BoxHeader      subBox    = {1,1};
-            Jp2UuidBox        uuid      = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
-            bool              bLF       = false;
-
-            while (box.length && box.type != kJp2BoxTypeClose && io_->read((byte*)&box, sizeof(box)) == sizeof(box))
-            {
-                position   = io_->tell();
+            while (box.length && box.type != kJp2BoxTypeClose && io_->read((byte*)&box, sizeof(box)) == sizeof(box)) {
+                long position = io_->tell();
                 box.length = getLong((byte*)&box.length, bigEndian);
                 box.type = getLong((byte*)&box.type, bigEndian);
 
@@ -505,7 +501,7 @@ namespace Exiv2
                             subBox.length = getLong((byte*)&subBox.length, bigEndian);
                             subBox.type = getLong((byte*)&subBox.type, bigEndian);
 
-                            if (subBox.length < sizeof(box) || subBox.length > io_->size() - io_->tell()) {
+                            if (subBox.length > io_->size() - io_->tell()) {
                                 throw Error(kerCorruptedMetadata);
                             }
 
@@ -515,7 +511,7 @@ namespace Exiv2
                                 out << Internal::stringFormat("%8ld | %8ld |  sub:", (size_t)address,
                                                               (size_t)subBox.length)
                                     << toAscii(subBox.type) << " | "
-                                    << Internal::binaryToString(makeSlice(data, 0, std::min(30l, data.size_)));
+                                    << Internal::binaryToString(makeSlice(data, 0, 30));
                                 bLF = true;
                             }
 
@@ -574,7 +570,7 @@ namespace Exiv2
                             if (bIsExif && bRecursive && rawData.size_ > 0) {
                                 if ((rawData.pData_[0] == rawData.pData_[1]) &&
                                     (rawData.pData_[0] == 'I' || rawData.pData_[0] == 'M')) {
-                                    BasicIo::AutoPtr p = BasicIo::AutoPtr(new MemIo(rawData.pData_, rawData.size_));
+                                    BasicIo::UniquePtr p = BasicIo::UniquePtr(new MemIo(rawData.pData_, rawData.size_));
                                     printTiffStructure(*p, out, option, depth);
                                 }
                             }
@@ -610,7 +606,7 @@ namespace Exiv2
             throw Error(kerDataSourceOpenFailed, io_->path(), strError());
         }
         IoCloser closer(*io_);
-        BasicIo::AutoPtr tempIo(new MemIo);
+        BasicIo::UniquePtr tempIo(new MemIo);
         assert (tempIo.get() != 0);
 
         doWriteMetadata(*tempIo); // may throw
@@ -930,9 +926,9 @@ namespace Exiv2
 
     // *************************************************************************
     // free functions
-    Image::AutoPtr newJp2Instance(BasicIo::AutoPtr io, bool create)
+    Image::UniquePtr newJp2Instance(BasicIo::UniquePtr io, bool create)
     {
-        Image::AutoPtr image(new Jp2Image(io, create));
+        Image::UniquePtr image(new Jp2Image(std::move(io), create));
         if (!image->good())
         {
             image.reset();

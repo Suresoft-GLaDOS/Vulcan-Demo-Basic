@@ -116,9 +116,8 @@ if __name__ == '__main__':
         help="Additional flags for cmake",
         type=str,
         nargs='?',
-        default="-DEXIV2_TEAM_EXTRA_WARNINGS=ON -DEXIV2_ENABLE_VIDEO=ON "
-        "-DEXIV2_ENABLE_WEBREADY=ON -DEXIV2_BUILD_UNIT_TESTS=ON "
-        "-DBUILD_WITH_CCACHE=ON -DEXIV2_ENABLE_CURL=ON"
+        default="-DEXIV2_TEAM_EXTRA_WARNINGS=ON -DEXIV2_ENABLE_WEBREADY=ON"
+        " -DBUILD_WITH_CCACHE=ON -DEXIV2_ENABLE_CURL=ON"
     )
 
     args = parser.parse_args()

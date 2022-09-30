@@ -30,8 +30,7 @@
            <a href="mailto:mul@rentapacs.de">mul@rentapacs.de</a>
   @date    15-Jan-05, brad: split out from image.cpp
  */
-#ifndef JPGIMAGE_HPP_
-#define JPGIMAGE_HPP_
+#pragma once
 
 // *****************************************************************************
 #include "exiv2lib_export.h"
@@ -45,12 +44,6 @@ namespace Exiv2 {
 
 // *****************************************************************************
 // class definitions
-
-    // Supported JPEG image formats
-    namespace ImageType {
-        const int jpeg = 1;         //!< JPEG image type (see class JpegImage)
-        const int exv  = 2;         //!< EXV image type (see class ExvImage)
-    }
 
     /*!
       @brief Helper class, has methods to deal with %Photoshop "Information
@@ -145,8 +138,8 @@ namespace Exiv2 {
     public:
         //! @name Manipulators
         //@{
-        void readMetadata();
-        void writeMetadata();
+        void readMetadata() override;
+        void writeMetadata() override;
 
         /*!
           @brief Print out the structure of image file.
@@ -154,7 +147,7 @@ namespace Exiv2 {
                 not valid (does not look like data of the specific image type).
           @warning This function is not thread safe and intended for exiv2 -pS for debugging.
          */
-        void printStructure(std::ostream& out, PrintStructureOption option,int depth);
+        void printStructure(std::ostream& out, PrintStructureOption option,int depth) override;
         //@}
 
     protected:
@@ -178,8 +171,8 @@ namespace Exiv2 {
               valid image of the calling subclass.
           @param dataSize Size of initData in bytes.
          */
-        JpegBase(int              type,
-                 BasicIo::AutoPtr io,
+        JpegBase(ImageType       type,
+                 BasicIo::UniquePtr io,
                  bool             create,
                  const byte       initData[],
                  long             dataSize);
@@ -249,17 +242,13 @@ namespace Exiv2 {
         static const char xmpId_[];             //!< XMP packet identifier
         static const char iccId_[];             //!< ICC profile identifier
 
-    private:
-        //! @name NOT implemented
-        //@{
-        //! Default constructor.
-        JpegBase();
-        //! Copy constructor
-        JpegBase(const JpegBase& rhs);
-        //! Assignment operator
-        JpegBase& operator=(const JpegBase& rhs);
-        //@}
+        JpegBase() = delete;
+        JpegBase& operator=(const JpegBase& rhs) = delete;
+        JpegBase& operator=(const JpegBase&& rhs) = delete;
+        JpegBase(const JpegBase& rhs) = delete;
+        JpegBase(const JpegBase&& rhs) = delete;
 
+    private:
         //! @name Manipulators
         //@{
         /*!
@@ -318,17 +307,17 @@ namespace Exiv2 {
           @param create Specifies if an existing image should be read (false)
               or if a new file should be created (true).
          */
-        JpegImage(BasicIo::AutoPtr io, bool create);
+        JpegImage(BasicIo::UniquePtr io, bool create);
         //@}
         //! @name Accessors
         //@{
-        std::string mimeType() const;
+        std::string mimeType() const override;
         //@}
 
     protected:
         //! @name Accessors
         //@{
-        bool isThisType(BasicIo& iIo, bool advance) const;
+        bool isThisType(BasicIo& iIo, bool advance) const override;
         //@}
         //! @name Manipulators
         //@{
@@ -340,7 +329,7 @@ namespace Exiv2 {
                  4 if the temporary image can not be written to;<BR>
                 -3 other temporary errors
          */
-        int writeHeader(BasicIo& oIo) const;
+        int writeHeader(BasicIo& oIo) const override;
         //@}
 
     private:
@@ -348,14 +337,12 @@ namespace Exiv2 {
         static const byte soi_;          // SOI marker
         static const byte blank_[];      // Minimal Jpeg image
 
-        // NOT Implemented
-        //! Default constructor
-        JpegImage();
-        //! Copy constructor
-        JpegImage(const JpegImage& rhs);
-        //! Assignment operator
-        JpegImage& operator=(const JpegImage& rhs);
-
+    public:
+        JpegImage() = delete;
+        JpegImage& operator=(const JpegImage& rhs) = delete;
+        JpegImage& operator=(const JpegImage&& rhs) = delete;
+        JpegImage(const JpegImage& rhs) = delete;
+        JpegImage(const JpegImage&& rhs) = delete;
     }; // class JpegImage
 
     //! Helper class to access %Exiv2 files
@@ -379,21 +366,21 @@ namespace Exiv2 {
           @param create Specifies if an existing image should be read (false)
                  or if a new file should be created (true).
          */
-        ExvImage(BasicIo::AutoPtr io, bool create);
+        ExvImage(BasicIo::UniquePtr io, bool create);
         //@}
         //! @name Accessors
         //@{
-        std::string mimeType() const;
+        std::string mimeType() const override;
         //@}
 
     protected:
         //! @name Accessors
         //@{
-        bool isThisType(BasicIo& iIo, bool advance) const;
+        bool isThisType(BasicIo& iIo, bool advance) const override;
         //@}
         //! @name Manipulators
         //@{
-        int writeHeader(BasicIo& oIo) const;
+        int writeHeader(BasicIo& oIo) const override;
         //@}
 
     private:
@@ -401,15 +388,13 @@ namespace Exiv2 {
         static const char exiv2Id_[];    // EXV identifier
         static const byte blank_[];      // Minimal exiv2 file
 
-        // NOT Implemented
-        //! Default constructor
-        ExvImage();
-        //! Copy constructor
-        ExvImage(const ExvImage& rhs);
-        //! Assignment operator
-        ExvImage& operator=(const ExvImage& rhs);
-
-    }; // class ExvImage
+    public:
+        ExvImage() = delete;
+        ExvImage& operator=(const ExvImage& rhs) = delete;
+        ExvImage& operator=(const ExvImage&& rhs) = delete;
+        ExvImage(const ExvImage& rhs) = delete;
+        ExvImage(const ExvImage&& rhs) = delete;
+    };  // class ExvImage
 
 // *****************************************************************************
 // template, inline and free functions
@@ -421,7 +406,7 @@ namespace Exiv2 {
              Caller owns the returned object and the auto-pointer ensures that
              it will be deleted.
      */
-    EXIV2API Image::AutoPtr newJpegInstance(BasicIo::AutoPtr io, bool create);
+    EXIV2API Image::UniquePtr newJpegInstance(BasicIo::UniquePtr io, bool create);
     //! Check if the file iIo is a JPEG image.
     EXIV2API bool isJpegType(BasicIo& iIo, bool advance);
     /*!
@@ -429,10 +414,8 @@ namespace Exiv2 {
              Caller owns the returned object and the auto-pointer ensures that
              it will be deleted.
      */
-    EXIV2API Image::AutoPtr newExvInstance(BasicIo::AutoPtr io, bool create);
+    EXIV2API Image::UniquePtr newExvInstance(BasicIo::UniquePtr io, bool create);
     //! Check if the file iIo is an EXV file
     EXIV2API bool isExvType(BasicIo& iIo, bool advance);
 
 }                                       // namespace Exiv2
-
-#endif                                  // #ifndef JPGIMAGE_HPP_

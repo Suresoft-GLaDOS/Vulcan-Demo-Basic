@@ -1,6 +1,7 @@
 | Travis        | AppVeyor      | GitLab| Codecov| Repology|
 |:-------------:|:-------------:|:-----:|:------:|:-------:|
-| [![Build Status](https://travis-ci.org/Exiv2/exiv2.svg?branch=0.27-maintenance)](https://travis-ci.org/Exiv2/exiv2) | [![Build status](https://ci.appveyor.com/api/projects/status/d6vxf2n0cp3v88al/branch/0.27-maintenance?svg=true)](https://ci.appveyor.com/project/piponazo/exiv2-wutfp/branch/0.27-maintenance) | [![pipeline status](https://gitlab.com/D4N/exiv2/badges/0.27-maintenance/pipeline.svg)](https://gitlab.com/D4N/exiv2/commits/0.27-maintenance) | [![codecov](https://codecov.io/gh/Exiv2/exiv2/branch/0.27-maintenance/graph/badge.svg)](https://codecov.io/gh/Exiv2/exiv2) | [![Packaging status](https://repology.org/badge/tiny-repos/exiv2.svg)](https://repology.org/metapackage/exiv2/versions) |
+| [![Build Status](https://travis-ci.org/Exiv2/exiv2.svg?branch=master)](https://travis-ci.org/Exiv2/exiv2) | [![Build status](https://ci.appveyor.com/api/projects/status/d6vxf2n0cp3v88al/branch/master?svg=true)](https://ci.appveyor.com/project/piponazo/exiv2-wutfp/branch/master) | [![pipeline status](https://gitlab.com/D4N/exiv2/badges/master/pipeline.svg)](https://gitlab.com/D4N/exiv2/commits/master) | [![codecov](https://codecov.io/gh/Exiv2/exiv2/branch/master/graph/badge.svg)](https://codecov.io/gh/Exiv2/exiv2) | [![Packaging status](https://repology.org/badge/tiny-repos/exiv2.svg)](https://repology.org/metapackage/exiv2/versions) |
+
 <div id="TOC">
 
 ### TABLE OF CONTENTS
@@ -45,9 +46,9 @@ write, delete and modify Exif, IPTC, XMP and ICC image metadata.
 
 | Exiv2 Resource              | Location |
 |:------                      |:----     |
-| Releases and Documentation  | [https://exiv2.org](https://exiv2.org) |
-| Prereleases:                | [https://pre-release.exiv2.org](https://pre-release.exiv2.org) |
-| Project Resources           | [https://github.com/Exiv2/exiv2](https://github.com/Exiv2/exiv2) |
+| Project Homepage            | [https://github.com/Exiv2/exiv2](https://github.com/Exiv2/exiv2) |
+| Downloads and Documentation | [http://exiv2.dyndns.org](http://exiv2.dyndns.org) |
+| BuildServer:                | [http://exiv2.dyndns.org:8080](http://exiv2.dyndns.org:8080) |
 | License (GPLv2)             | [COPYING](COPYING) |
 | CMake Downloads             | [https://cmake.org/download/](https://cmake.org/download/) |
 
@@ -83,13 +84,12 @@ To execute the exiv2 command line program, you should update your path to search
 $ export PATH="/usr/local/bin:$PATH"
 ```
 
-You will also need to locate libexiv2 at run time:
+ you'll also need to locate libexiv2 at run time:
 
 ```bash
 $ export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"      # Linux, Cygwin, MinGW/msys2
 $ export DYLD_LIBRARY_PATH="/usr/local/lib:$DYLD_LIBRARY_PATH"  # MacOS-X
 ```
-
 
 
 [TOC](#TOC)
@@ -158,26 +158,26 @@ See [README-CONAN](README-CONAN.md) for more information.
 
 ### 2.5 Building and linking your code with Exiv2
 
-There are detailed platform notes about compiling and linking in `releasenotes/{platform}/ReadMe.txt`
+There are detailed platform notes about linking code in releasenotes/platform/ReadMe.txt
 
-where `platform: { CYGWIN | Darwin | Linux | MinGW | msvc }`
+platform: { CYGWIN| Darwin | Linux | MinGW | msvc }
 
 In general you need to do the following:
 
-1) Application code should be written in C++98 and include exiv2 headers:
+1) Application code should be written in C++11 and include exiv2 headers:
 
 ```C++
 #include <exiv2/exiv2.hpp>
 ```
 
-2) Compile your C++ code with the directive: **`-I/usr/local/include`**
+2 Compile your C++ code with the directive: **`-I/usr/local/include`**
 
-3) Link your code with libexiv2 using the linker options: **`-lexiv2`** and **`-L/usr/local/lib`**
+3 Link your code with libexiv2 using the linker options: **`-lexiv2`** and **`-L/usr/local/lib`**
 
 The following is a typical command to build and link with libexiv2:
 
 ```bash
-$ g++ -std=c++98 myprog.cpp -o myprog -I/usr/local/include -L/usr/local/lib -lexiv2
+$ g++ -std=c++11 myprog.cpp -o myprog -I/usr/local/include -L/usr/local/lib -lexiv2
 ```
 
 [TOC](#TOC)
@@ -185,7 +185,7 @@ $ g++ -std=c++98 myprog.cpp -o myprog -I/usr/local/include -L/usr/local/lib -lex
 
 ### 2.6 Consuming Exiv2 with CMake
 
-When exiv2 is installed, the files required to consume Exiv2 are installed in `${CMAKE_INSTALL_PREFIX}/lib/cmake/exiv2`
+When exiv2 is installed, the files required to consume Exiv2 are installed in `${CMAKE_INSTALL_PREFIX}/share/exiv2/cmake/`
 
 You can build samples/exifprint.cpp as follows:
 
@@ -201,9 +201,9 @@ project(exifprint VERSION 0.0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-find_package(exiv2 REQUIRED CONFIG NAMES exiv2)    # search ${CMAKE_INSTALL_PREFIX}/lib/cmake/exiv2/
+find_package(exiv2 REQUIRED CONFIG NAMES exiv2)    # search ${CMAKE_INSTALL_PREFIX}/share/exiv2/cmake/
 add_executable(exifprint ../samples/exifprint.cpp) # compile this
-target_link_libraries(exifprint exiv2lib)          # link exiv2lib
+target_link_libraries(exifprint exiv2)             # link exiv2
 
 $ cmake .                                          # generate the makefile
 $ make                                             # build the code
@@ -322,8 +322,10 @@ Open a new issue on https://github.com/exiv2/exiv2 and attach the file po/xy/exi
 ### 2.9 Building Exiv2 Documentation
 
 Building documentation requires installing special tools.  You will probably prefer to
-read the documentation on-line from the project website: https://exiv2.org
+read the documentation on-line from the project website: http://exiv2.dyndns.org
 
+Additionally, complete copies of the project website are archived on the buildserver
+and can be downloaded for off-line use.  http://exiv2.dyndns.org:8080/userContent/builds/Website/
 
 To build documentation, use the CMake option **`-DEXIV2_BUILD_DOC=On`**.
 Additionally, you will require an additional build step to actually build the documentation.
@@ -344,7 +346,7 @@ To build the documentation, you must install the following products:
 
 ### 2.10 Building Exiv2 Packages
 
-To enable the building of Exiv2 packages, use the CMake option `-DEXIV2_TEAM_PACKAGING=ON`.
+To enable building of packages, use the CMake option **`-DEXIV2\_TEAM\_PACKAGING=On`**.
 
 You should not build Exiv2 Packages.  This feature is intended for use by Team Exiv2 to create Platform and Source Packages on the buildserver.
 
@@ -366,7 +368,7 @@ $ cmake --build . --config Release
 [100%] Built target addmoddel
 $ make package
 ...
-CPack: - package: /path/to/exiv2/build/exiv2-0.27.1-Linux.tar.gz generated.
+CPack: - package: /path/to/exiv2/build/exiv2-0.27.0.1-Linux.tar.gz generated.
 ```
 
 2) Source Package
@@ -375,7 +377,7 @@ CPack: - package: /path/to/exiv2/build/exiv2-0.27.1-Linux.tar.gz generated.
 $ make package_source
 Run CPack packaging tool for source...
 ...
-CPack: - package: /path/to/exiv2/build/exiv2-0.27.1-Source.tar.gz generated.
+CPack: - package: /path/to/exiv2/build/exiv2-0.27.0.1-Source.tar.gz generated.
 ```
 
 You may prefer to run `$ cmake --build . --config Release --target package_source`
@@ -388,7 +390,7 @@ You may prefer to run `$ cmake --build . --config Release --target package_sourc
 
 1) Generating and installing a debug library
 
-In general to generate a debug library, you should use the option *cmake* option `-DCMAKE_RELEASE_TYPE=Debug` and build in the usual way.
+In general to generate a debug library, you should use the option *cmake* option **`-DCMAKE_RELEASE_TYPE=Debug`** and build in the usual way.
 
 ```bash
 $ cd <exiv2dir>
@@ -396,7 +398,6 @@ $ mkdir build
 $ cd build
 $ cmake .. -G "Unix Makefiles" "-DCMAKE_BUILD_TYPE=Debug"
 $ make
-
 ```
 
 You must install the library to ensure that your code is linked to the debug library.
@@ -405,7 +406,7 @@ You can check that you have generated a debug build with the command:
 
 ```bash
 $ exiv2 -vVg debug
-exiv2 0.27.1
+exiv2 0.27.0.3
 debug=1
 $
 ```
@@ -566,7 +567,6 @@ You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-
 [TOC](#TOC)
 <div id="3-2">
 
@@ -611,17 +611,15 @@ rmills@rmillsmbp-w7 ~/gnu/github/exiv2/exiv2/test $ env EXIV2_BINDIR=${PWD}/../b
 
 ### 4.2 Running tests on Visual Studio builds
 
-Use the bash interpreter for MinGW/msys2 to run the test suite.  It's essential to have a DOS Python3 interpreter on your path called `python3.exe`  The variables EXIV2\_BINDIR and EXIV2\_EXT enable the test suite to locate the MSVC build artifacts.
+Use the bash interpreter for MinGW/msys2 to run the test suite.  It's essential to have a DOS Python3 interpreter on your path.  The variables EXIV2\_BINDIR and EXIV2\_EXT enable the test suite to locate the MSVC build artifacts.
 
 ```bash
 $ cd <exiv2dir>/build
 $ cd ../test
-$ PATH="/c/Python37:$PATH"
+$ PATH="/c/Python36:$PATH"
 $ export EXIV2_EXT=.exe
 $ export EXIV2_BINDIR=${PWD}/../build/bin
 ```
-
-**Caution: ** The python3 interpreter must be for DOS and called python3.exe.  I copied `c:\Python37\python.exe c:\Python37\python3.exe`
 
 Once you have modified the PATH and and exported EXIV2\_BINDIR and EXIV2\_EXT, you can execute the test suite as described for UNIX-like systems:
 
@@ -639,7 +637,7 @@ $ ./icc-test.sh
 
 The code for the unit tests is in `<exiv2dir>/unitTests`
 
-To build the unit tests, use the *cmake* option `-DEXIV2_BUILD_UNIT_TESTS=ON`.
+To build the unit tests, use the *cmake* option **`-DEXIV2_BUILD_UNIT_TESTS=On`**.
 
 To execute the unit tests:
 
@@ -710,13 +708,12 @@ I use the following batch file to start the MinGW/msys2 64 bit bash shell from t
 ```bat
 @echo off
 setlocal
-set "PS1=\! MSYS64:\u@\h:\w \$ "
-set  PATH="/usr/local/bin/:/usr/bin:/mingw64/bin:/bin:/usr/sbin:/sbin"
-set "HOME=c:\msys64\home\%USERNAME%"
+set "PATH=c:\msys64\usr\bin;c:\msys64\usr\local\bin;"
+set "HOME=c:\msys64\home\rmills"
 if NOT EXIST %HOME% mkdir %HOME%
 cd  %HOME%
-c:\msys64\usr\bin\bash.exe -norc
-
+set "PS1=\! MSYS64:\u@\h:\w \$ "
+bash.exe -norc
 ```
 
 #### MinGW/msys2 32 bit
@@ -727,13 +724,12 @@ I use the following batch file to start the MinGW/msys2 32 bit bash shell from t
 ```bat
 @echo off
 setlocal
-set "PS1=\! MSYS32:\u@\h:\w \$ "
-set  PATH="/usr/local/bin/:/usr/bin:/mingw32/bin:/bin:/usr/sbin:/sbin"
-set "HOME=c:\msys32\home\%USERNAME%"
+set "PATH=c:\msys32\usr\bin;c:\msys32\usr\local\bin;"
+set "HOME=c:\msys32\home\rmills"
 if NOT EXIST %HOME% mkdir %HOME%
 cd  %HOME%
-c:\msys32\usr\bin\bash.exe -norc
-
+set "PS1=\! MSYS32:\u@\h:\w \$ "
+bash.exe -norc
 ```
 
 #### Install MinGW Dependencies
@@ -768,7 +764,7 @@ The exiv2 command line program provides an option **`--grep`** to filter output.
 
 ```bash
 $ exiv2 -vVg regex
-exiv2 0.27.1
+exiv2 0.27.0.3
 have_regex=1
 $
 ```
@@ -809,7 +805,7 @@ bash.exe -norc
 
 ### 5.5 Microsoft Visual C++
 
-We recommend that you use Conan to build Exiv2 using Microsoft Visual C++. Exiv2 v0.27 can be built with Visual Studio versions 2008 and later.  We actively support and build with Visual Studio 2015, 2017 and 2019.
+We recommend that you use Conan to build Exiv2 using Microsoft Visual C++. Since we require a C++11 compiler, we only support the Visual Studio versions 2015 and 2017.
 
 As well as Microsoft Visual Studio, you will need to install CMake, Python3, and Conan.
 
@@ -823,12 +819,10 @@ I use the following batch file to start cmd.exe.  I do this to reduce the comple
 @echo off
 setlocal
 cd  %HOMEPATH%
-set "PATH=C:\Python37\;C:\Python27\;C:\Python27\Scripts;C:\Perl64\site\bin;C:\Perl64\bin;C:\WINDOWS\system32;C:\Program Files\Git\cmd;C:\Program Files\Git\usr\bin;c:\Program Files\cmake\bin;"
+set "PATH=C:\Python34\;C:\Python27\;C:\Python27\Scripts;C:\Perl64\site\bin;C:\Perl64\bin;C:\WINDOWS\system32;C:\Program Files\Git\cmd;C:\Program Files\Git\usr\bin;c:\Program Files\cmake\bin;"
 cmd
 ```
 
 [TOC](#TOC)
 
-Written by Robin Mills<br>
-robin@clanmills.com<br>
-Revised: 2019-04-28
+Written by Robin Mills<br>robin@clanmills.com<br>Updated: 2018-12-18

@@ -49,6 +49,9 @@
 #include <regex.h>
 #endif
 
+#if defined(_MSC_VER)
+#include <Windows.h>
+#endif
 
 // *****************************************************************************
 // local declarations
@@ -154,7 +157,7 @@ int main(int argc, char* const argv[])
     try {
         // Create the required action class
         Action::TaskFactory& taskFactory = Action::TaskFactory::instance();
-        Action::Task::AutoPtr task = taskFactory.create(Action::TaskType(params.action_));
+        Action::Task::UniquePtr task = taskFactory.create(Action::TaskType(params.action_));
         assert(task.get());
 
         // Process all files
@@ -245,25 +248,6 @@ void Params::usage(std::ostream& os) const
     os << _("Usage:") << " " << progname()
        << " " << _("[ options ] [ action ] file ...\n\n")
        << _("Manipulate the Exif metadata of images.\n");
-}
-
-std::string Params::printTarget(const std::string &before, int target, bool bPrint, std::ostream& out)
-{
-    std::string t;
-    if ( target & Params::ctExif       ) t+= 'e';
-    if ( target & Params::ctXmpSidecar ) t+= 'X';
-    if ( target & Params::ctXmpRaw     ) t+= target & Params::ctXmpSidecar ? 'X' : 'R' ;
-    if ( target & Params::ctIptc       ) t+= 'i';
-    if ( target & Params::ctIccProfile ) t+= 'C';
-    if ( target & Params::ctIptcRaw    ) t+= 'I';
-    if ( target & Params::ctXmp        ) t+= 'x';
-    if ( target & Params::ctComment    ) t+= 'c';
-    if ( target & Params::ctThumb      ) t+= 't';
-    if ( target & Params::ctPreview    ) t+= 'p';
-    if ( target & Params::ctStdInOut   ) t+= '-';
-
-    if ( bPrint ) out << before << " :" << t << std::endl;
-    return t;
 }
 
 void Params::help(std::ostream& os) const
@@ -470,7 +454,7 @@ int Params::evalGrep( const std::string& optarg)
 
     // there was an error compiling the regexp
     if( errcode ) {
-        size_t length = regerror (errcode, pRegex, NULL, 0);
+        size_t length = regerror (errcode, pRegex, nullptr, 0);
         char *buffer = new char[ length];
         regerror (errcode, pRegex, buffer, length);
         std::cerr << progname()
@@ -929,7 +913,7 @@ static int readFileToBuf(FILE* f,Exiv2::DataBuf& buf)
     const int buff_size = 4*1028;
     Exiv2::byte* bytes  = (Exiv2::byte*)::malloc(buff_size);
     int       nBytes    = 0 ;
-    bool      more      = bytes != NULL;
+    bool      more      = bytes != nullptr;
     while   ( more ) {
         char buff[buff_size];
         int  n     = (int) fread(buff,1,buff_size,f);
@@ -945,7 +929,7 @@ static int readFileToBuf(FILE* f,Exiv2::DataBuf& buf)
         buf.alloc(nBytes);
         memcpy(buf.pData_,(const void*)bytes,nBytes);
     }
-    if ( bytes != NULL ) ::free(bytes) ;
+    if ( bytes != nullptr ) ::free(bytes) ;
     return nBytes;
 }
 
@@ -967,7 +951,7 @@ void Params::getStdin(Exiv2::DataBuf& buf)
         struct timeval timeout =  {1,0}; // yes: set timeout seconds,microseconds
 
         // if we have something in the pipe, read it
-        if (select(1, &readfds, NULL, NULL, &timeout)) {
+        if (select(1, &readfds, nullptr, nullptr, &timeout)) {
 #endif
 #ifdef DEBUG
             std::cerr << "stdin has data" << std::endl;
@@ -1009,7 +993,7 @@ typedef std::map<std::string,std::string> long_t;
 int Params::getopt(int argc, char* const Argv[])
 {
     char** argv = new char* [argc+1];
-    argv[argc] = NULL;
+    argv[argc] = nullptr;
     long_t longs;
 
     longs["--adjust"   ] = "-a";
