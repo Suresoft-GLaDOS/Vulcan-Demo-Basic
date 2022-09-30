@@ -16,13 +16,13 @@ max-patch-number : 500
 
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
   rm -rf build
-  cmake -B build . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-fsanitize=address"
+  cmake -B . . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-fsanitize=address"
   cd build;  make -j10
 #  make -j10
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   rm -rf build
-  cmake -B build . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV -fsanitize=address"
+  cmake -B . . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV -fsanitize=address"
   cd build;  make -j10
 #  make -j10
 
