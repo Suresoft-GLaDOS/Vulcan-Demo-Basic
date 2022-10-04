@@ -19,7 +19,6 @@ jobs:
                     rm -rf build
                     cmake -B build .
                     cd build;  make -j10
-                    find . -name $(sed -n '$p' ../.dpp/test_list) -exec mv {} ./tests \;
 
     test:
         needs: build
