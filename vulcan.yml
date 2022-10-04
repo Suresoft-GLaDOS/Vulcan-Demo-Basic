@@ -18,14 +18,14 @@ test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json
   rm -rf build
   cmake -B build .
   cd build;  make -j10
-  find . -name $(sed -n '$p' .dpp/test_list) -exec mv {} ./tests \;
+  cd build; find . -name $(sed -n '$p' ../.dpp/test_list) -exec mv {} ./tests \;
 #  make -j10
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   rm -rf build
   cmake -DCMAKE_CXX_FLAGS='--coverage -g -O0 -DDPP_ENABLE_GCOV' -B build .
   cd build;  make -j10
-  find . -name $(sed -n '$p' .dpp/test_list) -exec mv {} ./tests \;
+  cd build; find . -name $(sed -n '$p' ../.dpp/test_list) -exec mv {} ./tests \;
 #  make -j10
 
 
