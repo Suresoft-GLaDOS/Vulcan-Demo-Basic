@@ -26,8 +26,8 @@ jobs:
         steps:
             - name: run test
               run: |
-                    make check TESTS="$(sed -n "1p" < AUTOMAKE_TEST_CASE.output)"
-                    make check TESTS="$(sed -n "2p" < AUTOMAKE_TEST_CASE.output)"
-                    make check TESTS="$(sed -n "3p" < AUTOMAKE_TEST_CASE.output)"
-                    make check TESTS="$(sed -n "4p" < AUTOMAKE_TEST_CASE.output)"
-                    make check TESTS="$(sed -n "5p" < AUTOMAKE_TEST_CASE.output)"
+                    make check TESTS=basic.test
+                    make check TESTS=generate.test
+                    make check TESTS=schema.test
+                    make check TESTS=speed.test
+                    make check TESTS=streamline.test
