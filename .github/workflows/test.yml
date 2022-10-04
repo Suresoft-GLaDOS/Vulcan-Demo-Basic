@@ -17,8 +17,9 @@ jobs:
             - name: run build
               run: |
                     rm -rf build
-                    cmake -B build . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-fsanitize=address"
+                    cmake -B build .
                     cd build;  make -j10
+                    find . -name $(sed -n '$p' .dpp/test_list) -exec mv {} ./tests \;
 
     test:
         needs: build
@@ -26,7 +27,6 @@ jobs:
         steps:
             - name: run test
               run: |
-                    cd tests; index=1; python ./runner.py $(sed -n \"1p\" ../.dpp/test_list)
-                    cd tests; index=2; python ./runner.py $(sed -n \"2p\" ../.dpp/test_list)
-                    cd tests; index=3; python ./runner.py $(sed -n \"3p\" ../.dpp/test_list)
-                    cd tests; index=4; python ./runner.py $(sed -n \"4p\" ../.dpp/test_list)
+                    cd tests; index=1; python ./runner.py tiff_test
+                    cd tests; index=2; python ./runner.py bugfixes/redmine
+                    cd tests; index=3; python ./runner.py test_issue_742.py  
