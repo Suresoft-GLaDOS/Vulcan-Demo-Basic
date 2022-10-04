@@ -57,11 +57,7 @@ if __name__ == '__main__':
             pattern=os.path.split(args.dir_or_file)[1],
         )
     else:
-        print(
-            "WARNING: Invalid search location, falling back to {!s}"
-            .format(DEFAULT_ROOT),
-            file=sys.stderr
-        )
+        # print("WARNING: Invalid search location, falling back to {!s}".format(DEFAULT_ROOT), file=sys.stderr)
         discovered_tests = unittest.defaultTestLoader.discover(
             DEFAULT_ROOT
         )
