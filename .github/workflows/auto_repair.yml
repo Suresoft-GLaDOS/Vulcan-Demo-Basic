@@ -14,6 +14,6 @@ jobs:
               run: export
               shell: bash
             - name: run vulcan action
-              uses: Suresoft-GLaDOS/vulcan-action@main
+              uses: Suresoft-GLaDOS/vulcan-action@for_debug
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
