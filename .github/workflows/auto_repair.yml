@@ -11,7 +11,7 @@ jobs:
         if: ${{ github.event.workflow_run.conclusion == 'failure' }}
         steps:
             - name: run vulcan action
-              uses: Suresoft-GLaDOS/vulcan-action@main
+              uses: Suresoft-GLaDOS/vulcan-action@for_debug
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 path: vulcan_target
