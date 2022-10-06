@@ -17,8 +17,8 @@ jobs:
             - name: run build
               run: |
                     rm -rf build
-                    cmake -B . . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-fsanitize=address"
-                    make -j10
+                    cmake -B build . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-fsanitize=address"
+                    cd build; make -j10
 
     test:
         needs: build
