@@ -37,7 +37,7 @@
 	case 0:	op[0]  = (unsigned char) ((v) << 6); break;	\
 	case 1:	op[0] |= (v) << 4; break;	\
 	case 2:	op[0] |= (v) << 2; break;	\
-	case 3:	*op++ |= (v);	   op_offset++; break;	\
+	case 3:	*op++ |= (v);	   break;	\
 	}					\
 }
 
@@ -103,7 +103,6 @@ NeXTDecode(TIFF* tif, uint8* buf, tmsize_t occ, uint16 s)
 		}
 		default: {
 			uint32 npixels = 0, grey;
-			tmsize_t op_offset = 0;
 			uint32 imagewidth = tif->tif_dir.td_imagewidth;
             if( isTiled(tif) )
                 imagewidth = tif->tif_dir.td_tilewidth;
@@ -123,15 +122,10 @@ NeXTDecode(TIFF* tif, uint8* buf, tmsize_t occ, uint16 s)
 				 * bounds, potentially resulting in a security
 				 * issue.
 				 */
-				while (n-- > 0 && npixels < imagewidth && op_offset < scanline)
+				while (n-- > 0 && npixels < imagewidth)
 					SETPIXEL(op, grey);
 				if (npixels >= imagewidth)
 					break;
-                if (op_offset >= scanline ) {
-                    TIFFErrorExt(tif->tif_clientdata, module, "Invalid data for scanline %ld",
-                        (long) tif->tif_row);
-                    return (0);
-                }
 				if (cc == 0)
 					goto bad;
 				n = *bp++, cc--;

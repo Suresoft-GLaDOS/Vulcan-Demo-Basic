@@ -133,10 +133,31 @@ int	readraster(void);
 int	process(int, unsigned char**);
 void	initcolors(unsigned char [COLSIZE][3], int);
 void	rasterize(int, char*);
+#ifdef DPP_ENABLE_GCOV
+#include <signal.h>
+static struct sigaction dpp_gcov_sigaction;
+static struct sigaction dpp_orig_sigaction;
+void dpp_sighandler(int signum) {
+	__gcov_flush();
+	sigaction(sigaction, &dpp_orig_sigaction, NULL);
+	raise(signum);
+	exit(1);
+}
+#endif
 
 int
 main(int argc, char* argv[])
 {
+#ifdef DPP_ENABLE_GCOV
+	  {
+		  dpp_gcov_sigaction.sa_handler = dpp_sighandler;
+		  sigemptyset(&dpp_gcov_sigaction.sa_mask);
+		  dpp_gcov_sigaction.sa_flags = 0;
+		  sigaction(SIGSEGV, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGFPE, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGABRT, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+	  }
+#endif
 #if !HAVE_DECL_OPTARG
     extern int optind;
     extern char *optarg;

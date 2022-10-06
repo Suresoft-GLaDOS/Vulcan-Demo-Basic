@@ -100,8 +100,7 @@ TIFFDefaultTransferFunction(TIFFDirectory* td)
 
 	n = ((tmsize_t)1)<<td->td_bitspersample;
 	nbytes = n * sizeof (uint16);
-        tf[0] = (uint16 *)_TIFFmalloc(nbytes);
-	if (tf[0] == NULL)
+	if (!(tf[0] = (uint16 *)_TIFFmalloc(nbytes)))
 		return 0;
 	tf[0][0] = 0;
 	for (i = 1; i < n; i++) {
@@ -110,12 +109,10 @@ TIFFDefaultTransferFunction(TIFFDirectory* td)
 	}
 
 	if (td->td_samplesperpixel - td->td_extrasamples > 1) {
-                tf[1] = (uint16 *)_TIFFmalloc(nbytes);
-		if(tf[1] == NULL)
+		if (!(tf[1] = (uint16 *)_TIFFmalloc(nbytes)))
 			goto bad;
 		_TIFFmemcpy(tf[1], tf[0], nbytes);
-                tf[2] = (uint16 *)_TIFFmalloc(nbytes);
-		if (tf[2] == NULL)
+		if (!(tf[2] = (uint16 *)_TIFFmalloc(nbytes)))
 			goto bad;
 		_TIFFmemcpy(tf[2], tf[0], nbytes);
 	}
@@ -137,8 +134,7 @@ TIFFDefaultRefBlackWhite(TIFFDirectory* td)
 {
 	int i;
 
-        td->td_refblackwhite = (float *)_TIFFmalloc(6*sizeof (float));
-	if (td->td_refblackwhite == NULL)
+	if (!(td->td_refblackwhite = (float *)_TIFFmalloc(6*sizeof (float))))
 		return 0;
         if (td->td_photometric == PHOTOMETRIC_YCBCR) {
 		/*
@@ -167,7 +163,7 @@ TIFFDefaultRefBlackWhite(TIFFDirectory* td)
  * value if the tag is not present in the directory.
  *
  * NB:	We use the value in the directory, rather than
- *	explicit values so that defaults exist only one
+ *	explcit values so that defaults exist only one
  *	place in the library -- in TIFFDefaultDirectory.
  */
 int

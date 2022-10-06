@@ -213,7 +213,7 @@ PredictorSetupEncode(TIFF* tif)
                 /*
                  * If the data is horizontally differenced 16-bit data that
                  * requires byte-swapping, then it must be byte swapped after
-                 * the differentiation step.  We do this with a special-purpose
+                 * the differenciation step.  We do this with a special-purpose
                  * routine and override the normal post decoding logic that
                  * the library setup when the directory was read.
                  */
@@ -700,7 +700,7 @@ PredictorVGetField(TIFF* tif, uint32 tag, va_list ap)
 
 	switch (tag) {
 	case TIFFTAG_PREDICTOR:
-		*va_arg(ap, uint16*) = (uint16)sp->predictor;
+		*va_arg(ap, uint16*) = sp->predictor;
 		break;
 	default:
 		return (*sp->vgetparent)(tif, tag, ap);

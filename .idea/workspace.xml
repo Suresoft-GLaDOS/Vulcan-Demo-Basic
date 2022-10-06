@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -31,16 +34,20 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="libchewing_7" />
-                    <option name="lastUsedInstant" value="1659492802" />
+                    <option name="branchName" value="libtiff_2" />
+                    <option name="lastUsedInstant" value="1665014976" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="lineClip" />
-                    <option name="lastUsedInstant" value="1659339345" />
+                    <option name="branchName" value="ndpi_1" />
+                    <option name="lastUsedInstant" value="1664933307" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="MultiFault_AVL" />
-                    <option name="lastUsedInstant" value="1659339344" />
+                    <option name="branchName" value="ndpi" />
+                    <option name="lastUsedInstant" value="1663046818" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="libtiff" />
+                    <option name="lastUsedInstant" value="1662528976" />
                   </RecentBranch>
                 </list>
               </option>
@@ -54,36 +61,47 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.github/workflows/run_vulcan.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.github/workflows/test.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/test/tiff2rgba-rgb-3c-16b.sh" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/tools/tiffcrop.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/vulcan.yml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="5o33wcpz" />
   </component>
+  <component name="MakefileLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2C9EtTDyBN5A4CVF8bRnFCpdNfn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/sure/GLaDOS/Vulcan-Demo-Basic",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sure/dpp_checkout/yaml_cpp/buggy#1&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="buggy_5" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,6 +246,7 @@
       <workItem from="1659416330327" duration="6022000" />
       <workItem from="1659686808744" duration="603000" />
       <workItem from="1659915910110" duration="2689000" />
+      <workItem from="1663026131648" duration="9366000" />
     </task>
     <servers />
   </component>

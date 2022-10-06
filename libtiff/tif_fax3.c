@@ -697,6 +697,7 @@ Fax3PutEOL(TIFF* tif)
 				align = sp->bit + (8 - align);
 			else
 				align = sp->bit - align;
+			code = 0;
 			tparm=align; 
 			_PutBits(tif, 0, tparm);
 		}
@@ -814,7 +815,7 @@ find0span(unsigned char* bp, int32 bs, int32 be)
 	/*
 	 * Check partial byte on lhs.
 	 */
-	if (bits > 0 && (n = (bs & 7)) != 0) {
+	if (bits > 0 && (n = (bs & 7))) {
 		span = zeroruns[(*bp << n) & 0xff];
 		if (span > 8-n)		/* table value too generous */
 			span = 8-n;
@@ -873,7 +874,7 @@ find1span(unsigned char* bp, int32 bs, int32 be)
 	/*
 	 * Check partial byte on lhs.
 	 */
-	if (bits > 0 && (n = (bs & 7)) != 0) {
+	if (bits > 0 && (n = (bs & 7))) {
 		span = oneruns[(*bp << n) & 0xff];
 		if (span > 8-n)		/* table value too generous */
 			span = 8-n;
@@ -1181,7 +1182,7 @@ Fax3VSetField(TIFF* tif, uint32 tag, va_list ap)
 		return (*sp->vsetparent)(tif, tag, ap);
 	}
 	
-	if ((fip = TIFFFieldWithTag(tif, tag)) != NULL)
+	if ((fip = TIFFFieldWithTag(tif, tag)))
 		TIFFSetFieldBit(tif, fip->field_bit);
 	else
 		return 0;

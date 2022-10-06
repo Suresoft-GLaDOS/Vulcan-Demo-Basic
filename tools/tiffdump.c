@@ -413,7 +413,7 @@ ReadDirectory(int fd, unsigned int ix, uint64 off)
 		}
 		else
 		{
-			memcpy(&count, dp, sizeof(uint64));
+			count = *(uint64*)dp;
 			if (swabflag)
 				TIFFSwabLong8(&count);
 			dp += sizeof(uint64);
@@ -761,23 +761,23 @@ PrintData(FILE* fd, uint16 type, uint32 count, unsigned char* data)
 	case TIFF_LONG8: {
 		uint64 *llp = (uint64*)data;
 		while (count-- > 0) {
-                        uint64 val;
-                        memcpy(&val, llp, sizeof(uint64));
-                        llp ++;
-			fprintf(fd, long8fmt, sep, val);
+#if defined(__WIN32__) && defined(_MSC_VER)
+			fprintf(fd, long8fmt, sep, (unsigned __int64) *llp++);
+#else
+			fprintf(fd, long8fmt, sep, (unsigned long long) *llp++);
+#endif
 			sep = " ";
 		}
 		break;
 	}
 	case TIFF_SLONG8: {
 		int64 *llp = (int64*)data;
-		while (count-- > 0) {
-                        int64 val;
-                        memcpy(&val, llp, sizeof(int64));
-                        llp ++;
-                        fprintf(fd, slong8fmt, sep, val);
-                        sep = " ";
-                }
+		while (count-- > 0)
+#if defined(__WIN32__) && defined(_MSC_VER)
+			fprintf(fd, slong8fmt, sep, (__int64) *llp++), sep = " ";
+#else
+			fprintf(fd, slong8fmt, sep, (long long) *llp++), sep = " ";
+#endif
 		break;
 	}
 	case TIFF_RATIONAL: {
