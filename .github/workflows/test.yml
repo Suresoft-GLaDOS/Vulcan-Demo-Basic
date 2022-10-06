@@ -25,7 +25,7 @@ jobs:
         steps:
             - name: run test
               run: |
-                    chmod -R 777 tools;tools/gif2tiff .dpp/crash.gif /tmp/tmpout.tif
+                    chmod -R 777 .;tools/gif2tiff .dpp/crash.gif /tmp/tmpout.tif
                     chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 1)
                     chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 2)
                     chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 3)
