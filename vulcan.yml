@@ -17,13 +17,13 @@ max-patch-number : 500
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
   rm -rf build
   cmake -B build . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-fsanitize=address"
-  cd build; make -j10
+  cd build;  make -j10
 #  make -j10
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   rm -rf build
   cmake -B build . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV -fsanitize=address"
-  cd build; make -j10
+  cd build;  make -j10
 #  make -j10
 
 
@@ -47,9 +47,9 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
 test-case:
 
 test-command: | # 테스트 실행
-  @testcase@
+  "@testcase@"
 test-coverage-command: | # 커버리지 테스트 실행 / 테스트 대상을 입력받아서 하나씩 실행할 수 있어야 함
-  @testcase@
+  "@testcase@"
 gcov-exclusion-list: | # 커버리지 제외 대상
   *test*.o
 gcov-inclusion-list: | # 커버리지 포함 대상 지정
