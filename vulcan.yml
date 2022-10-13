@@ -32,16 +32,16 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-              python test/spec_tests.py -s test/coverage.txt -p "build/md2html/md2html" --skip 19
-              python test/spec_tests.py -s test/permissive-email-autolinks.txt -p "build/md2html/md2html --fpermissive-email-autolinks"
-              python test/spec_tests.py -s test/permissive-url-autolinks.txt -p "build/md2html/md2html --fpermissive-url-autolinks"
-              python test/spec_tests.py -s test/permissive-www-autolinks.txt -p "build/md2html/md2html --fpermissive-www-autolinks"
-              python test/spec_tests.py -s test/tables.txt -p "build/md2html/md2html --ftables"
-              python test/spec_tests.py -s test/strikethrough.txt -p "build/md2html/md2html --fstrikethrough"
-              python test/spec_tests.py -s test/tasklists.txt -p "build/md2html/md2html --ftasklists"
-              python test/spec_tests.py -s test/latex-math.txt -p "build/md2html/md2html --flatex-math"
-              python test/pathological_tests.py -p "build/md2html/md2html"
-              python test/spec_tests.py -s test/coverage.txt -p "build/md2html/md2html" --number 19
+              python3 test/spec_tests.py -s test/coverage.txt -p "build/md2html/md2html" --skip 19
+              python3 test/spec_tests.py -s test/permissive-email-autolinks.txt -p "build/md2html/md2html --fpermissive-email-autolinks"
+              python3 test/spec_tests.py -s test/permissive-url-autolinks.txt -p "build/md2html/md2html --fpermissive-url-autolinks"
+              python3 test/spec_tests.py -s test/permissive-www-autolinks.txt -p "build/md2html/md2html --fpermissive-www-autolinks"
+              python3 test/spec_tests.py -s test/tables.txt -p "build/md2html/md2html --ftables"
+              python3 test/spec_tests.py -s test/strikethrough.txt -p "build/md2html/md2html --fstrikethrough"
+              python3 test/spec_tests.py -s test/tasklists.txt -p "build/md2html/md2html --ftasklists"
+              python3 test/spec_tests.py -s test/latex-math.txt -p "build/md2html/md2html --flatex-math"
+              python3 test/pathological_tests.py -p "build/md2html/md2html"
+              python3 test/spec_tests.py -s test/coverage.txt -p "build/md2html/md2html" --number 19
 
 
 test-case:
