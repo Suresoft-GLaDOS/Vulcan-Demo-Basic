@@ -1,0 +1,104 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "md4c",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-md4c-Debug-e26a47d064f9d6d2c244.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "md4c",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "md2html",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-md2html-Debug-20bdbc1e91bf73763fe6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "md2html",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "MD4C",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "md2html::@ed93794b31220dfce921",
+					"jsonFile" : "target-md2html-Debug-b9f3fcc493548f18ca27.json",
+					"name" : "md2html",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "md4c::@ac332c5e1d2fb5e68ffb",
+					"jsonFile" : "target-md4c-Debug-b15673e239d27acdbd44.json",
+					"name" : "md4c",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug",
+		"source" : "C:/Users/sure/GLaDOS/Vulcan-Demo-Basic"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

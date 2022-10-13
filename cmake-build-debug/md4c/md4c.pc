@@ -1,0 +1,12 @@
+prefix=C:/Program Files (x86)/MD4C
+exec_prefix=C:/Program Files (x86)/MD4C
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: MD4C
+Description: 
+Version: 
+
+Requires:
+Libs: -L${libdir} -lmd4c
+Cflags: -I${includedir}
