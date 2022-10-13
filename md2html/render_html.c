@@ -2,7 +2,7 @@
  * MD4C: Markdown parser for C
  * (http://github.com/mity/md4c)
  *
- * Copyright (c) 2016-2017 Martin Mitas
+ * Copyright (c) 2016-2019 Martin Mitas
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -50,6 +50,7 @@ struct MD_RENDER_HTML_tag {
     void* userdata;
     unsigned flags;
     int image_nesting_level;
+    char escape_map[256];
 };
 
 
@@ -69,7 +70,7 @@ render_text(MD_RENDER_HTML* r, const MD_CHAR* text, MD_SIZE size)
     r->process_output(text, size, r->userdata);
 }
 
-#define RENDER_LITERAL(r, literal)    render_text((r), (literal), strlen(literal))
+#define RENDER_LITERAL(r, literal)    render_text((r), (literal), (MD_SIZE) strlen(literal))
 
 
 static void
@@ -79,12 +80,16 @@ render_html_escaped(MD_RENDER_HTML* r, const MD_CHAR* data, MD_SIZE size)
     MD_OFFSET off = 0;
 
     /* Some characters need to be escaped in normal HTML text. */
-    #define HTML_NEED_ESCAPE(ch)                                            \
-            ((ch) == '&' || (ch) == '<' || (ch) == '>' || (ch) == '"')
+    #define HTML_NEED_ESCAPE(ch)        (r->escape_map[(unsigned char)(ch)] != 0)
 
     while(1) {
+        /* Optimization: Use some loop unrolling. */
+        while(off + 3 < size  &&  !HTML_NEED_ESCAPE(data[off+0])  &&  !HTML_NEED_ESCAPE(data[off+1])
+                              &&  !HTML_NEED_ESCAPE(data[off+2])  &&  !HTML_NEED_ESCAPE(data[off+3]))
+            off += 4;
         while(off < size  &&  !HTML_NEED_ESCAPE(data[off]))
             off++;
+
         if(off > beg)
             render_text(r, data + beg, off - beg);
 
@@ -268,6 +273,20 @@ render_open_ol_block(MD_RENDER_HTML* r, const MD_BLOCK_OL_DETAIL* det)
 }
 
 static void
+render_open_li_block(MD_RENDER_HTML* r, const MD_BLOCK_LI_DETAIL* det)
+{
+    if(det->is_task) {
+        RENDER_LITERAL(r, "<li class=\"task-list-item\">"
+                          "<input type=\"checkbox\" class=\"task-list-item-checkbox\" disabled");
+        if(det->task_mark == 'x' || det->task_mark == 'X')
+            RENDER_LITERAL(r, " checked");
+        RENDER_LITERAL(r, ">");
+    } else {
+        RENDER_LITERAL(r, "<li>");
+    }
+}
+
+static void
 render_open_code_block(MD_RENDER_HTML* r, const MD_BLOCK_CODE_DETAIL* det)
 {
     RENDER_LITERAL(r, "<pre><code");
@@ -350,7 +369,7 @@ enter_block_callback(MD_BLOCKTYPE type, void* detail, void* userdata)
         case MD_BLOCK_QUOTE:    RENDER_LITERAL(r, "<blockquote>\n"); break;
         case MD_BLOCK_UL:       RENDER_LITERAL(r, "<ul>\n"); break;
         case MD_BLOCK_OL:       render_open_ol_block(r, (const MD_BLOCK_OL_DETAIL*)detail); break;
-        case MD_BLOCK_LI:       RENDER_LITERAL(r, "<li>"); break;
+        case MD_BLOCK_LI:       render_open_li_block(r, (const MD_BLOCK_LI_DETAIL*)detail); break;
         case MD_BLOCK_HR:       RENDER_LITERAL(r, "<hr>\n"); break;
         case MD_BLOCK_H:        RENDER_LITERAL(r, head[((MD_BLOCK_H_DETAIL*)detail)->level - 1]); break;
         case MD_BLOCK_CODE:     render_open_code_block(r, (const MD_BLOCK_CODE_DETAIL*) detail); break;
@@ -407,12 +426,14 @@ enter_span_callback(MD_SPANTYPE type, void* detail, void* userdata)
     }
 
     switch(type) {
-        case MD_SPAN_EM:        RENDER_LITERAL(r, "<em>"); break;
-        case MD_SPAN_STRONG:    RENDER_LITERAL(r, "<strong>"); break;
-        case MD_SPAN_A:         render_open_a_span(r, (MD_SPAN_A_DETAIL*) detail); break;
-        case MD_SPAN_IMG:       render_open_img_span(r, (MD_SPAN_IMG_DETAIL*) detail); break;
-        case MD_SPAN_CODE:      RENDER_LITERAL(r, "<code>"); break;
-        case MD_SPAN_DEL:       RENDER_LITERAL(r, "<del>"); break;
+        case MD_SPAN_EM:                RENDER_LITERAL(r, "<em>"); break;
+        case MD_SPAN_STRONG:            RENDER_LITERAL(r, "<strong>"); break;
+        case MD_SPAN_A:                 render_open_a_span(r, (MD_SPAN_A_DETAIL*) detail); break;
+        case MD_SPAN_IMG:               render_open_img_span(r, (MD_SPAN_IMG_DETAIL*) detail); break;
+        case MD_SPAN_CODE:              RENDER_LITERAL(r, "<code>"); break;
+        case MD_SPAN_DEL:               RENDER_LITERAL(r, "<del>"); break;
+        case MD_SPAN_LATEXMATH:         RENDER_LITERAL(r, "<equation>"); break;
+        case MD_SPAN_LATEXMATH_DISPLAY: RENDER_LITERAL(r, "<equation type=\"display\">"); break;
     }
 
     return 0;
@@ -432,12 +453,14 @@ leave_span_callback(MD_SPANTYPE type, void* detail, void* userdata)
     }
 
     switch(type) {
-        case MD_SPAN_EM:        RENDER_LITERAL(r, "</em>"); break;
-        case MD_SPAN_STRONG:    RENDER_LITERAL(r, "</strong>"); break;
-        case MD_SPAN_A:         RENDER_LITERAL(r, "</a>"); break;
-        case MD_SPAN_IMG:       /*noop, handled above*/ break;
-        case MD_SPAN_CODE:      RENDER_LITERAL(r, "</code>"); break;
-        case MD_SPAN_DEL:       RENDER_LITERAL(r, "</del>"); break;
+        case MD_SPAN_EM:                RENDER_LITERAL(r, "</em>"); break;
+        case MD_SPAN_STRONG:            RENDER_LITERAL(r, "</strong>"); break;
+        case MD_SPAN_A:                 RENDER_LITERAL(r, "</a>"); break;
+        case MD_SPAN_IMG:               /*noop, handled above*/ break;
+        case MD_SPAN_CODE:              RENDER_LITERAL(r, "</code>"); break;
+        case MD_SPAN_DEL:               RENDER_LITERAL(r, "</del>"); break;
+        case MD_SPAN_LATEXMATH:         /*fall through*/
+        case MD_SPAN_LATEXMATH_DISPLAY: RENDER_LITERAL(r, "</equation>"); break;
     }
 
     return 0;
@@ -473,18 +496,25 @@ md_render_html(const MD_CHAR* input, MD_SIZE input_size,
                void (*process_output)(const MD_CHAR*, MD_SIZE, void*),
                void* userdata, unsigned parser_flags, unsigned renderer_flags)
 {
-    MD_RENDER_HTML render = { process_output, userdata, renderer_flags, 0 };
+    MD_RENDER_HTML render = { process_output, userdata, renderer_flags, 0, { 0 } };
 
-    MD_RENDERER renderer = {
+    MD_PARSER parser = {
+        0,
+        parser_flags,
         enter_block_callback,
         leave_block_callback,
         enter_span_callback,
         leave_span_callback,
         text_callback,
         debug_log_callback,
-        parser_flags
+        NULL
     };
 
-    return md_parse(input, input_size, &renderer, (void*) &render);
+    render.escape_map[(unsigned char)'"'] = 1;
+    render.escape_map[(unsigned char)'&'] = 1;
+    render.escape_map[(unsigned char)'<'] = 1;
+    render.escape_map[(unsigned char)'>'] = 1;
+
+    return md_parse(input, input_size, &parser, (void*) &render);
 }
 

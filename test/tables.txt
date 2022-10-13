@@ -248,11 +248,11 @@ quux     | [quuz](/url2)
 </table>
 ````````````````````````````````
 
-However pipes which are inside a link, an image or a code span are not
-recognized as cell boundaries.
+However pipes which are inside a code span are not recognized as cell
+boundaries.
 
 ```````````````````````````````` example
-Column 1 | [|](/url)
+Column 1 | Column 2
 ---------|---------
 `foo     | bar`
 baz      | qux
@@ -260,7 +260,7 @@ quux     | quuz
 .
 <table>
 <thead>
-<tr><th>Column 1</th><th><a href="/url">|</a></th></tr>
+<tr><th>Column 1</th><th>Column 2</th></tr>
 </thead>
 <tbody>
 </tbody>
@@ -309,3 +309,30 @@ x|x
 ````````````````````````````````
 (Here the underline has the right indentation so the table is detected.
 But the last line is not part of it due its indentation.)
+
+
+### [Issue 42](https://github.com/mity/md4c/issues/42)
+
+```````````````````````````````` example
+] http://x.x *x*
+
+|x|x|
+|---|---|
+|x|
+.
+<p>] http://x.x <em>x</em></p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+````````````````````````````````

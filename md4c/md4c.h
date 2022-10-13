@@ -2,7 +2,7 @@
  * MD4C: Markdown parser for C
  * (http://github.com/mity/md4c)
  *
- * Copyright (c) 2016-2017 Martin Mitas
+ * Copyright (c) 2016-2019 Martin Mitas
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -30,16 +30,12 @@
     extern "C" {
 #endif
 
-
-#define MD_VERSION_MAJOR        0
-#define MD_VERSION_MINOR        2
-#define MD_VERSION_RELEASE      6
-
-
-/* Magic to support UTF-16. */
 #if defined MD4C_USE_UTF16
+    /* Magic to support UTF-16. Not that in order to use it, you have to define
+     * the macro MD4C_USE_UTF16 both when building MD4C as well as when
+     * including this header in your code. */
     #ifdef _WIN32
-        #include <wchar.h>
+        #include <windows.h>
         typedef WCHAR       MD_CHAR;
     #else
         #error MD4C_USE_UTF16 is only supported on Windows.
@@ -53,7 +49,8 @@ typedef unsigned MD_OFFSET;
 
 
 /* Block represents a part of document hierarchy structure like a paragraph
- * or list item. */
+ * or list item.
+ */
 typedef enum MD_BLOCKTYPE {
     /* <body>...</body> */
     MD_BLOCK_DOC = 0,
@@ -69,7 +66,8 @@ typedef enum MD_BLOCKTYPE {
      * Detail: Structure MD_BLOCK_OL_DETAIL. */
     MD_BLOCK_OL,
 
-    /* <li>...</li> */
+    /* <li>...</li>
+     * Detail: Structure MD_BLOCK_LI_DETAIL. */
     MD_BLOCK_LI,
 
     /* <hr> */
@@ -131,7 +129,13 @@ typedef enum MD_SPANTYPE {
     /* <del>...</del>
      * Note: Recognized only when MD_FLAG_STRIKETHROUGH is enabled.
      */
-    MD_SPAN_DEL
+    MD_SPAN_DEL,
+
+    /* For recognizing inline ($) and display ($$) equations
+     * Note: Recognized only when MD_FLAG_LATEXMATHSPANS is enabled.
+     */
+    MD_SPAN_LATEXMATH,
+    MD_SPAN_LATEXMATH_DISPLAY
 } MD_SPANTYPE;
 
 /* Text is the actual textual contents of span. */
@@ -170,7 +174,11 @@ typedef enum MD_TEXTTYPE {
     /* Text is a raw HTML. If it is contents of a raw HTML block (i.e. not
      * an inline raw HTML), then MD_TEXT_BR and MD_TEXT_SOFTBR are not used.
      * The text contains verbatim '\n' for the new lines. */
-    MD_TEXT_HTML
+    MD_TEXT_HTML,
+
+    /* Text is inside an equation. This is processed the same way as inlined code
+     * spans (`code`). */
+    MD_TEXT_LATEXMATH
 } MD_TEXTTYPE;
 
 
@@ -192,7 +200,7 @@ typedef enum MD_ALIGN {
  * So, for example, lets consider an image has a title attribute string
  * set to "foo &quot; bar". (Note the string size is 14.)
  *
- * Then:
+ * Then the attribute MD_SPAN_IMG_DETAIL::title shall provide the following:
  *  -- [0]: "foo "   (substr_types[0] == MD_TEXT_NORMAL; substr_offsets[0] == 0)
  *  -- [1]: "&quot;" (substr_types[1] == MD_TEXT_ENTITY; substr_offsets[1] == 4)
  *  -- [2]: " bar"   (substr_types[2] == MD_TEXT_NORMAL; substr_offsets[2] == 10)
@@ -213,16 +221,23 @@ typedef struct MD_ATTRIBUTE {
 
 /* Detailed info for MD_BLOCK_UL. */
 typedef struct MD_BLOCK_UL_DETAIL {
-    int is_tight;           /* Non-zero if tight list, zero of loose. */
+    int is_tight;           /* Non-zero if tight list, zero if loose. */
     MD_CHAR mark;           /* Item bullet character in MarkDown source of the list, e.g. '-', '+', '*'. */
 } MD_BLOCK_UL_DETAIL;
 
 /* Detailed info for MD_BLOCK_OL. */
 typedef struct MD_BLOCK_OL_DETAIL {
     unsigned start;         /* Start index of the ordered list. */
-    int is_tight;           /* Non-zero if tight list, zero of loose. */
+    int is_tight;           /* Non-zero if tight list, zero if loose. */
     MD_CHAR mark_delimiter; /* Character delimiting the item marks in MarkDown source, e.g. '.' or ')' */
 } MD_BLOCK_OL_DETAIL;
+
+/* Detailed info for MD_BLOCK_LI. */
+typedef struct MD_BLOCK_LI_DETAIL {
+    int is_task;            /* Can be non-zero only with MD_FLAG_TASKLISTS */
+    MD_CHAR task_mark;      /* If is_task, then one of 'x', 'X' or ' '. Undefined otherwise. */
+    MD_OFFSET task_mark_offset;  /* If is_task, then offset in the input of the char between '[' and ']'. */
+} MD_BLOCK_LI_DETAIL;
 
 /* Detailed info for MD_BLOCK_H. */
 typedef struct MD_BLOCK_H_DETAIL {
@@ -233,6 +248,7 @@ typedef struct MD_BLOCK_H_DETAIL {
 typedef struct MD_BLOCK_CODE_DETAIL {
     MD_ATTRIBUTE info;
     MD_ATTRIBUTE lang;
+    MD_CHAR fence_char;     /* The character used for fenced code block; or zero for indented code block. */
 } MD_BLOCK_CODE_DETAIL;
 
 /* Detailed info for MD_BLOCK_TH and MD_BLOCK_TD. */
@@ -268,21 +284,35 @@ typedef struct MD_SPAN_IMG_DETAIL {
 #define MD_FLAG_TABLES                      0x0100  /* Enable tables extension. */
 #define MD_FLAG_STRIKETHROUGH               0x0200  /* Enable strikethrough extension. */
 #define MD_FLAG_PERMISSIVEWWWAUTOLINKS      0x0400  /* Enable WWW autolinks (even without any scheme prefix, if they begin with 'www.') */
+#define MD_FLAG_TASKLISTS                   0x0800  /* Enable task list extension. */
+#define MD_FLAG_LATEXMATHSPANS              0x1000  /* Enable $ and $$ containing LaTeX equations. */
 
 #define MD_FLAG_PERMISSIVEAUTOLINKS         (MD_FLAG_PERMISSIVEEMAILAUTOLINKS | MD_FLAG_PERMISSIVEURLAUTOLINKS | MD_FLAG_PERMISSIVEWWWAUTOLINKS)
 #define MD_FLAG_NOHTML                      (MD_FLAG_NOHTMLBLOCKS | MD_FLAG_NOHTMLSPANS)
 
 /* Convenient sets of flags corresponding to well-known Markdown dialects.
+ *
  * Note we may only support subset of features of the referred dialect.
  * The constant just enables those extensions which bring us as close as
  * possible given what features we implement.
+ *
+ * ABI compatibility note: Meaning of these can change in time as new
+ * extensions, bringing the dialect closer to the original, are implemented.
  */
 #define MD_DIALECT_COMMONMARK               0
-#define MD_DIALECT_GITHUB                   (MD_FLAG_PERMISSIVEAUTOLINKS | MD_FLAG_TABLES | MD_FLAG_STRIKETHROUGH)
+#define MD_DIALECT_GITHUB                   (MD_FLAG_PERMISSIVEAUTOLINKS | MD_FLAG_TABLES | MD_FLAG_STRIKETHROUGH | MD_FLAG_TASKLISTS)
 
 /* Renderer structure.
  */
-typedef struct MD_RENDERER {
+typedef struct MD_PARSER {
+    /* Reserved. Set to zero.
+     */
+    unsigned abi_version;
+
+    /* Dialect options. Bitmask of MD_FLAG_xxxx values.
+     */
+    unsigned flags;
+
     /* Caller-provided rendering callbacks.
      *
      * For some block/span types, more detailed information is provided in a
@@ -314,10 +344,14 @@ typedef struct MD_RENDERER {
      */
     void (*debug_log)(const char* /*msg*/, void* /*userdata*/);
 
-    /* Dialect options. Bitmask of MD_FLAG_xxxx values.
+    /* Reserved. Set to NULL.
      */
-    unsigned flags;
-} MD_RENDERER;
+    void (*syntax)(void);
+} MD_PARSER;
+
+
+/* For backward compatibility. Do not use in new code. */
+typedef MD_PARSER MD_RENDERER;
 
 
 /* Parse the Markdown document stored in the string 'text' of size 'size'.
@@ -329,7 +363,7 @@ typedef struct MD_RENDERER {
  * fails), -1 is returned. If the processing is aborted due any callback
  * returning non-zero, md_parse() the return value of the callback is returned.
  */
-int md_parse(const MD_CHAR* text, MD_SIZE size, const MD_RENDERER* renderer, void* userdata);
+int md_parse(const MD_CHAR* text, MD_SIZE size, const MD_PARSER* parser, void* userdata);
 
 
 #ifdef __cplusplus

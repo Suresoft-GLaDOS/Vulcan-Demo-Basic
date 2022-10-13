@@ -64,7 +64,9 @@ bar</a></p>
 </blockquote>
 ````````````````````````````````
 
+
 ### [Issue 10](https://github.com/mity/md4c/issues/10)
+
 ```````````````````````````````` example
 [x]:
 x
@@ -74,27 +76,24 @@ x
 .
 <ul>
 <li><?
-<p>x</p>
+
+x
 </li>
 </ul>
 ````````````````````````````````
 
+
 ### [Issue 11](https://github.com/mity/md4c/issues/11)
+
 ```````````````````````````````` example
 x [link](/url "foo &ndash; bar") x
 .
 <p>x <a href="/url" title="foo – bar">link</a> x</p>
 ````````````````````````````````
 
-### [Issue 15](https://github.com/mity/md4c/issues/15)
-```````````````````````````````` example
-***b* c*
-.
-<p>*<em><em>b</em> c</em></p>
-````````````````````````````````
-
 
 ### [Issue 14](https://github.com/mity/md4c/issues/14)
+
 ```````````````````````````````` example
 a***b* c*
 .
@@ -102,7 +101,17 @@ a***b* c*
 ````````````````````````````````
 
 
+### [Issue 15](https://github.com/mity/md4c/issues/15)
+
+```````````````````````````````` example
+***b* c*
+.
+<p>*<em><em>b</em> c</em></p>
+````````````````````````````````
+
+
 ### [Issue 21](https://github.com/mity/md4c/issues/21)
+
 ```````````````````````````````` example
 a*b**c*
 .
@@ -110,15 +119,8 @@ a*b**c*
 ````````````````````````````````
 
 
-### [Issue 24](https://github.com/mity/md4c/issues/24)
-```````````````````````````````` example
-[a](<b>c)
-.
-<p><a href="%3Cb%3Ec">a</a></p>
-````````````````````````````````
-
-
 ### [Issue 33](https://github.com/mity/md4c/issues/33)
+
 ```````````````````````````````` example
 ```&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
 .
@@ -127,6 +129,7 @@ a*b**c*
 
 
 ### [Issue 36](https://github.com/mity/md4c/issues/36)
+
 ```````````````````````````````` example
 __x_ _x___
 .
@@ -135,6 +138,7 @@ __x_ _x___
 
 
 ### [Issue 39](https://github.com/mity/md4c/issues/39)
+
 ```````````````````````````````` example
 [\\]: x
 .
@@ -142,6 +146,7 @@ __x_ _x___
 
 
 ### [Issue 40](https://github.com/mity/md4c/issues/40)
+
 ```````````````````````````````` example
 [x](url
 'title'
@@ -150,6 +155,62 @@ __x_ _x___
 <p><a href="url" title="title">x</a>x</p>
 ````````````````````````````````
 
+
+### [Issue 65](https://github.com/mity/md4c/issues/65)
+
+```````````````````````````````` example
+`
+.
+<p>`</p>
+````````````````````````````````
+
+
+### [Issue 74](https://github.com/mity/md4c/issues/74)
+
+```````````````````````````````` example
+[f]:
+-
+    xx
+-
+.
+<pre><code>xx
+</code></pre>
+<ul>
+<li></li>
+</ul>
+````````````````````````````````
+
+
+### [Issue 78](https://github.com/mity/md4c/issues/78)
+
+```````````````````````````````` example
+[SS ẞ]: /url
+[ẞ SS]
+.
+<p><a href="/url">ẞ SS</a></p>
+````````````````````````````````
+
+
+### [Issue 83](https://github.com/mity/md4c/issues/83)
+
+```````````````````````````````` example
+foo
+>
+.
+<p>foo</p>
+<blockquote>
+</blockquote>
+
+````````````````````````````````
+
+
+### [Issue 95](https://github.com/mity/md4c/issues/95)
+
+```````````````````````````````` example
+. foo
+.
+<p>. foo</p>
+````````````````````````````````
 
 
 ## Code coverage
@@ -201,7 +262,6 @@ Ditto for Unicode punctuation (here U+00A1).
 
 ### `md_is_link_destination_A()`
 
-
 ```````````````````````````````` example
 [link](</url\.with\.escape>)
 .
@@ -210,7 +270,6 @@ Ditto for Unicode punctuation (here U+00A1).
 
 
 ### `md_link_label_eq()`
-
 
 ```````````````````````````````` example
 [foo bar]

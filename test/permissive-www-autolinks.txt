@@ -64,9 +64,9 @@ the only parentheses are in the interior of the autolink, no special rules are
 applied:
 
 ```````````````````````````````` example
-www.google.com/search?q=(business))+ok
+www.google.com/search?q=(business)+ok
 .
-<p><a href="http://www.google.com/search?q=(business))+ok">www.google.com/search?q=(business))+ok</a></p>
+<p><a href="http://www.google.com/search?q=(business)+ok">www.google.com/search?q=(business)+ok</a></p>
 ````````````````````````````````
 
 If an autolink ends in a semicolon (`;`), we check to see if it appears to
@@ -89,4 +89,19 @@ www.google.com/search?q=commonmark&hl;
 www.commonmark.org/he<lp
 .
 <p><a href="http://www.commonmark.org/he">www.commonmark.org/he</a>&lt;lp</p>
+````````````````````````````````
+
+
+## GitHub Issues
+
+### [Issue 53](https://github.com/mity/md4c/issues/53)
+```````````````````````````````` example
+This is [link](www.github.com/).
+.
+<p>This is <a href="www.github.com/">link</a>.</p>
+````````````````````````````````
+```````````````````````````````` example
+This is [link](www.github.com/)X
+.
+<p>This is <a href="www.github.com/">link</a>X</p>
 ````````````````````````````````
