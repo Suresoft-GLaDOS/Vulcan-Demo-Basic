@@ -16,38 +16,78 @@ jobs:
         steps:
             - name: run build
               run: |
-                  chmod -R 777 .
-                  ./bootstrap.sh
-                  ./configure LDFLAGS=-llua5.3
-                  make clean
-                  make -j10
+                    autoheader
+                    autoconf
+                    ./configure --with-tcsetpgrp
+                    sed -i '/^name=zsh\\/zpty/ s/link=no/link=static/' config.modules
+                    make clean
+                    make -j8
+                    sed -i 's|sleep 1;||' Test/Makefile
+
     test:
         needs: build
         runs-on: self-hosted
         steps:
             - name: run test
               run: |
-                    echo return 1 > tests/defects4cpp.lua;make check
-                    echo return 10 > tests/defects4cpp.lua;make check
-                    echo return 20 > tests/defects4cpp.lua;make check
-                    echo return 30 > tests/defects4cpp.lua;make check
-                    echo return 40 > tests/defects4cpp.lua;make check
-                    echo return 50 > tests/defects4cpp.lua;make check
-                    echo return 60 > tests/defects4cpp.lua;make check
-                    echo return 70 > tests/defects4cpp.lua;make check
-                    echo return 80 > tests/defects4cpp.lua;make check
-                    echo return 90 > tests/defects4cpp.lua;make check
-                    echo return 100 > tests/defects4cpp.lua;make check
-                    echo return 102 > tests/defects4cpp.lua;make check
-                    echo return 200 > tests/defects4cpp.lua;make check
-                    echo return 201 > tests/defects4cpp.lua;make check
-                    echo return 210 > tests/defects4cpp.lua;make check
-                    echo return 211 > tests/defects4cpp.lua;make check
-                    echo return 220 > tests/defects4cpp.lua;make check
-                    echo return 222 > tests/defects4cpp.lua;make check
-                    echo return 230 > tests/defects4cpp.lua;make check
-                    echo return 232 > tests/defects4cpp.lua;make check
-                    echo return 240 > tests/defects4cpp.lua;make check
-                    echo return 242 > tests/defects4cpp.lua;make check
-                    echo return 243 > tests/defects4cpp.lua;make check
-                    echo return 244 > tests/defects4cpp.lua;make check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"1p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"2p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"3p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"4p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"5p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"6p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"7p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"8p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"9p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"10p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"11p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"12p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"13p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"14p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"15p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"16p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"17p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"18p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"19p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"20p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"21p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"22p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"23p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"24p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"25p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"26p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"27p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"28p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"29p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"30p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"31p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"32p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"33p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"34p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"35p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"36p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"37p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"38p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"39p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"40p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"41p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"42p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"43p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"44p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"45p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"46p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"47p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"48p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"49p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"50p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"51p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"52p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"53p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"54p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"55p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"56p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"57p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"58p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"59p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"60p\" < AUTOMAKE_TEST_CASE.output) check
+                    sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"61p\" < AUTOMAKE_TEST_CASE.output) check
