@@ -657,6 +657,8 @@ Functions
 
     :c:macro:`ERROR_COULD_NOT_MAP_FILE`
 
+    :c:macro:`ERROR_ZERO_LENGTH_FILE`
+
     :c:macro:`ERROR_TOO_MANY_SCAN_THREADS`
 
     :c:macro:`ERROR_SCAN_TIMEOUT`
@@ -678,6 +680,8 @@ Functions
     :c:macro:`ERROR_INSUFFICIENT_MEMORY`
 
     :c:macro:`ERROR_COULD_NOT_MAP_FILE`
+
+    :c:macro:`ERROR_ZERO_LENGTH_FILE`
 
     :c:macro:`ERROR_TOO_MANY_SCAN_THREADS`
 
@@ -927,6 +931,10 @@ Error codes
 .. c:macro:: ERROR_COULD_NOT_MAP_FILE
 
   File could not be mapped into memory.
+
+.. c:macro:: ERROR_ZERO_LENGTH_FILE
+
+  File length is zero.
 
 .. c:macro:: ERROR_INVALID_FILE
 

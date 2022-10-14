@@ -125,28 +125,28 @@ static void test_comparison_operators()
       "rule test { condition: 0.5 <= 1}", NULL);
 
   assert_true_rule(
-      "rule test { condition: 1.0 <= 1}", NULL);
+      "rule rest { condition: 1.0 <= 1}", NULL);
 
   assert_true_rule(
-      "rule test { condition: \"abc\" == \"abc\"}", NULL);
+      "rule rest { condition: \"abc\" == \"abc\"}", NULL);
 
   assert_true_rule(
-      "rule test { condition: \"abc\" <= \"abc\"}", NULL);
+      "rule rest { condition: \"abc\" <= \"abc\"}", NULL);
 
   assert_true_rule(
-      "rule test { condition: \"abc\" >= \"abc\"}", NULL);
+      "rule rest { condition: \"abc\" >= \"abc\"}", NULL);
 
   assert_true_rule(
-      "rule test { condition: \"ab\" < \"abc\"}", NULL);
+      "rule rest { condition: \"ab\" < \"abc\"}", NULL);
 
   assert_true_rule(
-      "rule test { condition: \"abc\" > \"ab\"}", NULL);
+      "rule rest { condition: \"abc\" > \"ab\"}", NULL);
 
   assert_true_rule(
-      "rule test { condition: \"abc\" < \"abd\"}", NULL);
+      "rule rest { condition: \"abc\" < \"abd\"}", NULL);
 
   assert_true_rule(
-      "rule test { condition: \"abd\" > \"abc\"}", NULL);
+      "rule rest { condition: \"abd\" > \"abc\"}", NULL);
 
   assert_false_rule(
       "rule test { condition: 1 != 1}", NULL);
@@ -629,6 +629,26 @@ static void test_hex_strings()
 
   assert_true_rule(
       "rule test { \
+        strings: $a = { 31 32 [-] // Inline comment\n\r \
+          38 39 } \
+        condition: $a }",
+      "1234567890");
+
+  assert_true_rule(
+      "rule test { \
+        strings: $a = { 31 32 /* Inline comment */ [-] 38 39 } \
+        condition: $a }",
+      "1234567890");
+
+  assert_true_rule(
+      "rule test { \
+        strings: $a = { 31 32 /* Inline multi-line\n\r \
+                                 comment */ [-] 38 39 } \
+        condition: $a }",
+      "1234567890");
+
+  assert_true_rule(
+      "rule test { \
         strings: $a = {\n 31 32 [-] 38 39 \n\r} \
         condition: $a }",
       "1234567890");
@@ -963,27 +983,6 @@ void test_for()
           for all i in (1..#a) : (@a[i] == 5) \
       }",
       "mississippi");
-
-  assert_true_rule(
-      "rule test { \
-        condition: \
-          for any i in (1, 2, 3) : (i <= 1) \
-      }",
-      NULL);
-
-  assert_true_rule(
-      "rule test { \
-        condition: \
-          for all i in (1, 2, 3) : (i >= 1) \
-      }",
-      NULL);
-
-  assert_false_rule(
-      "rule test { \
-        condition: \
-          for all i in (1, 0) : (i != 1) \
-      }",
-      NULL);
 }
 
 
@@ -1203,10 +1202,6 @@ void test_re()
   assert_true_regexp("ab{1,3}?", "abbbbb", "ab");
   assert_true_regexp("ab{2,2}?", "abbbbb", "abb");
   assert_true_regexp("ab{2,3}?", "abbbbb", "abb");
-  assert_true_regexp("(a{2,3}b){2,3}", "aabaaabaab", "aabaaabaab");
-  assert_true_regexp("(a{2,3}?b){2,3}?", "aabaaabaab", "aabaaab");
-  assert_false_regexp("(a{4,5}b){4,5}", "aaaabaaaabaaaaab");
-  assert_true_regexp("(a{4,5}b){4,5}", "aaaabaaaabaaaaabaaaaab", "aaaabaaaabaaaaabaaaaab");
   assert_true_regexp(".(abc){0,1}", "xabcabcabcabc", "xabc");
   assert_true_regexp(".(abc){0,2}", "xabcabcabcabc", "xabcabc");
   assert_true_regexp("x{1,2}abcd", "xxxxabcd", "xxabcd");
@@ -1361,13 +1356,6 @@ void test_re()
   // Test case for issue #682
   assert_true_regexp("(a|\\b)[a]{1,}", "aaaa", "aaaa");
 
-  // Test cases for issue #1018
-  assert_true_regexp("(ba{4}){4,10}", "baaaabaaaabaaaabaaaabaaaa", "baaaabaaaabaaaabaaaabaaaa");
-  assert_true_regexp("(ba{2}a{2}){5,10}", "baaaabaaaabaaaabaaaabaaaa", "baaaabaaaabaaaabaaaabaaaa");
-  assert_true_regexp("(ba{3}){4,10}", "baaabaaabaaabaaabaaa", "baaabaaabaaabaaabaaa");
-  assert_true_regexp("(ba{4}){5,10}", "baaaabaaaabaaaabaaaabaaaa", "baaaabaaaabaaaabaaaabaaaa");
-  assert_false_regexp("(ba{4}){4,10}", "baaaabaaaabaaaa");
-
   // Test for integer overflow in repeat interval
   assert_regexp_syntax_error("a{2977952116}");
 
@@ -1490,45 +1478,6 @@ static void test_comments()
              true\n\
       }",
       NULL);
-
-  assert_true_rule(
-      "rule test { \
-        strings: $a = { 31 32 [-] // Inline comment\n\r \
-          38 39 } \
-        condition: !a == 9 }",
-      "1234567890");
-
-  assert_true_rule(
-      "rule test { \
-        strings: $a = { 31 32 /* Inline comment */ [-] 38 39 } \
-        condition: !a == 9 }",
-      "1234567890");
-
-  assert_true_rule(
-      "rule test { \
-        strings: $a = { 31 32 /* Inline comment */ [-] 38 39 } \
-                 $b = { 31 32 /* Inline comment */ [-] 35 36 } \
-        condition: (!a == 9) and (!b == 6) }",
-      "1234567890");
-
-  assert_true_rule(
-      "rule test { \
-        strings: $a = { 31 32 /* Inline comment with *asterisks* */ [-] 38 39 } \
-        condition: !a == 9}",
-      "1234567890");
-
-  assert_true_rule(
-      "rule test { \
-        strings: $a = { 31 32 /* Inline multi-line\n\r \
-                                 comment */ [-] 38 39 } \
-        condition: !a == 9 }",
-      "1234567890");
-
-  assert_true_rule(
-      "rule test { \
-        strings: $a = { /*Some*/ 31 /*interleaved*/ [-] /*comments*/ 38 39 } \
-        condition: !a == 9 }",
-      "1234567890");
 }
 
 static void test_matches_operator()
@@ -1918,7 +1867,6 @@ void test_process_scan()
         all of them\
     }", &rules) == ERROR_SUCCESS);
   rc1 = yr_rules_scan_proc(rules, pid, 0, count_matches, &matches, 0);
-  yr_rules_destroy(rules);
   kill(pid, SIGALRM);
 
   rc2 = waitpid(pid, &status, 0);
@@ -2089,67 +2037,67 @@ int main(int argc, char** argv)
   yr_initialize();
   int index = defects4cpp_test_index();
   switch (index) {
-      case 216:
+      case 215:
   test_boolean_operators();
           break;
-      case 217:
+      case 216:
   test_comparison_operators();
           break;
-      case 218:
+      case 217:
   test_arithmetic_operators();
           break;
-      case 219:
+      case 218:
   test_bitwise_operators();
           break;
-      case 220:
+      case 219:
   test_matches_operator();
           break;
-      case 221:
+      case 220:
   test_syntax();
           break;
-      case 222:
+      case 221:
   test_anonymous_strings();
           break;
-      case 223:
+      case 222:
   test_strings();
           break;
-      case 224:
+      case 223:
   test_wildcard_strings();
           break;
-      case 225:
+      case 224:
   test_hex_strings();
           break;
-      case 226:
+      case 225:
   test_count();
           break;
-      case 227:
+      case 226:
   test_at();
           break;
-      case 228:
+      case 227:
   test_in();
           break;
-      case 229:
+      case 228:
   test_offset();
           break;
-      case 230:
+      case 229:
   test_length();
           break;
-      case 231:
+      case 230:
   test_of();
           break;
-      case 232:
+      case 231:
   test_for();
           break;
-      case 233:
+      case 232:
   test_re();
           break;
-      case 234:
+      case 233:
   test_filesize();
           break;
-      case 235:
+      case 234:
   test_include_files();
           break;
-      case 236:
+      case 235:
   // test_compile_file();
   // test_compile_files();
 
@@ -2158,33 +2106,33 @@ int main(int argc, char** argv)
   // test_compare();
   test_comments();
           break;
-      case 237:
+      case 236:
   test_modules();
           break;
-      case 238:
+      case 237:
   test_integer_functions();
           break;
-      case 239:
+      case 238:
   // test_string_io();
   test_entrypoint();
           break;
-      case 240:
+      case 239:
   test_global_rules();
           break;
-      case 241:
+      case 240:
   #if !defined(USE_WINDOWS_PROC) && !defined(USE_NO_PROC)
   test_process_scan();
   #endif
           break;
-      case 242:
+      case 241:
   #if defined(HASH_MODULE)
   test_hash_module();
   #endif
           break;
-      case 243:
+      case 242:
   test_time_module();
           break;
-      case 244:
+      case 243:
   test_performance_warnings();
           break;
   }

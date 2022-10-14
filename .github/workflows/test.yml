@@ -27,15 +27,27 @@ jobs:
         steps:
             - name: run test
               run: |
-                    echo return 1 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 10 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 20 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 30 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 40 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 50 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 60 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 70 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 80 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 90 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 100 > tests/defects4cpp.lua;make check-TESTS
-                    echo return 102 > tests/defects4cpp.lua;make check-TESTS
+                    echo return 1 > tests/defects4cpp.lua;make check
+                    echo return 10 > tests/defects4cpp.lua;make check
+                    echo return 20 > tests/defects4cpp.lua;make check
+                    echo return 30 > tests/defects4cpp.lua;make check
+                    echo return 40 > tests/defects4cpp.lua;make check
+                    echo return 50 > tests/defects4cpp.lua;make check
+                    echo return 60 > tests/defects4cpp.lua;make check
+                    echo return 70 > tests/defects4cpp.lua;make check
+                    echo return 80 > tests/defects4cpp.lua;make check
+                    echo return 90 > tests/defects4cpp.lua;make check
+                    echo return 100 > tests/defects4cpp.lua;make check
+                    echo return 102 > tests/defects4cpp.lua;make check
+                    echo return 200 > tests/defects4cpp.lua;make check
+                    echo return 201 > tests/defects4cpp.lua;make check
+                    echo return 210 > tests/defects4cpp.lua;make check
+                    echo return 211 > tests/defects4cpp.lua;make check
+                    echo return 220 > tests/defects4cpp.lua;make check
+                    echo return 222 > tests/defects4cpp.lua;make check
+                    echo return 230 > tests/defects4cpp.lua;make check
+                    echo return 232 > tests/defects4cpp.lua;make check
+                    echo return 240 > tests/defects4cpp.lua;make check
+                    echo return 242 > tests/defects4cpp.lua;make check
+                    echo return 243 > tests/defects4cpp.lua;make check
+                    echo return 244 > tests/defects4cpp.lua;make check

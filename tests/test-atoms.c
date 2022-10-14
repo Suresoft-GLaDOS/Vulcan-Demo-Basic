@@ -653,12 +653,7 @@ void test_atom_choose()
     assert_hex_atoms("{11 ?? 11 ?? 22 33 44 55 66 }", 1, (struct atom[]) {
       {4, {0x22, 0x33, 0x44, 0x55}},
     });
-        break;
-      case 102:
-    // Test case for issue #1025
-    assert_hex_atoms("{?? 11 22 33 ?? 55 66 }", 1, (struct atom[]) {
-      {3, {0x11, 0x22, 0x33}},
-    });
+          break;
   }
 }
 

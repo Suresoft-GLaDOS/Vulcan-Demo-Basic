@@ -962,11 +962,6 @@ Reference
 
     .. versionadded:: 3.6.0
 
-    Function returning the file offset for RVA *addr*. Be careful to pass
-    relative addresses here and not absolute addresses, like `pe.entry_point`
-    when scanning a process.
+    Function returning the file offset for RVA *addr*.
 
-    *Example: pe.rva_to_offset(pe.sections[0].virtual_address) == pe.sections[0].raw_data_offset*
-
-    This example will make sure the offset for the virtual address in the first
-    section equals the file offset for that section.
+    *Example: pe.rva_to_offset(pe.entry_point)*

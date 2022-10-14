@@ -232,14 +232,14 @@ int main(int argc, char **argv)
     int status;
     int index = defects4cpp_test_index();
     switch (index) {
-        case 153:
+        case 152:
     puts("Test: crash");
     setenv("TEST_OP", "CRASH", 1);
     status = reexec(argv[0]);
     if (status != 0)
       return 1;
             break;
-        case 154:
+        case 153:
     puts("Test: crash-no-handle");
     setenv("TEST_OP", "CRASH-NO-HANDLE", 1);
     status = reexec(argv[0]);
@@ -249,14 +249,14 @@ int main(int argc, char **argv)
       return 1;
     }
             break;
-        case 155:
+        case 154:
     puts("Test: blocked-signal");
     setenv("TEST_OP", "BLOCKED-SIGNAL", 1);
     status = reexec(argv[0]);
     if (status != 0)
       return 1;
             break;
-        case 156:
+        case 155:
     puts("Test: crash-other-thread");
     setenv("TEST_OP", "CRASH-OTHER-THREAD", 1);
     status = reexec(argv[0]);

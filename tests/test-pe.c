@@ -14,7 +14,7 @@ int main(int argc, char** argv)
   yr_initialize();
   int index = defects4cpp_test_index();
   switch (index) {
-      case 195:
+      case 194:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -23,7 +23,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 196:
+      case 195:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -32,7 +32,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny-idata-51ff");
           break;
-      case 197:
+      case 196:
   assert_false_rule_file(
       "import \"pe\" \
       rule test { \
@@ -41,7 +41,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny-idata-5200");
           break;
-      case 198:
+      case 197:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -50,7 +50,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 199:
+      case 198:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 200:
+      case 199:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -68,7 +68,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny-idata-5200");
           break;
-      case 201:
+      case 200:
   assert_false_rule_file(
       "import \"pe\" \
       rule test { \
@@ -77,7 +77,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny-idata-5200");
           break;
-      case 202:
+      case 201:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -86,7 +86,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 203:
+      case 202:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -95,7 +95,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 204:
+      case 203:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -104,7 +104,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 205:
+      case 204:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -114,7 +114,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 206:
+      case 205:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -129,7 +129,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 207:
+      case 206:
   #if defined(HAVE_LIBCRYPTO) || \
       defined(HAVE_WINCRYPT_H) || \
       defined(HAVE_COMMONCRYPTO_COMMONCRYPTO_H)
@@ -153,7 +153,7 @@ int main(int argc, char** argv)
       "tests/data/079a472d22290a94ebb212aa8015cdc8dd28a968c6b4d3b88acdd58ce2d3b885");
   #endif
       break;
-      case 208:
+      case 207:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -162,7 +162,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 209:
+      case 208:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -171,7 +171,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 210:
+      case 209:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -180,7 +180,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 211:
+      case 210:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -189,7 +189,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 212:
+      case 211:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -198,7 +198,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 213:
+      case 212:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -207,7 +207,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny-overlay");
           break;
-      case 214:
+      case 213:
   assert_true_rule_file(
       "import \"pe\" \
       rule test { \
@@ -216,7 +216,7 @@ int main(int argc, char** argv)
       }",
       "tests/data/tiny");
           break;
-      case 215:
+      case 214:
   assert_false_rule_file(
       "import \"pe\" \
       rule test { \

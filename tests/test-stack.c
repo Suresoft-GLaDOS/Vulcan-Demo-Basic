@@ -45,7 +45,7 @@ int main(int argc, char** argv)
 
   int index = defects4cpp_test_index();
   switch (index) {
-    case 245:
+    case 244:
   item = 1;
 
   if (yr_stack_push(stack, &item) != ERROR_SUCCESS)

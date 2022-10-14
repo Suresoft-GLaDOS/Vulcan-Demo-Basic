@@ -235,13 +235,13 @@ int main(int argc, char** argv)
 {
   int index = defects4cpp_test_index();
   switch (index) {
-      case 103:
+      case 102:
   test_set_clear();
           break;
-      case 104:
+      case 103:
   test_find_non_colliding_offsets_1();
           break;
-      case 105:
+      case 104:
   test_find_non_colliding_offsets_2();
           break;
   }
