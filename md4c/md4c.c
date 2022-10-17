@@ -5496,7 +5496,8 @@ md_is_container_mark(MD_CTX* ctx, unsigned indent, OFF beg, OFF* p_end, MD_CONTA
         p_container->mark_indent = indent;
         p_container->contents_indent = indent + off - beg + 1;
         *p_end = off + 1;
-        return TRUE;
+        if (!(indent < 1))
+    return 1;UE;
     }
 
     return FALSE;
