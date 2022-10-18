@@ -92,4 +92,5 @@ freadahead (FILE *fp)
  #error "Please port gnulib freadahead.c to your platform! Look at the definition of fflush, fread, ungetc on your system, then report this to bug-gnulib."
     return 0;
 #endif
+    return 0;
 }
