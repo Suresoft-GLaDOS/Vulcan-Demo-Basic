@@ -17,6 +17,7 @@ jobs:
             - name: run build
               run: |
                     chmod 777 ./bootstrap
+                    chmod -R 777 gnulib
                     ./bootstrap
                     ./configure
                     make clean

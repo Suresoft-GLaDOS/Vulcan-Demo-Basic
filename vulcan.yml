@@ -6,6 +6,8 @@ time-out: 3600
 
 # Command to build user's project
 test-build-command: |
+  chmod 777 ./bootstrap
+  chmod -R 777 gnulib
   ./bootstrap
   ./configure
   make clean
@@ -13,6 +15,8 @@ test-build-command: |
 
 # Command to build user's project with coverage measurement
 coverage-build-command: |
+  chmod 777 ./bootstrap
+  chmod -R 777 gnulib
   ./bootstrap
   ./configure CFLAGS="-fprofile-arcs -ftest-coverage -g -O0" LDFLAGS="-lgcov"
   make clean
