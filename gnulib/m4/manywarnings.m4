@@ -106,7 +106,6 @@ AC_DEFUN([gl_MANYWARN_ALL_GCC],
   for gl_manywarn_item in \
     -fno-common \
     -W \
-    -Wabi \
     -Waddress \
     -Waggressive-loop-optimizations \
     -Wall \
