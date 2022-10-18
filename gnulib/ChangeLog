@@ -9960,7 +9960,7 @@ o	Test only that noncanonical values do not cause crashes, not that
 	Now static, not static inline.
 	* lib/fflush.c (disable_seek_optimization, restore_seek_optimization)
 	(update_fpos_cache):
-	Define only if ! (defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1).
+	Define only if ! (defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1).
 	* m4/fflush.m4 (gl_PREREQ_FFLUSH):
 	* m4/stat.m4 (gl_PREREQ_STAT):
 	Do not require AC_C_INLINE.
