@@ -14,22 +14,23 @@ test-candidates: |
 time-out: 3600
 max-patch-number : 500
 
-test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
+test-build-command: |
   autoheader
   autoconf
   ./configure --with-tcsetpgrp
-  sed -i '/^name=zsh\\/zpty/ s/link=no/link=static/' config.modules
+  sed -i '/^name=zsh\/zpty/ s/link=no/link=static/' config.modules
   make clean
-  make -j8
+  make -j10
   sed -i 's|sleep 1;||' Test/Makefile
 
-coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
+# Command to build user's project with coverage measurement
+coverage-build-command: |
   autoheader
   autoconf
   ./configure --with-tcsetpgrp --enable-cflags="--coverage -g -O0" --enable-libs="-lgcov"
-  sed -i '/^name=zsh\\/zpty/ s/link=no/link=static/' config.modules
+  sed -i '/^name=zsh\/zpty/ s/link=no/link=static/' config.modules
   make clean
-  make -j8
+  make -j10
   sed -i 's|sleep 1;||' Test/Makefile
 
 
@@ -38,67 +39,68 @@ coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 me
 # 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
 test-type: automake
 test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"1p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"2p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"3p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"4p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"5p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"6p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"7p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"8p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"9p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"10p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"11p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"12p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"13p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"14p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"15p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"16p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"17p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"18p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"19p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"20p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"21p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"22p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"23p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"24p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"25p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"26p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"27p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"28p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"29p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"30p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"31p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"32p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"33p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"34p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"35p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"36p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"37p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"38p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"39p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"40p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"41p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"42p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"43p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"44p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"45p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"46p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"47p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"48p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"49p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"50p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"51p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"52p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"53p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"54p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"55p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"56p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"57p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"58p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"59p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"60p\" < AUTOMAKE_TEST_CASE.output) check
-  sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output; make -s TESTNUM=$(sed -n \"61p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=1; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=2; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=3; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=4; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=5; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=6; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=7; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=8; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=9; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=10; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=11; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=12; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=13; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=14; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=15; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=16; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=17; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=18; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=19; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=20; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=21; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=22; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=23; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=24; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=25; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=26; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=27; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=28; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=29; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=30; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=31; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=32; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=33; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=34; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=35; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=36; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=37; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=38; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=39; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=40; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=41; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=42; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=43; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=44; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=45; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=46; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=47; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=48; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=49; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=50; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=51; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=52; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=53; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=54; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=55; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=56; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=57; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=58; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=59; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=60; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+  [ -f AUTOMAKE_TEST_CASE.output ] || find Test -type f -name "*.ztst" -exec basename {} .ztst \; | sort -t '\0' > AUTOMAKE_TEST_CASE.output; sed -i '/X04zlehighlight/d' AUTOMAKE_TEST_CASE.output ; index=61; make -s TESTNUM=$(sed -n \"${index}p\" < AUTOMAKE_TEST_CASE.output) check
+
   
 
 test-case:
