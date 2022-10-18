@@ -9,6 +9,7 @@ test-build-command: |
   chmod 777 ./bootstrap
   chmod -R 777 gnulib
   chmod -R 777 build-aux
+  export FORCE_UNSAFE_CONFIGURE=1
   ./bootstrap
   ./configure
   make clean
@@ -19,6 +20,7 @@ coverage-build-command: |
   chmod 777 ./bootstrap
   chmod -R 777 gnulib
   chmod -R 777 build-aux
+  export FORCE_UNSAFE_CONFIGURE=1
   ./bootstrap
   ./configure CFLAGS="-fprofile-arcs -ftest-coverage -g -O0" LDFLAGS="-lgcov"
   make clean

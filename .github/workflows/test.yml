@@ -19,6 +19,7 @@ jobs:
                     chmod 777 ./bootstrap
                     chmod -R 777 gnulib
                     chmod -R 777 build-aux
+                    export FORCE_UNSAFE_CONFIGURE=1
                     ./bootstrap
                     ./configure
                     make clean
