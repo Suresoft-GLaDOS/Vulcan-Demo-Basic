@@ -16,7 +16,7 @@ jobs:
         steps:
             - name: run build
               run: |
-                    chmod -R 777 .
+                    chmod 777 ./bootstrap
                     ./bootstrap
                     ./configure
                     make clean
