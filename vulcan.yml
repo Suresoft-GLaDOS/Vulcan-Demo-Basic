@@ -1,56 +1,141 @@
 --- # Start
-name: example
+name: coreutils_example
 
-# 유저의 github 저장소 정보
-url:
-docker-image:
-
-# predefined docker-image를 사용하되, 추가적인 설정이 필요한 경우 이렇게 정의
-extra-build-env-setting-commands:
-
-test-candidates: |
-  md4c/md4c.c
-
+# Timeout about program repair(second)
 time-out: 3600
-max-patch-number : 500
 
-test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
-  rm -rf build
-  cmake -B build . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-fsanitize=address"
-  cd build;  make -j10
-#  make -j10
+# Command to build user's project
+test-build-command: |
+  ./bootstrap
+  ./configure
+  make clean
+  make -j 10
 
-coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
-  rm -rf build
-  cmake -B build . -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV -fsanitize=address"
-  cd build;  make -j10
-#  make -j10
-
-
-# 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
-# 그렇지 않으면 test-case에 실행할 테스트 번호를 range로 하도록함
-# 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
-test-type: automake
-test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하기 위해 테스트 리스트를 출력해주는 내용 필요
-              python3 test/spec_tests.py -s test/coverage.txt -p "build/md2html/md2html" --skip 19
-              python3 test/spec_tests.py -s test/permissive-email-autolinks.txt -p "build/md2html/md2html --fpermissive-email-autolinks"
-              python3 test/spec_tests.py -s test/permissive-url-autolinks.txt -p "build/md2html/md2html --fpermissive-url-autolinks"
-              python3 test/spec_tests.py -s test/permissive-www-autolinks.txt -p "build/md2html/md2html --fpermissive-www-autolinks"
-              python3 test/spec_tests.py -s test/tables.txt -p "build/md2html/md2html --ftables"
-              python3 test/spec_tests.py -s test/strikethrough.txt -p "build/md2html/md2html --fstrikethrough"
-              python3 test/spec_tests.py -s test/tasklists.txt -p "build/md2html/md2html --ftasklists"
-              python3 test/spec_tests.py -s test/latex-math.txt -p "build/md2html/md2html --flatex-math"
-              python3 test/pathological_tests.py -p "build/md2html/md2html"
-              python3 test/spec_tests.py -s test/coverage.txt -p "build/md2html/md2html" --number 19
+# Command to build user's project with coverage measurement
+coverage-build-command: |
+  ./bootstrap
+  ./configure CFLAGS="-fprofile-arcs -ftest-coverage -g -O0" LDFLAGS="-lgcov"
+  make clean
+  make -j 10
 
 
-test-case:
+test-list: | # Test commands list
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 109)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 110)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 111)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 112)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 113)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 114)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 115)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 116)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 117)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 118)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 119)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 120)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 121)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 122)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 123)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 124)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 125)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 126)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 127)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 128)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 129)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 130)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 131)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 132)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 133)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 134)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 135)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 136)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 137)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 138)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 139)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 140)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 141)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 142)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 143)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 144)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 145)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 146)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 147)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 148)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 149)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 150)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 151)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 152)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 153)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 154)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 155)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 156)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 157)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 158)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 159)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 160)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 161)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 162)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 163)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 164)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 165)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 166)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 167)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 168)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 169)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 170)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 171)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 172)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 173)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 174)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 175)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 176)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 177)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 178)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 179)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 180)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 181)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 182)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 183)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 184)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 185)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 186)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 187)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 188)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 189)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 190)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 191)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 192)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 193)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 194)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 195)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 196)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 197)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 198)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 199)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 200)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 201)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 202)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 203)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 204)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 205)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 206)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 207)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 208)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 209)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 210)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 211)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 212)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 213)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 214)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 215)
+  make check-TESTS --no-print-directory TESTS=$(make print-TESTS | cut -d ' ' -f 216)
 
-test-command: | # 테스트 실행
+
+# Get the command from test-list and run each of them
+test-command: | # Run tests
   bash -c "@testcase@"
-test-coverage-command: | # 커버리지 테스트 실행 / 테스트 대상을 입력받아서 하나씩 실행할 수 있어야 함
+
+test-coverage-command: | # Run coverage tests
   bash -c "@testcase@"
-gcov-exclusion-list: | # 커버리지 제외 대상
+
+gcov-exclusion-list: | # Do not measure coverage from those files
   *test*.o
-gcov-inclusion-list: | # 커버리지 포함 대상 지정
-  *md4c*
