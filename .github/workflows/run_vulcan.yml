@@ -12,3 +12,4 @@ jobs:
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 path: vulcan_target
+                validator: ALL
