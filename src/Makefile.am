@@ -1,12 +1,9 @@
 SUBDIRS = common porting_layer
-
-AM_CPPFLAGS = \
+INCLUDES = \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/include/internal \
 	-I$(top_srcdir)/src/porting_layer/include \
 	-DCHEWING_DATADIR=\"$(datadir)/chewing\" \
-	$(USERPHRASE_CPPFLAGS) \
-	$(DEFAULT_CPPFLAGS) \
 	$(NULL)
 
 noinst_HEADERS = \
@@ -15,17 +12,17 @@ noinst_HEADERS = \
 
 lib_LTLIBRARIES = libchewing.la
 libchewing_la_SOURCES = \
-	compat.c \
+	char.c \
 	chewingio.c \
 	chewingutil.c \
 	choice.c \
 	dict.c \
+	hash.c \
 	tree.c \
-	bopomofo.c \
+	userphrase.c \
+	zuin.c \
 	pinyin.c \
 	mod_aux.c \
-	userphrase.c \
-	$(USERPHRASE_SOURCES) \
 	$(NULL)
 
 libchewing_la_LIBADD = \
@@ -40,26 +37,3 @@ libchewing_la_LDFLAGS = \
 	-Wl,--no-undefined \
 	-export-symbols-regex "^(chewing)_" \
 	$(NULL)
-
-if WITH_SQLITE3
-libchewing_la_SOURCES += \
-	chewing-sql.c \
-	userphrase-sql.c \
-	$(NULL)
-
-if WITH_INTERNAL_SQLITE3
-AM_CPPFLAGS += \
-	-I$(top_srcdir)/thirdparty/sqlite-amalgamation \
-	$(NULL)
-
-libchewing_la_SOURCES += \
-	$(top_srcdir)/thirdparty/sqlite-amalgamation/sqlite3.c \
-	$(NULL)
-endif
-
-else
-libchewing_la_SOURCES += \
-	hash.c \
-	userphrase-hash.c \
-	$(NULL)
-endif

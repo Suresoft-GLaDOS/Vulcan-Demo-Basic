@@ -1,22 +1,18 @@
-valgrind-check: testchewing
+valgrind-check: testchewing test.txt
 	@echo "Please waiting for the valgrind results..."
 	libtool --mode=execute valgrind \
 		--leak-check=full \
 		--show-reachable=yes \
-		./testchewing < $(srcdir)/data/default-test.txt
+		./testchewing < test.txt
 
-noinst_LTLIBRARIES = libtesthelper.la
+test.txt: default-test.txt
+	@if [ ! -f test.txt ]; then cp $(srcdir)/default-test.txt test.txt ; fi
 
 dist_noinst_DATA = \
-	data/default-test.txt \
-	data/dictionary.dat \
-	data/index_tree.dat \
-	data/phone.cin \
-	data/pinyin.tab \
-	data/swkb.dat \
-	data/symbols.dat \
-	data/tsi.src \
+	default-test.txt \
 	$(NULL)
+
+noinst_LTLIBRARIES = libtesthelper.la
 
 libtesthelper_la_SOURCES = \
 	testhelper.c \
@@ -31,11 +27,9 @@ NATIVE_TESTS = \
 	test-bopomofo \
 	test-config \
 	test-easy-symbol \
-	test-error-handling \
 	test-fullshape \
 	test-key2pho \
 	test-keyboard \
-	test-keyboardless \
 	test-logger \
 	test-mmap \
 	test-path \
@@ -52,7 +46,6 @@ check_HEADERS = \
 	$(NULL)
 
 check_PROGRAMS = \
-	performance \
 	testchewing \
 	simulate \
 	randkeystroke \
@@ -60,24 +53,23 @@ check_PROGRAMS = \
 	$(NATIVE_TESTS) \
 	$(NULL)
 
+test_mmap_CPPFLAGS = -DTESTDATA="\"$(srcdir)/default-test.txt\""
+
 if ENABLE_TEXT_UI
 TEXT_UI_BIN=genkeystroke
-genkeystroke_SOURCES = genkeystroke.c
+genkeystroke_SOURCES = gen_keystroke.c
 genkeystroke_LDADD = $(LDADD) @CURSES_LIB@
 else
 TEXT_UI_BIN=
 endif
 
-AM_CPPFLAGS = \
+INCLUDES = \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/include/internal \
 	-I$(top_srcdir)/src/porting_layer/include \
-	-I$(top_srcdir)/test/ \
-	-I$(top_srcdir)/thirdparty/sqlite-amalgamation \
+	-I$(top_srcdir)/test \
 	-DCHEWING_DATA_PREFIX="\"$(top_builddir)/data\"" \
 	-DTEST_HASH_DIR="\"$(PWD)\"" \
-	-DTEST_DATA_DIR="\"$(srcdir)/data\"" \
-	$(DEFAULT_CPPFLAGS) \
 	$(CHECK_CFLAGS) \
 	$(NULL)
 
@@ -89,17 +81,4 @@ LDADD = \
 
 AM_LDFLAGS = -static
 
-if WITH_SQLITE3
-if WITH_INTERNAL_SQLITE3
-sqlite3_SOURCES = \
-	$(top_srcdir)/thirdparty/sqlite-amalgamation/shell.c \
-	$(top_srcdir)/thirdparty/sqlite-amalgamation/sqlite3.c \
-	$(NULL)
-
-check_PROGRAMS += \
-	sqlite3 \
-	$(NULL)
-endif
-endif
-
-CLEANFILES = uhash.dat materials.txt-random chewing.sqlite3 test.sqlite3
+CLEANFILES = uhash.dat materials.txt-random test.txt

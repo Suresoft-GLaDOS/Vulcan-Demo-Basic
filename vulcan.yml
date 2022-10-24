@@ -9,7 +9,7 @@ docker-image:
 extra-build-env-setting-commands:
 
 test-candidates: |
-  src/chewingio.c
+  src/chewingutil.c
 
 time-out: 3600
 max-patch-number : 500
@@ -49,10 +49,6 @@ test-list: | # 테스트 리스트 커맨드 / 테스트를 하나씩 실행하�
   declare -x ISOLATED=\"15\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
   declare -x ISOLATED=\"16\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
   declare -x ISOLATED=\"17\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
-  declare -x ISOLATED=\"18\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
-  declare -x ISOLATED=\"19\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
-  declare -x ISOLATED=\"20\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
-  declare -x ISOLATED=\"21\"; index=1; ctest --output-on-failure --tests-regex $(sed -n "1"p < CTEST_TEST_CASE.output)$ --test-dir build
 
 test-case:
 
