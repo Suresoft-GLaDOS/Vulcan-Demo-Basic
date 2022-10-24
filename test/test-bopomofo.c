@@ -1706,6 +1706,9 @@ int main(int argc, char *argv[])
     assert(fd);
     free(logname);
 
+    char* isolated = getenv("ISOLATED");
+    int isolated_int = atoi(isolated);
+
 
     switch (isolated_int) {
         case 1: ;
