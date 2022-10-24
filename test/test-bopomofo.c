@@ -1707,80 +1707,80 @@ int main(int argc, char *argv[])
     free(logname);
 
 
-    char* isolated = getenv("ISOLATED");
-    int isolated_int = atoi(isolated);
-
     switch (isolated_int) {
-        case 1:;
+        case 1: ;
             test_select_candidate();
             break;
-        case 2:;
+        case 2: ;
             test_Esc();
             break;
-        case 3:;
+        case 3: ;
             test_Del();
             break;
-        case 4:;
+        case 4: ;
             test_Backspace();
             break;
-        case 5:;
+        case 5: ;
             test_Up();
             break;
-        case 6:;
+        case 6: ;
             test_Down();
             break;
-        case 7:;
+        case 7: ;
             test_Tab();
             break;
-        case 8:;
+        case 8: ;
             test_DblTab();
             break;
-        case 9:;
+        case 9: ;
             test_Capslock();
             break;
-        case 10:;
+        case 10: ;
             test_Home();
             break;
-        case 11:;
+        case 11: ;
             test_End();
             break;
-        case 12:;
+        case 12: ;
             test_PageUp();
             break;
-        case 13:;
+        case 13: ;
             test_PageDown();
             break;
-        case 14:;
+        case 14: ;
             test_ShiftSpace();
             break;
-        case 15:;
+        case 15: ;
             test_Numlock();
             break;
-        case 16:;
+        case 16: ;
             test_Space();
             break;
-        case 17:;
+        case 17: ;
             test_get_phoneSeq();
             break;
-        case 18:;
+        case 18: ;
             test_bopomofo_buffer();
             break;
-        case 19:;
+        case 19: ;
             test_longest_phrase();
             break;
-        case 20:;
+        case 20: ;
             test_auto_commit();
             break;
-        case 21:;
+        case 21: ;
             test_interval();
             break;
-        case 22:;
+        case 22: ;
             test_jk_selection();
             break;
-        case 23:;
+        case 23: ;
             test_KB();
             break;
+
     }
+
+
     fclose(fd);
 
     return exit_status();
