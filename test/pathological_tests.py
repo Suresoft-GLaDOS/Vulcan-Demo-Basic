@@ -6,6 +6,7 @@ import argparse
 import sys
 import platform
 from cmark import CMark
+from timeit import default_timer as timer
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run cmark tests.')
@@ -29,6 +30,9 @@ pathological = {
     "many emph openers with no closers":
                  (("_a " * 65000),
                   re.compile("(_a ){64999}_a")),
+    "many 3-emph openers with no closers":
+                 (("a***" * 65000),
+                  re.compile("(a<em><strong>a</strong></em>){32500}")),
     "many link closers with no openers":
                  (("a]" * 65000),
                   re.compile("(a\]){65000}")),
@@ -57,17 +61,35 @@ pathological = {
                  ("abc\u0000de\u0000",
                   re.compile("abc\ufffd?de\ufffd?")),
     "backticks":
-                 ("".join(map(lambda x: ("e" + "`" * x), range(1,10000))),
+                 ("".join(map(lambda x: ("e" + "`" * x), range(1,1000))),
                   re.compile("^<p>[e`]*</p>\r?\n$")),
     "many links":
                  ("[t](/u) " * 50000,
                   re.compile("(<a href=\"/u\">t</a> ?){50000}")),
     "many references":
-                 ("".join(map(lambda x: ("[" + str(x) + "]: u\n"), range(1,50000 * 16))) + "[0] " * 50000,
-                  re.compile("(\[0\] ){49999}")),
+                 ("".join(map(lambda x: ("[" + str(x) + "]: u\n"), range(1,20000 * 16))) + "[0] " * 20000,
+                  re.compile("(\[0\] ){19999}")),
     "deeply nested lists":
                  ("".join(map(lambda x: ("  " * x + "* a\n"), range(0,1000))),
-                  re.compile("<ul>\r?\n(<li>a<ul>\r?\n){999}<li>a</li>\r?\n</ul>\r?\n(</li>\r?\n</ul>\r?\n){999}"))
+                  re.compile("<ul>\r?\n(<li>a<ul>\r?\n){999}<li>a</li>\r?\n</ul>\r?\n(</li>\r?\n</ul>\r?\n){999}")),
+    "many html openers and closers":
+                 (("<>" * 50000),
+                  re.compile("(&lt;&gt;){50000}")),
+    "many html proc. inst. openers":
+                 (("x" + "<?" * 50000),
+                  re.compile("x(&lt;\\?){50000}")),
+    "many html CDATA openers":
+                 (("x" + "<![CDATA[" * 50000),
+                  re.compile("x(&lt;!\\[CDATA\\[){50000}")),
+    "many backticks and escapes":
+                 (("\\``" * 50000),
+                  re.compile("(``){50000}")),
+    "many broken link titles":
+                 (("[ (](" * 50000),
+                  re.compile("(\[ \(\]\(){50000}")),
+    "broken thematic break":
+                 (("* " * 50000 + "a"),
+                  re.compile("<ul>\r?\n(<li><ul>\r?\n){49999}<li>a</li>\r?\n</ul>\r?\n(</li>\r?\n</ul>\r?\n){49999}"))
     }
 
 whitespace_re = re.compile('/s+/')
@@ -78,16 +100,18 @@ failed = 0
 #print("Testing pathological cases:")
 for description in pathological:
     (inp, regex) = pathological[description]
+    start = timer()
     [rc, actual, err] = cmark.to_html(inp)
+    end = timer()
     if rc != 0:
         errored += 1
-        print(description, '[ERRORED (return code %d)]' %rc)
+        print('{:35} [ERRORED (return code %d)]'.format(description, rc))
         print(err)
     elif regex.search(actual):
-        #print(description, '[PASSED]')
+        print('{:35} [PASSED] {:.3f} secs'.format(description, end-start))
         passed += 1
     else:
-        print(description, '[FAILED]')
+        print('{:35} [FAILED]'.format(description))
         print(repr(actual))
         failed += 1
 

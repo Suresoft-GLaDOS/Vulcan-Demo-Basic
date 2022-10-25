@@ -27,7 +27,7 @@ MD4C is C Markdown parser with the following features:
 
 * **Compliance:** Generally MD4C aims to be compliant to the latest version of
   [CommonMark specification](http://spec.commonmark.org/). Right now we are
-  fully compliant to CommonMark 0.28.
+  fully compliant to CommonMark 0.29.
 
 * **Extensions:** MD4C supports some commonly requested and accepted extensions.
   See below.
@@ -50,26 +50,26 @@ MD4C is C Markdown parser with the following features:
 
 * **Permissive license:** MD4C is available under the MIT license.
 
-* **Performance:** MD4C is very fast. Preliminary tests show it's quite faster
-  then [Hoedown](https://github.com/hoedown/hoedown) or
-  [Cmark](https://github.com/jgm/cmark).
+* **Performance:** MD4C is [very fast](https://talk.commonmark.org/t/why-is-md4c-so-fast-c/2520).
 
 
 ## Using MD4C
 
-The parser is implemented in a single C source file `md4c.c` and its
-accompanying header `md4c.h`.
+Application has to include the header `md4c.h` and link against MD4C library;
+or alternatively it may include `md4c.h` and `md4c.c` directly into its source
+base as the parser is only implemented in the single C source file.
 
 The main provided function is `md_parse()`. It takes a text in Markdown syntax
-as an input and a pointer to renderer structure which holds pointers to few
+as an input and a pointer to a structure which holds pointers to several
 callback functions.
 
-As `md_parse()` processes the input, it calls the appropriate callbacks
-allowing application to convert it into another format or render it onto
-the screen.
+As `md_parse()` processes the input, and it calls the appropriate callbacks
+(when entering or leaving any Markdown block or span; and when outputting any
+textual content of the document), allowing application to convert it into
+another format or render it onto the screen.
 
 More comprehensive guide can be found in the header `md4c.h` and also
-on [MD4C wiki](http://github.com/mity/md4c/wiki).
+on [MD4C wiki].
 
 Example implementation of simple renderer is available in the `md2html`
 directory which implements a conversion utility from Markdown to HTML.
@@ -80,16 +80,18 @@ directory which implements a conversion utility from Markdown to HTML.
 The default behavior is to recognize only elements defined by the [CommonMark
 specification](http://spec.commonmark.org/).
 
-However with appropriate renderer flags, the behavior can be tuned to enable
-some extensions or allowing some deviations from the specification.
+However with appropriate flags, the behavior can be tuned to enable some
+extensions:
 
  * With the flag `MD_FLAG_COLLAPSEWHITESPACE`, non-trivial whitespace is
    collapsed into a single space.
 
  * With the flag `MD_FLAG_TABLES`, GitHub-style tables are supported.
 
- * With the flag `MD_FLAG_STRIKETHROUGH`, strikethrough spans are enabled
-   (text enclosed in tilde marks, e.g. '~foo bar~').
+ * With the flag `MD_FLAG_TASKLISTS`, GitHub-style task lists are supported.
+
+ * With the flag `MD_FLAG_STRIKETHROUGH`, strike-through spans are enabled
+   (text enclosed in tilde marks, e.g. `~foo bar~`).
 
  * With the flag `MD_FLAG_PERMISSIVEURLAUTOLINKS` permissive URL autolinks
    (not enclosed in `<` and `>`) are supported.
@@ -98,6 +100,11 @@ some extensions or allowing some deviations from the specification.
 
  * With the flag `MD_FLAG_PERMISSIVEWWWAUTOLINKS` permissive WWW autolinks
    (without any scheme specified; `http:` is assumed) are supported.
+
+The syntax of the extensions is described on [MD4C wiki].
+
+Few features (those some people see as mis-features) of CommonMark
+specification may be disabled:
 
  * With the flag `MD_FLAG_NOHTMLSPANS` or `MD_FLAG_NOHTMLBLOCKS`, raw inline
    HTML or raw HTML blocks respectively are disabled.
@@ -165,3 +172,7 @@ If you encounter any bug, please be so kind and report it. Unheard bugs cannot
 get fixed. You can submit bug reports here:
 
 * http://github.com/mity/md4c/issues
+
+
+[MD4C home]: http://github.com/mity/md4c
+[MD4C wiki]: http://github.com/mity/md4c/wiki

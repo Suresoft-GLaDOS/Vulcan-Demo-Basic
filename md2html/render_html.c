@@ -2,7 +2,7 @@
  * MD4C: Markdown parser for C
  * (http://github.com/mity/md4c)
  *
- * Copyright (c) 2016-2017 Martin Mitas
+ * Copyright (c) 2016-2019 Martin Mitas
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -268,6 +268,20 @@ render_open_ol_block(MD_RENDER_HTML* r, const MD_BLOCK_OL_DETAIL* det)
 }
 
 static void
+render_open_li_block(MD_RENDER_HTML* r, const MD_BLOCK_LI_DETAIL* det)
+{
+    if(det->is_task) {
+        RENDER_LITERAL(r, "<li class=\"task-list-item\">"
+                          "<input type=\"checkbox\" class=\"task-list-item-checkbox\" disabled");
+        if(det->task_mark == 'x' || det->task_mark == 'X')
+            RENDER_LITERAL(r, " checked");
+        RENDER_LITERAL(r, ">");
+    } else {
+        RENDER_LITERAL(r, "<li>");
+    }
+}
+
+static void
 render_open_code_block(MD_RENDER_HTML* r, const MD_BLOCK_CODE_DETAIL* det)
 {
     RENDER_LITERAL(r, "<pre><code");
@@ -350,7 +364,7 @@ enter_block_callback(MD_BLOCKTYPE type, void* detail, void* userdata)
         case MD_BLOCK_QUOTE:    RENDER_LITERAL(r, "<blockquote>\n"); break;
         case MD_BLOCK_UL:       RENDER_LITERAL(r, "<ul>\n"); break;
         case MD_BLOCK_OL:       render_open_ol_block(r, (const MD_BLOCK_OL_DETAIL*)detail); break;
-        case MD_BLOCK_LI:       RENDER_LITERAL(r, "<li>"); break;
+        case MD_BLOCK_LI:       render_open_li_block(r, (const MD_BLOCK_LI_DETAIL*)detail); break;
         case MD_BLOCK_HR:       RENDER_LITERAL(r, "<hr>\n"); break;
         case MD_BLOCK_H:        RENDER_LITERAL(r, head[((MD_BLOCK_H_DETAIL*)detail)->level - 1]); break;
         case MD_BLOCK_CODE:     render_open_code_block(r, (const MD_BLOCK_CODE_DETAIL*) detail); break;
@@ -475,16 +489,18 @@ md_render_html(const MD_CHAR* input, MD_SIZE input_size,
 {
     MD_RENDER_HTML render = { process_output, userdata, renderer_flags, 0 };
 
-    MD_RENDERER renderer = {
+    MD_PARSER parser = {
+        0,
+        parser_flags,
         enter_block_callback,
         leave_block_callback,
         enter_span_callback,
         leave_span_callback,
         text_callback,
         debug_log_callback,
-        parser_flags
+        NULL
     };
 
-    return md_parse(input, input_size, &renderer, (void*) &render);
+    return md_parse(input, input_size, &parser, (void*) &render);
 }
 

@@ -1,7 +1,27 @@
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.4)
 project(MD4C C)
 
+set(MD_VERSION_MAJOR 0)
+set(MD_VERSION_MINOR 3)
+set(MD_VERSION_RELEASE 2)
+set(MD_VERSION "${MD_VERSION_MAJOR}.${MD_VERSION_MINOR}.${MD_VERSION_RELEASE}")
+
+if(WIN32)
+    # On Windows, given there is no standard lib install dir etc., we rather
+    # by default build static lib.
+    option(BUILD_SHARED_LIBS "help string describing option" OFF)
+else()
+    # On Linux, MD4C is slowly being adding into some distros which prefer
+    # shared lib.
+    option(BUILD_SHARED_LIBS "help string describing option" ON)
+endif()
+
+add_definitions(
+    -DMD_VERSION_MAJOR=${MD_VERSION_MAJOR}
+    -DMD_VERSION_MINOR=${MD_VERSION_MINOR}
+    -DMD_VERSION_RELEASE=${MD_VERSION_RELEASE}
+)
 
 set(CMAKE_CONFIGURATION_TYPES Debug Release RelWithDebInfo MinSizeRel)
 if("${CMAKE_BUILD_TYPE}" STREQUAL "")
@@ -13,12 +33,8 @@ if("${CMAKE_BUILD_TYPE}" STREQUAL "")
 endif()
 
 
-if(CMAKE_COMPILER_IS_GNUCC)
+if(${CMAKE_C_COMPILER_ID} MATCHES GNU|Clang)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
-    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,")
-#    set(CMAKE_BUILD_RPATH "/home/workspace/msv/src/.libs")
-#    target_link_libraries(${PROJECT_NAME} test_runtime)
-
 elseif(MSVC)
     # Disable warnings about the so-called unsecured functions:
     add_definitions(/D_CRT_SECURE_NO_WARNINGS)
@@ -30,6 +46,7 @@ elseif(MSVC)
     set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_RELEASE} /MT")
 endif()
 
+include(GNUInstallDirs)
 
 add_subdirectory(md4c)
 add_subdirectory(md2html)
