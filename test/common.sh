@@ -13,6 +13,7 @@ BMP2TIFF=${TOOLS}/bmp2tiff
 FAX2PS=${TOOLS}/fax2ps
 FAX2TIFF=${TOOLS}/fax2tiff
 GIF2TIFF=${TOOLS}/gif2tiff
+GIF2TIFF_EXTRA=${TOOLS}/gif2tiff_extra
 PAL2RGB=${TOOLS}/pal2rgb
 PPM2TIFF=${TOOLS}/ppm2tiff
 RAS2TIFF=${TOOLS}/ras2tiff

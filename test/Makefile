@@ -133,7 +133,7 @@ CONFIG_HEADER = $(top_builddir)/libtiff/tif_config.h \
 	$(top_builddir)/libtiff/tiffconf.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-#am__EXEEXT_1 = raw_decode$(EXEEXT)
+am__EXEEXT_1 = raw_decode$(EXEEXT)
 am_ascii_tag_OBJECTS = ascii_tag.$(OBJEXT)
 ascii_tag_OBJECTS = $(am_ascii_tag_OBJECTS)
 ascii_tag_DEPENDENCIES = $(LIBTIFF)
@@ -415,8 +415,8 @@ am__set_TESTS_bases = \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
 AM_RECURSIVE_TARGETS = check recheck
-#am__EXEEXT_2 = tiff2rgba-quad-tile.jpg.sh
-am__EXEEXT_3 = bmp2tiff_palette.sh bmp2tiff_rgb.sh gif2tiff.sh \
+am__EXEEXT_2 = tiff2rgba-quad-tile.jpg.sh
+am__EXEEXT_3 = bmp2tiff_palette.sh bmp2tiff_rgb.sh gif2tiff.sh gif2tiff_extra.sh \
 	ppm2tiff_pbm.sh ppm2tiff_pgm.sh ppm2tiff_ppm.sh tiffcp-g3.sh \
 	tiffcp-g3-1d.sh tiffcp-g3-1d-fill.sh tiffcp-g3-2d.sh \
 	tiffcp-g3-2d-fill.sh tiffcp-g4.sh tiffcp-logluv.sh \
@@ -488,14 +488,14 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/config/depcomp \
 	$(top_srcdir)/config/mkinstalldirs \
 	$(top_srcdir)/config/test-driver
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing aclocal-1.16
+ACLOCAL = ${SHELL} /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/config/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
 AS = as
-AUTOCONF = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing autoconf
-AUTOHEADER = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing autoheader
-AUTOMAKE = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing automake-1.16
+AUTOCONF = ${SHELL} /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/config/missing autoconf
+AUTOHEADER = ${SHELL} /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/config/missing autoheader
+AUTOMAKE = ${SHELL} /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/config/missing automake-1.16
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -521,10 +521,10 @@ EXEEXT =
 FGREP = /usr/bin/grep -F
 GLUT_CFLAGS = 
 GLUT_LIBS = 
-GLU_CFLAGS = -pthread
-GLU_LIBS = -lGLU -lGL  -lm
-GL_CFLAGS = -pthread
-GL_LIBS = -lGL  -lm
+GLU_CFLAGS = 
+GLU_LIBS = 
+GL_CFLAGS = 
+GL_LIBS = 
 GREP = /usr/bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
@@ -535,13 +535,13 @@ LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
 LIBDIR = 
 LIBOBJS = 
-LIBS = -lz -lm 
+LIBS = -ljpeg -lz -lm 
 LIBTIFF_ALPHA_VERSION = 
 LIBTIFF_DOCDIR = ${prefix}/share/doc/tiff-4.0.6
 LIBTIFF_MAJOR_VERSION = 4
 LIBTIFF_MICRO_VERSION = 6
 LIBTIFF_MINOR_VERSION = 0
-LIBTIFF_RELEASE_DATE = 20221006
+LIBTIFF_RELEASE_DATE = 20221024
 LIBTIFF_VERSION = 4.0.6
 LIBTIFF_VERSION_INFO = 7:4:2
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
@@ -550,7 +550,7 @@ LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 MAINT = #
-MAKEINFO = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/missing makeinfo
+MAKEINFO = ${SHELL} /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/config/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -581,10 +581,10 @@ X_CFLAGS =
 X_EXTRA_LIBS = 
 X_LIBS = 
 X_PRE_LIBS =  -lSM -lICE
-abs_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test
-abs_srcdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test
-abs_top_builddir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
-abs_top_srcdir = /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic
+abs_builddir = /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/test
+abs_srcdir = /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/test
+abs_top_builddir = /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic
+abs_top_srcdir = /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -615,7 +615,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/config/install-sh
+install_sh = ${SHELL} /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/config/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -633,7 +633,7 @@ sharedstatedir = ${prefix}/com
 srcdir = .
 sysconfdir = ${prefix}/etc
 target_alias = 
-tiff_libs_private = -lz -lm 
+tiff_libs_private = -ljpeg -lz -lm 
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
@@ -658,16 +658,17 @@ EXTRA_DIST = \
 
 # Extra files which should be cleaned by 'make clean'
 CLEANFILES = test_packbits.tif o-*
-JPEG_DEPENDENT_CHECK_PROG = 
-#JPEG_DEPENDENT_CHECK_PROG = raw_decode
-JPEG_DEPENDENT_TESTSCRIPTS = 
-#JPEG_DEPENDENT_TESTSCRIPTS = tiff2rgba-quad-tile.jpg.sh
+#JPEG_DEPENDENT_CHECK_PROG = 
+JPEG_DEPENDENT_CHECK_PROG = raw_decode
+#JPEG_DEPENDENT_TESTSCRIPTS = 
+JPEG_DEPENDENT_TESTSCRIPTS = tiff2rgba-quad-tile.jpg.sh
 
 # Test scripts to execute
 TESTSCRIPTS = \
 	bmp2tiff_palette.sh \
 	bmp2tiff_rgb.sh \
 	gif2tiff.sh \
+	gif2tiff_extra.sh \
 	ppm2tiff_pbm.sh \
 	ppm2tiff_pgm.sh \
 	ppm2tiff_ppm.sh \
@@ -1176,6 +1177,13 @@ bmp2tiff_rgb.sh.log: bmp2tiff_rgb.sh
 gif2tiff.sh.log: gif2tiff.sh
 	@p='gif2tiff.sh'; \
 	b='gif2tiff.sh'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+gif2tiff_extra.sh.log: gif2tiff_extra.sh
+	@p='gif2tiff_extra.sh'; \
+	b='gif2tiff_extra.sh'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \

@@ -41,6 +41,9 @@
 #include <errno.h>
 #include <math.h>
 
+#include <stdbool.h>
+#include <assert.h>
+
 #ifdef HAVE_UNISTD_H
 # include <unistd.h>
 #endif
@@ -129,10 +132,15 @@ int	checksignature(void);
 int	readscreen(void);
 int	readgifimage(char*);
 int	readextension(void);
+int testReadextension(void);
 int	readraster(void);
 int	process(int, unsigned char**);
 void	initcolors(unsigned char [COLSIZE][3], int);
 void	rasterize(int, char*);
+
+bool extraTest = false;
+int extraResult = -1;
+
 #ifdef DPP_ENABLE_GCOV
 #include <signal.h>
 static struct sigaction dpp_gcov_sigaction;
@@ -164,8 +172,9 @@ main(int argc, char* argv[])
 #endif
 
     int c, status;
+    printf("In Main!\n");
 
-    while ((c = getopt(argc, argv, "c:r:")) != -1)
+    while ((c = getopt(argc, argv, "c:r:x:")) != -1)
 	    switch (c) {
 	    case 'c':		/* compression scheme */
 		    if (!processCompressOptions(optarg))
@@ -174,6 +183,10 @@ main(int argc, char* argv[])
 	    case 'r':		/* rows/strip */
 		    rowsperstrip = atoi(optarg);
 		    break;
+        case 'x':
+            printf("ExtraTest!\n");
+            extraTest = true;            
+            break;
 	    case '?':
 		    usage();
 		    /*NOTREACHED*/
@@ -195,6 +208,13 @@ main(int argc, char* argv[])
     if ((infile = fopen(filename, "rb")) == NULL) {
 	perror(filename);
 	return (1);
+    }
+    if (extraTest) {
+        int extTestResult = 0;
+        extTestResult = testReadextension();
+        fclose(infile);
+        printf("Do ExtraTest: %d\n", extTestResult);
+        return (extTestResult);
     }
     status = convert();
     fclose(infile);
@@ -365,19 +385,49 @@ readgifimage(char* mode)
 int
 readextension(void)
 {
+    printf("In ReadExtension!\n");
     int count;
     char buf[255];
     int status = 1;
 
+
     (void) getc(infile);
-    while ((count = getc(infile)) && count <= 255)
+    while ((count = getc(infile)) && count <= 255){
+        printf("In While\n");
+        if (extraTest == true) {
+            printf("In Extratest\n");
+            extraResult = 2;
+            return status;
+        }
         if (fread(buf, 1, count, infile) != (size_t) count) {
             fprintf(stderr, "short read from file %s (%s)\n",
                     filename, strerror(errno));
             status = 0;
             break;
         }
+    }
+    if (extraTest == true) {
+        extraResult = 0;
+    }
+    
     return status;
+}
+
+int testReadextension(void) {
+    int readExt = readextension();
+    if (extraResult == 0 || extraResult == 2) {
+        printf("ExtraResult: %d\n", extraResult);
+        return 0;
+    }
+    else if (extraResult == -1) {
+        printf("ExtraResult: %d\n", extraResult);
+        return 1;
+    }
+    else {
+        printf("ExtraResult: %d\n", extraResult);
+        return 1;
+    }
+    return 0;
 }
 
 /*

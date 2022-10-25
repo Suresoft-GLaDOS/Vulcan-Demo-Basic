@@ -32,6 +32,7 @@ set(TESTSCRIPTS
     bmp2tiff_palette.sh
     bmp2tiff_rgb.sh
     gif2tiff.sh
+    gif2tiff_extra.sh
     ppm2tiff_pbm.sh
     ppm2tiff_pgm.sh
     ppm2tiff_ppm.sh

@@ -1,0 +1,13 @@
+ /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/tools/gif2tiff_extra /home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/test/images/palette-1c-8b.gif o-gif2tiff.tiff
+/home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/tools/.libs/gif2tiff
+/home/testspace/runner/work/output/BaeEB/Suresoft-GLaDOS/example/Vulcan-Demo-Basic/test/images/palette-1c-8b.gif
+o-gif2tiff.tiff
+-x
+true
+In Main!
+ExtraTest!
+In ReadExtension!
+In While
+In Extratest
+ExtraResult: 2
+Do ExtraTest: 0
