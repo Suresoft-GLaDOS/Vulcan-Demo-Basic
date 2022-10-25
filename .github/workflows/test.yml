@@ -26,6 +26,8 @@ jobs:
             - name: run test
               run: |
                     chmod -R 777 .;tools/gif2tiff .dpp/crash.gif /tmp/tmpout.tif
+                    chmod -R 777 .; rm -rf /tmp/tmpout_pass.tif; tools/gif2tiff -x true .dpp/crash.gif /tmp/tmpout_pass.tif
+                    chmod -R 777 .; rm -rf /tmp/tmpout_pass2.tif; tools/gif2tiff -x true .dpp/palette-1c-8b.gif /tmp/tmpout_pass2.tif
                     chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 1)
                     chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 2)
                     chmod -R 777 .;cd test;make check-TESTS --no-print-directory TESTS=$(chmod -R 777 .;cd test;make print-TESTS | cut -d ' ' -f 3)
