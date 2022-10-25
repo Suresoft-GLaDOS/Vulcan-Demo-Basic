@@ -393,12 +393,7 @@ readextension(void)
 
     (void) getc(infile);
     while ((count = getc(infile)) && count <= 255){
-        printf("In While\n");
-        if (extraTest == true) {
-            printf("In Extratest\n");
-            extraResult = 2;
-            return status;
-        }
+        if (extraTest == true) { extraResult = 2; return status; }
         if (fread(buf, 1, count, infile) != (size_t) count) {
             fprintf(stderr, "short read from file %s (%s)\n",
                     filename, strerror(errno));
