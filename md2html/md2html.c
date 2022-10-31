@@ -314,9 +314,19 @@ cmdline_callback(int opt, char const* value, void* data)
 }
 
 #ifdef DPP_ENABLE_GCOV
+#include <signal.h>
+static struct sigaction dpp_gcov_sigaction;
+static struct sigaction dpp_orig_sigaction;
+void dpp_sighandler(int signum) {
+	__gcov_flush();
+	sigaction(sigaction, &dpp_orig_sigaction, NULL);
+	raise(signum);
+	exit(1);
+}
 #include <gcov.h>
 void __asan_on_error(void);
 void __asan_on_error(void) {
+    printf("asan_on_error called\n");
 	__gcov_flush();
 }
 #endif
@@ -327,7 +337,16 @@ main(int argc, char** argv)
     FILE* in = stdin;
     FILE* out = stdout;
     int ret = 0;
-
+    #ifdef DPP_ENABLE_GCOV
+	  {
+		  dpp_gcov_sigaction.sa_handler = dpp_sighandler;
+		  sigemptyset(&dpp_gcov_sigaction.sa_mask);
+		  dpp_gcov_sigaction.sa_flags = 0;
+		  sigaction(SIGSEGV, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGFPE, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGABRT, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+	  }
+    #endif
     if(readoptions(cmdline_options, argc, argv, cmdline_callback, NULL) < 0) {
         usage();
         exit(1);
