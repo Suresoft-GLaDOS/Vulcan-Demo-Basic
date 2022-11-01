@@ -16,7 +16,7 @@ jobs:
         steps:
             - name: run build
               run: |
-                    ./config enable-unit-test
+                    chmod -R 777 .; ./config enable-unit-test
                     make clean
                     make -j10 depend
                     make -j10

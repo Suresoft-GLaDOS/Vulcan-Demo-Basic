@@ -9,21 +9,21 @@ docker-image:
 extra-build-env-setting-commands:
 
 test-candidates: |
-  md4c/md4c.c
+  crypto/evp/p_lib.c
 
 time-out: 3600
 max-patch-number : 500
 
 # Command to build user's project
 test-build-command: |
-  ./config enable-unit-test
+  chmod -R 777 .; ./config enable-unit-test
   make clean
   make -j10 depend
   make -j10
 
 # Command to build user's project with coverage measurement
 coverage-build-command: |
-  ./config CFLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV" LDFLAGS="-lgcov" enable-unit-test
+  chmod -R 777 .; ./config CFLAGS="--coverage -g -O0 -DDPP_ENABLE_GCOV" LDFLAGS="-lgcov" enable-unit-test
   make clean
   make -j10 depend
   make -j10
