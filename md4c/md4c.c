@@ -1308,7 +1308,7 @@ md_is_named_entity_contents(MD_CTX* ctx, const CHAR* text, OFF beg, OFF max_end,
 {
     OFF off = beg;
 
-    if(off < max_end  &&  ISALPHA_(text[off]))
+    if(off <= max_end  &&  ISALPHA_(text[off]))
         off++;
     else
         return FALSE;
@@ -1882,15 +1882,13 @@ md_is_link_label(MD_CTX* ctx, const MD_LINE* lines, int n_lines, OFF beg,
         return FALSE;
     off++;
 
-    while(1) {
+    while(line_index < n_lines) {
         OFF line_end = lines[line_index].end;
 
         while(off < line_end) {
             if(CH(off) == _T('\\')  &&  off+1 < ctx->size  &&  (ISPUNCT(off+1) || ISNEWLINE(off+1))) {
-                if(contents_end == 0) {
+                if(contents_end == 0)
                     contents_beg = off;
-                    *p_beg_line_index = line_index;
-                }
                 contents_end = off + 2;
                 off += 2;
             } else if(CH(off) == _T('[')) {
@@ -1930,10 +1928,7 @@ md_is_link_label(MD_CTX* ctx, const MD_LINE* lines, int n_lines, OFF beg,
 
         line_index++;
         len++;
-        if(line_index < n_lines)
-            off = lines[line_index].beg;
-        else
-            break;
+        off = lines[line_index].beg;
     }
 
     return FALSE;
@@ -2071,11 +2066,11 @@ md_is_link_title(MD_CTX* ctx, const MD_LINE* lines, int n_lines, OFF beg,
 
 /* Returns 0 if it is not a reference definition.
  *
- * Returns N > 0 if it is a reference definition. N then corresponds to the
- * number of lines forming it). In this case the definition is stored for
- * resolving any links referring to it.
+ * Returns N > 0 if it is not a reference definition (then N corresponds
+ * to the number of lines forming it). In this case the definition is stored
+ * for resolving any links referring to it.
  *
- * Returns -1 in case of an error (out of memory).
+ * If there is an error (cannot alloc memory for storing it), we return -1.
  */
 static int
 md_is_link_reference_definition_helper(
@@ -2305,22 +2300,16 @@ md_is_inline_link_spec_helper(MD_CTX* ctx, const MD_LINE* lines, int n_lines,
         off = lines[line_index].beg;
     }
 
-    /* Link destination may be omitted, but only when not also having a title. */
-    if(off < ctx->size  &&  CH(off) == _T(')')) {
-        attr->dest_beg = off;
-        attr->dest_end = off;
-        attr->title = NULL;
-        attr->title_size = 0;
-        attr->title_needs_free = FALSE;
-        off++;
-        *p_end = off;
-        return TRUE;
-    }
-
-    /* Link destination. */
+    /* (Optional) link destination. */
     if(!is_link_dest_fn(ctx, off, lines[line_index].end,
-                        &off, &attr->dest_beg, &attr->dest_end))
-        return FALSE;
+                        &off, &attr->dest_beg, &attr->dest_end)) {
+        if(is_link_dest_fn == md_is_link_destination_B) {
+            attr->dest_beg = off;
+            attr->dest_end = off;
+        } else {
+            return FALSE;
+        }
+    }
 
     /* (Optional) title. */
     if(md_is_link_title(ctx, lines + line_index, n_lines - line_index, off,
@@ -3501,7 +3490,7 @@ static int
 md_split_simple_pairing_mark(MD_CTX* ctx, int mark_index, SZ n)
 {
     MD_MARK* mark = &ctx->marks[mark_index];
-    int new_mark_index = mark_index + (mark->end - mark->beg - n);
+    int new_mark_index = mark_index + (mark->end - mark->beg - 1);
     MD_MARK* dummy = &ctx->marks[new_mark_index];
 
     MD_ASSERT(mark->end - mark->beg > n);
@@ -3959,13 +3948,6 @@ md_process_inlines(MD_CTX* ctx, const MD_LINE* lines, int n_lines)
                                 (opener->ch == '!' ? MD_SPAN_IMG : MD_SPAN_A),
                                 STR(dest_mark->beg), dest_mark->end - dest_mark->beg, FALSE,
                                 md_mark_get_ptr(ctx, title_mark - ctx->marks), title_mark->prev));
-
-                    /* link/image closer may span multiple lines. */
-                    if(mark->ch == ']') {
-                        while(mark->end > line->end)
-                            line++;
-                    }
-
                     break;
                 }
 
@@ -4062,7 +4044,7 @@ md_process_inlines(MD_CTX* ctx, const MD_LINE* lines, int n_lines)
                 MD_TEXT(break_type, _T("\n"), 1);
             }
 
-            /* Move to the next line. */
+            /* Switch to the following line. */
             line++;
             off = line->beg;
 
@@ -5549,6 +5531,12 @@ redo:
         }
     }
 
+    /* Check whether we are table continuation. */
+    if(pivot_line->type == MD_LINE_TABLE  &&  md_is_table_row(ctx, off, &off)) {
+        line->type = MD_LINE_TABLE;
+        goto done;
+    }
+
     /* Check for "brother" container. I.e. whether we are another list item
      * in already started list. */
     if(n_parents < ctx->n_containers  &&  n_brothers + n_children == 0) {
@@ -5640,13 +5628,6 @@ redo:
         }
     }
 
-    /* Check whether we are table continuation. */
-    if(pivot_line->type == MD_LINE_TABLE  &&  md_is_table_row(ctx, off, &off))
-    {
-        line->type = MD_LINE_TABLE;
-        goto done;
-    }
-
     /* Check for ATX header. */
     if(line->indent < ctx->code_indent_offset  &&  CH(off) == _T('#')) {
         unsigned level;
@@ -5690,8 +5671,7 @@ redo:
 
     /* Check for table underline. */
     if((ctx->r.flags & MD_FLAG_TABLES)  &&  pivot_line->type == MD_LINE_TEXT  &&
-       (CH(off) == _T('|') || CH(off) == _T('-') || CH(off) == _T(':'))  &&
-       n_parents == ctx->n_containers)
+       (CH(off) == _T('|') || CH(off) == _T('-') || CH(off) == _T(':')))
     {
         unsigned col_count;
 

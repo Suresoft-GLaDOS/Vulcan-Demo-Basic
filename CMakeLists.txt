@@ -15,10 +15,6 @@ endif()
 
 if(CMAKE_COMPILER_IS_GNUCC)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
-    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,")
-#    set(CMAKE_BUILD_RPATH "/home/workspace/msv/src/.libs")
-#    target_link_libraries(${PROJECT_NAME} test_runtime)
-
 elseif(MSVC)
     # Disable warnings about the so-called unsecured functions:
     add_definitions(/D_CRT_SECURE_NO_WARNINGS)

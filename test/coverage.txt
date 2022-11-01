@@ -134,23 +134,6 @@ __x_ _x___
 ````````````````````````````````
 
 
-### [Issue 39](https://github.com/mity/md4c/issues/39)
-```````````````````````````````` example
-[\\]: x
-.
-````````````````````````````````
-
-
-### [Issue 40](https://github.com/mity/md4c/issues/40)
-```````````````````````````````` example
-[x](url
-'title'
-)x
-.
-<p><a href="url" title="title">x</a>x</p>
-````````````````````````````````
-
-
 
 ## Code coverage
 
