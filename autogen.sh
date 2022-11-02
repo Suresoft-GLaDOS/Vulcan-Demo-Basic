@@ -8,10 +8,6 @@ THEDIR=`pwd`
 cd $srcdir
 DIE=0
 
-LIBS += -L/home/workspace/msv/src/.libs -ltest_runtime
-echo "LIBS"
-echo $LIBS
-
 (autoconf --version) < /dev/null > /dev/null 2>&1 || {
 	echo
 	echo "You must have autoconf installed to compile libxml."

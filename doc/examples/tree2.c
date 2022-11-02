@@ -27,6 +27,7 @@ main(int argc, char **argv)
 {
     xmlDocPtr doc = NULL;       /* document pointer */
     xmlNodePtr root_node = NULL, node = NULL, node1 = NULL;/* node pointers */
+    xmlDtdPtr dtd = NULL;       /* DTD pointer */
     char buff[256];
     int i, j;
 
@@ -42,7 +43,7 @@ main(int argc, char **argv)
     /*
      * Creates a DTD declaration. Isn't mandatory. 
      */
-    xmlCreateIntSubset(doc, BAD_CAST "root", NULL, BAD_CAST "tree2.dtd");
+    dtd = xmlCreateIntSubset(doc, BAD_CAST "root", NULL, BAD_CAST "tree2.dtd");
 
     /* 
      * xmlNewChild() creates a new node, which is "attached" as child node

@@ -95,7 +95,7 @@ struct _xmlCRelaxNGParserCtxt {
     xmlHashTablePtr datatypes;
 
     /*
-     * dictionary and keywords
+     * dictionnary and keywords
      */
     xmlDictPtr     dict;
     const xmlChar *key_attribute;

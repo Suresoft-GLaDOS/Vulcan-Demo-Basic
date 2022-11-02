@@ -1,4 +1,1 @@
-<!DOCTYPE A [
-  <!ENTITY % SYSTEM "A<lbbbbbbbbbbbbbbbbbbb_">
-  %SYSTEM;
-  <![
+<!DOCTYPEA[<!ENTITY %SYSTEM "A<lbbbbbbbbbbbbbbbbbbb_">%SYSTEM;<![

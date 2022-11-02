@@ -4,15 +4,25 @@ import sys, libxml2
 libxml2.debugMemory(True)
 
 expect="""--> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 --> Invalid expression
+--> xmlXPathEval: evaluation failed
 """
 err=""
 def callback(ctx, str):

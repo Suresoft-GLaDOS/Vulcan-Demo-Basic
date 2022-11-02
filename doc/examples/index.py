@@ -235,7 +235,7 @@ if REBUILD_DOCS
 rebuild: examples.xml index.html
 .PHONY: rebuild
 
-examples.xml: index.py $(check_PROGRAMS:=.c)
+examples.xml: index.py $(noinst_PROGRAMS:=.c)
 	cd $(srcdir) && $(PYTHON) index.py
 	$(MAKE) Makefile
 
@@ -259,21 +259,20 @@ clean-local:
     for extra in extras:
         EXTRA_DIST = EXTRA_DIST + " \\\n\t" + extra
     Makefile = Makefile + "EXTRA_DIST =%s\n\n" % (EXTRA_DIST)
-    check_PROGRAMS=""
+    noinst_PROGRAMS=""
     for example in examples:
-        check_PROGRAMS = check_PROGRAMS + " \\\n\t" + example
-    Makefile = Makefile + "check_PROGRAMS =%s\n\n" % (check_PROGRAMS)
+        noinst_PROGRAMS = noinst_PROGRAMS + " \\\n\t" + example
+    Makefile = Makefile + "noinst_PROGRAMS =%s\n\n" % (noinst_PROGRAMS)
     for example in examples:
         Makefile = Makefile + "%s_SOURCES = %s.c\n\n" % (example, example)
     Makefile = Makefile + "valgrind: \n\t$(MAKE) CHECKER='valgrind' tests\n\n"
-    Makefile = Makefile + "tests: $(check_PROGRAMS)\n"
-    Makefile = Makefile + "\t@test -f Makefile.am || test -f test1.xml || $(LN_S) $(srcdir)/test?.xml .\n"
+    Makefile = Makefile + "tests: $(noinst_PROGRAMS)\n"
+    Makefile = Makefile + "\ttest -f Makefile.am || test -f test1.xml || $(LN_S) $(srcdir)/test?.xml .\n"
     Makefile = Makefile + "\t@(echo '## examples regression tests')\n"
     Makefile = Makefile + "\t@(echo > .memdump)\n"
     for test in tests:
-        Makefile = Makefile + "\t@$(CHECKER) %s\n" % (test)
+        Makefile = Makefile + "\t$(CHECKER) %s\n" % (test)
         Makefile = Makefile + '\t@grep "MORY ALLO" .memdump | grep -v "MEMORY ALLOCATED : 0" ; exit 0\n'
-    Makefile = Makefile + "\t@rm *.tmp\n"
     try:
 	old = open("Makefile.am", "r").read()
 	if old != Makefile:
@@ -303,7 +302,7 @@ if __name__ == "__main__":
     output = open("examples.xml", "w")
     output.write("<examples>\n")
 
-    for file in sorted(glob.glob('*.c')):
+    for file in glob.glob('*.c'):
 	parse(file, output)
 	examples.append(file[:-2])
 

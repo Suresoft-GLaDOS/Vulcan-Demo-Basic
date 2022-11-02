@@ -1,1 +1,0 @@
-/usr/bin/cc -fsanitize=address -Wall -O3 -DNDEBUG -rdynamic CMakeFiles/MD4C.dir/md4c/md4c.c.o -o MD4C  -ltest_runtime 

@@ -168,7 +168,7 @@ xmlHashComputeQKey(xmlHashTablePtr table,
  *
  * Create a new xmlHashTablePtr.
  *
- * Returns the newly created object, or NULL if an error occurred.
+ * Returns the newly created object, or NULL if an error occured.
  */
 xmlHashTablePtr
 xmlHashCreate(int size) {
@@ -202,7 +202,7 @@ xmlHashCreate(int size) {
  *
  * Create a new xmlHashTablePtr which will use @dict as the internal dictionary
  *
- * Returns the newly created object, or NULL if an error occurred.
+ * Returns the newly created object, or NULL if an error occured.
  */
 xmlHashTablePtr
 xmlHashCreateDict(int size, xmlDictPtr dict) {
