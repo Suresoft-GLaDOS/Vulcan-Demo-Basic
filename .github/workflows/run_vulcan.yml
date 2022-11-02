@@ -10,7 +10,7 @@ jobs:
             - name: Checkout vulcan target
               uses: actions/checkout@v2
             - name: run vulcan action
-              uses: Suresoft-GLaDOS/vulcan-action@for_debug
+              uses: Suresoft-GLaDOS/vulcan-action@ndpi
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 path: vulcan_target
