@@ -17,14 +17,14 @@ max-patch-number : 500
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
   chmod -R 777 .
   ./autogen.sh
-  ./configure --prefix="/home/workspace/install"
+  ./configure --prefix="./install"
   make -j10
   make install
 
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   chmod -R 777 .
   ./autogen.sh
-  CFLAGS="-Wno-error --coverage -g -O0" ./configure --prefix="/home/workspace/install"
+  CFLAGS="-Wno-error --coverage -g -O0" ./configure --prefix="./install"
   make -j10
   make install
 
