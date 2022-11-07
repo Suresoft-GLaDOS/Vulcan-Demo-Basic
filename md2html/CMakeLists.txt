@@ -1,15 +1,8 @@
 
-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DDEBUG")
+include_directories("${PROJECT_SOURCE_DIR}/md4c")
 
-
-# Build rules for md2html command line utility
-
-include_directories("${PROJECT_SOURCE_DIR}/src")
-add_executable(md2html cmdline.c cmdline.h md2html.c)
-target_link_libraries(md2html md4c-html)
-
-
-# Install rules
+add_executable(md2html cmdline.c cmdline.h entity.c entity.h md2html.c render_html.c render_html.h)
+target_link_libraries(md2html md4c)
 
 install(
     TARGETS md2html
@@ -18,5 +11,5 @@ install(
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
-install(FILES "md2html.1" DESTINATION "${CMAKE_INSTALL_MANDIR}/man1")
 
+install(FILES "md2html.1" DESTINATION "${CMAKE_INSTALL_MANDIR}/man1")

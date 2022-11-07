@@ -2,7 +2,7 @@
  * MD4C: Markdown parser for C
  * (http://github.com/mity/md4c)
  *
- * Copyright (c) 2016-2020 Martin Mitas
+ * Copyright (c) 2016-2017 Martin Mitas
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -28,20 +28,15 @@
 #include <string.h>
 #include <time.h>
 
-#include "md4c-html.h"
+#include "render_html.h"
 #include "cmdline.h"
 
 
 
 /* Global options. */
 static unsigned parser_flags = 0;
-#ifndef MD4C_USE_ASCII
-    static unsigned renderer_flags = MD_HTML_FLAG_DEBUG | MD_HTML_FLAG_SKIP_UTF8_BOM;
-#else
-    static unsigned renderer_flags = MD_HTML_FLAG_DEBUG;
-#endif
+static unsigned renderer_flags = MD_RENDER_FLAG_DEBUG;
 static int want_fullhtml = 0;
-static int want_xhtml = 0;
 static int want_stat = 0;
 
 
@@ -141,8 +136,8 @@ process_file(FILE* in, FILE* out)
      * md_renderer_t structure. */
     t0 = clock();
 
-    ret = md_html(buf_in.data, buf_in.size, process_output, (void*) &buf_out,
-                    parser_flags, renderer_flags);
+    ret = md_render_html(buf_in.data, buf_in.size, process_output,
+                (void*) &buf_out, parser_flags, renderer_flags);
 
     t1 = clock();
     if(ret != 0) {
@@ -155,7 +150,7 @@ process_file(FILE* in, FILE* out)
         fprintf(out, "<html>\n");
         fprintf(out, "<head>\n");
         fprintf(out, "<title></title>\n");
-        fprintf(out, "<meta name=\"generator\" content=\"md2html\"%s>\n", want_xhtml ? " /" : "");
+        fprintf(out, "<meta name=\"generator\" content=\"md2html\">\n");
         fprintf(out, "</head>\n");
         fprintf(out, "<body>\n");
     }
@@ -188,37 +183,40 @@ out:
 }
 
 
-static const CMDLINE_OPTION cmdline_options[] = {
-    { 'o', "output",                        'o', CMDLINE_OPTFLAG_REQUIREDARG },
-    { 'f', "full-html",                     'f', 0 },
-    { 'x', "xhtml",                         'x', 0 },
-    { 's', "stat",                          's', 0 },
-    { 'h', "help",                          'h', 0 },
-    { 'v', "version",                       'v', 0 },
+#define OPTION_ARG_NONE         0
+#define OPTION_ARG_REQUIRED     1
+#define OPTION_ARG_OPTIONAL     2
 
-    {  0,  "commonmark",                    'c', 0 },
-    {  0,  "github",                        'g', 0 },
+static const option cmdline_options[] = {
+    { "output",                     'o', 'o', OPTION_ARG_REQUIRED },
+    { "full-html",                  'f', 'f', OPTION_ARG_NONE },
+    { "stat",                       's', 's', OPTION_ARG_NONE },
+    { "help",                       'h', 'h', OPTION_ARG_NONE },
+    { "version",                    'v', 'v', OPTION_ARG_NONE },
 
-    {  0,  "fcollapse-whitespace",          'W', 0 },
-    {  0,  "flatex-math",                   'L', 0 },
-    {  0,  "fpermissive-atx-headers",       'A', 0 },
-    {  0,  "fpermissive-autolinks",         'V', 0 },
-    {  0,  "fpermissive-email-autolinks",   '@', 0 },
-    {  0,  "fpermissive-url-autolinks",     'U', 0 },
-    {  0,  "fpermissive-www-autolinks",     '.', 0 },
-    {  0,  "fstrikethrough",                'S', 0 },
-    {  0,  "ftables",                       'T', 0 },
-    {  0,  "ftasklists",                    'X', 0 },
-    {  0,  "funderline",                    '_', 0 },
-    {  0,  "fverbatim-entities",            'E', 0 },
-    {  0,  "fwiki-links",                   'K', 0 },
+    { "commonmark",                  0,  'c', OPTION_ARG_NONE },
+    { "github",                      0,  'g', OPTION_ARG_NONE },
 
-    {  0,  "fno-html-blocks",               'F', 0 },
-    {  0,  "fno-html-spans",                'G', 0 },
-    {  0,  "fno-html",                      'H', 0 },
-    {  0,  "fno-indented-code",             'I', 0 },
+    { "fcollapse-whitespace",        0,  'W', OPTION_ARG_NONE },
+    { "flatex-math",                 0,  'L', OPTION_ARG_NONE },
+    { "fpermissive-atx-headers",     0,  'A', OPTION_ARG_NONE },
+    { "fpermissive-autolinks",       0,  'V', OPTION_ARG_NONE },
+    { "fpermissive-email-autolinks", 0,  '@', OPTION_ARG_NONE },
+    { "fpermissive-url-autolinks",   0,  'U', OPTION_ARG_NONE },
+    { "fpermissive-www-autolinks",   0,  '.', OPTION_ARG_NONE },
+    { "fstrikethrough",              0,  'S', OPTION_ARG_NONE },
+    { "ftables",                     0,  'T', OPTION_ARG_NONE },
+    { "ftasklists",                  0,  'X', OPTION_ARG_NONE },
+    { "funderline",                  0,  '_', OPTION_ARG_NONE },
+    { "fverbatim-entities",          0,  'E', OPTION_ARG_NONE },
+    { "fwiki-links",                 0,  'K', OPTION_ARG_NONE },
 
-    {  0,  NULL,                             0,  0 }
+    { "fno-html-blocks",             0,  'F', OPTION_ARG_NONE },
+    { "fno-html-spans",              0,  'G', OPTION_ARG_NONE },
+    { "fno-html",                    0,  'H', OPTION_ARG_NONE },
+    { "fno-indented-code",           0,  'I', OPTION_ARG_NONE },
+
+    { 0 }
 };
 
 static void
@@ -231,7 +229,6 @@ usage(void)
         "General options:\n"
         "  -o  --output=FILE    Output file (default is standard output)\n"
         "  -f, --full-html      Generate full HTML document, including header\n"
-        "  -x, --xhtml          Generate XHTML instead of HTML\n"
         "  -s, --stat           Measure time of input parsing\n"
         "  -h, --help           Display this help and exit\n"
         "  -v, --version        Display version and exit\n"
@@ -302,7 +299,6 @@ cmdline_callback(int opt, char const* value, void* data)
 
         case 'o':   output_path = value; break;
         case 'f':   want_fullhtml = 1; break;
-        case 'x':   want_xhtml = 1; renderer_flags |= MD_HTML_FLAG_XHTML; break;
         case 's':   want_stat = 1; break;
         case 'h':   usage(); exit(0); break;
         case 'v':   version(); exit(0); break;
@@ -310,7 +306,7 @@ cmdline_callback(int opt, char const* value, void* data)
         case 'c':   parser_flags = MD_DIALECT_COMMONMARK; break;
         case 'g':   parser_flags = MD_DIALECT_GITHUB; break;
 
-        case 'E':   renderer_flags |= MD_HTML_FLAG_VERBATIM_ENTITIES; break;
+        case 'E':   renderer_flags |= MD_RENDER_FLAG_VERBATIM_ENTITIES; break;
         case 'A':   parser_flags |= MD_FLAG_PERMISSIVEATXHEADERS; break;
         case 'I':   parser_flags |= MD_FLAG_NOINDENTEDCODEBLOCKS; break;
         case 'F':   parser_flags |= MD_FLAG_NOHTMLBLOCKS; break;
@@ -345,7 +341,7 @@ main(int argc, char** argv)
     FILE* out = stdout;
     int ret = 0;
 
-    if(cmdline_read(cmdline_options, argc, argv, cmdline_callback, NULL) != 0) {
+    if(readoptions(cmdline_options, argc, argv, cmdline_callback, NULL) < 0) {
         usage();
         exit(1);
     }

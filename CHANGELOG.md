@@ -4,57 +4,6 @@
 
 ## Next Version (Work in Progress)
 
-Fixes:
-
- * [#118](https://github.com/mity/md4c/issues/118):
-   Fix HTML renderer's `MD_HTML_FLAG_VERBATIM_ENTITIES` flag, exposed in the
-   `md2html` utility via `--fverbatim-entities`.
-
- * [#124](https://github.com/mity/md4c/issues/124):
-   Fix handling of indentation of 16 or more spaces in the fenced code blocks.
-
-## Version 0.4.4
-
-Changes:
-
- * Make Unicode-specific code compliant to Unicode 13.0.
-
-New features:
-
- * The HTML renderer, developed originally as the heart of the `md2html`
-   utility, is now built as a standalone library, in order to simplify its
-   reuse in applications.
-
- * With `MD_HTML_FLAG_SKIP_UTF8_BOM`, the HTML renderer now skips UTF-8 byte
-   order mark (BOM) if the input begins with it, before passing to the Markdown
-   parser.
-
-   `md2html` utility automatically enables the flag (unless it is custom-built
-   with `-DMD4C_USE_ASCII`).
-
- * With `MD_HTML_FLAG_XHTML`, The HTML renderer generates XHTML instead of
-   HTML.
-
-   This effectively means `<br />` instead of `<br>`, `<hr />` instead of
-   `<hr>`, and `<img ... />` instead of `<img ...>`.
-
-   `md2html` utility now understands the command line option `-x` or `--xhtml`
-   enabling the XHTML mode.
-
-Fixes:
-
- * [#113](https://github.com/mity/md4c/issues/113):
-   Add missing folding info data for the following Unicode characters:
-   `U+0184`, `U+018a`, `U+01b2`, `U+01b5`, `U+01f4`, `U+0372`, `U+038f`,
-   `U+1c84`, `U+1fb9`, `U+1fbb`, `U+1fd9`, `U+1fdb`, `U+1fe9`, `U+1feb`,
-   `U+1ff9`, `U+1ffb`, `U+2c7f`, `U+2ced`, `U+a77b`, `U+a792`, `U+a7c9`.
-
-   Due the bug, the link definition label matching did not work in the case
-   insensitive way for these characters.
-
-
-## Version 0.4.3
-
 New features:
 
  * With `MD_FLAG_UNDERLINE`, spans enclosed in underscore (`_foo_`) are seen

@@ -4,11 +4,8 @@ project(MD4C C)
 
 set(MD_VERSION_MAJOR 0)
 set(MD_VERSION_MINOR 4)
-set(MD_VERSION_RELEASE 4)
+set(MD_VERSION_RELEASE 2)
 set(MD_VERSION "${MD_VERSION_MAJOR}.${MD_VERSION_MINOR}.${MD_VERSION_RELEASE}")
-
-set(PROJECT_VERSION "${MD_VERSION}")
-set(PROJECT_URL "https://github.com/mity/md4c")
 
 if(WIN32)
     # On Windows, given there is no standard lib install dir etc., we rather
@@ -55,5 +52,5 @@ endif()
 
 include(GNUInstallDirs)
 
-add_subdirectory(src)
+add_subdirectory(md4c)
 add_subdirectory(md2html)

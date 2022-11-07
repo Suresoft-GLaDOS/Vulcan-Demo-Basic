@@ -3,11 +3,10 @@ exec_prefix=@CMAKE_INSTALL_PREFIX@
 libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
 includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
 
-Name: @PROJECT_NAME@ HTML renderer
-Description: Markdown to HTML converter library.
+Name: @PROJECT_NAME@
+Description: @PROJECT_DESCRIPTION@
 Version: @PROJECT_VERSION@
-URL: @PROJECT_URL@
 
-Requires: md4c = @PROJECT_VERSION@
-Libs: -L${libdir} -lmd4c-html
+Requires:
+Libs: -L${libdir} -lmd4c
 Cflags: -I${includedir}

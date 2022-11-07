@@ -1,4 +1,4 @@
-[![Linux Build Status (travis-ci.com)](https://img.shields.io/travis/mity/md4c/master.svg?logo=linux&label=linux%20build)](https://travis-ci.com/mity/md4c)
+[![Linux Build Status (travis-ci.com)](https://img.shields.io/travis/mity/md4c/master.svg?logo=linux&label=linux%20build)](https://travis-ci.org/mity/md4c)
 [![Windows Build Status (appveyor.com)](https://img.shields.io/appveyor/ci/mity/md4c/master.svg?logo=windows&label=windows%20build)](https://ci.appveyor.com/project/mity/md4c/branch/master)
 [![Code Coverage Status (codecov.io)](https://img.shields.io/codecov/c/github/mity/md4c/master.svg?logo=codecov&label=code%20coverage)](https://codecov.io/github/mity/md4c)
 [![Coverity Scan Status](https://img.shields.io/coverity/scan/mity-md4c.svg?label=coverity%20scan)](https://scan.coverity.com/projects/mity-md4c)
@@ -33,11 +33,11 @@ MD4C is C Markdown parser with the following features:
 * **Extensions:** MD4C supports some commonly requested and accepted extensions.
   See below.
 
-* **Compactness:** MD4C parser is implemented in one source file and one header
-  file. There are no dependencies other than standard C library.
+* **Compactness:** MD4C is implemented in one source file and one header file.
+  There are no dependencies other then standard C library.
 
-* **Embedding:** MD4C parser is easy to reuse in other projects, its API is
-  very straightforward: There is actually just one function, `md_parse()`.
+* **Embedding:** MD4C is easy to reuse in other projects, its API is very
+  straightforward: There is actually just one function, `md_parse()`.
 
 * **Push model:** MD4C parses the complete document and calls few callback
   functions provided by the application to inform it about a start/end of
@@ -59,12 +59,9 @@ MD4C is C Markdown parser with the following features:
 
 ## Using MD4C
 
-### Parsing Markdown
-
-If you need just to parse a Markdown document, you need to include `md4c.h`
-and link against MD4C library (`-lmd4c`); or alternatively add `md4c.[hc]`
-directly to your code base as the parser is only implemented in the single C
-source file.
+Application has to include the header `md4c.h` and link against MD4C library;
+or alternatively it may include `md4c.h` and `md4c.c` directly into its source
+base as the parser is only implemented in the single C source file.
 
 The main provided function is `md_parse()`. It takes a text in the Markdown
 syntax and a pointer to a structure which provides pointers to several callback
@@ -75,17 +72,8 @@ leaving any Markdown block or span; and when outputting any textual content of
 the document), allowing application to convert it into another format or render
 it onto the screen.
 
-
-### Converting to HTML
-
-If you need to convert Markdown to HTML, include `md4c-html.h` and link against
-MD4C-HTML library (`-lmd4c-html`); or alternatively add the sources `md4c.[hc]`,
-`md4c-html.[hc]` and `entity.[hc]` into your code base.
-
-To convert a Markdown input, call `md_html()` function. It takes the Markdown
-input and calls the provided callback function. The callback is fed with
-chunks of the HTML output. Typical callback implementation just appends the
-chunks into a buffer or writes them to a file.
+An example implementation of simple renderer is available in the `md2html`
+directory which implements a conversion utility from Markdown to HTML.
 
 
 ## Markdown Extensions
@@ -198,8 +186,7 @@ MD4C has to understand Unicode are handled as specified by the following rules:
 
 ## Documentation
 
-The API of the parser is quite well documented in the comments in the `md4c.h`.
-The markdown-to-html API is described in its header `md4c-html.h`.
+The API is quite well documented in the comments in the `md4c.h` header.
 
 There is also [project wiki](http://github.com/mity/md4c/wiki) which provides
 some more comprehensive documentation. However note it is incomplete and some
@@ -207,6 +194,18 @@ details may be little-bit outdated.
 
 
 ## FAQ
+
+**Q: In my code, I need to convert Markdown to HTML. How?**
+
+**A:** Indeed the API, as provided by `md4c.h`, is just a SAX-like Markdown
+parser. Nothing more and nothing less.
+
+That said, there is a complete HTML generator built on top of the parser in the
+directory `md2html` (the files `render_html.[hc]` and `entity.[hc]`). At this
+time, you have to directly reuse that code in your project.
+
+There is [some discussion](https://github.com/mity/md4c/issues/82) whether this
+should be changed (and how) in the future.
 
 **Q: How does MD4C compare to a parser XY?**
 
@@ -240,23 +239,24 @@ as a bug.)
 
 **A:** No.
 
-CommonMark specification states that any sequence of Unicode characters is
-a valid Markdown document. (In practice, this more or less always means UTF-8
-encoding is assumed.)
+CommonMark specification declares that any sequence of (Unicode) characters is
+a valid Markdown document; i.e. that it does not matter whether some Markdown
+syntax is in some way broken or not. If it is broken, it will simply not be
+recognized and the parser should see the broken syntax construction just as a
+verbatim text.
 
-In other words, according to the specification, it does not matter whether some
-Markdown syntax construction is in some way broken or not. If it is broken, it
-will simply not be recognized and the parser should see it just as a verbatim
-text.
+MD4C takes this a step further. It sees any sequence of bytes as a valid input,
+following completely the GIGO philosophy (garbage in, garbage out).
 
-MD4C takes this a step further: It sees any sequence of bytes as a valid input,
-following completely the GIGO philosophy (garbage in, garbage out). I.e. any
-ill-formed UTF-8 byte sequence will propagate to the respective callback as
-a part of the text.
+If you need to validate that the input is, say, a valid UTF-8 document, you
+have to do it on your own. You can simply validate the whole Markdown document
+before passing it to the MD4C parser.
 
-If you need to validate that the input is, say, a well-formed UTF-8 document,
-you have to do it on your own. The easiest way how to do this is to simply
-validate the whole Markdown document before passing it to the MD4C parser.
+Alternatively, you may perform the validation on the fly during the parsing,
+in the `MD_PARSER::text()` callback. (Given how MD4C works internally, it will
+never break a sequence of bytes into multiple calls of `MD_PARSER::text()`,
+unless that sequence is already broken to multiple pieces in the input by some
+whitespace, new line character(s) and/or any Markdown syntax construction.)
 
 
 ## License
@@ -274,14 +274,7 @@ Ports and bindings to other languages:
 * [markdown-wasm](https://github.com/rsms/markdown-wasm):
   Markdown parser and HTML generator for WebAssembly, based on MD4C.
 
-* [PyMD4C](https://github.com/dominickpastore/pymd4c):
-  Python bindings for MD4C
-
 Software using MD4C:
-
-* [QOwnNotes](https://www.qownnotes.org/):
-  A plain-text file notepad and todo-list manager with markdown support and
-  ownCloud / Nextcloud integration.
 
 * [Qt](https://www.qt.io/):
   Cross-platform C++ GUI framework.
