@@ -331,6 +331,17 @@ main(int argc, char** argv)
     FILE* out = stdout;
     int ret = 0;
 
+#ifdef DPP_ENABLE_GCOV
+    {
+		  dpp_gcov_sigaction.sa_handler = dpp_sighandler;
+		  sigemptyset(&dpp_gcov_sigaction.sa_mask);
+		  dpp_gcov_sigaction.sa_flags = 0;
+		  sigaction(SIGSEGV, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGFPE, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+		  sigaction(SIGABRT, &dpp_gcov_sigaction, &dpp_orig_sigaction);
+	}
+#endif
+
     if(readoptions(cmdline_options, argc, argv, cmdline_callback, NULL) < 0) {
         usage();
         exit(1);
