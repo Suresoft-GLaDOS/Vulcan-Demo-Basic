@@ -13,7 +13,6 @@ except ImportError:
 from html.entities import name2codepoint
 import sys
 import re
-import cgi
 import html
 
 # Normalization code, adapted from
