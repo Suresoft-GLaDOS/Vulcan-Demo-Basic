@@ -39,12 +39,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="md4c_10" />
-                    <option name="lastUsedInstant" value="1667787993" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="md4c_7" />
-                    <option name="lastUsedInstant" value="1667786622" />
+                    <option name="branchName" value="md4c_5" />
+                    <option name="lastUsedInstant" value="1667797496" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="md4c_6" />
@@ -57,6 +53,10 @@
                   <RecentBranch>
                     <option name="branchName" value="exiv2_13" />
                     <option name="lastUsedInstant" value="1667445509" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="libxml2_7" />
+                    <option name="lastUsedInstant" value="1667445508" />
                   </RecentBranch>
                 </list>
               </option>
@@ -110,11 +110,6 @@
   }
 }</component>
   <component name="RunManager" selected="CMake Application.md2html">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="md2html" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MD4C" TARGET_NAME="md2html" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MD4C" RUN_TARGET_NAME="md2html">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -140,7 +135,8 @@
       <updated>1660721458903</updated>
       <workItem from="1660721460101" duration="329000" />
       <workItem from="1662338330576" duration="6877000" />
-      <workItem from="1667777770503" duration="3182000" />
+      <workItem from="1667777770503" duration="1313000" />
+      <workItem from="1667796522916" duration="655000" />
     </task>
     <servers />
   </component>

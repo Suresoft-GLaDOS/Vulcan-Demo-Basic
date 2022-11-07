@@ -3,9 +3,12 @@ cmake_minimum_required(VERSION 3.4)
 project(MD4C C)
 
 set(MD_VERSION_MAJOR 0)
-set(MD_VERSION_MINOR 3)
-set(MD_VERSION_RELEASE 2)
+set(MD_VERSION_MINOR 4)
+set(MD_VERSION_RELEASE 5)
 set(MD_VERSION "${MD_VERSION_MAJOR}.${MD_VERSION_MINOR}.${MD_VERSION_RELEASE}")
+
+set(PROJECT_VERSION "${MD_VERSION}")
+set(PROJECT_URL "https://github.com/mity/md4c")
 
 if(WIN32)
     # On Windows, given there is no standard lib install dir etc., we rather
@@ -40,6 +43,10 @@ elseif(MSVC)
     add_definitions(/D_CRT_SECURE_NO_WARNINGS)
 
     # Specify proper C runtime library:
+    string(REGEX REPLACE "/M[DT]d?" "" CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
+    string(REGEX REPLACE "/M[DT]d?" "" CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
+    string(REGEX REPLACE "/M[DT]d?" "" CMAKE_C_FLAGS_RELWITHDEBINFO "{$CMAKE_C_FLAGS_RELWITHDEBINFO}")
+    string(REGEX REPLACE "/M[DT]d?" "" CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL}")
     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} /MTd")
     set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} /MT")
     set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} /MT")
@@ -48,5 +55,5 @@ endif()
 
 include(GNUInstallDirs)
 
-add_subdirectory(md4c)
+add_subdirectory(src)
 add_subdirectory(md2html)

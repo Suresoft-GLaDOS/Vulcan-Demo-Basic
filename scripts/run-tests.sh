@@ -59,5 +59,17 @@ echo "Task lists extension:"
 $PYTHON "$TEST_DIR/spec_tests.py" -s "$TEST_DIR/tasklists.txt" -p "$PROGRAM --ftasklists"
 
 echo
+echo "LaTeX extension:"
+$PYTHON "$TEST_DIR/spec_tests.py" -s "$TEST_DIR/latex-math.txt" -p "$PROGRAM --flatex-math"
+
+echo
+echo "Wiki links extension:"
+$PYTHON "$TEST_DIR/spec_tests.py" -s "$TEST_DIR/wiki-links.txt" -p "$PROGRAM --fwiki-links --ftables"
+
+echo
+echo "Underline extension:"
+$PYTHON "$TEST_DIR/spec_tests.py" -s "$TEST_DIR/underline.txt" -p "$PROGRAM --funderline"
+
+echo
 echo "Pathological input:"
 $PYTHON "$TEST_DIR/pathological_tests.py" -p "$PROGRAM"
