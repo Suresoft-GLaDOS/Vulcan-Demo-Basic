@@ -317,6 +317,15 @@ cmdline_callback(int opt, char const* value, void* data)
 }
 
 #ifdef DPP_ENABLE_GCOV
+#include <signal.h>
+static struct sigaction dpp_gcov_sigaction;
+static struct sigaction dpp_orig_sigaction;
+void dpp_sighandler(int signum) {
+	__gcov_flush();
+	sigaction(sigaction, &dpp_orig_sigaction, NULL);
+	raise(signum);
+	exit(1);
+}
 #include <gcov.h>
 void __asan_on_error(void);
 void __asan_on_error(void) {
