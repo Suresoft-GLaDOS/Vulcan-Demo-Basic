@@ -48,21 +48,9 @@ build INFO: phony CMakeFiles/INFO doc/libchewing.info
 
 
 #############################################
-# Utility command for pinyin.tab
+# Utility command for all_static_data
 
-build pinyin.tab: phony CMakeFiles/pinyin.tab
-
-
-#############################################
-# Utility command for swkb.dat
-
-build swkb.dat: phony CMakeFiles/swkb.dat
-
-
-#############################################
-# Utility command for symbols.dat
-
-build symbols.dat: phony CMakeFiles/symbols.dat
+build all_static_data: phony CMakeFiles/all_static_data
 
 
 #############################################
@@ -71,84 +59,47 @@ build symbols.dat: phony CMakeFiles/symbols.dat
 build stresstest.py: phony CMakeFiles/stresstest.py
 
 # =============================================================================
-# Object build statements for EXECUTABLE target sort
+# Object build statements for EXECUTABLE target init_database
 
 
 #############################################
-# Order-only phony target for sort
+# Order-only phony target for init_database
 
-build cmake_object_order_depends_target_sort: phony || cmake_object_order_depends_target_common
+build cmake_object_order_depends_target_init_database: phony || cmake_object_order_depends_target_common
 
-build CMakeFiles/sort.dir/src/tools/sort.o: C_COMPILER__sort_Debug /home/workspace/src/tools/sort.c || cmake_object_order_depends_target_sort
-  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
-  DEP_FILE = CMakeFiles/sort.dir/src/tools/sort.o.d
+build CMakeFiles/init_database.dir/src/tools/init_database.o: C_COMPILER__init_database_Debug /home/workspace/src/tools/init_database.c || cmake_object_order_depends_target_init_database
+  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/init_database.dir/src/tools/init_database.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
-  OBJECT_DIR = CMakeFiles/sort.dir
-  OBJECT_FILE_DIR = CMakeFiles/sort.dir/src/tools
-  TARGET_COMPILE_PDB = CMakeFiles/sort.dir/
-  TARGET_PDB = src/tools/sort.pdb
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  OBJECT_DIR = CMakeFiles/init_database.dir
+  OBJECT_FILE_DIR = CMakeFiles/init_database.dir/src/tools
+  TARGET_COMPILE_PDB = CMakeFiles/init_database.dir/
+  TARGET_PDB = src/tools/init_database.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target sort
+# Link build statements for EXECUTABLE target init_database
 
 
 #############################################
-# Link the executable src/tools/sort
+# Link the executable src/tools/init_database
 
-build src/tools/sort: C_EXECUTABLE_LINKER__sort_Debug CMakeFiles/common.dir/src/common/chewing-utf8-util.o CMakeFiles/common.dir/src/common/key2pho.o CMakeFiles/sort.dir/src/tools/sort.o || common
+build src/tools/init_database: C_EXECUTABLE_LINKER__init_database_Debug CMakeFiles/common.dir/src/common/chewing-utf8-util.o CMakeFiles/common.dir/src/common/key2pho.o CMakeFiles/init_database.dir/src/tools/init_database.o || common
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  OBJECT_DIR = CMakeFiles/sort.dir
+  OBJECT_DIR = CMakeFiles/init_database.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/sort.dir/
-  TARGET_FILE = src/tools/sort
-  TARGET_PDB = src/tools/sort.pdb
-
-# =============================================================================
-# Object build statements for EXECUTABLE target maketree
-
-
-#############################################
-# Order-only phony target for maketree
-
-build cmake_object_order_depends_target_maketree: phony || CMakeFiles/maketree.dir
-
-build CMakeFiles/maketree.dir/src/tools/maketree.o: C_COMPILER__maketree_Debug /home/workspace/src/tools/maketree.c || cmake_object_order_depends_target_maketree
-  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
-  DEP_FILE = CMakeFiles/maketree.dir/src/tools/maketree.o.d
-  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
-  OBJECT_DIR = CMakeFiles/maketree.dir
-  OBJECT_FILE_DIR = CMakeFiles/maketree.dir/src/tools
-  TARGET_COMPILE_PDB = CMakeFiles/maketree.dir/
-  TARGET_PDB = src/tools/maketree.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target maketree
-
-
-#############################################
-# Link the executable src/tools/maketree
-
-build src/tools/maketree: C_EXECUTABLE_LINKER__maketree_Debug CMakeFiles/maketree.dir/src/tools/maketree.o
-  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  LINK_FLAGS = -rdynamic
-  OBJECT_DIR = CMakeFiles/maketree.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/maketree.dir/
-  TARGET_FILE = src/tools/maketree
-  TARGET_PDB = src/tools/maketree.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/init_database.dir/
+  TARGET_FILE = src/tools/init_database
+  TARGET_PDB = src/tools/init_database.pdb
 
 
 #############################################
 # Utility command for check
 
-build check: phony CMakeFiles/check test/gen_keystroke test/randkeystroke test/simulate test/test-bopomofo test/test-config test/test-easy-symbol test/test-fullshape test/test-key2pho test/test-keyboard test/test-logger test/test-mmap test/test-path test/test-regression test/test-reset test/test-special-symbol test/test-symbol test/test-userphrase test/test-utf8 test/testchewing
+build check: phony CMakeFiles/check test/genkeystroke test/performance test/randkeystroke test/simulate test/test-bopomofo test/test-config test/test-easy-symbol test/test-error-handling test/test-fullshape test/test-key2pho test/test-keyboard test/test-keyboardless test/test-logger test/test-mmap test/test-path test/test-regression test/test-reset test/test-special-symbol test/test-symbol test/test-userphrase test/test-utf8 test/testchewing
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test-bopomofo
@@ -157,13 +108,13 @@ build check: phony CMakeFiles/check test/gen_keystroke test/randkeystroke test/s
 #############################################
 # Order-only phony target for test-bopomofo
 
-build cmake_object_order_depends_target_test-bopomofo: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-bopomofo: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-bopomofo.dir/test/test-bopomofo.o: C_COMPILER__test-bopomofo_Debug /home/workspace/test/test-bopomofo.c || cmake_object_order_depends_target_test-bopomofo
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-bopomofo.dir/test/test-bopomofo.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-bopomofo.dir
   OBJECT_FILE_DIR = CMakeFiles/test-bopomofo.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-bopomofo.dir/
@@ -177,10 +128,10 @@ build CMakeFiles/test-bopomofo.dir/test/test-bopomofo.o: C_COMPILER__test-bopomo
 #############################################
 # Link the executable test/test-bopomofo
 
-build test/test-bopomofo: C_EXECUTABLE_LINKER__test-bopomofo_Debug CMakeFiles/test-bopomofo.dir/test/test-bopomofo.o | libtesthelper.a || libtesthelper.a
+build test/test-bopomofo: C_EXECUTABLE_LINKER__test-bopomofo_Debug CMakeFiles/test-bopomofo.dir/test/test-bopomofo.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-bopomofo.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -195,13 +146,13 @@ build test/test-bopomofo: C_EXECUTABLE_LINKER__test-bopomofo_Debug CMakeFiles/te
 #############################################
 # Order-only phony target for test-config
 
-build cmake_object_order_depends_target_test-config: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-config: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-config.dir/test/test-config.o: C_COMPILER__test-config_Debug /home/workspace/test/test-config.c || cmake_object_order_depends_target_test-config
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-config.dir/test/test-config.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-config.dir
   OBJECT_FILE_DIR = CMakeFiles/test-config.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-config.dir/
@@ -215,10 +166,10 @@ build CMakeFiles/test-config.dir/test/test-config.o: C_COMPILER__test-config_Deb
 #############################################
 # Link the executable test/test-config
 
-build test/test-config: C_EXECUTABLE_LINKER__test-config_Debug CMakeFiles/test-config.dir/test/test-config.o | libtesthelper.a || libtesthelper.a
+build test/test-config: C_EXECUTABLE_LINKER__test-config_Debug CMakeFiles/test-config.dir/test/test-config.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-config.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -233,13 +184,13 @@ build test/test-config: C_EXECUTABLE_LINKER__test-config_Debug CMakeFiles/test-c
 #############################################
 # Order-only phony target for test-easy-symbol
 
-build cmake_object_order_depends_target_test-easy-symbol: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-easy-symbol: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-easy-symbol.dir/test/test-easy-symbol.o: C_COMPILER__test-easy-symbol_Debug /home/workspace/test/test-easy-symbol.c || cmake_object_order_depends_target_test-easy-symbol
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-easy-symbol.dir/test/test-easy-symbol.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-easy-symbol.dir
   OBJECT_FILE_DIR = CMakeFiles/test-easy-symbol.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-easy-symbol.dir/
@@ -253,10 +204,10 @@ build CMakeFiles/test-easy-symbol.dir/test/test-easy-symbol.o: C_COMPILER__test-
 #############################################
 # Link the executable test/test-easy-symbol
 
-build test/test-easy-symbol: C_EXECUTABLE_LINKER__test-easy-symbol_Debug CMakeFiles/test-easy-symbol.dir/test/test-easy-symbol.o | libtesthelper.a || libtesthelper.a
+build test/test-easy-symbol: C_EXECUTABLE_LINKER__test-easy-symbol_Debug CMakeFiles/test-easy-symbol.dir/test/test-easy-symbol.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-easy-symbol.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -265,19 +216,57 @@ build test/test-easy-symbol: C_EXECUTABLE_LINKER__test-easy-symbol_Debug CMakeFi
   TARGET_PDB = test/test-easy-symbol.pdb
 
 # =============================================================================
+# Object build statements for EXECUTABLE target test-error-handling
+
+
+#############################################
+# Order-only phony target for test-error-handling
+
+build cmake_object_order_depends_target_test-error-handling: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
+
+build CMakeFiles/test-error-handling.dir/test/test-error-handling.o: C_COMPILER__test-error-handling_Debug /home/workspace/test/test-error-handling.c || cmake_object_order_depends_target_test-error-handling
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/test-error-handling.dir/test/test-error-handling.o.d
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  OBJECT_DIR = CMakeFiles/test-error-handling.dir
+  OBJECT_FILE_DIR = CMakeFiles/test-error-handling.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-error-handling.dir/
+  TARGET_PDB = test/test-error-handling.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test-error-handling
+
+
+#############################################
+# Link the executable test/test-error-handling
+
+build test/test-error-handling: C_EXECUTABLE_LINKER__test-error-handling_Debug CMakeFiles/test-error-handling.dir/test/test-error-handling.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  LINK_FLAGS = -rdynamic
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
+  OBJECT_DIR = CMakeFiles/test-error-handling.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-error-handling.dir/
+  TARGET_FILE = test/test-error-handling
+  TARGET_PDB = test/test-error-handling.pdb
+
+# =============================================================================
 # Object build statements for EXECUTABLE target test-fullshape
 
 
 #############################################
 # Order-only phony target for test-fullshape
 
-build cmake_object_order_depends_target_test-fullshape: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-fullshape: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-fullshape.dir/test/test-fullshape.o: C_COMPILER__test-fullshape_Debug /home/workspace/test/test-fullshape.c || cmake_object_order_depends_target_test-fullshape
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-fullshape.dir/test/test-fullshape.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-fullshape.dir
   OBJECT_FILE_DIR = CMakeFiles/test-fullshape.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-fullshape.dir/
@@ -291,10 +280,10 @@ build CMakeFiles/test-fullshape.dir/test/test-fullshape.o: C_COMPILER__test-full
 #############################################
 # Link the executable test/test-fullshape
 
-build test/test-fullshape: C_EXECUTABLE_LINKER__test-fullshape_Debug CMakeFiles/test-fullshape.dir/test/test-fullshape.o | libtesthelper.a || libtesthelper.a
+build test/test-fullshape: C_EXECUTABLE_LINKER__test-fullshape_Debug CMakeFiles/test-fullshape.dir/test/test-fullshape.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-fullshape.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -309,13 +298,13 @@ build test/test-fullshape: C_EXECUTABLE_LINKER__test-fullshape_Debug CMakeFiles/
 #############################################
 # Order-only phony target for test-key2pho
 
-build cmake_object_order_depends_target_test-key2pho: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-key2pho: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-key2pho.dir/test/test-key2pho.o: C_COMPILER__test-key2pho_Debug /home/workspace/test/test-key2pho.c || cmake_object_order_depends_target_test-key2pho
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-key2pho.dir/test/test-key2pho.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-key2pho.dir
   OBJECT_FILE_DIR = CMakeFiles/test-key2pho.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-key2pho.dir/
@@ -329,10 +318,10 @@ build CMakeFiles/test-key2pho.dir/test/test-key2pho.o: C_COMPILER__test-key2pho_
 #############################################
 # Link the executable test/test-key2pho
 
-build test/test-key2pho: C_EXECUTABLE_LINKER__test-key2pho_Debug CMakeFiles/test-key2pho.dir/test/test-key2pho.o | libtesthelper.a || libtesthelper.a
+build test/test-key2pho: C_EXECUTABLE_LINKER__test-key2pho_Debug CMakeFiles/test-key2pho.dir/test/test-key2pho.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-key2pho.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -347,13 +336,13 @@ build test/test-key2pho: C_EXECUTABLE_LINKER__test-key2pho_Debug CMakeFiles/test
 #############################################
 # Order-only phony target for test-keyboard
 
-build cmake_object_order_depends_target_test-keyboard: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-keyboard: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-keyboard.dir/test/test-keyboard.o: C_COMPILER__test-keyboard_Debug /home/workspace/test/test-keyboard.c || cmake_object_order_depends_target_test-keyboard
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-keyboard.dir/test/test-keyboard.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-keyboard.dir
   OBJECT_FILE_DIR = CMakeFiles/test-keyboard.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-keyboard.dir/
@@ -367,10 +356,10 @@ build CMakeFiles/test-keyboard.dir/test/test-keyboard.o: C_COMPILER__test-keyboa
 #############################################
 # Link the executable test/test-keyboard
 
-build test/test-keyboard: C_EXECUTABLE_LINKER__test-keyboard_Debug CMakeFiles/test-keyboard.dir/test/test-keyboard.o | libtesthelper.a || libtesthelper.a
+build test/test-keyboard: C_EXECUTABLE_LINKER__test-keyboard_Debug CMakeFiles/test-keyboard.dir/test/test-keyboard.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-keyboard.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -379,19 +368,57 @@ build test/test-keyboard: C_EXECUTABLE_LINKER__test-keyboard_Debug CMakeFiles/te
   TARGET_PDB = test/test-keyboard.pdb
 
 # =============================================================================
+# Object build statements for EXECUTABLE target test-keyboardless
+
+
+#############################################
+# Order-only phony target for test-keyboardless
+
+build cmake_object_order_depends_target_test-keyboardless: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
+
+build CMakeFiles/test-keyboardless.dir/test/test-keyboardless.o: C_COMPILER__test-keyboardless_Debug /home/workspace/test/test-keyboardless.c || cmake_object_order_depends_target_test-keyboardless
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/test-keyboardless.dir/test/test-keyboardless.o.d
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  OBJECT_DIR = CMakeFiles/test-keyboardless.dir
+  OBJECT_FILE_DIR = CMakeFiles/test-keyboardless.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/test-keyboardless.dir/
+  TARGET_PDB = test/test-keyboardless.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test-keyboardless
+
+
+#############################################
+# Link the executable test/test-keyboardless
+
+build test/test-keyboardless: C_EXECUTABLE_LINKER__test-keyboardless_Debug CMakeFiles/test-keyboardless.dir/test/test-keyboardless.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  LINK_FLAGS = -rdynamic
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
+  OBJECT_DIR = CMakeFiles/test-keyboardless.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test-keyboardless.dir/
+  TARGET_FILE = test/test-keyboardless
+  TARGET_PDB = test/test-keyboardless.pdb
+
+# =============================================================================
 # Object build statements for EXECUTABLE target test-logger
 
 
 #############################################
 # Order-only phony target for test-logger
 
-build cmake_object_order_depends_target_test-logger: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-logger: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-logger.dir/test/test-logger.o: C_COMPILER__test-logger_Debug /home/workspace/test/test-logger.c || cmake_object_order_depends_target_test-logger
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-logger.dir/test/test-logger.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-logger.dir
   OBJECT_FILE_DIR = CMakeFiles/test-logger.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-logger.dir/
@@ -405,10 +432,10 @@ build CMakeFiles/test-logger.dir/test/test-logger.o: C_COMPILER__test-logger_Deb
 #############################################
 # Link the executable test/test-logger
 
-build test/test-logger: C_EXECUTABLE_LINKER__test-logger_Debug CMakeFiles/test-logger.dir/test/test-logger.o | libtesthelper.a || libtesthelper.a
+build test/test-logger: C_EXECUTABLE_LINKER__test-logger_Debug CMakeFiles/test-logger.dir/test/test-logger.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-logger.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -423,13 +450,13 @@ build test/test-logger: C_EXECUTABLE_LINKER__test-logger_Debug CMakeFiles/test-l
 #############################################
 # Order-only phony target for test-mmap
 
-build cmake_object_order_depends_target_test-mmap: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-mmap: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-mmap.dir/test/test-mmap.o: C_COMPILER__test-mmap_Debug /home/workspace/test/test-mmap.c || cmake_object_order_depends_target_test-mmap
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-mmap.dir/test/test-mmap.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-mmap.dir
   OBJECT_FILE_DIR = CMakeFiles/test-mmap.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-mmap.dir/
@@ -443,10 +470,10 @@ build CMakeFiles/test-mmap.dir/test/test-mmap.o: C_COMPILER__test-mmap_Debug /ho
 #############################################
 # Link the executable test/test-mmap
 
-build test/test-mmap: C_EXECUTABLE_LINKER__test-mmap_Debug CMakeFiles/test-mmap.dir/test/test-mmap.o | libtesthelper.a || libtesthelper.a
+build test/test-mmap: C_EXECUTABLE_LINKER__test-mmap_Debug CMakeFiles/test-mmap.dir/test/test-mmap.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-mmap.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -461,13 +488,13 @@ build test/test-mmap: C_EXECUTABLE_LINKER__test-mmap_Debug CMakeFiles/test-mmap.
 #############################################
 # Order-only phony target for test-path
 
-build cmake_object_order_depends_target_test-path: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-path: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-path.dir/test/test-path.o: C_COMPILER__test-path_Debug /home/workspace/test/test-path.c || cmake_object_order_depends_target_test-path
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-path.dir/test/test-path.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-path.dir
   OBJECT_FILE_DIR = CMakeFiles/test-path.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-path.dir/
@@ -481,10 +508,10 @@ build CMakeFiles/test-path.dir/test/test-path.o: C_COMPILER__test-path_Debug /ho
 #############################################
 # Link the executable test/test-path
 
-build test/test-path: C_EXECUTABLE_LINKER__test-path_Debug CMakeFiles/test-path.dir/test/test-path.o | libtesthelper.a || libtesthelper.a
+build test/test-path: C_EXECUTABLE_LINKER__test-path_Debug CMakeFiles/test-path.dir/test/test-path.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-path.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -499,13 +526,13 @@ build test/test-path: C_EXECUTABLE_LINKER__test-path_Debug CMakeFiles/test-path.
 #############################################
 # Order-only phony target for test-regression
 
-build cmake_object_order_depends_target_test-regression: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-regression: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-regression.dir/test/test-regression.o: C_COMPILER__test-regression_Debug /home/workspace/test/test-regression.c || cmake_object_order_depends_target_test-regression
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-regression.dir/test/test-regression.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-regression.dir
   OBJECT_FILE_DIR = CMakeFiles/test-regression.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-regression.dir/
@@ -519,10 +546,10 @@ build CMakeFiles/test-regression.dir/test/test-regression.o: C_COMPILER__test-re
 #############################################
 # Link the executable test/test-regression
 
-build test/test-regression: C_EXECUTABLE_LINKER__test-regression_Debug CMakeFiles/test-regression.dir/test/test-regression.o | libtesthelper.a || libtesthelper.a
+build test/test-regression: C_EXECUTABLE_LINKER__test-regression_Debug CMakeFiles/test-regression.dir/test/test-regression.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-regression.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -537,13 +564,13 @@ build test/test-regression: C_EXECUTABLE_LINKER__test-regression_Debug CMakeFile
 #############################################
 # Order-only phony target for test-reset
 
-build cmake_object_order_depends_target_test-reset: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-reset: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-reset.dir/test/test-reset.o: C_COMPILER__test-reset_Debug /home/workspace/test/test-reset.c || cmake_object_order_depends_target_test-reset
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-reset.dir/test/test-reset.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-reset.dir
   OBJECT_FILE_DIR = CMakeFiles/test-reset.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-reset.dir/
@@ -557,10 +584,10 @@ build CMakeFiles/test-reset.dir/test/test-reset.o: C_COMPILER__test-reset_Debug 
 #############################################
 # Link the executable test/test-reset
 
-build test/test-reset: C_EXECUTABLE_LINKER__test-reset_Debug CMakeFiles/test-reset.dir/test/test-reset.o | libtesthelper.a || libtesthelper.a
+build test/test-reset: C_EXECUTABLE_LINKER__test-reset_Debug CMakeFiles/test-reset.dir/test/test-reset.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-reset.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -575,13 +602,13 @@ build test/test-reset: C_EXECUTABLE_LINKER__test-reset_Debug CMakeFiles/test-res
 #############################################
 # Order-only phony target for test-special-symbol
 
-build cmake_object_order_depends_target_test-special-symbol: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-special-symbol: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-special-symbol.dir/test/test-special-symbol.o: C_COMPILER__test-special-symbol_Debug /home/workspace/test/test-special-symbol.c || cmake_object_order_depends_target_test-special-symbol
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-special-symbol.dir/test/test-special-symbol.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-special-symbol.dir
   OBJECT_FILE_DIR = CMakeFiles/test-special-symbol.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-special-symbol.dir/
@@ -595,10 +622,10 @@ build CMakeFiles/test-special-symbol.dir/test/test-special-symbol.o: C_COMPILER_
 #############################################
 # Link the executable test/test-special-symbol
 
-build test/test-special-symbol: C_EXECUTABLE_LINKER__test-special-symbol_Debug CMakeFiles/test-special-symbol.dir/test/test-special-symbol.o | libtesthelper.a || libtesthelper.a
+build test/test-special-symbol: C_EXECUTABLE_LINKER__test-special-symbol_Debug CMakeFiles/test-special-symbol.dir/test/test-special-symbol.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-special-symbol.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -613,13 +640,13 @@ build test/test-special-symbol: C_EXECUTABLE_LINKER__test-special-symbol_Debug C
 #############################################
 # Order-only phony target for test-symbol
 
-build cmake_object_order_depends_target_test-symbol: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-symbol: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-symbol.dir/test/test-symbol.o: C_COMPILER__test-symbol_Debug /home/workspace/test/test-symbol.c || cmake_object_order_depends_target_test-symbol
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-symbol.dir/test/test-symbol.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-symbol.dir
   OBJECT_FILE_DIR = CMakeFiles/test-symbol.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-symbol.dir/
@@ -633,10 +660,10 @@ build CMakeFiles/test-symbol.dir/test/test-symbol.o: C_COMPILER__test-symbol_Deb
 #############################################
 # Link the executable test/test-symbol
 
-build test/test-symbol: C_EXECUTABLE_LINKER__test-symbol_Debug CMakeFiles/test-symbol.dir/test/test-symbol.o | libtesthelper.a || libtesthelper.a
+build test/test-symbol: C_EXECUTABLE_LINKER__test-symbol_Debug CMakeFiles/test-symbol.dir/test/test-symbol.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-symbol.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -651,13 +678,13 @@ build test/test-symbol: C_EXECUTABLE_LINKER__test-symbol_Debug CMakeFiles/test-s
 #############################################
 # Order-only phony target for test-userphrase
 
-build cmake_object_order_depends_target_test-userphrase: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-userphrase: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-userphrase.dir/test/test-userphrase.o: C_COMPILER__test-userphrase_Debug /home/workspace/test/test-userphrase.c || cmake_object_order_depends_target_test-userphrase
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-userphrase.dir/test/test-userphrase.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-userphrase.dir
   OBJECT_FILE_DIR = CMakeFiles/test-userphrase.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-userphrase.dir/
@@ -671,10 +698,10 @@ build CMakeFiles/test-userphrase.dir/test/test-userphrase.o: C_COMPILER__test-us
 #############################################
 # Link the executable test/test-userphrase
 
-build test/test-userphrase: C_EXECUTABLE_LINKER__test-userphrase_Debug CMakeFiles/test-userphrase.dir/test/test-userphrase.o | libtesthelper.a || libtesthelper.a
+build test/test-userphrase: C_EXECUTABLE_LINKER__test-userphrase_Debug CMakeFiles/test-userphrase.dir/test/test-userphrase.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-userphrase.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -689,13 +716,13 @@ build test/test-userphrase: C_EXECUTABLE_LINKER__test-userphrase_Debug CMakeFile
 #############################################
 # Order-only phony target for test-utf8
 
-build cmake_object_order_depends_target_test-utf8: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_test-utf8: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/test-utf8.dir/test/test-utf8.o: C_COMPILER__test-utf8_Debug /home/workspace/test/test-utf8.c || cmake_object_order_depends_target_test-utf8
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/test-utf8.dir/test/test-utf8.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/test-utf8.dir
   OBJECT_FILE_DIR = CMakeFiles/test-utf8.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/test-utf8.dir/
@@ -709,10 +736,10 @@ build CMakeFiles/test-utf8.dir/test/test-utf8.o: C_COMPILER__test-utf8_Debug /ho
 #############################################
 # Link the executable test/test-utf8
 
-build test/test-utf8: C_EXECUTABLE_LINKER__test-utf8_Debug CMakeFiles/test-utf8.dir/test/test-utf8.o | libtesthelper.a || libtesthelper.a
+build test/test-utf8: C_EXECUTABLE_LINKER__test-utf8_Debug CMakeFiles/test-utf8.dir/test/test-utf8.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/test-utf8.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -721,19 +748,57 @@ build test/test-utf8: C_EXECUTABLE_LINKER__test-utf8_Debug CMakeFiles/test-utf8.
   TARGET_PDB = test/test-utf8.pdb
 
 # =============================================================================
+# Object build statements for EXECUTABLE target performance
+
+
+#############################################
+# Order-only phony target for performance
+
+build cmake_object_order_depends_target_performance: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
+
+build CMakeFiles/performance.dir/test/performance.o: C_COMPILER__performance_Debug /home/workspace/test/performance.c || cmake_object_order_depends_target_performance
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/performance.dir/test/performance.o.d
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  OBJECT_DIR = CMakeFiles/performance.dir
+  OBJECT_FILE_DIR = CMakeFiles/performance.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/performance.dir/
+  TARGET_PDB = test/performance.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target performance
+
+
+#############################################
+# Link the executable test/performance
+
+build test/performance: C_EXECUTABLE_LINKER__performance_Debug CMakeFiles/performance.dir/test/performance.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  LINK_FLAGS = -rdynamic
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
+  OBJECT_DIR = CMakeFiles/performance.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/performance.dir/
+  TARGET_FILE = test/performance
+  TARGET_PDB = test/performance.pdb
+
+# =============================================================================
 # Object build statements for EXECUTABLE target randkeystroke
 
 
 #############################################
 # Order-only phony target for randkeystroke
 
-build cmake_object_order_depends_target_randkeystroke: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_randkeystroke: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/randkeystroke.dir/test/randkeystroke.o: C_COMPILER__randkeystroke_Debug /home/workspace/test/randkeystroke.c || cmake_object_order_depends_target_randkeystroke
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/randkeystroke.dir/test/randkeystroke.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/randkeystroke.dir
   OBJECT_FILE_DIR = CMakeFiles/randkeystroke.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/randkeystroke.dir/
@@ -747,10 +812,10 @@ build CMakeFiles/randkeystroke.dir/test/randkeystroke.o: C_COMPILER__randkeystro
 #############################################
 # Link the executable test/randkeystroke
 
-build test/randkeystroke: C_EXECUTABLE_LINKER__randkeystroke_Debug CMakeFiles/randkeystroke.dir/test/randkeystroke.o | libtesthelper.a || libtesthelper.a
+build test/randkeystroke: C_EXECUTABLE_LINKER__randkeystroke_Debug CMakeFiles/randkeystroke.dir/test/randkeystroke.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/randkeystroke.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -765,13 +830,13 @@ build test/randkeystroke: C_EXECUTABLE_LINKER__randkeystroke_Debug CMakeFiles/ra
 #############################################
 # Order-only phony target for simulate
 
-build cmake_object_order_depends_target_simulate: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_simulate: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/simulate.dir/test/simulate.o: C_COMPILER__simulate_Debug /home/workspace/test/simulate.c || cmake_object_order_depends_target_simulate
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/simulate.dir/test/simulate.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/simulate.dir
   OBJECT_FILE_DIR = CMakeFiles/simulate.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/simulate.dir/
@@ -785,10 +850,10 @@ build CMakeFiles/simulate.dir/test/simulate.o: C_COMPILER__simulate_Debug /home/
 #############################################
 # Link the executable test/simulate
 
-build test/simulate: C_EXECUTABLE_LINKER__simulate_Debug CMakeFiles/simulate.dir/test/simulate.o | libtesthelper.a || libtesthelper.a
+build test/simulate: C_EXECUTABLE_LINKER__simulate_Debug CMakeFiles/simulate.dir/test/simulate.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/simulate.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -803,13 +868,13 @@ build test/simulate: C_EXECUTABLE_LINKER__simulate_Debug CMakeFiles/simulate.dir
 #############################################
 # Order-only phony target for testchewing
 
-build cmake_object_order_depends_target_testchewing: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_testchewing: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
 build CMakeFiles/testchewing.dir/test/testchewing.o: C_COMPILER__testchewing_Debug /home/workspace/test/testchewing.c || cmake_object_order_depends_target_testchewing
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/testchewing.dir/test/testchewing.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/testchewing.dir
   OBJECT_FILE_DIR = CMakeFiles/testchewing.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/testchewing.dir/
@@ -823,10 +888,10 @@ build CMakeFiles/testchewing.dir/test/testchewing.o: C_COMPILER__testchewing_Deb
 #############################################
 # Link the executable test/testchewing
 
-build test/testchewing: C_EXECUTABLE_LINKER__testchewing_Debug CMakeFiles/testchewing.dir/test/testchewing.o | libtesthelper.a || libtesthelper.a
+build test/testchewing: C_EXECUTABLE_LINKER__testchewing_Debug CMakeFiles/testchewing.dir/test/testchewing.o | libtesthelper.a libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a
+  LINK_LIBRARIES = libtesthelper.a  libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/testchewing.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -835,42 +900,42 @@ build test/testchewing: C_EXECUTABLE_LINKER__testchewing_Debug CMakeFiles/testch
   TARGET_PDB = test/testchewing.pdb
 
 # =============================================================================
-# Object build statements for EXECUTABLE target gen_keystroke
+# Object build statements for EXECUTABLE target genkeystroke
 
 
 #############################################
-# Order-only phony target for gen_keystroke
+# Order-only phony target for genkeystroke
 
-build cmake_object_order_depends_target_gen_keystroke: phony || cmake_object_order_depends_target_testhelper
+build cmake_object_order_depends_target_genkeystroke: phony || all_static_data cmake_object_order_depends_target_testhelper cmake_object_order_depends_target_userphrase data
 
-build CMakeFiles/gen_keystroke.dir/test/gen_keystroke.o: C_COMPILER__gen_keystroke_Debug /home/workspace/test/gen_keystroke.c || cmake_object_order_depends_target_gen_keystroke
-  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
-  DEP_FILE = CMakeFiles/gen_keystroke.dir/test/gen_keystroke.o.d
+build CMakeFiles/genkeystroke.dir/test/genkeystroke.o: C_COMPILER__genkeystroke_Debug /home/workspace/test/genkeystroke.c || cmake_object_order_depends_target_genkeystroke
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/genkeystroke.dir/test/genkeystroke.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
-  OBJECT_DIR = CMakeFiles/gen_keystroke.dir
-  OBJECT_FILE_DIR = CMakeFiles/gen_keystroke.dir/test
-  TARGET_COMPILE_PDB = CMakeFiles/gen_keystroke.dir/
-  TARGET_PDB = test/gen_keystroke.pdb
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  OBJECT_DIR = CMakeFiles/genkeystroke.dir
+  OBJECT_FILE_DIR = CMakeFiles/genkeystroke.dir/test
+  TARGET_COMPILE_PDB = CMakeFiles/genkeystroke.dir/
+  TARGET_PDB = test/genkeystroke.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target gen_keystroke
+# Link build statements for EXECUTABLE target genkeystroke
 
 
 #############################################
-# Link the executable test/gen_keystroke
+# Link the executable test/genkeystroke
 
-build test/gen_keystroke: C_EXECUTABLE_LINKER__gen_keystroke_Debug CMakeFiles/gen_keystroke.dir/test/gen_keystroke.o | libtesthelper.a /usr/lib/x86_64-linux-gnu/libncursesw.so /usr/lib/x86_64-linux-gnu/libform.so || libtesthelper.a
+build test/genkeystroke: C_EXECUTABLE_LINKER__genkeystroke_Debug CMakeFiles/genkeystroke.dir/test/genkeystroke.o | libtesthelper.a /usr/lib/x86_64-linux-gnu/libncursesw.so /usr/lib/x86_64-linux-gnu/libform.so libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || all_static_data data libtesthelper.a libuserphrase.a
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = libtesthelper.a  -lncursesw  -lform
-  OBJECT_DIR = CMakeFiles/gen_keystroke.dir
+  LINK_LIBRARIES = libtesthelper.a  -lncursesw  -lform  libuserphrase.a  -lsqlite3
+  OBJECT_DIR = CMakeFiles/genkeystroke.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/gen_keystroke.dir/
-  TARGET_FILE = test/gen_keystroke
-  TARGET_PDB = test/gen_keystroke.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/genkeystroke.dir/
+  TARGET_FILE = test/genkeystroke
+  TARGET_PDB = test/genkeystroke.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target testhelper
@@ -879,13 +944,13 @@ build test/gen_keystroke: C_EXECUTABLE_LINKER__gen_keystroke_Debug CMakeFiles/ge
 #############################################
 # Order-only phony target for testhelper
 
-build cmake_object_order_depends_target_testhelper: phony || cmake_object_order_depends_target_chewing cmake_object_order_depends_target_common
+build cmake_object_order_depends_target_testhelper: phony || cmake_object_order_depends_target_chewing cmake_object_order_depends_target_common cmake_object_order_depends_target_userphrase
 
 build CMakeFiles/testhelper.dir/test/testhelper.o: C_COMPILER__testhelper_Debug /home/workspace/test/testhelper.c || cmake_object_order_depends_target_testhelper
-  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DCHEWING_DATA_PREFIX=\"/home/workspace/build/data\" -DHAVE_CONFIG_H=1 -DPIC -DTESTDATA=\"/home/workspace/test/default-test.txt\" -DTEST_DATA_DIR=\"/home/workspace/test/data\" -DTEST_HASH_DIR=\"/home/workspace/build/test\" -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/testhelper.dir/test/testhelper.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/testhelper.dir
   OBJECT_FILE_DIR = CMakeFiles/testhelper.dir/test
   TARGET_COMPILE_PDB = CMakeFiles/testhelper.dir/testhelper.pdb
@@ -899,7 +964,7 @@ build CMakeFiles/testhelper.dir/test/testhelper.o: C_COMPILER__testhelper_Debug 
 #############################################
 # Link the static library libtesthelper.a
 
-build libtesthelper.a: C_STATIC_LIBRARY_LINKER__testhelper_Debug CMakeFiles/chewing.dir/src/char.o CMakeFiles/chewing.dir/src/chewingio.o CMakeFiles/chewing.dir/src/chewingutil.o CMakeFiles/chewing.dir/src/choice.o CMakeFiles/chewing.dir/src/dict.o CMakeFiles/chewing.dir/src/hash.o CMakeFiles/chewing.dir/src/mod_aux.o CMakeFiles/chewing.dir/src/pinyin.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o CMakeFiles/chewing.dir/src/tree.o CMakeFiles/chewing.dir/src/userphrase.o CMakeFiles/chewing.dir/src/zuin.o CMakeFiles/common.dir/src/common/chewing-utf8-util.o CMakeFiles/common.dir/src/common/key2pho.o CMakeFiles/testhelper.dir/test/testhelper.o || chewing common
+build libtesthelper.a: C_STATIC_LIBRARY_LINKER__testhelper_Debug CMakeFiles/chewing.dir/src/chewingio.o CMakeFiles/chewing.dir/src/chewingutil.o CMakeFiles/chewing.dir/src/choice.o CMakeFiles/chewing.dir/src/dict.o CMakeFiles/chewing.dir/src/mod_aux.o CMakeFiles/chewing.dir/src/pinyin.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.o CMakeFiles/chewing.dir/src/tree.o CMakeFiles/chewing.dir/src/userphrase.o CMakeFiles/chewing.dir/src/zuin.o CMakeFiles/common.dir/src/common/chewing-utf8-util.o CMakeFiles/common.dir/src/common/key2pho.o CMakeFiles/testhelper.dir/test/testhelper.o || chewing common libuserphrase.a
   LANGUAGE_COMPILE_FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   OBJECT_DIR = CMakeFiles/testhelper.dir
   POST_BUILD = :
@@ -912,7 +977,7 @@ build libtesthelper.a: C_STATIC_LIBRARY_LINKER__testhelper_Debug CMakeFiles/chew
 #############################################
 # Utility command for data
 
-build data: phony CMakeFiles/data data/dict.dat data/fonetree.dat data/ph_index.dat data/us_freq.dat data/ch_index_begin.dat data/ch_index_phone.dat chewing-definition.h src/tools/maketree src/tools/sort
+build data: phony CMakeFiles/data data/dictionary.dat data/index_tree.dat src/tools/init_database
 
 # =============================================================================
 # Object build statements for OBJECT_LIBRARY target chewing
@@ -921,143 +986,133 @@ build data: phony CMakeFiles/data data/dict.dat data/fonetree.dat data/ph_index.
 #############################################
 # Order-only phony target for chewing
 
-build cmake_object_order_depends_target_chewing: phony || chewing-definition
-
-build CMakeFiles/chewing.dir/src/char.o: C_COMPILER__chewing_Debug /home/workspace/src/char.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
-  DEP_FILE = CMakeFiles/chewing.dir/src/char.o.d
-  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
-  OBJECT_DIR = CMakeFiles/chewing.dir
-  OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
-  TARGET_PDB = ""
+build cmake_object_order_depends_target_chewing: phony || CMakeFiles/chewing.dir
 
 build CMakeFiles/chewing.dir/src/chewingio.o: C_COMPILER__chewing_Debug /home/workspace/src/chewingio.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/chewingio.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/chewingutil.o: C_COMPILER__chewing_Debug /home/workspace/src/chewingutil.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/chewingutil.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/choice.o: C_COMPILER__chewing_Debug /home/workspace/src/choice.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/choice.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/dict.o: C_COMPILER__chewing_Debug /home/workspace/src/dict.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/dict.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
-  OBJECT_DIR = CMakeFiles/chewing.dir
-  OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
-  TARGET_PDB = ""
-
-build CMakeFiles/chewing.dir/src/hash.o: C_COMPILER__chewing_Debug /home/workspace/src/hash.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
-  DEP_FILE = CMakeFiles/chewing.dir/src/hash.o.d
-  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/mod_aux.o: C_COMPILER__chewing_Debug /home/workspace/src/mod_aux.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/mod_aux.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/pinyin.o: C_COMPILER__chewing_Debug /home/workspace/src/pinyin.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/pinyin.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o: C_COMPILER__chewing_Debug /home/workspace/src/porting_layer/src/plat_mmap_posix.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src/porting_layer/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o: C_COMPILER__chewing_Debug /home/workspace/src/porting_layer/src/plat_mmap_windows.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src/porting_layer/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o: C_COMPILER__chewing_Debug /home/workspace/src/porting_layer/src/plat_path.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  OBJECT_DIR = CMakeFiles/chewing.dir
+  OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src/porting_layer/src
+  TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
+  TARGET_PDB = ""
+
+build CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.o: C_COMPILER__chewing_Debug /home/workspace/src/porting_layer/src/rpl_malloc.c || cmake_object_order_depends_target_chewing
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.o.d
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src/porting_layer/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/tree.o: C_COMPILER__chewing_Debug /home/workspace/src/tree.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/tree.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/userphrase.o: C_COMPILER__chewing_Debug /home/workspace/src/userphrase.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/userphrase.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/chewing.dir/src/zuin.o: C_COMPILER__chewing_Debug /home/workspace/src/zuin.c || cmake_object_order_depends_target_chewing
-  DEFINES = -DHAVE_CONFIG_H=1 -DLIBDIR=\"\" -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DDATADIR=\"/usr/local/share/libchewing\" -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/chewing.dir/src/zuin.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/chewing.dir
   OBJECT_FILE_DIR = CMakeFiles/chewing.dir/src
   TARGET_COMPILE_PDB = CMakeFiles/chewing.dir/
@@ -1068,13 +1123,53 @@ build CMakeFiles/chewing.dir/src/zuin.o: C_COMPILER__chewing_Debug /home/workspa
 #############################################
 # Object library chewing
 
-build chewing: phony CMakeFiles/chewing.dir/src/char.o CMakeFiles/chewing.dir/src/chewingio.o CMakeFiles/chewing.dir/src/chewingutil.o CMakeFiles/chewing.dir/src/choice.o CMakeFiles/chewing.dir/src/dict.o CMakeFiles/chewing.dir/src/hash.o CMakeFiles/chewing.dir/src/mod_aux.o CMakeFiles/chewing.dir/src/pinyin.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o CMakeFiles/chewing.dir/src/tree.o CMakeFiles/chewing.dir/src/userphrase.o CMakeFiles/chewing.dir/src/zuin.o
+build chewing: phony CMakeFiles/chewing.dir/src/chewingio.o CMakeFiles/chewing.dir/src/chewingutil.o CMakeFiles/chewing.dir/src/choice.o CMakeFiles/chewing.dir/src/dict.o CMakeFiles/chewing.dir/src/mod_aux.o CMakeFiles/chewing.dir/src/pinyin.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.o CMakeFiles/chewing.dir/src/tree.o CMakeFiles/chewing.dir/src/userphrase.o CMakeFiles/chewing.dir/src/zuin.o
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target userphrase
 
 
 #############################################
-# Utility command for chewing-definition
+# Order-only phony target for userphrase
 
-build chewing-definition: phony CMakeFiles/chewing-definition data/dict.dat data/fonetree.dat data/ph_index.dat data/us_freq.dat data/ch_index_begin.dat data/ch_index_phone.dat chewing-definition.h src/tools/maketree src/tools/sort
+build cmake_object_order_depends_target_userphrase: phony || CMakeFiles/userphrase.dir
+
+build CMakeFiles/userphrase.dir/src/chewing-sql.o: C_COMPILER__userphrase_Debug /home/workspace/src/chewing-sql.c || cmake_object_order_depends_target_userphrase
+  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/userphrase.dir/src/chewing-sql.o.d
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  OBJECT_DIR = CMakeFiles/userphrase.dir
+  OBJECT_FILE_DIR = CMakeFiles/userphrase.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/userphrase.dir/userphrase.pdb
+  TARGET_PDB = libuserphrase.pdb
+
+build CMakeFiles/userphrase.dir/src/userphrase-sql.o: C_COMPILER__userphrase_Debug /home/workspace/src/userphrase-sql.c || cmake_object_order_depends_target_userphrase
+  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/userphrase.dir/src/userphrase-sql.o.d
+  FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  OBJECT_DIR = CMakeFiles/userphrase.dir
+  OBJECT_FILE_DIR = CMakeFiles/userphrase.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/userphrase.dir/userphrase.pdb
+  TARGET_PDB = libuserphrase.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target userphrase
+
+
+#############################################
+# Link the static library libuserphrase.a
+
+build libuserphrase.a: C_STATIC_LIBRARY_LINKER__userphrase_Debug CMakeFiles/userphrase.dir/src/chewing-sql.o CMakeFiles/userphrase.dir/src/userphrase-sql.o
+  LANGUAGE_COMPILE_FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
+  OBJECT_DIR = CMakeFiles/userphrase.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/userphrase.dir/userphrase.pdb
+  TARGET_FILE = libuserphrase.a
+  TARGET_PDB = libuserphrase.pdb
 
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target chewing_shared
@@ -1083,7 +1178,7 @@ build chewing-definition: phony CMakeFiles/chewing-definition data/dict.dat data
 #############################################
 # Order-only phony target for chewing_shared
 
-build cmake_object_order_depends_target_chewing_shared: phony || cmake_object_order_depends_target_chewing cmake_object_order_depends_target_common
+build cmake_object_order_depends_target_chewing_shared: phony || cmake_object_order_depends_target_chewing cmake_object_order_depends_target_common cmake_object_order_depends_target_userphrase
 
 
 # =============================================================================
@@ -1093,9 +1188,10 @@ build cmake_object_order_depends_target_chewing_shared: phony || cmake_object_or
 #############################################
 # Link the shared library libchewing.so.3.1.0
 
-build libchewing.so.3.1.0: C_SHARED_LIBRARY_LINKER__chewing_shared_Debug CMakeFiles/chewing.dir/src/char.o CMakeFiles/chewing.dir/src/chewingio.o CMakeFiles/chewing.dir/src/chewingutil.o CMakeFiles/chewing.dir/src/choice.o CMakeFiles/chewing.dir/src/dict.o CMakeFiles/chewing.dir/src/hash.o CMakeFiles/chewing.dir/src/mod_aux.o CMakeFiles/chewing.dir/src/pinyin.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o CMakeFiles/chewing.dir/src/tree.o CMakeFiles/chewing.dir/src/userphrase.o CMakeFiles/chewing.dir/src/zuin.o CMakeFiles/common.dir/src/common/chewing-utf8-util.o CMakeFiles/common.dir/src/common/key2pho.o || chewing common
+build libchewing.so.3.1.0: C_SHARED_LIBRARY_LINKER__chewing_shared_Debug CMakeFiles/chewing.dir/src/chewingio.o CMakeFiles/chewing.dir/src/chewingutil.o CMakeFiles/chewing.dir/src/choice.o CMakeFiles/chewing.dir/src/dict.o CMakeFiles/chewing.dir/src/mod_aux.o CMakeFiles/chewing.dir/src/pinyin.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.o CMakeFiles/chewing.dir/src/tree.o CMakeFiles/chewing.dir/src/userphrase.o CMakeFiles/chewing.dir/src/zuin.o CMakeFiles/common.dir/src/common/chewing-utf8-util.o CMakeFiles/common.dir/src/common/key2pho.o | libuserphrase.a /usr/lib/x86_64-linux-gnu/libsqlite3.so || chewing common libuserphrase.a
   LANGUAGE_COMPILE_FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   LINK_FLAGS = -Wl,--no-undefined
+  LINK_LIBRARIES = libuserphrase.a  -lsqlite3
   OBJECT_DIR = CMakeFiles/chewing_shared.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -1119,7 +1215,7 @@ build libchewing.so.3 libchewing.so: CMAKE_SYMLINK_LIBRARY libchewing.so.3.1.0
 #############################################
 # Order-only phony target for chewing_static
 
-build cmake_object_order_depends_target_chewing_static: phony || cmake_object_order_depends_target_chewing cmake_object_order_depends_target_common
+build cmake_object_order_depends_target_chewing_static: phony || cmake_object_order_depends_target_chewing cmake_object_order_depends_target_common cmake_object_order_depends_target_userphrase
 
 
 # =============================================================================
@@ -1129,7 +1225,7 @@ build cmake_object_order_depends_target_chewing_static: phony || cmake_object_or
 #############################################
 # Link the static library libchewing.a
 
-build libchewing.a: C_STATIC_LIBRARY_LINKER__chewing_static_Debug CMakeFiles/chewing.dir/src/char.o CMakeFiles/chewing.dir/src/chewingio.o CMakeFiles/chewing.dir/src/chewingutil.o CMakeFiles/chewing.dir/src/choice.o CMakeFiles/chewing.dir/src/dict.o CMakeFiles/chewing.dir/src/hash.o CMakeFiles/chewing.dir/src/mod_aux.o CMakeFiles/chewing.dir/src/pinyin.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o CMakeFiles/chewing.dir/src/tree.o CMakeFiles/chewing.dir/src/userphrase.o CMakeFiles/chewing.dir/src/zuin.o CMakeFiles/common.dir/src/common/chewing-utf8-util.o CMakeFiles/common.dir/src/common/key2pho.o || chewing common
+build libchewing.a: C_STATIC_LIBRARY_LINKER__chewing_static_Debug CMakeFiles/chewing.dir/src/chewingio.o CMakeFiles/chewing.dir/src/chewingutil.o CMakeFiles/chewing.dir/src/choice.o CMakeFiles/chewing.dir/src/dict.o CMakeFiles/chewing.dir/src/mod_aux.o CMakeFiles/chewing.dir/src/pinyin.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.o CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.o CMakeFiles/chewing.dir/src/porting_layer/src/rpl_malloc.o CMakeFiles/chewing.dir/src/tree.o CMakeFiles/chewing.dir/src/userphrase.o CMakeFiles/chewing.dir/src/zuin.o CMakeFiles/common.dir/src/common/chewing-utf8-util.o CMakeFiles/common.dir/src/common/key2pho.o || chewing common libuserphrase.a
   LANGUAGE_COMPILE_FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
   OBJECT_DIR = CMakeFiles/chewing_static.dir
   POST_BUILD = :
@@ -1148,20 +1244,20 @@ build libchewing.a: C_STATIC_LIBRARY_LINKER__chewing_static_Debug CMakeFiles/che
 build cmake_object_order_depends_target_common: phony || CMakeFiles/common.dir
 
 build CMakeFiles/common.dir/src/common/chewing-utf8-util.o: C_COMPILER__common_Debug /home/workspace/src/common/chewing-utf8-util.c || cmake_object_order_depends_target_common
-  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/common.dir/src/common/chewing-utf8-util.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/common.dir
   OBJECT_FILE_DIR = CMakeFiles/common.dir/src/common
   TARGET_COMPILE_PDB = CMakeFiles/common.dir/
   TARGET_PDB = ""
 
 build CMakeFiles/common.dir/src/common/key2pho.o: C_COMPILER__common_Debug /home/workspace/src/common/key2pho.c || cmake_object_order_depends_target_common
-  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -DUSE_BINARY_DATA=1 -D_GNU_SOURCE
+  DEFINES = -DHAVE_CONFIG_H=1 -DPIC -DUNDER_POSIX -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/common.dir/src/common/key2pho.o.d
   FLAGS = -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC --coverage -g -O0 -DDPP_ENABLE_GCOV -g
-  INCLUDES = -I/home/workspace/build -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
+  INCLUDES = -I/home/workspace/SQLITE3_INCLUDE -I/home/workspace/build/include -I/home/workspace/include -I/home/workspace/include/internal -I/home/workspace/src -I/home/workspace/src/porting_layer/include
   OBJECT_DIR = CMakeFiles/common.dir
   OBJECT_FILE_DIR = CMakeFiles/common.dir/src/common
   TARGET_COMPILE_PDB = CMakeFiles/common.dir/
@@ -1268,24 +1364,10 @@ build doc/libchewing.info | ${cmake_ninja_workdir}doc/libchewing.info: CUSTOM_CO
 
 
 #############################################
-# Custom command for CMakeFiles/pinyin.tab
+# Custom command for CMakeFiles/all_static_data
 
-build CMakeFiles/pinyin.tab | ${cmake_ninja_workdir}CMakeFiles/pinyin.tab: CUSTOM_COMMAND
-  COMMAND = cd /home/workspace/build && /usr/bin/cmake -E copy_if_different /home/workspace/data/pinyin.tab /home/workspace/build/data/pinyin.tab
-
-
-#############################################
-# Custom command for CMakeFiles/swkb.dat
-
-build CMakeFiles/swkb.dat | ${cmake_ninja_workdir}CMakeFiles/swkb.dat: CUSTOM_COMMAND
-  COMMAND = cd /home/workspace/build && /usr/bin/cmake -E copy_if_different /home/workspace/data/swkb.dat /home/workspace/build/data/swkb.dat
-
-
-#############################################
-# Custom command for CMakeFiles/symbols.dat
-
-build CMakeFiles/symbols.dat | ${cmake_ninja_workdir}CMakeFiles/symbols.dat: CUSTOM_COMMAND
-  COMMAND = cd /home/workspace/build && /usr/bin/cmake -E copy_if_different /home/workspace/data/symbols.dat /home/workspace/build/data/symbols.dat
+build CMakeFiles/all_static_data | ${cmake_ninja_workdir}CMakeFiles/all_static_data: CUSTOM_COMMAND
+  COMMAND = cd /home/workspace/build && /usr/bin/cmake -E copy_if_different /home/workspace/data/pinyin.tab /home/workspace/build/data/pinyin.tab && /usr/bin/cmake -E copy_if_different /home/workspace/data/swkb.dat /home/workspace/build/data/swkb.dat && /usr/bin/cmake -E copy_if_different /home/workspace/data/symbols.dat /home/workspace/build/data/symbols.dat
 
 
 #############################################
@@ -1298,29 +1380,23 @@ build CMakeFiles/stresstest.py | ${cmake_ninja_workdir}CMakeFiles/stresstest.py:
 #############################################
 # Custom command for CMakeFiles/check
 
-build CMakeFiles/check | ${cmake_ninja_workdir}CMakeFiles/check: CUSTOM_COMMAND || chewing chewing-definition common libtesthelper.a src/tools/maketree src/tools/sort test/gen_keystroke test/randkeystroke test/simulate test/test-bopomofo test/test-config test/test-easy-symbol test/test-fullshape test/test-key2pho test/test-keyboard test/test-logger test/test-mmap test/test-path test/test-regression test/test-reset test/test-special-symbol test/test-symbol test/test-userphrase test/test-utf8 test/testchewing
+build CMakeFiles/check | ${cmake_ninja_workdir}CMakeFiles/check: CUSTOM_COMMAND || all_static_data chewing common data libtesthelper.a libuserphrase.a src/tools/init_database test/genkeystroke test/performance test/randkeystroke test/simulate test/test-bopomofo test/test-config test/test-easy-symbol test/test-error-handling test/test-fullshape test/test-key2pho test/test-keyboard test/test-keyboardless test/test-logger test/test-mmap test/test-path test/test-regression test/test-reset test/test-special-symbol test/test-symbol test/test-userphrase test/test-utf8 test/testchewing
   COMMAND = cd /home/workspace/build && /usr/bin/ctest
 
 
 #############################################
 # Phony custom command for CMakeFiles/data
 
-build CMakeFiles/data | ${cmake_ninja_workdir}CMakeFiles/data: phony data/dict.dat data/fonetree.dat data/ph_index.dat data/us_freq.dat data/ch_index_begin.dat data/ch_index_phone.dat || common src/tools/maketree src/tools/sort
+build CMakeFiles/data | ${cmake_ninja_workdir}CMakeFiles/data: phony data/dictionary.dat data/index_tree.dat || common src/tools/init_database
 
 
 #############################################
-# Custom command for data/dict.dat
+# Custom command for data/dictionary.dat
 
-build data/dict.dat data/fonetree.dat data/ph_index.dat data/us_freq.dat data/ch_index_begin.dat data/ch_index_phone.dat chewing-definition.h | ${cmake_ninja_workdir}data/dict.dat ${cmake_ninja_workdir}data/fonetree.dat ${cmake_ninja_workdir}data/ph_index.dat ${cmake_ninja_workdir}data/us_freq.dat ${cmake_ninja_workdir}data/ch_index_begin.dat ${cmake_ninja_workdir}data/ch_index_phone.dat ${cmake_ninja_workdir}chewing-definition.h: CUSTOM_COMMAND src/tools/sort src/tools/maketree /home/workspace/data/phone.cin /home/workspace/data/tsi.src || common src/tools/maketree src/tools/sort
-  COMMAND = cd /home/workspace/build && /usr/bin/cmake -E make_directory /home/workspace/build/data && /usr/bin/cmake -E chdir /home/workspace/build/data /home/workspace/build/src/tools/sort /home/workspace/data/phone.cin /home/workspace/data/tsi.src && /usr/bin/cmake -E chdir /home/workspace/build/data /home/workspace/build/src/tools/maketree /home/workspace/build/data/phoneid.dic && /usr/bin/cmake -E copy /home/workspace/build/data/chewing-definition.h /home/workspace/build/chewing-definition.h && /usr/bin/cmake -E remove -f /home/workspace/build/data/chewing-definition.h /home/workspace/build/data/phoneid.dic
-  DESC = Generating data/dict.dat, data/fonetree.dat, data/ph_index.dat, data/us_freq.dat, data/ch_index_begin.dat, data/ch_index_phone.dat, chewing-definition.h
+build data/dictionary.dat data/index_tree.dat | ${cmake_ninja_workdir}data/dictionary.dat ${cmake_ninja_workdir}data/index_tree.dat: CUSTOM_COMMAND src/tools/init_database /home/workspace/data/phone.cin /home/workspace/data/tsi.src || common src/tools/init_database
+  COMMAND = cd /home/workspace/build && /usr/bin/cmake -E make_directory /home/workspace/build/data && /usr/bin/cmake -E chdir /home/workspace/build/data /home/workspace/build/src/tools/init_database /home/workspace/data/phone.cin /home/workspace/data/tsi.src
+  DESC = Generating data/dictionary.dat, data/index_tree.dat
   restat = 1
-
-
-#############################################
-# Phony custom command for CMakeFiles/chewing-definition
-
-build CMakeFiles/chewing-definition | ${cmake_ninja_workdir}CMakeFiles/chewing-definition: phony chewing-definition.h || common src/tools/maketree src/tools/sort
 
 # =============================================================================
 # Target aliases.
@@ -1329,15 +1405,15 @@ build chewing_shared: phony libchewing.so
 
 build chewing_static: phony libchewing.a
 
-build gen_keystroke: phony test/gen_keystroke
+build genkeystroke: phony test/genkeystroke
 
-build maketree: phony src/tools/maketree
+build init_database: phony src/tools/init_database
+
+build performance: phony test/performance
 
 build randkeystroke: phony test/randkeystroke
 
 build simulate: phony test/simulate
-
-build sort: phony src/tools/sort
 
 build test-bopomofo: phony test/test-bopomofo
 
@@ -1345,11 +1421,15 @@ build test-config: phony test/test-config
 
 build test-easy-symbol: phony test/test-easy-symbol
 
+build test-error-handling: phony test/test-error-handling
+
 build test-fullshape: phony test/test-fullshape
 
 build test-key2pho: phony test/test-key2pho
 
 build test-keyboard: phony test/test-keyboard
+
+build test-keyboardless: phony test/test-keyboardless
 
 build test-logger: phony test/test-logger
 
@@ -1373,6 +1453,8 @@ build testchewing: phony test/testchewing
 
 build testhelper: phony libtesthelper.a
 
+build userphrase: phony libuserphrase.a
+
 # =============================================================================
 # Folder targets.
 
@@ -1381,7 +1463,7 @@ build testhelper: phony libtesthelper.a
 #############################################
 # Folder: /home/workspace/build
 
-build all: phony INFO pinyin.tab swkb.dat symbols.dat stresstest.py src/tools/sort src/tools/maketree test/test-bopomofo test/test-config test/test-easy-symbol test/test-fullshape test/test-key2pho test/test-keyboard test/test-logger test/test-mmap test/test-path test/test-regression test/test-reset test/test-special-symbol test/test-symbol test/test-userphrase test/test-utf8 test/randkeystroke test/simulate test/testchewing test/gen_keystroke libtesthelper.a data chewing libchewing.so libchewing.a common
+build all: phony INFO stresstest.py src/tools/init_database test/test-bopomofo test/test-config test/test-easy-symbol test/test-error-handling test/test-fullshape test/test-key2pho test/test-keyboard test/test-keyboardless test/test-logger test/test-mmap test/test-path test/test-regression test/test-reset test/test-special-symbol test/test-symbol test/test-userphrase test/test-utf8 test/performance test/randkeystroke test/simulate test/testchewing test/genkeystroke libtesthelper.a data chewing libuserphrase.a libchewing.so libchewing.a common
 
 # =============================================================================
 # Unknown Build Time Dependencies.
@@ -1395,14 +1477,14 @@ build all: phony INFO pinyin.tab swkb.dat symbols.dat stresstest.py src/tools/so
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/workspace/CMakeLists.txt /home/workspace/cmake/FindCurses.cmake /home/workspace/cmake/chewing.pc.in /home/workspace/cmake/config.h.in /home/workspace/cmake/version.texi.in /usr/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in /usr/share/cmake-3.24/Modules/CMakeCCompilerABI.c /usr/share/cmake-3.24/Modules/CMakeCInformation.cmake /usr/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.24/Modules/CMakeConfigurableFile.in /usr/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.24/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake-3.24/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.24/Modules/CheckFunctionExists.c /usr/share/cmake-3.24/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFile.c.in /usr/share/cmake-3.24/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFiles.cmake /usr/share/cmake-3.24/Modules/CheckTypeSize.c.in /usr/share/cmake-3.24/Modules/CheckTypeSize.cmake /usr/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU.cmake /usr/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.24/Modules/FindPackageMessage.cmake /usr/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.24/Modules/Platform/Linux.cmake /usr/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.24/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.24.1/CMakeCCompiler.cmake CMakeFiles/3.24.1/CMakeCXXCompiler.cmake CMakeFiles/3.24.1/CMakeSystem.cmake CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c CMakeFiles/CheckTypeSize/UINT16_T.c
+build build.ninja: RERUN_CMAKE | /home/workspace/CMakeLists.txt /home/workspace/chewing.pc.in /home/workspace/cmake/FindCurses.cmake /home/workspace/cmake/config.h.in /home/workspace/cmake/version.texi.in /usr/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in /usr/share/cmake-3.24/Modules/CMakeCCompilerABI.c /usr/share/cmake-3.24/Modules/CMakeCInformation.cmake /usr/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.24/Modules/CMakeConfigurableFile.in /usr/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.24/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake-3.24/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.24/Modules/CheckFunctionExists.c /usr/share/cmake-3.24/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFile.c.in /usr/share/cmake-3.24/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFiles.cmake /usr/share/cmake-3.24/Modules/CheckTypeSize.c.in /usr/share/cmake-3.24/Modules/CheckTypeSize.cmake /usr/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU.cmake /usr/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.24/Modules/FindPackageMessage.cmake /usr/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.24/Modules/Platform/Linux.cmake /usr/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.24/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.24.1/CMakeCCompiler.cmake CMakeFiles/3.24.1/CMakeCXXCompiler.cmake CMakeFiles/3.24.1/CMakeSystem.cmake CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c CMakeFiles/CheckTypeSize/UINT16_T.c
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/workspace/CMakeLists.txt /home/workspace/cmake/FindCurses.cmake /home/workspace/cmake/chewing.pc.in /home/workspace/cmake/config.h.in /home/workspace/cmake/version.texi.in /usr/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in /usr/share/cmake-3.24/Modules/CMakeCCompilerABI.c /usr/share/cmake-3.24/Modules/CMakeCInformation.cmake /usr/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.24/Modules/CMakeConfigurableFile.in /usr/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.24/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake-3.24/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.24/Modules/CheckFunctionExists.c /usr/share/cmake-3.24/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFile.c.in /usr/share/cmake-3.24/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFiles.cmake /usr/share/cmake-3.24/Modules/CheckTypeSize.c.in /usr/share/cmake-3.24/Modules/CheckTypeSize.cmake /usr/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU.cmake /usr/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.24/Modules/FindPackageMessage.cmake /usr/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.24/Modules/Platform/Linux.cmake /usr/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.24/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.24.1/CMakeCCompiler.cmake CMakeFiles/3.24.1/CMakeCXXCompiler.cmake CMakeFiles/3.24.1/CMakeSystem.cmake CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c CMakeFiles/CheckTypeSize/UINT16_T.c: phony
+build /home/workspace/CMakeLists.txt /home/workspace/chewing.pc.in /home/workspace/cmake/FindCurses.cmake /home/workspace/cmake/config.h.in /home/workspace/cmake/version.texi.in /usr/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in /usr/share/cmake-3.24/Modules/CMakeCCompilerABI.c /usr/share/cmake-3.24/Modules/CMakeCInformation.cmake /usr/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.24/Modules/CMakeConfigurableFile.in /usr/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.24/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake-3.24/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.24/Modules/CheckFunctionExists.c /usr/share/cmake-3.24/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFile.c.in /usr/share/cmake-3.24/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.24/Modules/CheckIncludeFiles.cmake /usr/share/cmake-3.24/Modules/CheckTypeSize.c.in /usr/share/cmake-3.24/Modules/CheckTypeSize.cmake /usr/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.24/Modules/Compiler/GNU.cmake /usr/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.24/Modules/FindPackageMessage.cmake /usr/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.24/Modules/Platform/Linux.cmake /usr/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.24/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.24.1/CMakeCCompiler.cmake CMakeFiles/3.24.1/CMakeCXXCompiler.cmake CMakeFiles/3.24.1/CMakeSystem.cmake CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c CMakeFiles/CheckTypeSize/UINT16_T.c: phony
 
 
 #############################################

@@ -12,6 +12,7 @@
 #include <config.h>
 #endif
 
+#include <assert.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -32,13 +33,15 @@ static int ALTERNATE_SELECT_KEY[] = {
 
 const TestData DATA = { "`a", "\xE2\x80\xA6" /* … */ };
 
+FILE *fd;
+
 void test_default_value()
 {
 	int *select_key;
 	ChewingContext *ctx;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	select_key = chewing_get_selKey( ctx );
 	ok( select_key, "chewing_get_selKey shall not return NULL" );
@@ -99,8 +102,8 @@ void test_set_candPerPage()
 	size_t i;
 	size_t j;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( i = 0; i < ARRAY_SIZE( VALUE ); ++i ) {
 		chewing_set_candPerPage( ctx, VALUE[i] );
@@ -123,8 +126,8 @@ void test_set_maxChiSymbolLen()
 	ChewingContext *ctx;
 	int i;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	chewing_set_maxChiSymbolLen( ctx, 16 );
 	ok( chewing_get_maxChiSymbolLen( ctx ) == 16,
@@ -166,6 +169,7 @@ void test_maxChiSymbolLen()
 	int i;
 
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	chewing_set_maxChiSymbolLen( ctx, MAX_CHI_SYMBOL_LEN );
 
@@ -180,15 +184,13 @@ void test_maxChiSymbolLen()
 	chewing_delete( ctx );
 }
 
-void test_set_selKey()
+void test_set_selKey_normal()
 {
 	ChewingContext *ctx;
 	int *select_key;
 
-
 	ctx = chewing_new();
-
-	chewing_set_maxChiSymbolLen( ctx, 16 );
+	start_testcase( ctx, fd );
 
 	// XXX: chewing_set_selKey shall accept const char *.
 	chewing_set_selKey( ctx,
@@ -207,14 +209,63 @@ void test_set_selKey()
 	chewing_delete( ctx );
 }
 
+void test_set_selKey_error_handling()
+{
+	ChewingContext *ctx;
+	int *select_key;
+
+	ctx = chewing_new();
+	start_testcase( ctx, fd );
+
+	chewing_set_selKey( NULL, ALTERNATE_SELECT_KEY, ARRAY_SIZE( ALTERNATE_SELECT_KEY ) );
+	select_key = chewing_get_selKey( ctx );
+	ok( select_key, "chewing_get_selKey shall not return NULL" );
+	ok( !memcmp( select_key, DEFAULT_SELECT_KEY,
+		sizeof( DEFAULT_SELECT_KEY )),
+		"select key shall be DEFAULT_SELECT_KEY");
+	chewing_free( select_key );
+
+	chewing_set_selKey( ctx, NULL, ARRAY_SIZE( ALTERNATE_SELECT_KEY ) );
+	select_key = chewing_get_selKey( ctx );
+	ok( select_key, "chewing_get_selKey shall not return NULL" );
+	ok( !memcmp( select_key, DEFAULT_SELECT_KEY,
+		sizeof( DEFAULT_SELECT_KEY )),
+		"select key shall be DEFAULT_SELECT_KEY");
+	chewing_free( select_key );
+
+	chewing_set_selKey( ctx, ALTERNATE_SELECT_KEY, 0 );
+	select_key = chewing_get_selKey( ctx );
+	ok( select_key, "chewing_get_selKey shall not return NULL" );
+	ok( !memcmp( select_key, DEFAULT_SELECT_KEY,
+		sizeof( DEFAULT_SELECT_KEY )),
+		"select key shall be DEFAULT_SELECT_KEY");
+	chewing_free( select_key );
+
+	chewing_set_selKey( ctx, ALTERNATE_SELECT_KEY, 11 );
+	select_key = chewing_get_selKey( ctx );
+	ok( select_key, "chewing_get_selKey shall not return NULL" );
+	ok( !memcmp( select_key, DEFAULT_SELECT_KEY,
+		sizeof( DEFAULT_SELECT_KEY )),
+		"select key shall be DEFAULT_SELECT_KEY");
+	chewing_free( select_key );
+
+	chewing_delete( ctx );
+}
+
+void test_set_selKey()
+{
+	test_set_selKey_normal();
+	test_set_selKey_error_handling();
+}
+
 void test_set_addPhraseDirection()
 {
 	ChewingContext *ctx;
 	int value;
 	int mode;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( value = 0; value < 2; ++value ) {
 		chewing_set_addPhraseDirection( ctx, value );
@@ -242,8 +293,8 @@ void test_set_spaceAsSelection()
 	int value;
 	int mode;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( value = 0; value < 2; ++value ) {
 		chewing_set_spaceAsSelection( ctx, value );
@@ -271,8 +322,8 @@ void test_set_escCleanAllBuf()
 	int value;
 	int mode;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( value = 0; value < 2; ++value ) {
 		chewing_set_escCleanAllBuf( ctx, value );
@@ -300,23 +351,23 @@ void test_set_autoShiftCur()
 	int value;
 	int mode;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( value = 0; value < 2; ++value ) {
 		chewing_set_autoShiftCur( ctx, value );
 		mode = chewing_get_autoShiftCur( ctx );
-		ok( mode = chewing_get_autoShiftCur( ctx ) == value,
+		ok( mode == value,
 			"autoShiftCur shall be `%d'", value );
 
 		chewing_set_autoShiftCur( ctx, -1 );
 		mode = chewing_get_autoShiftCur( ctx );
-		ok( mode = chewing_get_autoShiftCur( ctx ) == value,
+		ok( mode == value,
 			"autoShiftCur shall be `%d'", value );
 
 		chewing_set_autoShiftCur( ctx, 2 );
 		mode = chewing_get_autoShiftCur( ctx );
-		ok( mode = chewing_get_autoShiftCur( ctx ) == value,
+		ok( mode == value,
 			"autoShiftCur shall be `%d'", value );
 	}
 
@@ -329,8 +380,8 @@ void test_set_easySymbolInput()
 	int value;
 	int mode;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( value = 0; value < 2; ++value ) {
 		chewing_set_easySymbolInput( ctx, value );
@@ -358,8 +409,8 @@ void test_set_phraseChoiceRearward()
 	int value;
 	int mode;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( value = 0; value < 2; ++value ) {
 		chewing_set_phraseChoiceRearward( ctx, value );
@@ -397,8 +448,8 @@ void test_set_ChiEngMode()
 	size_t i;
 	size_t j;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( i = 0; i < ARRAY_SIZE( VALUE ); ++i ) {
 		chewing_set_ChiEngMode( ctx, VALUE[i] );
@@ -432,8 +483,8 @@ void test_set_ShapeMode()
 	size_t i;
 	size_t j;
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	for ( i = 0; i < ARRAY_SIZE( VALUE ); ++i ) {
 		chewing_set_ShapeMode( ctx, VALUE[i] );
@@ -458,8 +509,8 @@ void test_deprecated()
 	ChewingConfigData configure;
 	memset( &configure, 0, sizeof( ChewingConfigData ) );
 
-
 	ctx = chewing_new();
+	start_testcase( ctx, fd );
 
 	chewing_set_hsuSelKeyType( ctx, HSU_SELKEY_TYPE1 );
 	type = chewing_get_hsuSelKeyType( ctx );
@@ -470,10 +521,86 @@ void test_deprecated()
 	chewing_delete( ctx );
 }
 
-int main()
+void test_new2_syspath_alternative()
 {
+	ChewingContext *ctx;
+
+	printf("#\n# %s\n#\n", __func__);
+	fprintf( fd, "#\n# %s\n#\n", __func__ );
+
+	ctx = chewing_new2( TEST_DATA_DIR, NULL, logger, fd );
+	ok( ctx != NULL, "chewing_new2 returns `%#p' shall not be `%#p'", ctx, NULL );
+
+	chewing_delete( ctx );
+}
+
+void test_new2_syspath_error()
+{
+	ChewingContext *ctx;
+
+	printf("#\n# %s\n#\n", __func__);
+	fprintf( fd, "#\n# %s\n#\n", __func__ );
+
+	ctx = chewing_new2( "NoSuchPath", NULL, logger, fd );
+	ok( ctx == NULL, "chewing_new2 returns `%#p' shall be `%#p'", ctx, NULL );
+}
+
+void test_new2_syspath()
+{
+	test_new2_syspath_alternative();
+	test_new2_syspath_error();
+}
+
+void test_new2_userpath_alternative()
+{
+	ChewingContext *ctx;
+
+	printf("#\n# %s\n#\n", __func__);
+	fprintf( fd, "#\n# %s\n#\n", __func__ );
+
+	ctx = chewing_new2( NULL, TEST_HASH_DIR "/test.sqlite3", logger, fd );
+	ok( ctx != NULL, "chewing_new2 returns `%#p' shall not be `%#p'", ctx, NULL );
+
+	chewing_delete( ctx );
+}
+
+void test_new2_userpath_error()
+{
+	ChewingContext *ctx;
+
+	printf("#\n# %s\n#\n", __func__);
+	fprintf( fd, "#\n# %s\n#\n", __func__ );
+
+	ctx = chewing_new2( NULL, TEST_HASH_DIR , logger, fd );
+	ok( ctx == NULL, "chewing_new2 returns `%#p' shall be `%#p'", ctx, NULL );
+}
+
+void test_new2_userpath()
+{
+	test_new2_userpath_alternative();
+	test_new2_userpath_error();
+}
+
+void test_new2()
+{
+	test_new2_syspath();
+	test_new2_userpath();
+}
+
+int main(int argc, char *argv[])
+{
+	char *logname;
+	int ret;
+
 	putenv( "CHEWING_PATH=" CHEWING_DATA_PREFIX );
 	putenv( "CHEWING_USER_PATH=" TEST_HASH_DIR );
+
+	ret = asprintf( &logname, "%s.log", argv[0] );
+	if ( ret == -1 ) return -1;
+	fd = fopen( logname, "w" );
+	assert( fd );
+	free( logname );
+
 
 	test_default_value();
 
@@ -491,6 +618,10 @@ int main()
 	test_set_ShapeMode();
 
 	test_deprecated();
+
+	test_new2();
+
+	fclose( fd );
 
 	return exit_status();
 }

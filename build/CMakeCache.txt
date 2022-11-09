@@ -260,14 +260,29 @@ MAKEINFO:FILEPATH=/usr/bin/makeinfo
 //No undefined symbol in object file
 NO_UNDEFINED:BOOL=ON
 
-//Use binary representation for internal data manipulation
-USE_BINARY_DATA:BOOL=ON
+//Path to a file.
+SQLITE3_HEADER:FILEPATH=/usr/include/sqlite3.h
+
+//Path to a library.
+SQLITE3_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libsqlite3.so
 
 //Use valgrind when testing
 USE_VALGRIND:BOOL=ON
 
 //Path to a program.
 VALGRIND:FILEPATH=VALGRIND-NOTFOUND
+
+//Use internal sqlite3
+WITH_INTERNAL_SQLITE3:BOOL=OFF
+
+//Use sqlite3 to store userphrase
+WITH_SQLITE3:BOOL=ON
+
+//Dependencies for the target
+chewing_shared_LIB_DEPENDS:STATIC=general;userphrase;general;/usr/lib/x86_64-linux-gnu/libsqlite3.so;
+
+//Dependencies for the target
+chewing_static_LIB_DEPENDS:STATIC=general;userphrase;general;/usr/lib/x86_64-linux-gnu/libsqlite3.so;
 
 //Value Computed by CMake
 libchewing_BINARY_DIR:STATIC=/home/workspace/build
@@ -277,6 +292,9 @@ libchewing_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 libchewing_SOURCE_DIR:STATIC=/home/workspace
+
+//Dependencies for the target
+testhelper_LIB_DEPENDS:STATIC=general;userphrase;general;/usr/lib/x86_64-linux-gnu/libsqlite3.so;
 
 
 ########################

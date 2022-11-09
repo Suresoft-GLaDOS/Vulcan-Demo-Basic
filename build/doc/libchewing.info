@@ -44,6 +44,7 @@ version 0.3.5.
 * Operating Modes::
 * Candidates Selection::
 * Output Handling::
+* Userphrase Handling::
 * Global Settings::
 * Variable Index::
 * Function Index::
@@ -83,10 +84,26 @@ File: libchewing.info,  Node: Glossary,  Next: Setup,  Prev: Overview,  Up: Top
 2 Glassary
 **********
 
-"zuin"
-     The word "zuin" is obsolete.  Here "zuin" means "Zhuyin" or
-     "Bopomofo", a phonetic system for transcribing Chinese, especially
-     Mandarin.
+"Bopomofo"
+     The word "Bopomofo" is a phonetic system for transcribing Chinese,
+     especially Mandarin.  The word "zuin", "Zhuyin" are obsolete terms
+     for "Bopomofo".
+
+"bopomofo buffer"
+     The bopomofo buffer contains bopomofo symbols in current status.
+     After a completed bopomofo sequence is provided, the content of
+     bopomofo buffer will be cleaned and a word will be added to preedit
+     buffer.
+
+"preedit buffer"
+     The preedit buffer contains string which is not finalized.  The
+     string can be updated by selecting new one with candidate selecting
+     APIs.  Normally, the content in preedit buffer will be displayed
+     with underline.
+
+"commit buffer"
+     The commit buffer contains string which is finalized.  A finalized
+     string will not be modified by input method.
 
 
 File: libchewing.info,  Node: Setup,  Next: Input Handling,  Prev: Glossary,  Up: Top
@@ -146,7 +163,21 @@ creates the context and deletes it after use.
      IM.
 
      The return value is a pointer to the new Chewing IM instance.  See
-     also the 'chewing_delete' function.
+     also the 'chewing_new2', 'chewing_delete' functions.
+
+ -- Function: ChewingContext* chewing_new2 ( const char *SYSPATH, const
+          char *USERPATH, void (*LOGGER)( void *data, int level, const
+          char *fmt, ... ), void *LOGGERDATA)
+     The 'chewing_new2' function creates a new instance of the Chewing
+     IM. The SYSPATH is the directory path to system dictionary.  The
+     USERPATH is file path to user dictionary.  User shall have enough
+     permission to update this file.  The LOGGER and LOGGERDATA is
+     logger function and its data.
+
+     All parameters will be default if set to 'NULL'.
+
+     The return value is a pointer to the new Chewing IM instance.  See
+     also the 'chewing_new', 'chewing_delete' function.
 
  -- Function: void chewing_delete (ChewingContext *CTX)
      This function releases the resources used by the given Chewing IM
@@ -282,10 +313,19 @@ Functions to handle key strokes.  The return value of these functions is
      This function handles the input key 'RIGHT'.
 
  -- Function: int chewing_handle_Up (ChewingContext *CTX)
-     This function handles the input key 'UP'.
+     This function handles the input key 'UP'.  'UP' is used to close
+     candidate window.
+
+          Deprecated: Use 'chewing_cand_close' to close candidate
+          window.  The keyboard oriented API is not suggested to use
+          anymore.
 
  -- Function: int chewing_handle_Down (ChewingContext *CTX)
-     This function handles the input key 'DOWN'.
+     This function handles the input key 'DOWN'.  'DOWN' is used to open
+     candidate window.
+
+          Deprecated: Use 'chewing_cand_open' to open candidate window.
+          The keyboard oriented API is not suggested to use anymore.
 
  -- Function: int chewing_handle_ShiftLeft (ChewingContext *CTX)
      This function handles the input key holding 'SHIFT' and 'LEFT'
@@ -329,7 +369,8 @@ context.
      KBTYPE argument should be a value returned from function
      'chewing_KBStr2Num'.
 
-     The return value is '0' on success and '-1' on failure.
+     The return value is '0' on success and '-1' on failure.  The
+     keyboard type will set to 'KB_DEFAULT' if return value is '-1'.
 
  -- Function: int chewing_get_KBType (ChewingContext *CTX)
      This functions gets the current keyboard layout index for CTX.
@@ -381,6 +422,14 @@ context.
 
      The returned value is a pointer to a character string.  The memory
      _must_ be freed by the caller using function 'chewing_free'.
+
+ -- Function: char* chewing_kbtype_String_static (ChewingContext *CTX)
+     This function returns the current enumerated keyboard layout name.
+     The returnd string is emtpy string when enumeration is over.  This
+     function returns 'NULL' when no memory.
+
+     The return value is a const pointer to a character string.  The
+     memory will be freed by the next time be used.
 
 
 File: libchewing.info,  Node: Operating Modes,  Next: Candidates Selection,  Prev: Layout Settings,  Up: Top
@@ -434,6 +483,7 @@ are candidates when 'chewing_cand_TotalPage' is greater than zero.
 
 * Get Candidates::
 * Candidates Behavior::
+* Keyboardless APIs::
 
 
 File: libchewing.info,  Node: Get Candidates,  Next: Candidates Behavior,  Up: Candidates Selection
@@ -481,6 +531,13 @@ File: libchewing.info,  Node: Get Candidates,  Next: Candidates Behavior,  Up: C
 
      The return value _must_ be freed by the 'chewing_free' function.
 
+ -- Function: char* chewing_cand_String_static (ChewingContext *CTX)
+     This function returns the current enumerated candidate string.
+     This function returns 'NULL' when no memory.
+
+     The return value is a const pointer to a character string.  The
+     memory will be freed by the next time be used.
+
  -- Function: int chewing_cand_CheckDone (ChewingContext *CTX)
           Deprecated: The 'chewing_cand_TotalPage' function could
           achieve the same effect.
@@ -488,7 +545,7 @@ File: libchewing.info,  Node: Get Candidates,  Next: Candidates Behavior,  Up: C
      This function checks if the candidates selection has finished.
 
 
-File: libchewing.info,  Node: Candidates Behavior,  Prev: Get Candidates,  Up: Candidates Selection
+File: libchewing.info,  Node: Candidates Behavior,  Next: Keyboardless APIs,  Prev: Get Candidates,  Up: Candidates Selection
 
 7.2 Candidates Behavior
 =======================
@@ -535,7 +592,100 @@ File: libchewing.info,  Node: Candidates Behavior,  Prev: Get Candidates,  Up: C
           'chewing_get_selKey' instead.
 
 
-File: libchewing.info,  Node: Output Handling,  Next: Global Settings,  Prev: Candidates Selection,  Up: Top
+File: libchewing.info,  Node: Keyboardless APIs,  Prev: Candidates Behavior,  Up: Candidates Selection
+
+7.3 Keyboardless APIs
+=====================
+
+The traditional chewing APIs are coupling to keyboard.  They cause some
+problems if the program like to design its own keyboard scheme, or if a
+platform does not have certain keyboard keys (ex: mobile device).  To
+overcome these problems, the new keyboardless APIs are provided.  With
+these APIs, program can have better control over libchewing, instead of
+hacking libchewing via fake keyboard event.
+
+ -- Function: int chewing_cand_open (ChewingContext *CTX)
+     This function opens the candidate windows.  It returns '0' when
+     success, '-1' otherwise.
+
+ -- Function: int chewing_cand_close (ChewingContext *CTX)
+     This function closes the candidate windows.  It returns '0' when
+     success, '-1' otherwise.
+
+ -- Function: char* chewing_cand_string_by_index_static (ChewingContext
+          *CTX, int
+     INDEX) This function returns the candidate string by its index.
+     The range of INDEX shall be '0' ≤ INDEX <
+     'chewing_cand_TotalChoice'.  This function returns 'NULL' when no
+     memory.
+
+     The return value is a const pointer to a character string.  The
+     memory will be freed by the next time be used.
+
+ -- Function: int chewing_cand_choose_by_index (ChewingContext *CTX, int
+     INDEX) This function chooses the candidate by its index.  The range
+     of INDEX shall be '0' ≤ INDEX < 'chewing_cand_TotalChoice'.  This
+     function returns '0' when success, '-1' otherwise.
+
+ -- Function: int chewing_cand_list_first (ChewingContext *CTX)
+     This function sets the candidate list to the first (longest)
+     candidate list.
+
+     This function returns '0' when success, '-1' otherwise.
+
+ -- Function: int chewing_cand_list_last (ChewingContext *CTX)
+     This function sets the candidate list to the last (shortest)
+     candidate list.
+
+     This function returns '0' when success, '-1' otherwise.
+
+ -- Function: int chewing_cand_list_has_next (ChewingContext *CTX)
+     This function checks whether or not there is a next (shorter)
+     candidate list.
+
+     The return value is '1' when there is a next candidate list, '0'
+     otherwise.
+
+ -- Function: int chewing_cand_list_has_prev (ChewingContext *CTX)
+     This function checks whether or not there is a prev (longer)
+     candidate list.
+
+     The return value is '1' when there is a prev candidate list, '0'
+     otherwise.
+
+ -- Function: int chewing_cand_list_next (ChewingContext *CTX)
+     This function changes current candidate list to next candidate
+     list.
+
+     This function returns '0' when success, '-1' otherwise.
+
+ -- Function: int chewing_cand_list_prev (ChewingContext *CTX)
+     This function changes current candidate list to prev candidate
+     list.
+
+     This function returns '0' when success, '-1' otherwise.
+
+ -- Function: int chewing_commit_preedit_buf (ChewingContext *CTX)
+     This function commits the current preedit buffer content to commit
+     buffer.
+
+     This function returns '0' when string is committed to commit
+     buffer, '-1' otherwise.
+
+ -- Function: int chewing_clean_preedit_buf (ChewingContext *CTX)
+     This function cleans the content in preedit buffer.
+
+     This function returns '0' when preedit buffer is cleaned, '-1'
+     otherwise.
+
+ -- Function: int chewing_clean_bopomofo_buf (ChewingContext *CTX)
+     This function cleans the content in bopomofo buffer.
+
+     This function returns '0' when bopomofo buffer is cleaned, '-1'
+     otherwise.
+
+
+File: libchewing.info,  Node: Output Handling,  Next: Userphrase Handling,  Prev: Candidates Selection,  Up: Top
 
 8 Output Handling
 *****************
@@ -547,11 +697,19 @@ File: libchewing.info,  Node: Output Handling,  Next: Global Settings,  Prev: Ca
      The return value is '1' on success, '0' on failure.
 
  -- Function: char* chewing_commit_String (ChewingContext *CTX)
-     This function returns the string in the commit buffer and clears
-     the buffer.  This function returns 'NULL' when no memory.
+     This function returns the string in the commit buffer This function
+     returns 'NULL' when no memory.
 
      The return value is a pointer to a character string.  The memory
      _must_ be freed by the caller using function 'chewing_free'.
+
+ -- Function: const char* chewing_commit_String_static (ChewingContext
+          *CTX)
+     This function returns the string in the commit buffer This function
+     returns 'NULL' when no memory.
+
+     The return value is a const pointer to a character string.  The
+     memory will be freed by the next time be used.
 
  -- Function: int chewing_keystroke_CheckIgnore (ChewingContext *CTX)
      This function checks whether the previous keystroke is ignored or
@@ -582,6 +740,21 @@ File: libchewing.info,  Node: Output Handling,  Next: Global Settings,  Prev: Ca
      The return value is a pointer to a character string.  The memory
      _must_ be freed by the caller using function 'chewing_free'.
 
+ -- Function: const char* chewing_buffer_String_static (ChewingContext
+          *CTX)
+     This function returns the current output in the pre-edit buffer.
+     This function returns 'NULL' when no memory.
+
+     The return value is a const pointer to a character string.  The
+     memory will be freed by the next time be used.
+
+ -- Function: int chewing_bopomofo_Check (ChewingContext *CTX)
+     This function returns whether there are phonetic pre-edit string in
+     the buffer.
+
+     The return value is '1' when there are phonetic pre-edit string,
+     '0' otherwise.
+
  -- Function: int chewing_zuin_Check (ChewingContext *CTX)
      This function returns whether there are phonetic pre-edit string in
      the buffer.  Here "zuin" means bopomofo, a phonetic system for
@@ -593,6 +766,22 @@ File: libchewing.info,  Node: Output Handling,  Next: Global Settings,  Prev: Ca
      *CAUTION*: The return value of this function is different from
      'chewing_commit_Check', 'chewing_buffer_Check', and
      'chewing_aux_Check'.
+
+          Deprecated: This 'chewing_zuin_Check' function is superseded
+          by 'chewing_bopomofo_Check' because it provides more
+          consistent interface
+
+ -- Function: const char* chewing_bopomofo_String_static (ChewingContext
+          *CTX)
+     This function returns the phonetic characters in the pre-edit
+     buffer.
+
+     It will contain the number of phonetic characters in the returned
+     string.  This function returns 'NULL' when no memory.
+
+     The return value is a const pointer to a character string.  This
+     function returns 'NULL' when no memory.  The memory will be freed
+     by the next time be used.
 
  -- Function: char* chewing_zuin_String (ChewingContext *CTX, int
           *ZUIN_COUNT)
@@ -607,6 +796,10 @@ File: libchewing.info,  Node: Output Handling,  Next: Global Settings,  Prev: Ca
      The return value is a pointer to a character string.  This function
      returns 'NULL' when no memory.  The memory _must_ be freed by the
      caller using function 'chewing_free'.
+
+          Deprecated: This 'chewing_zuin_String' function is superseded
+          by 'chewing_bopomofo_String' because it provides more
+          consistent interface
 
  -- Function: int chewing_cursor_Current (ChewingContext *CTX)
      This function returns the current cursor position in the pre-edit
@@ -665,10 +858,77 @@ File: libchewing.info,  Node: Output Handling,  Next: Global Settings,  Prev: Ca
      Chewing IM internal state machine.
 
 
-File: libchewing.info,  Node: Global Settings,  Next: Variable Index,  Prev: Output Handling,  Up: Top
+File: libchewing.info,  Node: Userphrase Handling,  Next: Global Settings,  Prev: Output Handling,  Up: Top
 
-9 Global Settings
-*****************
+9 Userphrase Handling
+*********************
+
+ -- Function: int chewing_userphrase_enumerate (ChewingContext *CTX)
+     This function starts a userphrase enumeration.  Caller shall call
+     this function prior 'chewing_userphrase_has_next' and
+     'chewing_userphrase_get' in order to enumerate userphrase
+     correctly.
+
+     The return value is '0' on success, '-1' on failure.
+
+     The following example shows how to enumerate userphrase:
+          chewing_userphrase_enumerate(ctx);
+          while (chewing_userphrase_has_next(ctx, &phrase_len, &bopomofo_len)) {
+              phrase = malloc(phrase_len);
+              if (!phrase) goto error;
+              bopomofo = malloc(bopomofo_len);
+              if (!bopomofo) goto error;
+
+              chewing_userphrase_get(ctx, phrase, phrase_len, bopomofo, bopomofo_len);
+              /* do somthing */
+          }
+
+ -- Function: int chewing_userphrase_has_next (ChewingContext *CTX,
+          unsigned
+     int *PHRASE_LEN, unsigned int *BOPOMOFO_LEN)
+
+     This function checks if there is another userphrase in current
+     enumeration.  The *PHRASE_LEN and *BOPOMOFO_LEN are output buffer
+     lengths needed by userphrase and its bopomofo representation.
+
+     The return value is '1' if there is another userphrase present, '0'
+     otherwise.
+
+ -- Function: int chewing_userphrase_get (ChewingContext *CTX, char
+     *PHRASE_BUF, unsigned int PHRASE_LEN, char *BOPOMOFO_BUF, unsigned
+     int BOPOMOFO_LEN) This function gets the current enumerated
+     userphrase.  The PHRASE_BUF and BOPOMOFO_BUF are userphrase and its
+     bopomofo buffers provided by caller.  The length of buffer
+     PHRASE_LEN and BOPOMOFO_LEN can be get by
+     'chewing_userphrase_has_next'.
+
+     The return value is '0' on success, '-1' on failure.
+
+ -- Function: int chewing_userphrase_add (ChewingContext *CTX, const
+          char
+     *PHRASE_BUF, const char *BOPOMOFO_BUF) This function adds new
+     userphrase PHRASE_BUF(BOPOMOFO_BUF).
+
+     The return value is how many phrases are added, '-1' on failure.
+
+ -- Function: int chewing_userphrase_remove (ChewingContext *CTX, const
+     char *PHRASE_BUF, const char *BOPOMOFO_BUF) This function removes
+     new userphrase PHRASE_BUF(BOPOMOFO_BUF).
+
+     The return value is how many phrases are removed, '-1' on failure.
+
+ -- Function: int chewing_userphrase_lookup (ChewingContext *CTX, const
+     char *PHRASE_BUF, const char *BOPOMOFO_BUF) This function lookups
+     if userphrase PHRASE_BUF(BOPOMOFO_BUF) is in userphrase.
+
+     The return value is '1' if userphrase PHRASE_BUF(BOPOMOFO_BUF) is
+     present, '0' otherwise.
+
+
+File: libchewing.info,  Node: Global Settings,  Next: Variable Index,  Prev: Userphrase Handling,  Up: Top
+
+10 Global Settings
+******************
 
 The Chewing IM could be customized in some small details.  These
 functions provide the configuration interfaces to the front-end.
@@ -777,11 +1037,11 @@ Variable Index
  [index ]
 * Menu:
 
-* CHEWING_LOG_DEBUG:                     Setup.               (line 129)
-* CHEWING_LOG_ERROR:                     Setup.               (line 135)
-* CHEWING_LOG_INFO:                      Setup.               (line 131)
-* CHEWING_LOG_VERBOSE:                   Setup.               (line 127)
-* CHEWING_LOG_WARN:                      Setup.               (line 133)
+* CHEWING_LOG_DEBUG:                     Setup.               (line 143)
+* CHEWING_LOG_ERROR:                     Setup.               (line 149)
+* CHEWING_LOG_INFO:                      Setup.               (line 145)
+* CHEWING_LOG_VERBOSE:                   Setup.               (line 141)
+* CHEWING_LOG_WARN:                      Setup.               (line 147)
 * CHINESE_MODE:                          Operating Modes.     (line  10)
 * FULLSHAPE_MODE:                        Operating Modes.     (line  25)
 * HALFSHAPE_MODE:                        Operating Modes.     (line  26)
@@ -805,26 +1065,44 @@ Function Index
  [index ]
 * Menu:
 
-* chewing_aux_Check:                     Output Handling.     (line 102)
-* chewing_aux_Length:                    Output Handling.     (line 108)
-* chewing_aux_String:                    Output Handling.     (line 112)
-* chewing_buffer_Check:                  Output Handling.     (line  31)
-* chewing_buffer_Len:                    Output Handling.     (line  37)
-* chewing_buffer_String:                 Output Handling.     (line  41)
-* chewing_cand_CheckDone:                Get Candidates.      (line  46)
+* char*:                                 Output Handling.     (line  19)
+* char* <1>:                             Output Handling.     (line  56)
+* char* <2>:                             Output Handling.     (line  87)
+* chewing_aux_Check:                     Output Handling.     (line 145)
+* chewing_aux_Length:                    Output Handling.     (line 151)
+* chewing_aux_String:                    Output Handling.     (line 155)
+* chewing_bopomofo_Check:                Output Handling.     (line  64)
+* chewing_buffer_Check:                  Output Handling.     (line  39)
+* chewing_buffer_Len:                    Output Handling.     (line  45)
+* chewing_buffer_String:                 Output Handling.     (line  49)
+* chewing_cand_CheckDone:                Get Candidates.      (line  53)
 * chewing_cand_ChoicePerPage:            Get Candidates.      (line  22)
+* chewing_cand_choose_by_index:          Keyboardless APIs.   (line  31)
+* chewing_cand_close:                    Keyboardless APIs.   (line  17)
 * chewing_cand_CurrentPage:              Get Candidates.      (line  13)
 * chewing_cand_Enumerate:                Get Candidates.      (line  30)
 * chewing_cand_hasNext:                  Get Candidates.      (line  34)
+* chewing_cand_list_first:               Keyboardless APIs.   (line  36)
+* chewing_cand_list_has_next:            Keyboardless APIs.   (line  48)
+* chewing_cand_list_has_prev:            Keyboardless APIs.   (line  55)
+* chewing_cand_list_last:                Keyboardless APIs.   (line  42)
+* chewing_cand_list_next:                Keyboardless APIs.   (line  62)
+* chewing_cand_list_prev:                Keyboardless APIs.   (line  68)
+* chewing_cand_open:                     Keyboardless APIs.   (line  13)
 * chewing_cand_String:                   Get Candidates.      (line  40)
+* chewing_cand_string_by_index_static:   Keyboardless APIs.   (line  21)
+* chewing_cand_String_static:            Get Candidates.      (line  46)
 * chewing_cand_TotalChoice:              Get Candidates.      (line  27)
 * chewing_cand_TotalPage:                Get Candidates.      (line   6)
+* chewing_clean_bopomofo_buf:            Keyboardless APIs.   (line  87)
+* chewing_clean_preedit_buf:             Keyboardless APIs.   (line  81)
 * chewing_commit_Check:                  Output Handling.     (line   6)
+* chewing_commit_preedit_buf:            Keyboardless APIs.   (line  74)
 * chewing_commit_String:                 Output Handling.     (line  12)
-* chewing_Configure:                     Setup.               (line  71)
-* chewing_cursor_Current:                Output Handling.     (line  74)
-* chewing_delete:                        Setup.               (line  60)
-* chewing_free:                          Setup.               (line  89)
+* chewing_Configure:                     Setup.               (line  85)
+* chewing_cursor_Current:                Output Handling.     (line 117)
+* chewing_delete:                        Setup.               (line  74)
+* chewing_free:                          Setup.               (line 103)
 * chewing_get_addPhraseDirection:        Global Settings.     (line  43)
 * chewing_get_autoShiftCur:              Global Settings.     (line  76)
 * chewing_get_candPerPage:               Candidates Behavior. (line  11)
@@ -832,11 +1110,11 @@ Function Index
 * chewing_get_easySymbolInput:           Global Settings.     (line  93)
 * chewing_get_escCleanAllBuf:            Global Settings.     (line  68)
 * chewing_get_hsuSelKeyType:             Candidates Behavior. (line  43)
-* chewing_get_KBString:                  Layout Settings.     (line  22)
-* chewing_get_KBType:                    Layout Settings.     (line  17)
+* chewing_get_KBString:                  Layout Settings.     (line  23)
+* chewing_get_KBType:                    Layout Settings.     (line  18)
 * chewing_get_maxChiSymbolLen:           Global Settings.     (line  31)
-* chewing_get_phoneSeq:                  Output Handling.     (line 118)
-* chewing_get_phoneSeqLen:               Output Handling.     (line 126)
+* chewing_get_phoneSeq:                  Output Handling.     (line 161)
+* chewing_get_phoneSeqLen:               Output Handling.     (line 169)
 * chewing_get_phraseChoiceRearward:      Global Settings.     (line 101)
 * chewing_get_selKey:                    Candidates Behavior. (line  28)
 * chewing_get_ShapeMode:                 Operating Modes.     (line  36)
@@ -844,38 +1122,40 @@ Function Index
 * chewing_handle_Backspace:              Input Handling.      (line  15)
 * chewing_handle_Capslock:               Input Handling.      (line  18)
 * chewing_handle_CtrlNum:                Input Handling.      (line  21)
-* chewing_handle_DblTab:                 Input Handling.      (line  79)
+* chewing_handle_DblTab:                 Input Handling.      (line  88)
 * chewing_handle_Default:                Input Handling.      (line   9)
 * chewing_handle_Del:                    Input Handling.      (line  28)
-* chewing_handle_Down:                   Input Handling.      (line  58)
+* chewing_handle_Down:                   Input Handling.      (line  63)
 * chewing_handle_End:                    Input Handling.      (line  46)
 * chewing_handle_Enter:                  Input Handling.      (line  31)
 * chewing_handle_Esc:                    Input Handling.      (line  34)
 * chewing_handle_Home:                   Input Handling.      (line  43)
 * chewing_handle_Left:                   Input Handling.      (line  49)
-* chewing_handle_Numlock:                Input Handling.      (line  82)
-* chewing_handle_PageDown:               Input Handling.      (line  76)
-* chewing_handle_PageUp:                 Input Handling.      (line  73)
+* chewing_handle_Numlock:                Input Handling.      (line  91)
+* chewing_handle_PageDown:               Input Handling.      (line  85)
+* chewing_handle_PageUp:                 Input Handling.      (line  82)
 * chewing_handle_Right:                  Input Handling.      (line  52)
-* chewing_handle_ShiftLeft:              Input Handling.      (line  61)
-* chewing_handle_ShiftRight:             Input Handling.      (line  65)
-* chewing_handle_ShiftSpace:             Input Handling.      (line  69)
+* chewing_handle_ShiftLeft:              Input Handling.      (line  70)
+* chewing_handle_ShiftRight:             Input Handling.      (line  74)
+* chewing_handle_ShiftSpace:             Input Handling.      (line  78)
 * chewing_handle_Space:                  Input Handling.      (line  37)
 * chewing_handle_Tab:                    Input Handling.      (line  40)
 * chewing_handle_Up:                     Input Handling.      (line  55)
 * chewing_Init:                          Setup.               (line  43)
-* chewing_interval_Enumerate:            Output Handling.     (line  87)
-* chewing_interval_Get:                  Output Handling.     (line  96)
-* chewing_interval_hasNext:              Output Handling.     (line  91)
-* chewing_KBStr2Num:                     Layout Settings.     (line  30)
-* chewing_kbtype_Enumerate:              Layout Settings.     (line  53)
-* chewing_kbtype_hasNext:                Layout Settings.     (line  56)
-* chewing_kbtype_String:                 Layout Settings.     (line  60)
-* chewing_kbtype_Total:                  Layout Settings.     (line  49)
-* chewing_keystroke_CheckAbsorb:         Output Handling.     (line  25)
-* chewing_keystroke_CheckIgnore:         Output Handling.     (line  19)
+* chewing_interval_Enumerate:            Output Handling.     (line 130)
+* chewing_interval_Get:                  Output Handling.     (line 139)
+* chewing_interval_hasNext:              Output Handling.     (line 134)
+* chewing_KBStr2Num:                     Layout Settings.     (line  31)
+* chewing_kbtype_Enumerate:              Layout Settings.     (line  54)
+* chewing_kbtype_hasNext:                Layout Settings.     (line  57)
+* chewing_kbtype_String:                 Layout Settings.     (line  61)
+* chewing_kbtype_String_static:          Layout Settings.     (line  69)
+* chewing_kbtype_Total:                  Layout Settings.     (line  50)
+* chewing_keystroke_CheckAbsorb:         Output Handling.     (line  33)
+* chewing_keystroke_CheckIgnore:         Output Handling.     (line  27)
 * chewing_new:                           Setup.               (line  53)
-* chewing_Reset:                         Setup.               (line  84)
+* chewing_new2:                          Setup.               (line  60)
+* chewing_Reset:                         Setup.               (line  98)
 * chewing_set_addPhraseDirection:        Global Settings.     (line  35)
 * chewing_set_autoShiftCur:              Global Settings.     (line  71)
 * chewing_set_candPerPage:               Candidates Behavior. (line   6)
@@ -884,14 +1164,20 @@ Function Index
 * chewing_set_escCleanAllBuf:            Global Settings.     (line  60)
 * chewing_set_hsuSelKeyType:             Candidates Behavior. (line  38)
 * chewing_set_KBType:                    Layout Settings.     (line  10)
-* chewing_set_logger:                    Setup.               (line 101)
+* chewing_set_logger:                    Setup.               (line 115)
 * chewing_set_maxChiSymbolLen:           Global Settings.     (line   9)
 * chewing_set_phraseChoiceRearward:      Global Settings.     (line  96)
 * chewing_set_selKey:                    Candidates Behavior. (line  21)
 * chewing_set_ShapeMode:                 Operating Modes.     (line  30)
 * chewing_set_spaceAsSelection:          Global Settings.     (line  50)
-* chewing_zuin_Check:                    Output Handling.     (line  48)
-* chewing_zuin_String:                   Output Handling.     (line  60)
+* chewing_userphrase_add:                Userphrase Handling. (line  47)
+* chewing_userphrase_enumerate:          Userphrase Handling. (line   6)
+* chewing_userphrase_get:                Userphrase Handling. (line  37)
+* chewing_userphrase_has_next:           Userphrase Handling. (line  26)
+* chewing_userphrase_lookup:             Userphrase Handling. (line  60)
+* chewing_userphrase_remove:             Userphrase Handling. (line  54)
+* chewing_zuin_Check:                    Output Handling.     (line  71)
+* chewing_zuin_String:                   Output Handling.     (line  99)
 
 
 File: libchewing.info,  Node: Concept Index,  Prev: Function Index,  Up: Top
@@ -902,28 +1188,33 @@ Concept Index
  [index ]
 * Menu:
 
-* Bopomofo:                              Glossary.              (line 7)
-* Chewing IM:                            Overview.              (line 6)
-* zuin, Zhuyin:                          Glossary.              (line 7)
+* Bopomofo:                              Glossary.             (line  7)
+* bopomofo buffer:                       Glossary.             (line 12)
+* Chewing IM:                            Overview.             (line  6)
+* commit buffer:                         Glossary.             (line 24)
+* preedit buffer:                        Glossary.             (line 18)
+* zuin, Zhuyin:                          Glossary.             (line  7)
 
 
 
 Tag Table:
 Node: Top616
-Node: Overview1372
-Node: Glossary2741
-Node: Setup3007
-Node: Input Handling7558
-Node: Layout Settings10774
-Node: Operating Modes13292
-Node: Candidates Selection14662
-Node: Get Candidates15014
-Node: Candidates Behavior17064
-Node: Output Handling18854
-Node: Global Settings23920
-Node: Variable Index27914
-Node: Function Index29386
-Node: Concept Index35893
+Node: Overview1396
+Node: Glossary2765
+Node: Setup3682
+Node: Input Handling8938
+Node: Layout Settings12544
+Node: Operating Modes15519
+Node: Candidates Selection16889
+Node: Get Candidates17263
+Node: Candidates Behavior19623
+Node: Keyboardless APIs21439
+Node: Output Handling24995
+Node: Userphrase Handling31743
+Node: Global Settings34483
+Node: Variable Index38483
+Node: Function Index39955
+Node: Concept Index48360
 
 End Tag Table
 

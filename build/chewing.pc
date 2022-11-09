@@ -3,10 +3,10 @@ exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 datarootdir=${prefix}/share
-datadir=${datarootdir}/chewing
+datadir=${datarootdir}/libchewing
 sysconfdir=${prefix}/etc
 
-chewing_binary_version=
+chewing_binary_version=1.0.0
 
 Name: Chewing
 Description: Intelligent Chinese phonetic input method library

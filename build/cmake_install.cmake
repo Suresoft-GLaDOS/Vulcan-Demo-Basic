@@ -44,20 +44,32 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/lib/libchewing/dict.dat;/usr/local/lib/libchewing/fonetree.dat;/usr/local/lib/libchewing/ph_index.dat;/usr/local/lib/libchewing/us_freq.dat;/usr/local/lib/libchewing/ch_index_begin.dat;/usr/local/lib/libchewing/ch_index_phone.dat")
+   "/usr/local/share/libchewing/dictionary.dat;/usr/local/share/libchewing/index_tree.dat")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/local/lib/libchewing" TYPE FILE FILES
-    "/home/workspace/build/data/dict.dat"
-    "/home/workspace/build/data/fonetree.dat"
-    "/home/workspace/build/data/ph_index.dat"
-    "/home/workspace/build/data/us_freq.dat"
-    "/home/workspace/build/data/ch_index_begin.dat"
-    "/home/workspace/build/data/ch_index_phone.dat"
+  file(INSTALL DESTINATION "/usr/local/share/libchewing" TYPE FILE FILES
+    "/home/workspace/build/data/dictionary.dat"
+    "/home/workspace/build/data/index_tree.dat"
+    )
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/usr/local/share/libchewing/pinyin.tab;/usr/local/share/libchewing/swkb.dat;/usr/local/share/libchewing/symbols.dat")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/usr/local/share/libchewing" TYPE FILE FILES
+    "/home/workspace/build/data/pinyin.tab"
+    "/home/workspace/build/data/swkb.dat"
+    "/home/workspace/build/data/symbols.dat"
     )
 endif()
 
