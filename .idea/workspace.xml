@@ -8,8 +8,38 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="MD4C" targetName="md2html" />
-      <config projectName="MD4C" targetName="md4c" />
+      <config projectName="libchewing" targetName="test-mmap" />
+      <config projectName="libchewing" targetName="test-key2pho" />
+      <config projectName="libchewing" targetName="testhelper" />
+      <config projectName="libchewing" targetName="test-reset" />
+      <config projectName="libchewing" targetName="test-config" />
+      <config projectName="libchewing" targetName="pinyin.tab" />
+      <config projectName="libchewing" targetName="data" />
+      <config projectName="libchewing" targetName="test-special-symbol" />
+      <config projectName="libchewing" targetName="test-logger" />
+      <config projectName="libchewing" targetName="test-fullshape" />
+      <config projectName="libchewing" targetName="test-symbol" />
+      <config projectName="libchewing" targetName="chewing-definition" />
+      <config projectName="libchewing" targetName="test-path" />
+      <config projectName="libchewing" targetName="swkb.dat" />
+      <config projectName="libchewing" targetName="stresstest.py" />
+      <config projectName="libchewing" targetName="simulate" />
+      <config projectName="libchewing" targetName="common" />
+      <config projectName="libchewing" targetName="test-regression" />
+      <config projectName="libchewing" targetName="check" />
+      <config projectName="libchewing" targetName="chewing_shared" />
+      <config projectName="libchewing" targetName="symbols.dat" />
+      <config projectName="libchewing" targetName="chewing" />
+      <config projectName="libchewing" targetName="test-userphrase" />
+      <config projectName="libchewing" targetName="test-utf8" />
+      <config projectName="libchewing" targetName="sort" />
+      <config projectName="libchewing" targetName="test-easy-symbol" />
+      <config projectName="libchewing" targetName="test-keyboard" />
+      <config projectName="libchewing" targetName="chewing_static" />
+      <config projectName="libchewing" targetName="testchewing" />
+      <config projectName="libchewing" targetName="test-bopomofo" />
+      <config projectName="libchewing" targetName="randkeystroke" />
+      <config projectName="libchewing" targetName="maketree" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -27,6 +57,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -90,31 +121,224 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sure/dpp_checkout/libxml2/buggy_6&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "ctest.advertisement.all.test.configuration.is.created": "true",
+    "last_opened_file_path": "C:/Users/sure/dpp_checkout/libxml2/buggy_6"
   }
-}</component>
-  <component name="RunManager" selected="CMake Application.md2html">
-    <configuration name="md2html" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MD4C" TARGET_NAME="md2html" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MD4C" RUN_TARGET_NAME="md2html">
+}]]></component>
+  <component name="RunManager" selected="CMake Application.check">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="check" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="check" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="md4c" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MD4C" TARGET_NAME="md4c" CONFIG_NAME="Debug">
+    <configuration name="chewing-definition" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="chewing-definition" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="chewing" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="chewing" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="chewing_shared" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="chewing_shared" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="chewing_static" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="chewing_static" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="common" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="common" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="data" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="data" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="maketree" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="maketree" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="maketree">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pinyin.tab" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="pinyin.tab" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="randkeystroke" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="randkeystroke" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="randkeystroke">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="simulate" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="simulate" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="simulate">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sort" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="sort" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="sort">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="stresstest.py" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="stresstest.py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="swkb.dat" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="swkb.dat" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="symbols.dat" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="symbols.dat" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-bopomofo" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-bopomofo" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-bopomofo">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-config" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-config" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-config">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-easy-symbol" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-easy-symbol" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-easy-symbol">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-fullshape" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-fullshape" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-fullshape">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-key2pho" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-key2pho" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-key2pho">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-keyboard" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-keyboard" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-keyboard">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-logger" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-logger" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-logger">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-mmap" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-mmap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-mmap">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-path" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-path" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-path">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-regression" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-regression" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-regression">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-reset" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-reset" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-reset">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-special-symbol" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-special-symbol" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-special-symbol">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-symbol" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-symbol" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-symbol">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-userphrase" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-userphrase" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-userphrase">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-utf8" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="test-utf8" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="test-utf8">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testchewing" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="testchewing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libchewing" RUN_TARGET_NAME="testchewing">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testhelper" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="libchewing" TARGET_NAME="testhelper" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.md2html" />
-      <item itemvalue="CMake Application.md4c" />
+      <item itemvalue="CMake Application.check" />
+      <item itemvalue="CMake Application.chewing" />
+      <item itemvalue="CMake Application.chewing-definition" />
+      <item itemvalue="CMake Application.chewing_shared" />
+      <item itemvalue="CMake Application.chewing_static" />
+      <item itemvalue="CMake Application.common" />
+      <item itemvalue="CMake Application.data" />
+      <item itemvalue="CMake Application.maketree" />
+      <item itemvalue="CMake Application.pinyin.tab" />
+      <item itemvalue="CMake Application.randkeystroke" />
+      <item itemvalue="CMake Application.simulate" />
+      <item itemvalue="CMake Application.sort" />
+      <item itemvalue="CMake Application.stresstest.py" />
+      <item itemvalue="CMake Application.swkb.dat" />
+      <item itemvalue="CMake Application.symbols.dat" />
+      <item itemvalue="CMake Application.test-bopomofo" />
+      <item itemvalue="CMake Application.test-config" />
+      <item itemvalue="CMake Application.test-easy-symbol" />
+      <item itemvalue="CMake Application.test-fullshape" />
+      <item itemvalue="CMake Application.test-key2pho" />
+      <item itemvalue="CMake Application.test-keyboard" />
+      <item itemvalue="CMake Application.test-logger" />
+      <item itemvalue="CMake Application.test-mmap" />
+      <item itemvalue="CMake Application.test-path" />
+      <item itemvalue="CMake Application.test-regression" />
+      <item itemvalue="CMake Application.test-reset" />
+      <item itemvalue="CMake Application.test-special-symbol" />
+      <item itemvalue="CMake Application.test-symbol" />
+      <item itemvalue="CMake Application.test-userphrase" />
+      <item itemvalue="CMake Application.test-utf8" />
+      <item itemvalue="CMake Application.testchewing" />
+      <item itemvalue="CMake Application.testhelper" />
+      <item itemvalue="CTest Application.All CTest" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
