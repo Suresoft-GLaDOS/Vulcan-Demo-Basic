@@ -6706,8 +6706,7 @@ xmlParseElementDecl(xmlParserCtxtPtr ctxt) {
 
 	SKIP(9);
 	if (!IS_BLANK_CH(CUR)) {
-	    xmlFatalErrMsg(ctxt, XML_ERR_SPACE_REQUIRED,
-		           "Space required after 'ELEMENT'\n");
+	    xmlFatalErrMsg(ctxt, XML_ERR_SPACE_REQUIRED, "Space required after 'ELEMENT'\n");
 	}
         SKIP_BLANKS;
         name = xmlParseName(ctxt);
