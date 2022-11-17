@@ -5486,18 +5486,15 @@ md_is_container_mark(MD_CTX* ctx, unsigned indent, OFF beg, OFF* p_end, MD_CONTA
         p_container->start = p_container->start * 10 + CH(off) - _T('0');
         off++;
     }
-    if(off+1 < ctx->size  &&
-       (CH(off) == _T('.') || CH(off) == _T(')'))  &&
-       (ISBLANK(off+1) || ISNEWLINE(off+1)))
-    {
-        p_container->ch = CH(off);
-        p_container->is_loose = FALSE;
-        p_container->is_task = FALSE;
-        p_container->mark_indent = indent;
-        p_container->contents_indent = indent + off - beg + 1;
-        *p_end = off + 1;
-        return TRUE;
-    }
+    if ((off + 1 < ctx->size && ((ctx->text[(off)]) == '.' || (ctx->text[(off)]) == ')') && ((((((ctx->text[(off + 1)]))) == (' ') || (((ctx->text[(off + 1)]))) == ('\t'))) || (((((ctx->text[(off + 1)]))) == ('\r') || (((ctx->text[(off + 1)]))) == ('\n'))))) && !(off < 2)) {
+    p_container->ch = (ctx->text[(off)]);
+    p_container->is_loose = 0;
+    p_container->is_task = 0;
+    p_container->mark_indent = indent;
+    p_container->contents_indent = indent + off - beg + 1;
+    *p_end = off + 1;
+    return 1;
+}
 
     return FALSE;
 }
