@@ -15,12 +15,12 @@ max-patch-number : 500
 
 test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요  
   rm -f Makefile
-  ./autogen.sh 
+  chmod 777 -R . ; ./autogen.sh 
   make clean
   make runtest -j10
 coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
   rm -f Makefile
-  ./autogen.sh --with-coverage
+  chmod 777 -R . ; ./autogen.sh --with-coverage
   make clean
   make runtest -j10
 # 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
