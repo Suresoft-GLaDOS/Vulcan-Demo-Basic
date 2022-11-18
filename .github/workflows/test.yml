@@ -17,7 +17,7 @@ jobs:
             - name: run build
               run: |
                     rm -f Makefile
-                    ./autogen.sh
+                    chmod -R 777 .; ./autogen.sh
                     make clean
                     make runtest -j10
 
