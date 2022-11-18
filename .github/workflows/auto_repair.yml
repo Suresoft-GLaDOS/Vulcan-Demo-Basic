@@ -6,6 +6,11 @@ on:
         types: [completed]
 
 jobs:
+    checkout:
+        runs-on: self-hosted
+        steps:
+            - name: checkout source code
+              uses: actions/checkout@v2
     auto-repair:
         runs-on: self-hosted
         if: ${{ github.event.workflow_run.conclusion == 'failure' }}
