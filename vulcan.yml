@@ -53,3 +53,6 @@ gcov-exclusion-list: | # 커버리지 제외 대상
   *test*.o
 gcov-inclusion-list: | # 커버리지 포함 대상 지정
   *md4c*
+
+build-subdir: |
+  build
