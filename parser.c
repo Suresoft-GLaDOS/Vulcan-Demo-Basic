@@ -8467,7 +8467,11 @@ xmlParseInternalSubset(xmlParserCtxtPtr ctxt) {
      * We should be at the end of the DOCTYPE declaration.
      */
     if (RAW != '>') {
-	xmlFatalErr(ctxt, XML_ERR_DOCTYPE_NOT_FINISHED, NULL);
+	{
+    xmlFatalErr(ctxt, XML_ERR_DOCTYPE_NOT_FINISHED, ((void *)0));
+    if ((1))
+        return;
+}
     }
     NEXT;
 }
