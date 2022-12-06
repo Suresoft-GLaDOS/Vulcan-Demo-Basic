@@ -1,0 +1,1 @@
+/usr/bin/cc -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g -rdynamic CMakeFiles/randkeystroke.dir/test/randkeystroke.c.o -o test/randkeystroke  libtesthelper.a 

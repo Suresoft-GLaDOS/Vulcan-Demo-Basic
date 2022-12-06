@@ -1,0 +1,1 @@
+/usr/bin/cc -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g -rdynamic "CMakeFiles/test-bopomofo.dir/test/test-bopomofo.c.o" -o test/test-bopomofo  libtesthelper.a 

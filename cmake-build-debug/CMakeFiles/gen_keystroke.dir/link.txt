@@ -1,0 +1,1 @@
+/usr/bin/cc -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g -rdynamic CMakeFiles/gen_keystroke.dir/test/gen_keystroke.c.o -o test/gen_keystroke  libtesthelper.a -lncursesw -lform 

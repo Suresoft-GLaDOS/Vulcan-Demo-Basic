@@ -1,0 +1,2238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="libchewing"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="INFO">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 INFO"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pinyin.tab">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 pinyin.tab"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swkb.dat">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 swkb.dat"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="symbols.dat">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 symbols.dat"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stresstest.py">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 stresstest.py"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sort">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/src/tools/sort" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 sort"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sort/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/src/tools/sort" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 sort/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="maketree">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/src/tools/maketree" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 maketree"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="maketree/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/src/tools/maketree" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 maketree/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="check">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 check"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-bopomofo">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-bopomofo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-bopomofo"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-bopomofo/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-bopomofo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-bopomofo/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-config">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-config" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-config"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-config/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-config" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-config/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-easy-symbol">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-easy-symbol" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-easy-symbol"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-easy-symbol/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-easy-symbol" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-easy-symbol/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-fullshape">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-fullshape" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-fullshape"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-fullshape/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-fullshape" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-fullshape/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-key2pho">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-key2pho" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-key2pho"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-key2pho/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-key2pho" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-key2pho/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-keyboard">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-keyboard" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-keyboard"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-keyboard/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-keyboard" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-keyboard/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-logger">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-logger" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-logger"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-logger/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-logger" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-logger/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-mmap">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-mmap" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-mmap"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-mmap/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-mmap" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-mmap/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-path">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-path" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-path"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-path/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-path" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-path/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-regression">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-regression" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-regression"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-regression/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-regression" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-regression/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-reset">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-reset" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-reset"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-reset/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-reset" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-reset/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-special-symbol">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-special-symbol" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-special-symbol"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-special-symbol/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-special-symbol" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-special-symbol/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-symbol">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-symbol" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-symbol"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-symbol/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-symbol" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-symbol/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-userphrase">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-userphrase" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-userphrase"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-userphrase/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-userphrase" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-userphrase/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-utf8">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-utf8" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-utf8"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-utf8/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/test-utf8" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-utf8/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="randkeystroke">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/randkeystroke" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 randkeystroke"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="randkeystroke/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/randkeystroke" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 randkeystroke/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simulate">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/simulate" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 simulate"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simulate/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/simulate" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 simulate/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testchewing">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/testchewing" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 testchewing"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testchewing/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/testchewing" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 testchewing/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gen_keystroke">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/gen_keystroke" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 gen_keystroke"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gen_keystroke/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test/gen_keystroke" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCHEWING_DATA_PREFIX=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data&quot;"/>
+					<Add option="-DTEST_HASH_DIR=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test&quot;"/>
+					<Add option="-DTESTDATA=&quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 gen_keystroke/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testhelper">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/libtesthelper.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 testhelper"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testhelper/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/libtesthelper.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 testhelper/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="data">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 data"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chewing">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/chewing.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DLIBDIR=&quot;&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 chewing"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chewing/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/chewing.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DLIBDIR=&quot;&quot;"/>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 chewing/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chewing-definition">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 chewing-definition"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chewing_shared">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/libchewing.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 chewing_shared"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chewing_shared/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/libchewing.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 chewing_shared/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chewing_static">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/libchewing.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 chewing_static"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chewing_static/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/libchewing.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 chewing_static/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="common">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/common.dir/common.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 common"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="common/fast">
+				<Option output="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/common.dir/common.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUNDER_POSIX"/>
+					<Add option="-DPIC"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DHAVE_CONFIG_H=1"/>
+					<Add option="-DUSE_BINARY_DATA=1"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"/>
+					<Add directory="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 common/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/char.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/chewingio.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/chewingutil.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/choice.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/dict.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/hash.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/mod_aux.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/pinyin.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_posix.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/porting_layer/src/plat_mmap_windows.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/porting_layer/src/plat_path.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/tree.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/userphrase.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/chewing.dir/src/zuin.c.o">
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/common.dir/src/common/chewing-utf8-util.c.o">
+			<Option target="sort"/>
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/common.dir/src/common/key2pho.c.o">
+			<Option target="sort"/>
+			<Option target="testhelper"/>
+			<Option target="chewing_shared"/>
+			<Option target="chewing_static"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/chewing.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/chewingio.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/global.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/char-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/chewing-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/chewing-utf8-util.h">
+			<Option target="common"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/chewingutil.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/choice-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/dict-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/global-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/hash-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/key2pho-private.h">
+			<Option target="common"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/memory-private.h">
+			<Option target="common"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/pinyin-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/tree-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/userphrase-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal/zuin-private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/mod_aux.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/char.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingio.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/chewingutil.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/choice.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/common/chewing-utf8-util.c">
+			<Option target="common"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/common/key2pho.c">
+			<Option target="common"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/dict.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/hash.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/mod_aux.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/pinyin.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include/plat_mmap.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include/plat_path.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include/plat_types.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include/sys/plat_posix.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include/sys/plat_windows.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/src/plat_mmap_posix.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/src/plat_mmap_windows.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/src/plat_path.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/private.h">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tools/maketree.c">
+			<Option target="maketree"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tools/sort.c">
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/tree.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/userphrase.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/zuin.c">
+			<Option target="chewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/gen_keystroke.c">
+			<Option target="gen_keystroke"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/randkeystroke.c">
+			<Option target="randkeystroke"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/simulate.c">
+			<Option target="simulate"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-bopomofo.c">
+			<Option target="test-bopomofo"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-config.c">
+			<Option target="test-config"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-easy-symbol.c">
+			<Option target="test-easy-symbol"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-fullshape.c">
+			<Option target="test-fullshape"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-key2pho.c">
+			<Option target="test-key2pho"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-keyboard.c">
+			<Option target="test-keyboard"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-logger.c">
+			<Option target="test-logger"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-mmap.c">
+			<Option target="test-mmap"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-path.c">
+			<Option target="test-path"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-regression.c">
+			<Option target="test-regression"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-reset.c">
+			<Option target="test-reset"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-special-symbol.c">
+			<Option target="test-special-symbol"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-symbol.c">
+			<Option target="test-symbol"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-userphrase.c">
+			<Option target="test-userphrase"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/test-utf8.c">
+			<Option target="test-utf8"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/testchewing.c">
+			<Option target="testchewing"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/testhelper.c">
+			<Option target="testhelper"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/testhelper.h">
+			<Option target="testhelper"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake/FindCurses.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake/chewing.pc.in">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake/config.h.in">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake/version.texi.in">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

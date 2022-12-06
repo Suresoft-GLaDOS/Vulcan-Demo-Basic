@@ -1,0 +1,207 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "test/test-config"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"set_target_properties",
+			"add_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 253,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 271,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 263,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 46,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 91,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "CHEWING_DATA_PREFIX=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/data\""
+				},
+				{
+					"backtrace" : 4,
+					"define" : "HAVE_CONFIG_H=1"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "PIC"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "TESTDATA=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/test/default-test.txt\""
+				},
+				{
+					"backtrace" : 3,
+					"define" : "TEST_HASH_DIR=\"/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/test\""
+				},
+				{
+					"backtrace" : 5,
+					"define" : "UNDER_POSIX"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "USE_BINARY_DATA=1"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "_GNU_SOURCE"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 8,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "testhelper::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "test-config::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-rdynamic",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libtesthelper.a",
+				"role" : "libraries"
+			}
+		],
+		"language" : "C"
+	},
+	"name" : "test-config",
+	"nameOnDisk" : "test-config",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "test/test-config.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

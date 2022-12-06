@@ -1,0 +1,1 @@
+/usr/bin/cc -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g -rdynamic "CMakeFiles/test-reset.dir/test/test-reset.c.o" -o test/test-reset  libtesthelper.a 

@@ -1,0 +1,11 @@
+# Hashes of file build rules.
+83d96641d955295af974f3ffaecfdbd9 CMakeFiles/INFO
+e27519cd576dd5a3d95fd30a0cc0dbba CMakeFiles/check
+83d96641d955295af974f3ffaecfdbd9 CMakeFiles/chewing-definition
+83d96641d955295af974f3ffaecfdbd9 CMakeFiles/data
+ca82bf587e444f8d8af45892fcb60a0b CMakeFiles/pinyin.tab
+d40ac03884729737bde1aa880b6ad2e2 CMakeFiles/stresstest.py
+5e80a0d2308dbbe65190d74e15e6eadb CMakeFiles/swkb.dat
+8bbd1b2a86c041cd2b052b10d6703e9a CMakeFiles/symbols.dat
+019e5e4619dd0fcfa6b079fc6ed73878 data/dict.dat
+36ef906f983edd83ae7b91e137c8d3ef doc/libchewing.info

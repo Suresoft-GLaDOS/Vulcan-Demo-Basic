@@ -1,0 +1,1 @@
+/usr/bin/cc -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g -rdynamic CMakeFiles/testchewing.dir/test/testchewing.c.o -o test/testchewing  libtesthelper.a 

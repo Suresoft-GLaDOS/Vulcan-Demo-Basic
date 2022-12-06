@@ -1,0 +1,1 @@
+/usr/bin/cc -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g -rdynamic "CMakeFiles/test-key2pho.dir/test/test-key2pho.c.o" -o test/test-key2pho  libtesthelper.a 

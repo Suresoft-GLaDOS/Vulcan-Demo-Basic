@@ -1,0 +1,169 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "src/tools/maketree"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"add_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 181,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 46,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 91,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "HAVE_CONFIG_H=1"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "PIC"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "UNDER_POSIX"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_BINARY_DATA=1"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "_GNU_SOURCE"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 6,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/include/internal"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/src/porting_layer/include"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "maketree::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-rdynamic",
+				"role" : "flags"
+			}
+		],
+		"language" : "C"
+	},
+	"name" : "maketree",
+	"nameOnDisk" : "maketree",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/tools/maketree.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

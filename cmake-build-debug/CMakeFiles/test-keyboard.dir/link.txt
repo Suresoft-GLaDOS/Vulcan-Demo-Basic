@@ -1,0 +1,1 @@
+/usr/bin/cc -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g -rdynamic "CMakeFiles/test-keyboard.dir/test/test-keyboard.c.o" -o test/test-keyboard  libtesthelper.a 

@@ -1,0 +1,1 @@
+/usr/bin/cc -fvisibility=hidden -std=gnu99 -g -O2 -Wall -fPIC  -g -rdynamic "CMakeFiles/test-special-symbol.dir/test/test-special-symbol.c.o" -o test/test-special-symbol  libtesthelper.a 

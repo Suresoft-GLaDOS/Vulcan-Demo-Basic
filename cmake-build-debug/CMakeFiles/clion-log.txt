@@ -1,0 +1,41 @@
+C:\WINDOWS\system32\wsl.exe --distribution Ubuntu-20.04 --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic -B /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test FVISIBILITY_HIDDEN
+-- Performing Test FVISIBILITY_HIDDEN - Success
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of uint16_t
+-- Check size of uint16_t - done
+-- Found Curses: /usr/lib/x86_64-linux-gnu/libncursesw.so  
+-- Looking for strtok_r
+-- Looking for strtok_r - found
+-- Looking for asprintf
+-- Looking for asprintf - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug
