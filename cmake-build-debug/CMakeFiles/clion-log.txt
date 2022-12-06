@@ -1,30 +1,95 @@
-"C:\Program Files\JetBrains\CLion 2022.1.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.1.3/bin/ninja/win/ninja.exe" -G Ninja -S C:\Users\sure\GLaDOS\Vulcan-Demo-Basic -B C:\Users\sure\GLaDOS\Vulcan-Demo-Basic\cmake-build-debug
--- The CXX compiler identification is GNU 11.2.0
--- The C compiler identification is GNU 11.2.0
+C:\WINDOWS\system32\wsl.exe --distribution Ubuntu-20.04 --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic -B /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug"
+-- The CXX compiler identification is GNU 9.4.0
+-- The C compiler identification is GNU 9.4.0
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2022.1.3/bin/mingw/bin/g++.exe - skipped
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2022.1.3/bin/mingw/bin/gcc.exe - skipped
+-- Check for working C compiler: /usr/bin/cc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Looking for pthread.h
--- Looking for pthread.h - found
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
 -- Found Threads: TRUE  
--- Found ZLIB: C:/Program Files/zlib/lib/zlib.lib (found version "1.2.12") 
-CMake Error at C:/Program Files/JetBrains/CLion 2022.1.3/bin/cmake/win/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
-  Could NOT find EXPAT (missing: EXPAT_INCLUDE_DIR)
-Call Stack (most recent call first):
-  C:/Program Files/JetBrains/CLion 2022.1.3/bin/cmake/win/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:594 (_FPHSA_FAILURE_MESSAGE)
-  C:/Program Files/JetBrains/CLion 2022.1.3/bin/cmake/win/share/cmake-3.22/Modules/FindEXPAT.cmake:65 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
-  cmake/findDependencies.cmake:27 (find_package)
-  CMakeLists.txt:59 (include)
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+-- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.2.9") 
+-- Found Intl: built in to C library  
+-- Performing Test Iconv_IS_BUILT_IN
+-- Performing Test Iconv_IS_BUILT_IN - Success
+-- Found Iconv: /usr/lib/x86_64-linux-gnu/libc.so  
+-- ICONV_INCLUDE_DIR : 
+-- ICONV_LIBRARIES : /usr/lib/x86_64-linux-gnu/libc.so
+-- Looking for gmtime_r
+-- Looking for gmtime_r - found
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for munmap
+-- Looking for munmap - found
+-- Looking for strerror_r
+-- Looking for strerror_r - found
+-- Performing Test EXV_STRERROR_R_CHAR_P
+-- Performing Test EXV_STRERROR_R_CHAR_P - Success
+-- Looking for C++ include unistd.h
+-- Looking for C++ include unistd.h - found
+-- Looking for C++ include sys/mman.h
+-- Looking for C++ include sys/mman.h - found
+-- Looking for C++ include regex.h
+-- Looking for C++ include regex.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+-- Install prefix:    /usr/local
+-- ------------------------------------------------------------------
+-- CMake Generator:   Unix Makefiles
+-- CMAKE_BUILD_TYPE:  Debug
+-- Compiler info: GNU (/usr/bin/c++) ; version: 9.4.0
+--  --- Compiler flags --- 
+-- General:            -Wall -Wcast-align -Wpointer-arith -Wformat-security -Wmissing-format-attribute -Woverloaded-virtual -W
+-- Extra:              
+-- Debug:             -g3 -gstrict-dwarf -O0
+-- Release:           -O3 -DNDEBUG
+-- RelWithDebInfo:    -O2 -g -DNDEBUG
+-- MinSizeRel:        -Os -DNDEBUG
+--  --- Linker flags --- 
+-- General:           
+-- Debug:             
+-- Release:           
+-- RelWithDebInfo:    
+-- MinSizeRel:        
+-- 
+-- Compiler Options
+-- Warnings as errors:                 NO
+-- Use extra compiler warning flags:   NO
+-- 
+-- Compiler info: GNU (/usr/bin/c++) ; version: 9.4.0
+-- ------------------------------------------------------------------
+-- Building shared library:            YES
+-- Building PNG support:               YES
+-- XMP metadata support:               YES
+-- Native language support:            YES
+-- Conversion of Windows XP tags:      YES
+-- Nikon lens database:                YES
+-- Building webready support:          NO
+-- Building exiv2 command:             YES
+-- Building samples:                   YES
+-- Building PO files:                  NO
+-- Building unit tests:                NO
+-- Building doc:                       NO
+-- Building with coverage flags:       NO
+-- Using ccache:                       NO
+-- ------------------------------------------------------------------
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug

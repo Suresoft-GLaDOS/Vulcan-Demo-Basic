@@ -1,0 +1,155 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 215,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 221,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 226,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 228,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 266,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 267,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/libexiv2.so.0.27.99.0",
+				"lib/libexiv2.so.27"
+			],
+			"targetId" : "exiv2lib::@145eef247bfb46b6828c",
+			"targetIndex" : 12,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/libexiv2.so"
+			],
+			"targetId" : "exiv2lib::@145eef247bfb46b6828c",
+			"targetIndex" : 12,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/exiv2",
+			"paths" : 
+			[
+				"cmake-build-debug/exv_conf.h",
+				"cmake-build-debug/exiv2lib_export.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/exiv2",
+			"exportName" : "exiv2Config",
+			"exportTargets" : 
+			[
+				{
+					"id" : "exiv2-xmp::@9fdf5071edba6c7b7855",
+					"index" : 10
+				},
+				{
+					"id" : "exiv2lib::@145eef247bfb46b6828c",
+					"index" : 12
+				}
+			],
+			"paths" : 
+			[
+				"src/CMakeFiles/Export/7c214f9ecc114891e0d2d508bbbeac60/exiv2Config.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/exiv2",
+			"paths" : 
+			[
+				"cmake-build-debug/src/exiv2ConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"bin/exiv2"
+			],
+			"targetId" : "exiv2::@145eef247bfb46b6828c",
+			"targetIndex" : 9,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "share/man/man1",
+			"paths" : 
+			[
+				"src/exiv2.1"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "src",
+		"source" : "src"
+	}
+}

@@ -1,0 +1,228 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 93,
+				"parent" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "exiv2lib::@145eef247bfb46b6828c"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "exiv2::@145eef247bfb46b6828c"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "addmoddel::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "convert-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "easyaccess-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "exifcomment::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "exifdata-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "exifdata::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "exifprint::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "exifvalue::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "ini-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "iotest::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "iptceasy::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "iptcprint::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "iptctest::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "key-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "largeiptc-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "mmap-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "mrwthumb::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "prevtest::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "stringto-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "taglist::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "tiff-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "werror-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "write-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "write2-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "xmpparse::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "xmpparser-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "xmpprint::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "xmpsample::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "xmpdump::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "getopt-test::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "metacopy::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "pathtest::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "exiv2json::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "geotag::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "conntest::@fd003194bc69d7fb51e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "remotetest::@fd003194bc69d7fb51e8"
+		}
+	],
+	"id" : "tests::@6890427a1f51a3e7e1df",
+	"name" : "tests",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/tests",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/tests.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,515 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						4,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-60c15ef360182026d3e7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						31,
+						33
+					]
+				},
+				{
+					"build" : "xmpsdk",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-xmpsdk-Debug-7791ab51fe27095a9529.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "xmpsdk",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "include",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-include-Debug-7ead17b99bffc88b66bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "include"
+				},
+				{
+					"build" : "include/exiv2",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-include.exiv2-Debug-0bd1fba3401eae9cb379.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "include/exiv2"
+				},
+				{
+					"build" : "src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-31fd75ba2f0effdb110e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						9,
+						12,
+						13
+					]
+				},
+				{
+					"build" : "samples",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-samples-Debug-7264bf0446213b191fb3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "samples",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						32,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "exiv2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "addmoddel::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-addmoddel-Debug-8ce24c46e3e8220b3fea.json",
+					"name" : "addmoddel",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "conntest::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-conntest-Debug-3c61557c07889a046460.json",
+					"name" : "conntest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "convert-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-convert-test-Debug-3e84825721082af75501.json",
+					"name" : "convert-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "easyaccess-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-easyaccess-test-Debug-a9e1eb798c78bb959b72.json",
+					"name" : "easyaccess-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "exifcomment::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-exifcomment-Debug-68a5685a75a6bab41f47.json",
+					"name" : "exifcomment",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "exifdata::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-exifdata-Debug-ab604c00485750a95c53.json",
+					"name" : "exifdata",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "exifdata-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-exifdata-test-Debug-db9ee19ec74c3d1402d4.json",
+					"name" : "exifdata-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "exifprint::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-exifprint-Debug-3e6a24254187bec936dd.json",
+					"name" : "exifprint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "exifvalue::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-exifvalue-Debug-f11be96c97ac142325c7.json",
+					"name" : "exifvalue",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "exiv2::@145eef247bfb46b6828c",
+					"jsonFile" : "target-exiv2-Debug-8ba48deb93594d0fad36.json",
+					"name" : "exiv2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "exiv2-xmp::@9fdf5071edba6c7b7855",
+					"jsonFile" : "target-exiv2-xmp-Debug-6b6b258c89e766faf5e3.json",
+					"name" : "exiv2-xmp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "exiv2json::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-exiv2json-Debug-87d75b55b34b6f6842d6.json",
+					"name" : "exiv2json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "exiv2lib::@145eef247bfb46b6828c",
+					"jsonFile" : "target-exiv2lib-Debug-7f3be7b6842d084e768a.json",
+					"name" : "exiv2lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "exiv2lib_int::@145eef247bfb46b6828c",
+					"jsonFile" : "target-exiv2lib_int-Debug-f9b5bb1d0ed4fa4a98fd.json",
+					"name" : "exiv2lib_int",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "geotag::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-geotag-Debug-28a4a8150026b83e0c58.json",
+					"name" : "geotag",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "getopt-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-getopt-test-Debug-7238e5797c4cf42ccd57.json",
+					"name" : "getopt-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ini-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-ini-test-Debug-d9c3a8064f6381cf37e8.json",
+					"name" : "ini-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "iotest::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-iotest-Debug-7c8445ec522a675b914c.json",
+					"name" : "iotest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "iptceasy::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-iptceasy-Debug-aadf4d838485944d512c.json",
+					"name" : "iptceasy",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "iptcprint::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-iptcprint-Debug-d77663a10fae496aabc9.json",
+					"name" : "iptcprint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "iptctest::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-iptctest-Debug-2f63b01ffa54f5ec98a6.json",
+					"name" : "iptctest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "key-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-key-test-Debug-964fe916518d47744cf5.json",
+					"name" : "key-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "largeiptc-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-largeiptc-test-Debug-fefb821e2d1761e72741.json",
+					"name" : "largeiptc-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "metacopy::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-metacopy-Debug-bdbb31fd6a89fd993ba3.json",
+					"name" : "metacopy",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "mmap-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-mmap-test-Debug-51967f3ace33d25a98bd.json",
+					"name" : "mmap-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "mrwthumb::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-mrwthumb-Debug-74a04552e7833026f785.json",
+					"name" : "mrwthumb",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "pathtest::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-pathtest-Debug-c463185e03caebc2a376.json",
+					"name" : "pathtest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "prevtest::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-prevtest-Debug-325f9ad57a7c38b7792e.json",
+					"name" : "prevtest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "remotetest::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-remotetest-Debug-1b3e8718d6ed9ddc5c17.json",
+					"name" : "remotetest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "stringto-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-stringto-test-Debug-2d6ec377136a02cff7e4.json",
+					"name" : "stringto-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "taglist::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-taglist-Debug-01e099acb001e5946986.json",
+					"name" : "taglist",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tests-Debug-121e382ed512a9d93494.json",
+					"name" : "tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "tiff-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-tiff-test-Debug-d8d03f1a1640fad48531.json",
+					"name" : "tiff-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-b1911fcbd802c1389851.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "werror-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-werror-test-Debug-97287ef0e8f81ba2c120.json",
+					"name" : "werror-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "write-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-write-test-Debug-f8c4c9bcb03a62da407c.json",
+					"name" : "write-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "write2-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-write2-test-Debug-eed0bc542a4197fa198b.json",
+					"name" : "write2-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "xmpdump::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-xmpdump-Debug-6f8b70898b6ccd6d2e6c.json",
+					"name" : "xmpdump",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "xmpparse::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-xmpparse-Debug-6437ab779c57741347e1.json",
+					"name" : "xmpparse",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "xmpparser-test::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-xmpparser-test-Debug-c34be6e575c387395bc2.json",
+					"name" : "xmpparser-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "xmpprint::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-xmpprint-Debug-c3d8d5924e36e5dd620c.json",
+					"name" : "xmpprint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "xmpsample::@fd003194bc69d7fb51e8",
+					"jsonFile" : "target-xmpsample-Debug-1fe7457266a03a565781.json",
+					"name" : "xmpsample",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic/cmake-build-debug",
+		"source" : "/mnt/c/Users/sure/GLaDOS/Vulcan-Demo-Basic"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
