@@ -179,38 +179,27 @@ Node* Delete(Node* node, int data)
         {
             node = NULL;
         }
-        else if (node->Left != NULL) //Original: node->Left != NULL && node->Right == NULL
-        {
-            node->Left->Parent = node->Parent;
-            node = node->Left;
-        }
-        else if (node->Left == NULL && node->Right != NULL)
-        {
-            node->Right->Parent = node->Parent;
-            node = node->Right;
-        }
-        else
-        {
-            Node* deleteNode = node;
-            Node* minNode = GetMinNode(node->Right, deleteNode);
-
-            minNode->Parent = node->Parent;
-
-            minNode->Left = deleteNode->Left;
-            if (deleteNode->Left != NULL)
-            {
-                deleteNode->Left->Parent = minNode;
-            }
-
-            minNode->Right = deleteNode->Right;
-            if (deleteNode->Right != NULL)
-            {
-                deleteNode->Right->Parent = minNode;
-            }
-
-            node = minNode;
-            free(deleteNode);
-        }
+        else if ((node->Left != ((void *)0)) && !(node->Right != 0)) {
+    node->Left->Parent = node->Parent;
+    node = node->Left;
+} else if (node->Left == ((void *)0) && node->Right != ((void *)0)) {
+    node->Right->Parent = node->Parent;
+    node = node->Right;
+} else {
+    Node *deleteNode = node;
+    Node *minNode = GetMinNode(node->Right, deleteNode);
+    minNode->Parent = node->Parent;
+    minNode->Left = deleteNode->Left;
+    if (deleteNode->Left != ((void *)0)) {
+        deleteNode->Left->Parent = minNode;
+    }
+    minNode->Right = deleteNode->Right;
+    if (deleteNode->Right != ((void *)0)) {
+        deleteNode->Right->Parent = minNode;
+    }
+    node = minNode;
+    free(deleteNode);
+}
     }
 
     return node;
