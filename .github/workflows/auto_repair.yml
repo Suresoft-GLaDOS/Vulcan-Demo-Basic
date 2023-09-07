@@ -7,7 +7,7 @@ on:
 
 jobs:
     auto-repair:
-        runs-on: self-hosted
+        runs-on: [self-hosted, linux, x64, test]
         if: ${{ github.event.workflow_run.conclusion == 'failure' }}
         steps:
             - name: run vulcan action
