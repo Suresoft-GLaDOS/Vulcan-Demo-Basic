@@ -1,5 +1,5 @@
 int function(int x, int y) {
-  if(x == 10)) {
+  if(x == 10) {
       if (y == 10) {
         return 1;
       }
