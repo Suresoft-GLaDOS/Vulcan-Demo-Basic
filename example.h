@@ -1,1 +1,1 @@
-int mid(int x, int y, int z);
+int function(int x, int y);
