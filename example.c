@@ -1,5 +1,8 @@
 int function(int x, int y) {
-  int a = x > y;
+  int a,b ;
+
+  a = x > y;
+  b = x ==y;
 
   if(x == 10) {
       if (y == 10) {
