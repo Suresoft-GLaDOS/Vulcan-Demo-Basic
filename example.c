@@ -1,4 +1,6 @@
 int function(int x, int y) {
+  int a = x > y;
+
   if(x == 10) {
       if (y == 10) {
         return 1;
